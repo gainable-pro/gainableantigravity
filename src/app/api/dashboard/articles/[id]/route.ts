@@ -19,13 +19,15 @@ async function getExpertFromToken() {
 }
 
 // GET SINGLE ARTICLE
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const expert = await getExpertFromToken();
     if (!expert) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
+    const { id } = await params;
+
     try {
         const article = await prisma.article.findUnique({
-            where: { id: params.id }
+            where: { id }
         });
 
         if (!article || article.expertId !== expert.id) {
@@ -39,15 +41,17 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
 }
 
 // DELETE ARTICLE
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const expert = await getExpertFromToken();
     if (!expert) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
+    const { id } = await params;
+
     try {
-        const article = await prisma.article.findUnique({ where: { id: params.id } });
+        const article = await prisma.article.findUnique({ where: { id } });
         if (!article || article.expertId !== expert.id) return NextResponse.json({ error: "Introuvable" }, { status: 404 });
 
-        await prisma.article.delete({ where: { id: params.id } });
+        await prisma.article.delete({ where: { id } });
         return NextResponse.json({ success: true });
     } catch (error) {
         return NextResponse.json({ error: "Erreur suppression" }, { status: 500 });
@@ -78,12 +82,14 @@ function checkForbiddenWords(text: string) {
     return found;
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const expert = await getExpertFromToken();
     if (!expert) return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
 
+    const { id } = await params;
+
     try {
-        const article = await prisma.article.findUnique({ where: { id: params.id } });
+        const article = await prisma.article.findUnique({ where: { id } });
         if (!article || article.expertId !== expert.id) return NextResponse.json({ error: "Introuvable" }, { status: 404 });
 
         const body = await req.json();
@@ -158,7 +164,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
         }
 
         const updated = await prisma.article.update({
-            where: { id: params.id },
+            where: { id },
             data: {
                 title: body.title,
                 slug: body.slug,
