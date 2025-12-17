@@ -17,6 +17,10 @@ if (process.env.NODE_ENV === 'production') {
     prisma = (global as any).prisma;
 }
 
+// Force dynamic to prevent build-time DB access
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export default async function InvoicesPage() {
     // ---------------------------------------------------------
     // TEMP: MOCK AUTH
