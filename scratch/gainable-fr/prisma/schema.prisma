@@ -69,7 +69,7 @@ model Expert {
   leadAssignments  LeadAssignment[]
   
   // Stripe
-  stripeCustomerId String?     @unique
+  stripeCustomerId String?     @unique @map("stripe_customer_id")
   subscription     Subscription?
   invoices         Invoice[]
 }
