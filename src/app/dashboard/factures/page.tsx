@@ -93,7 +93,7 @@ export default async function InvoicesPage() {
                         </div>
                     ) : (
                         <div className="divide-y divide-slate-100">
-                            {invoices.map((inv) => (
+                            {invoices.map((inv: any) => (
                                 <div key={inv.id} className="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
                                     <div className="flex flex-col gap-1">
                                         <span className="font-medium text-slate-700 text-sm">

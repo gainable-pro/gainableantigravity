@@ -7,7 +7,8 @@ import { Search, MapPin, Filter, RefreshCcw } from "lucide-react";
 // --- MOCK DATA ---
 const MOCK_PROS = [
     {
-        id: 1,
+        id: "1",
+        slug: "clim-express-33",
         name: "Clim'Express 33",
         city: "Bordeaux",
         country: "France",
@@ -17,7 +18,8 @@ const MOCK_PROS = [
         logoUrl: undefined
     },
     {
-        id: 2,
+        id: "2",
+        slug: "eco-thermie-sa",
         name: "Eco-Thermie S.A.",
         city: "Genève",
         country: "Suisse",
@@ -27,7 +29,8 @@ const MOCK_PROS = [
         logoUrl: undefined
     },
     {
-        id: 3,
+        id: "3",
+        slug: "atlantic-confort",
         name: "Atlantic Confort",
         city: "Mérignac",
         country: "France",
@@ -37,7 +40,8 @@ const MOCK_PROS = [
         logoUrl: undefined
     },
     {
-        id: 4,
+        id: "4",
+        slug: "expert-clim-75",
         name: "Expert Clim 75",
         city: "Paris",
         country: "France",

@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
                 await prisma.expert.update({
                     where: { id: expertId },
                     data: {
-                        stripeCustomerId: session.customer as string,
+                        stripeCustomerId: ((session.customer as any) as string) || null,
                         status: "active", // Activate account!
                     }
                 });
@@ -62,14 +62,14 @@ export async function POST(req: NextRequest) {
                     update: {
                         status: sub.status,
                         planId: sub.items.data[0]?.price?.id ?? "",
-                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : null,
+                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : new Date(),
                     },
                     create: {
                         expertId: expertId,
                         stripeId: sub.id,
                         status: sub.status,
                         planId: sub.items.data[0]?.price?.id ?? "",
-                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : null,
+                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : new Date(),
                     }
                 });
             }
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
                 where: { stripeId: subscription.id },
                 data: {
                     status: subscription.status,
-                    currentPeriodEnd: (subscription as any).current_period_end ? new Date((subscription as any).current_period_end * 1000) : null,
+                    currentPeriodEnd: (subscription as any).current_period_end ? new Date((subscription as any).current_period_end * 1000) : new Date(),
                 }
             });
 
