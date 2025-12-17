@@ -55,13 +55,21 @@ export async function POST(req: NextRequest) {
 
                 // Create Subscription Record
                 const subDetails = await stripe.subscriptions.retrieve(subscriptionId);
-                await prisma.subscription.create({
-                    data: {
+                const sub = subDetails as Stripe.Subscription;
+
+                await prisma.subscription.upsert({
+                    where: { stripeId: sub.id },
+                    update: {
+                        status: sub.status,
+                        planId: sub.items.data[0]?.price?.id ?? "",
+                        currentPeriodEnd: new Date(sub.current_period_end * 1000),
+                    },
+                    create: {
                         expertId: expertId,
-                        stripeId: subscriptionId,
-                        status: subDetails.status,
-                        planId: subDetails.items.data[0].price.id,
-                        currentPeriodEnd: new Date(subDetails.current_period_end * 1000),
+                        stripeId: sub.id,
+                        status: sub.status,
+                        planId: sub.items.data[0]?.price?.id ?? "",
+                        currentPeriodEnd: new Date(sub.current_period_end * 1000),
                     }
                 });
             }
