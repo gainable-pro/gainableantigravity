@@ -62,14 +62,14 @@ export async function POST(req: NextRequest) {
                     update: {
                         status: sub.status,
                         planId: sub.items.data[0]?.price?.id ?? "",
-                        currentPeriodEnd: new Date(sub.current_period_end * 1000),
+                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : null,
                     },
                     create: {
                         expertId: expertId,
                         stripeId: sub.id,
                         status: sub.status,
                         planId: sub.items.data[0]?.price?.id ?? "",
-                        currentPeriodEnd: new Date(sub.current_period_end * 1000),
+                        currentPeriodEnd: (sub as any).current_period_end ? new Date((sub as any).current_period_end * 1000) : null,
                     }
                 });
             }
@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
                 where: { stripeId: subscription.id },
                 data: {
                     status: subscription.status,
-                    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+                    currentPeriodEnd: (subscription as any).current_period_end ? new Date((subscription as any).current_period_end * 1000) : null,
                 }
             });
 
