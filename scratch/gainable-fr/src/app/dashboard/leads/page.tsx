@@ -1,13 +1,10 @@
-import { PrismaClient } from "@prisma/client";
-import { format } from "date-fns";
-import { fr } from "date-fns/locale";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// Ensure global prisma
-let prisma: PrismaClient;
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
+prisma = new PrismaClient();
 } else {
     if (!(global as any).prisma) {
         (global as any).prisma = new PrismaClient();
