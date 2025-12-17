@@ -1,43 +1,16 @@
-import { PrismaClient } from "@prisma/client";
-import { format } from "date-fns";
-import { fr } from "date-fns/locale";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, Download, TrendingUp } from "lucide-react";
+import { FileText, TrendingUp, Download } from "lucide-react";
 
-// Ensure global prisma
-let prisma: PrismaClient;
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
-} else {
-    if (!(global as any).prisma) {
-        (global as any).prisma = new PrismaClient();
-    }
-    prisma = (global as any).prisma;
-}
-
-// Force dynamic to prevent build-time DB access
+// Force dynamic
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export default async function InvoicesPage() {
-    // ---------------------------------------------------------
-    // TEMP: MOCK AUTH
-    // ---------------------------------------------------------
-    const demoExpert = await prisma.expert.findFirst({
-        include: {
-            subscription: true,
-            invoices: { orderBy: { createdAt: 'desc' } }
-        }
-    });
-
-    if (!demoExpert) {
-        return <div className="p-8">Aucun expert trouvé en base pour la démo.</div>;
-    }
-
-    const subscription = demoExpert.subscription;
-    const invoices = demoExpert.invoices;
+export default function InvoicesPage() {
+    // Static placeholder data
+    const subscription = { status: 'active', currentPeriodEnd: new Date("2024-12-31") };
+    const invoices: any[] = [];
 
     return (
         <div className="space-y-6">
@@ -61,23 +34,14 @@ export default async function InvoicesPage() {
                         <div>
                             <div className="flex items-center gap-3">
                                 <span className="text-sm text-slate-500">Statut actuel:</span>
-                                {subscription ? (
-                                    <Badge variant={subscription.status === 'active' ? 'default' : 'destructive'}
-                                        className={subscription.status === 'active' ? "bg-green-100 text-green-700 hover:bg-green-200" : ""}>
-                                        {subscription.status === 'active' ? 'Actif' : subscription.status}
-                                    </Badge>
-                                ) : (
-                                    <Badge variant="outline" className="text-slate-500 border-slate-300">Inactif</Badge>
-                                )}
+                                <Badge variant="default" className="bg-green-100 text-green-700 hover:bg-green-200">
+                                    Actif
+                                </Badge>
                             </div>
-                            {subscription && (
-                                <p className="text-xs text-slate-400 mt-1">
-                                    Renouvellement le {format(new Date(subscription.currentPeriodEnd), "d MMMM yyyy", { locale: fr })}
-                                </p>
-                            )}
+                            <p className="text-xs text-slate-400 mt-1">
+                                (Mode Démarrage - Pas de facturation réelle pour l'instant)
+                            </p>
                         </div>
-                        {/* Manage Button (could link to Stripe Customer Portal later) */}
-                        {/* <Button variant="outline" size="sm">Gérer</Button> */}
                     </div>
                 </CardContent>
             </Card>
@@ -91,39 +55,9 @@ export default async function InvoicesPage() {
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
-                    {invoices.length === 0 ? (
-                        <div className="text-center py-10 text-slate-500 text-sm">
-                            Aucune facture disponible.
-                        </div>
-                    ) : (
-                        <div className="divide-y divide-slate-100">
-                            {invoices.map((inv: any) => (
-                                <div key={inv.id} className="p-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
-                                    <div className="flex flex-col gap-1">
-                                        <span className="font-medium text-slate-700 text-sm">
-                                            Facture du {format(new Date(inv.createdAt), "d MMMM yyyy", { locale: fr })}
-                                        </span>
-                                        <div className="flex items-center gap-2 text-xs">
-                                            <Badge variant="outline" className="text-xs font-normal bg-white border-slate-200">
-                                                {(inv.amount / 100).toFixed(2)} €
-                                            </Badge>
-                                            <span className={inv.status === 'paid' ? "text-green-600 font-medium" : "text-slate-500"}>
-                                                {inv.status === 'paid' ? 'Payée' : inv.status}
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {inv.pdfUrl && (
-                                        <Button variant="ghost" size="sm" asChild className="text-slate-600 hover:text-[#D59B2B] hover:bg-amber-50">
-                                            <a href={inv.pdfUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                                                <Download className="h-4 w-4" />
-                                                <span className="hidden sm:inline">PDF</span>
-                                            </a>
-                                        </Button>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                    <div className="text-center py-10 text-slate-500 text-sm">
+                        Aucune facture disponible pour le moment.
+                    </div>
                 </CardContent>
             </Card>
         </div>

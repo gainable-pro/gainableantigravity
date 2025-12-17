@@ -1,6 +1,9 @@
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+// Force Static Build - Update 2 (No Prisma)
+
+
 export default function LeadsPage() {
     return (
         <div className="space-y-6">
