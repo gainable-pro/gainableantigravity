@@ -1,13 +1,3 @@
-
-import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-import { z } from "zod";
-import { sendEmail } from "@/lib/email";
-
-// Ensure global prisma client usage
-let prisma: PrismaClient;
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
 } else {
     if (!(global as any).prisma) {
         (global as any).prisma = new PrismaClient();
