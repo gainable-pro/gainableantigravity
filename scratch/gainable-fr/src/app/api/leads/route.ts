@@ -188,7 +188,7 @@ export async function POST(request: Request) {
     } catch (error) {
         console.error("API Lead Error:", error);
         if (error instanceof z.ZodError) {
-            return NextResponse.json({ success: false, errors: error.errors }, { status: 400 });
+            return NextResponse.json({ success: false, errors: error.issues }, { status: 400 });
         }
         return NextResponse.json({ success: false, message: "Internal Server Error" }, { status: 500 });
     }
