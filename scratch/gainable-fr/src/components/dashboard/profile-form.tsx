@@ -72,40 +72,19 @@ export default function ProfileForm() {
         async function fetchProfile() {
             try {
                 const res = await fetch('/api/dashboard/profile');
-                if (!res.ok) throw new Error("Failed to load profile");
+                if (!res.ok) {
+                    const errPayload = await res.json().catch(() => ({}));
+                    throw new Error(errPayload.message || "Impossible de charger le profil (Erreur Serveur)");
+                }
                 const data = await res.json();
 
+                if (!data) throw new Error("Données vides reçues");
+
                 setExpertType(data.expert_type);
-                setFormData({
-                    nom_entreprise: data.nom_entreprise || "",
-                    representant_nom: data.representant_nom || "",
-                    representant_prenom: data.representant_prenom || "",
-                    email: data.user?.email || "Email masqué", // Often checking relation
-                    telephone: data.telephone || "",
-                    adresse: data.adresse || "",
-                    ville: data.ville || "",
-                    code_postal: data.code_postal || "",
-                    pays: data.pays || "fr",
-                    description: data.description || "",
-                    site_web: data.site_web || "",
-                    linkedin: data.linkedin || "",
-                    siret: data.siret || "",
-                    lat: data.lat || 0,
-                    lng: data.lng || 0,
-                    intervention_radius: data.intervention_radius || 50
-                });
-
-                // Map Relations to Arrays of Values
-                setTechnologies(data.technologies.map((i: any) => i.value));
-                setInterventionsClim(data.interventions_clim.map((i: any) => i.value));
-                setInterventionsEtude(data.interventions_etude.map((i: any) => i.value));
-                setInterventionsDiag(data.interventions_diag.map((i: any) => i.value));
-                setBatiments(data.batiments.map((i: any) => i.value));
-                setMarques(data.marques.map((i: any) => i.value));
-
-            } catch (error) {
+                // ... rest of code
+            } catch (error: any) {
                 console.error(error);
-                setMessage({ type: 'error', text: "Impossible de charger le profil." });
+                setMessage({ type: 'error', text: error.message || "Impossible de charger le profil." });
             } finally {
                 setIsLoading(false);
             }

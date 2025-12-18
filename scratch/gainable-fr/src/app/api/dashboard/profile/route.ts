@@ -4,6 +4,8 @@ import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { PrismaClient } from "@prisma/client";
 
+export const dynamic = 'force-dynamic';
+
 const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
@@ -40,9 +42,12 @@ export async function GET() {
 
         if (!expert) return NextResponse.json({ message: "Expert not found" }, { status: 404 });
         return NextResponse.json(expert);
-    } catch (error) {
+    } catch (error: any) {
         console.error("GET Profile Error:", error);
-        return NextResponse.json({ message: "Error fetching profile" }, { status: 500 });
+        return NextResponse.json(
+            { message: `Error fetching profile: ${error?.message || String(error)}` },
+            { status: 500 }
+        );
     }
 }
 
