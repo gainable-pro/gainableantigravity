@@ -69,7 +69,7 @@ function NewPasswordForm() {
                 <h1 className="font-bold text-lg">Lien invalide</h1>
                 <p>Le lien de réinitialisation est manquant ou incorrect.</p>
                 <Button asChild className="mt-4" variant="outline">
-                    <Link href="/mot-de-passe-oublie">Renvoyer un lien</Link>
+                    <Link href="/auth/reset-password">Renvoyer un lien</Link>
                 </Button>
             </div>
         );
