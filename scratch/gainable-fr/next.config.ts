@@ -6,7 +6,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/mot-de-passe-oublie',
-        destination: '/reset-password',
+        destination: '/auth/reset-password',
+        permanent: true,
+      },
+      {
+        source: '/reset-password',
+        destination: '/auth/reset-password',
         permanent: true,
       },
     ]

@@ -217,7 +217,7 @@ export function LoginDropdown() {
 
                             <div className="space-y-2 text-center pt-2">
                                 <div>
-                                    <Link href="/reset-password" className="text-xs text-[#D59B2B] hover:underline">
+                                    <Link href="/auth/reset-password" className="text-xs text-[#D59B2B] hover:underline">
                                         Mot de passe oublié ?
                                     </Link>
                                 </div>
