@@ -56,7 +56,7 @@ async function main() {
                 nom_entreprise: 'Air G Energie',
                 representant_nom: 'Ghari',
                 representant_prenom: 'Rabah',
-                email_contact: email,
+
                 telephone: '0600000000',
                 adresse: '13140 MIRAMAS',
                 ville: 'MIRAMAS',
