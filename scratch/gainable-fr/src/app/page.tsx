@@ -377,7 +377,9 @@ export default function Home() {
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
                 En France et en Suisse, il existe des milliers d’entreprises spécialisées en climatisation et en équipements thermiques.
-                <span className="text-xs block text-center text-slate-400 py-2">v2.0-debug-active</span>
+                <span className="text-xs block text-center text-slate-400 py-2">
+                  v2.1-debug | Resend Key: {process.env.RESEND_API_KEY ? "PRESENT ✅" : "MISSING ❌"}
+                </span>
                 <span className="font-bold text-[#1F2D3D]">Le vrai défi, c’est de trouver celle qui fera un travail sérieux, durable et adapté à vos besoins.</span>
               </p>
               <ul className="space-y-3 font-medium text-[#1F2D3D]">
