@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, ArrowLeft, CheckCircle } from "lucide-react";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+
+
 
 export default function ForgotPasswordPage() {
     const [email, setEmail] = useState("");
@@ -41,7 +41,7 @@ export default function ForgotPasswordPage() {
 
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col">
-            <Header />
+
 
             <main className="flex-grow flex items-center justify-center p-4">
                 <div className="max-w-md w-full bg-white rounded-xl shadow-sm border border-slate-100 p-8">
@@ -104,7 +104,7 @@ export default function ForgotPasswordPage() {
                 </div>
             </main>
 
-            <Footer />
+
         </div>
     );
 }
