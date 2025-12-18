@@ -1,0 +1,6 @@
+src/app/api/webhooks/stripe/route.ts(65,25): error TS2322: Type 'Date | null' is not assignable to type 'string | DateTimeFieldUpdateOperationsInput | Date | undefined'.
+  Type 'null' is not assignable to type 'string | DateTimeFieldUpdateOperationsInput | Date | undefined'.
+src/app/api/webhooks/stripe/route.ts(72,25): error TS2322: Type 'Date | null' is not assignable to type 'string | Date'.
+  Type 'null' is not assignable to type 'string | Date'.
+src/app/api/webhooks/stripe/route.ts(109,21): error TS2322: Type 'Date | null' is not assignable to type 'string | DateTimeFieldUpdateOperationsInput | Date | undefined'.
+  Type 'null' is not assignable to type 'string | DateTimeFieldUpdateOperationsInput | Date | undefined'.

@@ -1,0 +1,250 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// 2.1 Table users
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  role          String   @default("expert") // "expert"
+  created_at    DateTime @default(now())
+
+  expert        Expert?
+
+  // Password Reset
+  resetToken          String?  @unique
+  resetTokenExpires   DateTime?
+}
+
+// 2.2 Table experts (profil public + SEO)
+model Expert {
+  id               String      @id @default(uuid())
+  user_id          String      @unique
+  user             User        @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  expert_type      ExpertType
+  
+  nom_entreprise   String
+  representant_nom String
+  representant_prenom String
+  description      String      @db.Text
+  site_web         String?
+  linkedin         String?
+  telephone        String?
+  
+  // Localisation
+  pays             String      // "FR" / "CH"
+  adresse          String
+  ville            String
+  code_postal      String
+  lat              Float?
+  lng              Float?
+  intervention_radius Int?     @default(50)
+  
+  // Identifiants
+  siret            String?     // FR uniquement
+  ape_code         String?
+  ide_tva          String?     // Suisse
+  
+  // SEO
+  slug             String      @unique
+  logo_url         String?
+  video_url        String?
+  
+  status           String      @default("pending") // "pending" / "active"
+  created_at       DateTime    @default(now())
+
+  // Relations (2.3 Tables multi-valeurs)
+  technologies     ExpertTechnology[]
+  interventions_clim ExpertInterventionClim[]
+  interventions_etude ExpertInterventionEtude[]
+  interventions_diag ExpertInterventionDiag[]
+  batiments        ExpertBatiment[]
+  marques          ExpertMarque[]
+  photos           ExpertPhoto[]
+  articles         Article[]
+  leadAssignments  LeadAssignment[]
+  
+  // Stripe
+  stripeCustomerId String?     @unique @map("stripe_customer_id")
+  subscription     Subscription?
+  invoices         Invoice[]
+}
+
+// 5.0 Stripe / Paiement
+model Subscription {
+  id              String   @id @default(cuid())
+  expertId        String   @unique
+  expert          Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  
+  stripeId        String   @unique // sub_...
+  status          String   // active, past_due, canceled
+  planId          String   // price_...
+  currentPeriodEnd DateTime
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Invoice {
+  id              String   @id @default(cuid())
+  expertId        String
+  expert          Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  
+  stripeId        String   @unique // in_...
+  amount          Int      // en centimes
+  status          String   // paid, open, void
+  pdfUrl          String?  // hosted_invoice_url ou invoice_pdf
+  createdAt       DateTime @default(now())
+}
+
+enum ExpertType {
+  cvc_climatisation
+  bureau_detude
+  diagnostics_dpe
+}
+
+// 2.3 Tables multi-valeurs
+
+model ExpertTechnology {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // gainable, pac_air_air, etc.
+}
+
+model ExpertInterventionClim {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // installation, maintenance, etc.
+}
+
+model ExpertInterventionEtude {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // etudes_thermiques, re2020, etc.
+}
+
+model ExpertInterventionDiag {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // dpe, amiante, etc.
+}
+
+model ExpertBatiment {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // maison, immeuble, etc.
+}
+
+model ExpertMarque {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // daikin, mitsubishi, etc.
+}
+
+model ExpertPhoto {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  photo_url String
+}
+
+// 3.0 Module Articles SEO
+model Article {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   // Unique per company or global? Global simplifies routing /entreprise/[slug]/articles/[article-slug] if unique. 
+  introduction String? @db.Text
+  content     String   @db.Text
+  
+  // Images
+  mainImage   String?  // URL
+  altText     String?
+  videoUrl    String?  // YouTube or Uploaded URL
+
+  // SEO Local & Meta
+  targetCity  String?
+  metaDesc    String?
+  
+  // Status & Validation
+  status      ArticleStatus @default(DRAFT)
+  rejectionReason String?
+
+  // Dates
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  publishedAt DateTime?
+
+  // Relation
+  expertId    String
+  expert      Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+
+  // FAQ structured data
+  faq         Json?    // [{question: "...", response: "..."}]
+
+  // Structured Content (for Editor re-hydration)
+  jsonContent Json?    // { sections: [{ title, content, ... }] }
+
+  @@index([expertId])
+  @@index([slug])
+  @@unique([expertId, slug]) // Ensure slug is unique per expert, or make it globally unique. Let's start with unique per expert.
+}
+
+enum ArticleStatus {
+  DRAFT
+  PENDING
+  PUBLISHED
+  REJECTED
+}
+
+// 4.0 Sales / Leads
+model Lead {
+  id              String   @id @default(cuid())
+  type            String   // "cvc", "diag", "simple"
+  
+  // Infos Contact
+  nom             String
+  prenom          String?
+  email           String
+  telephone       String
+  code_postal     String
+  ville           String?
+  adresse         String?
+
+  // Détails Projet (JSON pour flexibilité selon type)
+  details         Json?    // { surface, annee, travaux, etc. }
+  
+  // Statut
+  status          String   @default("new") // new, treated, archived
+  
+  createdAt       DateTime @default(now())
+
+  // Relations
+  assignments     LeadAssignment[]
+}
+
+model LeadAssignment {
+  id        String   @id @default(cuid())
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  
+  expertId  String
+  expert    Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+  
+  status    String   @default("sent") // sent, viewed, accepted, rejected
+  sentAt    DateTime @default(now())
+
+  @@unique([leadId, expertId])
+}

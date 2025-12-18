@@ -1,0 +1,9 @@
+src/app/api/webhooks/stripe/route.ts(51,25): error TS2353: Object literal may only specify known properties, and 'stripeCustomerId' does not exist in type '(Without<ExpertUpdateInput, ExpertUncheckedUpdateInput> & ExpertUncheckedUpdateInput) | (Without<...> & ExpertUpdateInput)'.
+src/app/api/webhooks/stripe/route.ts(60,30): error TS2339: Property 'subscription' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+src/app/api/webhooks/stripe/route.ts(85,26): error TS2353: Object literal may only specify known properties, and 'stripeCustomerId' does not exist in type 'ExpertWhereUniqueInput'.
+src/app/api/webhooks/stripe/route.ts(89,30): error TS2339: Property 'invoice' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+src/app/api/webhooks/stripe/route.ts(105,26): error TS2339: Property 'subscription' does not exist on type 'PrismaClient<PrismaClientOptions, never, DefaultArgs>'.
+src/app/dashboard/factures/page.tsx(26,13): error TS2353: Object literal may only specify known properties, and 'subscription' does not exist in type 'ExpertInclude<DefaultArgs>'.
+src/app/dashboard/factures/page.tsx(35,37): error TS2339: Property 'subscription' does not exist on type '{ status: string; id: string; created_at: Date; expert_type: ExpertType; nom_entreprise: string; representant_nom: string; representant_prenom: string; description: string; ... 16 more ...; user_id: string; }'.
+src/app/dashboard/factures/page.tsx(36,33): error TS2339: Property 'invoices' does not exist on type '{ status: string; id: string; created_at: Date; expert_type: ExpertType; nom_entreprise: string; representant_nom: string; representant_prenom: string; description: string; ... 16 more ...; user_id: string; }'.
+src/app/dashboard/factures/page.tsx(96,44): error TS7006: Parameter 'inv' implicitly has an 'any' type.
