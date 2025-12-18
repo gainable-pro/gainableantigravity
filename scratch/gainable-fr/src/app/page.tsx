@@ -372,123 +372,118 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto bg-slate-50 p-10 md:p-14 rounded-3xl border-l-8 border-[#D59B2B] shadow-sm mb-24">
             <h3 className="text-2xl font-bold text-[#1F2D3D] mb-6 font-montserrat">
-              Le saviez-vous ?
-            </h3>
-            <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
-              <p>
-                En France et en Suisse, il existe des milliers d’entreprises spécialisées en climatisation et en équipements thermiques.
-                <p className="text-xs text-center text-slate-400 py-2">v2.0-debug-active</p>
-                <Hero />
-                <span className="font-bold text-[#1F2D3D]">Le vrai défi, c’est de trouver celle qui fera un travail sérieux, durable et adapté à vos besoins.</span>
-              </p>
-              <ul className="space-y-3 font-medium text-[#1F2D3D]">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
-                  Qui sera présent avant, pendant et après l’installation ?
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
-                  Qui dimensionnera correctement votre installation pour éviter la surconsommation ?
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
-                  Qui s’engagera réellement à garantir votre satisfaction ?
-                </li>
-              </ul>
-              <p className="pt-4 font-bold text-xl text-[#D59B2B]">
-                C’est précisément là que Gainable.fr intervient.
-              </p>
-            </div>
-          </div>
-
-          {/* 4. Value Added (Blue Block) */}
-          <div className="grid md:grid-cols-2 gap-16 items-start mb-24">
-
-            {/* Column 1: Selection Criteria */}
-            <div>
-              <h3 className="text-3xl font-extrabold text-[#1F2D3D] mb-8 font-montserrat uppercase">
-                <span className="text-[#D59B2B]">La valeur ajoutée</span><br />Gainable.fr
-              </h3>
-              <p className="text-lg text-slate-600 mb-8 font-medium">Nous sélectionnons uniquement des entreprises :</p>
-
-              <ul className="space-y-4">
-                {[
-                  "Vérifiées (SIRET / IDE, assurances, certifications)",
-                  "Spécialisées en gainable, VRV/DRV, PAC, CTA, tertiaire et résidentiel",
-                  "Qui ne sous-traitent pas",
-                  "Qui garantissent la performance et la longévité du matériel",
-                  "Qui accompagnent le client à chaque étape"
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <div className="mt-1 min-w-[20px] h-5 rounded-full bg-[#1F2D3D] flex items-center justify-center">
-                      <Check className="w-3 h-3 text-white" strokeWidth={3} />
-                    </div>
-                    <span className="text-slate-800 font-semibold">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Column 2: Technical Mastery */}
-            <div className="bg-[#1F2D3D] p-10 rounded-2xl text-white shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-32 bg-[#D59B2B]/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-[#D59B2B]/20"></div>
-
-              <h4 className="text-xl font-bold text-[#D59B2B] mb-6 uppercase tracking-wider relative z-10">Expertise Technique</h4>
-              <p className="text-lg text-slate-300 mb-8 relative z-10">Nous mettons en avant les installateurs qui maîtrisent :</p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 relative z-10">
-                {[
-                  "Le dimensionnement", "L’équilibrage réseaux", "La sélection machine", "L’optimisation énergétique", "La mise en service", "Le suivi après installation"
-                ].map((skill, j) => (
-                  <div key={j} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#D59B2B]"></div>
-                    <span className="font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 pt-8 border-t border-white/10 relative z-10">
-                <p className="font-bold text-lg">
-                  Notre priorité : <span className="text-[#D59B2B]">assurer un résultat fiable, durable et performant pour chaque projet.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </section>
-
-      {/* 5. Conclusion Strong & CTA (Moved here) */}
-      <section className="py-16 bg-white">
-        <div className="container max-w-7xl mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto bg-white border-2 border-[#1F2D3D] rounded-3xl p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1F2D3D] mb-6 font-montserrat">
-              Choisir un installateur ne devrait pas être un risque.
-            </h3>
-            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
-              Gainable.fr vous met en relation avec des professionnels rigoureusement sélectionnés, capables d’assurer un travail de qualité et une performance durable.
+              En France et en Suisse, il existe des milliers d’entreprises spécialisées en climatisation et en équipements thermiques.
+              <p className="text-xs text-center text-slate-400 py-2">v2.0-debug-active</p>
+              <span className="font-bold text-[#1F2D3D]">Le vrai défi, c’est de trouver celle qui fera un travail sérieux, durable et adapté à vos besoins.</span>
             </p>
-            <div className="flex flex-col items-center gap-4 justify-center">
-              <Link href="/trouver-installateur">
-                <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white text-lg font-bold px-12 py-8 rounded-full shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto">
-                  Trouver un installateur
-                </Button>
-              </Link>
-              <Link href="/inscription">
-                <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white text-lg font-bold px-12 py-8 rounded-full shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto">
-                  Devenir membre Expert Gainable.fr
-                </Button>
-              </Link>
+            <ul className="space-y-3 font-medium text-[#1F2D3D]">
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
+                Qui sera présent avant, pendant et après l’installation ?
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
+                Qui dimensionnera correctement votre installation pour éviter la surconsommation ?
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#D59B2B]"></div>
+                Qui s’engagera réellement à garantir votre satisfaction ?
+              </li>
+            </ul>
+            <p className="pt-4 font-bold text-xl text-[#D59B2B]">
+              C’est précisément là que Gainable.fr intervient.
+            </p>
+          </div>
+        </div>
+
+        {/* 4. Value Added (Blue Block) */}
+        <div className="grid md:grid-cols-2 gap-16 items-start mb-24">
+
+          {/* Column 1: Selection Criteria */}
+          <div>
+            <h3 className="text-3xl font-extrabold text-[#1F2D3D] mb-8 font-montserrat uppercase">
+              <span className="text-[#D59B2B]">La valeur ajoutée</span><br />Gainable.fr
+            </h3>
+            <p className="text-lg text-slate-600 mb-8 font-medium">Nous sélectionnons uniquement des entreprises :</p>
+
+            <ul className="space-y-4">
+              {[
+                "Vérifiées (SIRET / IDE, assurances, certifications)",
+                "Spécialisées en gainable, VRV/DRV, PAC, CTA, tertiaire et résidentiel",
+                "Qui ne sous-traitent pas",
+                "Qui garantissent la performance et la longévité du matériel",
+                "Qui accompagnent le client à chaque étape"
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <div className="mt-1 min-w-[20px] h-5 rounded-full bg-[#1F2D3D] flex items-center justify-center">
+                    <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                  </div>
+                  <span className="text-slate-800 font-semibold">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 2: Technical Mastery */}
+          <div className="bg-[#1F2D3D] p-10 rounded-2xl text-white shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-32 bg-[#D59B2B]/10 rounded-full blur-3xl -mr-16 -mt-16 transition-all group-hover:bg-[#D59B2B]/20"></div>
+
+            <h4 className="text-xl font-bold text-[#D59B2B] mb-6 uppercase tracking-wider relative z-10">Expertise Technique</h4>
+            <p className="text-lg text-slate-300 mb-8 relative z-10">Nous mettons en avant les installateurs qui maîtrisent :</p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 relative z-10">
+              {[
+                "Le dimensionnement", "L’équilibrage réseaux", "La sélection machine", "L’optimisation énergétique", "La mise en service", "Le suivi après installation"
+              ].map((skill, j) => (
+                <div key={j} className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#D59B2B]"></div>
+                  <span className="font-medium">{skill}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-white/10 relative z-10">
+              <p className="font-bold text-lg">
+                Notre priorité : <span className="text-[#D59B2B]">assurer un résultat fiable, durable et performant pour chaque projet.</span>
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* BLOCK 3: Fonctionnement */}
-      <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+
+    </div>
+      </section >
+
+    {/* 5. Conclusion Strong & CTA (Moved here) */ }
+    < section className = "py-16 bg-white" >
+      <div className="container max-w-7xl mx-auto px-4">
+        <div className="text-center max-w-4xl mx-auto bg-white border-2 border-[#1F2D3D] rounded-3xl p-12 shadow-xl hover:shadow-2xl transition-all duration-300">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#1F2D3D] mb-6 font-montserrat">
+            Choisir un installateur ne devrait pas être un risque.
+          </h3>
+          <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+            Gainable.fr vous met en relation avec des professionnels rigoureusement sélectionnés, capables d’assurer un travail de qualité et une performance durable.
+          </p>
+          <div className="flex flex-col items-center gap-4 justify-center">
+            <Link href="/trouver-installateur">
+              <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white text-lg font-bold px-12 py-8 rounded-full shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto">
+                Trouver un installateur
+              </Button>
+            </Link>
+            <Link href="/inscription">
+              <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white text-lg font-bold px-12 py-8 rounded-full shadow-lg transform hover:scale-105 transition-all w-full sm:w-auto">
+                Devenir membre Expert Gainable.fr
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      </section >
+
+    {/* BLOCK 3: Fonctionnement */ }
+    < section className = "py-20 bg-slate-900 text-white relative overflow-hidden" >
+      {/* Subtle background pattern */ }
+      < div className = "absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" ></div >
 
         <div className="container relative z-10 mx-auto px-4">
           <div className="text-center mb-16">
@@ -523,9 +518,9 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section >
 
-      {/* Footer is now global */}
+    {/* Footer is now global */ }
     </div >
   );
 }
