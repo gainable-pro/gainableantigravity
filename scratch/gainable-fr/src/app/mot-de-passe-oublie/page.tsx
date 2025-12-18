@@ -54,7 +54,7 @@ export default function ForgotPasswordPage() {
                         <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                             <Mail className="w-6 h-6" />
                         </div>
-                        <h1 className="text-2xl font-bold text-[#1F2D3D]">Mot de passe oublié ?</h1>
+                        <h1 className="text-2xl font-bold text-[#1F2D3D]">Réinitialisation du mot de passe</h1>
                         <p className="text-slate-500 mt-2">
                             Entrez votre email pour recevoir un lien de réinitialisation.
                         </p>
