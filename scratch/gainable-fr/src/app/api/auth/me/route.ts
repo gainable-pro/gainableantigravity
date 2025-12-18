@@ -22,7 +22,14 @@ export async function GET() {
         // Let's verify user still exists in DB just in case
         const user = await prisma.user.findUnique({
             where: { id: decoded.userId },
-            select: { id: true, email: true, role: true } // Don't return hash
+            select: {
+                id: true,
+                email: true,
+                role: true,
+                expert: {
+                    select: { slug: true }
+                }
+            } // Don't return hash
         });
 
         if (!user) {

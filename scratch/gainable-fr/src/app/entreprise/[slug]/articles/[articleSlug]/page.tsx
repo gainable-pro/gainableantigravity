@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 
 const prisma = new PrismaClient();
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+
 interface PageProps {
     params: Promise<{
         slug: string; // Expert slug

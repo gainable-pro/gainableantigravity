@@ -67,8 +67,13 @@ export async function POST(req: Request) {
 
     } catch (error: any) {
         console.error("Login Error:", error);
+
+        // DEBUG: Return real error to user
+        const errorMsg = error?.message || "Erreur inconnue";
+        const errorCode = error?.code || "NO_CODE";
+
         return NextResponse.json(
-            { message: "Une erreur technique est survenue. Merci de réessayer plus tard." },
+            { message: `Erreur technique: ${errorMsg} (Code: ${errorCode})` },
             { status: 500 }
         );
     }

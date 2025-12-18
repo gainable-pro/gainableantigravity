@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-const JWT_SECRET = process.env.JWT_SECRET || "super-secret-jwt-key-change-me";
+const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
 async function getUserIdFromToken() {
     const cookieStore = await cookies();
@@ -27,8 +27,8 @@ export async function GET() {
     try {
         const expert = await prisma.expert.findUnique({
             where: { user_id: userId },
-            select: { 
-                logo_url: true, 
+            select: {
+                logo_url: true,
                 video_url: true,
                 photos: {
                     select: { photo_url: true }
@@ -56,7 +56,7 @@ export async function PUT(req: Request) {
 
     try {
         const body = await req.json();
-        
+
         // Find expert ID first
         const currentExpert = await prisma.expert.findUnique({ where: { user_id: userId } });
         if (!currentExpert) return NextResponse.json({ message: "Expert not found" }, { status: 404 });

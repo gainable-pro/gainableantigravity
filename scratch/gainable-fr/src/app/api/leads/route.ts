@@ -4,7 +4,8 @@ import { z } from 'zod';
 import { Resend } from 'resend';
 
 // Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend (Use fallback to prevent build crash if env is missing)
+const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 
 // Validation Schema
 const leadSchema = z.object({
