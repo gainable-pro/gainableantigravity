@@ -17,6 +17,10 @@ model User {
   created_at    DateTime @default(now())
 
   expert        Expert?
+
+  // Password Reset
+  resetToken          String?  @unique
+  resetTokenExpires   DateTime?
 }
 
 // 2.2 Table experts (profil public + SEO)
