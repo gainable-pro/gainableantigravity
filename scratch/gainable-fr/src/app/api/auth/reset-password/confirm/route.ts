@@ -17,7 +17,7 @@ export async function POST(req: Request) {
             where: {
                 resetToken: token,
                 resetTokenExpires: { gt: new Date() } // Not expired
-            }
+            } as any
         });
 
         if (!user) {
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
                 password_hash: passwordHash,
                 resetToken: null,
                 resetTokenExpires: null
-            }
+            } as any
         });
 
         return NextResponse.json({ success: true });

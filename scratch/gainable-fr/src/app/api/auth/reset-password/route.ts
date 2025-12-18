@@ -32,7 +32,7 @@ export async function POST(req: Request) {
             data: {
                 resetToken: token,
                 resetTokenExpires: expires
-            }
+            } as any
         });
 
         // Send Email
