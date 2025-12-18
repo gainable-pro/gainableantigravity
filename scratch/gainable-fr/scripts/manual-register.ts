@@ -1,3 +1,6 @@
+export { };
+
+export { };
 
 // Usage: npx ts-node scripts/manual-register.ts <SIRET> <TYPE> <EMAIL> <NAME>
 // TYPE: societe | bureau_etude | diagnostiqueur

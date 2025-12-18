@@ -1,6 +1,8 @@
 
 
 
+export { };
+
 async function main() {
     const payload = {
         email: "test.diagnostiqueur@example.com",
