@@ -290,7 +290,7 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
                             {/* Filter: Pays (Moved after Localisation) */}
                             <FilterDropdown label="Pays" active={!!countryFilter}>
                                 <div className="space-y-2">
-                                    {["France", "Suisse"].map((item) => (
+                                    {["France", "Suisse", "Belgique", "Maroc"].map((item) => (
                                         <label key={item} className="flex items-center gap-2 cursor-pointer">
                                             <input
                                                 type="checkbox"

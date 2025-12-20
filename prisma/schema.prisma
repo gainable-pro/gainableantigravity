@@ -51,7 +51,8 @@ model Expert {
   // Identifiants
   siret            String?     // FR uniquement
   ape_code         String?
-  ide_tva          String?     // Suisse
+  ide_tva          String?     // Suisse (IDE)
+  tva_number       String?     // TVA Intracom / Locale
   
   // SEO
   slug             String      @unique

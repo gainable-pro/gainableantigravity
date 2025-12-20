@@ -13,7 +13,7 @@ export async function POST(req: Request) {
             email, password, expertType,
             representativeName, nomEntreprise, description,
             website, linkedin, telephone,
-            adresse, ville, codePostal, pays, siret, codeApe,
+            adresse, ville, codePostal, pays, siret, tvaNumber, codeApe,
             technologies, interventionsClim, interventionsEtude,
             interventionsDiag, batiments, marques
         } = body;
@@ -25,7 +25,11 @@ export async function POST(req: Request) {
             'societe': ['43.', '41.2', '33.2'],
         };
 
-        if (expertType && VALID_APE_PREFIXES[expertType]) {
+        // Only validate APE if strict France context or provided
+        // We relax this for International as APE is French-specific
+        const isFrance = !pays || pays === 'France';
+
+        if (isFrance && expertType && VALID_APE_PREFIXES[expertType]) {
             const allowed = VALID_APE_PREFIXES[expertType];
             // Normalize APE: remove dots and spaces
             const cleanApe = codeApe ? codeApe.replace(/[\.\s]/g, '') : '';
@@ -96,7 +100,7 @@ export async function POST(req: Request) {
                 .replace(/^-|-$/g, ''); // trim dashes
 
             // 3. Construct Slug
-            const baseSlug = `${activityKey}-${sluggify(ville || 'france')}-${sluggify(nomEntreprise)}`;
+            const baseSlug = `${activityKey}-${sluggify(ville || 'france')}${pays !== 'France' && pays ? '-' + sluggify(pays === 'Suisse' ? 'ch' : pays === 'Belgique' ? 'be' : pays === 'Maroc' ? 'ma' : pays) : ''}-${sluggify(nomEntreprise)}`;
             const randomSuffix = Math.floor(Math.random() * 10000); // collision avoidance
             const finalSlug = `${baseSlug}-${randomSuffix}`;
 
@@ -116,11 +120,12 @@ export async function POST(req: Request) {
                     ville: ville,
                     code_postal: codePostal,
                     pays: pays,
-                    siret: siret,
+                    siret: siret, // Used for generic ID storage (SIRET/IDE/ICE)
+                    tva_number: tvaNumber, // New Field
                     ape_code: codeApe,
                     // Default values
                     slug: finalSlug,
-                    status: expertType === 'diagnostiqueur' ? 'pending_payment' : 'pending_validation',
+                    status: expertType === 'diagnostiqueur' || pays !== 'France' ? 'pending_payment' : 'pending_validation', // Force pending for manual validation if Foreign
                 },
             });
 

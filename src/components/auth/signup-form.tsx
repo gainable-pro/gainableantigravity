@@ -52,6 +52,7 @@ export function SignUpForm() {
         ville: "",
         codeApe: "",
         siret: "",
+        tvaNumber: "",
         pays: "France"
     });
 
@@ -122,7 +123,7 @@ export function SignUpForm() {
                     ville: data.ville,
                     codeApe: data.naf,
                     siret: siretInput,
-                    pays: "France" // Force France provided by INSEE API
+                    // pays: "France" // Don't force override if user selected something else, but API is France only so implicitly France.
                 }));
             } else {
                 alert("SIRET non trouvé ou erreur API");
@@ -144,7 +145,8 @@ export function SignUpForm() {
     const prevStep = () => setStep(prev => prev - 1);
 
     const handleRegister = async () => {
-        if (!validateApe(formData.codeApe, expertType)) {
+        // Validation APE only for France
+        if (formData.pays === 'France' && !validateApe(formData.codeApe, expertType)) {
             alert(`Inscription bloquée: Code APE ${formData.codeApe} incompatible avec le type de compte.`);
             return;
         }
@@ -553,8 +555,10 @@ export function SignUpForm() {
                                             <SelectValue placeholder="Sélectionner le pays" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            <SelectItem value="France">France</SelectItem>
-                                            <SelectItem value="Suisse">Suisse</SelectItem>
+                                            <SelectItem value="France">France 🇫🇷</SelectItem>
+                                            <SelectItem value="Suisse">Suisse 🇨🇭</SelectItem>
+                                            <SelectItem value="Belgique">Belgique 🇧🇪</SelectItem>
+                                            <SelectItem value="Maroc">Maroc 🇲🇦</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
@@ -571,27 +575,52 @@ export function SignUpForm() {
                                 </div>
                             </div>
 
+                            {/* TVA Field */}
+                            <div className="space-y-2">
+                                <Label>Numéro de TVA {formData.pays !== 'France' && '(Intracommunautaire ou local)'}</Label>
+                                <Input
+                                    name="tvaNumber"
+                                    placeholder={formData.pays === 'France' ? "FRXX..." : "Numéro de TVA"}
+                                    value={formData.tvaNumber}
+                                    onChange={handleCommonChange}
+                                />
+                            </div>
+
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <Label>SIRET (France) <span className="text-red-500">*</span></Label>
+                                    <Label>
+                                        {formData.pays === 'France' && 'SIRET (France)'}
+                                        {formData.pays === 'Suisse' && 'IDE / UID (CHE-xxx.xxx.xxx)'}
+                                        {formData.pays === 'Belgique' && 'BCE / KBO (0xxx.xxx.xxx)'}
+                                        {formData.pays === 'Maroc' && 'ICE (Identifiant Commun de l\'Entreprise)'}
+                                        <span className="text-red-500">*</span>
+                                    </Label>
                                     <div className="flex gap-2">
                                         <Input
-                                            placeholder="14 chiffres"
-                                            maxLength={14}
+                                            placeholder={formData.pays === 'France' ? "14 chiffres" : "Identifiant officiel"}
                                             value={siretInput}
-                                            onChange={(e) => setSiretInput(e.target.value)}
+                                            onChange={(e) => {
+                                                setSiretInput(e.target.value);
+                                                // For non-France, direct update to formData
+                                                if (formData.pays !== 'France') {
+                                                    setFormData(prev => ({ ...prev, siret: e.target.value }));
+                                                }
+                                            }}
                                         />
-                                        <Button
-                                            type="button"
-                                            variant="outline"
-                                            className="shrink-0"
-                                            onClick={checkSiret}
-                                            disabled={isLoadingSiret}
-                                        >
-                                            {isLoadingSiret ? "..." : "Vérifier"}
-                                        </Button>
+                                        {formData.pays === 'France' && (
+                                            <Button
+                                                type="button"
+                                                variant="outline"
+                                                className="shrink-0"
+                                                onClick={checkSiret}
+                                                disabled={isLoadingSiret}
+                                            >
+                                                {isLoadingSiret ? "..." : "Vérifier"}
+                                            </Button>
+                                        )}
                                     </div>
-                                    <p className="text-xs text-slate-500">API INSEE : Vérification automatique</p>
+                                    {formData.pays === 'France' && <p className="text-xs text-slate-500">API INSEE : Vérification automatique</p>}
+                                    {formData.pays !== 'France' && <p className="text-xs text-orange-600 font-medium">Validation manuelle de votre dossier sous 24h.</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <Label>Code APE (Lecture seule)</Label>
@@ -599,7 +628,8 @@ export function SignUpForm() {
                                 </div>
                             </div>
 
-                            {/* Address Auto-fill */}
+
+                            {/* Address Auto-fill Logic */}
                             <div className="space-y-2">
                                 <Label>Adresse du siège {formData.pays === 'France' && <span className="text-xs text-orange-600">(Vérifiée via SIRET)</span>}</Label>
                                 <Input
@@ -783,6 +813,15 @@ export function SignUpForm() {
                         </>
                     )}
 
+                    <div className="mt-8 p-4 bg-orange-50 border border-orange-200 rounded-lg text-sm text-orange-800">
+                        <strong>Important :</strong> Toute usurpation d'identité ou fausse déclaration entraînera la suppression immédiate du compte conformément à nos conditions générales.
+                        {formData.pays !== 'France' && (
+                            <span className="block mt-1">Pour les entreprises hors France, un justificatif (Kbis, Registre Commerce...) pourra vous être demandé ultérieurement.</span>
+                        )}
+                    </div>
+
+
+
                     <div className="flex justify-between pt-6 pb-12">
                         <Button variant="outline" onClick={prevStep}>Retour</Button>
                         {expertType !== 'diagnostiqueur' && (
@@ -796,7 +835,7 @@ export function SignUpForm() {
                         )}
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 
