@@ -80,8 +80,42 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     };
     const youtubeId = getYoutubeId(expert.video_url);
 
+    // --- SEO: STRUCTURED DATA (JSON-LD) ---
+    // Helps AI & Google understand this is a Local Business
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": expert.expert_type === 'cvc_climatisation' ? "HVACBusiness" :
+            expert.expert_type === 'bureau_detude' ? "ProfessionalService" : "LocalBusiness",
+        "name": expert.nom_entreprise,
+        "image": expert.logo_url || "https://gainable.fr/assets/logo-share.jpg", // Fallback image
+        "@id": `https://gainable.fr/pro/${expert.slug}`,
+        "url": `https://gainable.fr/pro/${expert.slug}`,
+        "telephone": expert.telephone,
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": expert.adresse,
+            "addressLocality": expert.ville,
+            "postalCode": expert.code_postal,
+            "addressCountry": expert.pays || "FR"
+        },
+        "description": expert.description?.substring(0, 160) || `Expert ${typeLabel} à ${expert.ville}.`,
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": expert.lat || 46.2276,
+                "longitude": expert.lng || 2.2137
+            },
+            "geoRadius": expert.intervention_radius ? `${expert.intervention_radius * 1000}` : "50000"
+        }
+    };
+
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
 
             <main className="container mx-auto px-4 py-8">

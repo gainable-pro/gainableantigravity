@@ -17,8 +17,27 @@ export const metadata: Metadata = {
 };
 
 export default function PourquoiGainablePage() {
+    // JSON-LD for SEO
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Gainable.fr",
+        "url": "https://gainable.fr",
+        "logo": "https://gainable.fr/logo.png",
+        "description": "La plateforme de confiance pour la climatisation gainable et le génie climatique.",
+        "missionCoveragePrioritiesPolicy": "https://gainable.fr/pourquoi-gainable",
+        "foundingDate": "2024",
+        "sameAs": [
+            "https://www.linkedin.com/company/gainable-fr"
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-white font-sans text-[#1F2D3D]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             {/* Header is now in global layout */}
 
             {/* 1. HERO SECTION */}

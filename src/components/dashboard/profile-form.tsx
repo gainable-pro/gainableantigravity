@@ -81,7 +81,33 @@ export default function ProfileForm() {
                 if (!data) throw new Error("Données vides reçues");
 
                 setExpertType(data.expert_type);
-                // ... rest of code
+
+                setFormData({
+                    nom_entreprise: data.nom_entreprise || "",
+                    representant_nom: data.representant_nom || "",
+                    representant_prenom: data.representant_prenom || "",
+                    email: data.user?.email || "", // Email usually comes from User relation or is readonly
+                    telephone: data.telephone || "",
+                    adresse: data.adresse || "",
+                    ville: data.ville || "",
+                    code_postal: data.code_postal || "",
+                    pays: data.pays || "France",
+                    description: data.description || "",
+                    site_web: data.site_web || "",
+                    linkedin: data.linkedin || "",
+                    siret: data.siret || "",
+                    lat: data.lat || 0,
+                    lng: data.lng || 0,
+                    intervention_radius: data.intervention_radius || 50
+                });
+
+                // Populate Checkboxes (API returns objects {value: "foo"}, we need strings ["foo"])
+                if (data.technologies) setTechnologies(data.technologies.map((t: any) => t.value));
+                if (data.interventions_clim) setInterventionsClim(data.interventions_clim.map((t: any) => t.value));
+                if (data.interventions_etude) setInterventionsEtude(data.interventions_etude.map((t: any) => t.value));
+                if (data.interventions_diag) setInterventionsDiag(data.interventions_diag.map((t: any) => t.value));
+                if (data.batiments) setBatiments(data.batiments.map((t: any) => t.value));
+                if (data.marques) setMarques(data.marques.map((t: any) => t.value));
             } catch (error: any) {
                 console.error(error);
                 setMessage({ type: 'error', text: error.message || "Impossible de charger le profil." });

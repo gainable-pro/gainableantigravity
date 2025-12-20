@@ -82,6 +82,24 @@ export async function POST(req: Request) {
             const nomRep = nameParts.length > 1 ? nameParts.slice(1).join(" ") : nameParts[0];
             const prenomRep = nameParts.length > 1 ? nameParts[0] : "";
 
+            // Smart Slug Generation: [activite]-[ville]-[nom]
+            // 1. Determine Activity Keyword
+            let activityKey = 'expert';
+            if (expertType === 'societe') activityKey = 'climatisation-pompe-a-chaleur';
+            else if (expertType === 'bureau_etude') activityKey = 'bureau-etude-thermique';
+            else if (expertType === 'diagnostiqueur') activityKey = 'diagnostic-immobilier-dpe';
+
+            // 2. Normalize Helper
+            const sluggify = (s: string) => s.toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove accents
+                .replace(/[^a-z0-9]+/g, '-') // non-alphanum to dash
+                .replace(/^-|-$/g, ''); // trim dashes
+
+            // 3. Construct Slug
+            const baseSlug = `${activityKey}-${sluggify(ville || 'france')}-${sluggify(nomEntreprise)}`;
+            const randomSuffix = Math.floor(Math.random() * 10000); // collision avoidance
+            const finalSlug = `${baseSlug}-${randomSuffix}`;
+
             // Create Expert
             const expert = await tx.expert.create({
                 data: {
@@ -101,7 +119,7 @@ export async function POST(req: Request) {
                     siret: siret,
                     ape_code: codeApe,
                     // Default values
-                    slug: nomEntreprise.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '-' + Math.floor(Math.random() * 1000), // simplistic slug generation
+                    slug: finalSlug,
                     status: expertType === 'diagnostiqueur' ? 'pending_payment' : 'pending_validation',
                 },
             });

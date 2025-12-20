@@ -6,13 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, Eye, EyeOff, CheckCircle, AlertCircle } from "lucide-react";
 import Link from "next/link";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+
 
 function NewPasswordForm() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const token = searchParams.get("token");
+    const token = searchParams?.get("token");
 
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -157,14 +156,10 @@ function NewPasswordForm() {
 
 export default function NewPasswordPage() {
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col">
-            <Header />
-            <main className="flex-grow flex items-center justify-center p-4">
-                <Suspense fallback={<div>Chargement...</div>}>
-                    <NewPasswordForm />
-                </Suspense>
-            </main>
-            <Footer />
+        <div className="flex-grow flex items-center justify-center p-4">
+            <Suspense fallback={<div>Chargement...</div>}>
+                <NewPasswordForm />
+            </Suspense>
         </div>
     );
 }

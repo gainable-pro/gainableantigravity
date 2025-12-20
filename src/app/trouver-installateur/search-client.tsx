@@ -55,12 +55,12 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
 
     // -- INIT STATE FROM URL PARAMS OR DEFAULTS --
     // Helper to get initial param value
-    const getParam = (key: string) => searchParams.get(key);
-    const getListParam = (key: string) => searchParams.get(key)?.split(',') || [];
-    const getTypesParam = () => searchParams.getAll('type');
+    const getParam = (key: string) => searchParams?.get(key);
+    const getListParam = (key: string) => searchParams?.get(key)?.split(',') || [];
+    const getTypesParam = () => searchParams?.getAll('type');
 
-    const filterParam = searchParams.get('filter'); // Legacy support
-    const typeParams = searchParams.getAll('type');
+    const filterParam = searchParams?.get('filter'); // Legacy support
+    const typeParams = searchParams?.getAll('type') || [];
 
     // Determine initial filter state
     const initialSociete = typeParams.includes('societe') || (!filterParam && typeParams.length === 0) || (filterParam !== 'bureau_etude' && filterParam !== 'diagnostiqueur' && typeParams.length === 0);

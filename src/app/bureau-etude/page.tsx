@@ -17,8 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function BureauEtudePage() {
+    // JSON-LD for SEO
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "EngineeringService",
+        "name": "Bureau d'Étude Thermique Gainable.fr",
+        "description": "Études thermiques RE2020, dimensionnement CVC et audit énergétique.",
+        "url": "https://gainable.fr/bureau-etude",
+        "logo": "https://gainable.fr/logo.png",
+        "areaServed": "FR",
+        "knowsAbout": ["Climatisation", "Chauffage", "RE2020", "Audit Énergétique"]
+    };
+
     return (
         <div className="flex min-h-screen flex-col font-sans text-[#1F2D3D]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
 
             {/* BLOCK 1: HERO SECTION */}

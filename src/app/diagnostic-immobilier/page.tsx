@@ -17,8 +17,24 @@ export const metadata: Metadata = {
 };
 
 export default function DiagnosticImmobilierPage() {
+    // JSON-LD for SEO
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Service de Diagnostic Immobilier Gainable.fr",
+        "description": "Réseau de diagnostiqueurs immobiliers certifiés pour DPE, amiante, plomb et audit énergétique.",
+        "url": "https://gainable.fr/diagnostic-immobilier",
+        "logo": "https://gainable.fr/logo.png",
+        "areaServed": "FR",
+        "knowsAbout": ["DPE", "Audit Énergétique", "Diagnostic Vente", "Diagnostic Location"]
+    };
+
     return (
         <div className="flex min-h-screen flex-col font-sans text-[#1F2D3D]">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
 
             {/* BLOCK 1: HERO / ACCROCHE PRINCIPALE */}
