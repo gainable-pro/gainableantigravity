@@ -262,7 +262,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
 
     // Scoring Logic
     const points = {
-        words: Math.min(40, (wordCount / 800) * 40),
+        words: Math.min(40, (wordCount / 600) * 40),
         sections: sections.length >= 3 ? 20 : (sections.length / 3) * 20,
         faq: faq.length >= 2 ? 20 : (faq.length / 2) * 20,
         image: (mainImage && altText.length > 5) ? 20 : 0
@@ -573,26 +573,26 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                 {/* Word Count Meter */}
                                 <div>
                                     <div className="flex justify-between text-sm mb-2">
-                                        <span className={wordCount >= 800 ? "text-green-600 font-bold" : "text-slate-600"}>
-                                            {wordCount} / 800 mots
+                                        <span className={wordCount >= 600 ? "text-green-600 font-bold" : "text-slate-600"}>
+                                            {wordCount} / 600 mots
                                         </span>
                                         <span>
-                                            {Math.min(100, Math.round((wordCount / 800) * 100))}%
+                                            {Math.min(100, Math.round((wordCount / 600) * 100))}%
                                         </span>
                                     </div>
                                     <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden mb-2">
                                         <div
-                                            className={`h-full transition-all duration-500 ${wordCount >= 800 ? 'bg-green-500' : 'bg-orange-400'}`}
-                                            style={{ width: `${Math.min(100, (wordCount / 800) * 100)}%` }}
+                                            className={`h-full transition-all duration-500 ${wordCount >= 600 ? 'bg-green-500' : 'bg-orange-400'}`}
+                                            style={{ width: `${Math.min(100, (wordCount / 600) * 100)}%` }}
                                         />
                                     </div>
-                                    {wordCount < 800 && (
+                                    {wordCount < 600 && (
                                         <div className="text-xs text-slate-500 space-y-1">
                                             <p className="flex items-center gap-1">
                                                 💡 Ajoutez du contenu dans les sections (H2) ci-dessous.
                                             </p>
                                             <p className="font-medium text-orange-600">
-                                                ✍️ Encore ~{800 - wordCount} mots à rédiger
+                                                ✍️ Encore ~{600 - wordCount} mots à rédiger
                                             </p>
                                         </div>
                                     )}
@@ -602,9 +602,9 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                     <li className={`flex items-center justify-between ${points.words >= 40 ? "text-green-600" : "text-slate-400"}`}>
                                         <div className="flex items-center gap-2">
                                             {points.words >= 40 ? <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center text-xs">✓</div> : <div className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-1.5" />}
-                                            <span>800 mots min (Corps article)</span>
+                                            <span>600 mots min (Corps article)</span>
                                         </div>
-                                        <span className="text-xs font-mono">{wordCount}/800</span>
+                                        <span className="text-xs font-mono">{wordCount}/600</span>
                                     </li>
                                     <li className={`flex items-center justify-between ${points.sections >= 20 ? "text-green-600" : "text-slate-400"}`}>
                                         <div className="flex items-center gap-2">

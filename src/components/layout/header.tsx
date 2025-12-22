@@ -7,16 +7,21 @@ import { LoginDropdown } from "@/components/layout/login-dropdown";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import * as React from "react";
 
-export function Header() {
+export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
+    // Dynamic Logo based on Country
+    let logoSrc = "/logo.png"; // Default (FR/Global)
+    if (countryCode === 'CH') logoSrc = "/logo-ch.jpg"; // Suisse
+    if (countryCode === 'MA') logoSrc = "/logo-ma.jpg"; // Maroc
+
     return (
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex py-0 items-center justify-between px-4">
                 {/* Logo */}
-                <Link href="/" className="relative h-28 w-96 overflow-hidden block">
+                <Link href="/" className="relative h-24 w-72 md:h-40 md:w-96 block transition-all">
                     <img
-                        src="/logo.png"
+                        src={logoSrc}
                         alt="Gainable.fr"
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[250px] w-auto max-w-none"
+                        className="w-full h-full object-contain"
                     />
                 </Link>
 
@@ -38,7 +43,7 @@ export function Header() {
 
                 {/* Right Side: CTA */}
                 <div className="flex items-center gap-4">
-                    <div className="hidden sm:block">
+                    <div className="hidden md:block">
                         <LoginDropdown />
                     </div>
                     {/* Mobile Menu Button */}
@@ -65,6 +70,10 @@ function MobileMenu() {
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
                 <SheetDescription className="sr-only">Menu principal pour mobile</SheetDescription>
                 <nav className="flex flex-col space-y-4 mt-8">
+                    <div className="mb-4">
+                        <LoginDropdown />
+                    </div>
+                    <hr className="border-slate-100" />
                     <Link href="/trouver-installateur" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
                         Trouver un expert
                     </Link>

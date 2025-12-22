@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-    MapPin, Globe, Linkedin, CheckCircle,
+    MapPin, Globe, Linkedin, Facebook, Youtube, CheckCircle,
     Building2, Wrench, GraduationCap, FileCheck, Mail
 } from "lucide-react";
 import { ContactWizard } from "@/components/features/contact/contact-wizard";
@@ -47,6 +47,30 @@ async function getExpertBySlug(slug: string) {
         }
     });
     return expert;
+}
+
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const expert = await getExpertBySlug(slug);
+
+    if (!expert) {
+        return {
+            title: "Expert introuvable - Gainable.fr",
+            description: "Le profil de cet expert est introuvable."
+        };
+    }
+
+    return {
+        title: `${expert.nom_entreprise} - Expert à ${expert.ville} | Gainable.fr`,
+        description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise}, expert en génie climatique à ${expert.ville}. Devis gratuit et intervention rapide.`,
+        openGraph: {
+            title: `${expert.nom_entreprise} - Expert à ${expert.ville}`,
+            description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise} pour vos projets de climatisation.`,
+            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.jpg']
+        }
+    };
 }
 
 export default async function PublicProfilePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -165,8 +189,23 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                                 <MapPin className="w-4 h-4 text-[#D59B2B]" /> {expert.ville} ({expert.code_postal}), {expert.pays}
                                             </span>
                                             {expert.site_web && (
-                                                <a href={expert.site_web} target="_blank" className="flex items-center gap-1 hover:text-[#D59B2B] transition-colors">
+                                                <a href={expert.site_web.startsWith('http') ? expert.site_web : `https://${expert.site_web}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#D59B2B] transition-colors">
                                                     <Globe className="w-4 h-4" /> Site web
+                                                </a>
+                                            )}
+                                            {expert.linkedin && (
+                                                <a href={expert.linkedin.startsWith('http') ? expert.linkedin : `https://${expert.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#0077b5] transition-colors">
+                                                    <Linkedin className="w-4 h-4" /> LinkedIn
+                                                </a>
+                                            )}
+                                            {expert.facebook && (
+                                                <a href={expert.facebook.startsWith('http') ? expert.facebook : `https://${expert.facebook}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors">
+                                                    <Facebook className="w-4 h-4" /> Facebook
+                                                </a>
+                                            )}
+                                            {expert.youtube && (
+                                                <a href={expert.youtube.startsWith('http') ? expert.youtube : `https://${expert.youtube}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#FF0000] transition-colors">
+                                                    <Youtube className="w-4 h-4" /> YouTube
                                                 </a>
                                             )}
                                         </div>

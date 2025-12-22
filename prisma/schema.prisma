@@ -37,6 +37,8 @@ model Expert {
   description      String      @db.Text
   site_web         String?
   linkedin         String?
+  facebook         String?
+  youtube          String?
   telephone        String?
   
   // Localisation

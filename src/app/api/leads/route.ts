@@ -2,8 +2,8 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { Resend } from 'resend';
+import { prisma } from "@/lib/prisma";
 
-// Initialize Resend
 // Initialize Resend (Use fallback to prevent build crash if env is missing)
 const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 
@@ -48,25 +48,55 @@ export async function POST(request: Request) {
         }
 
         const data = result.data;
+        const messageContent = data.message || data.details?.message || "Aucun message";
+        const attachedFiles = data.details?.files || [];
+
+        // 3. Save to Database (Reliability)
+        let savedLead;
+        try {
+            savedLead = await prisma.lead.create({
+                data: {
+                    type: data.type,
+                    nom: data.nom,
+                    prenom: data.prenom,
+                    email: data.email,
+                    telephone: data.telephone,
+                    code_postal: data.code_postal,
+                    ville: data.ville,
+                    adresse: data.adresse,
+                    details: {
+                        message: messageContent,
+                        surface: data.surface,
+                        projet: data.projet,
+                        logement: data.logement,
+                        files: attachedFiles,
+                        ...data.details
+                    },
+                    status: 'new'
+                }
+            });
+            console.log("Lead saved to DB:", savedLead.id);
+        } catch (dbError) {
+            console.error("Database Error (Lead Save):", dbError);
+            // Continue to try sending email even if DB fails? Or fail?
+            // Better to fail if DB is critical, but email is 'notification'.
+        }
+
+        // 4. Send Email via Resend
         const recipientEmail = process.env.LEADS_TO_EMAIL || 'contact@airgenergie.fr';
-
-        // Use referer as sourceUrl if available
-        const sourceUrl = request.headers.get("referer") || "Non spécifié";
-        const date = new Date().toLocaleString("fr-FR");
-
-        // 3. Send Email via Resend
         // Using "Gainable <onboarding@resend.dev>" as sender if no custom domain verified yet
         const fromEmail = process.env.LEADS_FROM_EMAIL || 'Gainable <onboarding@resend.dev>';
 
-        // Format message content
-        const messageContent = data.message || data.details?.message || "Aucun message";
+        const sourceUrl = request.headers.get("referer") || "Non spécifié";
+        const date = new Date().toLocaleString("fr-FR");
         const projetType = data.type;
 
-        const { error } = await resend.emails.send({
-            from: fromEmail,
-            to: recipientEmail,
-            subject: `Nouveau lead Gainable – ${data.prenom || ''} ${data.nom} – ${data.ville}`,
-            html: `
+        try {
+            const { error } = await resend.emails.send({
+                from: fromEmail,
+                to: recipientEmail,
+                subject: `Nouveau lead Gainable – ${data.prenom || ''} ${data.nom} – ${data.ville}`,
+                html: `
 <h2>Nouveau contact via Gainable</h2>
 
 <p><strong>Nom :</strong> ${data.prenom || ''} ${data.nom}</p>
@@ -83,12 +113,20 @@ export async function POST(request: Request) {
 <p><strong>Surface :</strong> ${data.surface || data.details?.surface || "N/A"}</p>
 <p><strong>Type :</strong> ${projetType}</p>
 
+${attachedFiles.length > 0 ? `
+<hr />
+<p><strong>Fichiers joints :</strong></p>
+<ul>
+    ${attachedFiles.map((f: any) => `<li><a href="${f.url}">${f.name}</a></li>`).join('')}
+</ul>
+` : ''}
+
 <hr />
 
 <p><strong>Source :</strong> ${sourceUrl}</p>
 <p><strong>Date :</strong> ${date}</p>
-            `,
-            text: `
+                `,
+                text: `
 Nouveau contact via Gainable
 
 Nom : ${data.prenom || ''} ${data.nom}
@@ -102,19 +140,31 @@ Projet : ${data.projet || "N/A"}
 Surface : ${data.surface || "N/A"}
 Type : ${projetType}
 
+${attachedFiles.length > 0 ? `
+Fichiers joints :
+${attachedFiles.map((f: any) => `- ${f.name}: ${f.url}`).join('\n')}
+` : ''}
+
 Source : ${sourceUrl}
 Date : ${date}
-            `
-        });
+                `
+            });
 
-        if (error) {
-            console.error("Resend API Error:", error);
-            // Don't leak error details to client, but return 500
-            return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
+            if (error) {
+                console.error("Resend API Error:", error);
+                // We previously failed here. Now we verify if DB worked.
+                if (!savedLead) {
+                    return NextResponse.json({ error: "Failed to save lead and send email" }, { status: 500 });
+                }
+                // If saved to DB but email failed, we return SUCCESS but log warning
+                // The client will see "Success", data is safe in DB.
+            }
+        } catch (emailExc) {
+            console.error("Email Exception:", emailExc);
         }
 
-        // 4. Return Success
-        return NextResponse.json({ success: true });
+        // 5. Return Success
+        return NextResponse.json({ success: true, id: savedLead?.id });
 
     } catch (error) {
         console.error("API Error (Leads):", error);

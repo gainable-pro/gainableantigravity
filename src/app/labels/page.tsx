@@ -35,7 +35,7 @@ export default function LabelsPage() {
                     <div className="inline-block p-3 px-6 rounded-full bg-[#D59B2B] text-white font-bold text-sm tracking-wider mb-6 uppercase shadow-lg">
                         Gage de Qualité
                     </div>
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal mb-8 tracking-wide leading-tight uppercase font-montserrat">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal mb-8 tracking-wide leading-tight uppercase font-montserrat text-white">
                         Label Gainable.fr <br />
                         <span className="text-[#D59B2B] text-2xl md:text-4xl normal-case block mt-4 font-bold">La Référence des Artisans Spécialisés en Climatisation Gainable</span>
                     </h1>
@@ -85,19 +85,12 @@ export default function LabelsPage() {
 
                         <div className="relative">
                             {/* Illustration / Graphic for Trust */}
-                            <div className="aspect-square bg-slate-100 rounded-2xl p-8 flex flex-col justify-center items-center shadow-lg border border-slate-100 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D59B2B]/10 rounded-bl-[100px]"></div>
-                                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#1F2D3D]/5 rounded-tr-[100px]"></div>
-
-                                <ShieldCheck className="w-32 h-32 text-[#D59B2B] mb-6" />
-                                <h3 className="text-2xl font-bold text-[#1F2D3D] mb-2 text-center">Profil Vérifié</h3>
-                                <div className="flex gap-2">
-                                    <Star className="w-6 h-6 text-[#D59B2B] fill-[#D59B2B]" />
-                                    <Star className="w-6 h-6 text-[#D59B2B] fill-[#D59B2B]" />
-                                    <Star className="w-6 h-6 text-[#D59B2B] fill-[#D59B2B]" />
-                                    <Star className="w-6 h-6 text-[#D59B2B] fill-[#D59B2B]" />
-                                    <Star className="w-6 h-6 text-[#D59B2B] fill-[#D59B2B]" />
-                                </div>
+                            <div className="flex justify-center items-center">
+                                <img
+                                    src="/expert-verifie-logo-v3.jpg"
+                                    alt="Logo Expert Vérifié Réseau Gainable.fr"
+                                    className="w-full max-w-sm"
+                                />
                             </div>
                         </div>
                     </div>

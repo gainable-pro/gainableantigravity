@@ -63,6 +63,8 @@ interface CvcRequestFormProps {
 
 export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFormProps) => {
     const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+    const [uploading, setUploading] = useState(false);
+    const [files, setFiles] = useState<{ url: string, name: string }[]>([]);
 
     const form = useForm<CvcFormValues>({
         resolver: zodResolver(cvcFormSchema),
@@ -84,6 +86,36 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFor
 
         setSelectedTechs(updated);
         setValue("technologies", updated, { shouldValidate: true });
+    };
+
+    const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files || e.target.files.length === 0) return;
+
+        setUploading(true);
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+            const res = await fetch("/api/upload", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!res.ok) throw new Error("Upload failed");
+
+            const data = await res.json();
+            // Assuming API returns { url: string }
+            const newFile = { url: data.url, name: file.name };
+            const updatedFiles = [...files, newFile];
+            setFiles(updatedFiles);
+            setValue("files", updatedFiles); // Update form state
+        } catch (error) {
+            console.error(error);
+            alert("Erreur lors de l'upload du fichier.");
+        } finally {
+            setUploading(false);
+        }
     };
 
     return (
@@ -215,10 +247,42 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFor
 
                 <div className="space-y-2">
                     <Label>Plans ou photos (Optionnel)</Label>
-                    <div className="border-2 border-dashed border-slate-200 rounded-lg p-6 flex flex-col items-center justify-center text-slate-500 hover:bg-slate-50 transition-colors cursor-pointer">
-                        <Paperclip className="w-8 h-8 mb-2 text-slate-400" />
-                        <span className="text-sm">Cliquez pour ajouter des fichiers</span>
-                        <span className="text-xs text-slate-400">(JPG, PNG, PDF)</span>
+                    <div className="bg-slate-50 p-4 rounded-lg border border-dashed border-slate-300">
+                        {files.length > 0 && (
+                            <div className="mb-4 space-y-2">
+                                {files.map((f, i) => (
+                                    <div key={i} className="flex items-center gap-2 text-sm text-green-700 bg-green-50 p-2 rounded">
+                                        <Paperclip className="w-4 h-4" />
+                                        <span className="truncate max-w-[200px]">{f.name}</span>
+                                        <Check className="w-4 h-4 ml-auto" />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        <div className="relative">
+                            <input
+                                type="file"
+                                id="file-upload"
+                                className="hidden"
+                                onChange={handleFileUpload}
+                                accept="image/*,application/pdf"
+                                disabled={uploading}
+                            />
+                            <label
+                                htmlFor="file-upload"
+                                className={`
+                                    flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-lg cursor-pointer transition-colors
+                                    ${uploading ? "bg-slate-100 border-slate-300" : "border-slate-300 hover:bg-slate-100"}
+                                `}
+                            >
+                                <Paperclip className={`w-8 h-8 mb-2 ${uploading ? "text-slate-300" : "text-slate-400"}`} />
+                                <span className="text-sm text-slate-600">
+                                    {uploading ? "Chargement en cours..." : "Cliquez pour ajouter des fichiers"}
+                                </span>
+                                <span className="text-xs text-slate-400 mt-1">(JPG, PNG, PDF)</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -228,9 +292,9 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFor
                 <Button
                     type="submit"
                     className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 text-lg shadow-md"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || uploading}
                 >
-                    {isSubmitting ? "Envoi en cours..." : "📨 Envoyer ma demande de devis"}
+                    {isSubmitting || uploading ? "Envoi en cours..." : "📨 Envoyer ma demande de devis"}
                 </Button>
                 <p className="text-xs text-center text-slate-400 mt-4">
                     En envoyant ce formulaire, vous acceptez que vos informations soient transmises aux sociétés sélectionnées.

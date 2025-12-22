@@ -75,8 +75,14 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
                 return;
             }
 
-            setStep("success");
-            // Clear or handle success logic (e.g. notify parent?)
+            // Redirect to confirmation page for tracking
+            setIsOpen(false);
+            const expertIds = selectedExperts.map(e => e.id).join(',');
+            window.location.href = `/confirmation-devis?experts=${expertIds}`;
+            // Using window.location to force a hard reload usually ensures pixel firing, 
+            // but router.push is smoother. Let's use router.push if imported, or window.location for simplicity as I don't want to add import hooks top-level if not present.
+            // Looking at file imports: useState, useEffect, etc. No useRouter.
+            // I will use window.location.href as it guarantees tracking scripts reload/fire reliably on the new page.
         } catch (e) {
             console.error("Network error:", e);
             alert("Erreur de connexion. Veuillez vérifier votre connexion internet.");

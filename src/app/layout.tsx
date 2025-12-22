@@ -15,15 +15,21 @@ export const metadata: Metadata = {
   description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV.",
 };
 
-export default function RootLayout({
+import { headers } from "next/headers";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Get Country from Vercel Headers
+  const headersList = await headers();
+  const country = headersList.get('x-vercel-ip-country') || 'FR';
+
   return (
     <html lang="fr">
       <body className={`${montserrat.variable} font-sans`}>
-        <Header />
+        <Header countryCode={country} />
         <main className="min-h-screen">
           {children}
         </main>

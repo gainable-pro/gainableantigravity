@@ -163,18 +163,32 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
         fetchExperts();
     };
 
+    const [showMobileFilters, setShowMobileFilters] = useState(false);
+
     return (
         <div className="min-h-screen bg-slate-50 font-sans flex flex-col">
 
 
             {/* --- TOP FILTER BAR --- */}
-            <div className="bg-white border-b shadow-sm sticky top-[80px] z-30">
+            <div className="bg-white border-b shadow-sm sticky top-[60px] md:top-[80px] z-30 transition-all">
                 <div className="container mx-auto px-4 py-3">
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
 
-                        {/* Filters List */}
-                        <div className="flex flex-wrap items-center gap-3">
-                            <span className="text-sm font-bold text-[#1F2D3D] mr-2">Filtres :</span>
+                        {/* Mobile Toggle & Label */}
+                        <div className="flex items-center justify-between w-full lg:w-auto lg:hidden">
+                            <span className="text-sm font-bold text-[#1F2D3D]">Filtres :</span>
+                            <button
+                                onClick={() => setShowMobileFilters(!showMobileFilters)}
+                                className="flex items-center gap-2 text-sm font-medium text-[#D59B2B] border border-[#D59B2B] px-3 py-1.5 rounded-md"
+                            >
+                                <Filter className="w-4 h-4" />
+                                {showMobileFilters ? "Masquer" : "Afficher"}
+                            </button>
+                        </div>
+
+                        {/* Filters List - Hidden on Mobile unless toggled */}
+                        <div className={`${showMobileFilters ? 'flex' : 'hidden'} lg:flex flex-wrap items-center gap-3 w-full lg:w-auto border-b lg:border-b-0 pb-4 lg:pb-0 border-slate-100 mb-2 lg:mb-0`}>
+                            <span className="hidden lg:inline text-sm font-bold text-[#1F2D3D] mr-2">Filtres :</span>
 
                             {/* Filter 1: Type d'expert */}
                             <FilterDropdown label="Type d'expert" active={expertFilters.societe || expertFilters.bureau || expertFilters.diag}>
@@ -306,7 +320,7 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
 
                         </div>
 
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-3 w-full lg:w-auto justify-end">
                             <button
                                 onClick={() => {
                                     setLocationFilter("");

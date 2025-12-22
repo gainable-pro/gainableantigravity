@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getExperts } from "@/lib/experts";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
 

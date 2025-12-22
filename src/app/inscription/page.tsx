@@ -19,21 +19,17 @@ export default function InscriptionPage() {
             {/* NEW: Vision Section (Full Width) */}
             <VisionSection />
 
-            <main className="flex-1 container mx-auto px-4 py-12" id="offres">
-                <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-10">
-                        <h1 className="text-3xl md:text-4xl font-bold text-[#1F2D3D] mb-4 font-montserrat">
-                            Rejoignez le réseau <span className="text-[#D59B2B]">Gainable.fr</span>
-                        </h1>
-                        <p className="text-lg text-slate-600">
-                            Créez votre compte professionnel pour développer votre activité.
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
-                        <SignUpForm />
-                    </div>
+            <main className="flex-1 container mx-auto px-4 py-8" id="offres">
+                <div className="text-center mb-0">
+                    <h1 className="text-3xl md:text-5xl font-bold text-[#1F2D3D] mb-4 font-montserrat">
+                        Rejoignez le réseau <span className="text-[#D59B2B]">Gainable.fr</span>
+                    </h1>
+                    <p className="text-lg text-slate-600 mb-8">
+                        Créez votre compte professionnel pour développer votre activité.
+                    </p>
                 </div>
+
+                <SignUpForm />
             </main>
         </div>
     );

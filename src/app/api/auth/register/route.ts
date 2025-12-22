@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 import { hash } from "bcryptjs";
+import { prisma } from "@/lib/prisma";
 
 // Initialize Prisma Client
 // In a real app, use a singleton pattern for the client
-const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
     try {

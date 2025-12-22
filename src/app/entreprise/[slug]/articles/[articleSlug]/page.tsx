@@ -206,7 +206,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                 <article className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#1F2D3D] prose-a:text-[#D59B2B] prose-img:rounded-xl">
                     {/* Introduction */}
                     {article.introduction && (
-                        <div className="lead text-xl md:text-2xl text-slate-600 font-serif mb-8 border-l-4 border-[#D59B2B] pl-6 italic">
+                        <div className="lead text-xl md:text-2xl text-slate-700 font-serif mb-12 border-l-[6px] border-[#D59B2B] pl-8 italic leading-relaxed bg-[#D59B2B]/5 py-6 pr-4 rounded-r-lg">
                             {article.introduction}
                         </div>
                     )}

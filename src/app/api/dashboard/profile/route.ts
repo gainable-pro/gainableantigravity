@@ -2,11 +2,10 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 export const dynamic = 'force-dynamic';
 
-const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
 // HELPER: Verify User
@@ -75,6 +74,8 @@ export async function PUT(req: Request) {
                     description: body.description,
                     site_web: body.site_web,
                     linkedin: body.linkedin,
+                    facebook: body.facebook,
+                    youtube: body.youtube,
                     telephone: body.telephone,
                     lat: body.lat,
                     lng: body.lng,

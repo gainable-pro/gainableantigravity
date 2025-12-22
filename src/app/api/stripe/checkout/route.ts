@@ -1,17 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { PrismaClient } from "@prisma/client";
-
-// Ensure global prisma
-let prisma: PrismaClient;
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
-} else {
-    if (!(global as any).prisma) {
-        (global as any).prisma = new PrismaClient();
-    }
-    prisma = (global as any).prisma;
-}
+import { prisma } from "@/lib/prisma"; // Shared instance
+// Remove local instantiation logic
 
 const CORS_HEADERS = {
     "Access-Control-Allow-Origin": "*",
@@ -46,6 +36,10 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Invalid Price ID configuration" }, { status: 500 });
         }
 
+        // Determine base URL dynamically or use env
+        const origin = req.headers.get('origin');
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || origin || "https://www.gainable.ch";
+
         const session = await stripe.checkout.sessions.create({
             mode: 'subscription',
             payment_method_types: ['card'],
@@ -61,8 +55,8 @@ export async function POST(req: NextRequest) {
                 // Based on user flow: Form -> DB (Pending) -> Payment. So expertId SHOULD be present.
             },
             allow_promotion_codes: true, // Enable promo codes
-            success_url: `${process.env.NEXT_PUBLIC_APP_URL}/inscription/paiement/succes?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/inscription?canceled=true`,
+            success_url: `${baseUrl}/inscription/paiement/succes?session_id={CHECKOUT_SESSION_ID}`,
+            cancel_url: `${baseUrl}/inscription?canceled=true`,
         });
 
         return NextResponse.json({ url: session.url }, { headers: CORS_HEADERS });

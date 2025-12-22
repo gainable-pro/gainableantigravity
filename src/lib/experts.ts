@@ -32,7 +32,7 @@ export async function getExperts(filters: ExpertFilters) {
         // Build Prisma where clause
         const where: Prisma.ExpertWhereInput = {
             // Base filter: must be verified/active
-            status: 'active'
+            status: { equals: 'active', mode: 'insensitive' }
         };
 
 

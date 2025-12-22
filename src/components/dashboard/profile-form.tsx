@@ -53,6 +53,8 @@ export default function ProfileForm() {
         description: "",
         site_web: "",
         linkedin: "",
+        facebook: "",
+        youtube: "",
         siret: "",
         lat: 0,
         lng: 0,
@@ -95,6 +97,8 @@ export default function ProfileForm() {
                     description: data.description || "",
                     site_web: data.site_web || "",
                     linkedin: data.linkedin || "",
+                    facebook: data.facebook || "",
+                    youtube: data.youtube || "",
                     siret: data.siret || "",
                     lat: data.lat || 0,
                     lng: data.lng || 0,
@@ -246,11 +250,19 @@ export default function ProfileForm() {
                     <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <Label>Site Web</Label>
-                            <Input name="site_web" value={formData.site_web} onChange={handleChange} />
+                            <Input name="site_web" value={formData.site_web} onChange={handleChange} placeholder="https://www.exemple.com" />
                         </div>
                         <div className="space-y-2">
                             <Label>LinkedIn</Label>
-                            <Input name="linkedin" value={formData.linkedin} onChange={handleChange} />
+                            <Input name="linkedin" value={formData.linkedin} onChange={handleChange} placeholder="URL Profil LinkedIn" />
+                        </div>
+                        <div className="space-y-2">
+                            <Label>Facebook</Label>
+                            <Input name="facebook" value={formData.facebook} onChange={handleChange} placeholder="URL Page Facebook" />
+                        </div>
+                        <div className="space-y-2">
+                            <Label>YouTube</Label>
+                            <Input name="youtube" value={formData.youtube} onChange={handleChange} placeholder="URL Chaîne YouTube" />
                         </div>
                     </div>
                 </CardContent>

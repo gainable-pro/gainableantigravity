@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import * as jose from 'jose';
 import { cookies } from "next/headers";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
 // Helper to get expert
@@ -109,7 +108,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
             let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
             sections.forEach((sec: any) => totalWordCount += countWordsText(sec.content || ""));
-            if (totalWordCount < 800) return NextResponse.json({ error: `Contenu trop court (${totalWordCount} mots). Min 800.` }, { status: 400 });
+            if (totalWordCount < 600) return NextResponse.json({ error: `Contenu trop court (${totalWordCount} mots). Min 600.` }, { status: 400 });
 
             // Rule: Forbidden Words
             const allText = [
@@ -139,8 +138,25 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
         // GENERATE HTML
         let generatedHtml = "";
-        // Video (Hotfix: Disabled)
-        /* if (body.videoUrl) { ... } */
+
+        // Video
+        if (body.videoUrl) {
+            const vUrl = body.videoUrl;
+            if (vUrl.includes("youtube.com") || vUrl.includes("youtu.be")) {
+                const videoId = vUrl.split('v=')[1]?.split('&')[0] || vUrl.split('/').pop();
+                if (videoId) {
+                    generatedHtml += `<div class="video-container" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:2rem;border-radius:0.75rem;">
+                         <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/${videoId}" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                     </div>\n`;
+                }
+            } else {
+                generatedHtml += `<div class="video-container" style="margin-bottom:2rem;">
+                     <video controls style="width:100%;border-radius:0.75rem;">
+                         <source src="${vUrl}" type="video/mp4">
+                     </video>
+                 </div>\n`;
+            }
+        }
 
         sections.forEach((sec: any) => {
             generatedHtml += `<h2>${sec.title}</h2>\n`;
@@ -170,9 +186,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 slug: body.slug,
                 introduction: body.introduction,
                 content: generatedHtml,
-                // jsonContent: { sections, faq: faqs }, // DISABLE HOTFIX
+                jsonContent: { sections, faq: faqs },
                 mainImage: body.mainImage,
                 altText: body.altText,
+                videoUrl: body.videoUrl,
                 targetCity: body.targetCity,
                 metaDesc: body.introduction ? body.introduction.slice(0, 160) : "",
                 status: status as any,

@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import * as jose from 'jose';
 import { cookies } from "next/headers";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
 // Schema validation for creating an article
@@ -125,10 +124,15 @@ export async function POST(req: Request) {
         const body = await req.json();
 
         // 1. Validate Basic Info
+        // 1. Validate Basic Info
         if (!body.title || body.title.length < 5) return NextResponse.json({ error: "Le titre est trop court." }, { status: 400 });
         if (!body.slug || body.slug.length < 3) return NextResponse.json({ error: "Le slug est invalide." }, { status: 400 });
-        if (!body.mainImage) return NextResponse.json({ error: "L'image principale est obligatoire." }, { status: 400 });
-        if (!body.altText || body.altText.length < 5) return NextResponse.json({ error: "Le texte alternatif (Alt) est obligatoire." }, { status: 400 });
+
+        // Validation stricte uniquement pour la publication
+        if (body.status === 'PUBLISHED') {
+            if (!body.mainImage) return NextResponse.json({ error: "L'image principale est obligatoire pour la publication." }, { status: 400 });
+            if (!body.altText || body.altText.length < 5) return NextResponse.json({ error: "Le texte alternatif (Alt) est obligatoire pour la publication." }, { status: 400 });
+        }
 
         // 2. Validate Structure (Sections)
         const sections = Array.isArray(body.sections) ? body.sections : [];
@@ -146,14 +150,14 @@ export async function POST(req: Request) {
                 return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 2 questions FAQ." }, { status: 400 });
             }
 
-            // Rule: Min 800 words (Title + Intro + Sections Content)
+            // Rule: Min 600 words (Title + Intro + Sections Content)
             let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
             sections.forEach((sec: any) => {
                 totalWordCount += countWordsText(sec.content || "");
             });
 
-            if (totalWordCount < 800) {
-                return NextResponse.json({ error: `Publication refusée : Contenu trop court (${totalWordCount} mots). Minimum 800 mots requis.` }, { status: 400 });
+            if (totalWordCount < 600) {
+                return NextResponse.json({ error: `Publication refusée : Contenu trop court (${totalWordCount} mots). Minimum 600 mots requis.` }, { status: 400 });
             }
 
             // Rule: Forbidden Words
@@ -260,16 +264,16 @@ export async function POST(req: Request) {
                 slug: body.slug,
                 introduction: body.introduction,
                 content: generatedHtml, // Auto-generated HTML
-                // jsonContent: { sections, faq: faqs }, // DISBLED HOTFIX
+                jsonContent: { sections, faq: faqs },
                 mainImage: body.mainImage,
                 altText: body.altText,
-                // videoUrl: body.videoUrl, // TEMPORARILY DISABLED: Requires server restart to work. Uncomment after restart.
+                videoUrl: body.videoUrl,
                 targetCity: body.targetCity,
                 metaDesc: body.introduction ? body.introduction.slice(0, 160) : "",
                 status: status as any,
                 publishedAt: status === 'PUBLISHED' ? new Date() : null,
                 expertId: expert.id,
-                // faq: faqs // DISBLED HOTFIX
+                faq: faqs
             }
         });
 

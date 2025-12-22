@@ -223,7 +223,7 @@ export function LoginDropdown() {
                                 </div>
                                 <div className="text-xs text-slate-600">
                                     Pas encore de compte ?{" "}
-                                    <Link href="/inscription" className="text-[#D59B2B] font-medium hover:underline">
+                                    <Link href="/inscription#offres" className="text-[#D59B2B] font-medium hover:underline">
                                         Créer un compte
                                     </Link>
                                 </div>

@@ -1,19 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma"; // Shared instance
 import { headers } from "next/headers";
 import Stripe from "stripe";
 
-// Ensure global prisma
-let prisma: PrismaClient;
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
-} else {
-    if (!(global as any).prisma) {
-        (global as any).prisma = new PrismaClient();
-    }
-    prisma = (global as any).prisma;
-}
+// Remove local instantiation logic
 
 export async function POST(req: NextRequest) {
     const body = await req.text();

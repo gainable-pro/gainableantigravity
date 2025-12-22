@@ -1,43 +1,55 @@
 
 import { NextResponse } from "next/server";
-import { writeFile } from "fs/promises";
-import path from "path";
-import fs from "fs";
+import { supabase } from "@/lib/supabase";
 
 export async function POST(req: Request) {
     try {
         const formData = await req.formData();
         const file = formData.get("file") as File;
+        const folder = (formData.get("folder") as string) || "uploads";
 
         if (!file) {
             return NextResponse.json({ error: "No file received." }, { status: 400 });
         }
 
-        const buffer = Buffer.from(await file.arrayBuffer());
-        const filename = Date.now() + "_" + file.name.replaceAll(" ", "_");
+        // Generate clean filename
+        // 1. Sanitize original name
+        const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+        // 2. Add timestamp
+        const filename = `${Date.now()}_${sanitizedName}`;
+        // 3. Full Path in Bucket
+        const filePath = `${folder}/${filename}`;
 
-        const folder = (formData.get("folder") as string) || "uploads";
+        const buffer = await file.arrayBuffer();
 
-        // Security check: ensure folder is one of allowed list to prevent traversal
-        const allowedFolders = ["uploads", "articles", "avatars", "logos"];
-        const safeFolder = allowedFolders.includes(folder) ? folder : "uploads";
+        // Upload to Supabase Storage (Bucket: 'gainable-assets')
+        // Ensure you have a public bucket named 'gainable-assets'
+        const { data, error } = await supabase
+            .storage
+            .from('gainable-assets')
+            .upload(filePath, buffer, {
+                contentType: file.type,
+                upsert: false
+            });
 
-        // Save to public/[folder] directory
-        const uploadDir = path.join(process.cwd(), "public", safeFolder);
-
-        // Ensure directory exists
-        if (!fs.existsSync(uploadDir)) {
-            fs.mkdirSync(uploadDir, { recursive: true });
+        if (error) {
+            console.error("Supabase Storage Error:", error);
+            throw error;
         }
 
-        const filepath = path.join(uploadDir, filename);
-        await writeFile(filepath, buffer);
+        // Get Public URL
+        const { data: publicUrlData } = supabase
+            .storage
+            .from('gainable-assets')
+            .getPublicUrl(filePath);
 
-        // Return relative path for frontend access
-        return NextResponse.json({ url: `/${safeFolder}/${filename}` });
+        return NextResponse.json({ url: publicUrlData.publicUrl });
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("Upload Error:", error);
-        return NextResponse.json({ error: "Upload failed." }, { status: 500 });
+        return NextResponse.json({
+            error: "Upload failed.",
+            details: error.message
+        }, { status: 500 });
     }
 }

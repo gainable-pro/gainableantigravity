@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import SearchPageClient from './search-client';
 import { getExperts } from '@/lib/experts';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
     title: 'Trouver un Installateur de Climatisation Gainable | Gainable.fr',
     description: 'Annuaire des experts certifiés en climatisation gainable, bureaux d\'études et diagnostiqueurs. Recevez des devis gratuits pour votre installation.',

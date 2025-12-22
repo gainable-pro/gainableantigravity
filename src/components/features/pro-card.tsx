@@ -38,13 +38,13 @@ export function ProCard({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col lg:flex-row gap-6 hover:shadow-md transition-shadow">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 md:p-6 flex flex-col md:flex-row gap-4 md:gap-6 hover:shadow-md transition-shadow">
             {/* Logo & Selection */}
-            <div className="relative w-full lg:w-48 h-32 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group">
+            <div className="relative w-full h-32 md:w-64 md:h-40 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group">
                 {logoUrl ? (
-                    <img src={logoUrl} alt={name} className="max-w-full max-h-full object-contain p-2" />
+                    <img src={logoUrl} alt={name} className="max-w-full max-h-full object-contain p-1" />
                 ) : (
-                    <span className="text-2xl font-bold text-slate-300">{name.charAt(0)}</span>
+                    <span className="text-3xl font-bold text-slate-300">{name.charAt(0)}</span>
                 )}
 
                 {/* Selection Checkbox Overlay */}
@@ -62,38 +62,43 @@ export function ProCard({
             </div>
 
             {/* Info */}
-            <div className="flex-1 space-y-3">
+            <div className="flex-1 space-y-2 md:space-y-3">
                 <div className="flex justify-between items-start">
                     <div>
-                        <h3 className="text-xl font-bold text-[#1F2D3D]">{name}</h3>
-                        <div className="flex items-center text-sm text-slate-500 mt-1">
-                            <MapPin className="w-4 h-4 mr-1 text-[#D59B2B]" />
+                        <h3 className="text-lg md:text-xl font-bold text-[#1F2D3D]">{name}</h3>
+                        <div className="flex items-center text-xs md:text-sm text-slate-500 mt-1">
+                            <MapPin className="w-3 h-3 md:w-4 md:h-4 mr-1 text-[#D59B2B]" />
                             {city} – {country}
                         </div>
                     </div>
                 </div>
 
-                <div className="space-y-2 text-sm text-slate-600">
+                <div className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-slate-600">
                     <p className="flex items-start gap-2">
-                        <Building2 className="w-4 h-4 mt-0.5 text-slate-400 flex-shrink-0" />
-                        <span className="font-semibold text-slate-700">Types d'expert :</span>
+                        <Building2 className="w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 text-slate-400 flex-shrink-0" />
+                        <span className="font-semibold text-slate-700">Expert :</span>
                         <span>{expertTypes.join(", ")}</span>
                     </p>
-                    <p className="flex items-start gap-2">
+
+                    {/* Hidden on mobile to save space */}
+                    <p className="hidden md:flex items-start gap-2">
                         <Wrench className="w-4 h-4 mt-0.5 text-slate-400 flex-shrink-0" />
                         <span className="font-semibold text-slate-700">Interventions :</span>
                         <span>{interventions.join(", ")}</span>
                     </p>
+
+                    {/* Simplified on mobile */}
                     {technologies.length > 0 && (
                         <p className="flex items-start gap-2">
-                            <CheckCircle className="w-4 h-4 mt-0.5 text-slate-400 flex-shrink-0" />
-                            <span className="font-semibold text-slate-700">Technologies :</span>
-                            <span>{technologies.join(", ")}</span>
+                            <CheckCircle className="w-3.5 h-3.5 md:w-4 md:h-4 mt-0.5 text-slate-400 flex-shrink-0" />
+                            <span className="font-semibold text-slate-700">Technos :</span>
+                            <span className="md:hidden">{technologies.slice(0, 3).join(", ")}{technologies.length > 3 ? "..." : ""}</span>
+                            <span className="hidden md:inline">{technologies.join(", ")}</span>
                         </p>
                     )}
 
                     {marques && marques.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-2">
+                        <div className="hidden md:flex flex-wrap gap-2 pt-2">
                             {marques.map(m => (
                                 <BrandLogo key={m} brand={m} size={24} />
                             ))}
