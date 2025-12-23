@@ -132,7 +132,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 const publishedCount = await prisma.article.count({
                     where: { expertId: expert.id, status: 'PUBLISHED', publishedAt: { gte: startOfMonth, lte: endOfMonth } }
                 });
-                if (publishedCount >= 2) return NextResponse.json({ error: `Quota atteint (2/mois).` }, { status: 403 });
+                if (publishedCount >= 2 && expert.slug !== 'gainable-fr') return NextResponse.json({ error: `Quota atteint (2/mois).` }, { status: 403 });
             }
         }
 

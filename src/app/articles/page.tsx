@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { ArrowRight, Calendar, User, MapPin } from "lucide-react";
 import { Metadata } from "next";
+import { prisma } from "@/lib/prisma";
 
-const prisma = new PrismaClient();
 
 export const dynamic = 'force-dynamic';
 
@@ -63,7 +62,7 @@ export default async function ArticlesPage() {
                                     <div className="relative h-56 bg-slate-200 overflow-hidden">
                                         {article.mainImage ? (
                                             <Image
-                                                src={article.mainImage}
+                                                src={article.mainImage.startsWith('http') || article.mainImage.startsWith('/') ? article.mainImage : `/${article.mainImage}`}
                                                 alt={article.title}
                                                 fill
                                                 className="object-cover transition-transform duration-700 group-hover:scale-105"

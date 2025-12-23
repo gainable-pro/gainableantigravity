@@ -1,21 +1,7 @@
 import { PrismaClient, Prisma, ExpertType } from "@prisma/client";
+import { prisma } from "./prisma";
 
 // Ensure global prisma client usage if not already centralized
-// Assuming standard Next.js singleton pattern might be needed, but sticking to local instantiation or import if existing
-// For now, importing from @prisma/client is standard. 
-// Ideally we should use a singleton 'db' or 'prisma' export from lib/prisma.ts if it exists.
-// Checking if lib/prisma.ts exists would be good, but standard new PrismaClient() works for now in server methods.
-
-let prisma: PrismaClient;
-
-if (process.env.NODE_ENV === 'production') {
-    prisma = new PrismaClient();
-} else {
-    if (!(global as any).prisma) {
-        (global as any).prisma = new PrismaClient();
-    }
-    prisma = (global as any).prisma;
-}
 
 export type ExpertFilters = {
     q?: string;
@@ -32,7 +18,8 @@ export async function getExperts(filters: ExpertFilters) {
         // Build Prisma where clause
         const where: Prisma.ExpertWhereInput = {
             // Base filter: must be verified/active
-            status: { equals: 'active', mode: 'insensitive' }
+            status: { equals: 'active', mode: 'insensitive' },
+            slug: { not: 'gainable-fr' } // Hide Admin Profile
         };
 
 
@@ -132,6 +119,7 @@ export async function getExperts(filters: ExpertFilters) {
             marques: expert.marques.map(m => m.value),
             logoUrl: expert.logo_url || undefined,
             coverPhoto: expert.photos[0]?.photo_url || undefined,
+            telephone: expert.telephone, // Added telephone
             // Mock Lat/Lng for now if missing
             lat: 46.2276,
             lng: 2.2137

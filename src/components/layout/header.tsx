@@ -17,7 +17,7 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex py-0 items-center justify-between px-4">
                 {/* Logo */}
-                <Link href="/" className="relative h-24 w-72 md:h-40 md:w-96 block transition-all">
+                <Link href="/" className="relative h-48 w-auto md:h-52 md:w-[500px] block transition-all">
                     <img
                         src={logoSrc}
                         alt="Gainable.fr"

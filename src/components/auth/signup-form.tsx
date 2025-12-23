@@ -316,7 +316,7 @@ export function SignUpForm() {
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Société Expert CVC</h3>
                             <div className="mt-1">
-                                <span className="text-[#D59B2B] font-bold text-2xl">520 €</span> <span className="text-xs text-slate-500">/ an TTC</span>
+                                <span className="text-[#D59B2B] font-bold text-2xl">685 €</span> <span className="text-xs text-slate-500">/ an TTC</span>
                             </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">

@@ -122,7 +122,7 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">520 €</span> <span className="text-sm text-slate-500 font-normal">/ an TTC</span>
+                                    <span className="text-[#D59B2B] font-bold text-3xl">685 €</span> <span className="text-sm text-slate-500 font-normal">/ an TTC</span>
                                 </div>
                                 <div className="text-sm font-bold text-white mb-4 bg-[#D59B2B] inline-block px-3 py-1 rounded-sm shadow-sm">
                                     🟨 Expert Gainable certifié

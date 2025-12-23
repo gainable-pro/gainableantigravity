@@ -29,6 +29,10 @@ const leadSchema = z.object({
 
 export async function POST(request: Request) {
     try {
+        if (!process.env.RESEND_API_KEY) {
+            console.error("CRITICAL: RESEND_API_KEY is missing in environment variables.");
+        }
+
         const body = await request.json();
 
         // 1. Anti-spam Honeypot Check

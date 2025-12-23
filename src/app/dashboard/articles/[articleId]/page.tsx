@@ -45,6 +45,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
     const [altText, setAltText] = useState("");
     const [videoUrl, setVideoUrl] = useState("");
     const [targetCity, setTargetCity] = useState("");
+    const [currentStatus, setCurrentStatus] = useState<string>("DRAFT");
 
     const [sections, setSections] = useState<Section[]>([]);
     const [faq, setFaq] = useState<FAQItem[]>([]);
@@ -65,6 +66,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                 setTargetCity(data.targetCity || "");
                 // Hotfix: videoUrl might be missing in DB or API response if commented out
                 setVideoUrl(data.videoUrl || "");
+                setCurrentStatus(data.status || "DRAFT");
 
                 // Hydrate Blocks
                 // IF jsonContent exists, use it. ELSE fallback to empty or try to parse (we will just init empty for now if missing to avoid complex parsing)
@@ -351,9 +353,18 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                             <span className="text-xs text-slate-500 mt-2 block">Cliquer pour importer (WebP recommandé)</span>
                                         </div>
                                     ) : (
-                                        <div className="relative rounded-xl overflow-hidden border border-slate-200">
-                                            <img src={mainImage} alt="Preview" className="w-full h-32 object-cover" />
-                                            <button onClick={() => setMainImage("")} className="absolute top-2 right-2 bg-white p-1 rounded-full text-red-500 shadow-sm"><X className="w-4 h-4" /></button>
+                                        <div className="space-y-2">
+                                            <div className="relative rounded-xl overflow-hidden border border-slate-200 group">
+                                                <img src={mainImage} alt="Preview" className="w-full h-32 object-cover" />
+                                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <Button variant="secondary" size="sm" onClick={() => fileInputRef.current?.click()}>
+                                                        Changer l'image
+                                                    </Button>
+                                                </div>
+                                            </div>
+                                            <Button variant="ghost" size="sm" onClick={() => setMainImage("")} className="text-red-500 w-full h-8">
+                                                <Trash2 className="w-4 h-4 mr-2" /> Supprimer l'image
+                                            </Button>
                                         </div>
                                     )}
                                 </div>
@@ -630,22 +641,44 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                 </ul>
 
                                 <div className="pt-2 flex flex-col gap-3">
-                                    <Button
-                                        onClick={() => handleSubmit('PUBLISHED')}
-                                        className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold transition-all"
-                                        disabled={isSaving || score < 100}
-                                        title={score < 100 ? "Complétez l'article pour publier" : "Publier l'article"}
-                                    >
-                                        {isSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                                        <Save className="mr-2 h-4 w-4" /> Publier Modifications
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        onClick={() => handleSubmit('DRAFT')}
-                                        disabled={isSaving}
-                                    >
-                                        Enregistrer brouillon
-                                    </Button>
+                                    {currentStatus === 'PUBLISHED' ? (
+                                        <>
+                                            <Button
+                                                onClick={() => handleSubmit('PUBLISHED')}
+                                                className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold transition-all"
+                                                disabled={isSaving || score < 100}
+                                            >
+                                                {isSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                                <Save className="mr-2 h-4 w-4" /> Mettre à jour (Rester publié)
+                                            </Button>
+                                            <Button
+                                                variant="outline"
+                                                onClick={() => handleSubmit('DRAFT')}
+                                                disabled={isSaving}
+                                                className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                            >
+                                                Dépublier (Repasser en brouillon)
+                                            </Button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Button
+                                                onClick={() => handleSubmit('PUBLISHED')}
+                                                className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold transition-all"
+                                                disabled={isSaving || score < 100}
+                                            >
+                                                {isSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                                                <Save className="mr-2 h-4 w-4" /> Publier l'article
+                                            </Button>
+                                            <Button
+                                                variant="outline"
+                                                onClick={() => handleSubmit('DRAFT')}
+                                                disabled={isSaving}
+                                            >
+                                                Enregistrer brouillon (Ne pas publier)
+                                            </Button>
+                                        </>
+                                    )}
                                 </div>
                             </CardContent>
                         </Card>

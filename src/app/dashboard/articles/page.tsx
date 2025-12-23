@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, FileText, CheckCircle2, Clock, AlertCircle } from "lucide-react";
+import { PlusCircle, FileText, CheckCircle2, Clock, AlertCircle, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -76,7 +76,7 @@ export default function ArticlesPage() {
                         <div className="text-right">
                             <div className="text-sm font-medium text-slate-500">Quota mensuel (publiés)</div>
                             <div className={`text-xl font-bold ${quota.remaining === 0 ? 'text-orange-600' : 'text-slate-800'}`}>
-                                {quota.used} / {quota.limit}
+                                {quota.limit >= 999 ? <span className="text-green-600">Illimité</span> : `${quota.used} / ${quota.limit}`}
                             </div>
                         </div>
                         <Button asChild disabled={quota.remaining === 0} className={quota.remaining === 0 ? "opacity-50" : ""}>
@@ -142,6 +142,23 @@ export default function ArticlesPage() {
                                             <Link href={`/dashboard/articles/${article.id}`}>
                                                 Modifier
                                             </Link>
+                                        </Button>
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            onClick={() => {
+                                                if (confirm("Supprimer cet article ?")) {
+                                                    fetch(`/api/dashboard/articles/${article.id}`, { method: "DELETE" })
+                                                        .then(res => {
+                                                            if (res.ok) fetchArticles();
+                                                            else alert("Erreur suppression");
+                                                        });
+                                                }
+                                            }}
+                                            className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                        >
+                                            <Trash2 className="w-4 h-4 mr-1" />
+                                            Supprimer
                                         </Button>
                                     </td>
                                 </tr>

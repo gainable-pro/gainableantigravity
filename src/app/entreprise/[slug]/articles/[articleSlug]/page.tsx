@@ -1,14 +1,12 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { Mail, Phone, MapPin, ArrowRight, User } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, User, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const prisma = new PrismaClient();
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -115,22 +113,22 @@ export default async function PublicArticlePage({ params }: PageProps) {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* HERO IMAGE */}
-            <div className="relative w-full h-[300px] md:h-[400px]">
-                {article.mainImage ? (
+            {/* Article Image - Optimized */}
+            {article.mainImage ? (
+                <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-xl">
                     <Image
-                        src={article.mainImage}
+                        src={article.mainImage.startsWith('http') || article.mainImage.startsWith('/') ? article.mainImage : `/${article.mainImage}`}
                         alt={article.altText || article.title}
                         fill
                         className="object-cover"
                         priority
                     />
-                ) : (
-                    <div className="w-full h-full bg-slate-300 flex items-center justify-center text-slate-500">
-                        Pas d'image
-                    </div>
-                )}
-            </div>
+                </div>
+            ) : (
+                <div className="relative w-full h-[300px] md:h-[400px] bg-slate-300 flex items-center justify-center text-slate-500">
+                    Pas d'image
+                </div>
+            )}
 
             {/* HEADER CONTENT (Below Image) */}
             <div className="max-w-4xl mx-auto w-full px-6 -mt-12 relative z-10">
@@ -178,13 +176,14 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     {/* Author mini-block */}
                     <div className="flex items-center gap-3 pt-2 border-t border-slate-100 mt-4">
                         {expert.logo_url ? (
-                            <Image
-                                src={expert.logo_url}
-                                alt={expert.nom_entreprise}
-                                width={40}
-                                height={40}
-                                className="rounded-full border border-slate-200"
-                            />
+                            <div className="relative w-24 h-10">
+                                <Image
+                                    src={expert.logo_url}
+                                    alt={expert.nom_entreprise}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         ) : (
                             <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center">
                                 <User className="w-5 h-5 text-slate-500" />
@@ -224,13 +223,14 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     {/* Author Card */}
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center space-y-4">
                         {expert.logo_url ? (
-                            <Image
-                                src={expert.logo_url}
-                                alt={expert.nom_entreprise}
-                                width={100}
-                                height={100}
-                                className="rounded-full border-4 border-slate-50"
-                            />
+                            <div className="relative w-48 h-24">
+                                <Image
+                                    src={expert.logo_url}
+                                    alt={expert.nom_entreprise}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         ) : (
                             <div className="w-24 h-24 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-2">
                                 <User className="w-10 h-10" />
@@ -244,11 +244,13 @@ export default async function PublicArticlePage({ params }: PageProps) {
                             </p>
                         </div>
 
-                        <Link href={`/pro/${expert.slug}`} className="w-full">
-                            <Button variant="outline" className="w-full">
-                                Voir le profil
-                            </Button>
-                        </Link>
+                        {expert.slug !== 'gainable-fr' && (
+                            <Link href={`/pro/${expert.slug}`} className="w-full">
+                                <Button variant="outline" className="w-full">
+                                    Voir le profil
+                                </Button>
+                            </Link>
+                        )}
                     </div>
 
                     {/* CTA Contact */}
@@ -262,9 +264,13 @@ export default async function PublicArticlePage({ params }: PageProps) {
                             Contactez <strong>{expert.nom_entreprise}</strong> pour votre projet de climatisation gainable.
                         </p>
 
-                        <Link href={`/pro/${expert.slug}#contact`} className="block relative z-10">
+                        <Link
+                            href={expert.slug === 'gainable-fr' ? '/trouver-installateur' : `/pro/${expert.slug}#contact`}
+                            className="block relative z-10"
+                        >
                             <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
-                                Contacter cet expert <ArrowRight className="ml-2 w-4 h-4" />
+                                {expert.slug === 'gainable-fr' ? "Contacter un expert" : "Contacter cet expert"}
+                                <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
                         </Link>
                     </div>

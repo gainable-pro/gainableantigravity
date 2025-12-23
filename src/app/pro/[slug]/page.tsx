@@ -1,5 +1,5 @@
 
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,9 +11,6 @@ import { ContactWizard } from "@/components/features/contact/contact-wizard";
 import { ExpertArticles } from "@/components/features/expert/expert-articles";
 import { PhoneCallButton } from "@/components/features/expert/phone-call-button";
 import { BrandLogo } from "@/components/ui/brand-logo";
-
-// Singleton Prisma (or import shared instance)
-const prisma = new PrismaClient();
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -449,9 +446,12 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                     </div>
                                 }
                             />
+
+                            <div className="flex justify-center mt-4">
+                                <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </main>
         </div>

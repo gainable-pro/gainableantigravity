@@ -97,6 +97,23 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                         <div className="text-2xl font-bold">{users.length}</div>
                     </CardContent>
                 </Card>
+
+                <Card className="bg-slate-900 text-white border-slate-800">
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <CardTitle className="text-sm font-medium text-slate-100">Espace Éditorial</CardTitle>
+                        <div className="h-4 w-4 text-amber-400 font-bold">G</div>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="text-sm text-slate-400 mb-4">Gérer les articles officiels Gainable.fr</div>
+                        <Button
+                            variant="secondary"
+                            className="w-full bg-amber-500 hover:bg-amber-600 text-white border-none"
+                            onClick={() => window.open('/dashboard/articles', '_blank')}
+                        >
+                            Rédiger un article ➜
+                        </Button>
+                    </CardContent>
+                </Card>
             </div>
 
             <Card>

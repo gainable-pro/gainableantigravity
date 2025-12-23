@@ -71,7 +71,7 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
             if (!res.ok) {
                 const err = await res.json();
                 console.error("Error submitting lead:", err);
-                alert("Une erreur est survenue. Veuillez réessayer.");
+                alert(err.error || "Une erreur est survenue. Veuillez réessayer.");
                 return;
             }
 

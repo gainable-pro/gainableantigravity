@@ -125,7 +125,7 @@ export function ProCard({
                             <Phone className="w-4 h-4" /> {telephone}
                         </span>
                     ) : (
-                        "Contacter"
+                        <Phone className="w-5 h-5" />
                     )}
                 </Button>
 
@@ -134,6 +134,11 @@ export function ProCard({
                         Devis gratuit
                     </Button>
                 )}
+
+                {/* Verified Badge */}
+                <div className="flex justify-center mt-3">
+                    <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-20 w-auto object-contain" />
+                </div>
             </div>
         </div>
     );
