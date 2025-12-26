@@ -15,7 +15,8 @@ import {
     EXPERT_INTERVENTIONS_ETUDE,
     EXPERT_INTERVENTIONS_DIAG,
     EXPERT_BRANDS,
-    EXPERT_BATIMENTS
+    EXPERT_BATIMENTS,
+    EXPERT_CERTIFICATIONS
 } from "@/lib/constants";
 
 const VALID_APE_PREFIXES: Record<string, string[]> = {
@@ -64,6 +65,7 @@ export function SignUpForm() {
     const [interventionsDiag, setInterventionsDiag] = useState<string[]>([]);
     const [batiments, setBatiments] = useState<string[]>([]);
     const [marques, setMarques] = useState<string[]>([]);
+    const [certifications, setCertifications] = useState<string[]>([]);
 
     const [siretInput, setSiretInput] = useState("");
     const [isLoadingSiret, setIsLoadingSiret] = useState(false);
@@ -77,6 +79,7 @@ export function SignUpForm() {
     const INTERVENTION_DIAG_LIST = EXPERT_INTERVENTIONS_DIAG.map(t => ({ id: t, label: t }));
     const BATIMENT_LIST = EXPERT_BATIMENTS.map(t => ({ id: t, label: t }));
     const MARQUE_LIST = EXPERT_BRANDS.map(t => ({ id: t, label: t }));
+    const CERT_LIST = EXPERT_CERTIFICATIONS.map(t => ({ id: t, label: t }));
 
     // Scroll to form when plan selected
     useEffect(() => {
@@ -155,7 +158,8 @@ export function SignUpForm() {
             interventionsEtude: selectedPlan === 'bureau_etude' ? interventionsEtude : [],
             interventionsDiag: selectedPlan === 'diagnostiqueur' ? interventionsDiag : [],
             batiments,
-            marques: selectedPlan === 'societe' ? marques : []
+            marques: selectedPlan === 'societe' ? marques : [],
+            certifications: selectedPlan === 'societe' ? certifications : []
         };
 
         try {
@@ -183,6 +187,13 @@ export function SignUpForm() {
                 return;
             }
 
+            // MANUAL VALIDATION MODE (Stripe Bypassed)
+            // We treat all plans as "Request for registration"
+            setIsSuccess(true);
+            setIsSubmitting(false);
+            return;
+
+            /* STRIPE DISABLED
             // PAID PLANS -> Stripe Checkout
             let planMap = '';
             if (selectedPlan === 'societe') planMap = 'cvc';
@@ -214,6 +225,7 @@ export function SignUpForm() {
                 alert("Erreur de connexion au service de paiement.");
                 setIsSubmitting(false);
             }
+            */
 
         } catch (error) {
             console.error(error);
@@ -252,7 +264,7 @@ export function SignUpForm() {
     const getPlanPrice = (p: string) => {
         if (p === 'societe') return "520 € TTC / an";
         if (p === 'bureau_etude') return "Gratuit";
-        if (p === 'diagnostiqueur') return "199 € TTC / an";
+        if (p === 'diagnostiqueur') return "200 € TTC / an";
         return "";
     };
 
@@ -316,7 +328,7 @@ export function SignUpForm() {
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Société Expert CVC</h3>
                             <div className="mt-1">
-                                <span className="text-[#D59B2B] font-bold text-2xl">685 €</span> <span className="text-xs text-slate-500">/ an TTC</span>
+                                <span className="text-[#D59B2B] font-bold text-2xl">520 €</span> <span className="text-xs text-slate-500">/ an TTC</span>
                             </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
@@ -352,7 +364,7 @@ export function SignUpForm() {
                                 <FileText className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
-                            <div className="text-purple-600 font-bold text-xl mt-1">199 € <span className="text-xs text-slate-500 font-normal">/ an TTC</span></div>
+                            <div className="text-purple-600 font-bold text-xl mt-1">200 € <span className="text-xs text-slate-500 font-normal">/ an TTC</span></div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
@@ -423,6 +435,7 @@ export function SignUpForm() {
                                             <Input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleCommonChange} />
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 

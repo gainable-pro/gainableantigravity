@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { cookies } from "next/headers";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import jwt from "jsonwebtoken";
 
-const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
 async function getUserSlug() {
@@ -25,11 +24,16 @@ async function getUserSlug() {
     }
 }
 
+import AdminPendingList from "@/components/dashboard/admin-pending-list";
+
 export default async function DashboardPage() {
     const slug = await getUserSlug();
 
     return (
         <div className="space-y-6">
+            {/* ADMIN ONLY: PENDING VALIDATIONS */}
+            <AdminPendingList />
+
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h2 className="text-2xl font-bold text-[#1F2D3D]">Mon Profil Public</h2>

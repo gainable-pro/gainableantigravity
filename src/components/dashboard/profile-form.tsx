@@ -19,7 +19,8 @@ import {
     EXPERT_INTERVENTIONS_ETUDE,
     EXPERT_INTERVENTIONS_DIAG,
     EXPERT_BRANDS,
-    EXPERT_BATIMENTS
+    EXPERT_BATIMENTS,
+    EXPERT_CERTIFICATIONS
 } from "@/lib/constants";
 
 // Map constants to ID/Label format
@@ -29,6 +30,7 @@ const INTERVENTION_ETUDE_LIST = EXPERT_INTERVENTIONS_ETUDE.map(t => ({ id: t, la
 const INTERVENTION_DIAG_LIST = EXPERT_INTERVENTIONS_DIAG.map(t => ({ id: t, label: t }));
 const BATIMENT_LIST = EXPERT_BATIMENTS.map(t => ({ id: t, label: t }));
 const MARQUE_LIST = EXPERT_BRANDS.map(t => ({ id: t, label: t }));
+const CERT_LIST = EXPERT_CERTIFICATIONS.map(t => ({ id: t, label: t }));
 
 import dynamicModule from "next/dynamic";
 const EditMap = dynamicModule(() => import("./edit-map"), { ssr: false });
@@ -68,6 +70,7 @@ export default function ProfileForm() {
     const [interventionsDiag, setInterventionsDiag] = useState<string[]>([]);
     const [batiments, setBatiments] = useState<string[]>([]);
     const [marques, setMarques] = useState<string[]>([]);
+    const [certifications, setCertifications] = useState<string[]>([]);
 
     // FETCH DATA
     useEffect(() => {
@@ -112,6 +115,7 @@ export default function ProfileForm() {
                 if (data.interventions_diag) setInterventionsDiag(data.interventions_diag.map((t: any) => t.value));
                 if (data.batiments) setBatiments(data.batiments.map((t: any) => t.value));
                 if (data.marques) setMarques(data.marques.map((t: any) => t.value));
+                if (data.certifications) setCertifications(data.certifications.map((t: any) => t.value));
             } catch (error: any) {
                 console.error(error);
                 setMessage({ type: 'error', text: error.message || "Impossible de charger le profil." });
@@ -145,7 +149,8 @@ export default function ProfileForm() {
                 interventions_etude: interventionsEtude,
                 interventions_diag: interventionsDiag,
                 batiments,
-                marques
+                marques,
+                certifications
             };
 
             const res = await fetch('/api/dashboard/profile', {
@@ -396,57 +401,83 @@ export default function ProfileForm() {
                             </div>
                         </CardContent>
                     </Card>
+                </div>
+        </CardContent>
+                    </Card >
+
+        <Card>
+            <CardContent className="pt-6 space-y-4">
+                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Certifications</h3>
+                <div className="grid grid-cols-1 gap-3">
+                    {CERT_LIST.map(item => (
+                        <div key={item.id} className="flex items-center space-x-2">
+                            <Checkbox
+                                id={`cert-${item.id}`}
+                                checked={certifications.includes(item.id)}
+                                onCheckedChange={() => toggleSelection(certifications, setCertifications, item.id)}
+                            />
+                            <label htmlFor={`cert-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
+                        </div>
+                    ))}
+                </div>
+            </CardContent>
+        </Card>
                 </>
-            )}
+            )
+}
 
-            {/* BUREAU ETUDE SPECIFIC */}
-            {(expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
-                <Card>
-                    <CardContent className="pt-6 space-y-4">
-                        <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Compétences Étude</h3>
-                        <div className="grid gap-3">
-                            {INTERVENTION_ETUDE_LIST.map(item => (
-                                <div key={item.id} className="flex items-center space-x-2">
-                                    <Checkbox
-                                        id={`etude-${item.id}`}
-                                        checked={interventionsEtude.includes(item.id)}
-                                        onCheckedChange={() => toggleSelection(interventionsEtude, setInterventionsEtude, item.id)}
-                                    />
-                                    <label htmlFor={`etude-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
-                                </div>
-                            ))}
+{/* BUREAU ETUDE SPECIFIC */ }
+{
+    (expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
+        <Card>
+            <CardContent className="pt-6 space-y-4">
+                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Compétences Étude</h3>
+                <div className="grid gap-3">
+                    {INTERVENTION_ETUDE_LIST.map(item => (
+                        <div key={item.id} className="flex items-center space-x-2">
+                            <Checkbox
+                                id={`etude-${item.id}`}
+                                checked={interventionsEtude.includes(item.id)}
+                                onCheckedChange={() => toggleSelection(interventionsEtude, setInterventionsEtude, item.id)}
+                            />
+                            <label htmlFor={`etude-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
                         </div>
-                    </CardContent>
-                </Card>
-            )}
+                    ))}
+                </div>
+            </CardContent>
+        </Card>
+    )
+}
 
-            {/* DIAGNOSTIQUEUR SPECIFIC */}
-            {(expertType === 'diagnostiqueur' || expertType === 'Diagnostiqueur' || expertType === 'diagnostics_dpe') && (
-                <Card>
-                    <CardContent className="pt-6 space-y-4">
-                        <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Diagnostics Réalisés</h3>
-                        <div className="grid grid-cols-2 gap-3">
-                            {INTERVENTION_DIAG_LIST.map(item => (
-                                <div key={item.id} className="flex items-center space-x-2">
-                                    <Checkbox
-                                        id={`diag-${item.id}`}
-                                        checked={interventionsDiag.includes(item.id)}
-                                        onCheckedChange={() => toggleSelection(interventionsDiag, setInterventionsDiag, item.id)}
-                                    />
-                                    <label htmlFor={`diag-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
-                                </div>
-                            ))}
+{/* DIAGNOSTIQUEUR SPECIFIC */ }
+{
+    (expertType === 'diagnostiqueur' || expertType === 'Diagnostiqueur' || expertType === 'diagnostics_dpe') && (
+        <Card>
+            <CardContent className="pt-6 space-y-4">
+                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Diagnostics Réalisés</h3>
+                <div className="grid grid-cols-2 gap-3">
+                    {INTERVENTION_DIAG_LIST.map(item => (
+                        <div key={item.id} className="flex items-center space-x-2">
+                            <Checkbox
+                                id={`diag-${item.id}`}
+                                checked={interventionsDiag.includes(item.id)}
+                                onCheckedChange={() => toggleSelection(interventionsDiag, setInterventionsDiag, item.id)}
+                            />
+                            <label htmlFor={`diag-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
                         </div>
-                    </CardContent>
-                </Card>
-            )}
+                    ))}
+                </div>
+            </CardContent>
+        </Card>
+    )
+}
 
-            <div className="flex justify-end pt-6">
-                <Button onClick={handleSave} disabled={isSaving} className="bg-[#D59B2B] hover:bg-[#b88622] text-white size-lg text-lg px-8">
-                    {isSaving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-                    Enregistrer les modifications
-                </Button>
-            </div>
-        </div>
+<div className="flex justify-end pt-6">
+    <Button onClick={handleSave} disabled={isSaving} className="bg-[#D59B2B] hover:bg-[#b88622] text-white size-lg text-lg px-8">
+        {isSaving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+        Enregistrer les modifications
+    </Button>
+</div>
+        </div >
     );
 }

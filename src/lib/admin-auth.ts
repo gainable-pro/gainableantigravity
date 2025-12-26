@@ -1,9 +1,8 @@
 import { cookies } from "next/headers";
 import { verify } from "jsonwebtoken";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-const prisma = new PrismaClient();
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
 export async function verifyAdmin() {

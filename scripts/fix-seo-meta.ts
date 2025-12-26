@@ -23,37 +23,17 @@ async function main() {
         // OR we can make it better. Let's strictly use the introduction text if it fits typical length (it was 140-160 chars approx).
 
         let metaDesc = article.introduction || "";
+        if (!metaDesc || metaDesc.trim() === "") {
+            metaDesc = `Découvrez tout ce qu'il faut savoir sur : ${article.title}. Installation, avantages et conseils d'experts pour votre confort thermique.`;
+        }
+
         if (metaDesc.length > 300) {
-            // Truncate if too long (though intro was designed to be short)
             metaDesc = metaDesc.substring(0, 297) + "...";
         }
 
-        // 2. Alt Text
-        // Generate based on title. 
-        // "Installation de climatisation gainable à [City]"
-        // We need the city. I didn't save 'targetCity' in valid column in previous script?
-        // Let's check if targetCity was saved. 
-        // Checking generate-articles-batch.ts... I DID NOT save targetCity in the `data` object!
-        // I rotated cities in memory but didn't persist the choice!
-        // This is a problem. The content mentions the city, but the structured field `targetCity` is likely null.
-
-        // RECOVERY:
-        // Extract city from the content (it's in the first paragraph "Vous êtes situé à Paris...").
-        // Regex to find city.
-        const cityMatch = article.introduction?.match(/projet à ([^.]+)\./) || null;
-        let city = "France";
-        if (cityMatch && cityMatch[1]) {
-            city = cityMatch[1].trim();
-        } else {
-            // Fallback regex on content if intro structure varies
-            // <p>Vous êtes situé à <strong>Paris</strong>
-        }
-
-        // Wait, I can't easily read content here without fetching it (heavy).
-        // Actually, in `generate-articles-batch.ts`, intro was: `Découvrez tout sur : ${title}. Guide complet pour votre projet à ${city}.`
-        // So I can extract city from `introduction` string easily.
         const introText = article.introduction || "";
         const extraction = introText.match(/projet à (.*?)\./);
+        let city = "France";
         if (extraction) {
             city = extraction[1];
         }
@@ -64,8 +44,8 @@ async function main() {
             where: { id: article.id },
             data: {
                 metaDesc: metaDesc,
-                altText: altText, // SEO optimized alt text
-                targetCity: city // Populate this missing field too
+                altText: altText,
+                targetCity: city
             }
         });
 

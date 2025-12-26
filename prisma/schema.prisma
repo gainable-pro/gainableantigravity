@@ -71,6 +71,7 @@ model Expert {
   interventions_diag ExpertInterventionDiag[]
   batiments        ExpertBatiment[]
   marques          ExpertMarque[]
+  certifications   ExpertCertification[]
   photos           ExpertPhoto[]
   articles         Article[]
   leadAssignments  LeadAssignment[]
@@ -250,4 +251,11 @@ model LeadAssignment {
   sentAt    DateTime @default(now())
 
   @@unique([leadId, expertId])
+}
+
+model ExpertCertification {
+  id        String   @id @default(uuid())
+  expert_id String
+  expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
+  value     String   // rge_qualipac, fluide_frigo, etc.
 }

@@ -11,8 +11,22 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Gainable.fr - La climatisation gainable, encastrable et invisible",
-  description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV.",
+  metadataBase: new URL('https://www.gainable.fr'),
+  title: {
+    default: "Gainable.fr - La climatisation gainable, encastrable et invisible",
+    template: "%s | Gainable.fr"
+  },
+  description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV. Trouvez un installateur, un bureau d'étude ou un diagnostiqueur certifié.",
+  alternates: {
+    canonical: './',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://www.gainable.fr',
+    siteName: 'Gainable.fr',
+    images: [{ url: '/assets/logo-share.jpg', width: 1200, height: 630, alt: 'Gainable.fr' }],
+  },
 };
 
 import { headers } from "next/headers";

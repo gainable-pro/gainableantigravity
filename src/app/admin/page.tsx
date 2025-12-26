@@ -1,9 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+
+import { prisma } from "@/lib/prisma";
 import { verifyAdmin } from "@/lib/admin-auth";
 import { redirect } from "next/navigation";
 import AdminDashboardClient from "./dashboard-client";
-
-const prisma = new PrismaClient();
 
 // Force dynamic because we check auth and DB
 export const dynamic = 'force-dynamic';

@@ -72,3 +72,8 @@ export const EXPERT_BATIMENTS = [
     "Hôtellerie / Restauration",
     "Santé (Hôpitaux, Cliniques)"
 ];
+
+export const EXPERT_CERTIFICATIONS = [
+    "RGE QualiPAC",
+    "Capacité Fluides Frigorigènes"
+];

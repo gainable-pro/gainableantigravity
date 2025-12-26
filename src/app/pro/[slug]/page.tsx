@@ -25,6 +25,7 @@ async function getExpertBySlug(slug: string) {
             interventions_diag: true,
             batiments: true,
             marques: true,
+            certifications: true,
             photos: true,
             articles: {
                 where: { status: 'PUBLISHED' },
@@ -62,10 +63,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
         title: `${expert.nom_entreprise} - Expert à ${expert.ville} | Gainable.fr`,
         description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise}, expert en génie climatique à ${expert.ville}. Devis gratuit et intervention rapide.`,
+        alternates: {
+            canonical: `/pro/${expert.slug}`,
+        },
         openGraph: {
             title: `${expert.nom_entreprise} - Expert à ${expert.ville}`,
             description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise} pour vos projets de climatisation.`,
-            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.jpg']
+            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.jpg'],
+            type: 'profile',
         }
     };
 }
@@ -385,6 +390,30 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                         )}
                                     </div>
                                 </div>
+
+                            )}
+
+                            {/* CERTIFICATIONS */}
+                            {expert.certifications && expert.certifications.length > 0 && (
+                                <div className="mt-8 pt-6 border-t border-slate-100">
+                                    <h2 className="text-xl font-bold text-[#1F2D3D] mb-4">Labels & Certifications</h2>
+                                    <div className="flex flex-wrap items-center gap-6">
+                                        {expert.certifications.map((cert) => (
+                                            <div key={cert.id} className="flex flex-col items-center gap-2 group">
+                                                <div className="h-16 w-auto flex items-center justify-center p-2 bg-slate-50 rounded-lg border border-slate-100 group-hover:border-[#D59B2B]/30 transition-colors">
+                                                    {cert.value === 'RGE QualiPAC' ? (
+                                                        <img src="/assets/images/rge-logo.png" alt="RGE QualiPAC" className="h-full w-auto object-contain" />
+                                                    ) : (
+                                                        <div className="h-full flex items-center gap-2 px-3">
+                                                            <CheckCircle className="w-6 h-6 text-[#D59B2B]" />
+                                                            <span className="font-semibold text-slate-700 text-sm max-w-[100px] text-center leading-tight">{cert.value}</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             )}
                         </section>
 
@@ -452,8 +481,8 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                             </div>
                         </div>
                     </div>
-                </div>
-            </main>
-        </div>
+                </div >
+            </main >
+        </div >
     );
 }

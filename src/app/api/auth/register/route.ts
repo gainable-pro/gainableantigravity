@@ -124,7 +124,7 @@ export async function POST(req: Request) {
                     ape_code: codeApe,
                     // Default values
                     slug: finalSlug,
-                    status: expertType === 'diagnostiqueur' || pays !== 'France' ? 'pending_payment' : 'pending_validation', // Force pending for manual validation if Foreign
+                    status: 'pending_validation', // Forced for manual validation (Stripe Bypass)
                 },
             });
 
@@ -166,12 +166,17 @@ export async function POST(req: Request) {
                 }
             }
 
-            if (expertType === 'diagnostiqueur') {
-                if (interventionsDiag?.length) {
-                    await tx.expertInterventionDiag.createMany({
-                        data: interventionsDiag.map((i: string) => ({ expert_id: expert.id, value: i }))
-                    });
-                }
+            if (interventionsDiag?.length) {
+                await tx.expertInterventionDiag.createMany({
+                    data: interventionsDiag.map((i: string) => ({ expert_id: expert.id, value: i }))
+                });
+            }
+
+            // Certifications (Societe only typically)
+            if (expertType === 'societe' && body.certifications?.length > 0) {
+                await tx.expertCertification.createMany({
+                    data: body.certifications.map((c: string) => ({ expert_id: expert.id, value: c }))
+                });
             }
 
             return { user, expert };

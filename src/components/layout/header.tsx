@@ -10,14 +10,15 @@ import * as React from "react";
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
     // Dynamic Logo based on Country
     let logoSrc = "/logo.png"; // Default (FR/Global)
-    if (countryCode === 'CH') logoSrc = "/logo-ch.jpg"; // Suisse
-    if (countryCode === 'MA') logoSrc = "/logo-ma.jpg"; // Maroc
+    if (countryCode === 'CH') logoSrc = "/logo-ch.png"; // Suisse
+    if (countryCode === 'MA') logoSrc = "/logo-ma.png"; // Maroc
+    if (countryCode === 'BE') logoSrc = "/logo-be.png"; // Belgique
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex py-0 items-center justify-between px-4">
                 {/* Logo */}
-                <Link href="/" className="relative h-48 w-auto md:h-52 md:w-[500px] block transition-all">
+                <Link href="/" className="relative h-24 w-auto md:h-28 md:w-[250px] block transition-all">
                     <img
                         src={logoSrc}
                         alt="Gainable.fr"

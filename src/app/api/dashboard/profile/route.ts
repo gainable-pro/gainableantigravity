@@ -35,7 +35,8 @@ export async function GET() {
                 interventions_etude: true,
                 interventions_diag: true,
                 batiments: true,
-                marques: true
+                marques: true,
+                certifications: true
             }
         });
 
@@ -147,6 +148,16 @@ export async function PUT(req: Request) {
                 if (body.marques.length > 0) {
                     await tx.expertMarque.createMany({
                         data: body.marques.map((t: string) => ({ expert_id: expertId, value: t }))
+                    });
+                }
+            }
+
+            // CERTIFICATIONS
+            if (body.certifications) {
+                await tx.expertCertification.deleteMany({ where: { expert_id: expertId } });
+                if (body.certifications.length > 0) {
+                    await tx.expertCertification.createMany({
+                        data: body.certifications.map((t: string) => ({ expert_id: expertId, value: t }))
                     });
                 }
             }

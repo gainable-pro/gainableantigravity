@@ -122,7 +122,7 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">685 €</span> <span className="text-sm text-slate-500 font-normal">/ an TTC</span>
+                                    <span className="text-[#D59B2B] font-bold text-3xl">520 €</span> <span className="text-sm text-slate-500 font-normal">/ an TTC</span>
                                 </div>
                                 <div className="text-sm font-bold text-white mb-4 bg-[#D59B2B] inline-block px-3 py-1 rounded-sm shadow-sm">
                                     🟨 Expert Gainable certifié
@@ -166,7 +166,7 @@ export default function EspaceProPage() {
                                     <FileText className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Diagnostiqueur</h3>
-                                <div className="text-purple-600 font-bold text-2xl mb-4">199 € <span className="text-sm text-slate-500 font-normal">/ an TTC</span></div>
+                                <div className="text-4xl font-bold text-gray-900 mb-2">200 € <span className="text-lg font-normal text-gray-500">/ an TTC</span></div>
                                 <p className="text-slate-500 text-sm">
                                     Pour les diagnostiqueurs CVC / Audit / Conseil.
                                 </p>
