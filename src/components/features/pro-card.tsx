@@ -112,14 +112,14 @@ export function ProCard({
             {/* Actions */}
             <div className="flex flex-col gap-2 justify-center lg:min-w-[180px]">
                 <Link href={`/pro/${slug}`} className="w-full">
-                    <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-50">
+                    <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 transition-colors">
                         Voir la fiche
                     </Button>
                 </Link>
 
                 <Button
                     variant={showPhone ? "default" : "outline"}
-                    className={`w-full transition-all ${showPhone ? 'bg-green-600 hover:bg-green-700 text-white border-transparent' : 'border-slate-300 text-slate-700 hover:bg-slate-50'}`}
+                    className={`w-full transition-all ${showPhone ? 'bg-green-600 hover:bg-green-700 text-white border-transparent' : 'border-slate-300 text-slate-700 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'}`}
                     onClick={handleContactClick}
                 >
                     {showPhone ? (
@@ -127,7 +127,9 @@ export function ProCard({
                             <Phone className="w-4 h-4" /> {telephone}
                         </span>
                     ) : (
-                        <Phone className="w-5 h-5" />
+                        <span className="flex items-center justify-center w-full">
+                            <Phone className="w-5 h-5" />
+                        </span>
                     )}
                 </Button>
 
