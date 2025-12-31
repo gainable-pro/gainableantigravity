@@ -47,18 +47,32 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
     const expertType = selectedExperts.length > 0 ? selectedExperts[0].expert_type : "cvc_climatisation";
 
     const handleSubmitCVC = async (data: any) => {
-        // Prepare Payload
+        // Parse Address to extract Zip/City (Simple Regex for FR/CH/BE format support could be complex, assuming FR 5 digits for now as main target)
+        // If international, this might need relaxation.
+        const address = data.address || "";
+        const zipMatch = address.match(/\b\d{4,5}\b/); // 4 or 5 digits for CH/FR
+        const extractedZip = zipMatch ? zipMatch[0] : "00000";
+        // City is roughly what's left, or default "Inconnue"
+        // This is a naive parse but better than failing validation.
+
+        // Prepare Payload logic
         const payload = {
             type: expertType === 'cvc_climatisation' ? 'cvc' : (expertType === 'diagnostics_dpe' ? 'diag' : 'simple'),
-            nom: data.nom,
-            prenom: data.prenom,
+            nom: data.lastName || data.nom, // Handle both just in case
+            prenom: data.firstName || data.prenom,
             email: data.email,
-            telephone: data.telephone,
-            code_postal: data.code_postal,
-            ville: data.ville || "",
-            adresse: data.adresse || "",
-            details: data, // Send full data as details for now, simpler
-            expertIds: selectedExperts.map(e => e.id)
+            telephone: data.phone || data.telephone,
+            // API expects code_postal key
+            code_postal: extractedZip,
+            ville: data.ville || address.replace(extractedZip, "").replace(/,/g, "").trim() || "Localisation non précisée",
+            adresse: address,
+            // Map Form fields to API expected fields
+            message: data.description || data.message || "",
+            projet: data.propertyType || data.projet || "",
+            surface: data.surface ? String(data.surface) : undefined,
+            details: data,
+            expertIds: selectedExperts.map(e => e.id),
+            expert_id: selectedExperts.length > 0 ? selectedExperts[0].id : undefined // Logic for single routing
         };
 
         try {

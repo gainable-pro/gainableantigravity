@@ -36,7 +36,13 @@ export async function GET() {
                 interventions_diag: true,
                 batiments: true,
                 marques: true,
-                certifications: true
+                certifications: true,
+                user: {
+                    select: {
+                        role: true,
+                        email: true
+                    }
+                }
             }
         });
 
@@ -81,6 +87,11 @@ export async function PUT(req: Request) {
                     lat: body.lat,
                     lng: body.lng,
                     intervention_radius: body.intervention_radius ? parseInt(body.intervention_radius) : 50,
+                    // Adresse d'intervention
+                    adresse_indep: body.adresse_indep,
+                    adresse_inter: body.adresse_inter,
+                    ville_inter: body.ville_inter,
+                    cp_inter: body.cp_inter,
                 }
             });
 

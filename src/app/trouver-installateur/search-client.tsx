@@ -109,7 +109,22 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
             if (expertFilters.bureau) params.append('type', 'bureau');
             if (expertFilters.diag) params.append('type', 'diag');
 
-            if (locationFilter) params.append('city', locationFilter);
+            if (locationFilter) {
+                params.append('city', locationFilter);
+                // GEOCODE ON SEARCH
+                try {
+                    const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationFilter + ", France")}&limit=1`);
+                    if (geoRes.ok) {
+                        const geoData = await geoRes.json();
+                        if (geoData && geoData.length > 0) {
+                            params.append('lat', geoData[0].lat);
+                            params.append('lng', geoData[0].lon);
+                        }
+                    }
+                } catch (e) {
+                    console.error("Geocoding failed for search:", e);
+                }
+            }
             if (countryFilter) params.append('country', countryFilter);
             if (selectedTechs.length) params.append('technologies', selectedTechs.join(','));
 

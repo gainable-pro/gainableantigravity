@@ -108,27 +108,55 @@ export default function EditMap({
     useEffect(() => {
         const init = async () => {
             // 1. If we have initial saved coords, use them for Marker
-            let startPos = (initialLat && initialLng) ? { lat: initialLat, lng: initialLng } : null;
+            let startPos = (initialLat && initialLng && initialLat !== 0) ? { lat: initialLat, lng: initialLng } : null;
 
             // 2. We need an ANCHOR (City Center) to constrain movement.
             // We'll geocode the CITY ONLY to get the center.
+            let cityCenter = null;
             try {
-                const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city + ", France")}&limit=1`);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data && data.length > 0) {
-                        const cityCenter = { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+                const resCity = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city + ", France")}&limit=1`);
+                if (resCity.ok) {
+                    const dataCity = await resCity.json();
+                    if (dataCity && dataCity.length > 0) {
+                        cityCenter = { lat: parseFloat(dataCity[0].lat), lng: parseFloat(dataCity[0].lon) };
                         setAnchor(cityCenter);
-
-                        // If no saved position, start at city center (or geocoded full address if possible, but simplicity: city center)
-                        if (!startPos) {
-                            startPos = cityCenter;
-                            // Also try full address for better start? optional.
-                        }
                     }
                 }
             } catch (e) {
-                console.error("Geocoding failed", e);
+                console.error("Geocoding city failed", e);
+            }
+
+            // 3. GEOCODE ADDRESS (if no saved pos OR if we want to update it)
+            // If we assume this effect runs when city/address changes, we might want to override startPos?
+            // Actually, if we have a saved pos, we usually prioritize it. 
+            // BUT, if the user complains "address not taken into account", it implies they CHANGED it and want the map to update.
+            // So if address is present, let's try to geocode it to reset user position if it differs significantly?
+            // Safer strategy: always try Geocode Address if provided.
+
+            if (address && city) {
+                try {
+                    const resAddr = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ", " + city + ", France")}&limit=1`);
+                    if (resAddr.ok) {
+                        const dataAddr = await resAddr.json();
+                        if (dataAddr && dataAddr.length > 0) {
+                            const addrPos = { lat: parseFloat(dataAddr[0].lat), lng: parseFloat(dataAddr[0].lon) };
+
+                            // Only set as position if it's within range of city center (if city center exists)
+                            if (cityCenter) {
+                                const dist = wrapperDistance(addrPos.lat, addrPos.lng, cityCenter.lat, cityCenter.lng);
+                                if (dist <= 15) {
+                                    startPos = addrPos; // Override
+                                }
+                            } else {
+                                startPos = addrPos;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.error("Geocoding address failed", e);
+                }
+            } else if (!startPos && cityCenter) {
+                startPos = cityCenter;
             }
 
             if (startPos) {
@@ -137,8 +165,11 @@ export default function EditMap({
             }
         };
 
+        // Debounce or just run? Nominatim has rate limits. 
+        // We really should use a debounce but for now let's rely on React not re-rendering too fast.
+        // Or better: Checking if address/city actually changed meaningfuly.
         if (city) init();
-    }, [city]); // Run if city changes (or once on mount)
+    }, [city, address]); // Added address dependency
 
     useEffect(() => {
         if (position) {

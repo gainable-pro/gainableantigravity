@@ -89,7 +89,7 @@ export default function EspaceProPage() {
                                 {[
                                     "Visibilité sur Gainable.fr",
                                     "Page dédiée",
-                                    "Création 2 articles / mois (Optimisé SEO)",
+                                    "Création 3 articles / mois (Optimisé SEO)",
                                     "SEO standard",
                                     "Leads & contacts illimités",
                                     "Accès codes APE dédiés BE",
@@ -136,7 +136,7 @@ export default function EspaceProPage() {
                                 {[
                                     "Priorité SEO réelle et mesurable",
                                     "Mise en avant Premium",
-                                    "Création 2 articles / mois (Optimisé SEO)",
+                                    "Création 3 articles / mois (Optimisé SEO)",
                                     "Badge Expert visible",
                                     "Leads qualifiés",
                                     "Aucun intermédiaire",
@@ -176,7 +176,7 @@ export default function EspaceProPage() {
                                 {[
                                     "Visibilité locale sur Gainable.fr",
                                     "Page PRO dédiée",
-                                    "Création 2 articles / mois (Optimisé SEO)",
+                                    "Création 3 articles / mois (Optimisé SEO)",
                                     "Carte interactive",
                                     "Leads & contacts illimités",
                                     "Missions de diagnostic",

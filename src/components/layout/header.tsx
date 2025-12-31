@@ -40,6 +40,9 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                     <Link href="/pourquoi-gainable" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
                     </Link>
+                    <Link href="/contact" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
+                        Contact
+                    </Link>
                 </nav>
 
                 {/* Right Side: CTA */}
@@ -86,6 +89,9 @@ function MobileMenu() {
                     <Link href="/labels" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Label Gainable.fr</Link>
                     <Link href="/pourquoi-gainable" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
+                    </Link>
+                    <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
+                        Contact
                     </Link>
                 </nav>
             </SheetContent>

@@ -261,13 +261,21 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                         <iframe
                                             width="100%"
                                             height="100%"
-                                            src={`https://www.youtube.com/embed/${youtubeId}`}
+                                            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&loop=1&playlist=${youtubeId}&mute=1`}
                                             title="Video user"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen
                                         ></iframe>
                                     ) : (
-                                        <video src={expert.video_url} controls className="w-full h-full" />
+                                        <video
+                                            src={expert.video_url}
+                                            controls
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="w-full h-full object-cover"
+                                        />
                                     )}
                                 </div>
                             </section>
@@ -477,7 +485,9 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                             />
 
                             <div className="flex justify-center mt-4">
-                                <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
+                                {expert.is_labeled && (
+                                    <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
+                                )}
                             </div>
                         </div>
                     </div>

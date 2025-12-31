@@ -11,7 +11,21 @@ export type ExpertFilters = {
     technologies?: string[];
     batiments?: string[];
     interventions?: string[];
+    lat?: number;
+    lng?: number;
 };
+
+// Haversine Distance Helper
+function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
+    const R = 6371; // km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
 
 export async function getExperts(filters: ExpertFilters) {
     try {
@@ -35,7 +49,10 @@ export async function getExperts(filters: ExpertFilters) {
         }
 
         // 2. Exact City Filter (from location input)
-        if (filters.city) {
+        // 2. Exact City Filter (from location input)
+        // Only ignore strict city match if we have Radial Coordinates (lat/lng)
+        // Otherwise, fallback to text match.
+        if (filters.city && (!filters.lat || !filters.lng)) {
             where.ville = { contains: filters.city, mode: 'insensitive' };
         }
 
@@ -85,7 +102,7 @@ export async function getExperts(filters: ExpertFilters) {
         }
 
         // Query DB
-        const experts = await prisma.expert.findMany({
+        let experts = await prisma.expert.findMany({
             where,
             include: {
                 technologies: true,
@@ -100,12 +117,36 @@ export async function getExperts(filters: ExpertFilters) {
             }
         });
 
+        // 8. RADIAL SEARCH (In Memory)
+        if (filters.lat && filters.lng) {
+            const searchLat = filters.lat;
+            const searchLng = filters.lng;
+
+            experts = experts.filter(expert => {
+                // Determine expert location (Intervention Address vs Main Address)
+                let expLat = expert.lat || 0;
+                let expLng = expert.lng || 0;
+
+                // If using distinct intervention address, coordinates should have been updated in profile save.
+                // But just in case, we rely on what's in lat/lng columns.
+
+                if (expLat === 0 && expLng === 0) return false; // Skip if no location
+
+                const distKm = getDistance(searchLat, searchLng, expLat, expLng);
+                const radius = expert.intervention_radius || 50;
+
+                // Return true if distance <= expert's radius
+                // AND allow a small margin? No, strict radius.
+                return distKm <= radius;
+            });
+        }
+
         // Format for frontend
         return experts.map(expert => ({
             id: expert.id,
             slug: expert.slug,
             name: expert.nom_entreprise,
-            city: expert.ville,
+            city: ((expert as any).adresse_indep && (expert as any).ville_inter) ? (expert as any).ville_inter : expert.ville,
             country: expert.pays,
             description: expert.description,
             // Collect all tags
@@ -121,8 +162,9 @@ export async function getExperts(filters: ExpertFilters) {
             coverPhoto: expert.photos[0]?.photo_url || undefined,
             telephone: expert.telephone, // Added telephone
             // Mock Lat/Lng for now if missing
-            lat: 46.2276,
-            lng: 2.2137
+            lat: expert.lat || 0,
+            lng: expert.lng || 0,
+            isLabeled: expert.is_labeled // Map DB field to frontend prop
         }));
 
     } catch (error) {

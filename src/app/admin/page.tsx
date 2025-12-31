@@ -25,7 +25,11 @@ export default async function AdminPage() {
                         nom_entreprise: true,
                         status: true,
                         ville: true,
-                        slug: true
+                        slug: true,
+                        is_labeled: true,
+                        representant_nom: true,
+                        representant_prenom: true,
+                        telephone: true
                     }
                 }
             },

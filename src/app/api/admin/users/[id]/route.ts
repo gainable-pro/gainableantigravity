@@ -48,6 +48,19 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
         }
     }
 
+    // Toggle Label
+    if (body.action === 'toggle_label') {
+        try {
+            await prisma.expert.update({
+                where: { user_id: id },
+                data: { is_labeled: body.value }
+            });
+            return NextResponse.json({ message: "Label updated" });
+        } catch (e) {
+            return NextResponse.json({ message: "Error updating label" }, { status: 500 });
+        }
+    }
+
     // Update User Role (e.g. promote to admin)
     if (body.action === 'update_role') {
         try {
@@ -58,6 +71,30 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
             return NextResponse.json({ message: "Role updated" });
         } catch (e) {
             return NextResponse.json({ message: "Error updating role" }, { status: 500 });
+        }
+    }
+
+    // Update User Email
+    if (body.action === 'update_email') {
+        const { email } = body;
+        if (!email || !email.includes('@')) {
+            return NextResponse.json({ message: "Invalid email" }, { status: 400 });
+        }
+
+        try {
+            // Check uniqueness
+            const existing = await prisma.user.findUnique({ where: { email } });
+            if (existing && existing.id !== id) {
+                return NextResponse.json({ message: "Email already taken" }, { status: 409 });
+            }
+
+            await prisma.user.update({
+                where: { id: id },
+                data: { email: email }
+            });
+            return NextResponse.json({ message: "Email updated" });
+        } catch (e) {
+            return NextResponse.json({ message: "Error updating email" }, { status: 500 });
         }
     }
 

@@ -76,7 +76,11 @@ export async function POST(request: Request) {
                         files: attachedFiles,
                         ...data.details
                     },
-                    status: 'new'
+                    status: 'new',
+                    assignments: {
+                        create: data.expert_id ? [{ expertId: data.expert_id }] :
+                            (data.expertIds && data.expertIds.length > 0) ? data.expertIds.map((id: string) => ({ expertId: id })) : []
+                    }
                 }
             });
             console.log("Lead saved to DB:", savedLead.id);
@@ -87,9 +91,31 @@ export async function POST(request: Request) {
         }
 
         // 4. Send Email via Resend
-        const recipientEmail = process.env.LEADS_TO_EMAIL || 'contact@airgenergie.fr';
-        // Using "Gainable <onboarding@resend.dev>" as sender if no custom domain verified yet
-        const fromEmail = process.env.LEADS_FROM_EMAIL || 'Gainable <onboarding@resend.dev>';
+        const adminEmail = process.env.LEADS_TO_EMAIL || 'contact@airgenergie.fr';
+        // Changed to production domain
+        const fromEmail = process.env.LEADS_FROM_EMAIL || 'Gainable <leads@gainable.ch>';
+
+        let recipientEmail = adminEmail;
+        let bccEmail = undefined;
+
+        // Dynamic Routing: If expert_id provided, fetch expert email
+        if (data.expert_id) {
+            try {
+                const expert = await prisma.expert.findUnique({
+                    where: { id: data.expert_id },
+                    include: { user: true }
+                });
+
+                if (expert && expert.user && expert.user.email) {
+                    recipientEmail = expert.user.email;
+                    bccEmail = adminEmail; // Admin always gets a copy for control
+                    console.log(`Routing Lead to Expert: ${recipientEmail} (expert_id: ${expert.id})`);
+                }
+            } catch (err) {
+                console.error("Error fetching expert for lead routing:", err);
+                // Fallback to admin only
+            }
+        }
 
         const sourceUrl = request.headers.get("referer") || "Non spécifié";
         const date = new Date().toLocaleString("fr-FR");
@@ -99,36 +125,72 @@ export async function POST(request: Request) {
             const { error } = await resend.emails.send({
                 from: fromEmail,
                 to: recipientEmail,
+                bcc: bccEmail,
                 subject: `Nouveau lead Gainable – ${data.prenom || ''} ${data.nom} – ${data.ville}`,
                 html: `
-<h2>Nouveau contact via Gainable</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nouveau Lead Gainable</title>
+</head>
+<body style="margin:0; padding:0; background-color:#F4F4F4; font-family:sans-serif;">
+    <div style="max-width:600px; margin:0 auto; background-color:#ffffff; border-radius:8px; overflow:hidden; border:1px solid #E5E5E5; margin-top: 20px;">
+        
+        <!-- HEADER -->
+        <div style="background-color:#ffffff; padding:20px; text-align:center; border-bottom:1px solid #E5E5E5;">
+            <img src="https://www.gainable.fr/logo.png" alt="Gainable" style="height:40px; border:0;">
+        </div>
 
-<p><strong>Nom :</strong> ${data.prenom || ''} ${data.nom}</p>
-<p><strong>Email :</strong> ${data.email}</p>
-<p><strong>Téléphone :</strong> ${data.telephone}</p>
-<p><strong>Ville :</strong> ${data.ville} (${data.code_postal})</p>
-<p><strong>Adresse :</strong> ${data.adresse || 'Non renseignée'}</p>
+        <!-- BANNER -->
+        <div style="background-color:#D59B2B; color:white; padding:15px 24px; font-weight:bold; font-size:18px;">
+            📢 Nouvelle demande de projet
+        </div>
 
-<hr />
+        <!-- CONTENT -->
+        <div style="padding:24px;">
+            <p style="color:#666; margin-top:0;">Bonjour,</p>
+            <p style="color:#333; font-size:16px;">Vous avez reçu une nouvelle demande de devis via <strong>Gainable.fr</strong>.</p>
+            
+            <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
 
-<p><strong>Demande :</strong></p>
-<p style="white-space:pre-wrap;">${messageContent}</p>
-<p><strong>Projet :</strong> ${data.projet || data.logement || "N/A"}</p>
-<p><strong>Surface :</strong> ${data.surface || data.details?.surface || "N/A"}</p>
-<p><strong>Type :</strong> ${projetType}</p>
+            <h3 style="color:#D59B2B; margin-bottom:12px;">👤 Coordonnées</h3>
+            <p><strong>Nom :</strong> ${data.prenom || ''} ${data.nom}</p>
+            <p><strong>Email :</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+            <p><strong>Téléphone :</strong> <a href="tel:${data.telephone}">${data.telephone}</a></p>
+            <p><strong>Ville :</strong> ${data.ville} (${data.code_postal})</p>
+            <p><strong>Adresse :</strong> ${data.adresse || 'Non renseignée'}</p>
 
-${attachedFiles.length > 0 ? `
-<hr />
-<p><strong>Fichiers joints :</strong></p>
-<ul>
-    ${attachedFiles.map((f: any) => `<li><a href="${f.url}">${f.name}</a></li>`).join('')}
-</ul>
-` : ''}
+            <hr style="border:0; border-top:1px solid #eee; margin:20px 0;">
 
-<hr />
+            <h3 style="color:#D59B2B; margin-bottom:12px;">🏠 Projet</h3>
+            <p><strong>Type :</strong> ${projetType}</p>
+            <p><strong>Bien :</strong> ${data.logement || data.projet || 'Non renseigné'}</p>
+            <p><strong>Surface :</strong> ${data.surface || (data.details && data.details.surface) || 'Non renseignée'}</p>
+            
+            <div style="background-color:#f9f9f9; padding:10px; border-radius:4px; margin-top:10px;">
+                <strong>Message :</strong><br/>
+                <span style="white-space:pre-wrap;">${messageContent}</span>
+            </div>
 
-<p><strong>Source :</strong> ${sourceUrl}</p>
-<p><strong>Date :</strong> ${date}</p>
+            ${attachedFiles && attachedFiles.length > 0 ? `
+            <div style="margin-top:20px; background-color:#EFF6FF; padding:15px; border-radius:6px;">
+                <p style="margin:0 0 10px 0; font-weight:bold; color:#1F2D3D;">📎 Fichiers joints :</p>
+                <ul style="margin:0; padding-left:20px;">
+                    ${attachedFiles.map((f: any) => `<li><a href="${f.url}" style="color:#2563EB;">${f.name}</a></li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
+
+        </div>
+
+        <!-- FOOTER -->
+        <div style="background-color:#F9FAFB; padding:20px; text-align:center; font-size:12px; color:#9CA3AF; border-top:1px solid #E5E5E5;">
+            <p style="margin:0;">Source : Gainable.fr &bull; Lead reçu le ${date}</p>
+        </div>
+    </div>
+</body>
+</html>
                 `,
                 text: `
 Nouveau contact via Gainable

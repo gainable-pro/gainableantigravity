@@ -11,9 +11,11 @@ import {
     Search,
     LogOut,
     FileText,
-    Inbox
+    Inbox,
+    Shield
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 const sidebarItems = [
     { label: "Mon Profil", icon: UserCircle, href: "/dashboard" },
@@ -25,6 +27,18 @@ const sidebarItems = [
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('/api/dashboard/profile')
+            .then(res => res.json())
+            .then(data => {
+                if (data?.user?.role === 'admin') {
+                    setIsAdmin(true);
+                }
+            })
+            .catch(err => console.error(err));
+    }, []);
 
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -38,6 +52,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     </div>
 
                     <nav className="flex-1 p-4 space-y-1">
+                        {isAdmin && (
+                            <Link href="/admin">
+                                <span className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-bold text-white bg-red-600 hover:bg-red-700 transition-colors mb-4">
+                                    <Shield className="w-4 h-4" />
+                                    Administration
+                                </span>
+                            </Link>
+                        )}
                         {sidebarItems.map((item) => {
                             const isActive = pathname === item.href;
                             return (

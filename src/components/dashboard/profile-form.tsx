@@ -60,7 +60,12 @@ export default function ProfileForm() {
         siret: "",
         lat: 0,
         lng: 0,
-        intervention_radius: 50
+
+        intervention_radius: 50,
+        adresse_indep: false,
+        adresse_inter: "",
+        ville_inter: "",
+        cp_inter: ""
     });
 
     // Multi-value States
@@ -105,7 +110,11 @@ export default function ProfileForm() {
                     siret: data.siret || "",
                     lat: data.lat || 0,
                     lng: data.lng || 0,
-                    intervention_radius: data.intervention_radius || 50
+                    intervention_radius: data.intervention_radius || 50,
+                    adresse_indep: data.adresse_indep || false,
+                    adresse_inter: data.adresse_inter || "",
+                    ville_inter: data.ville_inter || "",
+                    cp_inter: data.cp_inter || ""
                 });
 
                 // Populate Checkboxes (API returns objects {value: "foo"}, we need strings ["foo"])
@@ -278,6 +287,39 @@ export default function ProfileForm() {
                 <CardContent className="pt-6 space-y-6">
                     <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Localisation & Zone d'Intervention</h3>
 
+                    {/* INTERVENTION ADDRESS TOGGLE */}
+                    <div className="bg-amber-50 border border-amber-100 p-4 rounded-lg mb-4">
+                        <div className="flex items-center space-x-2 mb-4">
+                            <Checkbox
+                                id="adresse_indep"
+                                checked={formData.adresse_indep}
+                                onCheckedChange={(checked) => setFormData(prev => ({ ...prev, adresse_indep: checked as boolean }))}
+                            />
+                            <label htmlFor="adresse_indep" className="text-sm font-medium leading-none cursor-pointer">
+                                Mon atelier / lieu d'intervention est différent de mon adresse de domiciliation
+                            </label>
+                        </div>
+
+                        {formData.adresse_indep && (
+                            <div className="space-y-4 pl-6 border-l-2 border-amber-200">
+                                <div className="space-y-2">
+                                    <Label>Adresse de l'atelier</Label>
+                                    <Input name="adresse_inter" value={formData.adresse_inter} onChange={handleChange} placeholder="Ex: 12 Rue de l'Industrie" />
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <Label>Code Postal (Atelier)</Label>
+                                        <Input name="cp_inter" value={formData.cp_inter} onChange={handleChange} />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label>Ville (Atelier)</Label>
+                                        <Input name="ville_inter" value={formData.ville_inter} onChange={handleChange} />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
                     <div className="space-y-4">
                         <div className="flex justify-between items-center bg-slate-50 p-4 rounded-lg">
                             <div>
@@ -306,10 +348,10 @@ export default function ProfileForm() {
                     </div>
 
                     <div className="h-[400px] w-full rounded-xl border border-slate-200 overflow-hidden relative z-0">
-                        {formData.ville ? (
+                        {formData.ville || (formData.adresse_indep && formData.ville_inter) ? (
                             <EditMap
-                                address={formData.adresse}
-                                city={formData.ville}
+                                address={formData.adresse_indep ? formData.adresse_inter : formData.adresse}
+                                city={formData.adresse_indep ? formData.ville_inter : formData.ville}
                                 initialLat={formData.lat}
                                 initialLng={formData.lng}
                                 radius={formData.intervention_radius}
@@ -401,83 +443,81 @@ export default function ProfileForm() {
                             </div>
                         </CardContent>
                     </Card>
-                </div>
-        </CardContent>
-                    </Card >
 
-        <Card>
-            <CardContent className="pt-6 space-y-4">
-                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Certifications</h3>
-                <div className="grid grid-cols-1 gap-3">
-                    {CERT_LIST.map(item => (
-                        <div key={item.id} className="flex items-center space-x-2">
-                            <Checkbox
-                                id={`cert-${item.id}`}
-                                checked={certifications.includes(item.id)}
-                                onCheckedChange={() => toggleSelection(certifications, setCertifications, item.id)}
-                            />
-                            <label htmlFor={`cert-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-        </Card>
+
+                    <Card>
+                        <CardContent className="pt-6 space-y-4">
+                            <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Certifications</h3>
+                            <div className="grid grid-cols-1 gap-3">
+                                {CERT_LIST.map(item => (
+                                    <div key={item.id} className="flex items-center space-x-2">
+                                        <Checkbox
+                                            id={`cert-${item.id}`}
+                                            checked={certifications.includes(item.id)}
+                                            onCheckedChange={() => toggleSelection(certifications, setCertifications, item.id)}
+                                        />
+                                        <label htmlFor={`cert-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
+                                    </div>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
                 </>
             )
-}
+            }
 
-{/* BUREAU ETUDE SPECIFIC */ }
-{
-    (expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
-        <Card>
-            <CardContent className="pt-6 space-y-4">
-                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Compétences Étude</h3>
-                <div className="grid gap-3">
-                    {INTERVENTION_ETUDE_LIST.map(item => (
-                        <div key={item.id} className="flex items-center space-x-2">
-                            <Checkbox
-                                id={`etude-${item.id}`}
-                                checked={interventionsEtude.includes(item.id)}
-                                onCheckedChange={() => toggleSelection(interventionsEtude, setInterventionsEtude, item.id)}
-                            />
-                            <label htmlFor={`etude-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-        </Card>
-    )
-}
+            {/* BUREAU ETUDE SPECIFIC */}
+            {
+                (expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
+                    <Card>
+                        <CardContent className="pt-6 space-y-4">
+                            <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Compétences Étude</h3>
+                            <div className="grid gap-3">
+                                {INTERVENTION_ETUDE_LIST.map(item => (
+                                    <div key={item.id} className="flex items-center space-x-2">
+                                        <Checkbox
+                                            id={`etude-${item.id}`}
+                                            checked={interventionsEtude.includes(item.id)}
+                                            onCheckedChange={() => toggleSelection(interventionsEtude, setInterventionsEtude, item.id)}
+                                        />
+                                        <label htmlFor={`etude-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
+                                    </div>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                )
+            }
 
-{/* DIAGNOSTIQUEUR SPECIFIC */ }
-{
-    (expertType === 'diagnostiqueur' || expertType === 'Diagnostiqueur' || expertType === 'diagnostics_dpe') && (
-        <Card>
-            <CardContent className="pt-6 space-y-4">
-                <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Diagnostics Réalisés</h3>
-                <div className="grid grid-cols-2 gap-3">
-                    {INTERVENTION_DIAG_LIST.map(item => (
-                        <div key={item.id} className="flex items-center space-x-2">
-                            <Checkbox
-                                id={`diag-${item.id}`}
-                                checked={interventionsDiag.includes(item.id)}
-                                onCheckedChange={() => toggleSelection(interventionsDiag, setInterventionsDiag, item.id)}
-                            />
-                            <label htmlFor={`diag-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-        </Card>
-    )
-}
+            {/* DIAGNOSTIQUEUR SPECIFIC */}
+            {
+                (expertType === 'diagnostiqueur' || expertType === 'Diagnostiqueur' || expertType === 'diagnostics_dpe') && (
+                    <Card>
+                        <CardContent className="pt-6 space-y-4">
+                            <h3 className="font-semibold text-lg text-[#1F2D3D] mb-4">Diagnostics Réalisés</h3>
+                            <div className="grid grid-cols-2 gap-3">
+                                {INTERVENTION_DIAG_LIST.map(item => (
+                                    <div key={item.id} className="flex items-center space-x-2">
+                                        <Checkbox
+                                            id={`diag-${item.id}`}
+                                            checked={interventionsDiag.includes(item.id)}
+                                            onCheckedChange={() => toggleSelection(interventionsDiag, setInterventionsDiag, item.id)}
+                                        />
+                                        <label htmlFor={`diag-${item.id}`} className="text-sm font-medium leading-none cursor-pointer">{item.label}</label>
+                                    </div>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                )
+            }
 
-<div className="flex justify-end pt-6">
-    <Button onClick={handleSave} disabled={isSaving} className="bg-[#D59B2B] hover:bg-[#b88622] text-white size-lg text-lg px-8">
-        {isSaving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-        Enregistrer les modifications
-    </Button>
-</div>
+            <div className="flex justify-end pt-6">
+                <Button onClick={handleSave} disabled={isSaving} className="bg-[#D59B2B] hover:bg-[#b88622] text-white size-lg text-lg px-8">
+                    {isSaving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+                    Enregistrer les modifications
+                </Button>
+            </div>
         </div >
     );
 }

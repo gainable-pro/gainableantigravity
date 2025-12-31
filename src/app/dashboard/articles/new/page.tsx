@@ -511,11 +511,42 @@ export default function NewArticlePage() {
                             <Plus className="w-5 h-5 mr-2" /> Ajouter une question
                         </Button>
                     </div>
+
+                    {/* --- BOTTOM ACTIONS Mobile/Desktop --- */}
+                    <Card className="border-t-4 border-t-blue-500 shadow-md">
+                        <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
+                            <CardTitle className="text-base text-slate-800">Validation</CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-6">
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button
+                                    onClick={() => handleSubmit('PUBLISHED')}
+                                    className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-6 transition-all"
+                                    disabled={isLoading || score < 100}
+                                    title={score < 100 ? "Complétez l'article pour publier" : "Publier l'article"}
+                                >
+                                    {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                                    <Save className="mr-2 h-5 w-5" /> Publier l'article
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    onClick={() => handleSubmit('DRAFT')}
+                                    disabled={isLoading}
+                                    className="flex-1 py-6"
+                                >
+                                    Enregistrer brouillon
+                                </Button>
+                            </div>
+                            <p className="text-xs text-slate-400 mt-4 text-center">
+                                {score < 100 ? "L'article doit être optimisé à 100% pour être publié." : "Tout est prêt chef !"}
+                            </p>
+                        </CardContent>
+                    </Card>
                 </div>
 
                 {/* --- SIDEBAR --- */}
-                <div className="space-y-6">
-                    <div className="sticky top-6">
+                <div className="space-y-6 sticky top-6 self-start max-h-[calc(100vh-2rem)] overflow-y-auto pr-1 pb-10">
+                    <div>
                         <Card className="shadow-lg border-blue-100 bg-white">
                             <CardHeader className="bg-slate-50 pb-4">
                                 <CardTitle className="text-sm uppercase tracking-wider text-slate-500">Score SEO</CardTitle>
@@ -622,7 +653,7 @@ export default function NewArticlePage() {
                     </div>
 
                     {/* AI HELPER */}
-                    <div className="sticky top-[380px]">
+                    <div>
                         <Card className="shadow-lg border-purple-100 bg-gradient-to-br from-purple-50 to-white">
                             <CardHeader className="bg-purple-100/50 pb-4">
                                 <CardTitle className="text-sm uppercase tracking-wider text-purple-700 flex items-center gap-2">

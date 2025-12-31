@@ -23,11 +23,13 @@ interface ProCardProps {
     onToggleSelect?: () => void;
     selectable?: boolean;
     actionButton?: React.ReactNode;
+    // Label Prop
+    isLabeled?: boolean;
 }
 
 export function ProCard({
     id, slug, name, city, country, expertTypes, interventions, technologies, marques, logoUrl, telephone,
-    isSelected = false, onToggleSelect, selectable = false, actionButton
+    isSelected = false, onToggleSelect, selectable = false, actionButton, isLabeled = false
 }: ProCardProps) {
     const [showPhone, setShowPhone] = useState(false);
 
@@ -135,10 +137,12 @@ export function ProCard({
                     </Button>
                 )}
 
-                {/* Verified Badge */}
-                <div className="flex justify-center mt-3">
-                    <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-20 w-auto object-contain" />
-                </div>
+                {/* Verified Badge - Conditioned */}
+                {isLabeled && (
+                    <div className="flex justify-center mt-3">
+                        <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-20 w-auto object-contain" />
+                    </div>
+                )}
             </div>
         </div>
     );

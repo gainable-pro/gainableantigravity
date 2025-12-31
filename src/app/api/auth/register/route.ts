@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
 import { prisma } from "@/lib/prisma";
+import { Resend } from "resend";
 
 // Initialize Prisma Client
 // In a real app, use a singleton pattern for the client
@@ -181,6 +182,93 @@ export async function POST(req: Request) {
 
             return { user, expert };
         });
+
+        // 5. Send Welcome Email (Async - don't block response too long, or await if critical)
+        try {
+            const resend = new Resend(process.env.RESEND_API_KEY);
+            const showLabelSection = expertType === 'societe'; // Only for Installer companies
+
+            const subject = showLabelSection
+                ? "Bienvenue sur Gainable.fr – démarche de labellisation"
+                : "Bienvenue sur Gainable.fr – Confirmation d'inscription";
+
+            // Conditional Label HTML
+            const labelSectionHtml = showLabelSection ? `
+            <div style="background-color: #fff8ed; border-left: 4px solid #D59B2B; padding: 20px; margin: 30px 0;">
+                <h3 style="color: #D59B2B; margin-top: 0;">Le Label Gainable.fr</h3>
+                <p style="color: #1F2D3D;">Le Label Gainable.fr s’inscrit dans une démarche volontaire de qualité et d’alignement professionnel.</p>
+                <p style="color: #1F2D3D;">Un membre de notre équipe prendra contact avec vous afin d’échanger et de valider que nous partageons la même vision du métier, les mêmes standards d’installation et la même exigence de satisfaction client.</p>
+                <p style="font-weight: bold; color: #1F2D3D;">Ce label est attribué aux professionnels qui incarnent pleinement les valeurs du réseau.</p>
+            </div>
+            ` : "";
+
+            await resend.emails.send({
+                from: "Gainable.fr <conseil@gainable.ch>",
+                to: email,
+                subject: subject,
+                html: `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>${subject}</title>
+</head>
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #f4f7fa; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        
+        <!-- Header -->
+        <div style="background-color: #ffffff; padding: 24px; text-align: center; border-bottom: 3px solid #D59B2B;">
+            <img src="https://www.gainable.fr/logo.png" alt="Gainable.fr" style="height: 40px;">
+        </div>
+
+        <!-- Body -->
+        <div style="padding: 40px 30px; color: #1F2D3D; line-height: 1.6;">
+            <h1 style="font-size: 22px; font-weight: bold; margin-bottom: 24px; color: #1F2D3D;">Bonjour,</h1>
+
+            <p>Nous vous souhaitons la bienvenue au sein du réseau <strong>Gainable.fr</strong>.<br>
+            Votre inscription a bien été enregistrée.</p>
+
+            <h2 style="color: #D59B2B; font-size: 18px; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">Votre espace professionnel</h2>
+            
+            <p>Vous bénéficiez désormais d’un accès dédié vous permettant de construire une présence qualitative et cohérente sur la plateforme.</p>
+            <p>À ce titre, vous pouvez :</p>
+            
+            <ul style="padding-left: 20px; color: #444;">
+                <li style="margin-bottom: 8px;">Intégrer des <strong>photos et vidéos</strong> de chantiers et de réalisations,</li>
+                <li style="margin-bottom: 8px;">Configurer votre profil en sélectionnant les <strong>technologies réellement installées</strong>,</li>
+                <li style="margin-bottom: 8px;">Publier des <strong>articles SEO pré-optimisés</strong>, conçus pour renforcer durablement votre visibilité locale,</li>
+                <li style="margin-bottom: 8px;">Mettre en avant votre savoir-faire, votre expérience et votre exigence métier auprès des particuliers.</li>
+            </ul>
+
+            <p>Chaque élément contribue à valoriser votre expertise et à renforcer la crédibilité du réseau.</p>
+
+            ${labelSectionHtml}
+
+            <p style="margin-top: 40px;">Nous sommes ravis de vous compter parmi les entreprises référencées sur Gainable.fr et nous réjouissons de cette future collaboration.</p>
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="https://www.gainable.fr/login" style="background-color: #1F2D3D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Accéder à mon espace pro</a>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 14px; color: #666;">
+                Cordialement,<br>
+                <strong>L’équipe Gainable.fr</strong>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #f8fafc; padding: 20px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+            <p style="margin: 0;">Gainable.fr - La plateforme des experts</p>
+        </div>
+    </div>
+</body>
+</html>
+                `
+            });
+            console.log(`[Register] Welcome email sent to ${email}`);
+        } catch (emailError) {
+            console.error("Failed to send welcome email:", emailError);
+        }
 
         return NextResponse.json(
             { message: "Compte créé avec succès", userId: result.user.id, expertId: result.expert.id },

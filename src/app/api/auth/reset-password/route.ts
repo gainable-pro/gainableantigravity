@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         console.log("----------------------------------------");
 
         await resend.emails.send({
-            from: "Gainable.fr <onboarding@resend.dev>", // Or verified domain
+            from: "Gainable <no-reply@gainable.ch>",
             to: email,
             subject: "Réinitialisation de votre mot de passe",
             html: `

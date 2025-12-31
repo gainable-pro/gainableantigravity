@@ -14,6 +14,8 @@ export async function GET(request: Request) {
         technologies: searchParams.get("technologies")?.split(",") || [],
         batiments: searchParams.get("batiments")?.split(",") || [],
         interventions: searchParams.get("interventions")?.split(",") || [],
+        lat: searchParams.get("lat") ? parseFloat(searchParams.get("lat")!) : undefined,
+        lng: searchParams.get("lng") ? parseFloat(searchParams.get("lng")!) : undefined
     };
 
     try {

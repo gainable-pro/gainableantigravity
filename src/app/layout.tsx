@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     siteName: 'Gainable.fr',
     images: [{ url: '/assets/logo-share.jpg', width: 1200, height: 630, alt: 'Gainable.fr' }],
   },
+  icons: {
+    icon: '/favicon.jpg',
+    shortcut: '/favicon.jpg',
+    apple: '/favicon.jpg', // Apple touch icon usually needs png, but jpg might work or fallback
+  },
 };
 
 import { headers } from "next/headers";

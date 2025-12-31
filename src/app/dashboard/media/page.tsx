@@ -40,33 +40,47 @@ export default function MediaPage() {
         const files = e.target.files;
         if (!files || files.length === 0) return;
 
-        // For gallery (photo), we allow multiple, but let's upload one by one for simplicity or first one if simple input
-        const file = files[0];
-
-        const formData = new FormData();
-        formData.append("file", file);
-
         setIsLoading(true);
+        setMessage(null);
+
+        // Import supabase client dynamically or use the one from lib (but lib one is generic)
+        // We'll use the one from lib since it uses public keys
+        const { supabase } = await import("@/lib/supabase");
+
         try {
-            const res = await fetch('/api/upload', {
-                method: 'POST',
-                body: formData
+            const uploadPromises = Array.from(files).map(async (file) => {
+                const sanitizedName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
+                const filename = `${Date.now()}_${Math.random().toString(36).substr(2, 9)}_${sanitizedName}`;
+                const filePath = `uploads/${filename}`;
+
+                const { data, error } = await supabase.storage
+                    .from('gainable-assets')
+                    .upload(filePath, file, { upsert: false });
+
+                if (error) throw error;
+
+                const { data: publicUrlData } = supabase.storage
+                    .from('gainable-assets')
+                    .getPublicUrl(filePath);
+
+                return publicUrlData.publicUrl;
             });
 
-            if (!res.ok) throw new Error("Upload failed");
-            const data = await res.json();
+            const uploadedUrls = await Promise.all(uploadPromises);
 
-            if (type === 'logo') setLogoUrl(data.url);
-            if (type === 'video') setVideoUrl(data.url);
+            if (type === 'logo') setLogoUrl(uploadedUrls[0]);
+            if (type === 'video') setVideoUrl(uploadedUrls[0]);
             if (type === 'photo') {
-                setPhotos(prev => [...prev, data.url]);
+                setPhotos(prev => [...prev, ...uploadedUrls]);
             }
 
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            setMessage({ type: 'error', text: "Erreur lors de l'upload." });
+            setMessage({ type: 'error', text: `Erreur lors de l'upload: ${error.message || "Erreur inconnue"}` });
         } finally {
             setIsLoading(false);
+            // Reset input value to allow re-uploading same file if needed
+            e.target.value = '';
         }
     };
 
@@ -202,6 +216,7 @@ export default function MediaPage() {
                                 type="file"
                                 accept="image/*"
                                 className="hidden"
+                                multiple
                                 onChange={(e) => handleFileUpload(e, 'photo')}
                             />
                         </div>
