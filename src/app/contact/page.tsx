@@ -299,18 +299,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* INFO BOTTOM */}
-                <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-5xl mx-auto border-t border-slate-200 pt-12">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-white p-3 rounded-full shadow-sm text-[#D59B2B] border border-slate-100">
-                            <MapPin className="w-6 h-6" />
-                        </div>
-                        <div>
-                            <h4 className="font-bold text-slate-900">Siège Social</h4>
-                            <p className="text-slate-500 text-sm mt-1">
-                                Gainable.fr<br />Lyon, France
-                            </p>
-                        </div>
-                    </div>
+                <div className="mt-20 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto border-t border-slate-200 pt-12">
+
                     <div className="flex items-start gap-4">
                         <div className="bg-white p-3 rounded-full shadow-sm text-[#D59B2B] border border-slate-100">
                             <Mail className="w-6 h-6" />

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Vercel Cron Secret (Optional but recommended for security)
 // const CRON_SECRET = process.env.CRON_SECRET;
@@ -15,6 +15,8 @@ export async function GET(req: Request) {
     // Parse URL params for testing
     const { searchParams } = new URL(req.url);
     const testEmail = searchParams.get('test_email');
+
+    const resend = new Resend(process.env.RESEND_API_KEY || 're_123'); // Fallback for build/test
 
     try {
         let whereCondition: any = { status: 'active' };
