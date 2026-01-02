@@ -38,6 +38,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     };
 }
 
+import { headers } from 'next/headers';
+
+// ... (existing imports)
+
 export default async function SearchPage({
     searchParams,
 }: {
@@ -45,6 +49,19 @@ export default async function SearchPage({
 }) {
     // safe resolve of params
     const resolvedParams = await searchParams;
+    const headerList = await headers();
+    const countryCode = headerList.get("x-vercel-ip-country") || "FR";
+
+    // Default View: France (Global)
+    let initialView = { center: [46.603354, 1.888334], zoom: 6 };
+
+    if (countryCode === "BE") {
+        initialView = { center: [50.5039, 4.4699], zoom: 7 };
+    } else if (countryCode === "CH") {
+        initialView = { center: [46.8182, 8.2275], zoom: 7 };
+    } else if (countryCode === "MA") {
+        initialView = { center: [31.7917, -7.0926], zoom: 6 };
+    }
 
     const filters = {
         q: (resolvedParams.q as string)?.trim() || "",
@@ -69,6 +86,6 @@ export default async function SearchPage({
     const initialExperts = await getExperts(filters);
 
     return (
-        <SearchPageClient initialExperts={initialExperts} />
+        <SearchPageClient initialExperts={initialExperts} initialView={initialView} />
     );
 }

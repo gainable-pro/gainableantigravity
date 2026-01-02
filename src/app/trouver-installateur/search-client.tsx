@@ -48,7 +48,7 @@ function FilterDropdown({ label, children, active = false }: { label: string, ch
     );
 }
 
-function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
+function SearchPageContent({ initialExperts, initialView }: { initialExperts: any[], initialView: { center: number[], zoom: number } }) {
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -428,7 +428,7 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
                     <aside className="hidden lg:block lg:col-span-5 h-[calc(100vh-200px)] sticky top-[180px]">
                         <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative border border-slate-300 shadow-md group">
                             {/* Real Interactive Map */}
-                            <SearchMap experts={experts} hasLocationFilter={!!locationFilter || !!countryFilter} />
+                            <SearchMap experts={experts} hasLocationFilter={!!locationFilter || !!countryFilter} initialView={initialView} />
                         </div>
                     </aside>
                 </div>
@@ -462,10 +462,12 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
     );
 }
 
-export default function SearchPageClient({ initialExperts = [] }: { initialExperts?: any[] }) {
+export default function SearchPageClient({ initialExperts = [], initialView }: { initialExperts?: any[], initialView?: { center: number[], zoom: number } }) {
+    // Default fallback if not provided
+    const safeView = initialView || { center: [46.603354, 1.888334], zoom: 6 };
     return (
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Chargement...</div>}>
-            <SearchPageContent initialExperts={initialExperts} />
+            <SearchPageContent initialExperts={initialExperts} initialView={safeView} />
         </Suspense>
     );
 }
