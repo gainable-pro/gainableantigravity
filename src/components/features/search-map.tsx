@@ -25,8 +25,11 @@ function MapUpdater({ experts, geocodedCoords, hasLocationFilter }: { experts: a
     const map = useMap();
     useEffect(() => {
         // STRICT RULE: Only auto-zoom if the user has explicitly requested a location (city/country)
-        // Otherwise, keep the neutral "France" view.
-        if (!hasLocationFilter) return;
+        if (!hasLocationFilter) {
+            // Force reset to global view (France/Swiss/Belgium)
+            map.setView([47.0, 4.5], 6);
+            return;
+        }
 
         // Find the first expert with valid coords (either from DB or geocoded)
         const firstValid = experts.find(e => {
