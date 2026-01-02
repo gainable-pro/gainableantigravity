@@ -3,9 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
 
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
 
   generateBuildId: async () => {
     // Force a unique build ID to prevent Vercel from serving stale cache
