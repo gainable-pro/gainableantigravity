@@ -1,11 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, Shield, UserX, LogIn, CheckCircle, Pencil } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 interface User {
     id: string;
@@ -16,19 +9,27 @@ interface User {
         id: string;
         nom_entreprise: string;
         status: string;
-        is_labeled?: boolean; // New Field
+        is_labeled?: boolean;
         ville: string;
         slug: string;
         representant_nom?: string;
         representant_prenom?: string;
         telephone?: string;
+        expert_type?: string; // New Field
     } | null;
 }
 
 export default function AdminDashboardClient({ initialUsers }: { initialUsers: User[] }) {
     const [users, setUsers] = useState<User[]>(initialUsers);
-    const [loadingMap, setLoadingMap] = useState<Record<string, string | null>>({}); // userId -> action
+    const [loadingMap, setLoadingMap] = useState<Record<string, string | null>>({});
+    const [filterType, setFilterType] = useState<string>("all");
     const router = useRouter();
+
+    const filteredUsers = users.filter(user => {
+        if (filterType === "all") return true;
+        if (filterType === "no_expert") return !user.expert;
+        return user.expert?.expert_type === filterType;
+    });
 
     const handleImpersonate = async (userId: string) => {
         setLoadingMap(prev => ({ ...prev, [userId]: 'impersonate' }));
@@ -38,7 +39,6 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                 body: JSON.stringify({ userId }),
             });
             if (res.ok) {
-                // Force hard reload to pick up new cookie
                 window.location.href = "/dashboard";
             } else {
                 alert("Erreur lors de la connexion");
@@ -54,14 +54,12 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
         setLoadingMap(prev => ({ ...prev, [userId]: action }));
         try {
-            // Special handling for DELETE
             if (action === 'delete') {
                 const res = await fetch(`/api/admin/users/${userId}`, { method: "DELETE" });
                 if (res.ok) {
                     setUsers(prev => prev.filter(u => u.id !== userId));
                 }
             } else {
-                // PATCH actions
                 let payload: any = { action };
                 if (action === 'promote_admin') payload.role = 'admin';
                 if (action === 'toggle_label') payload.value = value;
@@ -74,8 +72,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                 });
 
                 if (res.ok) {
-                    router.refresh(); // Reload data
-                    // Optimistic update
+                    router.refresh();
                     if (action === 'validate_expert') {
                         setUsers(prev => prev.map(u => u.id === userId && u.expert ? { ...u, expert: { ...u.expert, status: 'active' } } : u));
                     }
@@ -122,6 +119,11 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">{users.length}</div>
+                        <p className="text-xs text-muted-foreground mt-1">
+                            {users.filter(u => u.expert?.expert_type === 'cvc_climatisation').length} CVC •
+                            {users.filter(u => u.expert?.expert_type === 'diagnostics_dpe').length} Diag •
+                            {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude
+                        </p>
                     </CardContent>
                 </Card>
 
@@ -144,8 +146,27 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
             </div>
 
             <Card>
-                <CardHeader>
-                    <CardTitle>Gestion des Utilisateurs</CardTitle>
+                <CardHeader className="flex flex-row items-center justify-between">
+                    <div>
+                        <CardTitle>Gestion des Utilisateurs</CardTitle>
+                        <div className="mt-2">
+                            <Select value={filterType} onValueChange={setFilterType}>
+                                <SelectTrigger className="w-[250px] bg-slate-50">
+                                    <SelectValue placeholder="Filtrer par métier..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="all">Tous les utilisateurs</SelectItem>
+                                    <SelectItem value="cvc_climatisation">Installateurs CVC</SelectItem>
+                                    <SelectItem value="diagnostics_dpe">Diagnostiqueurs</SelectItem>
+                                    <SelectItem value="bureau_detude">Bureaux d'Études</SelectItem>
+                                    <SelectItem value="no_expert">Comptes sans profil expert</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                        {filteredUsers.length} affichés
+                    </div>
                 </CardHeader>
                 <CardContent>
                     <div className="rounded-md border">
@@ -154,7 +175,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                 <tr>
                                     <th className="p-4 font-medium text-slate-500">Utilisateur</th>
                                     <th className="p-4 font-medium text-slate-500">Entreprise</th>
-                                    <th className="p-4 font-medium text-slate-500">Nom</th>
+                                    <th className="p-4 font-medium text-slate-500">Métier</th>
                                     <th className="p-4 font-medium text-slate-500">Téléphone</th>
                                     <th className="p-4 font-medium text-slate-500 text-center">Label G</th>
                                     <th className="p-4 font-medium text-slate-500">Statut</th>
@@ -162,7 +183,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                 </tr>
                             </thead>
                             <tbody>
-                                {users.map((user) => (
+                                {filteredUsers.map((user) => (
                                     <tr key={user.id} className="border-b last:border-0 hover:bg-slate-50/50">
                                         <td className="p-4">
                                             <div className="flex items-center gap-2">
@@ -193,7 +214,9 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                         <td className="p-4">
                                             {user.expert ? (
                                                 <div className="text-sm text-slate-700">
-                                                    {user.expert.representant_prenom} {user.expert.representant_nom}
+                                                    {user.expert.expert_type === 'cvc_climatisation' && <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-700">Installateur</Badge>}
+                                                    {user.expert.expert_type === 'diagnostics_dpe' && <Badge variant="outline" className="border-purple-200 bg-purple-50 text-purple-700">Diagnostic</Badge>}
+                                                    {user.expert.expert_type === 'bureau_detude' && <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">Etude</Badge>}
                                                 </div>
                                             ) : "-"}
                                         </td>

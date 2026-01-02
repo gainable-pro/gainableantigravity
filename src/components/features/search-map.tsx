@@ -21,9 +21,13 @@ const iconBrand = new L.Icon({
 
 
 // Helper to center map on results
-function MapUpdater({ experts, geocodedCoords }: { experts: any[], geocodedCoords: Record<string, [number, number]> }) {
+function MapUpdater({ experts, geocodedCoords, hasLocationFilter }: { experts: any[], geocodedCoords: Record<string, [number, number]>, hasLocationFilter: boolean }) {
     const map = useMap();
     useEffect(() => {
+        // STRICT RULE: Only auto-zoom if the user has explicitly requested a location (city/country)
+        // Otherwise, keep the neutral "France" view.
+        if (!hasLocationFilter) return;
+
         // Find the first expert with valid coords (either from DB or geocoded)
         const firstValid = experts.find(e => {
             const hasDbCoords = e.lat && e.lat !== 46.2276; // Ignore default mock
@@ -37,11 +41,8 @@ function MapUpdater({ experts, geocodedCoords }: { experts: any[], geocodedCoord
             if (coords) {
                 map.setView(coords as [number, number], 10);
             }
-        } else if (experts.length > 0 && experts[0].city === "MIRAMAS") {
-            // Hard fallback for the specific user case if geocoding lags
-            map.setView([43.5804, 5.0007], 12);
         }
-    }, [experts, geocodedCoords, map]);
+    }, [experts, geocodedCoords, map, hasLocationFilter]);
     return null;
 }
 
@@ -79,7 +80,7 @@ const MANUAL_GEOCODES: Record<string, [number, number]> = {
     "coretec conception realisat.thermique (conception realisation thermique energetique et climatique)": [45.7289, 4.9863]
 };
 
-export default function SearchMap({ experts }: { experts: any[] }) {
+export default function SearchMap({ experts, hasLocationFilter = false }: { experts: any[], hasLocationFilter?: boolean }) {
     const [geocodedCoords, setGeocodedCoords] = useState<Record<string, [number, number]>>({});
 
     useEffect(() => {
@@ -132,13 +133,13 @@ export default function SearchMap({ experts }: { experts: any[] }) {
     }, [experts]); // Run when experts list changes
 
     return (
-        <MapContainer center={[46.603354, 1.888334]} zoom={6} scrollWheelZoom={false} className="w-full h-full z-0">
+        <MapContainer center={[47.0, 4.5]} zoom={6} scrollWheelZoom={false} className="w-full h-full z-0">
             {/* Google Maps Tiles (Standard) */}
             <TileLayer
                 attribution='&copy; Google Maps'
                 url="https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
             />
-            <MapUpdater experts={experts} geocodedCoords={geocodedCoords} />
+            <MapUpdater experts={experts} geocodedCoords={geocodedCoords} hasLocationFilter={hasLocationFilter} />
 
             {experts.map((expert) => {
                 let position: [number, number] | null = null;

@@ -428,7 +428,7 @@ function SearchPageContent({ initialExperts }: { initialExperts: any[] }) {
                     <aside className="hidden lg:block lg:col-span-5 h-[calc(100vh-200px)] sticky top-[180px]">
                         <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative border border-slate-300 shadow-md group">
                             {/* Real Interactive Map */}
-                            <SearchMap experts={experts} />
+                            <SearchMap experts={experts} hasLocationFilter={!!locationFilter || !!countryFilter} />
                         </div>
                     </aside>
                 </div>
