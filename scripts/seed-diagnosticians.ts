@@ -621,8 +621,13 @@ const EXPERTS_TO_SEED = [
 async function main() {
     // 1. Connection
     // Using POOLER URL as Direct URL is not resolving on user network.
-    const connectionString = "postgresql://postgres.mppxucdjziuaovdfeknj:Monamoure23012017@aws-1-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true";
-    console.log("Using Hardcoded POOLER URL for seeding...");
+    // 1. Connection
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+        console.error("❌ DATABASE_URL is not defined in .env");
+        process.exit(1);
+    }
+    console.log("Connecting to database...");
 
     // Disable prepared statements for PgBouncer compatibility (query_mode: 'simple' is not directly supported by pg client in all versions, but simple queries usually work)
     const client = new Client({
