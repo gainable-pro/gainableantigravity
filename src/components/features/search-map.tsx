@@ -66,7 +66,7 @@ export default function SearchMap({ experts, hasLocationFilter = false, initialV
             {/* Google Maps Tiles (Standard) */}
             <TileLayer
                 attribution='&copy; Google Maps'
-                url="https://mt0.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
+                url="https://mt0.google.com/vt/lyrs=m&hl=fr&x={x}&y={y}&z={z}"
             />
             <MapUpdater experts={experts} geocodedCoords={geocodedCoords} hasLocationFilter={hasLocationFilter} initialView={defaultView} />
 
