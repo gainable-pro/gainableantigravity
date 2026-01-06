@@ -58,12 +58,9 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
 }
 
 // PUT (UPDATE) ARTICLE
-// Forbidden words list
+// Forbidden words list (Relaxed)
 const FORBIDDEN_WORDS = [
-    "moins cher", "le moins cher", "prix imbattable", "promo", "promotion",
-    "garanti", "garantie", "résultats garantis", "n°1", "leader",
-    "meilleur de", "100%", "devis gratuit garanti", "offre limitée",
-    "urgent", "cliquez ici"
+    "prix imbattable", "résultats garantis", "cliquez ici", "urgent", "offre limitée"
 ];
 
 function countWordsText(text: string) {
@@ -99,24 +96,38 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
         if (!body.mainImage) return NextResponse.json({ error: "L'image principale est obligatoire." }, { status: 400 });
 
         const sections = Array.isArray(body.sections) ? body.sections : [];
+        const blocks = Array.isArray(body.blocks) ? body.blocks : [];
         const faqs = Array.isArray(body.faq) ? body.faq : [];
         const status = body.status === 'PUBLISHED' ? 'PUBLISHED' : (body.status === 'PENDING' ? 'PENDING' : 'DRAFT');
 
         if (status === 'PUBLISHED') {
-            if (sections.length < 3) return NextResponse.json({ error: "Min 3 sections." }, { status: 400 });
-            if (faqs.length < 2) return NextResponse.json({ error: "Min 2 FAQ." }, { status: 400 });
 
             let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
-            sections.forEach((sec: any) => totalWordCount += countWordsText(sec.content || ""));
+
+            if (blocks.length > 0) {
+                const h2Count = blocks.filter((b: any) => b.type === 'h2').length;
+                if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2)." }, { status: 400 });
+                blocks.forEach((b: any) => {
+                    if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') totalWordCount += countWordsText(b.value || "");
+                });
+            } else {
+                if (sections.length < 3) return NextResponse.json({ error: "Min 3 sections." }, { status: 400 });
+                sections.forEach((sec: any) => totalWordCount += countWordsText(sec.content || ""));
+            }
+
+            if (faqs.length < 2) return NextResponse.json({ error: "Min 2 FAQ." }, { status: 400 });
             if (totalWordCount < 600) return NextResponse.json({ error: `Contenu trop court (${totalWordCount} mots). Min 600.` }, { status: 400 });
 
             // Rule: Forbidden Words
-            const allText = [
-                body.title,
-                body.introduction,
-                ...sections.map((s: any) => s.title + " " + s.content),
-                ...faqs.map((f: any) => f.question + " " + f.response)
-            ].join(" ").toLowerCase();
+            let allText = body.title + " " + (body.introduction || "") + " ";
+            if (blocks.length > 0) {
+                blocks.forEach((b: any) => {
+                    if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') allText += b.value + " ";
+                });
+            } else {
+                sections.forEach((s: any) => allText += (s.title || "") + " " + (s.content || "") + " ");
+            }
+            faqs.forEach((f: any) => allText += (f.question || "") + " " + (f.response || "") + " ");
 
             const forbiddenFound = checkForbiddenWords(allText);
             if (forbiddenFound.length > 0) {

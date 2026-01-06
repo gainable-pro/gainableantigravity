@@ -6,18 +6,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { AlertCircle, ChevronLeft, Loader2, Save, Image as ImageIcon, X, UploadCloud, Plus, Trash2, HelpCircle, Copy } from "lucide-react";
+import {
+    AlertCircle, ChevronLeft, Loader2, Save, Image as ImageIcon, X, UploadCloud, Plus,
+    Trash2, HelpCircle, Copy, AlignLeft, Heading, Video, MoveUp, MoveDown, Type
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-// Switch removed
 
-interface Section {
+// --- TYPES ---
+export type BlockType = 'h2' | 'h3' | 'text' | 'image' | 'video';
+
+export interface ContentBlock {
     id: string;
-    title: string;
-    content: string;
-    subtitle?: string;
-    list?: string[]; // Simplified as array of strings
-    showSubtitle?: boolean;
-    showList?: boolean;
+    type: BlockType;
+    value: string; // Content text or URL
+    alt?: string; // For images
 }
 
 interface FAQItem {
@@ -39,17 +41,17 @@ export default function NewArticlePage() {
     const [introduction, setIntroduction] = useState("");
     const [mainImage, setMainImage] = useState("");
     const [altText, setAltText] = useState("");
-    const [videoUrl, setVideoUrl] = useState(""); // YouTube or Uploaded
+    // Video Main (Top) - Optional, users might prefer blocks now, but keeping for compatibility
+    const [videoUrl, setVideoUrl] = useState("");
     const [targetCity, setTargetCity] = useState("");
 
-    // Sections (Min 3)
-    const [sections, setSections] = useState<Section[]>([
-        { id: '1', title: '', content: '', showSubtitle: false, showList: false },
-        { id: '2', title: '', content: '', showSubtitle: false, showList: false },
-        { id: '3', title: '', content: '', showSubtitle: false, showList: false },
+    // BLOCKS (Flexible Content)
+    const [blocks, setBlocks] = useState<ContentBlock[]>([
+        { id: '1', type: 'h2', value: '' },
+        { id: '2', type: 'text', value: '' },
     ]);
 
-    // FAO (Min 2)
+    // FAQ (Min 2)
     const [faq, setFaq] = useState<FAQItem[]>([
         { id: '1', question: '', response: '' },
         { id: '2', question: '', response: '' },
@@ -75,12 +77,10 @@ export default function NewArticlePage() {
 
     const getTotalWordCount = () => {
         let count = countWords(title) + countWords(introduction);
-        sections.forEach(s => {
-            count += countWords(s.title);
-            count += countWords(s.content);
-            if (s.subtitle) count += countWords(s.subtitle);
-            if (s.list) // list logic if simplified or complex
-                s.list.forEach(l => count += countWords(l));
+        blocks.forEach(b => {
+            if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') {
+                count += countWords(b.value);
+            }
         });
         faq.forEach(f => {
             count += countWords(f.question) + countWords(f.response);
@@ -88,24 +88,103 @@ export default function NewArticlePage() {
         return count;
     };
 
-    // --- UPDATERS ---
-    const updateSection = (index: number, field: keyof Section, value: any) => {
-        const newSections = [...sections];
-        newSections[index] = { ...newSections[index], [field]: value };
-        setSections(newSections);
+    // --- BLOCK ACTIONS ---
+    const addBlock = (type: BlockType) => {
+        setBlocks([...blocks, { id: Date.now().toString(), type, value: '' }]);
     };
 
-    const addSection = () => {
-        setSections([...sections, { id: Date.now().toString(), title: '', content: '' }]);
+    const removeBlock = (index: number) => {
+        const newBlocks = [...blocks];
+        newBlocks.splice(index, 1);
+        setBlocks(newBlocks);
     };
 
-    const removeSection = (index: number) => {
-        if (sections.length <= 3) return; // Prevent deleting below min
-        const newSections = [...sections];
-        newSections.splice(index, 1);
-        setSections(newSections);
+    const moveBlock = (index: number, direction: 'up' | 'down') => {
+        if (direction === 'up' && index === 0) return;
+        if (direction === 'down' && index === blocks.length - 1) return;
+
+        const newBlocks = [...blocks];
+        const swapIndex = direction === 'up' ? index - 1 : index + 1;
+        [newBlocks[index], newBlocks[swapIndex]] = [newBlocks[swapIndex], newBlocks[index]];
+        setBlocks(newBlocks);
     };
 
+    const updateBlock = (index: number, field: keyof ContentBlock, value: string) => {
+        const newBlocks = [...blocks];
+        newBlocks[index] = { ...newBlocks[index], [field]: value };
+        setBlocks(newBlocks);
+    };
+
+    // Generic Upload for Blocks
+    const handleBlockUpload = async (index: number, e: React.ChangeEvent<HTMLInputElement>, isVideo: boolean = false) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        if (isVideo && !['video/mp4', 'video/webm'].includes(file.type)) {
+            alert("Format vidéo non supporté (MP4, WebM)");
+            return;
+        }
+
+        setIsUploading(true);
+        const data = new FormData();
+        data.append("file", file);
+        data.append("folder", "articles");
+
+        try {
+            const res = await fetch("/api/upload", { method: "POST", body: data });
+            if (!res.ok) throw new Error("Upload failed");
+            const json = await res.json();
+            updateBlock(index, 'value', json.url);
+        } catch (err) {
+            alert("Erreur upload");
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    // --- MAIN IMAGE UPLOAD ---
+    const handleMainImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        setIsUploading(true);
+        const data = new FormData();
+        data.append("file", file);
+        data.append("folder", "articles");
+        try {
+            const res = await fetch("/api/upload", { method: "POST", body: data });
+            if (!res.ok) throw new Error("Erreur upload");
+            const json = await res.json();
+            setMainImage(json.url);
+        } catch (err) {
+            setError("Impossible d'uploader l'image.");
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
+    const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        // Keep existing logic for top video if user wants it there
+        const file = e.target.files?.[0];
+        if (!file) return;
+        setIsUploading(true);
+        if (!['video/mp4', 'video/webm'].includes(file.type)) {
+            alert("Format vidéo non supporté");
+            setIsUploading(false);
+            return;
+        }
+        const data = new FormData();
+        data.append("file", file);
+        data.append("folder", "articles");
+        try {
+            const res = await fetch("/api/upload", { method: "POST", body: data });
+            if (!res.ok) throw new Error("Err");
+            const json = await res.json();
+            setVideoUrl(json.url);
+        } catch (err) { setError("Erreur upload vidéo"); }
+        finally { setIsUploading(false); }
+    };
+
+    // --- FAQ ACTIONS ---
     const updateFaq = (index: number, field: keyof FAQItem, value: string) => {
         const newFaq = [...faq];
         newFaq[index] = { ...newFaq[index], [field]: value };
@@ -123,56 +202,26 @@ export default function NewArticlePage() {
         setFaq(newFaq);
     };
 
-    const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setIsUploading(true);
-        setError(null);
-        const data = new FormData();
-        data.append("file", file);
-        data.append("folder", "articles");
-        try {
-            const res = await fetch("/api/upload", { method: "POST", body: data });
-            if (!res.ok) throw new Error("Erreur upload");
-            const json = await res.json();
-            setMainImage(json.url);
-        } catch (err) {
-            setError("Impossible d'uploader l'image.");
-        } finally {
-            setIsUploading(false);
-        }
-    };
-
-    const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setIsUploading(true);
-        // Only allow mp4, webm
-        if (!['video/mp4', 'video/webm'].includes(file.type)) {
-            alert("Format vidéo non supporté (MP4, WebM uniquement)");
-            return;
-        }
-
-        const data = new FormData();
-        data.append("file", file);
-        data.append("folder", "articles");
-        try {
-            // Re-use upload endpoint (generic)
-            const res = await fetch("/api/upload", { method: "POST", body: data });
-            if (!res.ok) throw new Error("Erreur upload");
-            const json = await res.json();
-            setVideoUrl(json.url);
-        } catch (err) {
-            setError("Impossible d'uploader la vidéo.");
-        } finally {
-            setIsUploading(false);
-        }
-    };
-
     // --- SUBMIT ---
     const handleSubmit = async (status: string) => {
         setIsLoading(true);
         setError(null);
+
+        // Generate HTML Content for SEO/Legacy
+        let generatedContent = "";
+        blocks.forEach(b => {
+            if (!b.value) return;
+            if (b.type === 'h2') generatedContent += `<h2>${b.value}</h2>`;
+            if (b.type === 'h3') generatedContent += `<h3>${b.value}</h3>`;
+            if (b.type === 'image') generatedContent += `<div class="article-image"><img src="${b.value}" alt="${b.alt || ''}" /></div>`;
+            if (b.type === 'video') generatedContent += `<div class="article-video"><video controls src="${b.value}"></video></div>`;
+            if (b.type === 'text') {
+                generatedContent += b.value.split('\n').filter(line => line.trim() !== '').map(line => `<p>${line}</p>`).join('');
+            }
+        });
+
+        // Add FAQ to content if needed by SEO? Usually FAQ is Schema.
+        // We leave FAQ separate in DB json but maybe append to content? No, strictly structured.
 
         const payload = {
             title,
@@ -182,9 +231,12 @@ export default function NewArticlePage() {
             altText,
             videoUrl,
             targetCity,
-            sections,
+            blocks, // Save Blocks!
+            sections: [], // Deprecated
             faq,
-            status
+            status,
+            content: generatedContent, // Fallback HTML
+            jsonContent: { blocks, faq } // Unified JSON
         };
 
         try {
@@ -206,10 +258,7 @@ export default function NewArticlePage() {
                 return;
             }
 
-            if (status === 'PUBLISHED') {
-                alert("✅ Article publié avec succès !");
-            }
-
+            if (status === 'PUBLISHED') alert("✅ Article publié !");
             router.push("/dashboard/articles");
             router.refresh();
 
@@ -222,23 +271,21 @@ export default function NewArticlePage() {
     };
 
     const wordCount = getTotalWordCount();
+    const nbH2 = blocks.filter(b => b.type === 'h2').length;
+    const hasImage = mainImage && altText.length > 5;
 
-    // Scoring Logic
+    // Simple Score
     const points = {
         words: Math.min(40, (wordCount / 800) * 40),
-        sections: sections.length >= 3 ? 20 : (sections.length / 3) * 20,
-        faq: faq.length >= 2 ? 20 : (faq.length / 2) * 20,
-        image: (mainImage && altText.length > 5) ? 20 : 0
+        structure: Math.min(20, nbH2 * 5),
+        faq: Math.min(20, faq.length * 5),
+        image: hasImage ? 20 : 0
     };
-
-    const score = Math.min(100, Math.round(points.words + points.sections + points.faq + points.image));
+    const score = Math.min(100, Math.round(points.words + points.structure + points.faq + points.image));
 
     let scoreMessage = "Commencez à rédiger...";
-    if (score > 10) scoreMessage = "Bon début 👍";
     if (score > 40) scoreMessage = "Continuez comme ça ! 📝";
-    if (score > 70) scoreMessage = "Article bien structuré 🏗️";
     if (score > 90) scoreMessage = "Presque prêt à publier 🚀";
-    if (score >= 100) scoreMessage = "Article optimisé ✅";
 
     return (
         <div className="max-w-5xl mx-auto pb-24">
@@ -248,8 +295,8 @@ export default function NewArticlePage() {
                     <ChevronLeft className="w-5 h-5" />
                 </Button>
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800">Rédiger un article (Assistant SEO)</h1>
-                    <p className="text-slate-500">Laissez-vous guider pour créer un contenu parfaitement optimisé.</p>
+                    <h1 className="text-2xl font-bold text-slate-800">Rédiger un article</h1>
+                    <p className="text-slate-500">Créez un contenu riche avec des blocs flexibles.</p>
                 </div>
             </div>
 
@@ -300,18 +347,18 @@ export default function NewArticlePage() {
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800 flex items-center gap-2">
                                 <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">2</span>
-                                Illustration
+                                Illustration Principale
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-4">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <Label>Image Principale</Label>
-                                    <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" accept="image/*" />
+                                    <Label>Image de couverture</Label>
+                                    <input type="file" ref={fileInputRef} onChange={handleMainImageChange} className="hidden" accept="image/*" />
                                     {!mainImage ? (
                                         <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 transition-colors">
                                             {isUploading ? <Loader2 className="w-8 h-8 animate-spin mx-auto text-slate-400" /> : <UploadCloud className="w-8 h-8 mx-auto text-slate-400" />}
-                                            <span className="text-xs text-slate-500 mt-2 block">Cliquer pour importer (WebP recommandé)</span>
+                                            <span className="text-xs text-slate-500 mt-2 block">Importer (JPG, WebP)</span>
                                         </div>
                                     ) : (
                                         <div className="relative rounded-xl overflow-hidden border border-slate-200">
@@ -321,53 +368,8 @@ export default function NewArticlePage() {
                                     )}
                                 </div>
                                 <div className="space-y-2">
-                                    <Label>Texte Alternatif (Alt) *Obligatoire</Label>
+                                    <Label>Texte Alternatif</Label>
                                     <Input placeholder="Description de l'image" value={altText} onChange={(e) => setAltText(e.target.value)} />
-                                    <p className="text-xs text-slate-400">Décrivez l'image pour Google (ex: "Installation clim gainable dans un salon")</p>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    {/* 2.5 VIDEO (Optional) */}
-                    <Card>
-                        <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
-                            <CardTitle className="text-base text-slate-800 flex items-center gap-2">
-                                <span className="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">2b</span>
-                                Vidéo (Optionnel)
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-6 space-y-4">
-                            <div className="space-y-4">
-                                <div className="flex gap-4 border-b border-slate-100 pb-2">
-                                    <Button variant={videoUrl && !videoUrl.startsWith('http') ? 'outline' : 'default'} onClick={() => { }} className="pointer-events-none">Lien YouTube / Upload</Button>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label>Lien YouTube</Label>
-                                        <Input
-                                            placeholder="https://www.youtube.com/watch?v=..."
-                                            value={videoUrl.startsWith('http') ? videoUrl : ''}
-                                            onChange={(e) => setVideoUrl(e.target.value)}
-                                            disabled={!!(videoUrl && !videoUrl.startsWith('http'))}
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label>Ou fichier vidéo (MP4/WebM)</Label>
-                                        <Input
-                                            type="file"
-                                            accept="video/mp4,video/webm"
-                                            onChange={handleVideoUpload}
-                                            disabled={!!(videoUrl && videoUrl.startsWith('http')) && videoUrl.length > 5}
-                                        />
-                                        {videoUrl && !videoUrl.startsWith('http') && (
-                                            <div className="text-xs text-green-600 flex items-center gap-2">
-                                                Fichier ajouté ✅
-                                                <button onClick={() => setVideoUrl("")} className="text-red-500 hover:underline">Supprimer</button>
-                                            </div>
-                                        )}
-                                    </div>
                                 </div>
                             </div>
                         </CardContent>
@@ -388,131 +390,196 @@ export default function NewArticlePage() {
                                 value={introduction}
                                 onChange={(e) => setIntroduction(e.target.value)}
                             />
-                            <p className="text-xs text-slate-400 mt-2">Sera utilisé comme Meta-description sur Google.</p>
                         </CardContent>
                     </Card>
 
-                    {/* 4. CORPS (SECTIONS) */}
-                    <div className="space-y-4">
+                    {/* 4. BLOCKS BUILDER */}
+                    <div className="space-y-6">
                         <div className="flex items-center justify-between">
-                            <h2 className="font-bold text-lg text-slate-800">Corps de l'article</h2>
-                            <p className="text-sm text-slate-500">Minimum 3 sections obligatoires</p>
+                            <h2 className="font-bold text-lg text-slate-800">Contenu de l'article</h2>
+                            <p className="text-sm text-slate-500">Ajoutez des blocs pour construire votre article</p>
                         </div>
 
-                        {sections.map((section, index) => (
-                            <Card key={section.id} className="border-l-4 border-l-blue-500">
-                                <CardHeader className="bg-slate-50/50 py-3 px-4 flex flex-row items-center justify-between">
-                                    <span className="uppercase text-xs font-bold text-slate-500 tracking-wider">Section {index + 1} (H2)</span>
-                                    {sections.length > 3 && (
-                                        <Button variant="ghost" size="sm" onClick={() => removeSection(index)} className="text-red-500 hover:text-red-700 h-8 w-8 p-0">
-                                            <Trash2 className="w-4 h-4" />
-                                        </Button>
-                                    )}
-                                </CardHeader>
-                                <CardContent className="pt-4 space-y-4">
-                                    <div>
-                                        <Input
-                                            placeholder="Titre de la section (ex: Les avantages du gainable)"
-                                            value={section.title}
-                                            onChange={(e) => updateSection(index, 'title', e.target.value)}
-                                            className="font-bold text-lg border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-500"
-                                        />
-                                    </div>
-                                    <div>
-                                        <div className="flex justify-between mb-1">
-                                            <Label className="sr-only">Contenu</Label>
-                                            <span className="text-[10px] text-slate-400 uppercase tracking-wide">≈ 200–300 mots recommandés</span>
+                        <div className="space-y-4">
+                            {blocks.map((block, index) => (
+                                <div key={block.id} className="relative group">
+                                    <Card className={`border-l-4 shadow-sm transition-all hover:shadow-md ${block.type === 'h2' ? 'border-l-blue-600' : block.type === 'h3' ? 'border-l-blue-400' : block.type === 'image' ? 'border-l-purple-500' : 'border-l-slate-300'}`}>
+                                        <div className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+                                            <Button variant="ghost" size="sm" onClick={() => moveBlock(index, 'up')} disabled={index === 0} title="Monter">
+                                                <MoveUp className="w-4 h-4 text-slate-400" />
+                                            </Button>
+                                            <Button variant="ghost" size="sm" onClick={() => moveBlock(index, 'down')} disabled={index === blocks.length - 1} title="Descendre">
+                                                <MoveDown className="w-4 h-4 text-slate-400" />
+                                            </Button>
+                                            <Button variant="ghost" size="sm" onClick={() => removeBlock(index)} className="text-red-400 hover:text-red-600">
+                                                <Trash2 className="w-4 h-4" />
+                                            </Button>
                                         </div>
-                                        <Textarea
-                                            placeholder="Contenu de cette section..."
-                                            value={section.content}
-                                            onChange={(e) => updateSection(index, 'content', e.target.value)}
-                                            className="min-h-[150px] bg-slate-50 border-0 focus-visible:ring-1 ring-inset"
-                                        />
-                                        {/* SECTION PROGRESS BAR */}
-                                        <div className="mt-2">
-                                            <div className="flex justify-between text-[10px] text-slate-400 mb-1 px-1">
-                                                <span>{countWords(section.content)} mots</span>
-                                                <span>300 mots max recommandés</span>
+
+                                        <CardContent className="p-4 pt-4">
+                                            {/* Block Header */}
+                                            <div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                                                {block.type === 'h2' && <><Heading className="w-3 h-3" /> Section (H2)</>}
+                                                {block.type === 'h3' && <><Heading className="w-3 h-3" /> Sous-section (H3)</>}
+                                                {block.type === 'text' && <><AlignLeft className="w-3 h-3" /> Paragraphe</>}
+                                                {block.type === 'image' && <><ImageIcon className="w-3 h-3" /> Image</>}
+                                                {block.type === 'video' && <><Video className="w-3 h-3" /> Vidéo</>}
                                             </div>
-                                            <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
-                                                <div
-                                                    className={`h-full transition-all duration-500 ${countWords(section.content) >= 200 ? 'bg-green-500' : 'bg-orange-300'}`}
-                                                    style={{ width: `${Math.min(100, (countWords(section.content) / 300) * 100)}%` }}
+
+                                            {/* BLOCK CONTENT INPUTS */}
+                                            {block.type === 'h2' && (
+                                                <Input
+                                                    value={block.value}
+                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
+                                                    placeholder="Titre de la section..."
+                                                    className="font-bold text-lg border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-500"
                                                 />
-                                            </div>
+                                            )}
+                                            {block.type === 'h3' && (
+                                                <Input
+                                                    value={block.value}
+                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
+                                                    placeholder="Titre de la sous-section..."
+                                                    className="font-semibold text-md border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-400"
+                                                />
+                                            )}
+                                            {block.type === 'text' && (
+                                                <Textarea
+                                                    value={block.value}
+                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
+                                                    placeholder="Rédigez votre paragraphe..."
+                                                    className="min-h-[120px] bg-slate-50 border-0 focus-visible:ring-1 ring-inset"
+                                                />
+                                            )}
+                                            {block.type === 'image' && (
+                                                <div className="flex gap-4 items-start">
+                                                    <div className="flex-1 space-y-2">
+                                                        {!block.value ? (
+                                                            <div className="border-2 border-dashed border-slate-200 rounded-lg p-6 text-center">
+                                                                <Label htmlFor={`file-${block.id}`} className="cursor-pointer flex flex-col items-center gap-2 text-slate-500 hover:text-blue-600">
+                                                                    <UploadCloud className="w-6 h-6" />
+                                                                    <span>Choisir une image</span>
+                                                                    <Input id={`file-${block.id}`} type="file" className="hidden" accept="image/*" onChange={(e) => handleBlockUpload(index, e)} />
+                                                                </Label>
+                                                            </div>
+                                                        ) : (
+                                                            <div className="relative rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
+                                                                <img src={block.value} alt={block.alt} className="w-full h-48 object-cover" />
+                                                                <Button variant="secondary" size="sm" className="absolute top-2 right-2 h-8 w-8 p-0" onClick={() => updateBlock(index, 'value', '')}>
+                                                                    <X className="w-4 h-4" />
+                                                                </Button>
+                                                            </div>
+                                                        )}
+                                                    </div>
+                                                    <div className="w-1/3 space-y-2">
+                                                        <Label className="text-xs">Légende / Alt</Label>
+                                                        <Input
+                                                            value={block.alt || ''}
+                                                            onChange={(e) => {
+                                                                const newBlocks = [...blocks];
+                                                                newBlocks[index] = { ...newBlocks[index], alt: e.target.value };
+                                                                setBlocks(newBlocks);
+                                                            }}
+                                                            placeholder="Description SEO..."
+                                                            className="text-sm"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {block.type === 'video' && (
+                                                <div className="space-y-4">
+                                                    <div className="flex gap-2">
+                                                        <Input
+                                                            placeholder="URL YouTube ou..."
+                                                            value={block.value.startsWith('http') ? block.value : ''}
+                                                            onChange={(e) => updateBlock(index, 'value', e.target.value)}
+                                                        />
+                                                        <div className="relative">
+                                                            <Button variant="outline" className="whitespace-nowrap">Upload</Button>
+                                                            <Input type="file" className="absolute inset-0 opacity-0 cursor-pointer" accept="video/mp4" onChange={(e) => handleBlockUpload(index, e, true)} />
+                                                        </div>
+                                                    </div>
+                                                    {block.value && (
+                                                        <div className="bg-slate-100 p-2 rounded text-xs truncate">
+                                                            Source: {block.value}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+
+                                        </CardContent>
+                                    </Card>
+
+                                    {/* Quick Insert Between Blocks (Hover) */}
+                                    <div className="h-4 -my-2 flex items-center justify-center opacity-0 group-hover:opacity-100 hover:opacity-100 transition-opacity z-10 relative">
+                                        <div className="bg-blue-500 rounded-full p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => {
+                                            const newBlocks = [...blocks];
+                                            newBlocks.splice(index + 1, 0, { id: Date.now().toString(), type: 'text', value: '' });
+                                            setBlocks(newBlocks);
+                                        }} title="Insérer texte">
+                                            <Plus className="w-3 h-3 text-white" />
                                         </div>
                                     </div>
+                                </div>
+                            ))}
+                        </div>
 
-                                    {/* Sub-options toggle */}
-                                    <div className="flex gap-4 pt-2">
-                                        {!section.showSubtitle && (
-                                            <Button variant="outline" size="sm" onClick={() => updateSection(index, 'showSubtitle', true)} className="text-xs">
-                                                + Sous-titre (H3)
-                                            </Button>
-                                        )}
-                                        {/* List support can be added later if needed, simple text is priority */}
-                                    </div>
-
-                                    {section.showSubtitle && (
-                                        <div className="pl-4 border-l-2 border-slate-200 space-y-2 animate-in fade-in slide-in-from-top-2">
-                                            <Input
-                                                placeholder="Sous-titre (H3)"
-                                                value={section.subtitle || ''}
-                                                onChange={(e) => updateSection(index, 'subtitle', e.target.value)}
-                                                className="text-sm font-semibold"
-                                            />
-                                            <Button variant="ghost" size="sm" onClick={() => updateSection(index, 'showSubtitle', false)} className="text-xs text-red-500 h-6">
-                                                Supprimer sous-titre
-                                            </Button>
-                                        </div>
-                                    )}
-                                </CardContent>
-                            </Card>
-                        ))}
-
-                        <Button variant="outline" onClick={addSection} className="w-full py-6 border-dashed border-2 text-slate-500 hover:text-blue-600 hover:border-blue-300">
-                            <Plus className="w-5 h-5 mr-2" /> Ajouter une section
-                        </Button>
+                        {/* TOOLBOX */}
+                        <Card className="border-dashed border-2 border-slate-300 bg-slate-50/50">
+                            <CardContent className="p-4 flex flex-wrap gap-2 justify-center">
+                                <span className="w-full text-center text-xs text-slate-400 uppercase tracking-widest mb-2">Ajouter un bloc</span>
+                                <Button variant="outline" onClick={() => addBlock('h2')} className="gap-2">
+                                    <Heading className="w-4 h-4" /> Titre (H2)
+                                </Button>
+                                <Button variant="outline" onClick={() => addBlock('text')} className="gap-2">
+                                    <AlignLeft className="w-4 h-4" /> Texte
+                                </Button>
+                                <Button variant="outline" onClick={() => addBlock('image')} className="gap-2">
+                                    <ImageIcon className="w-4 h-4" /> Image
+                                </Button>
+                                <Button variant="outline" onClick={() => addBlock('h3')} className="gap-2 text-slate-500">
+                                    <Type className="w-4 h-4" /> Sous-titre (H3)
+                                </Button>
+                                <Button variant="outline" onClick={() => addBlock('video')} className="gap-2 text-slate-500">
+                                    <Video className="w-4 h-4" /> Vidéo
+                                </Button>
+                            </CardContent>
+                        </Card>
                     </div>
 
                     {/* 5. FAQ */}
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <h2 className="font-bold text-lg text-slate-800">FAQ (Foire Aux Questions)</h2>
-                            <p className="text-sm text-slate-500">Minimum 2 questions</p>
+                            <h2 className="font-bold text-lg text-slate-800">FAQ</h2>
                         </div>
-
                         {faq.map((item, index) => (
                             <Card key={item.id} className="border-l-4 border-l-green-500">
                                 <CardContent className="pt-4 space-y-3">
                                     <div className="flex justify-between items-start">
                                         <Label className="uppercase text-xs text-slate-400 mb-1 block">Question {index + 1}</Label>
-                                        {faq.length > 2 && (
-                                            <Button variant="ghost" size="sm" onClick={() => removeFaq(index)} className="text-red-500 hover:text-red-700 h-6 w-6 p-0">
-                                                <X className="w-4 h-4" />
-                                            </Button>
-                                        )}
+                                        <Button variant="ghost" size="sm" onClick={() => removeFaq(index)} className="text-red-500 h-6 w-6 p-0">
+                                            <X className="w-4 h-4" />
+                                        </Button>
                                     </div>
                                     <Input
-                                        placeholder="Ex: Quel est le prix moyen ?"
+                                        placeholder="Question..."
                                         value={item.question}
                                         onChange={(e) => updateFaq(index, 'question', e.target.value)}
                                     />
                                     <Textarea
-                                        placeholder="Réponse courte..."
+                                        placeholder="Réponse..."
                                         value={item.response}
                                         onChange={(e) => updateFaq(index, 'response', e.target.value)}
                                     />
                                 </CardContent>
                             </Card>
                         ))}
-                        <Button variant="outline" onClick={addFaq} className="w-full py-4 border-dashed border-2 text-slate-500 hover:text-green-600 hover:border-green-300">
-                            <Plus className="w-5 h-5 mr-2" /> Ajouter une question
+                        <Button variant="outline" onClick={addFaq} className="w-full py-2 border-dashed border-2 text-slate-500">
+                            <Plus className="w-5 h-5 mr-2" /> Ajouter Question
                         </Button>
                     </div>
 
-                    {/* --- BOTTOM ACTIONS Mobile/Desktop --- */}
+                    {/* SUBMIT */}
                     <Card className="border-t-4 border-t-blue-500 shadow-md">
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800">Validation</CardTitle>
@@ -521,12 +588,11 @@ export default function NewArticlePage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Button
                                     onClick={() => handleSubmit('PUBLISHED')}
-                                    className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-6 transition-all"
+                                    className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-6"
                                     disabled={isLoading || score < 100}
-                                    title={score < 100 ? "Complétez l'article pour publier" : "Publier l'article"}
                                 >
                                     {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                                    <Save className="mr-2 h-5 w-5" /> Publier l'article
+                                    <Save className="mr-2 h-5 w-5" /> Publier
                                 </Button>
                                 <Button
                                     variant="outline"
@@ -534,180 +600,46 @@ export default function NewArticlePage() {
                                     disabled={isLoading}
                                     className="flex-1 py-6"
                                 >
-                                    Enregistrer brouillon
+                                    Brouillon
                                 </Button>
                             </div>
-                            <p className="text-xs text-slate-400 mt-4 text-center">
-                                {score < 100 ? "L'article doit être optimisé à 100% pour être publié." : "Tout est prêt chef !"}
-                            </p>
+                        </CardContent>
+                    </Card>
+
+                </div>
+
+                {/* --- SIDEBAR --- */}
+                <div className="space-y-6 sticky top-6 self-start">
+                    <Card>
+                        <CardHeader className="bg-slate-50 pb-4"><CardTitle className="text-sm">Score SEO</CardTitle></CardHeader>
+                        <CardContent className="pt-6 text-center space-y-4">
+                            <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
+                            <div className="text-xs text-slate-500">{scoreMessage}</div>
+                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div className="h-full bg-[#D59B2B]" style={{ width: `${score}%` }}></div>
+                            </div>
+                            <ul className="text-left text-xs space-y-2 text-slate-500">
+                                <li>• {wordCount} mots (obj. 800)</li>
+                                <li>• {nbH2} titres H2 (obj. 3)</li>
+                                <li>• {faq.length} questions FAQ</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-purple-50 border-purple-100">
+                        <CardContent className="pt-6 space-y-4">
+                            <div className="flex items-center gap-2 text-sm font-bold text-purple-700">
+                                <HelpCircle className="w-4 h-4" /> Prompt IA
+                            </div>
+                            <p className="text-xs text-slate-600">Copiez ce prompt pour générer votre article.</p>
+                            <Button variant="secondary" className="w-full text-xs" onClick={() => {
+                                navigator.clipboard.writeText(`Rédige un article sur : ${title}... (Format JSON Blocks)`);
+                                alert("Copié !");
+                            }}>Copier Prompt</Button>
                         </CardContent>
                     </Card>
                 </div>
 
-                {/* --- SIDEBAR --- */}
-                <div className="space-y-6 sticky top-6 self-start max-h-[calc(100vh-2rem)] overflow-y-auto pr-1 pb-10">
-                    <div>
-                        <Card className="shadow-lg border-blue-100 bg-white">
-                            <CardHeader className="bg-slate-50 pb-4">
-                                <CardTitle className="text-sm uppercase tracking-wider text-slate-500">Score SEO</CardTitle>
-                            </CardHeader>
-                            <CardContent className="pt-6 space-y-6">
-
-                                {/* SCORE GAUGE */}
-                                <div className="space-y-2 text-center">
-                                    <div className="relative w-24 h-24 mx-auto flex items-center justify-center">
-                                        {/* Simple Circle using CSS conic-gradient */}
-                                        <div className="absolute inset-0 rounded-full" style={{ background: `conic-gradient(${score === 100 ? '#22c55e' : '#D59B2B'} ${score}%, #f1f5f9 0)` }}></div>
-                                        <div className="absolute inset-1 bg-white rounded-full flex flex-col items-center justify-center">
-                                            <span className={`text-2xl font-bold ${score === 100 ? 'text-green-600' : 'text-[#D59B2B]'}`}>{Math.round(score)}%</span>
-                                        </div>
-                                    </div>
-                                    <p className="text-sm font-medium text-slate-700 animate-pulse">
-                                        {scoreMessage}
-                                    </p>
-                                </div>
-
-                                {/* Word Count Meter */}
-                                <div>
-                                    <div className="flex justify-between text-sm mb-2">
-                                        <span className={wordCount >= 800 ? "text-green-600 font-bold" : "text-slate-600"}>
-                                            {wordCount} / 800 mots
-                                        </span>
-                                        <span>
-                                            {Math.min(100, Math.round((wordCount / 800) * 100))}%
-                                        </span>
-                                    </div>
-                                    <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden mb-2">
-                                        <div
-                                            className={`h-full transition-all duration-500 ${wordCount >= 800 ? 'bg-green-500' : 'bg-orange-400'}`}
-                                            style={{ width: `${Math.min(100, (wordCount / 800) * 100)}%` }}
-                                        />
-                                    </div>
-                                    {wordCount < 800 && (
-                                        <div className="text-xs text-slate-500 space-y-1">
-                                            <p className="flex items-center gap-1">
-                                                💡 Ajoutez du contenu dans les sections (H2) ci-dessous.
-                                            </p>
-                                            <p className="font-medium text-orange-600">
-                                                ✍️ Encore ~{800 - wordCount} mots à rédiger
-                                            </p>
-                                        </div>
-                                    )}
-                                </div>
-
-                                <ul className="space-y-3 text-sm border-t border-slate-100 pt-4">
-                                    <li className={`flex items-center justify-between ${points.words >= 40 ? "text-green-600" : "text-slate-400"}`}>
-                                        <div className="flex items-center gap-2">
-                                            {points.words >= 40 ? <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center text-xs">✓</div> : <div className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-1.5" />}
-                                            <span>800 mots min (Corps article)</span>
-                                        </div>
-                                        <span className="text-xs font-mono">{wordCount}/800</span>
-                                    </li>
-                                    <li className={`flex items-center justify-between ${points.sections >= 20 ? "text-green-600" : "text-slate-400"}`}>
-                                        <div className="flex items-center gap-2">
-                                            {points.sections >= 20 ? <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center text-xs">✓</div> : <div className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-1.5" />}
-                                            <span>3 Sections (H2)</span>
-                                        </div>
-                                        <span className="text-xs font-mono">{sections.length}/3</span>
-                                    </li>
-                                    <li className={`flex items-center justify-between ${points.faq >= 20 ? "text-green-600" : "text-slate-400"}`}>
-                                        <div className="flex items-center gap-2">
-                                            {points.faq >= 20 ? <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center text-xs">✓</div> : <div className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-1.5" />}
-                                            <span>2 Questions FAQ</span>
-                                        </div>
-                                        <span className="text-xs font-mono">{faq.length}/2</span>
-                                    </li>
-                                    <li className={`flex items-center justify-between ${points.image >= 20 ? "text-green-600" : "text-slate-400"}`}>
-                                        <div className="flex items-center gap-2">
-                                            {points.image >= 20 ? <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center text-xs">✓</div> : <div className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-1.5" />}
-                                            <span>Image + Alt</span>
-                                        </div>
-                                        <span className="text-xs font-mono">{mainImage && altText ? "OK" : "-"}</span>
-                                    </li>
-                                </ul>
-
-                                <div className="pt-2 flex flex-col gap-3">
-                                    <Button
-                                        onClick={() => handleSubmit('PUBLISHED')}
-                                        className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold transition-all"
-                                        disabled={isLoading || score < 100}
-                                        title={score < 100 ? "Complétez l'article pour publier" : "Publier l'article"}
-                                    >
-                                        {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                                        <Save className="mr-2 h-4 w-4" /> Publier l'article
-                                    </Button>
-                                    <Button
-                                        variant="outline"
-                                        onClick={() => handleSubmit('DRAFT')}
-                                        disabled={isLoading}
-                                    >
-                                        Enregistrer brouillon
-                                    </Button>
-                                </div>
-
-                                <div className="text-xs text-slate-400 italic text-center">
-                                    {score < 100 ? "L'article doit être optimisé à 100% pour être publié." : "Votre article est prêt !"}
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    {/* AI HELPER */}
-                    <div>
-                        <Card className="shadow-lg border-purple-100 bg-gradient-to-br from-purple-50 to-white">
-                            <CardHeader className="bg-purple-100/50 pb-4">
-                                <CardTitle className="text-sm uppercase tracking-wider text-purple-700 flex items-center gap-2">
-                                    <HelpCircle className="w-4 h-4" /> Aide IA
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent className="pt-6 space-y-4">
-                                <p className="text-sm text-slate-600">
-                                    En panne d'inspiration ? Ce prompt aide à générer le H1, les sections H2 et le contenu optimisé. Copiez-le et utilisez ChatGPT ou Claude.
-                                </p>
-                                <div className="bg-slate-100 p-3 rounded-md text-xs font-mono text-slate-600 max-h-32 overflow-y-auto border border-slate-200">
-                                    Aide-moi à préparer le contenu d’un article informatif destiné à un particulier...
-                                </div>
-                                <Button
-                                    variant="secondary"
-                                    className="w-full bg-purple-100 hover:bg-purple-200 text-purple-800"
-                                    onClick={() => {
-                                        const prompt = `Aide-moi à préparer le contenu d’un article informatif destiné à un particulier.
-Sujet de l’article : ${title || "[TITRE DE L’ARTICLE]"}
-
-Merci de fournir :
-1) Un TITRE PRINCIPAL (H1) clair et pédagogique.
-2) Une INTRODUCTION (Chapeau) de 80 à 120 mots.
-3) 3 à 4 SECTIONS (H2), avec pour chacune :
-   - Un titre de section.
-   - Un contenu détaillé de 200 à 300 mots (Important pour le SEO).
-4) Une CONCLUSION courte.
-5) 2 à 3 QUESTIONS / RÉPONSES pour une FAQ.
-
-Contraintes :
-- Ton professionnel, neutre et pédagogique.
-- Aucun discours commercial.
-- Aucune promesse de prix, de garantie ou d’offre.
-- Aucune comparaison ou mention de plateforme.
-- Pas de HTML, pas de mise en forme, pas de couleur.
-- Le contenu sera structuré automatiquement par l’éditeur Gainable.fr.`;
-                                        navigator.clipboard.writeText(prompt);
-                                        alert("Prompt copié !");
-                                    }}
-                                >
-                                    <Copy className="w-4 h-4 mr-2" /> Copier le Prompt
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    {/* EDITORIAL RULES */}
-                    <div className="text-xs text-slate-400 space-y-2 px-2 mt-8">
-                        <p className="font-bold uppercase tracking-wider text-slate-500">Charte Éditoriale</p>
-                        <p>Contenu informatif uniquement.</p>
-                        <p>Interdiction de : promesses commerciales, dénigrement, attaques.</p>
-                        <p>Gainable.fr se réserve le droit de dépublier un article ou suspendre un compte en cas d'abus.</p>
-                    </div>
-                </div>
             </div>
         </div>
     );

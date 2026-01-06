@@ -87,11 +87,26 @@ export default function SearchMap({ experts, hasLocationFilter = false, initialV
                 const selectedIcon = iconBrand;
 
                 return (
-                    <Marker key={expert.id} position={position} icon={selectedIcon}>
+                    <Marker
+                        key={expert.id}
+                        position={position}
+                        icon={selectedIcon}
+                        eventHandlers={{
+                            click: () => {
+                                if (expert.slug) {
+                                    window.open(`/pro/${expert.slug}`, '_blank');
+                                }
+                            }
+                        }}
+                    >
                         <Popup>
                             <div className="text-sm font-sans">
                                 <strong className="block mb-1 text-[#1F2D3D]">{expert.name}</strong>
                                 <span className="text-slate-500">{expert.city}</span>
+                                <div className="mt-2 text-xs text-[#D59B2B] font-semibold flex items-center gap-1">
+                                    <span>Voir la fiche</span>
+                                    <span className="text-[10px]">↗</span>
+                                </div>
                             </div>
                         </Popup>
                     </Marker>

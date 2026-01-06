@@ -90,12 +90,9 @@ export async function GET() {
     }
 }
 
-// Forbidden words list
+// Forbidden words list (Relaxed)
 const FORBIDDEN_WORDS = [
-    "moins cher", "le moins cher", "prix imbattable", "promo", "promotion",
-    "garanti", "garantie", "résultats garantis", "n°1", "leader",
-    "meilleur de", "100%", "devis gratuit garanti", "offre limitée",
-    "urgent", "cliquez ici"
+    "prix imbattable", "résultats garantis", "cliquez ici", "urgent", "offre limitée"
 ];
 
 // Helper to count words in text
@@ -124,7 +121,6 @@ export async function POST(req: Request) {
         const body = await req.json();
 
         // 1. Validate Basic Info
-        // 1. Validate Basic Info
         if (!body.title || body.title.length < 5) return NextResponse.json({ error: "Le titre est trop court." }, { status: 400 });
         if (!body.slug || body.slug.length < 3) return NextResponse.json({ error: "Le slug est invalide." }, { status: 400 });
 
@@ -134,15 +130,37 @@ export async function POST(req: Request) {
             if (!body.altText || body.altText.length < 5) return NextResponse.json({ error: "Le texte alternatif (Alt) est obligatoire pour la publication." }, { status: 400 });
         }
 
-        // 2. Validate Structure (Sections)
+        // 2. Validate Structure (Sections OR Blocks)
         const sections = Array.isArray(body.sections) ? body.sections : [];
+        const blocks = Array.isArray(body.blocks) ? body.blocks : []; // New!
         const faqs = Array.isArray(body.faq) ? body.faq : [];
         const status = body.status === 'PUBLISHED' ? 'PUBLISHED' : (body.status === 'PENDING' ? 'PENDING' : 'DRAFT');
 
         if (status === 'PUBLISHED') {
-            // Rule: Min 3 Sections
-            if (sections.length < 3) {
-                return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 3 sections." }, { status: 400 });
+
+            // Check Structure (Legacy Sections OR New Blocks)
+            let hasEnoughContent = false;
+            let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
+
+            if (blocks.length > 0) {
+                // New System Validation
+                const h2Count = blocks.filter((b: any) => b.type === 'h2').length;
+                if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2) requis." }, { status: 400 });
+
+                blocks.forEach((b: any) => {
+                    if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') {
+                        totalWordCount += countWordsText(b.value || "");
+                    }
+                });
+
+            } else {
+                // Legacy System Validation
+                if (sections.length < 3) {
+                    return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 3 sections." }, { status: 400 });
+                }
+                sections.forEach((sec: any) => {
+                    totalWordCount += countWordsText(sec.content || "");
+                });
             }
 
             // Rule: Min 2 FAQs
@@ -150,23 +168,23 @@ export async function POST(req: Request) {
                 return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 2 questions FAQ." }, { status: 400 });
             }
 
-            // Rule: Min 600 words (Title + Intro + Sections Content)
-            let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
-            sections.forEach((sec: any) => {
-                totalWordCount += countWordsText(sec.content || "");
-            });
-
+            // Rule: Min 600 words
             if (totalWordCount < 600) {
                 return NextResponse.json({ error: `Publication refusée : Contenu trop court (${totalWordCount} mots). Minimum 600 mots requis.` }, { status: 400 });
             }
 
             // Rule: Forbidden Words
-            const allText = [
-                body.title,
-                body.introduction,
-                ...sections.map((s: any) => s.title + " " + s.content),
-                ...faqs.map((f: any) => f.question + " " + f.response)
-            ].join(" ").toLowerCase();
+            let allText = body.title + " " + (body.introduction || "") + " ";
+
+            if (blocks.length > 0) {
+                blocks.forEach((b: any) => {
+                    if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') allText += b.value + " ";
+                });
+            } else {
+                sections.forEach((s: any) => allText += (s.title || "") + " " + (s.content || "") + " ");
+            }
+
+            faqs.forEach((f: any) => allText += (f.question || "") + " " + (f.response || "") + " ");
 
             const forbiddenFound = checkForbiddenWords(allText);
             if (forbiddenFound.length > 0) {

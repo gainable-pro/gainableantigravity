@@ -1,16 +1,16 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { ShareButtons } from "@/components/features/articles/share-buttons";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { Mail, Phone, MapPin, ArrowRight, User, Calendar } from "lucide-react";
+import { MapPin, ArrowRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-
 
 interface PageProps {
     params: Promise<{
@@ -28,8 +28,7 @@ async function getArticleData(slug: string, articleSlug: string) {
             slug: true,
             ville: true,
             logo_url: true,
-            user: { select: { email: true } }, // fetch email from user
-            // Phone might be missing or in another relation? I'll skip phone for now or check if it exists later.
+            user: { select: { email: true } },
             expert_type: true
         }
     });
@@ -81,6 +80,10 @@ export default async function PublicArticlePage({ params }: PageProps) {
 
     const { expert, article } = data;
 
+    // Resolve Content Blocks (New System)
+    const blocks = (article.jsonContent as any)?.blocks as any[];
+    const hasBlocks = Array.isArray(blocks) && blocks.length > 0;
+
     // Structured Data (Schema.org)
     const jsonLd = {
         "@context": "https://schema.org",
@@ -99,11 +102,11 @@ export default async function PublicArticlePage({ params }: PageProps) {
             "name": "Gainable.fr",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://gainable.fr/logo.png" // Replace with real logo URL
+                "url": "https://gainable.fr/logo.png"
             }
         },
         "description": article.metaDesc || article.introduction,
-        "articleBody": article.content
+        "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : article.content
     };
 
     return (
@@ -146,27 +149,10 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         </div>
 
                         {/* Social Share Buttons */}
-                        <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold text-slate-400 uppercase hidden sm:block">Partager :</span>
-                            <a
-                                href={`https://www.facebook.com/sharer/sharer.php?u=https://gainable.fr/entreprise/${expert.slug}/articles/${article.slug}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-8 h-8 rounded-full bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white flex items-center justify-center transition-all"
-                                title="Partager sur Facebook"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-                            </a>
-                            <a
-                                href={`https://www.linkedin.com/sharing/share-offsite/?url=https://gainable.fr/entreprise/${expert.slug}/articles/${article.slug}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-8 h-8 rounded-full bg-blue-50 hover:bg-[#0077b5] text-[#0077b5] hover:text-white flex items-center justify-center transition-all"
-                                title="Partager sur LinkedIn"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
-                            </a>
-                        </div>
+                        <ShareButtons
+                            url={`https://gainable.fr/entreprise/${slug}/articles/${articleSlug}`}
+                            title={article.title}
+                        />
                     </div>
 
                     <h1 className="text-3xl md:text-5xl font-bold leading-tight text-slate-800">
@@ -202,7 +188,8 @@ export default async function PublicArticlePage({ params }: PageProps) {
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_350px] gap-12 mt-12">
 
                 {/* ARTICLE CONTENT */}
-                <article className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#1F2D3D] prose-a:text-[#D59B2B] prose-img:rounded-xl">
+                {/* ARTICLE CONTENT */}
+                <article className="max-w-none">
                     {/* Introduction */}
                     {article.introduction && (
                         <div className="lead text-xl md:text-2xl text-slate-700 font-serif mb-12 border-l-[6px] border-[#D59B2B] pl-8 italic leading-relaxed bg-[#D59B2B]/5 py-6 pr-4 rounded-r-lg">
@@ -210,11 +197,63 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         </div>
                     )}
 
-                    {/* HTML Content */}
-                    <div dangerouslySetInnerHTML={{ __html: article.content }} />
+                    {/* Dynamic Block Rendering OR Fallback HTML */}
+                    {hasBlocks ? (
+                        <div className="space-y-10 text-lg text-slate-700 leading-relaxed font-sans">
+                            {blocks.map((block: any) => (
+                                <div key={block.id} className="article-block">
+                                    {block.type === 'h2' && (
+                                        <h2 className="text-3xl font-bold mt-16 mb-6 text-[#1F2D3D] relative inline-block border-b-4 border-[#D59B2B]/20 pb-2">
+                                            {block.value}
+                                        </h2>
+                                    )}
+                                    {block.type === 'h3' && (
+                                        <h3 className="text-2xl font-bold mt-10 mb-4 text-[#1F2D3D]">
+                                            {block.value}
+                                        </h3>
+                                    )}
+                                    {block.type === 'text' && (
+                                        <div className="space-y-6">
+                                            {block.value.split('\n').map((line: string, i: number) => {
+                                                if (!line.trim()) return null;
+                                                return <p key={i} className="min-h-[1em]">{line}</p>
+                                            })}
+                                        </div>
+                                    )}
+                                    {block.type === 'image' && block.value && (
+                                        <figure className="my-12">
+                                            <div className="relative w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+                                                <Image
+                                                    src={block.value}
+                                                    alt={block.alt || "Illustration"}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            {block.alt && (
+                                                <figcaption className="text-center text-sm text-slate-500 mt-3 italic bg-slate-50 py-2 px-4 rounded-full inline-block mx-auto">
+                                                    {block.alt}
+                                                </figcaption>
+                                            )}
+                                        </figure>
+                                    )}
+                                    {block.type === 'video' && block.value && (
+                                        <figure className="my-12">
+                                            <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border-4 border-slate-800">
+                                                <video controls src={block.value} className="w-full h-full" />
+                                            </div>
+                                        </figure>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div
+                            className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#1F2D3D] prose-a:text-[#D59B2B] prose-img:rounded-xl prose-p:leading-relaxed prose-p:mb-6"
+                            dangerouslySetInnerHTML={{ __html: article.content }}
+                        />
+                    )}
 
-                    {/* FAQ Schema render if needed? Or just hidden schema handled above. */}
-                    {/* If we had FAQ fields, we would render them here as Accordion. */}
                 </article>
 
                 {/* SIDEBAR : AUTHOR & CTA */}
