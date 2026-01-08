@@ -29,14 +29,15 @@ async function getExpertBySlug(slug: string) {
             photos: true,
             articles: {
                 where: { status: 'PUBLISHED' },
-                orderBy: { publishedAt: 'desc' },
+                orderBy: { createdAt: 'desc' }, // Updated to match main articles page
                 take: 6,
                 select: {
                     slug: true,
                     title: true,
                     introduction: true,
                     mainImage: true,
-                    publishedAt: true
+                    publishedAt: true,
+                    createdAt: true // Need this for fallback
                 }
             },
             user: {

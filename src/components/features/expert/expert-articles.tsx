@@ -11,6 +11,7 @@ interface Article {
     introduction: string | null;
     mainImage: string | null;
     publishedAt: Date | null;
+    createdAt: Date;
 }
 
 interface ExpertArticlesProps {
@@ -62,14 +63,12 @@ export function ExpertArticles({ articles, expertSlug, expertName }: ExpertArtic
 
                                     {/* Content */}
                                     <div className="p-5 flex-1 flex flex-col">
-                                        {article.publishedAt && (
-                                            <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                                                <Calendar className="w-3 h-3" />
-                                                <time dateTime={article.publishedAt.toISOString()}>
-                                                    {format(new Date(article.publishedAt), "d MMM yyyy", { locale: fr })}
-                                                </time>
-                                            </div>
-                                        )}
+                                        <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                                            <Calendar className="w-3 h-3" />
+                                            <time dateTime={(article.publishedAt || article.createdAt).toISOString()}>
+                                                {format(new Date(article.publishedAt || article.createdAt), "d MMM yyyy", { locale: fr })}
+                                            </time>
+                                        </div>
 
                                         <h3 className="font-bold text-[#1F2D3D] line-clamp-2 mb-2 group-hover:text-[#D59B2B] transition-colors">
                                             {article.title}
