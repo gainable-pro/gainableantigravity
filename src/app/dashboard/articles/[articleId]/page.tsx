@@ -265,18 +265,41 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
 
     const wordCount = getTotalWordCount();
     const nbH2 = blocks.filter(b => b.type === 'h2').length;
-    const hasImage = mainImage && altText.length > 5;
-    const points = {
-        words: Math.min(40, (wordCount / 800) * 40),
-        structure: Math.min(20, nbH2 * 5),
-        faq: Math.min(20, faq.length * 5),
-        image: hasImage ? 20 : 0
-    };
-    const score = Math.min(100, Math.round(points.words + points.structure + points.faq + points.image));
+    // const hasImage = mainImage && altText.length > 5; // Unused in new logic
 
-    let scoreMessage = "Commencez à rédiger...";
-    if (score > 40) scoreMessage = "Continuez comme ça ! 📝";
-    if (score > 90) scoreMessage = "Presque prêt à publier 🚀";
+    const [score, setScore] = useState(0);
+    const [scoreMessage, setScoreMessage] = useState("Commencez à rédiger...");
+
+    // --- SEO SCORE CALC (Relaxed) ---
+    const calculateSeoScore = () => {
+        let s = 0;
+        // 1. Word Count (Goal: 500 instead of 800)
+        if (wordCount >= 500) s += 40;
+        else s += Math.floor((wordCount / 500) * 40);
+
+        // 2. Headings (Goal: 3 H2)
+        if (nbH2 >= 3) s += 30;
+        else s += nbH2 * 10;
+
+        // 3. FAQ Presence (Min 2)
+        if (faq.length >= 2) s += 20;
+        else s += faq.length * 10;
+
+        // 4. Image Present
+        if (mainImage) s += 10;
+
+        // Cap at 100
+        if (s > 100) s = 100;
+        setScore(s);
+
+        if (s < 50) setScoreMessage("Contenu trop court ou incomplet.");
+        else if (s < 80) setScoreMessage("Bon début ! Ajoutez du contenu.");
+        else setScoreMessage("Excellent ! Prêt à publier.");
+    };
+
+    useEffect(() => {
+        calculateSeoScore();
+    }, [title, introduction, blocks, faq, mainImage]);
 
     return (
         <div className="max-w-5xl mx-auto pb-24">
@@ -433,10 +456,13 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                     {/* VALIDATION */}
                     <Card className="border-t-4 border-t-blue-500 shadow-md">
                         <CardContent className="pt-6 flex gap-4">
-                            <Button onClick={() => handleSubmit('PUBLISHED')} className="flex-1 bg-[#D59B2B] font-bold py-6 text-white" disabled={isSaving || score < 100}>
-                                {isSaving ? <Loader2 className="animate-spin" /> : <Save className="mr-2 w-5 h-5" />} Mettre à jour
+                            <Button onClick={() => handleSubmit('PUBLISHED')} className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] font-bold py-6 text-white" disabled={isSaving}>
+                                {isSaving ? <Loader2 className="animate-spin" /> : <Save className="mr-2 w-5 h-5" />}
+                                {currentStatus === 'PUBLISHED' ? "Mettre à jour" : "Publier l'article"}
                             </Button>
-                            <Button variant="outline" onClick={() => handleSubmit('DRAFT')} className="flex-1 py-6" disabled={isSaving}>Brouillon</Button>
+                            <Button variant="outline" onClick={() => handleSubmit('DRAFT')} className="flex-1 py-6" disabled={isSaving}>
+                                {currentStatus === 'DRAFT' ? "Enregistrer Brouillon" : "Passer en Brouillon"}
+                            </Button>
                         </CardContent>
                     </Card>
                 </div>
@@ -446,6 +472,31 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                         <CardContent className="pt-6 text-center space-y-4">
                             <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
                             <div className="text-xs text-slate-500">{scoreMessage}</div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="bg-purple-50 border-purple-100">
+                        <CardContent className="pt-6 space-y-4">
+                            <div className="flex items-center gap-2 text-sm font-bold text-purple-700">
+                                <HelpCircle className="w-4 h-4" /> Prompt IA
+                            </div>
+                            <p className="text-xs text-slate-600">Générez plus de contenu pour cet article.</p>
+                            <Button variant="secondary" className="w-full text-xs" onClick={() => {
+                                const detailedPrompt = `Tu es un expert d'élite en CVC. Complète ou réécris cet article sur : "${title}".
+Ville : ${targetCity || "Général"}
+Objectif : Atteindre 2000 mots avec une qualité technique irréprochable.
+
+Structure JSON attendue :
+{
+  "introduction": "...",
+  "blocks": [ ... ],
+  "faq": [ ... ]
+}`;
+                                navigator.clipboard.writeText(detailedPrompt);
+                                alert("Prompt de complétion copié !");
+                            }}>
+                                <Copy className="w-3 h-3 mr-2" /> Copier Prompt
+                            </Button>
                         </CardContent>
                     </Card>
                 </div>

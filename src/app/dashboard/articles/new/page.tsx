@@ -653,36 +653,44 @@ export default function NewArticlePage() {
                             </div>
                             <p className="text-xs text-slate-600">Copiez ce prompt pour générer votre article.</p>
                             <Button variant="secondary" className="w-full text-xs" onClick={() => {
-                                const detailedPrompt = `Tu es un expert en climatisation et rénovation énergétique. Rédige un article complet et optimisé SEO sur le sujet : "${title}".
+                                const detailedPrompt = `Tu es un expert d'élite en CVC (Chauffage, Ventilation, Climatisation) et en SEO local.
+Rédige un article ULTRA-COMPLET de 1500 à 2000 mots sur le sujet : "${title}".
 Ville ciblée : ${targetCity || "Général"}
+
+Règles d'or pour le SEO :
+1. LONGUEUR : L'article doit faire MINIMUM 1500 mots. Développe chaque point à l'extrême.
+2. EXPERTISE : Utilise un vocabulaire technique précis (COP, SEER, R32, Inverter, dB(A), pression statique).
+3. LOCAL : Mentionne spécifiquement le climat et les spécificités de ${targetCity || "la région"} dans chaque section.
+4. STRUCTURE : 1 Introduction choc + 6 à 8 H2 détaillés + 1 Conclusion + 5 FAQ (People Also Ask).
 
 IMPORTANT : Tu dois fournir la réponse UNIQUEMENT au format JSON strict, compatible avec mon système de blocs.
 Pas de markdown autour du JSON, pas de texte avant ou après.
 
-Structure attendue (JSON) :
+Structure JSON attendue :
 {
-  "introduction": "Un paragraphe d'accroche de 3-4 lignes.",
+  "introduction": "Intro longue, captivante et optimisée SEO (200 mots).",
   "blocks": [
-    { "type": "h2", "value": "Titre de section" },
-    { "type": "text", "value": "Paragraphe riche avec mots-clés." },
-    { "type": "image", "value": "https://source.unsplash.com/random/800x600/?air-conditioner", "alt": "Description image" },
-    { "type": "h2", "value": "Autre point important" },
-    { "type": "text", "value": "Explications détaillées..." }
+    { "type": "h2", "value": "1. Titre optimisé avec mot-clé" },
+    { "type": "text", "value": "Paragraphe TRÈS DÉTAILLÉ de 300 mots..." },
+    { "type": "text", "value": "Suite du paragraphe pour aérer la lecture..." },
+    { "type": "image", "value": "https://source.unsplash.com/random/800x600/?hvac,air-conditioner", "alt": "Description SEO de l'image" },
+    { "type": "h2", "value": "2. Analyse technique détaillée..." },
+    { "type": "text", "value": "Explications techniques..." },
+    // Répéter pour 6 à 8 sections
   ],
   "faq": [
-    { "question": "Question fréquente 1 ?", "response": "Réponse courte et précise." },
-    { "question": "Question fréquente 2 ?", "response": "Réponse experte." }
+    { "question": "Question fréquente 1 ?", "response": "Réponse précise et utile." },
+    { "question": "Question fréquente 2 ?", "response": "Réponse experte." },
+    { "question": "Question fréquente 3 ?", "response": "Réponse détaillée." },
+    { "question": "Question fréquente 4 ?", "response": "Réponse technique." },
+    { "question": "Question fréquente 5 ?", "response": "Réponse pratique." }
   ]
-}
-
-Consignes de rédaction :
-- Ton professionnel et rassurant.
-- Utilise la sémantique liée à la climatisation gainable, pompe à chaleur.
-- Structure claire avec H2 et H3.
-- Ajoute au moins 3 sections et 3 questions FAQ.`;
+}`;
                                 navigator.clipboard.writeText(detailedPrompt);
-                                alert("Prompt détaillé copié ! Collez-le dans ChatGPT.");
-                            }}>Copier Prompt Expert</Button>
+                                alert("Prompt Expert copié ! Collez-le dans ChatGPT/Claude.");
+                            }}>
+                                <Copy className="w-3 h-3 mr-2" /> Copier Prompt Expert
+                            </Button>
                         </CardContent>
                     </Card>
                 </div>
