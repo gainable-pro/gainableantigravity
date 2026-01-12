@@ -187,30 +187,58 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                             </span>
                                         </div>
 
-                                        <div className="flex flex-wrap items-center gap-4 text-slate-600 text-sm font-medium">
-                                            <span className="flex items-center gap-1">
-                                                <MapPin className="w-4 h-4 text-[#D59B2B]" /> {expert.ville} ({expert.code_postal}), {expert.pays}
-                                            </span>
-                                            {expert.site_web && (
-                                                <a href={expert.site_web.startsWith('http') ? expert.site_web : `https://${expert.site_web}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#D59B2B] transition-colors">
-                                                    <Globe className="w-4 h-4" /> Site web
-                                                </a>
-                                            )}
-                                            {expert.linkedin && (
-                                                <a href={expert.linkedin.startsWith('http') ? expert.linkedin : `https://${expert.linkedin}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#0077b5] transition-colors">
-                                                    <Linkedin className="w-4 h-4" /> LinkedIn
-                                                </a>
-                                            )}
-                                            {expert.facebook && (
-                                                <a href={expert.facebook.startsWith('http') ? expert.facebook : `https://${expert.facebook}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#1877F2] transition-colors">
-                                                    <Facebook className="w-4 h-4" /> Facebook
-                                                </a>
-                                            )}
-                                            {expert.youtube && (
-                                                <a href={expert.youtube.startsWith('http') ? expert.youtube : `https://${expert.youtube}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-[#FF0000] transition-colors">
-                                                    <Youtube className="w-4 h-4" /> YouTube
-                                                </a>
-                                            )}
+                                        <div className="flex flex-col gap-3 mb-6">
+                                            <div className="flex items-center gap-2 text-slate-600 font-medium">
+                                                <MapPin className="w-4 h-4 text-[#D59B2B]" />
+                                                <span>{expert.ville} ({expert.code_postal}), {expert.pays}</span>
+                                            </div>
+
+                                            <div className="flex flex-wrap items-center gap-3">
+                                                {expert.site_web && (
+                                                    <a
+                                                        href={expert.site_web.startsWith('http') ? expert.site_web : `https://${expert.site_web}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 font-medium hover:bg-white hover:border-[#D59B2B] hover:text-[#D59B2B] hover:shadow-md transition-all"
+                                                    >
+                                                        <Globe className="w-4 h-4" />
+                                                        <span>Site web</span>
+                                                    </a>
+                                                )}
+                                                {expert.linkedin && (
+                                                    <a
+                                                        href={expert.linkedin.startsWith('http') ? expert.linkedin : `https://${expert.linkedin}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 font-medium hover:bg-[#0077b5] hover:border-[#0077b5] hover:text-white hover:shadow-md transition-all"
+                                                    >
+                                                        <Linkedin className="w-4 h-4" />
+                                                        <span>LinkedIn</span>
+                                                    </a>
+                                                )}
+                                                {expert.facebook && (
+                                                    <a
+                                                        href={expert.facebook.startsWith('http') ? expert.facebook : `https://${expert.facebook}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 font-medium hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white hover:shadow-md transition-all"
+                                                    >
+                                                        <Facebook className="w-4 h-4" />
+                                                        <span>Facebook</span>
+                                                    </a>
+                                                )}
+                                                {expert.youtube && (
+                                                    <a
+                                                        href={expert.youtube.startsWith('http') ? expert.youtube : `https://${expert.youtube}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 font-medium hover:bg-[#FF0000] hover:border-[#FF0000] hover:text-white hover:shadow-md transition-all"
+                                                    >
+                                                        <Youtube className="w-4 h-4" />
+                                                        <span>YouTube</span>
+                                                    </a>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -262,7 +290,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                         <iframe
                                             width="100%"
                                             height="100%"
-                                            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&loop=1&playlist=${youtubeId}&mute=1`}
+                                            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&loop=1&playlist=${youtubeId}`}
                                             title="Video user"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen
@@ -273,7 +301,6 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                             controls
                                             autoPlay
                                             loop
-                                            muted
                                             playsInline
                                             className="w-full h-full object-cover"
                                         />

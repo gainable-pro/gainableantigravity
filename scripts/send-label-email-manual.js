@@ -1,59 +1,49 @@
 
-import { Resend } from 'resend';
+const { PrismaClient } = require('@prisma/client');
+const dotenv = require('dotenv');
+dotenv.config({ path: '.env' });
+dotenv.config({ path: '.env.local' });
 
-// Use env var or allowed test key if not set (for dev without env)
-// Note: In prod, strict env check is needed.
-// Generic Email Sender
-export async function sendEmail({
-    to,
-    subject,
-    html,
-    text
-}: {
-    to: string | string[];
-    subject: string;
-    html: string;
-    text?: string;
-}) {
-    const resendApiKey = process.env.RESEND_API_KEY;
+// Mock Resend/Fetch if running standalone without Next.js environment?
+// Actually simpler to just rely on the lib if we compile it, or inline the logic here to avoid compilation issues.
+// Let's inline the logic to be safe and fast.
 
-    if (!resendApiKey) {
-        console.warn("⚠️ RESEND_API_KEY not set. Email simulation:", { to, subject });
-        return { success: true, simulated: true };
+const { Resend } = require('resend');
+const fs = require('fs');
+const path = require('path');
+
+const prisma = new PrismaClient();
+
+async function sendData() {
+    console.log("Searching for Air G Energie...");
+    const expert = await prisma.expert.findFirst({
+        where: {
+            nom_entreprise: { contains: 'Air G', mode: 'insensitive' }
+        },
+        include: { user: true }
+    });
+
+    if (!expert) {
+        console.error("User not found!");
+        return;
     }
 
-    const resend = new Resend(resendApiKey);
+    console.log("Found expert:", expert.nom_entreprise, "Email:", expert.user.email);
 
-    try {
-        const data = await resend.emails.send({
-            from: 'Gainable.fr <contact@gainable.fr>', // Use generic sender for testing
-            to,
-            subject,
-            html,
-            text
-        });
-        return { success: true, data };
-    } catch (error) {
-        console.error("Resend Error:", error);
-        return { success: false, error };
-    }
-}
-
-// Specific Email: Expert Verified Label
-export async function sendLabelAwardedEmail(to: string, companyName: string, slug: string) {
-    const resendApiKey = process.env.RESEND_API_KEY;
-    if (!resendApiKey) {
-        console.warn("⚠️ RESEND_API_KEY not set. Email simulation for Label Award:", { to, companyName });
-        return { success: true, simulated: true };
+    const email = expert.user.email;
+    if (!process.env.RESEND_API_KEY) {
+        console.error("Missing RESEND_API_KEY");
+        return;
     }
 
-    const resend = new Resend(resendApiKey);
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
+    // Content Logic (Replicated from src/lib/email.ts for standalone test)
+    const slug = expert.slug;
     const profileUrl = `https://www.gainable.fr/pro/${slug}`;
     const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(profileUrl)}`;
     const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(profileUrl)}`;
 
-    // Text content
     const textContent = `Bonjour,
 
 Nous vous remercions pour votre confiance et sommes ravis de vous accueillir parmi les professionnels référencés sur Gainable.fr.
@@ -119,30 +109,38 @@ contact@gainable.fr`;
     `;
 
     try {
-        // Read the image file and convert to buffer
-        // Note: fs is not available in Edge runtime, but this is likely Node runtime.
-        // We will assume Node runtime for simplicity as no "edge" config seen in routes.
-        const fs = require('fs');
-        const path = require('path');
         const imagePath = path.join(process.cwd(), 'public', 'assets', 'label-gainable-verified.png');
-        const imageBuffer = fs.readFileSync(imagePath);
+        if (fs.existsSync(imagePath)) {
+            const imageBuffer = fs.readFileSync(imagePath);
+            console.log("Image found, sending email...");
 
-        const data = await resend.emails.send({
-            from: 'Gainable.fr <conseil@gainable.ch>',
-            to,
-            subject: 'Félicitations ! Votre entreprise a reçu le label "Compte Certifié" Gainable.fr',
-            html: htmlContent,
-            text: textContent,
-            attachments: [
-                {
-                    filename: 'label-gainable-verified.png',
-                    content: imageBuffer
-                }
-            ]
-        });
-        return { success: true, data };
-    } catch (error) {
-        console.error("Resend Error (Label Email):", error);
-        return { success: false, error };
+            const response = await resend.emails.send({
+                from: 'Gainable.fr <conseil@gainable.ch>',
+                to: email,
+                subject: 'Félicitations ! Votre entreprise a reçu le label "Compte Certifié" Gainable.fr',
+                html: htmlContent,
+                text: textContent,
+                attachments: [
+                    {
+                        filename: 'label-gainable-verified.png',
+                        content: imageBuffer
+                    }
+                ]
+            });
+            console.log("Resend API Response:", JSON.stringify(response, null, 2));
+            if (response.error) {
+                console.error("Resend Error:", response.error);
+            } else {
+                console.log("Email sent successfully according to API!");
+            }
+        } else {
+            console.error("Image file not found at " + imagePath);
+        }
+    } catch (e) {
+        console.error("Error sending email:", e);
     }
 }
+
+sendData()
+    .catch(e => console.error(e))
+    .finally(() => prisma.$disconnect());

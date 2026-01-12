@@ -247,7 +247,7 @@ export async function POST(req: Request) {
             <p style="margin-top: 40px;">Nous sommes ravis de vous compter parmi les entreprises référencées sur Gainable.fr et nous réjouissons de cette future collaboration.</p>
             
             <div style="margin-top: 40px; text-align: center;">
-                <a href="https://www.gainable.fr/login" style="background-color: #1F2D3D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Accéder à mon espace pro</a>
+                <a href="https://www.gainable.fr" style="background-color: #1F2D3D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Accéder à mon espace pro</a>
             </div>
 
             <p style="margin-top: 40px; font-size: 14px; color: #666;">

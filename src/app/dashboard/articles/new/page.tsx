@@ -633,9 +633,36 @@ export default function NewArticlePage() {
                             </div>
                             <p className="text-xs text-slate-600">Copiez ce prompt pour générer votre article.</p>
                             <Button variant="secondary" className="w-full text-xs" onClick={() => {
-                                navigator.clipboard.writeText(`Rédige un article sur : ${title}... (Format JSON Blocks)`);
-                                alert("Copié !");
-                            }}>Copier Prompt</Button>
+                                const detailedPrompt = `Tu es un expert en climatisation et rénovation énergétique. Rédige un article complet et optimisé SEO sur le sujet : "${title}".
+Ville ciblée : ${targetCity || "Général"}
+
+IMPORTANT : Tu dois fournir la réponse UNIQUEMENT au format JSON strict, compatible avec mon système de blocs.
+Pas de markdown autour du JSON, pas de texte avant ou après.
+
+Structure attendue (JSON) :
+{
+  "introduction": "Un paragraphe d'accroche de 3-4 lignes.",
+  "blocks": [
+    { "type": "h2", "value": "Titre de section" },
+    { "type": "text", "value": "Paragraphe riche avec mots-clés." },
+    { "type": "image", "value": "https://source.unsplash.com/random/800x600/?air-conditioner", "alt": "Description image" },
+    { "type": "h2", "value": "Autre point important" },
+    { "type": "text", "value": "Explications détaillées..." }
+  ],
+  "faq": [
+    { "question": "Question fréquente 1 ?", "response": "Réponse courte et précise." },
+    { "question": "Question fréquente 2 ?", "response": "Réponse experte." }
+  ]
+}
+
+Consignes de rédaction :
+- Ton professionnel et rassurant.
+- Utilise la sémantique liée à la climatisation gainable, pompe à chaleur.
+- Structure claire avec H2 et H3.
+- Ajoute au moins 3 sections et 3 questions FAQ.`;
+                                navigator.clipboard.writeText(detailedPrompt);
+                                alert("Prompt détaillé copié ! Collez-le dans ChatGPT.");
+                            }}>Copier Prompt Expert</Button>
                         </CardContent>
                     </Card>
                 </div>

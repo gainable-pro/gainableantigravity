@@ -59,7 +59,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
         setLoadingMap(prev => ({ ...prev, [userId]: null }));
     };
 
-    const handleAction = async (userId: string, action: 'delete' | 'validate_expert' | 'promote_admin' | 'toggle_label' | 'update_email', value?: boolean | string) => {
+    const handleAction = async (userId: string, action: 'delete' | 'validate_expert' | 'promote_admin' | 'toggle_label' | 'update_email' | 'send_label_email', value?: boolean | string) => {
         if (action === 'delete' && !confirm("Supprimer définitivement cet utilisateur ?")) return;
 
         setLoadingMap(prev => ({ ...prev, [userId]: action }));
@@ -240,7 +240,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                         {/* LABEL COLUMN */}
                                         <td className="p-4 text-center">
                                             {user.expert ? (
-                                                <div className="flex justify-center">
+                                                <div className="flex items-center gap-2 justify-center">
                                                     <input
                                                         type="checkbox"
                                                         checked={!!user.expert.is_labeled}
@@ -248,6 +248,19 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                                         disabled={!!loadingMap[user.id]}
                                                         className="w-5 h-5 rounded border-slate-300 text-[#D59B2B] focus:ring-[#D59B2B] cursor-pointer"
                                                     />
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            if (confirm(`Renvoyer l'email de label à ${user.expert?.nom_entreprise} ?`)) {
+                                                                handleAction(user.id, 'send_label_email');
+                                                            }
+                                                        }}
+                                                        disabled={!!loadingMap[user.id] || !user.expert.is_labeled}
+                                                        className="ml-2 p-1.5 rounded-full text-slate-400 hover:text-amber-600 hover:bg-amber-50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                                                        title="Envoyer l'email de label manuellement"
+                                                    >
+                                                        {loadingMap[user.id] === 'send_label_email' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
+                                                    </button>
                                                 </div>
                                             ) : (
                                                 "-"

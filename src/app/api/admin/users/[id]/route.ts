@@ -51,12 +51,25 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
     // Toggle Label
     if (body.action === 'toggle_label') {
         try {
-            await prisma.expert.update({
+            // Updated to fetch user so we can send email if labeled becomes true
+            const expert = await prisma.expert.update({
                 where: { user_id: id },
-                data: { is_labeled: body.value }
+                data: { is_labeled: body.value },
+                include: { user: true }
             });
+
+            // Send Email if Label is ACTIVATED (true)
+            if (body.value === true && expert.user?.email) {
+                console.log("Label activated, triggering email for:", expert.user.email);
+                const { sendLabelAwardedEmail } = await import("@/lib/email");
+                await sendLabelAwardedEmail(expert.user.email, expert.nom_entreprise || "Partenaire", expert.slug);
+            } else {
+                console.log("Label update: no email sent. Value:", body.value, "HasEmail:", !!expert.user?.email);
+            }
+
             return NextResponse.json({ message: "Label updated" });
         } catch (e) {
+            console.error("Error updating label:", e);
             return NextResponse.json({ message: "Error updating label" }, { status: 500 });
         }
     }
@@ -95,6 +108,29 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
             return NextResponse.json({ message: "Email updated" });
         } catch (e) {
             return NextResponse.json({ message: "Error updating email" }, { status: 500 });
+        }
+    }
+
+    // Manual Email Trigger
+    if (body.action === 'send_label_email') {
+        try {
+            const expert = await prisma.expert.findUnique({
+                where: { user_id: id },
+                include: { user: true }
+            });
+
+            if (!expert || !expert.user?.email) {
+                return NextResponse.json({ message: "Expert or email not found" }, { status: 404 });
+            }
+
+            console.log("Manual trigger: Sending label email to:", expert.user.email);
+            const { sendLabelAwardedEmail } = await import("@/lib/email");
+            await sendLabelAwardedEmail(expert.user.email, expert.nom_entreprise || "Partenaire", expert.slug);
+
+            return NextResponse.json({ message: "Email sent successfully" });
+        } catch (e) {
+            console.error("Error sending manual email:", e);
+            return NextResponse.json({ message: "Error sending email" }, { status: 500 });
         }
     }
 
