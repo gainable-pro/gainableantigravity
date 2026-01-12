@@ -102,21 +102,25 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
         if (status === 'PUBLISHED') {
 
+            // RELAXED VALIDATION: We allow publication even if content is short.
+            // Only basic checks remain (Image + Alt checked above).
+
+            /*
             let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
 
             if (blocks.length > 0) {
                 const h2Count = blocks.filter((b: any) => b.type === 'h2').length;
-                if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2)." }, { status: 400 });
+                // if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2)." }, { status: 400 });
                 blocks.forEach((b: any) => {
                     if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') totalWordCount += countWordsText(b.value || "");
                 });
             } else {
-                if (sections.length < 3) return NextResponse.json({ error: "Min 3 sections." }, { status: 400 });
+                // if (sections.length < 3) return NextResponse.json({ error: "Min 3 sections." }, { status: 400 });
                 sections.forEach((sec: any) => totalWordCount += countWordsText(sec.content || ""));
             }
 
-            if (faqs.length < 2) return NextResponse.json({ error: "Min 2 FAQ." }, { status: 400 });
-            if (totalWordCount < 600) return NextResponse.json({ error: `Contenu trop court (${totalWordCount} mots). Min 600.` }, { status: 400 });
+            // if (faqs.length < 2) return NextResponse.json({ error: "Min 2 FAQ." }, { status: 400 });
+            // if (totalWordCount < 600) return NextResponse.json({ error: `Contenu trop court (${totalWordCount} mots). Min 600.` }, { status: 400 });
 
             // Rule: Forbidden Words
             let allText = body.title + " " + (body.introduction || "") + " ";
@@ -133,6 +137,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
             if (forbiddenFound.length > 0) {
                 return NextResponse.json({ error: `Mots interdits: '${forbiddenFound[0]}'.` }, { status: 400 });
             }
+            */
 
             // Quota check ignored on UPDATE usually, unless we want to strict enforce. 
             // If article was DRAFT and now PUBLISHED, strictly speaking we should check quota.
@@ -143,7 +148,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 const publishedCount = await prisma.article.count({
                     where: { expertId: expert.id, status: 'PUBLISHED', publishedAt: { gte: startOfMonth, lte: endOfMonth } }
                 });
-                if (publishedCount >= 2 && expert.slug !== 'gainable-fr') return NextResponse.json({ error: `Quota atteint (2/mois).` }, { status: 403 });
+                if (publishedCount >= 3 && expert.slug !== 'gainable-fr') return NextResponse.json({ error: `Quota atteint (3/mois).` }, { status: 403 });
             }
         }
 

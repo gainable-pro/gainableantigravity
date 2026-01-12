@@ -138,6 +138,10 @@ export async function POST(req: Request) {
 
         if (status === 'PUBLISHED') {
 
+            // RELAXED VALIDATION: We allow publication even if content is short.
+            // Only basic checks remain (Image + Alt checked above).
+
+            /*
             // Check Structure (Legacy Sections OR New Blocks)
             let hasEnoughContent = false;
             let totalWordCount = countWordsText(body.title) + countWordsText(body.introduction || "");
@@ -145,7 +149,7 @@ export async function POST(req: Request) {
             if (blocks.length > 0) {
                 // New System Validation
                 const h2Count = blocks.filter((b: any) => b.type === 'h2').length;
-                if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2) requis." }, { status: 400 });
+                // if (h2Count < 2) return NextResponse.json({ error: "Structure insuffisante : Au moins 2 titres (H2) requis." }, { status: 400 });
 
                 blocks.forEach((b: any) => {
                     if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') {
@@ -155,41 +159,29 @@ export async function POST(req: Request) {
 
             } else {
                 // Legacy System Validation
-                if (sections.length < 3) {
-                    return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 3 sections." }, { status: 400 });
-                }
+                // if (sections.length < 3) return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 3 sections." }, { status: 400 });
                 sections.forEach((sec: any) => {
                     totalWordCount += countWordsText(sec.content || "");
                 });
             }
 
             // Rule: Min 2 FAQs
-            if (faqs.length < 2) {
-                return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 2 questions FAQ." }, { status: 400 });
-            }
+            // if (faqs.length < 2) return NextResponse.json({ error: "Publication refusée : L'article doit contenir au moins 2 questions FAQ." }, { status: 400 });
 
             // Rule: Min 600 words
-            if (totalWordCount < 600) {
-                return NextResponse.json({ error: `Publication refusée : Contenu trop court (${totalWordCount} mots). Minimum 600 mots requis.` }, { status: 400 });
-            }
+            // if (totalWordCount < 600) return NextResponse.json({ error: `Publication refusée : Contenu trop court (${totalWordCount} mots). Minimum 600 mots requis.` }, { status: 400 });
 
             // Rule: Forbidden Words
             let allText = body.title + " " + (body.introduction || "") + " ";
-
-            if (blocks.length > 0) {
-                blocks.forEach((b: any) => {
-                    if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') allText += b.value + " ";
-                });
-            } else {
-                sections.forEach((s: any) => allText += (s.title || "") + " " + (s.content || "") + " ");
-            }
-
+            if (blocks.length > 0) blocks.forEach((b: any) => { if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') allText += b.value + " "; });
+            else sections.forEach((s: any) => allText += (s.title || "") + " " + (s.content || "") + " ");
             faqs.forEach((f: any) => allText += (f.question || "") + " " + (f.response || "") + " ");
 
             const forbiddenFound = checkForbiddenWords(allText);
             if (forbiddenFound.length > 0) {
                 return NextResponse.json({ error: `Publication refusée : Mots interdits détectés ('${forbiddenFound[0]}').` }, { status: 400 });
             }
+            */
 
             // Rule: Quota
             // 1. Quota Check (Max 2 published per month)
