@@ -57,6 +57,9 @@ export default function NewArticlePage() {
         { id: '2', question: '', response: '' },
     ]);
 
+    const [score, setScore] = useState(0);
+    const [scoreMessage, setScoreMessage] = useState("Commencez à rédiger...");
+
     // --- HELPERS ---
     const slugify = (text: string) => {
         return text.toString().toLowerCase()
@@ -272,20 +275,37 @@ export default function NewArticlePage() {
 
     const wordCount = getTotalWordCount();
     const nbH2 = blocks.filter(b => b.type === 'h2').length;
-    const hasImage = mainImage && altText.length > 5;
 
-    // Simple Score
-    const points = {
-        words: Math.min(40, (wordCount / 800) * 40),
-        structure: Math.min(20, nbH2 * 5),
-        faq: Math.min(20, faq.length * 5),
-        image: hasImage ? 20 : 0
+    // --- SEO SCORE CALC ---
+    const calculateSeoScore = () => {
+        let s = 0;
+        // 1. Word Count (Goal: 500+)
+        if (wordCount >= 500) s += 40;
+        else s += Math.floor((wordCount / 500) * 40);
+
+        // 2. Headings (Goal: 3 H2)
+        if (nbH2 >= 3) s += 30;
+        else s += nbH2 * 10;
+
+        // 3. FAQ Presence
+        if (faq.length >= 2) s += 20;
+        else s += faq.length * 10;
+
+        // 4. Image Present
+        if (mainImage) s += 10;
+
+        // Cap at 100
+        if (s > 100) s = 100;
+        setScore(s);
+
+        if (s < 50) setScoreMessage("Contenu trop court ou incomplet.");
+        else if (s < 80) setScoreMessage("Bon début ! Ajoutez du contenu.");
+        else setScoreMessage("Excellent ! Prêt à publier.");
     };
-    const score = Math.min(100, Math.round(points.words + points.structure + points.faq + points.image));
 
-    let scoreMessage = "Commencez à rédiger...";
-    if (score > 40) scoreMessage = "Continuez comme ça ! 📝";
-    if (score > 90) scoreMessage = "Presque prêt à publier 🚀";
+    useEffect(() => {
+        calculateSeoScore();
+    }, [title, introduction, blocks, faq, mainImage]);
 
     return (
         <div className="max-w-5xl mx-auto pb-24">
@@ -589,7 +609,7 @@ export default function NewArticlePage() {
                                 <Button
                                     onClick={() => handleSubmit('PUBLISHED')}
                                     className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-6"
-                                    disabled={isLoading || score < 100}
+                                    disabled={isLoading}
                                 >
                                     {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
                                     <Save className="mr-2 h-5 w-5" /> Publier
