@@ -112,6 +112,11 @@ async function main() {
             Cordialement,<br>
             <strong>L'équipe Gainable.fr</strong>
         </p>
+        
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 11px; color: #999; text-align: center;">
+            <p style="margin: 0; margin-bottom: 5px;">Ceci est un email automatique, merci de ne pas y répondre directement.<br>
+            Pour toute demande, veuillez utiliser le formulaire de contact ou nous écrire à <a href="mailto:contact@gainable.fr" style="color: #999; text-decoration: underline;">contact@gainable.fr</a></p>
+        </div>
     </div>
     `;
 

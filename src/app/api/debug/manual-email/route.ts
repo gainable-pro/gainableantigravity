@@ -63,6 +63,11 @@ export async function GET(req: Request) {
             Cordialement,<br>
             <strong>L'équipe Gainable.fr</strong>
         </p>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 11px; color: #999; text-align: center;">
+            <p style="margin: 0; margin-bottom: 5px;">Ceci est un email automatique, merci de ne pas y répondre directement.<br>
+            Pour toute demande, veuillez utiliser le formulaire de contact ou nous écrire à <a href="mailto:contact@gainable.fr" style="color: #999; text-decoration: underline;">contact@gainable.fr</a></p>
+        </div>
     </div>
                 `
             });
@@ -122,6 +127,11 @@ export async function GET(req: Request) {
             <strong>L'équipe Gainable.fr</strong><br>
             <a href="https://www.gainable.fr" style="color: #F59E0B; text-decoration: none;">www.gainable.fr</a>
         </p>
+        
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; font-size: 11px; color: #94a3b8; text-align: center;">
+            <p style="margin: 0; margin-bottom: 5px;">Ceci est un email automatique, merci de ne pas y répondre directement.<br>
+            Pour toute demande, veuillez utiliser le formulaire de contact ou nous écrire à <a href="mailto:contact@gainable.fr" style="color: #94a3b8; text-decoration: underline;">contact@gainable.fr</a></p>
+        </div>
     </div>
                 `,
                 attachments: attachments

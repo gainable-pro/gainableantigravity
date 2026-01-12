@@ -258,6 +258,8 @@ export async function POST(req: Request) {
 
         <!-- Footer -->
         <div style="background-color: #f8fafc; padding: 20px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
+            <p style="margin: 0; margin-bottom: 10px;">Ceci est un email automatique, merci de ne pas y répondre directement.<br>
+            Pour toute demande, veuillez utiliser le formulaire de contact ou nous écrire à <a href="mailto:contact@gainable.fr" style="color: #94a3b8; text-decoration: underline;">contact@gainable.fr</a></p>
             <p style="margin: 0;">Gainable.fr - La plateforme des experts</p>
         </div>
     </div>
