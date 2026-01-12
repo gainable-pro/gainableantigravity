@@ -84,6 +84,13 @@ export default async function PublicArticlePage({ params }: PageProps) {
     const blocks = (article.jsonContent as any)?.blocks as any[];
     const hasBlocks = Array.isArray(blocks) && blocks.length > 0;
 
+    console.log("--- DEBUG ARTICLE RENDER ---");
+    console.log("Title:", article.title);
+    console.log("Has Blocks:", hasBlocks);
+    console.log("Blocks Count:", blocks?.length);
+    console.log("Raw JSON:", JSON.stringify(article.jsonContent));
+    console.log("----------------------------");
+
     // Structured Data (Schema.org)
     const jsonLd = {
         "@context": "https://schema.org",
