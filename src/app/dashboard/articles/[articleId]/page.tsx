@@ -70,30 +70,37 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                 setVideoUrl(data.videoUrl || "");
                 setCurrentStatus(data.status || "DRAFT");
 
-                // HYDRATION LOGIC
-                if (data.jsonContent && (data.jsonContent as any).blocks) {
-                    // New Format
-                    setBlocks((data.jsonContent as any).blocks);
-                    if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
-                } else if (data.jsonContent && (data.jsonContent as any).sections) {
-                    // OLD Format -> Convert to Blocks
-                    const oldSections = (data.jsonContent as any).sections;
-                    const convertedBlocks: ContentBlock[] = [];
+                // HYDRATION LOGIC (Robust)
+                if (data.jsonContent && typeof data.jsonContent === 'object') {
+                    if (Array.isArray((data.jsonContent as any).blocks)) {
+                        // New Format (Clean)
+                        setBlocks((data.jsonContent as any).blocks);
+                        if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
+                    }
+                    else if (Array.isArray((data.jsonContent as any).sections)) {
+                        // OLD Format -> Convert to Blocks
+                        const oldSections = (data.jsonContent as any).sections;
+                        const convertedBlocks: ContentBlock[] = [];
 
-                    oldSections.forEach((s: any) => {
-                        convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h2', value: s.title });
-                        convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'text', value: s.content });
-                        if (s.showSubtitle && s.subtitle) {
-                            convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h3', value: s.subtitle });
-                        }
-                    });
-                    setBlocks(convertedBlocks);
-                    if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
-                } else {
+                        oldSections.forEach((s: any) => {
+                            if (!s) return;
+                            convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h2', value: s.title || '' });
+                            convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'text', value: s.content || '' });
+                            if (s.showSubtitle && s.subtitle) {
+                                convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h3', value: s.subtitle || '' });
+                            }
+                        });
+                        setBlocks(convertedBlocks);
+                        if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
+                    }
+                }
+
+                // If blocks is still empty after check, fallback
+                if (blocks.length === 0 && (!data.jsonContent || !(data.jsonContent as any).blocks)) {
                     // Fallback / Corrupted
                     setBlocks([
                         { id: '1', type: 'h2', value: 'Nouvelle Section' },
-                        { id: '2', type: 'text', value: 'Contenu...' }
+                        { id: '2', type: 'text', value: 'Commencez à écrire ici...' }
                     ]);
                 }
 
