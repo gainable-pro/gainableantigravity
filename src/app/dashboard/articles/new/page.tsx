@@ -1,25 +1,21 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-    AlertCircle, ChevronLeft, Loader2, Save, Image as ImageIcon, X, UploadCloud, Plus,
-    Trash2, HelpCircle, Copy, AlignLeft, Heading, Video, MoveUp, MoveDown, Type
-} from "lucide-react";
+import { AlertCircle, ChevronLeft, Loader2, Save, UploadCloud, X, Plus, Trash2, HelpCircle, Copy, GripVertical } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// --- TYPES ---
-export type BlockType = 'h2' | 'h3' | 'text' | 'image' | 'video';
-
-export interface ContentBlock {
+interface ArticleSection {
     id: string;
-    type: BlockType;
-    value: string; // Content text or URL
-    alt?: string; // For images
+    title: string;
+    subtitle: string;
+    content: string;
+    showSubtitle: boolean;
+    list: string[];
 }
 
 interface FAQItem {
@@ -35,32 +31,25 @@ export default function NewArticlePage() {
     const [error, setError] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    // --- STATE ---
+    // Form State
     const [title, setTitle] = useState("");
     const [slug, setSlug] = useState("");
     const [introduction, setIntroduction] = useState("");
     const [mainImage, setMainImage] = useState("");
     const [altText, setAltText] = useState("");
-    // Video Main (Top) - Optional, users might prefer blocks now, but keeping for compatibility
     const [videoUrl, setVideoUrl] = useState("");
     const [targetCity, setTargetCity] = useState("");
 
-    // BLOCKS (Flexible Content)
-    const [blocks, setBlocks] = useState<ContentBlock[]>([
-        { id: '1', type: 'h2', value: '' },
-        { id: '2', type: 'text', value: '' },
+    const [sections, setSections] = useState<ArticleSection[]>([
+        { id: '1', title: '', subtitle: '', content: '', showSubtitle: false, list: [] }
     ]);
 
-    // FAQ (Min 2)
     const [faq, setFaq] = useState<FAQItem[]>([
         { id: '1', question: '', response: '' },
-        { id: '2', question: '', response: '' },
+        { id: '2', question: '', response: '' }
     ]);
 
-    const [score, setScore] = useState(0);
-    const [scoreMessage, setScoreMessage] = useState("Commencez à rédiger...");
-
-    // --- HELPERS ---
+    // Helpers
     const slugify = (text: string) => {
         return text.toString().toLowerCase()
             .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -76,236 +65,141 @@ export default function NewArticlePage() {
         }
     };
 
-    const countWords = (str: string) => str.trim().split(/\s+/).filter(w => w.length > 0).length;
-
-    const getTotalWordCount = () => {
-        let count = countWords(title) + countWords(introduction);
-        blocks.forEach(b => {
-            if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') {
-                count += countWords(b.value);
-            }
-        });
-        faq.forEach(f => {
-            count += countWords(f.question) + countWords(f.response);
-        });
-        return count;
-    };
-
-    // --- BLOCK ACTIONS ---
-    const addBlock = (type: BlockType) => {
-        setBlocks([...blocks, { id: Date.now().toString(), type, value: '' }]);
-    };
-
-    const removeBlock = (index: number) => {
-        const newBlocks = [...blocks];
-        newBlocks.splice(index, 1);
-        setBlocks(newBlocks);
-    };
-
-    const moveBlock = (index: number, direction: 'up' | 'down') => {
-        if (direction === 'up' && index === 0) return;
-        if (direction === 'down' && index === blocks.length - 1) return;
-
-        const newBlocks = [...blocks];
-        const swapIndex = direction === 'up' ? index - 1 : index + 1;
-        [newBlocks[index], newBlocks[swapIndex]] = [newBlocks[swapIndex], newBlocks[index]];
-        setBlocks(newBlocks);
-    };
-
-    const updateBlock = (index: number, field: keyof ContentBlock, value: string) => {
-        const newBlocks = [...blocks];
-        newBlocks[index] = { ...newBlocks[index], [field]: value };
-        setBlocks(newBlocks);
-    };
-
-    // Generic Upload for Blocks
-    const handleBlockUpload = async (index: number, e: React.ChangeEvent<HTMLInputElement>, isVideo: boolean = false) => {
+    const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (!file) return;
 
-        if (isVideo && !['video/mp4', 'video/webm'].includes(file.type)) {
-            alert("Format vidéo non supporté (MP4, WebM)");
-            return;
-        }
-
         setIsUploading(true);
-        const data = new FormData();
-        data.append("file", file);
-        data.append("folder", "articles");
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("folder", "articles");
 
         try {
-            const res = await fetch("/api/upload", { method: "POST", body: data });
-            if (!res.ok) throw new Error("Upload failed");
-            const json = await res.json();
-            updateBlock(index, 'value', json.url);
-        } catch (err) {
-            alert("Erreur upload");
-        } finally {
-            setIsUploading(false);
-        }
-    };
+            const res = await fetch("/api/upload", {
+                method: "POST",
+                body: formData
+            });
 
-    // --- MAIN IMAGE UPLOAD ---
-    const handleMainImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setIsUploading(true);
-        const data = new FormData();
-        data.append("file", file);
-        data.append("folder", "articles");
-        try {
-            const res = await fetch("/api/upload", { method: "POST", body: data });
             if (!res.ok) throw new Error("Erreur upload");
-            const json = await res.json();
-            setMainImage(json.url);
+            const data = await res.json();
+            setMainImage(data.url);
         } catch (err) {
-            setError("Impossible d'uploader l'image.");
+            console.error(err);
+            setError("Erreur lors de l'upload de l'image");
         } finally {
             setIsUploading(false);
         }
     };
 
-    const handleVideoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        // Keep existing logic for top video if user wants it there
-        const file = e.target.files?.[0];
-        if (!file) return;
-        setIsUploading(true);
-        if (!['video/mp4', 'video/webm'].includes(file.type)) {
-            alert("Format vidéo non supporté");
-            setIsUploading(false);
-            return;
-        }
-        const data = new FormData();
-        data.append("file", file);
-        data.append("folder", "articles");
-        try {
-            const res = await fetch("/api/upload", { method: "POST", body: data });
-            if (!res.ok) throw new Error("Err");
-            const json = await res.json();
-            setVideoUrl(json.url);
-        } catch (err) { setError("Erreur upload vidéo"); }
-        finally { setIsUploading(false); }
+    // Sections Management
+    const addSection = () => {
+        setSections([...sections, {
+            id: Date.now().toString(),
+            title: '',
+            subtitle: '',
+            content: '',
+            showSubtitle: false,
+            list: []
+        }]);
     };
 
-    // --- FAQ ACTIONS ---
+    const updateSection = (index: number, field: keyof ArticleSection, value: any) => {
+        const newSections = [...sections];
+        newSections[index] = { ...newSections[index], [field]: value };
+        setSections(newSections);
+    };
+
+    const removeSection = (index: number) => {
+        if (sections.length <= 1) return;
+        const newSections = [...sections];
+        newSections.splice(index, 1);
+        setSections(newSections);
+    };
+
+    const moveSection = (index: number, direction: 'up' | 'down') => {
+        if ((direction === 'up' && index === 0) || (direction === 'down' && index === sections.length - 1)) return;
+        const newSections = [...sections];
+        const swapIndex = direction === 'up' ? index - 1 : index + 1;
+        [newSections[index], newSections[swapIndex]] = [newSections[swapIndex], newSections[index]];
+        setSections(newSections);
+    };
+
+    // FAQ Management
+    const addFaq = () => {
+        setFaq([...faq, { id: Date.now().toString(), question: '', response: '' }]);
+    };
+
     const updateFaq = (index: number, field: keyof FAQItem, value: string) => {
         const newFaq = [...faq];
         newFaq[index] = { ...newFaq[index], [field]: value };
         setFaq(newFaq);
     };
 
-    const addFaq = () => {
-        setFaq([...faq, { id: Date.now().toString(), question: '', response: '' }]);
-    };
-
     const removeFaq = (index: number) => {
-        if (faq.length <= 2) return;
+        if (faq.length <= 1) return;
         const newFaq = [...faq];
         newFaq.splice(index, 1);
         setFaq(newFaq);
     };
 
-    // --- SUBMIT ---
+    // Submit
     const handleSubmit = async (status: string) => {
         setIsLoading(true);
         setError(null);
-
-        // Generate HTML Content for SEO/Legacy
-        let generatedContent = "";
-        blocks.forEach(b => {
-            if (!b.value) return;
-            if (b.type === 'h2') generatedContent += `<h2>${b.value}</h2>`;
-            if (b.type === 'h3') generatedContent += `<h3>${b.value}</h3>`;
-            if (b.type === 'image') generatedContent += `<div class="article-image"><img src="${b.value}" alt="${b.alt || ''}" /></div>`;
-            if (b.type === 'video') generatedContent += `<div class="article-video"><video controls src="${b.value}"></video></div>`;
-            if (b.type === 'text') {
-                generatedContent += b.value.split('\n').filter(line => line.trim() !== '').map(line => `<p>${line}</p>`).join('');
-            }
-        });
-
-        // Add FAQ to content if needed by SEO? Usually FAQ is Schema.
-        // We leave FAQ separate in DB json but maybe append to content? No, strictly structured.
-
-        const payload = {
-            title,
-            slug,
-            introduction,
-            mainImage,
-            altText,
-            videoUrl,
-            targetCity,
-            blocks, // Save Blocks!
-            sections: [], // Deprecated
-            faq,
-            status,
-            content: generatedContent, // Fallback HTML
-            jsonContent: { blocks, faq } // Unified JSON
-        };
 
         try {
             const res = await fetch("/api/dashboard/articles", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
+                body: JSON.stringify({
+                    title,
+                    slug,
+                    introduction,
+                    mainImage,
+                    altText,
+                    videoUrl,
+                    targetCity,
+                    sections,
+                    faq,
+                    status
+                })
             });
 
             const data = await res.json();
 
             if (!res.ok) {
                 if (Array.isArray(data.error)) {
-                    setError(data.error.map((err: any) => err.message).join(", "));
+                    setError(data.error.map((e: any) => e.message).join(", "));
                 } else {
-                    setError(data.error || "Une erreur est survenue.");
+                    setError(data.error || "Une erreur est survenue");
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 return;
             }
 
-            if (status === 'PUBLISHED') alert("✅ Article publié !");
             router.push("/dashboard/articles");
             router.refresh();
 
         } catch (err) {
-            setError("Erreur serveur.");
+            setError("Erreur de connexion au serveur");
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } finally {
             setIsLoading(false);
         }
     };
 
-    const wordCount = getTotalWordCount();
-    const nbH2 = blocks.filter(b => b.type === 'h2').length;
+    // SEO Score Calc (Simplified)
+    const wordCount = (title + introduction + sections.map(s => s.title + s.content).join("") + faq.map(f => f.question + f.response).join("")).split(/\s+/).length;
+    let score = 0;
+    if (wordCount > 500) score += 40; else score += Math.round((wordCount / 500) * 40);
+    if (sections.length >= 3) score += 30; else score += sections.length * 10;
+    if (faq.length >= 2) score += 20;
+    if (mainImage) score += 10;
+    if (score > 100) score = 100;
 
-    // --- SEO SCORE CALC ---
-    const calculateSeoScore = () => {
-        let s = 0;
-        // 1. Word Count (Goal: 500+)
-        if (wordCount >= 500) s += 40;
-        else s += Math.floor((wordCount / 500) * 40);
-
-        // 2. Headings (Goal: 3 H2)
-        if (nbH2 >= 3) s += 30;
-        else s += nbH2 * 10;
-
-        // 3. FAQ Presence
-        if (faq.length >= 2) s += 20;
-        else s += faq.length * 10;
-
-        // 4. Image Present
-        if (mainImage) s += 10;
-
-        // Cap at 100
-        if (s > 100) s = 100;
-        setScore(s);
-
-        if (s < 50) setScoreMessage("Contenu trop court ou incomplet.");
-        else if (s < 80) setScoreMessage("Bon début ! Ajoutez du contenu.");
-        else setScoreMessage("Excellent ! Prêt à publier.");
-    };
-
-    useEffect(() => {
-        calculateSeoScore();
-    }, [title, introduction, blocks, faq, mainImage]);
+    let scoreMessage = "Commencez à rédiger...";
+    if (score > 50) scoreMessage = "Bon début !";
+    if (score > 80) scoreMessage = "Excellent !";
 
     return (
         <div className="max-w-5xl mx-auto pb-24">
@@ -316,333 +210,282 @@ export default function NewArticlePage() {
                 </Button>
                 <div>
                     <h1 className="text-2xl font-bold text-slate-800">Rédiger un article</h1>
-                    <p className="text-slate-500">Créez un contenu riche avec des blocs flexibles.</p>
+                    <p className="text-slate-500">Créez un contenu riche et optimisé SEO.</p>
                 </div>
             </div>
 
             {error && (
-                <div className="bg-red-50 text-red-600 p-4 rounded-xl mb-6 flex items-start gap-3 border border-red-100">
+                <div className="bg-red-50 text-red-600 p-4 rounded-xl mb-6 flex items-start gap-3 border border-red-100 animate-in fade-in slide-in-from-top-2">
                     <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
                     <div>{error}</div>
                 </div>
             )}
 
             <div className="grid lg:grid-cols-[1fr_300px] gap-8">
-
-                {/* --- MAIN COLUMN --- */}
                 <div className="space-y-8">
 
-                    {/* 1. INFO GENERALES */}
+                    {/* 1. INFO */}
                     <Card>
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800 flex items-center gap-2">
-                                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">1</span>
+                                <span className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">1</span>
                                 Informations Générales
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-4">
                             <div className="space-y-2">
-                                <Label>Titre Principal (H1)</Label>
-                                <Input placeholder="Ex: Comment choisir sa climatisation..." value={title} onChange={handleTitleChange} />
+                                <Label>Titre Principal (H1) <span className="text-red-500">*</span></Label>
+                                <Input
+                                    placeholder="Ex: Les avantages de la climatisation gainable..."
+                                    value={title}
+                                    onChange={handleTitleChange}
+                                    className="font-bold text-lg"
+                                />
                             </div>
-
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <Label>Slug (URL)</Label>
-                                    <div className="flex">
-                                        <span className="bg-slate-50 border border-r-0 rounded-l-md px-3 py-2 text-slate-500 text-sm flex items-center">/articles/</span>
-                                        <Input value={slug} onChange={(e) => setSlug(slugify(e.target.value))} className="rounded-l-none font-mono" />
+                                    <Label>Slug (URL) <span className="text-red-500">*</span></Label>
+                                    <div className="flex items-center">
+                                        <div className="bg-slate-100 border border-r-0 border-slate-200 px-3 py-2 text-sm text-slate-500 rounded-l-md">/articles/</div>
+                                        <Input
+                                            value={slug}
+                                            onChange={(e) => setSlug(slugify(e.target.value))}
+                                            className="rounded-l-none font-mono text-sm"
+                                        />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <Label>Ville Ciblée (SEO Local)</Label>
-                                    <Input placeholder="Ex: Marseille" value={targetCity} onChange={(e) => setTargetCity(e.target.value)} />
+                                    <Input
+                                        placeholder="Ex: Bordeaux"
+                                        value={targetCity}
+                                        onChange={(e) => setTargetCity(e.target.value)}
+                                    />
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
 
-                    {/* 2. ILLUSTRATION */}
+                    {/* 2. IMAGE */}
                     <Card>
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800 flex items-center gap-2">
-                                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">2</span>
+                                <span className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">2</span>
                                 Illustration Principale
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6 space-y-4">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <Label>Image de couverture</Label>
-                                    <input type="file" ref={fileInputRef} onChange={handleMainImageChange} className="hidden" accept="image/*" />
+                                    <Label>Image de couverture <span className="text-red-500">*</span></Label>
+                                    <input
+                                        type="file"
+                                        ref={fileInputRef}
+                                        onChange={handleImageUpload}
+                                        className="hidden"
+                                        accept="image/*"
+                                    />
                                     {!mainImage ? (
-                                        <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 transition-colors">
-                                            {isUploading ? <Loader2 className="w-8 h-8 animate-spin mx-auto text-slate-400" /> : <UploadCloud className="w-8 h-8 mx-auto text-slate-400" />}
-                                            <span className="text-xs text-slate-500 mt-2 block">Importer (JPG, WebP)</span>
+                                        <div
+                                            onClick={() => fileInputRef.current?.click()}
+                                            className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 transition-colors group"
+                                        >
+                                            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                                {isUploading ? <Loader2 className="w-6 h-6 animate-spin" /> : <UploadCloud className="w-6 h-6" />}
+                                            </div>
+                                            <span className="text-sm font-medium text-slate-700">Cliquez pour importer</span>
+                                            <span className="text-xs text-slate-400 block mt-1">JPG, PNG, WEBP (Max 2MB)</span>
                                         </div>
                                     ) : (
-                                        <div className="relative rounded-xl overflow-hidden border border-slate-200">
-                                            <img src={mainImage} alt="Preview" className="w-full h-32 object-cover" />
-                                            <button onClick={() => setMainImage("")} className="absolute top-2 right-2 bg-white p-1 rounded-full text-red-500 shadow-sm"><X className="w-4 h-4" /></button>
+                                        <div className="relative rounded-xl overflow-hidden border border-slate-200 group">
+                                            <img src={mainImage} alt="Preview" className="w-full h-40 object-cover" />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                                <Button size="sm" variant="secondary" onClick={() => fileInputRef.current?.click()}>Changer</Button>
+                                                <Button size="sm" variant="destructive" onClick={() => setMainImage("")}><X className="w-4 h-4" /></Button>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
-                                <div className="space-y-2">
-                                    <Label>Texte Alternatif</Label>
-                                    <Input placeholder="Description de l'image" value={altText} onChange={(e) => setAltText(e.target.value)} />
+                                <div className="space-y-4">
+                                    <div className="space-y-2">
+                                        <Label>Texte Alternatif (Alt) <span className="text-red-500">*</span></Label>
+                                        <Input
+                                            placeholder="Description de l'image pour le SEO"
+                                            value={altText}
+                                            onChange={(e) => setAltText(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label>Lien Vidéo (YouTube)</Label>
+                                        <Input
+                                            placeholder="https://youtube.com/watch?v=..."
+                                            value={videoUrl}
+                                            onChange={(e) => setVideoUrl(e.target.value)}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
 
-                    {/* 3. INTRODUCTION */}
+                    {/* 3. INTRO */}
                     <Card>
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800 flex items-center gap-2">
-                                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">3</span>
+                                <span className="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">3</span>
                                 Introduction (Chapeau)
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="pt-6">
                             <Textarea
-                                placeholder="Résumez l'article en 3-4 lignes..."
-                                className="min-h-[100px]"
+                                placeholder="Une introduction captivante qui résume l'article et contient les mots-clés principaux..."
+                                className="min-h-[100px] text-lg leading-relaxed"
                                 value={introduction}
                                 onChange={(e) => setIntroduction(e.target.value)}
                             />
                         </CardContent>
                     </Card>
 
-                    {/* 4. BLOCKS BUILDER */}
+                    {/* 4. SECTIONS */}
                     <div className="space-y-6">
                         <div className="flex items-center justify-between">
-                            <h2 className="font-bold text-lg text-slate-800">Contenu de l'article</h2>
-                            <p className="text-sm text-slate-500">Ajoutez des blocs pour construire votre article</p>
+                            <h2 className="font-bold text-lg text-slate-800">Corps de l'article</h2>
+                            <span className="text-sm text-slate-500">{sections.length} sections</span>
                         </div>
 
-                        <div className="space-y-4">
-                            {blocks.map((block, index) => (
-                                <div key={block.id} className="relative group">
-                                    <Card className={`border-l-4 shadow-sm transition-all hover:shadow-md ${block.type === 'h2' ? 'border-l-blue-600' : block.type === 'h3' ? 'border-l-blue-400' : block.type === 'image' ? 'border-l-purple-500' : 'border-l-slate-300'}`}>
-                                        <div className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
-                                            <Button variant="ghost" size="sm" onClick={() => moveBlock(index, 'up')} disabled={index === 0} title="Monter">
-                                                <MoveUp className="w-4 h-4 text-slate-400" />
+                        {sections.map((section, index) => (
+                            <Card key={section.id} className="relative group overflow-hidden border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-slate-200 group-hover:bg-blue-500 transition-colors"></div>
+                                <CardContent className="p-6 space-y-4">
+                                    <div className="flex items-start justify-between gap-4">
+                                        <div className="space-y-4 flex-1">
+                                            <Input
+                                                placeholder={`Titre de la section ${index + 1} (H2)`}
+                                                className="font-bold text-lg border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-500"
+                                                value={section.title}
+                                                onChange={(e) => updateSection(index, 'title', e.target.value)}
+                                            />
+
+                                            {section.showSubtitle && (
+                                                <Input
+                                                    placeholder="Sous-titre (H3) - Optionnel"
+                                                    className="font-semibold text-slate-600 border-x-0 border-t-0 border-b rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-500 h-9 text-sm"
+                                                    value={section.subtitle}
+                                                    onChange={(e) => updateSection(index, 'subtitle', e.target.value)}
+                                                />
+                                            )}
+
+                                            <Textarea
+                                                placeholder="Contenu de la section..."
+                                                className="min-h-[150px] resize-y"
+                                                value={section.content}
+                                                onChange={(e) => updateSection(index, 'content', e.target.value)}
+                                            />
+                                        </div>
+
+                                        <div className="flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <Button variant="ghost" size="icon" onClick={() => moveSection(index, 'up')} disabled={index === 0}>
+                                                <ChevronLeft className="w-4 h-4 rotate-90" />
                                             </Button>
-                                            <Button variant="ghost" size="sm" onClick={() => moveBlock(index, 'down')} disabled={index === blocks.length - 1} title="Descendre">
-                                                <MoveDown className="w-4 h-4 text-slate-400" />
-                                            </Button>
-                                            <Button variant="ghost" size="sm" onClick={() => removeBlock(index)} className="text-red-400 hover:text-red-600">
+                                            <Button variant="ghost" size="icon" className="text-red-500 hover:text-red-600 hover:bg-red-50" onClick={() => removeSection(index)}>
                                                 <Trash2 className="w-4 h-4" />
                                             </Button>
-                                        </div>
-
-                                        <CardContent className="p-4 pt-4">
-                                            {/* Block Header */}
-                                            <div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-                                                {block.type === 'h2' && <><Heading className="w-3 h-3" /> Section (H2)</>}
-                                                {block.type === 'h3' && <><Heading className="w-3 h-3" /> Sous-section (H3)</>}
-                                                {block.type === 'text' && <><AlignLeft className="w-3 h-3" /> Paragraphe</>}
-                                                {block.type === 'image' && <><ImageIcon className="w-3 h-3" /> Image</>}
-                                                {block.type === 'video' && <><Video className="w-3 h-3" /> Vidéo</>}
-                                            </div>
-
-                                            {/* BLOCK CONTENT INPUTS */}
-                                            {block.type === 'h2' && (
-                                                <Input
-                                                    value={block.value}
-                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
-                                                    placeholder="Titre de la section..."
-                                                    className="font-bold text-lg border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-500"
-                                                />
-                                            )}
-                                            {block.type === 'h3' && (
-                                                <Input
-                                                    value={block.value}
-                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
-                                                    placeholder="Titre de la sous-section..."
-                                                    className="font-semibold text-md border-x-0 border-t-0 border-b-2 rounded-none px-0 focus-visible:ring-0 focus-visible:border-blue-400"
-                                                />
-                                            )}
-                                            {block.type === 'text' && (
-                                                <Textarea
-                                                    value={block.value}
-                                                    onChange={(e) => updateBlock(index, 'value', e.target.value)}
-                                                    placeholder="Rédigez votre paragraphe..."
-                                                    className="min-h-[120px] bg-slate-50 border-0 focus-visible:ring-1 ring-inset"
-                                                />
-                                            )}
-                                            {block.type === 'image' && (
-                                                <div className="flex gap-4 items-start">
-                                                    <div className="flex-1 space-y-2">
-                                                        {!block.value ? (
-                                                            <div className="border-2 border-dashed border-slate-200 rounded-lg p-6 text-center">
-                                                                <Label htmlFor={`file-${block.id}`} className="cursor-pointer flex flex-col items-center gap-2 text-slate-500 hover:text-blue-600">
-                                                                    <UploadCloud className="w-6 h-6" />
-                                                                    <span>Choisir une image</span>
-                                                                    <Input id={`file-${block.id}`} type="file" className="hidden" accept="image/*" onChange={(e) => handleBlockUpload(index, e)} />
-                                                                </Label>
-                                                            </div>
-                                                        ) : (
-                                                            <div className="relative rounded-lg overflow-hidden bg-slate-100 border border-slate-200">
-                                                                <img src={block.value} alt={block.alt} className="w-full h-48 object-cover" />
-                                                                <Button variant="secondary" size="sm" className="absolute top-2 right-2 h-8 w-8 p-0" onClick={() => updateBlock(index, 'value', '')}>
-                                                                    <X className="w-4 h-4" />
-                                                                </Button>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="w-1/3 space-y-2">
-                                                        <Label className="text-xs">Légende / Alt</Label>
-                                                        <Input
-                                                            value={block.alt || ''}
-                                                            onChange={(e) => {
-                                                                const newBlocks = [...blocks];
-                                                                newBlocks[index] = { ...newBlocks[index], alt: e.target.value };
-                                                                setBlocks(newBlocks);
-                                                            }}
-                                                            placeholder="Description SEO..."
-                                                            className="text-sm"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            )}
-                                            {block.type === 'video' && (
-                                                <div className="space-y-4">
-                                                    <div className="flex gap-2">
-                                                        <Input
-                                                            placeholder="URL YouTube ou..."
-                                                            value={block.value.startsWith('http') ? block.value : ''}
-                                                            onChange={(e) => updateBlock(index, 'value', e.target.value)}
-                                                        />
-                                                        <div className="relative">
-                                                            <Button variant="outline" className="whitespace-nowrap">Upload</Button>
-                                                            <Input type="file" className="absolute inset-0 opacity-0 cursor-pointer" accept="video/mp4" onChange={(e) => handleBlockUpload(index, e, true)} />
-                                                        </div>
-                                                    </div>
-                                                    {block.value && (
-                                                        <div className="bg-slate-100 p-2 rounded text-xs truncate">
-                                                            Source: {block.value}
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            )}
-
-                                        </CardContent>
-                                    </Card>
-
-                                    {/* Quick Insert Between Blocks (Hover) */}
-                                    <div className="h-4 -my-2 flex items-center justify-center opacity-0 group-hover:opacity-100 hover:opacity-100 transition-opacity z-10 relative">
-                                        <div className="bg-blue-500 rounded-full p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform" onClick={() => {
-                                            const newBlocks = [...blocks];
-                                            newBlocks.splice(index + 1, 0, { id: Date.now().toString(), type: 'text', value: '' });
-                                            setBlocks(newBlocks);
-                                        }} title="Insérer texte">
-                                            <Plus className="w-3 h-3 text-white" />
+                                            <Button variant="ghost" size="icon" onClick={() => moveSection(index, 'down')} disabled={index === sections.length - 1}>
+                                                <ChevronLeft className="w-4 h-4 -rotate-90" />
+                                            </Button>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
 
-                        {/* TOOLBOX */}
-                        <Card className="border-dashed border-2 border-slate-300 bg-slate-50/50">
-                            <CardContent className="p-4 flex flex-wrap gap-2 justify-center">
-                                <span className="w-full text-center text-xs text-slate-400 uppercase tracking-widest mb-2">Ajouter un bloc</span>
-                                <Button variant="outline" onClick={() => addBlock('h2')} className="gap-2">
-                                    <Heading className="w-4 h-4" /> Titre (H2)
-                                </Button>
-                                <Button variant="outline" onClick={() => addBlock('text')} className="gap-2">
-                                    <AlignLeft className="w-4 h-4" /> Texte
-                                </Button>
-                                <Button variant="outline" onClick={() => addBlock('image')} className="gap-2">
-                                    <ImageIcon className="w-4 h-4" /> Image
-                                </Button>
-                                <Button variant="outline" onClick={() => addBlock('h3')} className="gap-2 text-slate-500">
-                                    <Type className="w-4 h-4" /> Sous-titre (H3)
-                                </Button>
-                                <Button variant="outline" onClick={() => addBlock('video')} className="gap-2 text-slate-500">
-                                    <Video className="w-4 h-4" /> Vidéo
-                                </Button>
-                            </CardContent>
-                        </Card>
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="text-xs text-slate-500 h-8"
+                                            onClick={() => updateSection(index, 'showSubtitle', !section.showSubtitle)}
+                                        >
+                                            {section.showSubtitle ? "Masquer sous-titre" : "+ Ajouter sous-titre"}
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+
+                        <Button onClick={addSection} variant="outline" className="w-full py-8 border-dashed border-2 hover:border-blue-500 hover:bg-blue-50 text-slate-500 hover:text-blue-600 transition-all group">
+                            <Plus className="w-5 h-5 mr-2 group-hover:scale-125 transition-transform" />
+                            Ajouter une nouvelle section
+                        </Button>
                     </div>
 
                     {/* 5. FAQ */}
                     <div className="space-y-4">
-                        <div className="flex items-center justify-between">
-                            <h2 className="font-bold text-lg text-slate-800">FAQ</h2>
-                        </div>
+                        <h2 className="font-bold text-lg text-slate-800">FAQ (Questions Fréquentes)</h2>
                         {faq.map((item, index) => (
-                            <Card key={item.id} className="border-l-4 border-l-green-500">
+                            <Card key={item.id} className="border-l-4 border-l-green-500 bg-green-50/30">
                                 <CardContent className="pt-4 space-y-3">
                                     <div className="flex justify-between items-start">
-                                        <Label className="uppercase text-xs text-slate-400 mb-1 block">Question {index + 1}</Label>
-                                        <Button variant="ghost" size="sm" onClick={() => removeFaq(index)} className="text-red-500 h-6 w-6 p-0">
-                                            <X className="w-4 h-4" />
-                                        </Button>
+                                        <Label className="text-green-700 font-bold">Question {index + 1}</Label>
+                                        <Button variant="ghost" size="sm" onClick={() => removeFaq(index)} className="h-6 w-6 p-0 text-green-700 hover:text-green-900"><X className="w-4 h-4" /></Button>
                                     </div>
                                     <Input
-                                        placeholder="Question..."
+                                        placeholder="Question ?"
+                                        className="bg-white"
                                         value={item.question}
                                         onChange={(e) => updateFaq(index, 'question', e.target.value)}
                                     />
                                     <Textarea
-                                        placeholder="Réponse..."
+                                        placeholder="Réponse courte et précise..."
+                                        className="bg-white min-h-[80px]"
                                         value={item.response}
                                         onChange={(e) => updateFaq(index, 'response', e.target.value)}
                                     />
                                 </CardContent>
                             </Card>
                         ))}
-                        <Button variant="outline" onClick={addFaq} className="w-full py-2 border-dashed border-2 text-slate-500">
-                            <Plus className="w-5 h-5 mr-2" /> Ajouter Question
+                        <Button variant="outline" onClick={addFaq} className="w-full text-green-700 border-green-200 hover:bg-green-50">
+                            <Plus className="w-4 h-4 mr-2" /> Ajouter une question
                         </Button>
                     </div>
 
-                    {/* SUBMIT */}
-                    <Card className="border-t-4 border-t-blue-500 shadow-md">
-                        <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
-                            <CardTitle className="text-base text-slate-800">Validation</CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-6">
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <Button
-                                    onClick={() => handleSubmit('PUBLISHED')}
-                                    className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-6"
-                                    disabled={isLoading}
-                                >
-                                    {isLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                                    <Save className="mr-2 h-5 w-5" /> Publier
+                    {/* ACTIONS */}
+                    <div className="sticky bottom-6 pt-4">
+                        <div className="bg-white p-4 rounded-xl shadow-2xl border border-slate-200 flex items-center justify-between gap-4 max-w-5xl mx-auto">
+                            <div className="text-sm text-slate-500 hidden md:block">
+                                {isLoading ? "Sauvegarde en cours..." : "Modifications non enregistrées"}
+                            </div>
+                            <div className="flex items-center gap-3 w-full md:w-auto">
+                                <Button variant="outline" className="flex-1 md:flex-none" onClick={() => handleSubmit('DRAFT')} disabled={isLoading}>
+                                    Enregistrer Brouillon
                                 </Button>
-                                <Button
-                                    variant="outline"
-                                    onClick={() => handleSubmit('DRAFT')}
-                                    disabled={isLoading}
-                                    className="flex-1 py-6"
-                                >
-                                    Brouillon
+                                <Button className="flex-1 md:flex-none bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold" onClick={() => handleSubmit('PUBLISHED')} disabled={isLoading}>
+                                    {isLoading ? <Loader2 className="animate-spin mr-2" /> : <Save className="w-4 h-4 mr-2" />}
+                                    Publier l'article
                                 </Button>
                             </div>
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </div>
 
                 </div>
 
-                {/* --- SIDEBAR --- */}
-                <div className="space-y-6 sticky top-6 self-start">
-                    <Card>
-                        <CardHeader className="bg-slate-50 pb-4"><CardTitle className="text-sm">Score SEO</CardTitle></CardHeader>
+                {/* SIDEBAR */}
+                <div className="space-y-6">
+                    <Card className="sticky top-6">
+                        <CardHeader className="bg-slate-50 pb-4">
+                            <CardTitle className="text-sm text-slate-700 font-bold uppercase tracking-wider">Score SEO</CardTitle>
+                        </CardHeader>
                         <CardContent className="pt-6 text-center space-y-4">
                             <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
-                            <div className="text-xs text-slate-500">{scoreMessage}</div>
-                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                <div className="h-full bg-[#D59B2B]" style={{ width: `${score}%` }}></div>
+                            <div className="text-xs text-slate-500 font-medium px-2 py-1 bg-slate-100 rounded-full inline-block">
+                                {scoreMessage}
                             </div>
-                            <ul className="text-left text-xs space-y-2 text-slate-500">
-                                <li>• {wordCount} mots (obj. 800)</li>
-                                <li>• {nbH2} titres H2 (obj. 3)</li>
-                                <li>• {faq.length} questions FAQ</li>
-                            </ul>
+                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden w-full">
+                                <div className="h-full bg-[#D59B2B] transition-all duration-500 ease-out" style={{ width: `${score}%` }}></div>
+                            </div>
+                            <div className="text-left text-xs space-y-2 text-slate-500 pt-2 border-t border-slate-100">
+                                <div className="flex justify-between"><span>Mots ({wordCount})</span> <span>{wordCount >= 500 ? '✅' : '⚠️ 500+'}</span></div>
+                                <div className="flex justify-between"><span>Sections ({sections.length})</span> <span>{sections.length >= 3 ? '✅' : '⚠️ 3+'}</span></div>
+                                <div className="flex justify-between"><span>FAQ ({faq.length})</span> <span>{faq.length >= 2 ? '✅' : '⚠️ 2+'}</span></div>
+                                <div className="flex justify-between"><span>Image</span> <span>{mainImage ? '✅' : '⚠️'}</span></div>
+                            </div>
                         </CardContent>
                     </Card>
 
@@ -651,50 +494,29 @@ export default function NewArticlePage() {
                             <div className="flex items-center gap-2 text-sm font-bold text-purple-700">
                                 <HelpCircle className="w-4 h-4" /> Prompt IA
                             </div>
-                            <p className="text-xs text-slate-600">Copiez ce prompt pour générer votre article.</p>
-                            <Button variant="secondary" className="w-full text-xs" onClick={() => {
-                                const detailedPrompt = `Tu es un expert d'élite en CVC (Chauffage, Ventilation, Climatisation) et en SEO local.
-Rédige un article ULTRA-COMPLET de 1500 à 2000 mots sur le sujet : "${title}".
-Ville ciblée : ${targetCity || "Général"}
-
-Règles d'or pour le SEO :
-1. LONGUEUR : L'article doit faire MINIMUM 1500 mots. Développe chaque point à l'extrême.
-2. EXPERTISE : Utilise un vocabulaire technique précis (COP, SEER, R32, Inverter, dB(A), pression statique).
-3. LOCAL : Mentionne spécifiquement le climat et les spécificités de ${targetCity || "la région"} dans chaque section.
-4. STRUCTURE : 1 Introduction choc + 6 à 8 H2 détaillés + 1 Conclusion + 5 FAQ (People Also Ask).
-
-IMPORTANT : Tu dois fournir la réponse UNIQUEMENT au format JSON strict, compatible avec mon système de blocs.
-Pas de markdown autour du JSON, pas de texte avant ou après.
-
-Structure JSON attendue :
+                            <p className="text-xs text-slate-600">Copiez ce prompt pour générer l'article complet.</p>
+                            <Button variant="secondary" className="w-full text-xs bg-white hover:bg-purple-100 text-purple-700 border border-purple-200" onClick={() => {
+                                const prompt = `Tu es un expert en CVC. Rédige un article complet sur : "${title}".
+Ville : ${targetCity || "Général"}
+FORMAT JSON STRICT (Section[]):
 {
-  "introduction": "Intro longue, captivante et optimisée SEO (200 mots).",
-  "blocks": [
-    { "type": "h2", "value": "1. Titre optimisé avec mot-clé" },
-    { "type": "text", "value": "Paragraphe TRÈS DÉTAILLÉ de 300 mots..." },
-    { "type": "text", "value": "Suite du paragraphe pour aérer la lecture..." },
-    { "type": "image", "value": "https://source.unsplash.com/random/800x600/?hvac,air-conditioner", "alt": "Description SEO de l'image" },
-    { "type": "h2", "value": "2. Analyse technique détaillée..." },
-    { "type": "text", "value": "Explications techniques..." },
-    // Répéter pour 6 à 8 sections
+  "introduction": "...",
+  "sections": [
+    { "title": "Titre H2", "content": "Paragraphe détaillé..." },
+    { "title": "Titre H2", "content": "..." }
   ],
   "faq": [
-    { "question": "Question fréquente 1 ?", "response": "Réponse précise et utile." },
-    { "question": "Question fréquente 2 ?", "response": "Réponse experte." },
-    { "question": "Question fréquente 3 ?", "response": "Réponse détaillée." },
-    { "question": "Question fréquente 4 ?", "response": "Réponse technique." },
-    { "question": "Question fréquente 5 ?", "response": "Réponse pratique." }
+    { "question": "...", "response": "..." }
   ]
 }`;
-                                navigator.clipboard.writeText(detailedPrompt);
-                                alert("Prompt Expert copié ! Collez-le dans ChatGPT/Claude.");
+                                navigator.clipboard.writeText(prompt);
+                                alert("Prompt copié !");
                             }}>
-                                <Copy className="w-3 h-3 mr-2" /> Copier Prompt Expert
+                                <Copy className="w-3 h-3 mr-2" /> Copier Prompt
                             </Button>
                         </CardContent>
                     </Card>
                 </div>
-
             </div>
         </div>
     );
