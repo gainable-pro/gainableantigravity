@@ -1,5 +1,5 @@
 export const EXPERT_TECHNOLOGIES = [
-    "Gainable",
+    "Climatisation gainable",
     "PAC Air-Air",
     "PAC Air-Eau",
     "VRV",
