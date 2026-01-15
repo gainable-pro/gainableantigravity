@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.gainable.fr'),
   title: {
-    default: "Gainable.fr - La climatisation gainable, encastrable et invisible",
+    default: "Gainable.fr - Trouvez votre Installateur de Climatisation Gainable & VRV",
     template: "%s | Gainable.fr"
   },
   description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV. Trouvez un installateur, un bureau d'étude ou un diagnostiqueur certifié.",

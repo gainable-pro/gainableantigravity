@@ -66,11 +66,11 @@ export default function Home() {
 
         <div className="container relative z-10 mx-auto text-center px-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal text-[#1F2D3D] mb-6 tracking-wide leading-tight uppercase font-montserrat">
-            LA PLATEFORME DE RÉFÉRENCE DE LA<br />CLIMATISATION GAINABLE
+            TROUVEZ VOTRE INSTALLATEUR DE<br />CLIMATISATION GAINABLE
           </h1>
-          <p className="text-lg md:text-xl text-[#1F2D3D] mb-10 max-w-4xl mx-auto font-light font-montserrat leading-relaxed">
-            <span className="text-[#D59B2B] font-bold">La première plateforme de mise en relation d'experts</span> en climatisation gainable & VRV, pour les professionnels et les particuliers.
-          </p>
+          <h2 className="text-lg md:text-xl text-[#1F2D3D] mb-10 max-w-4xl mx-auto font-light font-montserrat leading-relaxed">
+            <span className="text-[#D59B2B] font-bold">La plateforme de référence</span> qui sélectionne les meilleurs artisans et experts certifiés pour vos devis.
+          </h2>
 
           {/* Simpler Search Box as requested: Just one big 'Trouvez votre expert' experience */}
           <div className="mt-8 flex flex-col items-center gap-4">
