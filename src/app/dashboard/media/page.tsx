@@ -14,15 +14,7 @@ export default function MediaPage() {
 
     const [logoUrl, setLogoUrl] = useState("");
     const [videoUrl, setVideoUrl] = useState("");
-    const [youtubeUrl, setYoutubeUrl] = useState("");
     const [photos, setPhotos] = useState<string[]>([]);
-
-    // Helper to extract ID
-    function getYoutubeId(url: string) {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : null;
-    }
 
     useEffect(() => {
         async function fetchMedia() {
@@ -32,7 +24,6 @@ export default function MediaPage() {
                     const data = await res.json();
                     setLogoUrl(data.logo_url || "");
                     setVideoUrl(data.video_url || "");
-                    setYoutubeUrl(data.video_youtube || "");
                     setPhotos(data.photos || []);
                 }
             } catch (error) {
@@ -107,7 +98,6 @@ export default function MediaPage() {
                 body: JSON.stringify({
                     logo_url: logoUrl,
                     video_url: videoUrl,
-                    video_youtube: youtubeUrl,
                     photos: photos
                 })
             });
@@ -182,59 +172,26 @@ export default function MediaPage() {
                             <Video className="w-5 h-5 text-[#D59B2B]" /> Vidéo de présentation
                         </h3>
 
-                        <div className="space-y-4">
-                            {/* Option 1: File Upload */}
-                            <div className="space-y-2">
-                                <Label>Importer une vidéo (MP4)</Label>
-                                <Input
-                                    type="file"
-                                    accept="video/*"
-                                    onChange={(e) => handleFileUpload(e, 'video')}
-                                />
-                                <p className="text-xs text-slate-400">Fichier local (MP4, WEBM).</p>
-                            </div>
-
-                            <div className="text-center text-sm text-slate-400">- OU -</div>
-
-                            {/* Option 2: YouTube URL */}
-                            <div className="space-y-2">
-                                <Label>Lien YouTube</Label>
-                                <Input
-                                    type="text"
-                                    placeholder="https://www.youtube.com/watch?v=..."
-                                    value={youtubeUrl}
-                                    onChange={(e) => setYoutubeUrl(e.target.value)}
-                                />
-                                <p className="text-xs text-slate-400">Copiez le lien de votre vidéo YouTube.</p>
-                            </div>
+                        <div className="space-y-2">
+                            <Label>Importer une vidéo</Label>
+                            <Input
+                                type="file"
+                                accept="video/*"
+                                onChange={(e) => handleFileUpload(e, 'video')}
+                            />
+                            <p className="text-xs text-slate-400">MP4, WEBM (Fichier local).</p>
                         </div>
 
-                        {/* Preview Section */}
-                        {(videoUrl || youtubeUrl) ? (
+                        {videoUrl ? (
                             <div className="mt-4 bg-black rounded-lg overflow-hidden relative group">
-                                {videoUrl ? (
-                                    <video
-                                        src={videoUrl}
-                                        controls
-                                        className="w-full h-auto"
-                                        style={{ maxHeight: '200px' }}
-                                    />
-                                ) : getYoutubeId(youtubeUrl) ? (
-                                    <iframe
-                                        width="100%"
-                                        height="200"
-                                        src={`https://www.youtube.com/embed/${getYoutubeId(youtubeUrl)}`}
-                                        title="YouTube video player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
-                                ) : (
-                                    <div className="h-[200px] flex items-center justify-center text-white">Lien YouTube invalide</div>
-                                )}
-
+                                <video
+                                    src={videoUrl}
+                                    controls
+                                    className="w-full h-auto"
+                                    style={{ maxHeight: '200px' }}
+                                />
                                 <button
-                                    onClick={() => { setVideoUrl(""); setYoutubeUrl(""); }}
+                                    onClick={() => setVideoUrl("")}
                                     className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 shadow-sm"
                                     title="Supprimer la vidéo"
                                     type="button"
@@ -278,53 +235,84 @@ export default function MediaPage() {
 
                     </CardContent>
                 </Card>
-            </div>
 
-            {/* --- GALLERY SECTION --- */}
-            <Card>
-                <CardContent className="pt-6 space-y-4">
-                    <div className="flex items-center justify-between">
-                        <h3 className="font-semibold text-lg flex items-center gap-2">
-                            <ImageIcon className="w-5 h-5 text-[#D59B2B]" /> Galerie Photos
-                        </h3>
-                        <div className="flex items-center gap-2">
-                            <Label htmlFor="gallery-upload" className="cursor-pointer bg-slate-100 peer-hover:bg-slate-200 px-3 py-2 rounded text-sm font-medium hover:bg-slate-200 transition-colors">
-                                + Ajouter une photo
-                            </Label>
-                            <Input
-                                id="gallery-upload"
-                                type="file"
-                                accept="image/*"
-                                className="hidden"
-                                multiple
-                                onChange={(e) => handleFileUpload(e, 'photo')}
-                            />
+                {/* DISTIA PROMO BLOCK */}
+                <div className="mt-6 pt-6 border-t border-slate-100">
+                    <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col md:flex-row items-center gap-4">
+                        <div className="bg-black p-2 rounded-lg flex-shrink-0">
+                            <img src="/distia-logo.png" alt="DISTIA" className="w-16 h-auto" />
                         </div>
+                        <div className="flex-1 text-center md:text-left space-y-1">
+                            <h4 className="font-bold text-[#1F2D3D]">Besoin d'une vidéo professionnelle ?</h4>
+                            <p className="text-sm text-slate-600">
+                                Faites appel à notre partenaire <strong>DISTIA</strong>, expert en communication visuelle & storytelling.
+                            </p>
+                            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-2 text-xs font-medium text-slate-500">
+                                <span>📞 06 74 07 25 00</span>
+                                <span className="hidden md:inline">•</span>
+                                <a href="mailto:mathias.delcistia@distia.fr" className="hover:text-[#D59B2B] transition-colors">mathias.delcistia@distia.fr</a>
+                            </div>
+                        </div>
+                        <a
+                            href="https://distia.fr/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="whitespace-nowrap bg-[#1F2D3D] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition-colors shadow-sm"
+                        >
+                            Voir leur site
+                        </a>
                     </div>
-                    <p className="text-sm text-slate-500">Ajoutez des photos de vos réalisations, chantiers, ou équipements pour rassurer vos futurs clients.</p>
+                </div>
 
-                    {photos.length > 0 ? (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
-                            {photos.map((url, idx) => (
-                                <div key={idx} className="relative group aspect-square bg-slate-100 rounded-lg overflow-hidden border">
-                                    <img src={url} alt={`Photo ${idx}`} className="w-full h-full object-cover" />
-                                    <button
-                                        onClick={() => removePhoto(idx)}
-                                        className="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                                        title="Supprimer"
-                                    >
-                                        <div className="w-4 h-4 flex items-center justify-center font-bold">×</div>
-                                    </button>
-                                </div>
-                            ))}
+            </CardContent>
+        </Card>
+            </div >
+
+        {/* --- GALLERY SECTION --- */ }
+        < Card >
+        <CardContent className="pt-6 space-y-4">
+            <div className="flex items-center justify-between">
+                <h3 className="font-semibold text-lg flex items-center gap-2">
+                    <ImageIcon className="w-5 h-5 text-[#D59B2B]" /> Galerie Photos
+                </h3>
+                <div className="flex items-center gap-2">
+                    <Label htmlFor="gallery-upload" className="cursor-pointer bg-slate-100 peer-hover:bg-slate-200 px-3 py-2 rounded text-sm font-medium hover:bg-slate-200 transition-colors">
+                        + Ajouter une photo
+                    </Label>
+                    <Input
+                        id="gallery-upload"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        multiple
+                        onChange={(e) => handleFileUpload(e, 'photo')}
+                    />
+                </div>
+            </div>
+            <p className="text-sm text-slate-500">Ajoutez des photos de vos réalisations, chantiers, ou équipements pour rassurer vos futurs clients.</p>
+
+            {photos.length > 0 ? (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
+                    {photos.map((url, idx) => (
+                        <div key={idx} className="relative group aspect-square bg-slate-100 rounded-lg overflow-hidden border">
+                            <img src={url} alt={`Photo ${idx}`} className="w-full h-full object-cover" />
+                            <button
+                                onClick={() => removePhoto(idx)}
+                                className="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                                title="Supprimer"
+                            >
+                                <div className="w-4 h-4 flex items-center justify-center font-bold">×</div>
+                            </button>
                         </div>
-                    ) : (
-                        <div className="p-8 border-2 border-dashed rounded-lg text-center text-slate-400">
-                            Votre galerie est vide. Ajoutez des photos pour mettre en valeur votre travail.
-                        </div>
-                    )}
-                </CardContent>
-            </Card>
-        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="p-8 border-2 border-dashed rounded-lg text-center text-slate-400">
+                    Votre galerie est vide. Ajoutez des photos pour mettre en valeur votre travail.
+                </div>
+            )}
+        </CardContent>
+            </Card >
+        </div >
     );
 }
