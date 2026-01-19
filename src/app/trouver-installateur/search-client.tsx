@@ -364,9 +364,9 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
 
                     {/* --- LEFT: LISTING (Scrollable) --- */}
                     <main className="lg:col-span-7 space-y-6">
-                        <div className="flex items-baseline justify-between">
-                            <h1 className="text-2xl font-bold text-[#1F2D3D]">Experts à proximité</h1>
-                            <span className="text-slate-500 font-medium">{experts.length} résultats</span>
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-2xl font-bold text-[#1F2D3D]">Experts à proximité</h2>
+                            {/* Count hidden as requested */}
                         </div>
 
                         <div className="space-y-4">
