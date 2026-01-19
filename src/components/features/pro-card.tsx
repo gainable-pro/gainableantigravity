@@ -40,9 +40,9 @@ export function ProCard({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 md:p-6 flex flex-col md:flex-row gap-4 md:gap-6 hover:shadow-md transition-shadow">
+        <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 md:p-4 lg:p-3 xl:p-6 flex flex-col md:flex-row gap-4 lg:gap-3 xl:gap-6 hover:shadow-md transition-shadow">
             {/* Logo & Selection */}
-            <div className="relative w-full h-32 md:w-64 md:h-40 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group">
+            <div className="relative w-full h-32 md:w-56 md:h-36 lg:w-40 lg:h-28 xl:w-64 xl:h-40 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group">
                 {logoUrl ? (
                     <img src={logoUrl} alt={name} className="max-w-full max-h-full object-contain p-1" />
                 ) : (
@@ -110,7 +110,7 @@ export function ProCard({
             </div>
 
             {/* Actions */}
-            <div className="flex flex-col gap-2 justify-center lg:min-w-[180px]">
+            <div className="flex flex-col gap-2 justify-center lg:min-w-[150px] xl:min-w-[180px]">
                 <Link href={`/pro/${slug}`} className="w-full">
                     <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 transition-colors">
                         Voir la fiche
