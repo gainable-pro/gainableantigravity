@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     shortcut: '/favicon.jpg',
     apple: '/favicon.jpg', // Apple touch icon usually needs png, but jpg might work or fallback
   },
+  verification: {
+    google: "7CpozW1B0HyKKwPSynXwVeV6-y7CK65t7Lb6MpMINgE",
+  },
 };
 
 import { headers } from "next/headers";
