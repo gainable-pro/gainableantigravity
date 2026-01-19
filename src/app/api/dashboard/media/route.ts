@@ -29,6 +29,7 @@ export async function GET() {
             select: {
                 logo_url: true,
                 video_url: true,
+                video_youtube: true,
                 photos: {
                     select: { photo_url: true }
                 }
@@ -66,7 +67,8 @@ export async function PUT(req: Request) {
                 where: { id: currentExpert.id },
                 data: {
                     logo_url: body.logo_url || null,
-                    video_url: body.video_url || null
+                    video_url: body.video_url || null,
+                    video_youtube: body.video_youtube || null
                 }
             });
 

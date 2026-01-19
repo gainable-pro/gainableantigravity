@@ -66,6 +66,7 @@ model Expert {
   slug             String      @unique
   logo_url         String?
   video_url        String?
+  video_youtube    String?
   
   status           String      @default("pending") // "pending" / "active"
   is_labeled       Boolean     @default(false)
