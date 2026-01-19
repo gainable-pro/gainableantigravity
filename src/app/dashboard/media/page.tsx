@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, Video, Image as ImageIcon, CheckCircle2 } from "lucide-react";
+import { Loader2, Video, Image as ImageIcon, CheckCircle2, Trash2 } from "lucide-react";
 
 export default function MediaPage() {
     const [isLoading, setIsLoading] = useState(true);
@@ -235,83 +235,52 @@ export default function MediaPage() {
 
                     </CardContent>
                 </Card>
-
-                {/* DISTIA PROMO BLOCK */}
-                <div className="mt-6 pt-6 border-t border-slate-100">
-                    <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col md:flex-row items-center gap-4">
-                        <div className="bg-black p-2 rounded-lg flex-shrink-0">
-                            <img src="/distia-logo.png" alt="DISTIA" className="w-16 h-auto" />
-                        </div>
-                        <div className="flex-1 text-center md:text-left space-y-1">
-                            <h4 className="font-bold text-[#1F2D3D]">Besoin d'une vidéo professionnelle ?</h4>
-                            <p className="text-sm text-slate-600">
-                                Faites appel à notre partenaire <strong>DISTIA</strong>, expert en communication visuelle & storytelling.
-                            </p>
-                            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mt-2 text-xs font-medium text-slate-500">
-                                <span>📞 06 74 07 25 00</span>
-                                <span className="hidden md:inline">•</span>
-                                <a href="mailto:mathias.delcistia@distia.fr" className="hover:text-[#D59B2B] transition-colors">mathias.delcistia@distia.fr</a>
-                            </div>
-                        </div>
-                        <a
-                            href="https://distia.fr/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="whitespace-nowrap bg-[#1F2D3D] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-700 transition-colors shadow-sm"
-                        >
-                            Voir leur site
-                        </a>
-                    </div>
-                </div>
-
-            </CardContent>
-        </Card>
-            </div >
-
-        {/* --- GALLERY SECTION --- */ }
-        < Card >
-        <CardContent className="pt-6 space-y-4">
-            <div className="flex items-center justify-between">
-                <h3 className="font-semibold text-lg flex items-center gap-2">
-                    <ImageIcon className="w-5 h-5 text-[#D59B2B]" /> Galerie Photos
-                </h3>
-                <div className="flex items-center gap-2">
-                    <Label htmlFor="gallery-upload" className="cursor-pointer bg-slate-100 peer-hover:bg-slate-200 px-3 py-2 rounded text-sm font-medium hover:bg-slate-200 transition-colors">
-                        + Ajouter une photo
-                    </Label>
-                    <Input
-                        id="gallery-upload"
-                        type="file"
-                        accept="image/*"
-                        className="hidden"
-                        multiple
-                        onChange={(e) => handleFileUpload(e, 'photo')}
-                    />
-                </div>
             </div>
-            <p className="text-sm text-slate-500">Ajoutez des photos de vos réalisations, chantiers, ou équipements pour rassurer vos futurs clients.</p>
 
-            {photos.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
-                    {photos.map((url, idx) => (
-                        <div key={idx} className="relative group aspect-square bg-slate-100 rounded-lg overflow-hidden border">
-                            <img src={url} alt={`Photo ${idx}`} className="w-full h-full object-cover" />
-                            <button
-                                onClick={() => removePhoto(idx)}
-                                className="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                                title="Supprimer"
-                            >
-                                <div className="w-4 h-4 flex items-center justify-center font-bold">×</div>
-                            </button>
+            {/* --- GALLERY SECTION --- */}
+            <Card>
+                <CardContent className="pt-6 space-y-4">
+                    <div className="flex items-center justify-between">
+                        <h3 className="font-semibold text-lg flex items-center gap-2">
+                            <ImageIcon className="w-5 h-5 text-[#D59B2B]" /> Galerie Photos
+                        </h3>
+                        <div className="flex items-center gap-2">
+                            <Label htmlFor="gallery-upload" className="cursor-pointer bg-slate-100 peer-hover:bg-slate-200 px-3 py-2 rounded text-sm font-medium hover:bg-slate-200 transition-colors">
+                                + Ajouter une photo
+                            </Label>
+                            <Input
+                                id="gallery-upload"
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                multiple
+                                onChange={(e) => handleFileUpload(e, 'photo')}
+                            />
                         </div>
-                    ))}
-                </div>
-            ) : (
-                <div className="p-8 border-2 border-dashed rounded-lg text-center text-slate-400">
-                    Votre galerie est vide. Ajoutez des photos pour mettre en valeur votre travail.
-                </div>
-            )}
-        </CardContent>
+                    </div>
+                    <p className="text-sm text-slate-500">Ajoutez des photos de vos réalisations, chantiers, ou équipements pour rassurer vos futurs clients.</p>
+
+                    {photos.length > 0 ? (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
+                            {photos.map((url, idx) => (
+                                <div key={idx} className="relative group aspect-square bg-slate-100 rounded-lg overflow-hidden border">
+                                    <img src={url} alt={`Photo ${idx}`} className="w-full h-full object-cover" />
+                                    <button
+                                        onClick={() => removePhoto(idx)}
+                                        className="absolute top-2 right-2 bg-red-600 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                                        title="Supprimer"
+                                    >
+                                        <div className="w-4 h-4 flex items-center justify-center font-bold">×</div>
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="p-8 border-2 border-dashed rounded-lg text-center text-slate-400">
+                            Votre galerie est vide. Ajoutez des photos pour mettre en valeur votre travail.
+                        </div>
+                    )}
+                </CardContent>
             </Card >
         </div >
     );
