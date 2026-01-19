@@ -50,6 +50,7 @@ export const EXPERT_BRANDS = [
     "Daikin",
     "Mitsubishi",
     "Toshiba",
+    "Hitachi",
     "Gree",
     "LG",
     "Panasonic",
