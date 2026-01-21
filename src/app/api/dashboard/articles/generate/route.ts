@@ -3,9 +3,7 @@ import OpenAI from 'openai';
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+
 
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
@@ -24,6 +22,9 @@ async function getUserIdFromToken() {
 }
 
 export async function POST(req: Request) {
+    const openai = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
     try {
         const userId = await getUserIdFromToken();
         if (!userId) {
