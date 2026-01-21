@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Search, Building, Trash2, Mail, ExternalLink, Loader2, Pencil, Eye, FileText, Check, X } from "lucide-react";
+import { Search, Building, Trash2, Mail, ExternalLink, Loader2, Pencil, Eye, FileText, Check, X, Shield, CheckCircle, XCircle, LogIn, LogOut, UserX } from "lucide-react";
 
 interface User {
     id: string;
