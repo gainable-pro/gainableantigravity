@@ -89,7 +89,7 @@ export async function GET(req: Request) {
 
             // Load attachment
             const imagePath = path.join(process.cwd(), 'public', 'assets', 'label-gainable-verified.png');
-            let attachments = [];
+            let attachments: { filename: string; content: Buffer }[] = [];
             if (fs.existsSync(imagePath)) {
                 const imageBuffer = fs.readFileSync(imagePath);
                 attachments = [{ filename: 'label-gainable-verified.png', content: imageBuffer }];
