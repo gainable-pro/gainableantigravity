@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { AlertCircle, ChevronLeft, Loader2, Save, UploadCloud, X, Plus, Trash2, HelpCircle, Copy, GripVertical, Sparkles } from "lucide-react";
+import { AlertCircle, ChevronLeft, Loader2, Save, UploadCloud, X, Plus, Trash2, HelpCircle, Copy, GripVertical, Sparkles, Mic } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ArticleSection {
@@ -16,6 +16,8 @@ interface ArticleSection {
     content: string;
     showSubtitle: boolean;
     list: string[];
+    imageUrl?: string;
+    imageAlt?: string;
 }
 
 interface FAQItem {
@@ -27,6 +29,7 @@ interface FAQItem {
 export default function NewArticlePage() {
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
+    const [isListening, setIsListening] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -43,7 +46,7 @@ export default function NewArticlePage() {
     const [targetCity, setTargetCity] = useState("");
 
     const [sections, setSections] = useState<ArticleSection[]>([
-        { id: '1', title: '', subtitle: '', content: '', showSubtitle: false, list: [] }
+        { id: '1', title: '', subtitle: '', content: '', showSubtitle: false, list: [], imageUrl: '', imageAlt: '' }
     ]);
 
     // AI Generation Handler
@@ -84,7 +87,9 @@ export default function NewArticlePage() {
                     subtitle: s.title || "", // Using title as subtitle for compatibility
                     content: s.content || "",
                     showSubtitle: true,
-                    list: []
+                    list: [],
+                    imageUrl: "",
+                    imageAlt: ""
                 }));
                 setSections(newSections);
             }
@@ -107,6 +112,37 @@ export default function NewArticlePage() {
         }
     };
 
+
+
+
+
+    // Voice Input Handler
+    const handleVoiceInput = () => {
+        if (typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
+            const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'fr-FR';
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.onstart = () => setIsListening(true);
+            recognition.onend = () => setIsListening(false);
+            recognition.onerror = (event: any) => {
+                console.error("Speech Error:", event.error);
+                setIsListening(false);
+                setError("Erreur lors de la reconnaissance vocale.");
+            };
+
+            recognition.onresult = (event: any) => {
+                const transcript = event.results[0][0].transcript;
+                setTopic((prev) => (prev ? prev + " " + transcript : transcript));
+            };
+
+            recognition.start();
+        } else {
+            setError("Votre navigateur ne supporte pas la saisie vocale (Essayez Chrome).");
+        }
+    };
 
     const [faq, setFaq] = useState<FAQItem[]>([
         { id: '1', question: '', response: '' },
@@ -155,6 +191,36 @@ export default function NewArticlePage() {
         }
     };
 
+    const handleSectionImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        setIsUploading(true);
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("folder", "articles");
+
+        try {
+            const res = await fetch("/api/upload", {
+                method: "POST",
+                body: formData
+            });
+
+            if (!res.ok) throw new Error("Erreur upload");
+            const data = await res.json();
+
+            const newSections = [...sections];
+            newSections[index].imageUrl = data.url;
+            setSections(newSections);
+
+        } catch (err) {
+            console.error(err);
+            setError("Erreur lors de l'upload de l'image de section");
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
     // Sections Management
     const addSection = () => {
         setSections([...sections, {
@@ -163,7 +229,9 @@ export default function NewArticlePage() {
             subtitle: '',
             content: '',
             showSubtitle: false,
-            list: []
+            list: [],
+            imageUrl: '',
+            imageAlt: ''
         }]);
     };
 
@@ -298,13 +366,25 @@ export default function NewArticlePage() {
                     <div className="flex gap-4 items-end">
                         <div className="flex-1 space-y-2">
                             <Label htmlFor="ai-topic">Sujet de l'article</Label>
-                            <Input
-                                id="ai-topic"
-                                placeholder="ex: Les avantages de la climatisation gainable dans une maison ancienne"
-                                value={topic}
-                                onChange={(e) => setTopic(e.target.value)}
-                                className="bg-white"
-                            />
+                            <div className="relative">
+                                <Input
+                                    id="ai-topic"
+                                    placeholder="ex: Les avantages de la climatisation gainable dans une maison ancienne"
+                                    value={topic}
+                                    onChange={(e) => setTopic(e.target.value)}
+                                    className="bg-white pr-10"
+                                />
+                                <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="icon"
+                                    className={`absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 ${isListening ? 'text-red-500 animate-pulse' : 'text-slate-400 hover:text-slate-600'}`}
+                                    onClick={handleVoiceInput}
+                                    title="Dicter le sujet"
+                                >
+                                    <Mic className="w-4 h-4" />
+                                </Button>
+                            </div>
                         </div>
                         <Button
                             onClick={handleGenerate}
@@ -503,6 +583,49 @@ export default function NewArticlePage() {
                                             <Button variant="ghost" size="icon" onClick={() => moveSection(index, 'down')} disabled={index === sections.length - 1}>
                                                 <ChevronLeft className="w-4 h-4 -rotate-90" />
                                             </Button>
+                                            <Button variant="ghost" size="icon" onClick={() => moveSection(index, 'down')} disabled={index === sections.length - 1}>
+                                                <ChevronLeft className="w-4 h-4 -rotate-90" />
+                                            </Button>
+                                        </div>
+                                    </div>
+
+                                    {/* Secondary Image Upload */}
+                                    <div className="pt-4 border-t border-slate-100 grid md:grid-cols-[120px_1fr] gap-4 items-start">
+                                        <div className="relative group">
+                                            {section.imageUrl ? (
+                                                <div className="relative w-full aspect-square rounded-lg overflow-hidden border border-slate-200 bg-slate-50">
+                                                    <img src={section.imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                                                    <button
+                                                        onClick={() => updateSection(index, 'imageUrl', '')}
+                                                        className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                                                    >
+                                                        <X className="w-3 h-3" />
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <label className="w-full aspect-square flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all">
+                                                    <div className="bg-blue-50 text-blue-500 p-2 rounded-full mb-1">
+                                                        {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <UploadCloud className="w-4 h-4" />}
+                                                    </div>
+                                                    <span className="text-[10px] text-slate-500 text-center leading-tight px-1">Ajouter<br />Image</span>
+                                                    <input
+                                                        type="file"
+                                                        className="hidden"
+                                                        accept="image/*"
+                                                        onChange={(e) => handleSectionImageUpload(e, index)}
+                                                    />
+                                                </label>
+                                            )}
+                                        </div>
+
+                                        <div className="space-y-2">
+                                            <Label className="text-xs text-slate-500">Légende / Texte Alternatif (SEO) - Optionnel mais recommandé</Label>
+                                            <Input
+                                                placeholder="Description de l'image..."
+                                                value={section.imageAlt || ''}
+                                                onChange={(e) => updateSection(index, 'imageAlt', e.target.value)}
+                                                className="h-9 text-sm"
+                                            />
                                         </div>
                                     </div>
 

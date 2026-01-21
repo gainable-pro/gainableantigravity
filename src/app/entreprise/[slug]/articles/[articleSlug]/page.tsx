@@ -20,6 +20,8 @@ interface PageProps {
 }
 
 async function getArticleData(slug: string, articleSlug: string) {
+    if (!slug || !articleSlug) return null;
+
     const expert = await prisma.expert.findUnique({
         where: { slug },
         select: {
@@ -81,8 +83,99 @@ export default async function PublicArticlePage({ params }: PageProps) {
     const { expert, article } = data;
 
     // Resolve Content Blocks (New System)
-    const blocks = (article.jsonContent as any)?.blocks as any[];
+    let blocks: any[] = [];
+    try {
+        const jsonContent = typeof article.jsonContent === 'string'
+            ? JSON.parse(article.jsonContent)
+            : article.jsonContent;
+        blocks = (jsonContent as any)?.blocks || [];
+    } catch (e) {
+        console.error("Error parsing jsonContent", e);
+    }
+
     const hasBlocks = Array.isArray(blocks) && blocks.length > 0;
+
+    // Group Blocks for Zig-Zag Layout
+    const groupedSections: any[] = [];
+
+    // Helper for Legacy HTML Parsing
+    const extractImageFromHtml = (html: string) => {
+        let image = null;
+        let alt = null;
+        let cleanHtml = html;
+        const imgMatch = html.match(/<img[^>]+src="([^">]+)"[^>]*>/i);
+        if (imgMatch) {
+            image = imgMatch[1];
+            const altMatch = imgMatch[0].match(/alt="([^">]+)"/i);
+            if (altMatch) alt = altMatch[1];
+            // Remove figure wrapper if exists (using [\s\S] instead of s flag for compatibility)
+            cleanHtml = html.replace(/<figure[^>]*>[\s\S]*?<img[^>]*>[\s\S]*?<\/figure>/i, "");
+            if (cleanHtml.length === html.length) {
+                // Fallback: Remove just the img tag
+                cleanHtml = html.replace(/<img[^>]*>/i, "");
+            }
+        }
+        return { image, alt, cleanHtml };
+    };
+
+    if (hasBlocks) {
+        let currentSection: any = null;
+        blocks.forEach((block: any) => {
+            if (block.type === 'h2') {
+                currentSection = { type: 'section', title: block.value, content: [], image: null, alt: null };
+                groupedSections.push(currentSection);
+            } else if (block.type === 'image') {
+                if (currentSection) {
+                    currentSection.image = block.value;
+                    currentSection.alt = block.alt;
+                } else {
+                    currentSection = { type: 'section', content: [], image: block.value, alt: block.alt };
+                    groupedSections.push(currentSection);
+                }
+            } else if (block.type === 'video') {
+                groupedSections.push({ type: 'video', value: block.value });
+                currentSection = null;
+            } else if (block.type === 'text' || block.type === 'h3') {
+                if (!currentSection) {
+                    currentSection = { type: 'section', content: [] };
+                    groupedSections.push(currentSection);
+                }
+                currentSection.content.push(block);
+            }
+        });
+    } else if (article.content) {
+        // Fallback: Parse Legacy HTML to Zig-Zag Sections
+        const parts = article.content.split(/<h2.*?>/i);
+        parts.forEach((part: string, index: number) => {
+            if (index === 0) {
+                // Introduction (text before first H2)
+                if (part.trim()) {
+                    const { image, alt, cleanHtml } = extractImageFromHtml(part);
+                    groupedSections.push({
+                        type: 'section',
+                        content: [{ type: 'html', value: cleanHtml }],
+                        image,
+                        alt
+                    });
+                }
+            } else {
+                // "Title</h2> Content..."
+                const closeIdx = part.indexOf('</h2>');
+                if (closeIdx !== -1) {
+                    const title = part.substring(0, closeIdx).replace(/<\/?[^>]+(>|$)/g, ""); // strip tags
+                    const body = part.substring(closeIdx + 5);
+                    const { image, alt, cleanHtml } = extractImageFromHtml(body);
+                    groupedSections.push({
+                        type: 'section',
+                        title: title,
+                        content: [{ type: 'html', value: cleanHtml }],
+                        image,
+                        alt
+                    });
+                }
+            }
+        });
+    }
 
     console.log("--- DEBUG ARTICLE RENDER ---");
     console.log("Title:", article.title);
@@ -205,54 +298,65 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     )}
 
                     {/* Dynamic Block Rendering OR Fallback HTML */}
-                    {hasBlocks ? (
-                        <div className="space-y-10 text-lg text-slate-700 leading-relaxed font-sans">
-                            {blocks.map((block: any) => (
-                                <div key={block.id} className="article-block">
-                                    {block.type === 'h2' && (
-                                        <h2 className="text-3xl font-bold mt-16 mb-6 text-[#1F2D3D] relative inline-block border-b-4 border-[#D59B2B]/20 pb-2">
-                                            {block.value}
-                                        </h2>
-                                    )}
-                                    {block.type === 'h3' && (
-                                        <h3 className="text-2xl font-bold mt-10 mb-4 text-[#1F2D3D]">
-                                            {block.value}
-                                        </h3>
-                                    )}
-                                    {block.type === 'text' && (
-                                        <div className="space-y-6">
-                                            {block.value.split('\n').map((line: string, i: number) => {
-                                                if (!line.trim()) return null;
-                                                return <p key={i} className="min-h-[1em]">{line}</p>
-                                            })}
-                                        </div>
-                                    )}
-                                    {block.type === 'image' && block.value && (
-                                        <figure className="my-12">
-                                            <div className="relative w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-                                                <Image
-                                                    src={block.value}
-                                                    alt={block.alt || "Illustration"}
-                                                    fill
-                                                    className="object-cover"
-                                                />
-                                            </div>
-                                            {block.alt && (
-                                                <figcaption className="text-center text-sm text-slate-500 mt-3 italic bg-slate-50 py-2 px-4 rounded-full inline-block mx-auto">
-                                                    {block.alt}
-                                                </figcaption>
-                                            )}
-                                        </figure>
-                                    )}
-                                    {block.type === 'video' && block.value && (
-                                        <figure className="my-12">
+                    {/* Dynamic Zig-Zag Rendering (Works for Blocks AND Legacy HTML) */}
+                    {groupedSections.length > 0 ? (
+                        <div className="space-y-24">
+                            {groupedSections.map((section, idx) => {
+                                if (section.type === 'video') {
+                                    return (
+                                        <figure key={idx} className="my-12">
                                             <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border-4 border-slate-800">
-                                                <video controls src={block.value} className="w-full h-full" />
+                                                <video controls src={section.value} className="w-full h-full" />
                                             </div>
                                         </figure>
-                                    )}
-                                </div>
-                            ))}
+                                    );
+                                }
+
+                                const isReversed = idx % 2 !== 0; // Alternate layout
+                                const hasImage = !!section.image;
+
+                                return (
+                                    <section key={idx} className={`grid gap-12 items-center ${hasImage ? 'md:grid-cols-2' : ''}`}>
+                                        {/* TEXT COLUMN */}
+                                        <div className={`space-y-6 ${hasImage ? (isReversed ? 'md:order-2' : 'md:order-1') : ''}`}>
+                                            {section.title && (
+                                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-6 relative inline-block">
+                                                    {section.title}
+                                                    <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#D59B2B] rounded-full"></span>
+                                                </h2>
+                                            )}
+
+                                            <div className="text-lg text-slate-700 leading-relaxed font-sans space-y-6">
+                                                {section.content.map((b: any, bIdx: number) => (
+                                                    <div key={bIdx}>
+                                                        {b.type === 'h3' && <h3 className="text-xl font-bold text-[#1F2D3D] mt-4 mb-2">{b.value}</h3>}
+                                                        {b.type === 'text' && b.value.split('\n').map((line: string, i: number) => (
+                                                            line.trim() ? <p key={i} className="mb-4">{line}</p> : null
+                                                        ))}
+                                                        {b.type === 'html' && (
+                                                            <div dangerouslySetInnerHTML={{ __html: b.value }} />
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* IMAGE COLUMN */}
+                                        {hasImage && (
+                                            <div className={`${isReversed ? 'md:order-1' : 'md:order-2'}`}>
+                                                <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-xl border border-slate-100 group hover:shadow-2xl transition-shadow duration-500">
+                                                    <Image
+                                                        src={section.image}
+                                                        alt={section.alt || "Illustration"}
+                                                        fill
+                                                        className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                                    />
+                                                </div>
+                                            </div>
+                                        )}
+                                    </section>
+                                );
+                            })}
                         </div>
                     ) : (
                         <div

@@ -22,16 +22,30 @@ async function getUserIdFromToken() {
 }
 
 export async function POST(req: Request) {
+    console.log("AI Generation: Received request");
+
+    // Check key presence
+    if (!process.env.OPENAI_API_KEY) {
+        console.error("AI Generation: OPENAI_API_KEY is missing");
+        return NextResponse.json({ error: 'Configuration serveur manquante (API Key)' }, { status: 500 });
+    }
+
     const openai = new OpenAI({
         apiKey: process.env.OPENAI_API_KEY,
     });
+
     try {
         const userId = await getUserIdFromToken();
+        console.log("AI Generation: User ID:", userId);
+
         if (!userId) {
+            console.log("AI Generation: Unauthorized (no user)");
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        const { topic } = await req.json();
+        const body = await req.json();
+        console.log("AI Generation: Body parsed:", body);
+        const { topic } = body;
 
         if (!topic) {
             return NextResponse.json({ error: 'Le sujet est requis.' }, { status: 400 });
@@ -75,6 +89,7 @@ export async function POST(req: Request) {
         }
         `;
 
+        console.log("AI Generation: Sending request to OpenAI...");
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
             messages: [
@@ -84,14 +99,17 @@ export async function POST(req: Request) {
             response_format: { type: "json_object" },
             temperature: 0.7,
         });
+        console.log("AI Generation: OpenAI response received");
 
         const content = completion.choices[0].message.content;
 
         if (!content) {
+            console.error("AI Generation: No content in response");
             throw new Error("No content generated");
         }
 
         const parsedContent = JSON.parse(content);
+        console.log("AI Generation: Content parsed successfully");
 
         return NextResponse.json(parsedContent);
 

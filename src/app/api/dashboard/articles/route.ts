@@ -240,6 +240,14 @@ export async function POST(req: Request) {
                 generatedHtml += `<p>${p}</p>\n`;
             });
 
+            // Secondary Image (Interleaved)
+            if (sec.imageUrl) {
+                generatedHtml += `<figure class="article-secondary-image">
+                    <img src="${sec.imageUrl}" alt="${sec.imageAlt || sec.title}" loading="lazy" />
+                    ${sec.imageAlt ? `<figcaption>${sec.imageAlt}</figcaption>` : ''}
+                </figure>\n`;
+            }
+
             if (sec.subtitle) {
                 generatedHtml += `<h3>${sec.subtitle}</h3>\n`;
             }

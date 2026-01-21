@@ -152,10 +152,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
             }
         }
 
-        // GENERATE HTML
+        // GENERATE HTML (From Blocks or Sections)
         let generatedHtml = "";
 
-        // Video
+        // Video Embed (Global)
         if (body.videoUrl) {
             const vUrl = body.videoUrl;
             if (vUrl.includes("youtube.com") || vUrl.includes("youtu.be")) {
@@ -174,17 +174,49 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
             }
         }
 
-        sections.forEach((sec: any) => {
-            generatedHtml += `<h2>${sec.title}</h2>\n`;
-            const paragraphs = sec.content.split('\n').filter((p: string) => p.trim() !== '');
-            paragraphs.forEach((p: string) => generatedHtml += `<p>${p}</p>\n`);
-            if (sec.subtitle) generatedHtml += `<h3>${sec.subtitle}</h3>\n`;
-            if (sec.list && Array.isArray(sec.list)) {
-                generatedHtml += `<ul>\n`;
-                sec.list.forEach((item: string) => item.trim() && (generatedHtml += `<li>${item}</li>\n`));
-                generatedHtml += `</ul>\n`;
-            }
-        });
+        if (blocks.length > 0) {
+            // GENERATE FROM BLOCKS (Advanced Editor)
+            blocks.forEach((b: any) => {
+                if (!b.value) return;
+                if (b.type === 'h2') generatedHtml += `<h2>${b.value}</h2>\n`;
+                if (b.type === 'h3') generatedHtml += `<h3>${b.value}</h3>\n`;
+                if (b.type === 'text') {
+                    const paragraphs = b.value.split('\n').filter((p: string) => p.trim() !== '');
+                    paragraphs.forEach((p: string) => generatedHtml += `<p>${p}</p>\n`);
+                }
+                if (b.type === 'image') {
+                    generatedHtml += `<figure class="article-secondary-image">
+                        <img src="${b.value}" alt="${b.alt || ''}" loading="lazy" />
+                        ${b.alt ? `<figcaption>${b.alt}</figcaption>` : ''}
+                    </figure>\n`;
+                }
+                if (b.type === 'video') {
+                    generatedHtml += `<div class="video-container"><video controls src="${b.value}"></video></div>\n`;
+                }
+            });
+        } else {
+            // GENERATE FROM SECTIONS (Legacy / Simple Editor)
+            sections.forEach((sec: any) => {
+                generatedHtml += `<h2>${sec.title}</h2>\n`;
+                const paragraphs = sec.content.split('\n').filter((p: string) => p.trim() !== '');
+                paragraphs.forEach((p: string) => generatedHtml += `<p>${p}</p>\n`);
+
+                // Secondary Image (Interleaved)
+                if (sec.imageUrl) {
+                    generatedHtml += `<figure class="article-secondary-image">
+                        <img src="${sec.imageUrl}" alt="${sec.imageAlt || sec.title}" loading="lazy" />
+                        ${sec.imageAlt ? `<figcaption>${sec.imageAlt}</figcaption>` : ''}
+                    </figure>\n`;
+                }
+
+                if (sec.subtitle) generatedHtml += `<h3>${sec.subtitle}</h3>\n`;
+                if (sec.list && Array.isArray(sec.list)) {
+                    generatedHtml += `<ul>\n`;
+                    sec.list.forEach((item: string) => item.trim() && (generatedHtml += `<li>${item}</li>\n`));
+                    generatedHtml += `</ul>\n`;
+                }
+            });
+        }
 
         // UPDATE
         // Check Slug uniqueness if changed

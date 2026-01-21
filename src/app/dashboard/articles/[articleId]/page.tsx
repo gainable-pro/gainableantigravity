@@ -53,6 +53,50 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
     const [blocks, setBlocks] = useState<ContentBlock[]>([]);
     const [faq, setFaq] = useState<FAQItem[]>([]);
 
+    const [score, setScore] = useState(0);
+    const [scoreMessage, setScoreMessage] = useState("Commencez à rédiger...");
+
+    // --- SEO SCORE CALC (Relaxed) ---
+    useEffect(() => {
+        let s = 0;
+        const countWords = (str: any) => {
+            if (typeof str !== 'string') return 0;
+            return str.trim().split(/\s+/).filter(w => w.length > 0).length;
+        };
+
+        const safeBlocks = Array.isArray(blocks) ? blocks : [];
+        const safeFaq = Array.isArray(faq) ? faq : [];
+
+        const currentWordCount = countWords(title) + countWords(introduction) +
+            safeBlocks.reduce((acc, b) => (b && (b.type === 'text' || b.type === 'h2' || b.type === 'h3')) ? acc + countWords(b.value) : acc, 0) +
+            safeFaq.reduce((acc, f) => (f) ? acc + countWords(f.question) + countWords(f.response) : acc, 0);
+
+        const currentNbH2 = safeBlocks.filter(b => b && b.type === 'h2').length;
+
+        // 1. Word Count (Goal: 500 instead of 800)
+        if (currentWordCount >= 500) s += 40;
+        else s += Math.floor((currentWordCount / 500) * 40);
+
+        // 2. Headings (Goal: 3 H2)
+        if (currentNbH2 >= 3) s += 30;
+        else s += currentNbH2 * 10;
+
+        // 3. FAQ Presence (Min 2)
+        if (safeFaq.length >= 2) s += 20;
+        else s += safeFaq.length * 10;
+
+        // 4. Image Present
+        if (mainImage) s += 10;
+
+        // Cap at 100
+        if (s > 100) s = 100;
+        setScore(s);
+
+        if (s < 50) setScoreMessage("Contenu trop court ou incomplet.");
+        else if (s < 80) setScoreMessage("Bon début ! Ajoutez du contenu.");
+        else setScoreMessage("Excellent ! Prêt à publier.");
+    }, [title, introduction, blocks, faq, mainImage]);
+
     // --- FETCH DATA ---
     useEffect(() => {
         const fetchArticle = async () => {
@@ -71,45 +115,64 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                 setCurrentStatus(data.status || "DRAFT");
 
                 // HYDRATION LOGIC (Robust)
+                let finalBlocks: ContentBlock[] = [];
+                let finalFaq: FAQItem[] = [];
+
                 if (data.jsonContent && typeof data.jsonContent === 'object') {
                     if (Array.isArray((data.jsonContent as any).blocks)) {
                         // New Format (Clean)
-                        setBlocks((data.jsonContent as any).blocks);
-                        if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
+                        finalBlocks = (data.jsonContent as any).blocks;
+                        if ((data.jsonContent as any).faq) finalFaq = (data.jsonContent as any).faq;
                     }
-                    else if (Array.isArray((data.jsonContent as any).sections)) {
+                    else if ((data.jsonContent as any).sections && Array.isArray((data.jsonContent as any).sections)) {
                         // OLD Format -> Convert to Blocks
                         const oldSections = (data.jsonContent as any).sections;
-                        const convertedBlocks: ContentBlock[] = [];
 
                         oldSections.forEach((s: any) => {
                             if (!s) return;
-                            convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h2', value: s.title || '' });
-                            convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'text', value: s.content || '' });
+                            if (s.title) finalBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h2', value: s.title });
+                            if (s.content) finalBlocks.push({ id: Date.now().toString() + Math.random(), type: 'text', value: s.content });
+
+                            // Image
+                            if (s.imageUrl) {
+                                finalBlocks.push({
+                                    id: Date.now().toString() + Math.random(),
+                                    type: 'image',
+                                    value: s.imageUrl,
+                                    alt: s.imageAlt || ''
+                                });
+                            }
+
                             if (s.showSubtitle && s.subtitle) {
-                                convertedBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h3', value: s.subtitle || '' });
+                                finalBlocks.push({ id: Date.now().toString() + Math.random(), type: 'h3', value: s.subtitle });
                             }
                         });
-                        setBlocks(convertedBlocks);
-                        if ((data.jsonContent as any).faq) setFaq((data.jsonContent as any).faq);
+
+                        if ((data.jsonContent as any).faq) finalFaq = (data.jsonContent as any).faq;
                     }
                 }
 
                 // If blocks is still empty after check, fallback
-                if (blocks.length === 0 && (!data.jsonContent || !(data.jsonContent as any).blocks)) {
+                if (finalBlocks.length === 0) {
                     // Fallback / Corrupted
-                    setBlocks([
+                    finalBlocks = [
                         { id: '1', type: 'h2', value: 'Nouvelle Section' },
                         { id: '2', type: 'text', value: 'Commencez à écrire ici...' }
-                    ]);
+                    ];
                 }
 
-                if (!data.jsonContent?.faq && !data.faq) {
+                setBlocks(finalBlocks);
+
+                if (!finalFaq.length && !data.faq) {
                     setFaq([{ id: '1', question: '', response: '' }, { id: '2', question: '', response: '' }]);
-                } else if (data.faq && !data.jsonContent?.faq) {
+                } else if (data.faq && !finalFaq.length) {
                     // If FAQ stored in column (unlikely given schema, likely jsonContent)
                     setFaq(data.faq as any);
+                } else {
+                    setFaq(finalFaq);
                 }
+
+
 
             } catch (err) {
                 setError("Impossible de charger l'article.");
@@ -134,20 +197,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
         if (!slug) setSlug(slugify(val));
     };
 
-    const countWords = (str: string) => str.trim().split(/\s+/).filter(w => w.length > 0).length;
 
-    const getTotalWordCount = () => {
-        let count = countWords(title) + countWords(introduction);
-        blocks.forEach(b => {
-            if (b.type === 'text' || b.type === 'h2' || b.type === 'h3') {
-                count += countWords(b.value);
-            }
-        });
-        faq.forEach(f => {
-            count += countWords(f.question) + countWords(f.response);
-        });
-        return count;
-    };
 
     // --- ACTIONS ---
     const addBlock = (type: BlockType) => {
@@ -269,44 +319,6 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
     };
 
     if (isLoading) return <div className="text-center py-20 flex justify-center"><Loader2 className="animate-spin" /></div>;
-
-    const wordCount = getTotalWordCount();
-    const nbH2 = blocks.filter(b => b.type === 'h2').length;
-    // const hasImage = mainImage && altText.length > 5; // Unused in new logic
-
-    const [score, setScore] = useState(0);
-    const [scoreMessage, setScoreMessage] = useState("Commencez à rédiger...");
-
-    // --- SEO SCORE CALC (Relaxed) ---
-    const calculateSeoScore = () => {
-        let s = 0;
-        // 1. Word Count (Goal: 500 instead of 800)
-        if (wordCount >= 500) s += 40;
-        else s += Math.floor((wordCount / 500) * 40);
-
-        // 2. Headings (Goal: 3 H2)
-        if (nbH2 >= 3) s += 30;
-        else s += nbH2 * 10;
-
-        // 3. FAQ Presence (Min 2)
-        if (faq.length >= 2) s += 20;
-        else s += faq.length * 10;
-
-        // 4. Image Present
-        if (mainImage) s += 10;
-
-        // Cap at 100
-        if (s > 100) s = 100;
-        setScore(s);
-
-        if (s < 50) setScoreMessage("Contenu trop court ou incomplet.");
-        else if (s < 80) setScoreMessage("Bon début ! Ajoutez du contenu.");
-        else setScoreMessage("Excellent ! Prêt à publier.");
-    };
-
-    useEffect(() => {
-        calculateSeoScore();
-    }, [title, introduction, blocks, faq, mainImage]);
 
     return (
         <div className="max-w-5xl mx-auto pb-24">
