@@ -165,9 +165,58 @@ export default function NewArticlePage() {
         }
     };
 
+    // Image Compression Helper
+    const compressImage = async (file: File): Promise<File> => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => {
+                const img = new Image();
+                img.src = event.target?.result as string;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 1200;
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > MAX_WIDTH) {
+                        height = Math.round((height * MAX_WIDTH) / width);
+                        width = MAX_WIDTH;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx?.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob((blob) => {
+                        if (blob) {
+                            const newFile = new File([blob], file.name.replace(/\.[^/.]+$/, "") + ".jpg", {
+                                type: 'image/jpeg',
+                                lastModified: Date.now(),
+                            });
+                            resolve(newFile);
+                        } else reject(new Error("Canvas blob failed"));
+                    }, 'image/jpeg', 0.8);
+                };
+                img.onerror = (err) => reject(err);
+            };
+            reader.onerror = (err) => reject(err);
+        });
+    };
+
     const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
+        let file = e.target.files?.[0];
         if (!file) return;
+
+        // Auto-Compress
+        try {
+            if (file.type.startsWith('image/')) {
+                file = await compressImage(file);
+            }
+        } catch (err) {
+            console.error("Compression warning:", err);
+        }
 
         setIsUploading(true);
         const formData = new FormData();
@@ -192,8 +241,17 @@ export default function NewArticlePage() {
     };
 
     const handleSectionImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-        const file = e.target.files?.[0];
+        let file = e.target.files?.[0];
         if (!file) return;
+
+        // Auto-Compress
+        try {
+            if (file.type.startsWith('image/')) {
+                file = await compressImage(file);
+            }
+        } catch (err) {
+            console.error("Compression warning:", err);
+        }
 
         setIsUploading(true);
         const formData = new FormData();
