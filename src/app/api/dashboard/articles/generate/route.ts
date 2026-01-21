@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
+import { prisma } from "@/lib/prisma";
 
 
 
@@ -43,6 +44,25 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
+        // Fetch Expert Context for Personalization
+        const expert = await prisma.expert.findUnique({
+            where: { user_id: userId },
+            select: { nom_entreprise: true, ville: true, description: true }
+        });
+
+        const expertContext = expert ? `
+        CONTEXTE DE L'ENTREPRISE :
+        - Nom : ${expert.nom_entreprise}
+        - Ville : ${expert.ville}
+        - Description : ${expert.description?.slice(0, 200) || "Installateur qualifié"}
+
+        INSTRUCTION UNIQUE :
+        Tu DOIS personnaliser l'article pour cette entreprise spécifique.
+        Mentionne "${expert.nom_entreprise}" dans l'introduction et la conclusion.
+        Adapte le ton en fonction de la description de l'entreprise si fournie.
+        Cela permet d'éviter le contenu dupliqué avec d'autres artisans.
+        ` : "";
+
         const body = await req.json();
         console.log("AI Generation: Body parsed:", body);
         const { topic } = body;
@@ -54,6 +74,8 @@ export async function POST(req: Request) {
         const systemPrompt = `
         Tu es un expert SEO et rédacteur web spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation), spécifiquement pour la "climatisation gainable" et les "pompes à chaleur".
         Ta mission est de rédiger un article complet, optimisé pour le référencement (SEO), qui sera publié sur le site d'un installateur professionnel.
+        
+        ${expertContext}
 
         Sujet de l'article : "${topic}"
 
