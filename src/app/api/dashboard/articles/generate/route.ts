@@ -47,7 +47,7 @@ export async function POST(req: Request) {
         // Fetch Expert Context for Personalization
         const expert = await prisma.expert.findUnique({
             where: { user_id: userId },
-            select: { id: true, nom_entreprise: true, ville: true, description: true }
+            select: { id: true, nom_entreprise: true, ville: true, description: true, expert_type: true }
         });
 
         if (!expert) {
@@ -96,8 +96,17 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Le sujet est requis.' }, { status: 400 });
         }
 
+        // DYNAMIC PERSONA
+        let persona = `Tu es un expert SEO et rédacteur web spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation), spécifiquement pour la "climatisation gainable" et les "pompes à chaleur".`;
+
+        if (expert.expert_type === 'diagnostics_dpe') {
+            persona = `Tu es un expert certifié en Diagnostic Immobilier (DPE, Amiante, Plomb, etc.). Ta mission est d'informer les propriétaires et agences sur les obligations légales et l'importance des diagnostics pour la vente/location.`;
+        } else if (expert.expert_type === 'bureau_detude') {
+            persona = `Tu es un ingénieur thermicien en Bureau d'Étude (RE2020, Audit Énergétique). Ta mission est d'expliquer les réglementations thermiques, les audits énergétiques et l'optimisation de la performance du bâtiment.`;
+        }
+
         const systemPrompt = `
-        Tu es un expert SEO et rédacteur web spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation), spécifiquement pour la "climatisation gainable" et les "pompes à chaleur".
+        ${persona}
         Ta mission est de rédiger un article complet, optimisé pour le référencement (SEO), qui sera publié sur le site d'un installateur professionnel.
         
         ${expertContext}
