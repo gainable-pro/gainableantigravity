@@ -55,13 +55,22 @@ export async function POST(req: Request) {
         }
 
         // --- LIMIT CHECK ---
-        // Only "Air G Energie" is unlimited. Others = 3 articles max (Test Mode).
+        // Only "Air G Energie" is unlimited. Others = 3 articles/month.
         const isUnlimited = expert.nom_entreprise.toLowerCase().includes("air g energie");
         if (!isUnlimited) {
-            const count = await prisma.article.count({ where: { expertId: expert.id } });
+            const now = new Date();
+            const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+            const count = await prisma.article.count({
+                where: {
+                    expertId: expert.id,
+                    createdAt: { gte: startOfMonth }
+                }
+            });
+
             if (count >= 3) {
                 return NextResponse.json({
-                    error: "Limite gratuite atteinte (3 articles). Contactez Air G Energie pour débloquer l'illimité."
+                    error: "Limite mensuelle atteinte (3 articles ce mois-ci). Revenez le 1er du mois prochain !"
                 }, { status: 403 });
             }
         }
