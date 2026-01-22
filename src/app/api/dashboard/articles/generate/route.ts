@@ -47,10 +47,26 @@ export async function POST(req: Request) {
         // Fetch Expert Context for Personalization
         const expert = await prisma.expert.findUnique({
             where: { user_id: userId },
-            select: { nom_entreprise: true, ville: true, description: true }
+            select: { id: true, nom_entreprise: true, ville: true, description: true }
         });
 
-        const expertContext = expert ? `
+        if (!expert) {
+            return NextResponse.json({ error: 'Profil expert introuvable.' }, { status: 404 });
+        }
+
+        // --- LIMIT CHECK ---
+        // Only "Air G Energie" is unlimited. Others = 3 articles max (Test Mode).
+        const isUnlimited = expert.nom_entreprise.toLowerCase().includes("air g energie");
+        if (!isUnlimited) {
+            const count = await prisma.article.count({ where: { expertId: expert.id } });
+            if (count >= 3) {
+                return NextResponse.json({
+                    error: "Limite gratuite atteinte (3 articles). Contactez Air G Energie pour débloquer l'illimité."
+                }, { status: 403 });
+            }
+        }
+
+        const expertContext = `
         CONTEXTE DE L'ENTREPRISE :
         - Nom : ${expert.nom_entreprise}
         - Ville : ${expert.ville}
@@ -61,7 +77,7 @@ export async function POST(req: Request) {
         Mentionne "${expert.nom_entreprise}" dans l'introduction et la conclusion.
         Adapte le ton en fonction de la description de l'entreprise si fournie.
         Cela permet d'éviter le contenu dupliqué avec d'autres artisans.
-        ` : "";
+        ` ;
 
         const body = await req.json();
         console.log("AI Generation: Body parsed:", body);
