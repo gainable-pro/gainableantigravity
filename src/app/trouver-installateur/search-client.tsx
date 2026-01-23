@@ -186,7 +186,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
 
 
             {/* --- TOP FILTER BAR --- */}
-            <div className="bg-white border-b shadow-sm sticky top-[96px] md:top-[112px] z-30 transition-all">
+            <div className="bg-white border-b border-slate-100 shadow-sm sticky top-[96px] md:top-[112px] z-30 transition-all">
                 <div className="container mx-auto px-4 py-3">
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
 

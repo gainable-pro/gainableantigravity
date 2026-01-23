@@ -287,7 +287,7 @@ export default function LabelsPage() {
                     </div>
 
                     <div className="mt-16">
-                        <Link href="/contact-pro">
+                        <Link href="/contact">
                             <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white px-10 py-6 text-lg rounded-full shadow-lg font-bold transition-all hover:scale-105">
                                 Demander le Label pour mon entreprise
                             </Button>
