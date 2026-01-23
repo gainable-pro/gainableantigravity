@@ -21,7 +21,7 @@ const iconBrand = new L.Icon({
 
 
 // Helper to center map on results
-function MapUpdater({ experts, geocodedCoords, hasLocationFilter, initialView }: { experts: any[], geocodedCoords: Record<string, [number, number]>, hasLocationFilter: boolean, initialView: { center: number[], zoom: number } }) {
+function MapUpdater({ experts, geocodedCoords, hasLocationFilter, initialView, searchCoords }: { experts: any[], geocodedCoords: Record<string, [number, number]>, hasLocationFilter: boolean, initialView: { center: number[], zoom: number }, searchCoords?: [number, number] }) {
     const map = useMap();
     useEffect(() => {
         // STRICT RULE: Only auto-zoom if the user has explicitly requested a location (city/country)
@@ -31,7 +31,13 @@ function MapUpdater({ experts, geocodedCoords, hasLocationFilter, initialView }:
             return;
         }
 
-        // Find the first expert with valid coords (either from DB or geocoded)
+        // PRIORITY 1: Explicit Search Coords (e.g. from City Search "Bourges")
+        if (searchCoords) {
+            map.setView(searchCoords, 10); // Standard city zoom
+            return;
+        }
+
+        // PRIORITY 2: First expert with coordinates
         const firstValid = experts.find(e => {
             const hasDbCoords = e.lat && e.lat !== 46.2276; // Ignore default mock
             const hasGeoCoords = !!geocodedCoords[e.id];
@@ -45,13 +51,13 @@ function MapUpdater({ experts, geocodedCoords, hasLocationFilter, initialView }:
                 map.setView(coords as [number, number], 10);
             }
         }
-    }, [experts, geocodedCoords, map, hasLocationFilter, initialView]);
+    }, [experts, geocodedCoords, map, hasLocationFilter, initialView, searchCoords]);
     return null;
 }
 
 // ... (omitted constants)
 
-export default function SearchMap({ experts, hasLocationFilter = false, initialView }: { experts: any[], hasLocationFilter?: boolean, initialView?: { center: number[], zoom: number } }) {
+export default function SearchMap({ experts, hasLocationFilter = false, initialView, searchCoords }: { experts: any[], hasLocationFilter?: boolean, initialView?: { center: number[], zoom: number }, searchCoords?: [number, number] }) {
     const [geocodedCoords, setGeocodedCoords] = useState<Record<string, [number, number]>>({});
 
     // Default fallback if not provided
@@ -68,7 +74,7 @@ export default function SearchMap({ experts, hasLocationFilter = false, initialV
                 attribution='&copy; Google Maps'
                 url="https://mt0.google.com/vt/lyrs=m&hl=fr&x={x}&y={y}&z={z}"
             />
-            <MapUpdater experts={experts} geocodedCoords={geocodedCoords} hasLocationFilter={hasLocationFilter} initialView={defaultView} />
+            <MapUpdater experts={experts} geocodedCoords={geocodedCoords} hasLocationFilter={hasLocationFilter} initialView={defaultView} searchCoords={searchCoords} />
 
             {experts.map((expert) => {
                 let position: [number, number] | null = null;

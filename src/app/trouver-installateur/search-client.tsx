@@ -88,6 +88,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
     const [isLoading, setIsLoading] = useState(false);
 
     const [selectedExperts, setSelectedExperts] = useState<any[]>([]);
+    const [searchCoords, setSearchCoords] = useState<[number, number] | undefined>(undefined);
 
     const toggleExpertSelection = (expert: any) => {
         if (selectedExperts.find(e => e.id === expert.id)) {
@@ -120,8 +121,13 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                     if (geoRes.ok) {
                         const geoData = await geoRes.json();
                         if (geoData && geoData.length > 0) {
-                            params.append('lat', geoData[0].lat);
-                            params.append('lng', geoData[0].lon);
+                            const lat = parseFloat(geoData[0].lat);
+                            const lng = parseFloat(geoData[0].lon);
+                            params.append('lat', lat.toString());
+                            params.append('lng', lng.toString());
+                            setSearchCoords([lat, lng]);
+                        } else {
+                            setSearchCoords(undefined);
                         }
                     }
                 } catch (e) {
@@ -425,7 +431,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                     <aside className="hidden lg:block lg:col-span-5 h-[calc(100vh-200px)] sticky top-[180px]">
                         <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative border border-slate-300 shadow-md group">
                             {/* Real Interactive Map */}
-                            <SearchMap experts={experts} hasLocationFilter={!!locationFilter || !!countryFilter} initialView={initialView} />
+                            <SearchMap experts={experts} hasLocationFilter={!!locationFilter || !!countryFilter} initialView={initialView} searchCoords={searchCoords} />
                         </div>
                     </aside>
                 </div>
