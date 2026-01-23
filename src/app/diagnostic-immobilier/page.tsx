@@ -6,14 +6,19 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Diagnostiqueur Immobilier Certifié - DPE & Audit | Gainable.fr",
-    description: "Trouvez un diagnostiqueur immobilier certifié pour votre DPE, audit énergétique ou diagnostic vente/location. Indispensable pour votre rénovation CVC.",
+    title: "Diagnostiqueur immobilier DPE & audit énergétique | Gainable.fr",
+    description: "Trouvez un diagnostiqueur immobilier pour votre DPE, audit énergétique ou diagnostic vente/location. Experts vérifiés disponibles sur Gainable.fr.",
     openGraph: {
-        title: "Diagnostiqueur Immobilier Certifié - DPE & Audit | Gainable.fr",
-        description: "DPE, Amiante, Plomb, Audit énergétique : Experts certifiés disponibles pour vos diagnostics immobiliers.",
+        title: "Diagnostiqueur immobilier DPE & audit énergétique | Gainable.fr",
+        description: "Trouvez un diagnostiqueur immobilier pour votre DPE, audit énergétique ou diagnostic vente/location. Experts vérifiés disponibles sur Gainable.fr.",
         images: ['/diag-hero.png'],
         type: 'website',
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Diagnostiqueur immobilier DPE & audit énergétique | Gainable.fr",
+        description: "Trouvez un diagnostiqueur immobilier pour votre DPE, audit énergétique ou diagnostic vente/location. Experts vérifiés disponibles sur Gainable.fr.",
+    }
 };
 
 export default function DiagnosticImmobilierPage() {

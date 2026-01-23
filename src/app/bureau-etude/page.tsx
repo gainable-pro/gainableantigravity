@@ -6,14 +6,19 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Bureau d'Étude Thermique & Fluides - Climatisation | Gainable.fr",
-    description: "Faites appel à un bureau d'étude spécialisé en CVC et thermique pour dimensionner votre installation de climatisation gainable (RE 2020, Rénovation).",
+    title: "Bureau d’étude CVC & thermique : climatisation gainable | Gainable.fr",
+    description: "Trouvez un bureau d’étude CVC et thermique pour vos projets de climatisation gainable, tertiaire ou résidentiel (RE2020, rénovation) avec Gainable.fr.",
     openGraph: {
-        title: "Bureau d'Étude Thermique & Fluides - Climatisation | Gainable.fr",
-        description: "Dimensionnement, étude thermique RE2020, audit énergétique : trouvez le bureau d'étude adapté à votre projet.",
+        title: "Bureau d’étude CVC & thermique : climatisation gainable | Gainable.fr",
+        description: "Trouvez un bureau d’étude CVC et thermique pour vos projets de climatisation gainable, tertiaire ou résidentiel (RE2020, rénovation) avec Gainable.fr.",
         images: ['/bureau-etude-hero.png'],
         type: 'website',
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Bureau d’étude CVC & thermique : climatisation gainable | Gainable.fr",
+        description: "Trouvez un bureau d’étude CVC et thermique pour vos projets de climatisation gainable, tertiaire ou résidentiel (RE2020, rénovation) avec Gainable.fr.",
+    }
 };
 
 export default function BureauEtudePage() {
