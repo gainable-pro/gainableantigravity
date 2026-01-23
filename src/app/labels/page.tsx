@@ -6,14 +6,19 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Expert Vérifié : La référence Qualité Climatisation & RGE",
-    description: "Découvrez la mention Expert Vérifié, garantissant des artisans certifiés, assurés et experts en climatisation gainable pour une installation en toute sérénité.",
+    title: "Expert Vérifié : la référence qualité en climatisation | Gainable.fr",
+    description: "Découvrez le label Expert Vérifié Gainable.fr : des installateurs contrôlés pour la qualité, le sérieux et l’expertise en climatisation gainable.",
     openGraph: {
-        title: "Expert Vérifié : La référence Qualité Climatisation & RGE",
-        description: "Gage de qualité et de confiance. Optez pour des installateurs labellisés Gainable.fr pour votre confort.",
+        title: "Expert Vérifié : la référence qualité en climatisation | Gainable.fr",
+        description: "Découvrez le label Expert Vérifié Gainable.fr : des installateurs contrôlés pour la qualité, le sérieux et l’expertise en climatisation gainable.",
         images: ['/label-quality-business-bg.png'],
         type: 'website',
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Expert Vérifié : la référence qualité en climatisation | Gainable.fr",
+        description: "Découvrez le label Expert Vérifié Gainable.fr : des installateurs contrôlés pour la qualité, le sérieux et l’expertise en climatisation gainable.",
+    }
 };
 
 export default function LabelsPage() {
