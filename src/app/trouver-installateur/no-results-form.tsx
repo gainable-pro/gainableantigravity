@@ -2,25 +2,39 @@
 
 import { useState } from "react";
 import { SimpleRequestForm } from "@/components/features/contact/forms/simple-form";
+import { CvcRequestForm } from "@/components/features/contact/forms/cvc-form";
+import { DiagRequestForm } from "@/components/features/contact/forms/diag-form";
 import { CheckCircle } from "lucide-react";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
 
 interface NoResultsFormProps {
     location?: string;
 }
 
+type FormType = 'cvc' | 'diag' | 'bureau';
+
 export function NoResultsForm({ location = "" }: NoResultsFormProps) {
     const [isSuccess, setIsSuccess] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formType, setFormType] = useState<FormType>('cvc'); // Default to CVC
 
     const handleSubmit = async (data: any) => {
         setIsSubmitting(true);
-        // Address parsing logic reused or simplified
+        // Address parsing logic
         const address = data.address || "";
         const zipMatch = address.match(/\b\d{4,5}\b/) || location.match(/\b\d{4,5}\b/);
         const extractedZip = zipMatch ? zipMatch[0] : "00000";
 
+        // Enrich payload
         const payload = {
-            type: 'simple', // Generic type
+            type: formType,
             nom: data.lastName,
             prenom: data.firstName,
             email: data.email,
@@ -28,12 +42,17 @@ export function NoResultsForm({ location = "" }: NoResultsFormProps) {
             code_postal: extractedZip,
             ville: data.ville || location || "Inconnue",
             adresse: address,
+
+            // Map specific fields
+            projet: data.propertyType || data.projet || "",
+            surface: data.surface ? String(data.surface) : undefined,
             message: data.description,
-            // Custom message indicating origin
+
             details: {
                 ...data,
                 origin: "no-results-search",
-                search_location: location
+                search_location: location,
+                form_type: formType
             }
         };
 
@@ -46,8 +65,7 @@ export function NoResultsForm({ location = "" }: NoResultsFormProps) {
 
             if (res.ok) {
                 setIsSuccess(true);
-                // Redirect to confirmation is standard
-                window.location.href = `/confirmation-devis?source=auto_fallback`;
+                window.location.href = `/confirmation-devis?source=fallback_${formType}`;
             } else {
                 const err = await res.json();
                 alert(err.error || "Une erreur est survenue.");
@@ -88,7 +106,25 @@ export function NoResultsForm({ location = "" }: NoResultsFormProps) {
             </div>
 
             <div className="max-w-xl mx-auto bg-slate-50 p-6 rounded-xl border border-slate-200">
-                <SimpleRequestForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />
+                {/* Form Type Selector */}
+                <div className="mb-8">
+                    <Label className="block mb-2 font-bold text-[#1F2D3D]">Quel est votre type de demande ?</Label>
+                    <Select value={formType} onValueChange={(val) => setFormType(val as FormType)}>
+                        <SelectTrigger className="w-full bg-white h-12">
+                            <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="cvc">Climatisation & Chauffage</SelectItem>
+                            <SelectItem value="diag">Diagnostics Immobiliers</SelectItem>
+                            <SelectItem value="bureau">Bureau d'Étude Thermique</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
+
+                {/* Dynamic Form Render */}
+                {formType === 'cvc' && <CvcRequestForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />}
+                {formType === 'diag' && <DiagRequestForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />}
+                {formType === 'bureau' && <SimpleRequestForm onSubmit={handleSubmit} isSubmitting={isSubmitting} />}
             </div>
         </div>
     );
