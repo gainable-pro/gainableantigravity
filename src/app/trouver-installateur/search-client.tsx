@@ -63,9 +63,11 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
     const typeParams = searchParams?.getAll('type') || [];
 
     // Determine initial filter state
-    const initialSociete = typeParams.includes('societe') || (!filterParam && typeParams.length === 0) || (filterParam !== 'bureau_etude' && filterParam !== 'diagnostiqueur' && typeParams.length === 0);
-    const initialBureau = typeParams.includes('bureau') || filterParam === 'bureau_etude';
-    const initialDiag = typeParams.includes('diag') || filterParam === 'diagnostiqueur';
+    // Determine initial filter state
+    const isDefault = typeParams.length === 0 && !filterParam;
+    const initialSociete = isDefault || typeParams.includes('societe');
+    const initialBureau = isDefault || typeParams.includes('bureau') || filterParam === 'bureau_etude';
+    const initialDiag = isDefault || typeParams.includes('diag') || filterParam === 'diagnostiqueur';
 
     // Filters State
     const [expertFilters, setExpertFilters] = useState({
@@ -167,9 +169,8 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
 
     const handleExpertChange = (key: keyof typeof expertFilters) => {
         setExpertFilters(prev => ({
-            societe: key === 'societe' ? !prev.societe : false,
-            bureau: key === 'bureau' ? !prev.bureau : false,
-            diag: key === 'diag' ? !prev.diag : false
+            ...prev,
+            [key]: !prev[key]
         }));
     };
 
@@ -185,7 +186,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
 
 
             {/* --- TOP FILTER BAR --- */}
-            <div className="bg-white border-b shadow-sm sticky top-[60px] md:top-[80px] z-30 transition-all">
+            <div className="bg-white border-b shadow-sm sticky top-[96px] md:top-[112px] z-30 transition-all">
                 <div className="container mx-auto px-4 py-3">
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
 

@@ -83,7 +83,7 @@ export default async function SearchPage({
     } else if (filterParam === 'diagnostiqueur') {
         if (!filters.types.includes('diag')) filters.types.push('diag');
     } else if (!filterParam && filters.types.length === 0) {
-        filters.types.push('societe');
+        filters.types.push('societe', 'bureau', 'diag');
     }
 
     const initialExperts = await getExperts(filters);
