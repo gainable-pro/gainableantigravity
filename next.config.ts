@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
 
   generateBuildId: async () => {
     // Force a unique build ID to prevent Vercel from serving stale cache
