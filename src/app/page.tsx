@@ -1,51 +1,49 @@
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 import SearchPageClient from '@/app/trouver-installateur/search-client';
 import { getExperts } from '@/lib/experts';
 
 export const dynamic = 'force-dynamic';
 
-const headerList = await headers();
-const countryCode = headerList.get("x-vercel-ip-country") || "FR";
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }): Promise<Metadata> {
+    const headerList = await headers();
+    const countryCode = headerList.get("x-vercel-ip-country") || "FR";
 
-// Determine Country Name for Title
-const countryMap: Record<string, string> = {
-    "FR": "France",
-    "CH": "Suisse",
-    "BE": "Belgique",
-    "MA": "Maroc"
-};
+    // Determine Country Name for Title
+    const countryMap: Record<string, string> = {
+        "FR": "France",
+        "CH": "Suisse",
+        "BE": "Belgique",
+        "MA": "Maroc"
+    };
 
-// If explicit country param exists, use it. Otherwise use IP country.
-const urlCountry = (await searchParams).country as string;
-const targetCountryCode = urlCountry ? (Object.keys(countryMap).find(k => countryMap[k] === urlCountry) || countryCode) : countryCode;
-const targetCountryName = countryMap[targetCountryCode] || "France, Suisse, Belgique, Maroc";
+    // If explicit country param exists, use it. Otherwise use IP country.
+    const urlCountry = (await searchParams).country as string;
+    const targetCountryCode = urlCountry ? (Object.keys(countryMap).find(k => countryMap[k] === urlCountry) || countryCode) : countryCode;
+    const targetCountryName = countryMap[targetCountryCode] || "France, Suisse, Belgique, Maroc";
 
-// Dynamic Title
-const title = `Experts climatisation & gainable – ${targetCountryName} | Gainable.fr`;
+    // Dynamic Title
+    const title = `Experts climatisation & gainable – ${targetCountryName} | Gainable.fr`;
 
-const description = "Plateforme de mise en relation avec des experts qualifiés en climatisation, gainable, pompe à chaleur, chauffage, bureaux d’études et diagnostics immobiliers en France, Suisse, Belgique et Maroc.";
+    const description = "Plateforme de mise en relation avec des experts qualifiés en climatisation, gainable, pompe à chaleur, chauffage, bureaux d’études et diagnostics immobiliers en France, Suisse, Belgique et Maroc.";
 
-const canonicalUrl = (await searchParams).city
-    ? `/trouver-installateur?city=${encodeURIComponent((await searchParams).city as string)}`
-    : '/';
+    const canonicalUrl = (await searchParams).city
+        ? `/trouver-installateur?city=${encodeURIComponent((await searchParams).city as string)}`
+        : '/';
 
-return {
-    title,
-    description,
-    alternates: {
-        canonical: canonicalUrl,
-    },
-    openGraph: {
+    return {
         title,
         description,
-        images: ['/hero-hvac.png'],
-    }
-};
+        alternates: {
+            canonical: canonicalUrl,
+        },
+        openGraph: {
+            title,
+            description,
+            images: ['/hero-hvac.png'],
+        }
+    };
 }
-
-import { headers } from 'next/headers';
-
-// ... (existing imports)
 
 export default async function SearchPage({
     searchParams,
