@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { MapPin, Building2, Wrench, CheckCircle, Phone } from "lucide-react";
@@ -25,11 +26,13 @@ interface ProCardProps {
     actionButton?: React.ReactNode;
     // Label Prop
     isLabeled?: boolean;
+    // Optimization
+    priority?: boolean;
 }
 
 export function ProCard({
     id, slug, name, city, country, expertTypes, interventions, technologies, marques, logoUrl, telephone,
-    isSelected = false, onToggleSelect, selectable = false, actionButton, isLabeled = false
+    isSelected = false, onToggleSelect, selectable = false, actionButton, isLabeled = false, priority = false
 }: ProCardProps) {
     const [showPhone, setShowPhone] = useState(false);
 
@@ -42,9 +45,16 @@ export function ProCard({
     return (
         <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 md:p-4 lg:p-3 xl:p-6 flex flex-col md:flex-row gap-4 lg:gap-3 xl:gap-6 hover:shadow-md transition-shadow">
             {/* Logo & Selection */}
-            <div className="relative w-full h-32 md:w-56 md:h-36 lg:w-40 lg:h-28 xl:w-64 xl:h-40 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group">
+            <div className="relative w-full h-32 md:w-56 md:h-36 lg:w-40 lg:h-28 xl:w-64 xl:h-40 bg-slate-50 rounded-lg flex-shrink-0 flex items-center justify-center border border-slate-100 group overflow-hidden">
                 {logoUrl ? (
-                    <img src={logoUrl} alt={name} className="max-w-full max-h-full object-contain p-1" />
+                    <Image
+                        src={logoUrl}
+                        alt={name}
+                        fill
+                        className="object-contain p-2"
+                        priority={priority}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 15vw"
+                    />
                 ) : (
                     <span className="text-3xl font-bold text-slate-300">{name.charAt(0)}</span>
                 )}

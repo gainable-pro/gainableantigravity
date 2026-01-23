@@ -380,6 +380,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                                         slug={pro.slug}
                                         {...pro}
                                         selectable={true}
+                                        priority={experts.indexOf(pro) < 4} // Preload first 4 items for UX/LCP
                                         isSelected={!!selectedExperts.find(e => e.id === pro.id)}
                                         onToggleSelect={() => toggleExpertSelection({
                                             id: pro.id,
