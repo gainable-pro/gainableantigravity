@@ -6,10 +6,10 @@ import Link from "next/link";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Label Gainable.fr : La référence Qualité Climatisation & RGE",
-    description: "Découvrez le Label Gainable.fr, garantissant des artisans certifiés, assurés et experts en climatisation gainable pour une installation en toute sérénité.",
+    title: "Expert Vérifié : La référence Qualité Climatisation & RGE",
+    description: "Découvrez la mention Expert Vérifié, garantissant des artisans certifiés, assurés et experts en climatisation gainable pour une installation en toute sérénité.",
     openGraph: {
-        title: "Label Gainable.fr : La référence Qualité Climatisation & RGE",
+        title: "Expert Vérifié : La référence Qualité Climatisation & RGE",
         description: "Gage de qualité et de confiance. Optez pour des installateurs labellisés Gainable.fr pour votre confort.",
         images: ['/label-quality-business-bg.png'],
         type: 'website',
@@ -101,7 +101,7 @@ export default function LabelsPage() {
             <section className="py-20 bg-slate-50">
                 <div className="container max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-[#1F2D3D] mb-4">Avantages du Label Gainable<span className="text-[#D59B2B]">.fr</span></h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-montserrat text-[#1F2D3D] mb-4">Avantages de l'Expert Vérifié<span className="text-[#D59B2B]"></span></h2>
                         <p className="text-slate-500 text-lg">Une valeur ajoutée pour tous</p>
                     </div>
 

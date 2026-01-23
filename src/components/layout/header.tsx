@@ -36,7 +36,7 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                         Bureau d'étude
                     </Link>
                     <Link href="/diagnostic-immobilier" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Diagnostic Immobilier</Link>
-                    <Link href="/labels" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Label Gainable.fr</Link>
+                    <Link href="/labels" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Expert Vérifié</Link>
                     <Link href="/pourquoi-gainable" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
                     </Link>
@@ -86,7 +86,7 @@ function MobileMenu() {
                         Bureau d'étude
                     </Link>
                     <Link href="/diagnostic-immobilier" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Diagnostic Immobilier</Link>
-                    <Link href="/labels" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Label Gainable.fr</Link>
+                    <Link href="/labels" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Expert Vérifié</Link>
                     <Link href="/pourquoi-gainable" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
                     </Link>
