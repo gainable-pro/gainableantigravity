@@ -12,6 +12,7 @@ import {
     EXPERT_INTERVENTIONS_DIAG
 } from "@/lib/constants";
 import { ContactWizard } from "@/components/features/contact/contact-wizard";
+import { NoResultsForm } from "./no-results-form";
 
 // Dynamically import Map to avoid SSR issues
 const SearchMap = dynamic(() => import("@/components/features/search-map"), {
@@ -408,13 +409,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                                     />
                                 ))
                             ) : (
-                                <div className="bg-white p-6 rounded-xl border border-dashed border-slate-300 text-center">
-                                    <p className="text-slate-500">Aucun expert trouvé pour cette recherche.</p>
-                                    <Button variant="link" onClick={() => {
-                                        setLocationFilter("");
-                                        setCountryFilter("");
-                                    }}>Effacer les filtres</Button>
-                                </div>
+                                <NoResultsForm location={locationFilter} />
                             )}
                         </div>
 
