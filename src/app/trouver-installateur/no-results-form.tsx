@@ -94,11 +94,10 @@ export function NoResultsForm({ location = "" }: NoResultsFormProps) {
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
             <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-4">
-                    Aucun expert trouvé pour cette recherche ?
+                    Ne vous inquiétez pas !
                 </h3>
                 <p className="text-slate-600 max-w-2xl mx-auto mb-4">
-                    Ne vous inquiétez pas ! <br />
-                    <span className="font-bold text-[#D59B2B]">L'équipe Gainable.fr fera en sorte de contacter sous 24h des experts sur cette région</span> (les plus proches de votre bien) pour qu'on puisse vous proposer d'autres artisans qualifiés.
+                    <span className="font-bold text-[#D59B2B]">L'équipe Gainable.fr sélectionne les meilleurs experts</span> (vérifiés par notre système de modération) et les contacte sous 24h pour vous mettre en relation avec eux.
                 </p>
                 <p className="text-sm text-slate-500 italic">
                     Remplissez ce formulaire pour être recontacté rapidement.
