@@ -6,14 +6,19 @@ import Image from "next/image";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Pourquoi Gainable.fr ? Le Manifeste de la Qualité en Climatisation",
-    description: "Découvrez notre vision : reconnecter la confiance entre particuliers et experts CVC. Pas de vente de leads, juste de la qualité et des artisans vérifiés.",
+    title: "Pourquoi rejoindre Gainable.fr | Visibilité & chantiers pour experts CVC",
+    description: "Gainable.fr est un réseau d’experts vérifiés en climatisation, CVC et génie climatique. Augmentez votre visibilité, obtenez des contacts qualifiés et valorisez votre savoir-faire.",
     openGraph: {
-        title: "Pourquoi Gainable.fr ? Le Manifeste de la Qualité en Climatisation",
-        description: "Contre l'uberisation du bâtiment, nous défendons l'artisanat qualifié et la transparence. Découvrez notre manifeste.",
+        title: "Pourquoi rejoindre Gainable.fr | Visibilité & chantiers pour experts CVC",
+        description: "Gainable.fr est un réseau d’experts vérifiés en climatisation, CVC et génie climatique. Augmentez votre visibilité, obtenez des contacts qualifiés et valorisez votre savoir-faire.",
         images: ['/images/relation-pro-client.png'],
         type: 'website',
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Pourquoi rejoindre Gainable.fr | Visibilité & chantiers pour experts CVC",
+        description: "Gainable.fr est un réseau d’experts vérifiés en climatisation, CVC et génie climatique. Augmentez votre visibilité, obtenez des contacts qualifiés et valorisez votre savoir-faire.",
+    }
 };
 
 export default function PourquoiGainablePage() {
