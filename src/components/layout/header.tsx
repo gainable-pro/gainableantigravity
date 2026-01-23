@@ -18,13 +18,14 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex py-0 items-center justify-between px-4">
                 {/* Logo */}
-                <Link href="/" className="relative h-24 w-auto md:h-28 md:w-[250px] block transition-all">
+                {/* Logo - Use standard anchor to force full refresh/reset on click */}
+                <a href="/" className="relative h-24 w-auto md:h-28 md:w-[250px] block transition-all">
                     <img
                         src={logoSrc}
                         alt="Gainable.fr"
                         className="w-full h-full object-contain"
                     />
-                </Link>
+                </a>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-6 text-base font-medium text-slate-700">

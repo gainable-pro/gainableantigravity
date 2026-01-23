@@ -117,7 +117,9 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                 params.append('city', locationFilter);
                 // GEOCODE ON SEARCH
                 try {
-                    const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(locationFilter + ", France")}&limit=1`);
+                    // Smart Query Construction: If countryFilter is active, append it. Otherwise just use the input.
+                    const query = locationFilter + (countryFilter ? `, ${countryFilter}` : "");
+                    const geoRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=1`);
                     if (geoRes.ok) {
                         const geoData = await geoRes.json();
                         if (geoData && geoData.length > 0) {
