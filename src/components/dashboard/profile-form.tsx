@@ -65,7 +65,9 @@ export default function ProfileForm() {
         adresse_indep: false,
         adresse_inter: "",
         ville_inter: "",
-        cp_inter: ""
+        cp_inter: "",
+        metaTitle: "",
+        metaDesc: ""
     });
 
     // Multi-value States
@@ -114,7 +116,9 @@ export default function ProfileForm() {
                     adresse_indep: data.adresse_indep || false,
                     adresse_inter: data.adresse_inter || "",
                     ville_inter: data.ville_inter || "",
-                    cp_inter: data.cp_inter || ""
+                    cp_inter: data.cp_inter || "",
+                    metaTitle: data.metaTitle || "",
+                    metaDesc: data.metaDesc || ""
                 });
 
                 // Populate Checkboxes (API returns objects {value: "foo"}, we need strings ["foo"])
@@ -277,6 +281,72 @@ export default function ProfileForm() {
                         <div className="space-y-2">
                             <Label>YouTube</Label>
                             <Input name="youtube" value={formData.youtube} onChange={handleChange} placeholder="URL Chaîne YouTube" />
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            {/* SEO SECTION */}
+            <Card>
+                <CardContent className="pt-6 space-y-4">
+                    <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-semibold text-lg text-[#1F2D3D]">Référencement (SEO)</h3>
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={async () => {
+                                setIsLoading(true); // Re-use main loader or local
+                                try {
+                                    const res = await fetch('/api/dashboard/seo/generate', { method: 'POST' });
+                                    const data = await res.json();
+                                    if (!res.ok) throw new Error(data.message);
+
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        metaTitle: data.data.metaTitle,
+                                        metaDesc: data.data.metaDesc
+                                    }));
+                                    setMessage({ type: 'success', text: "SEO régénéré avec l'IA !" });
+                                } catch (e: any) {
+                                    setMessage({ type: 'error', text: "Erreur IA: " + e.message });
+                                } finally {
+                                    setIsLoading(false);
+                                }
+                            }}
+                            className="bg-purple-50 text-purple-700 hover:bg-purple-100 border-purple-200"
+                        >
+                            Orbimatic AI Booster ✨
+                        </Button>
+                    </div>
+                    <p className="text-sm text-slate-500 mb-4">Ces éléments apparaissent sur Google. Vous pouvez les personnaliser ou utiliser l'IA pour les optimiser.</p>
+
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <Label>Titre Meta (Max 60 chars)</Label>
+                            <Input
+                                name="metaTitle"
+                                value={formData.metaTitle || ""}
+                                onChange={handleChange}
+                                maxLength={60}
+                                placeholder="Titre optimisé pour Google"
+                            />
+                            <div className="text-xs text-right text-slate-400">
+                                {(formData.metaTitle || "").length} / 60
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <Label>Description Meta (Max 160 chars)</Label>
+                            <Textarea
+                                name="metaDesc"
+                                value={formData.metaDesc || ""}
+                                onChange={handleChange}
+                                maxLength={160}
+                                placeholder="Description courte qui incite au clic"
+                                className="h-20"
+                            />
+                            <div className="text-xs text-right text-slate-400">
+                                {(formData.metaDesc || "").length} / 160
+                            </div>
                         </div>
                     </div>
                 </CardContent>

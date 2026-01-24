@@ -44,6 +44,7 @@ export default function NewArticlePage() {
     const [altText, setAltText] = useState("");
     const [videoUrl, setVideoUrl] = useState("");
     const [targetCity, setTargetCity] = useState("");
+    const [metaDesc, setMetaDesc] = useState("");
 
     const [sections, setSections] = useState<ArticleSection[]>([
         { id: '1', title: '', subtitle: '', content: '', showSubtitle: false, list: [], imageUrl: '', imageAlt: '' }
@@ -76,7 +77,9 @@ export default function NewArticlePage() {
             // Populate form
             setTitle(data.title || "");
             setSlug(data.slug || slugify(data.title || ""));
+            setSlug(data.slug || slugify(data.title || ""));
             setTargetCity(data.targetCity || "");
+            setMetaDesc(data.metaDesc || "");
             setIntroduction(data.introduction || "");
 
             // Map sections
@@ -349,6 +352,7 @@ export default function NewArticlePage() {
                     altText,
                     videoUrl,
                     targetCity,
+                    metaDesc,
                     sections,
                     faq,
                     status
@@ -509,6 +513,18 @@ export default function NewArticlePage() {
                                         value={targetCity}
                                         onChange={(e) => setTargetCity(e.target.value)}
                                     />
+                                </div>
+                            </div>
+                            <div className="space-y-2 mt-4 pt-4 border-t border-slate-100">
+                                <Label>Meta Description (SEO)</Label>
+                                <Textarea
+                                    placeholder="Description optimisée pour les moteurs de recherche (max 160 caractères)..."
+                                    value={metaDesc}
+                                    onChange={(e) => setMetaDesc(e.target.value)}
+                                    className="h-24 bg-white"
+                                />
+                                <div className={`text-xs text-right ${metaDesc.length > 160 ? 'text-red-500 font-bold' : 'text-slate-400'}`}>
+                                    {metaDesc.length} / 160 caractères
                                 </div>
                             </div>
                         </CardContent>

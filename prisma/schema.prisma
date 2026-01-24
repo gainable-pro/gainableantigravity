@@ -64,6 +64,8 @@ model Expert {
   
   // SEO
   slug             String      @unique
+  metaTitle        String?
+  metaDesc         String?
   logo_url         String?
   video_url        String?
   

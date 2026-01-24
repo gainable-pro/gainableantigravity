@@ -50,6 +50,8 @@ async function getExpertBySlug(slug: string) {
 
 import type { Metadata } from "next";
 
+import { generateExpertMetaTitle, generateExpertMetaDescription } from "@/lib/seo-templates";
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
     const expert = await getExpertBySlug(slug);
@@ -61,15 +63,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
+    // fallbackData object for template generator
+    const seoData = {
+        nomEntreprise: expert.nom_entreprise,
+        ville: expert.ville,
+        codePostal: expert.code_postal,
+        description: expert.description
+    };
+
     return {
-        title: `${expert.nom_entreprise} - Expert à ${expert.ville} | Gainable.fr`,
-        description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise}, expert en génie climatique à ${expert.ville}. Devis gratuit et intervention rapide.`,
+        title: expert.metaTitle || generateExpertMetaTitle(seoData),
+        description: expert.metaDesc || generateExpertMetaDescription(seoData),
         alternates: {
             canonical: `/pro/${expert.slug}`,
         },
         openGraph: {
-            title: `${expert.nom_entreprise} - Expert à ${expert.ville}`,
-            description: expert.description?.substring(0, 160) || `Contactez ${expert.nom_entreprise} pour vos projets de climatisation.`,
+            title: expert.metaTitle || generateExpertMetaTitle(seoData),
+            description: expert.metaDesc || generateExpertMetaDescription(seoData),
             images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.jpg'],
             type: 'profile',
         }
@@ -125,7 +135,12 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             "postalCode": expert.code_postal,
             "addressCountry": expert.pays || "FR"
         },
-        "description": expert.description?.substring(0, 160) || `Expert ${typeLabel} à ${expert.ville}.`,
+        description: expert.metaDesc || generateExpertMetaDescription({
+            nomEntreprise: expert.nom_entreprise,
+            ville: expert.ville,
+            codePostal: expert.code_postal,
+            description: expert.description
+        }),
         "areaServed": {
             "@type": "GeoCircle",
             "geoMidpoint": {
@@ -177,8 +192,15 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                             <div className="flex-1 pt-32 md:pt-4">
                                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                                     <div>
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <h1 className="text-3xl font-bold text-[#1F2D3D]">{expert.nom_entreprise}</h1>
+                                        <div className="flex flex-col gap-1 mb-3">
+                                            <h1 className="text-3xl font-bold text-[#1F2D3D]">
+                                                {expert.nom_entreprise} - Expert Climatisation Réversible & Gainable
+                                            </h1>
+                                            {/* Crawlable Badge - Always Visible if Verified */}
+                                            <div className="flex items-center gap-2 text-[#D59B2B] font-semibold bg-[#FFF8ED] px-3 py-1 rounded w-fit border border-[#D59B2B]/20">
+                                                <CheckCircle className="w-4 h-4" />
+                                                <span>Entreprise Vérifiée Gainable.fr</span>
+                                            </div>
                                         </div>
 
                                         <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -274,7 +296,9 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
                         {/* DESCRIPTION */}
                         <section className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-                            <h2 className="text-xl font-bold text-[#1F2D3D] mb-4">À propos</h2>
+                            <h2 className="text-xl font-bold text-[#1F2D3D] mb-4">
+                                À propos de notre expertise en solutions gainables à {expert.ville}
+                            </h2>
                             <p className="text-slate-600 leading-relaxed whitespace-pre-line">
                                 {expert.description || "Aucune description renseignée."}
                             </p>
@@ -329,7 +353,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
                         {/* SKILLS / TAGS */}
                         <section className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-                            <h2 className="text-xl font-bold text-[#1F2D3D] mb-6">Expertise & Compétences</h2>
+                            <h2 className="text-xl font-bold text-[#1F2D3D] mb-6">Nos compétences : Pompe à Chaleur & Climatisation</h2>
 
                             {/* CVC SPECIFIC */}
                             {expert.technologies.length > 0 && (

@@ -61,6 +61,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: `${article.title} - ${expert.nom_entreprise}`,
         description: article.metaDesc || article.introduction?.slice(0, 160) || "Article sur la climatisation gainable.",
+        alternates: {
+            canonical: `https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}`,
+        },
         openGraph: {
             title: article.title,
             description: article.metaDesc || article.introduction?.slice(0, 160),

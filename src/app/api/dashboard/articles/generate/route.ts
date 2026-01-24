@@ -96,50 +96,69 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Le sujet est requis.' }, { status: 400 });
         }
 
-        // DYNAMIC PERSONA
-        let persona = `Tu es un expert SEO et rédacteur web spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation), spécifiquement pour la "climatisation gainable" et les "pompes à chaleur".`;
-
-        if (expert.expert_type === 'diagnostics_dpe') {
-            persona = `Tu es un expert certifié en Diagnostic Immobilier (DPE, Amiante, Plomb, etc.). Ta mission est d'informer les propriétaires et agences sur les obligations légales et l'importance des diagnostics pour la vente/location.`;
-        } else if (expert.expert_type === 'bureau_detude') {
-            persona = `Tu es un ingénieur thermicien en Bureau d'Étude (RE2020, Audit Énergétique). Ta mission est d'expliquer les réglementations thermiques, les audits énergétiques et l'optimisation de la performance du bâtiment.`;
-        }
+        // DYNAMIC PERSONA & CONTEXT
+        const specialiteMap: Record<string, string> = {
+            'installateur_clim': 'Installation et Maintenance de Climatisation (Gainable, VRV, PAC)',
+            'bureau_detude': 'Études Thermiques et Audit Énergétique (RE2020)',
+            'diagnostics_dpe': 'Diagnostics Immobiliers (DPE, Amiante, Plomb)',
+            'architecte': 'Architecture et Rénovation Énergétique'
+        };
+        const specialite = specialiteMap[expert.expert_type] || 'Génie Climatique';
+        const ville = expert.ville || "France";
+        const zone = `${ville} et sa région`;
 
         const systemPrompt = `
-        ${persona}
-        Ta mission est de rédiger un article complet, optimisé pour le référencement (SEO), qui sera publié sur le site d'un installateur professionnel.
-        
-        ${expertContext}
+        🧠 PROMPT SEO PREMIUM
 
+        Tu es un rédacteur SEO senior spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation) et le référencement local.
+        Tu dois rédiger un article unique, expert et localisé, destiné à être indexé par Google.
+
+        CONTEXTE
+        Entreprise : ${expert.nom_entreprise}
+        Ville principale : ${ville}
+        Zone d’intervention : ${zone}
+        Spécialité : ${specialite}
         Sujet de l'article : "${topic}"
 
-        Consignes de rédaction :
-        1.  **Ton :** Professionnel, rassurant, expert mais accessible (pas trop de jargon sans explication). Encourage la demande de devis.
-        2.  **SEO :** Utilise des mots-clés pertinents (installation, prix, devis, avantages, confort, économies d'énergie).
-        3.  **Structure :**
-            -   **Titre (H1) :** Accrocheur, contient le mot-clé principal.
-            -   **Slug :** URL-friendly, court, mots-clés séparés par des tirets.
-            -   **Ville cible :** Choisis une grande ville française pertinente (ex: Bordeaux, Toulouse, Montpellier, Lyon) ou "France" si le sujet est général.
-            -   **Introduction :** Présente le problème et la solution, donne envie de lire.
-            -   **Sections (H2) :** 3 à 5 sections détaillées. Chaque section doit avoir un titre (subtitle) et un contenu riche (content).
-            -   **FAQ :** 3 questions/réponses pertinentes que les clients se posent souvent (prix, bruit, installation, consommation).
+        CONSIGNES STRICTES
+        1. Génère UN SEUL H1, optimisé SEO, intégrant naturellement la ville et la thématique.
+        2. Génère 4 à 6 H2, avec un ordre variable (ne jamais suivre toujours le même plan).
+        3. Ne jamais utiliser systématiquement : Introduction → Avantages → Prix → FAQ.
+        4. Le contenu doit être réellement différencié d’un article similaire dans une autre ville.
 
-        Format de réponse attendu (JSON uniquement) :
+        CONTENU À PRODUIRE
+        - Adapter le discours au contexte local (climat, type d’habitat, usages courants).
+        - Mettre en avant la méthode de travail de l'entreprise : "${expert.description?.slice(0, 150) || 'Service de qualité, expert qualifié'}".
+        - Varier les angles possibles : confort thermique, contraintes techniques locales, rénovation vs neuf, choix des marques, attentes des clients.
+
+        INTERDICTIONS
+        - Pas de phrases génériques type “dans un monde en constante évolution”.
+        - Pas de structure répétitive.
+        - Pas de paragraphes trop courts ou vides.
+
+        FORMAT DE RÉPONSE ATTENDU (JSON STRICT)
+        Tu dois ABSOLUMENT répondre avec ce format JSON pour que l'affichage fonctionne (Zig-Zag).
+
         {
-            "title": "Titre H1",
-            "slug": "mon-super-article",
-            "targetCity": "Ville",
-            "introduction": "Intro...",
+            "title": "Titre H1 (Optimisé)",
+            "slug": "slug-url-friendly",
+            "targetCity": "${ville}",
+            "metaDesc": "Meta description unique (max 160 chars) incitant au clic.",
+            "introduction": "Introduction engageante (pas de H2 ici)...",
             "sections": [
                 {
-                    "title": "Titre H2",
-                    "content": "Paragraphe complet expliquant ce point..."
+                    "title": "Titre H2 (Variable)",
+                    "content": "Contenu riche et détaillé (300 mots min)..."
+                },
+                {
+                    "title": "Autre H2 (Variable)",
+                    "content": "..."
                 }
             ],
             "faq": [
                 {
-                    "question": "Question ?",
-                    "response": "Réponse..."
+                    "question": "Question pertinente ?",
+                    "response": "Réponse experte..."
                 }
             ]
         }

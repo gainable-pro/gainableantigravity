@@ -287,7 +287,7 @@ export async function POST(req: Request) {
                 altText: body.altText,
                 videoUrl: body.videoUrl,
                 targetCity: body.targetCity,
-                metaDesc: body.introduction ? body.introduction.slice(0, 160) : "",
+                metaDesc: body.metaDesc || (body.introduction ? body.introduction.slice(0, 160) : ""),
                 status: status as any,
                 publishedAt: status === 'PUBLISHED' ? new Date() : null,
                 expertId: expert.id,

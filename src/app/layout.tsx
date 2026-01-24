@@ -35,6 +35,17 @@ export const metadata: Metadata = {
   verification: {
     google: "7CpozW1B0HyKKwPSynXwVeV6-y7CK65t7Lb6MpMINgE",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 import { headers } from "next/headers";

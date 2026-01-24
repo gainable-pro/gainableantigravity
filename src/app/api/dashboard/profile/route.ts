@@ -92,6 +92,9 @@ export async function PUT(req: Request) {
                     adresse_inter: body.adresse_inter,
                     ville_inter: body.ville_inter,
                     cp_inter: body.cp_inter,
+                    // SEO
+                    metaTitle: body.metaTitle,
+                    metaDesc: body.metaDesc,
                 }
             });
 

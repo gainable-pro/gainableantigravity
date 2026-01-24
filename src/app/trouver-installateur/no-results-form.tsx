@@ -97,7 +97,7 @@ export function NoResultsForm({ location = "" }: NoResultsFormProps) {
                     Ne vous inquiétez pas !
                 </h3>
                 <p className="text-slate-600 max-w-2xl mx-auto mb-4">
-                    <span className="font-bold text-[#D59B2B]">L'équipe Gainable.fr sélectionne les meilleurs experts</span> (vérifiés par notre système de modération) et les contacte sous 24h pour vous mettre en relation avec eux.
+                    <span className="font-bold text-[#D59B2B]">Les meilleurs experts de votre région, sélectionnés par Gainable.fr,</span> vous recontactent rapidement.
                 </p>
                 <p className="text-sm text-slate-500 italic">
                     Remplissez ce formulaire pour être recontacté rapidement.

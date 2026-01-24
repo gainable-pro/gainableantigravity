@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { hash } from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
+import { generateExpertMetaTitle, generateExpertMetaDescription } from "@/lib/seo-templates";
 
 // Initialize Prisma Client
 // In a real app, use a singleton pattern for the client
@@ -123,6 +124,9 @@ export async function POST(req: Request) {
                     siret: siret, // Used for generic ID storage (SIRET/IDE/ICE)
                     tva_number: tvaNumber, // New Field
                     ape_code: codeApe,
+                    // SEO Fields (Deterministic)
+                    metaTitle: generateExpertMetaTitle({ nomEntreprise, ville, codePostal }),
+                    metaDesc: generateExpertMetaDescription({ nomEntreprise, ville, codePostal, description }),
                     // Default values
                     slug: finalSlug,
                     status: 'pending_validation', // Forced for manual validation (Stripe Bypass)
