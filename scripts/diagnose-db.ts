@@ -5,8 +5,8 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient({
     datasources: {
         db: {
-            // Note the full username: postgres.mppxucdjziuaovdfeknj
-            url: "postgresql://postgres.mppxucdjziuaovdfeknj:Monamoure23012017@aws-1-eu-west-1.pooler.supabase.com:5432/postgres",
+
+            url: process.env.DATABASE_URL!,
         },
     },
     log: ['info', 'error'],
