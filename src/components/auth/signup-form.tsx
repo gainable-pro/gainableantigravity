@@ -187,15 +187,11 @@ export function SignUpForm() {
                 return;
             }
 
-            // MANUAL VALIDATION MODE (Stripe Bypassed)
-            // We treat all plans as "Request for registration"
-            setIsSuccess(true);
-            setIsSubmitting(false);
-            return;
 
-            /* STRIPE DISABLED
+
             // PAID PLANS -> Stripe Checkout
             let planMap = '';
+            // Pass the selected interval. Backend should handle 'cvc' + 'monthly' mapping.
             if (selectedPlan === 'societe') planMap = 'cvc';
             if (selectedPlan === 'diagnostiqueur') planMap = 'diag';
 
@@ -205,6 +201,7 @@ export function SignUpForm() {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         planId: planMap,
+                        interval: billingInterval, // New param
                         expertId: expertId,
                         email: formData.email
                     })
@@ -225,7 +222,6 @@ export function SignUpForm() {
                 alert("Erreur de connexion au service de paiement.");
                 setIsSubmitting(false);
             }
-            */
 
         } catch (error) {
             console.error(error);
@@ -253,6 +249,8 @@ export function SignUpForm() {
         );
     }
 
+    const [billingInterval, setBillingInterval] = useState<'yearly' | 'monthly'>('yearly');
+
     // --- RENDER HELPERS ---
     const getPlanName = (p: string) => {
         if (p === 'societe') return "Offre Expert CVC";
@@ -262,9 +260,11 @@ export function SignUpForm() {
     };
 
     const getPlanPrice = (p: string) => {
-        if (p === 'societe') return "520 € TTC / an";
+        if (p === 'societe') {
+            return billingInterval === 'yearly' ? "520 € HT / an" : "39,90 € HT / mois";
+        }
         if (p === 'bureau_etude') return "Gratuit";
-        if (p === 'diagnostiqueur') return "200 € TTC / an";
+        if (p === 'diagnostiqueur') return "200 € HT / an";
         return "";
     };
 
@@ -327,8 +327,30 @@ export function SignUpForm() {
                                 <Building2 className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Société Expert CVC</h3>
+
+                            {/* Toggle Switch */}
+                            <div className="flex items-center gap-2 mt-3 mb-2 bg-slate-100 p-1 rounded-lg w-max" onClick={(e) => e.stopPropagation()}>
+                                <button
+                                    className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                    onClick={() => setBillingInterval('yearly')}
+                                >
+                                    Annuel
+                                </button>
+                                <button
+                                    className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${billingInterval === 'monthly' ? 'bg-white text-[#1F2D3D] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                    onClick={() => setBillingInterval('monthly')}
+                                >
+                                    Mensuel
+                                </button>
+                            </div>
+
                             <div className="mt-1">
-                                <span className="text-[#D59B2B] font-bold text-2xl">520 €</span> <span className="text-xs text-slate-500">/ an TTC</span>
+                                <span className="text-[#D59B2B] font-bold text-2xl">
+                                    {billingInterval === 'yearly' ? '520 €' : '39,90 €'}
+                                </span>
+                                <span className="text-xs text-slate-500">
+                                    {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
+                                </span>
                             </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
@@ -364,7 +386,7 @@ export function SignUpForm() {
                                 <FileText className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
-                            <div className="text-purple-600 font-bold text-xl mt-1">200 € <span className="text-xs text-slate-500 font-normal">/ an TTC</span></div>
+                            <div className="text-purple-600 font-bold text-xl mt-1">200 € <span className="text-xs text-slate-500 font-normal">/ an HT</span></div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[

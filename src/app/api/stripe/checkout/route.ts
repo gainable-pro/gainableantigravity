@@ -16,23 +16,29 @@ export async function OPTIONS() {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { planId, expertId, email } = body;
+        const { planId, expertId, email, interval } = body; // interval: 'yearly' | 'monthly'
 
         // Basic validation
         if (!planId) return NextResponse.json({ error: "Missing planId" }, { status: 400 });
 
-        // If we have an expertId, ensure they exist and aren't already subscribed?
-        // User requirements: "Inscription -> Paiement". Expert might be pending.
-        // We will pass expertId as metadata to Stripe to reconcile in Webhook.
-
-        // Determine price ID from env or body (assuming body sends 'cvc' or 'diag' or directly priceId)
-        // Let's assume body sends key "cvc" or "diag"
+        // Determine price ID
         let priceId = "";
-        if (planId === 'cvc') priceId = process.env.STRIPE_PRICE_CVC || '';
-        if (planId === 'diag') priceId = process.env.STRIPE_PRICE_DIAG || '';
-        if (!priceId) priceId = planId; // Fallback if direct ID sent
+
+        if (planId === 'cvc') {
+            if (interval === 'monthly') {
+                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || '';
+            } else {
+                priceId = process.env.STRIPE_PRICE_CVC || '';
+            }
+        } else if (planId === 'diag') {
+            priceId = process.env.STRIPE_PRICE_DIAG || '';
+        } else {
+            // Fallback if direct ID sent (rare case)
+            priceId = planId;
+        }
 
         if (!priceId) {
+            console.error("Stripe Config Error: Missing Price ID for", planId, interval);
             return NextResponse.json({ error: "Invalid Price ID configuration" }, { status: 500 });
         }
 
