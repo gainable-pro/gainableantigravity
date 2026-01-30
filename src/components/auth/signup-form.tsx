@@ -299,6 +299,7 @@ export function SignUpForm() {
                                 "Visibilité sur Gainable.fr",
                                 "Page dédiée",
                                 "Création 3 articles / mois (Optimisé SEO)",
+                                "Assistant IA : Génération intégrale du contenu",
                                 "SEO standard",
                                 "Leads & contacts illimités",
                                 "Accès codes APE dédiés BE"
@@ -370,6 +371,7 @@ export function SignUpForm() {
                                 "Mise en avant Premium (Site + Carte)",
                                 "Badge Expert visible (Confiance)",
                                 "Création 3 articles / mois (Optimisé SEO)",
+                                "Assistant IA : Génération intégrale du contenu",
                                 "Leads qualifiés orientés installation",
                                 "Le client choisit lui-même",
                                 "Toutes fonctionnalités incluses"
@@ -404,6 +406,7 @@ export function SignUpForm() {
                                 "Visibilité locale sur Gainable.fr",
                                 "Page PRO dédiée",
                                 "Création 3 articles / mois (Optimisé SEO)",
+                                "Assistant IA : Génération intégrale du contenu",
                                 "Carte interactive",
                                 "Leads & contacts illimités",
                                 "Missions de diagnostic",
