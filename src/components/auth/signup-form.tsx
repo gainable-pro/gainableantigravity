@@ -328,30 +328,39 @@ export function SignUpForm() {
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Société Expert CVC</h3>
 
-                            {/* Toggle Switch */}
-                            <div className="flex items-center gap-2 mt-3 mb-2 bg-slate-100 p-1 rounded-lg w-max" onClick={(e) => e.stopPropagation()}>
+                            {/* Toggle Switch Enhanced */}
+                            <div className="flex items-center gap-1 mt-4 mb-3 bg-slate-100 p-1.5 rounded-lg w-full" onClick={(e) => e.stopPropagation()}>
                                 <button
-                                    className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] ring-1 ring-slate-200' : 'text-slate-500 hover:text-slate-700'}`}
                                     onClick={() => setBillingInterval('yearly')}
                                 >
                                     Annuel
                                 </button>
                                 <button
-                                    className={`px-3 py-1 text-xs font-bold rounded-md transition-all ${billingInterval === 'monthly' ? 'bg-white text-[#1F2D3D] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white ring-1 ring-[#1F2D3D]' : 'text-slate-500 hover:text-slate-700'}`}
                                     onClick={() => setBillingInterval('monthly')}
                                 >
                                     Mensuel
                                 </button>
                             </div>
 
-                            <div className="mt-1">
-                                <span className="text-[#D59B2B] font-bold text-2xl">
+                            <div className="mt-2">
+                                <span className="text-[#D59B2B] font-bold text-3xl">
                                     {billingInterval === 'yearly' ? '520 €' : '39,90 €'}
                                 </span>
-                                <span className="text-xs text-slate-500">
+                                <span className="text-sm text-slate-500 font-medium">
                                     {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
                                 </span>
                             </div>
+
+                            {/* Commitment Note */}
+                            {billingInterval === 'monthly' && (
+                                <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
+                                    <span className="text-[#D59B2B] font-bold">Engagement 12 mois reconductible.</span>
+                                    <br />
+                                    Résiliation possible 1 mois avant la fin du contrat.
+                                </div>
+                            )}
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
