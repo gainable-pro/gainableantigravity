@@ -61,6 +61,7 @@ export async function POST(req: NextRequest) {
                 // Based on user flow: Form -> DB (Pending) -> Payment. So expertId SHOULD be present.
             },
             allow_promotion_codes: true, // Enable promo codes
+            automatic_tax: { enabled: true }, // Verify VAT/Tax location
             success_url: `${baseUrl}/inscription/paiement/succes?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${baseUrl}/inscription?canceled=true`,
         });
