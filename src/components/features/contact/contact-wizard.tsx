@@ -187,7 +187,7 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
 
                     {step === 'form' && expertType === 'cvc_climatisation' && (
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-                            <CvcRequestForm onSubmit={handleSubmitCVC} isSubmitting={false} />
+                            <CvcRequestForm onSubmit={handleSubmitCVC} isSubmitting={false} defaultCity={preSelectedExperts.length === 0 ? (triggerButton as any)?.props?.['data-city'] : undefined} />
                         </div>
                     )}
 

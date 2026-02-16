@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
                     where: { id: expertId },
                     data: {
                         stripeCustomerId: ((session.customer as any) as string) || null,
-                        status: "active", // Activate account!
+                        status: "pending_approval", // Manual verification required
                     }
                 });
 

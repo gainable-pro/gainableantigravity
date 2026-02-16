@@ -502,6 +502,49 @@ export default function Home() {
         </div>
       </section >
 
+      {/* BLOC: NOS ZONES D'INTERVENTION (SEO MAILLAGE) */}
+      <section className="py-16 bg-white border-t border-slate-100">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-[#1F2D3D] mb-8">
+            Installation Climatisation Gainable : Nos zones d'intervention
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            <Link href="/climatisation/paris" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Paris</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/marseille" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Marseille</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/lyon" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Lyon</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/toulouse" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Toulouse</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/nice" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Nice</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/nantes" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Nantes</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/montpellier" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Montpellier</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/strasbourg" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Strasbourg</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/bordeaux" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Bordeaux</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/lille" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Lille</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/rennes" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Rennes</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/reims" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Reims</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/toulon" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Toulon</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/saint-etienne" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Saint-Étienne</Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/climatisation/le-havre" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Le Havre</Link>
+          </div>
+          <p className="mt-6 text-sm text-slate-400">
+            Intervention dans toute la France avec nos installateurs partenaires RGE.
+          </p>
+        </div>
+      </section>
+
       {/* BLOCK 3: Fonctionnement */}
       < section className="py-20 bg-slate-900 text-white relative overflow-hidden" >
         {/* Subtle background pattern */}

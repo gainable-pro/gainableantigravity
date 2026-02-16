@@ -53,5 +53,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
     }));
 
-    return [...routes, ...expertRoutes, ...articleRoutes];
+
+    // 4. City Landing Pages (SSG)
+    // We import CITIES_100 to generate these
+    const { CITIES_100 } = await import('@/data/cities-100');
+
+    const cityRoutes = CITIES_100.map((city) => ({
+        url: `${baseUrl}/climatisation/${city.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+    }));
+
+    return [...routes, ...expertRoutes, ...articleRoutes, ...cityRoutes];
+
 }

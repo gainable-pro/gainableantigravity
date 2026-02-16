@@ -59,9 +59,10 @@ type CvcFormValues = z.infer<typeof cvcFormSchema>;
 interface CvcRequestFormProps {
     onSubmit: (data: CvcFormValues) => void;
     isSubmitting?: boolean;
+    defaultCity?: string;
 }
 
-export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFormProps) => {
+export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: CvcRequestFormProps) => {
     const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
     const [uploading, setUploading] = useState(false);
     const [files, setFiles] = useState<{ url: string, name: string }[]>([]);
@@ -72,7 +73,8 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false }: CvcRequestFor
             technologies: [],
             propertyType: "",
             surface: "",
-            description: ""
+            description: "",
+            address: defaultCity || ""
         }
     });
 
