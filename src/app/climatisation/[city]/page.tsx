@@ -545,13 +545,21 @@ export default async function CityPage({ params }: PageProps) {
                     <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
                         Recevez jusqu'à 3 devis gratuits d'artisans locaux, sélectionnés pour leur sérieux.
                     </p>
-                    <ContactWizard
-                        triggerButton={
-                            <Button size="lg" className="bg-white text-[#D59B2B] hover:bg-slate-100 font-bold h-16 px-12 text-xl rounded-full shadow-2xl">
-                                Demander mes devis gratuits
-                            </Button>
-                        }
-                    />
+                    <div className="flex justify-center">
+                        {isInternational ? (
+                            <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-slate-800 text-left">
+                                <InternationalLeadForm city={city.name} />
+                            </div>
+                        ) : (
+                            <ContactWizard
+                                triggerButton={
+                                    <Button size="lg" className="bg-white text-[#D59B2B] hover:bg-slate-100 font-bold h-16 px-12 text-xl rounded-full shadow-2xl">
+                                        Demander mes devis gratuits
+                                    </Button>
+                                }
+                            />
+                        )}
+                    </div>
                 </div>
             </section>
         </div>
