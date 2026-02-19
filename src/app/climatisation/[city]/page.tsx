@@ -55,6 +55,11 @@ function getNearbyCities(currentCity: CityData) {
 }
 
 // 4. Page Component
+import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
+
+// ... existing imports
+
+// 4. Page Component
 export default async function CityPage({ params }: PageProps) {
     const { city: citySlug } = await params;
     const city = CITIES_100.find(c => c.slug === citySlug);
@@ -63,9 +68,32 @@ export default async function CityPage({ params }: PageProps) {
         notFound();
     }
 
-    // Dynamic Content Variables based on inputs
-    const priceMin = (12000 * city.priceIndex).toLocaleString('fr-FR');
-    const priceMax = (18000 * city.priceIndex).toLocaleString('fr-FR');
+    // Pricing Logic (MAD for Morocco, CHF for Switzerland, EUR for others)
+    const isInternational = city.country && city.country !== 'FR';
+    const isMorocco = city.country === 'MA';
+    const isSwitzerland = city.country === 'CH';
+
+    let currency = '€';
+    let priceMultiplier = 1;
+
+    if (isMorocco) {
+        currency = 'MAD';
+        priceMultiplier = 10 * 0.7; // ~10 MAD/EUR, -30% cost
+    } else if (isSwitzerland) {
+        currency = 'CHF';
+        priceMultiplier = 1.6; // Higher cost of living
+    }
+
+    const priceMinRaw = 12000 * city.priceIndex * priceMultiplier;
+    const priceMaxRaw = 18000 * city.priceIndex * priceMultiplier;
+
+    // Rounding logic: nearest 1000 for MAD, 100 for others
+    const roundTo = isMorocco ? 1000 : 100;
+    const priceMin = Math.round(priceMinRaw / roundTo) * roundTo;
+    const priceMax = Math.round(priceMaxRaw / roundTo) * roundTo;
+
+    const priceMinStr = priceMin.toLocaleString('fr-FR');
+    const priceMaxStr = priceMax.toLocaleString('fr-FR');
 
     const climateText = city.climateZone === 'mediterranean'
         ? "Avec les étés de plus en plus chauds de la zone méditerranéenne, la climatisation est devenue indispensable pour le confort de vie."
@@ -99,7 +127,7 @@ export default async function CityPage({ params }: PageProps) {
                 "description": `Installation, entretien et dépannage de climatisation réversible gainable à ${city.name}.`,
                 "offers": {
                     "@type": "Offer",
-                    "priceCurrency": "EUR",
+                    "priceCurrency": isMorocco ? "MAD" : "EUR",
                     "price": "0",
                     "priceValidUntil": "2025-12-31",
                     "availability": "https://schema.org/InStock"
@@ -113,15 +141,15 @@ export default async function CityPage({ params }: PageProps) {
                         "name": `Quel est le prix d'une climatisation gainable à ${city.name} ?`,
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": `À ${city.name}, le prix moyen d'une installation complète varie généralement entre ${priceMin}€ et ${priceMax}€, selon la surface et la complexité du chantier.`
+                            "text": `À ${city.name}, le prix moyen d'une installation complète varie généralement entre ${priceMinStr} ${currency} et ${priceMaxStr} ${currency}, selon la surface et la complexité du chantier.`
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": `Trouve-t-on des installateurs RGE à ${city.name} (${city.zip}) ?`,
+                        "name": `Trouve-t-on des installateurs qualifiés à ${city.name} ?`,
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": `Oui, Gainable.fr référence des artisans certifiés RGE QualiPAC intervenant à ${city.name} et dans le département ${city.department}.`
+                            "text": `Oui, Gainable.fr référence des artisans vérifiés intervenant à ${city.name} et dans la région.`
                         }
                     },
                     {
@@ -188,7 +216,19 @@ export default async function CityPage({ params }: PageProps) {
     const nearbyCities = getNearbyCities(city);
 
     // Dynamic Background Selection
-    const heroImage = city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' : '/hero-villa.png';
+    // Priority: 1. Specific City Image, 2. Generic Housing Type Image
+    const cityImageSlug = `/city-images/${city.slug}.jpg`;
+    // We can't easily check file existence in client component without server action or fs (which works in SSG)
+    // For SSG, we can assume the image exists if we generated it, or we handle onError in the img tag (but that complicates SSG/CLS).
+    // Better: use fs.existsSync here since we are in a Server Component (mostly).
+
+    // Note: fs is node-only. Next.js supports it in getStaticProps/Server Components.
+    const fs = require('fs');
+    const path = require('path');
+    const cityImagePath = path.join(process.cwd(), 'public', 'city-images', `${city.slug}.jpg`);
+    const hasCityImage = fs.existsSync(cityImagePath);
+
+    const heroImage = hasCityImage ? cityImageSlug : (city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' : '/hero-villa.png');
 
     return (
         <div className="bg-slate-50 min-h-screen font-sans">
@@ -224,13 +264,19 @@ export default async function CityPage({ params }: PageProps) {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <ContactWizard
-                            triggerButton={
-                                <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform animate-in fade-in zoom-in duration-500">
-                                    Trouver un expert à {city.name}
-                                </Button>
-                            }
-                        />
+                        {isInternational ? (
+                            <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+                                <InternationalLeadForm city={city.name} />
+                            </div>
+                        ) : (
+                            <ContactWizard
+                                triggerButton={
+                                    <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform animate-in fade-in zoom-in duration-500">
+                                        Trouver un expert à {city.name}
+                                    </Button>
+                                }
+                            />
+                        )}
                     </div>
 
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-200 font-medium">
