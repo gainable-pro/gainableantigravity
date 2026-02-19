@@ -137,11 +137,14 @@ export default async function CityPage({ params }: PageProps) {
         ]
     };
 
-    // 5. Fetch Local Experts & Articles
+    // 5. Fetch Local Experts & Articles (Expanded to Department)
     const localExperts = await prisma.expert.findMany({
         where: {
             status: 'active',
-            ville: { contains: city.name, mode: 'insensitive' }
+            OR: [
+                { ville: { contains: city.name, mode: 'insensitive' } },
+                { code_postal: { startsWith: city.department } }
+            ]
         },
         take: 3,
         select: { id: true, nom_entreprise: true, ville: true, logo_url: true, slug: true, expert_type: true }
@@ -240,7 +243,7 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             {/* LOCAL EXPERTS SECTION */}
-            {localExperts.length > 0 && (
+            {localExperts.length > 0 ? (
                 <section className="py-12 bg-white border-b border-slate-100">
                     <div className="container mx-auto px-6 max-w-6xl">
                         <h2 className="text-2xl font-bold text-[#1F2D3D] mb-8 text-center">
@@ -271,6 +274,28 @@ export default async function CityPage({ params }: PageProps) {
                                     </div>
                                 </Link>
                             ))}
+                        </div>
+                    </div>
+                </section>
+            ) : (
+                <section className="py-16 bg-white border-b border-slate-100">
+                    <div className="container mx-auto px-6 text-center max-w-4xl">
+                        <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                            <ShieldCheck className="w-12 h-12 text-[#D59B2B] mx-auto mb-4" />
+                            <h2 className="text-2xl font-bold text-[#1F2D3D] mb-4">
+                                Pas encore d'expert affiché à {city.name} ?
+                            </h2>
+                            <p className="text-slate-600 mb-8 max-w-xl mx-auto">
+                                Nos artisans partenaires interviennent pourtant sûrement chez vous.
+                                Faites une demande gratuite pour trouver les meilleurs installateurs disponibles.
+                            </p>
+                            <ContactWizard
+                                triggerButton={
+                                    <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white font-bold h-12 px-8 rounded-full">
+                                        Trouver un installateur disponible
+                                    </Button>
+                                }
+                            />
                         </div>
                     </div>
                 </section>
