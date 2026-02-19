@@ -187,89 +187,104 @@ export default async function CityPage({ params }: PageProps) {
 
     const nearbyCities = getNearbyCities(city);
 
+    // Dynamic Background Selection
+    const heroImage = city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' : '/hero-villa.png';
+
     return (
-        <div className="bg-slate-50 min-h-screen">
+        <div className="bg-slate-50 min-h-screen font-sans">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbJsonLd]) }}
             />
 
             {/* HERO SECTION */}
-            <section className="relative bg-[#1F2D3D] text-white py-20 lg:py-28 overflow-hidden">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-[#D59B2B]/10 rounded-l-full blur-3xl transform translate-x-1/3"></div>
+            <section className="relative h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+                {/* Background Image with Gradient Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src={heroImage}
+                        alt={`Climatisation gainable à ${city.name}`}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40"></div>
+                </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <span className="inline-block py-1 px-3 rounded-full bg-white/10 text-[#D59B2B] font-bold text-sm mb-6 border border-white/20">
+                <div className="container mx-auto px-6 relative z-10 text-center text-white">
+                    <span className="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md text-white font-medium text-sm mb-6 border border-white/30">
                         {city.department} • {city.region}
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-montserrat">
-                        Installateur Climatisation <br />
-                        <span className="text-[#D59B2B]">Gainable à {city.name}</span>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 font-montserrat tracking-tight leading-tight">
+                        Climatisation Gainable <br />
+                        <span className="text-[#D59B2B]">à {city.name}</span>
                     </h1>
-                    <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    <p className="text-xl md:text-2xl text-slate-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                         {city.catchphrase.charAt(0).toUpperCase() + city.catchphrase.slice(1)}.
-                        Comparez les meilleurs artisans RGE près de chez vous.
+                        <br className="hidden md:block" />
+                        Obtenez des devis d'artisans RGE vérifiés.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <ContactWizard
                             triggerButton={
-                                <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-8 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all">
+                                <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform animate-in fade-in zoom-in duration-500">
                                     Trouver un expert à {city.name}
                                 </Button>
                             }
                         />
                     </div>
 
-                    <div className="mt-8 flex items-center justify-center gap-6 text-sm text-slate-400 font-medium">
-                        <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#D59B2B]" /> Devis Gratuits</span>
-                        <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#D59B2B]" /> Artisans Vérifiés</span>
-                        <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-[#D59B2B]" /> Garantie Décennale</span>
+                    <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-200 font-medium">
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Devis Gratuits</span>
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Artisans Locaux</span>
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> RGE & Décennale</span>
                     </div>
                 </div>
             </section>
 
             {/* BREADCRUMBS */}
-            <div className="border-b border-slate-200 bg-white">
-                <div className="container mx-auto px-6 py-3">
+            <div className="border-b border-slate-200 bg-white shadow-sm relative z-20">
+                <div className="container mx-auto px-6 py-4">
                     <nav className="flex text-sm text-slate-500">
-                        <Link href="/" className="hover:text-[#D59B2B]">Accueil</Link>
+                        <Link href="/" className="hover:text-[#D59B2B] transition-colors">Accueil</Link>
                         <span className="mx-2">/</span>
-                        <Link href="/climatisation" className="hover:text-[#D59B2B]">Climatisation</Link>
+                        <Link href="/climatisation" className="hover:text-[#D59B2B] transition-colors">Climatisation</Link>
                         <span className="mx-2">/</span>
-                        <span className="text-slate-800 font-medium">{city.name}</span>
+                        <span className="text-slate-800 font-semibold text-[#D59B2B]">{city.name}</span>
                     </nav>
                 </div>
             </div>
 
             {/* LOCAL EXPERTS SECTION */}
             {localExperts.length > 0 ? (
-                <section className="py-12 bg-white border-b border-slate-100">
+                <section className="py-16 bg-white border-b border-slate-100">
                     <div className="container mx-auto px-6 max-w-6xl">
-                        <h2 className="text-2xl font-bold text-[#1F2D3D] mb-8 text-center">
-                            Installateurs recommandés à {city.name}
-                        </h2>
-                        <div className="grid md:grid-cols-3 gap-6">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4">
+                                Installateurs recommandés à {city.name}
+                            </h2>
+                            <p className="text-slate-500">Sélectionnés pour leur expertise et leur proximité.</p>
+                        </div>
+                        <div className="grid md:grid-cols-3 gap-8">
                             {localExperts.map(expert => (
-                                <Link key={expert.id} href={`/pro/${expert.slug}`} className="group">
-                                    <div className="border border-slate-200 rounded-xl p-6 hover:shadow-lg transition-all bg-white h-full flex flex-col items-center text-center">
-                                        <div className="w-20 h-20 relative mb-4">
+                                <Link key={expert.id} href={`/pro/${expert.slug}`} className="group h-full">
+                                    <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-[#D59B2B]/30 transition-all bg-white h-full flex flex-col items-center text-center group-hover:-translate-y-1">
+                                        <div className="w-24 h-24 relative mb-6 p-2 border border-slate-100 rounded-full bg-slate-50">
                                             {expert.logo_url ? (
-                                                <img src={expert.logo_url} alt={expert.nom_entreprise} className="object-contain w-full h-full" />
+                                                <img src={expert.logo_url} alt={expert.nom_entreprise} className="object-contain w-full h-full rounded-full" />
                                             ) : (
-                                                <div className="w-full h-full bg-slate-100 rounded-full flex items-center justify-center">
-                                                    <ShieldCheck className="w-8 h-8 text-slate-400" />
+                                                <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                                                    <ShieldCheck className="w-10 h-10 text-slate-300" />
                                                 </div>
                                             )}
                                         </div>
-                                        <h3 className="font-bold text-[#1F2D3D] text-lg mb-1 group-hover:text-[#D59B2B] transition-colors">
+                                        <h3 className="font-bold text-[#1F2D3D] text-xl mb-2 group-hover:text-[#D59B2B] transition-colors">
                                             {expert.nom_entreprise}
                                         </h3>
-                                        <p className="text-sm text-slate-500 flex items-center gap-1">
-                                            <MapPin className="w-3 h-3" /> {expert.ville}
+                                        <p className="text-sm text-slate-500 flex items-center gap-1 mb-6 bg-slate-50 px-3 py-1 rounded-full">
+                                            <MapPin className="w-3 h-3 text-[#D59B2B]" /> {expert.ville}
                                         </p>
-                                        <div className="mt-4 w-full">
-                                            <Button variant="outline" className="w-full text-xs">Voir le profil</Button>
+                                        <div className="mt-auto w-full">
+                                            <Button variant="outline" className="w-full rounded-xl group-hover:bg-[#1F2D3D] group-hover:text-white transition-colors">Voir le profil</Button>
                                         </div>
                                     </div>
                                 </Link>
@@ -278,24 +293,41 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                 </section>
             ) : (
-                <section className="py-16 bg-white border-b border-slate-100">
-                    <div className="container mx-auto px-6 text-center max-w-4xl">
-                        <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-                            <ShieldCheck className="w-12 h-12 text-[#D59B2B] mx-auto mb-4" />
-                            <h2 className="text-2xl font-bold text-[#1F2D3D] mb-4">
-                                Pas encore d'expert affiché à {city.name} ?
-                            </h2>
-                            <p className="text-slate-600 mb-8 max-w-xl mx-auto">
-                                Nos artisans partenaires interviennent pourtant sûrement chez vous.
-                                Faites une demande gratuite pour trouver les meilleurs installateurs disponibles.
-                            </p>
-                            <ContactWizard
-                                triggerButton={
-                                    <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white font-bold h-12 px-8 rounded-full">
-                                        Trouver un installateur disponible
-                                    </Button>
-                                }
-                            />
+                /* FALLBACK SECTION ("POSITIVE") */
+                <section className="py-20 bg-white border-b border-slate-100">
+                    <div className="container mx-auto px-6">
+                        <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-xl relative overflow-hidden text-center">
+                            {/* Decorative background element */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+                            <div className="relative z-10">
+                                <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D59B2B]/10 text-[#D59B2B] mb-6">
+                                    <Star className="w-8 h-8 fill-current" />
+                                </span>
+
+                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4">
+                                    Trouvez les meilleurs installateurs à {city.name}
+                                </h2>
+
+                                <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                    Nous avons sélectionné des artisans RGE de confiance intervenant dans le secteur de <strong>{city.department}</strong>.
+                                    Comparez leurs offres gratuitement.
+                                </p>
+
+                                <div className="flex justify-center">
+                                    <ContactWizard
+                                        triggerButton={
+                                            <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white font-bold h-14 px-10 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
+                                                Recevoir mes devis pour {city.name}
+                                            </Button>
+                                        }
+                                    />
+                                </div>
+
+                                <p className="mt-6 text-sm text-slate-400">
+                                    Gratuit • Sans engagement • Réponse sous 24h
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
