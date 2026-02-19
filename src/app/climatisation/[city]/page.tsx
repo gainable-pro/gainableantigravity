@@ -220,7 +220,7 @@ export default async function CityPage({ params }: PageProps) {
                     <p className="text-xl md:text-2xl text-slate-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                         {city.catchphrase.charAt(0).toUpperCase() + city.catchphrase.slice(1)}.
                         <br className="hidden md:block" />
-                        Obtenez des devis d'artisans RGE vérifiés.
+                        Obtenez des devis d'experts vérifiés Gainable.fr.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -236,7 +236,7 @@ export default async function CityPage({ params }: PageProps) {
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-200 font-medium">
                         <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Devis Gratuits</span>
                         <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Artisans Locaux</span>
-                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> RGE & Décennale</span>
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Experts Vérifiés</span>
                     </div>
                 </div>
             </section>
@@ -458,7 +458,7 @@ export default async function CityPage({ params }: PageProps) {
 
                     <div className="grid gap-6">
                         {[
-                            { q: `Quel budget prévoir pour une clim gainable à ${city.name} ?`, a: `Pour une installation complète à ${city.name}, comptez entre ${priceMin}€ et ${priceMax}€ pour une maison de 100m². Ce prix inclut le matériel et la pose par un artisan RGE.` },
+                            { q: `Quel budget prévoir pour une clim gainable à ${city.name} ?`, a: `Pour une installation complète à ${city.name}, comptez entre ${priceMin}€ et ${priceMax}€ pour une maison de 100m². Ce prix inclut le matériel et la pose par un expert vérifié.` },
                             { q: `Quelles sont les aides disponibles à ${city.name} ?`, a: `Les habitants de ${city.name} peuvent bénéficier de MaPrimeRénov', des CEE (Certificats d'Économies d'Énergie) et parfois d'aides locales de la région ${city.region}. Nos installateurs partenaires peuvent vous guider.` },
                             { q: `Faut-il une autorisation d'urbanisme à ${city.name} ?`, a: `Oui, la pose d'une unité extérieure modifie l'aspect de la façade. Vous devez déposer une déclaration préalable de travaux (DP) auprès de la mairie de ${city.name}.` }
                         ].map((item, i) => (
