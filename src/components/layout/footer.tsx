@@ -31,6 +31,9 @@ export function Footer() {
                     <Link href="/espace-pro" className="hover:text-amber-500 transition-colors">
                         Espace Pro
                     </Link>
+                    <Link href="/plan-du-site" className="hover:text-amber-500 transition-colors">
+                        Plan du site (Zones d'intervention)
+                    </Link>
                 </div>
 
                 <p className="text-xs text-slate-600">
