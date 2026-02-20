@@ -33,13 +33,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     return {
         title: `Installation Climatisation Gainable à ${city.name} | Devis Gratuit`,
-        description: `Trouvez un installateur Expert Vérifié Gainable.fr à ${city.name} (${city.zip}). Spécialiste climatisation gainable, VRV et PAC. Devis gratuit et sans engagement.`,
+        description: `Gainable.fr, 1ère plateforme internationale dédiée à la climatisation gainable & VRV. Trouvez un installateur de climatisation expert vérifié à ${city.name} (${city.zip}).`,
         alternates: {
             canonical: `https://www.gainable.fr/climatisation/${city.slug}`,
         },
         openGraph: {
             title: `Installateur Climatisation Gainable à ${city.name}`,
-            description: `Les meilleures sociétés Expert Vérifié Gainable.fr à ${city.name} pour votre climatisation gainable.`,
+            description: `1ère plateforme internationale dédiée à la climatisation gainable. Trouvez les meilleurs installateurs à ${city.name}.`,
             url: `https://www.gainable.fr/climatisation/${city.slug}`,
             type: 'website',
             images: ['/hero-villa.png'], // Default or dynamic image
@@ -348,7 +348,7 @@ export default async function CityPage({ params }: PageProps) {
                                 </h2>
 
                                 <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                                    Nous avons sélectionné des <strong>sociétés Expert Vérifié Gainable.fr</strong> intervenant dans le secteur de <strong>{city.department}</strong>.
+                                    Nous avons sélectionné des <strong>installateurs de climatisation Expert Vérifié Gainable.fr</strong> intervenant dans le secteur de <strong>{city.department}</strong>.
                                     Comparez leurs offres gratuitement.
                                 </p>
 
