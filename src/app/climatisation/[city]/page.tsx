@@ -264,19 +264,11 @@ export default async function CityPage({ params }: PageProps) {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        {isInternational ? (
-                            <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-                                <InternationalLeadForm city={city.name} />
-                            </div>
-                        ) : (
-                            <ContactWizard
-                                triggerButton={
-                                    <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform animate-in fade-in zoom-in duration-500">
-                                        Trouver un expert à {city.name}
-                                    </Button>
-                                }
-                            />
-                        )}
+                        <Button asChild size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-14 px-10 text-lg rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform animate-in fade-in zoom-in duration-500">
+                            <Link href="/">
+                                Trouver un expert à {city.name}
+                            </Link>
+                        </Button>
                     </div>
 
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-200 font-medium">
@@ -360,14 +352,10 @@ export default async function CityPage({ params }: PageProps) {
                                     Comparez leurs offres gratuitement.
                                 </p>
 
-                                <div className="flex justify-center">
-                                    <ContactWizard
-                                        triggerButton={
-                                            <Button size="lg" className="bg-[#1F2D3D] hover:bg-[#2c3e50] text-white font-bold h-14 px-10 text-lg rounded-full shadow-lg hover:shadow-xl transition-all">
-                                                Recevoir mes devis pour {city.name}
-                                            </Button>
-                                        }
-                                    />
+                                <div className="flex justify-center mt-8">
+                                    <div className="w-full max-w-lg text-left">
+                                        <InternationalLeadForm city={city.name} />
+                                    </div>
                                 </div>
 
                                 <p className="mt-6 text-sm text-slate-400">
