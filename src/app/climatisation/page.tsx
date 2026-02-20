@@ -578,9 +578,11 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-6 text-lg rounded-full shadow-lg shadow-amber-900/20">
-              Lancer ma recherche
-            </Button>
+            <Link href="/">
+              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white px-10 py-6 text-lg rounded-full shadow-lg shadow-amber-900/20">
+                Lancer ma recherche
+              </Button>
+            </Link>
           </div>
         </div>
       </section >
