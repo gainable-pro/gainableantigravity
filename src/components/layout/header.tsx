@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Globe, Menu } from "lucide-react";
+import Image from "next/image";
 import { LoginDropdown } from "@/components/layout/login-dropdown";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import * as React from "react";
