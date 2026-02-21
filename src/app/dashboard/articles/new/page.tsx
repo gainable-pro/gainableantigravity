@@ -32,6 +32,7 @@ export default function NewArticlePage() {
     const [isListening, setIsListening] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const [isGenerating, setIsGenerating] = useState(false);
+    const [generationProgress, setGenerationProgress] = useState(0);
     const [error, setError] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -58,7 +59,17 @@ export default function NewArticlePage() {
         }
 
         setIsGenerating(true);
+        setGenerationProgress(0);
         setError(null);
+
+        // Progress simulation
+        const progressInterval = setInterval(() => {
+            setGenerationProgress(prev => {
+                if (prev >= 92) return prev; // Slow down at the end
+                const step = prev < 50 ? 5 : prev < 75 ? 2 : 1;
+                return Math.min(prev + step, 95);
+            });
+        }, 800);
 
         try {
             const res = await fetch("/api/dashboard/articles/generate", {
@@ -111,7 +122,12 @@ export default function NewArticlePage() {
             console.error(err);
             setError(err.message || "Erreur de génération IA");
         } finally {
-            setIsGenerating(false);
+            clearInterval(progressInterval);
+            setGenerationProgress(100);
+            setTimeout(() => {
+                setIsGenerating(false);
+                setGenerationProgress(0);
+            }, 500);
         }
     };
 
@@ -451,20 +467,30 @@ export default function NewArticlePage() {
                         <Button
                             onClick={handleGenerate}
                             disabled={isGenerating}
-                            className="bg-blue-600 hover:bg-blue-700 text-white min-w-[200px]"
+                            className="bg-blue-600 hover:bg-blue-700 text-white min-w-[240px] relative overflow-hidden group transition-all"
                             type="button"
                         >
-                            {isGenerating ? (
-                                <>
-                                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                    Rédaction en cours...
-                                </>
-                            ) : (
-                                <>
-                                    <Sparkles className="w-4 h-4 mr-2" />
-                                    Générer l'article
-                                </>
+                            {/* Progress Background Overlay */}
+                            {isGenerating && (
+                                <div
+                                    className="absolute inset-0 bg-blue-500/50 transition-all duration-500 ease-out"
+                                    style={{ width: `${generationProgress}%` }}
+                                />
                             )}
+
+                            <div className="relative z-10 flex items-center justify-center gap-2">
+                                {isGenerating ? (
+                                    <>
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        <span>Rédaction en cours {generationProgress}%...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Sparkles className="w-4 h-4" />
+                                        <span>Générer l'article</span>
+                                    </>
+                                )}
+                            </div>
                         </Button>
                     </div>
                     <p className="text-xs text-slate-500 mt-2">
