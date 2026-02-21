@@ -321,6 +321,7 @@ export default async function CityPage({ params }: PageProps) {
                                         <p className="text-sm text-slate-500 flex items-center gap-1 mb-6 bg-slate-50 px-3 py-1 rounded-full">
                                             <MapPin className="w-3 h-3 text-[#D59B2B]" /> {expert.ville}
                                         </p>
+
                                         <div className="mt-auto w-full">
                                             <Button variant="outline" className="w-full rounded-xl group-hover:bg-[#1F2D3D] group-hover:text-white transition-colors">Voir le profil</Button>
                                         </div>
@@ -366,6 +367,7 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                 </section>
             )}
+
 
             {/* CONTEXTE LOCAL & PRIX */}
             <section className="py-16">
