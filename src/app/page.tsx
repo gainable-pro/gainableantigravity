@@ -23,9 +23,9 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const targetCountryName = countryMap[targetCountryCode] || "France, Suisse, Belgique, Maroc";
 
     // Dynamic Title
-    const title = `Experts climatisation & gainable – ${targetCountryName} | Gainable.fr`;
+    const title = `Gainable : Climatisation Gainable & Réversible – ${targetCountryName} | Gainable.fr`;
 
-    const description = "Plateforme de mise en relation avec des experts qualifiés en climatisation, gainable, pompe à chaleur, chauffage, bureaux d’études et diagnostics immobiliers en France, Suisse, Belgique et Maroc.";
+    const description = `Besoin d'une climatisation gainable ou réversible ? Trouvez un installateur expert à ${targetCountryName}. Devis gratuit, pompes à chaleur, CVC et diagnostics techniques.`;
 
     const canonicalUrl = (await searchParams).city
         ? `/trouver-installateur?city=${encodeURIComponent((await searchParams).city as string)}`
@@ -96,7 +96,7 @@ export default async function SearchPage({
             <section className="bg-white py-16 border-t border-slate-100">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-[#1F2D3D] mb-8">
-                        Trouver un expert en climatisation, gainable et génie climatique
+                        Gainable : Experts en Climatisation Gainable & Réversible
                     </h1>
 
                     <div className="grid md:grid-cols-2 gap-8 text-left mb-12">
