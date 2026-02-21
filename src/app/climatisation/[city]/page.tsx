@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Star } from "lucide-react";
 import { ContactWizard } from "@/components/features/contact/contact-wizard"; // Ensure this path is correct
 import { prisma } from "@/lib/prisma";
+import fs from 'fs';
+import path from 'path';
 
 // Force SSG for these pages
 export const dynamic = 'force-static';
@@ -250,12 +252,15 @@ export default async function CityPage({ params }: PageProps) {
     // Better: use fs.existsSync here since we are in a Server Component (mostly).
 
     // Note: fs is node-only. Next.js supports it in getStaticProps/Server Components.
-    const fs = require('fs');
-    const path = require('path');
     const cityImagePath = path.join(process.cwd(), 'public', 'city-images', `${city.slug}.jpg`);
     const hasCityImage = fs.existsSync(cityImagePath);
 
-    const heroImage = hasCityImage ? cityImageSlug : (city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' : '/hero-villa.png');
+    const heroImage = hasCityImage ? cityImageSlug : (
+        city.climateZone === 'mediterranean' ? '/hero-villa.png' :
+            city.climateZone === 'mountain' ? '/hero-hvac.png' :
+                city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' :
+                    '/hero-villa.png'
+    );
 
     return (
         <div className="bg-slate-50 min-h-screen font-sans">
