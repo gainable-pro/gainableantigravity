@@ -256,10 +256,11 @@ export default async function CityPage({ params }: PageProps) {
     const hasCityImage = fs.existsSync(cityImagePath);
 
     const heroImage = hasCityImage ? cityImageSlug : (
-        city.climateZone === 'mediterranean' ? '/hero-villa.png' :
-            city.climateZone === 'mountain' ? '/hero-hvac.png' :
-                city.housingType === 'urbain-dense' ? '/hero-skyscraper.png' :
-                    '/hero-villa.png'
+        city.housingType === 'urbain-dense' ? '/city-images/template-urban.jpg' :
+            city.climateZone === 'mediterranean' ? '/city-images/template-villa.jpg' :
+                city.housingType === 'historique' ? '/city-images/template-historic.jpg' :
+                    city.climateZone === 'mountain' ? '/city-images/template-mountain.jpg' :
+                        '/hero-villa.png' // Global fallback
     );
 
     return (
