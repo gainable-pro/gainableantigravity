@@ -57,33 +57,65 @@ export const SimpleRequestForm = ({ onSubmit, isSubmitting = false }: SimpleRequ
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Nom *</Label>
-                        <Input {...register("lastName")} placeholder="Votre nom" className={errors.lastName ? "border-red-500" : ""} />
-                        {errors.lastName && <p className="text-xs text-red-500">{errors.lastName.message}</p>}
+                        <Label htmlFor="lastName">Nom *</Label>
+                        <Input
+                            id="lastName"
+                            {...register("lastName")}
+                            placeholder="Votre nom"
+                            className={errors.lastName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.lastName ? "true" : "false"}
+                            aria-describedby={errors.lastName ? "lastName-error" : undefined}
+                        />
+                        {errors.lastName && <p id="lastName-error" className="text-xs text-red-500">{errors.lastName.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Prénom *</Label>
-                        <Input {...register("firstName")} placeholder="Votre prénom" className={errors.firstName ? "border-red-500" : ""} />
-                        {errors.firstName && <p className="text-xs text-red-500">{errors.firstName.message}</p>}
+                        <Label htmlFor="firstName">Prénom *</Label>
+                        <Input
+                            id="firstName"
+                            {...register("firstName")}
+                            placeholder="Votre prénom"
+                            className={errors.firstName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.firstName ? "true" : "false"}
+                            aria-describedby={errors.firstName ? "firstName-error" : undefined}
+                        />
+                        {errors.firstName && <p id="firstName-error" className="text-xs text-red-500">{errors.firstName.message}</p>}
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Téléphone *</Label>
+                        <Label htmlFor="phone">Téléphone *</Label>
                         <div className="relative">
-                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("phone")} placeholder="06 12 34 56 78" className={`pl-10 ${errors.phone ? "border-red-500" : ""}`} />
+                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="phone"
+                                {...register("phone")}
+                                placeholder="06 12 34 56 78"
+                                className={`pl-10 ${errors.phone ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.phone ? "true" : "false"}
+                                aria-describedby={errors.phone ? "phone-error" : undefined}
+                            />
                         </div>
-                        {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+                        {errors.phone && <p id="phone-error" className="text-xs text-red-500">{errors.phone.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Email *</Label>
+                        <Label htmlFor="email">Email *</Label>
                         <div className="relative">
-                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("email")} placeholder="votre@email.com" className={`pl-10 ${errors.email ? "border-red-500" : ""}`} />
+                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="email"
+                                {...register("email")}
+                                placeholder="votre@email.com"
+                                className={`pl-10 ${errors.email ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.email ? "true" : "false"}
+                                aria-describedby={errors.email ? "email-error" : undefined}
+                            />
                         </div>
-                        {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+                        {errors.email && <p id="email-error" className="text-xs text-red-500">{errors.email.message}</p>}
                     </div>
                 </div>
 
@@ -103,13 +135,17 @@ export const SimpleRequestForm = ({ onSubmit, isSubmitting = false }: SimpleRequ
                 </h3>
 
                 <div className="space-y-2">
-                    <Label>Message *</Label>
+                    <Label htmlFor="description">Message *</Label>
                     <Textarea
+                        id="description"
                         {...register("description")}
                         placeholder="Bonjour, je souhaiterais un devis pour..."
                         className="h-32 resize-none"
+                        aria-required="true"
+                        aria-invalid={errors.description ? "true" : "false"}
+                        aria-describedby={errors.description ? "description-error" : undefined}
                     />
-                    {errors.description && <p className="text-xs text-red-500">{errors.description.message}</p>}
+                    {errors.description && <p id="description-error" className="text-xs text-red-500">{errors.description.message}</p>}
                 </div>
             </section>
 

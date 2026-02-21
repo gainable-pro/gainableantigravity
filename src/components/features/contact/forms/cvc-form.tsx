@@ -131,34 +131,66 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: 
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Nom *</Label>
-                        <Input {...register("lastName")} placeholder="Votre nom" className={errors.lastName ? "border-red-500" : ""} />
-                        {errors.lastName && <p className="text-xs text-red-500">{errors.lastName.message}</p>}
+                        <Label htmlFor="lastName">Nom *</Label>
+                        <Input
+                            id="lastName"
+                            {...register("lastName")}
+                            placeholder="Votre nom"
+                            className={errors.lastName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.lastName ? "true" : "false"}
+                            aria-describedby={errors.lastName ? "lastName-error" : undefined}
+                        />
+                        {errors.lastName && <p id="lastName-error" className="text-xs text-red-500">{errors.lastName.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Prénom *</Label>
-                        <Input {...register("firstName")} placeholder="Votre prénom" className={errors.firstName ? "border-red-500" : ""} />
-                        {errors.firstName && <p className="text-xs text-red-500">{errors.firstName.message}</p>}
+                        <Label htmlFor="firstName">Prénom *</Label>
+                        <Input
+                            id="firstName"
+                            {...register("firstName")}
+                            placeholder="Votre prénom"
+                            className={errors.firstName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.firstName ? "true" : "false"}
+                            aria-describedby={errors.firstName ? "firstName-error" : undefined}
+                        />
+                        {errors.firstName && <p id="firstName-error" className="text-xs text-red-500">{errors.firstName.message}</p>}
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Téléphone *</Label>
+                        <Label htmlFor="phone">Téléphone *</Label>
                         <div className="relative">
-                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("phone")} placeholder="06 12 34 56 78" className={`pl-10 ${errors.phone ? "border-red-500" : ""}`} />
+                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="phone"
+                                {...register("phone")}
+                                placeholder="06 12 34 56 78"
+                                className={`pl-10 ${errors.phone ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.phone ? "true" : "false"}
+                                aria-describedby={errors.phone ? "phone-error phone-hint" : "phone-hint"}
+                            />
                         </div>
-                        {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
-                        <p className="text-xs text-slate-500">Obligatoire pour un contact rapide.</p>
+                        {errors.phone && <p id="phone-error" className="text-xs text-red-500">{errors.phone.message}</p>}
+                        <p id="phone-hint" className="text-xs text-slate-500">Obligatoire pour un contact rapide.</p>
                     </div>
                     <div className="space-y-2">
-                        <Label>Email *</Label>
+                        <Label htmlFor="email">Email *</Label>
                         <div className="relative">
-                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("email")} placeholder="votre@email.com" className={`pl-10 ${errors.email ? "border-red-500" : ""}`} />
+                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="email"
+                                {...register("email")}
+                                placeholder="votre@email.com"
+                                className={`pl-10 ${errors.email ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.email ? "true" : "false"}
+                                aria-describedby={errors.email ? "email-error" : undefined}
+                            />
                         </div>
-                        {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+                        {errors.email && <p id="email-error" className="text-xs text-red-500">{errors.email.message}</p>}
                     </div>
                 </div>
             </section>
@@ -171,9 +203,9 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: 
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Type de bien *</Label>
+                        <Label htmlFor="propertyType">Type de bien *</Label>
                         <Select onValueChange={(val) => setValue("propertyType", val, { shouldValidate: true })}>
-                            <SelectTrigger className={errors.propertyType ? "border-red-500" : ""}>
+                            <SelectTrigger id="propertyType" className={errors.propertyType ? "border-red-500" : ""} aria-required="true" aria-invalid={errors.propertyType ? "true" : "false"} aria-describedby={errors.propertyType ? "propertyType-error" : undefined}>
                                 <SelectValue placeholder="Sélectionnez..." />
                             </SelectTrigger>
                             <SelectContent>
@@ -182,22 +214,39 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: 
                                 ))}
                             </SelectContent>
                         </Select>
-                        {errors.propertyType && <p className="text-xs text-red-500">{errors.propertyType.message}</p>}
+                        {errors.propertyType && <p id="propertyType-error" className="text-xs text-red-500">{errors.propertyType.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Surface à traiter (m²) *</Label>
-                        <Input type="number" {...register("surface")} placeholder="Ex: 120" className={errors.surface ? "border-red-500" : ""} />
-                        {errors.surface && <p className="text-xs text-red-500">{errors.surface.message}</p>}
+                        <Label htmlFor="surface">Surface à traiter (m²) *</Label>
+                        <Input
+                            id="surface"
+                            type="number"
+                            {...register("surface")}
+                            placeholder="Ex: 120"
+                            className={errors.surface ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.surface ? "true" : "false"}
+                            aria-describedby={errors.surface ? "surface-error" : undefined}
+                        />
+                        {errors.surface && <p id="surface-error" className="text-xs text-red-500">{errors.surface.message}</p>}
                     </div>
                 </div>
 
                 <div className="space-y-2">
-                    <Label>Adresse complète du bien *</Label>
+                    <Label htmlFor="address">Adresse complète du bien *</Label>
                     <div className="relative">
-                        <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                        <Input {...register("address")} placeholder="Adresse, Code Postal, Ville" className={`pl-10 ${errors.address ? "border-red-500" : ""}`} />
+                        <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                        <Input
+                            id="address"
+                            {...register("address")}
+                            placeholder="Adresse, Code Postal, Ville"
+                            className={`pl-10 ${errors.address ? "border-red-500" : ""}`}
+                            aria-required="true"
+                            aria-invalid={errors.address ? "true" : "false"}
+                            aria-describedby={errors.address ? "address-error" : undefined}
+                        />
                     </div>
-                    {errors.address && <p className="text-xs text-red-500">{errors.address.message}</p>}
+                    {errors.address && <p id="address-error" className="text-xs text-red-500">{errors.address.message}</p>}
                 </div>
             </section>
 
@@ -209,25 +258,28 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: 
 
                 <div className="space-y-2">
                     <Label className="mb-2 block">Technologies envisagées *</Label>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2" role="group" aria-label="Technologies envisagées">
                         {EXPERT_TECHNOLOGIES.map((tech) => {
                             const isSelected = selectedTechs.includes(tech);
                             return (
-                                <div
+                                <button
                                     key={tech}
+                                    type="button"
                                     onClick={() => handleTechToggle(tech)}
+                                    role="checkbox"
+                                    aria-checked={isSelected}
                                     className={`
                                 cursor-pointer px-3 py-2 rounded-md border text-sm flex items-center gap-2 transition-all
                                 ${isSelected ? "bg-[#FFF8ED] border-[#D59B2B] text-[#D59B2B] font-bold" : "bg-white border-slate-200 text-slate-600 hover:border-[#D59B2B]"}
                             `}
                                 >
-                                    {isSelected ? <Check className="w-4 h-4" /> : <div className="w-4 h-4 rounded-sm border border-slate-300" />}
+                                    {isSelected ? <Check className="w-4 h-4" /> : <div className="w-4 h-4 rounded-sm border border-slate-300" aria-hidden="true" />}
                                     {tech}
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
-                    {errors.technologies && <p className="text-xs text-red-500">{errors.technologies.message}</p>}
+                    {errors.technologies && <p id="technologies-error" className="text-xs text-red-500">{errors.technologies.message}</p>}
                 </div>
             </section>
 
@@ -238,13 +290,15 @@ export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: 
                 </h3>
 
                 <div className="space-y-2">
-                    <Label>Décrivez votre projet (Optionnel)</Label>
+                    <Label htmlFor="description">Décrivez votre projet (Optionnel)</Label>
                     <Textarea
+                        id="description"
                         {...register("description")}
                         placeholder="Précisez votre besoin, vos contraintes..."
                         className="h-24 resize-none"
+                        aria-describedby="description-hint"
                     />
-                    <p className="text-xs text-slate-500">Plus votre demande est précise, plus le devis sera adapté.</p>
+                    <p id="description-hint" className="text-xs text-slate-500">Plus votre demande est précise, plus le devis sera adapté.</p>
                 </div>
 
                 <div className="space-y-2">

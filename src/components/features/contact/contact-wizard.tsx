@@ -147,7 +147,11 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
                                 </p>
                             )}
                         </div>
-                        <button onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white">
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="text-slate-400 hover:text-white"
+                            aria-label="Fermer la fenêtre"
+                        >
                             <X className="w-6 h-6" />
                         </button>
                     </div>
@@ -160,7 +164,11 @@ export const ContactWizard = ({ preSelectedExperts = [], triggerButton }: Contac
                                     <span>{expert.nom_entreprise}</span>
                                     {/* Only show remove if we have more than 1, or allow clearing all? */}
                                     {selectedExperts.length > 1 && (
-                                        <button onClick={() => handleRemoveExpert(expert.id)} className="hover:text-red-300">
+                                        <button
+                                            onClick={() => handleRemoveExpert(expert.id)}
+                                            className="hover:text-red-300"
+                                            aria-label={`Retirer ${expert.nom_entreprise}`}
+                                        >
                                             <X className="w-3 h-3" />
                                         </button>
                                     )}

@@ -3,7 +3,7 @@
 import { ProCard } from "@/components/features/pro-card";
 import { Button } from "@/components/ui/button";
 import { Filter, RefreshCcw, ChevronDown, MapPin } from "lucide-react";
-import { useState, useEffect, Suspense, useRef } from "react";
+import { useState, useEffect, Suspense, useRef, useId } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import {
@@ -26,6 +26,17 @@ const SearchMap = dynamic(() => import("@/components/features/search-map"), {
 
 function FilterDropdown({ label, children, active = false }: { label: string, children: React.ReactNode, active?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
+    const id = useId();
+    const dropdownId = `dropdown-${id}`;
+
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') setIsOpen(false);
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen]);
 
     return (
         <div className="relative">
@@ -33,16 +44,20 @@ function FilterDropdown({ label, children, active = false }: { label: string, ch
                 onClick={() => setIsOpen(!isOpen)}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
+                aria-controls={dropdownId}
                 className={`flex items-center gap-2 px-4 h-10 rounded-md border text-sm font-medium transition-colors ${isOpen || active ? 'border-[#D59B2B] bg-[#FFF8ED] text-[#D59B2B]' : 'border-slate-300 bg-white text-slate-700 hover:border-slate-400'}`}
             >
                 {label}
-                <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
             </button>
-
             {isOpen && (
                 <>
-                    <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} />
-                    <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-slate-100 z-20 p-4 max-h-[80vh] overflow-y-auto">
+                    <div className="fixed inset-0 z-10" onClick={() => setIsOpen(false)} aria-hidden="true" />
+                    <div
+                        id={dropdownId}
+                        role="listbox"
+                        className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-slate-100 z-20 p-4 max-h-[80vh] overflow-y-auto focus:outline-none"
+                    >
                         {children}
                     </div>
                 </>
@@ -316,21 +331,7 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                                 </div>
                             </FilterDropdown>
 
-                            {/* Filter 5: Localisation */}
-                            <div className="relative">
-                                <div className={`flex items-center gap-2 px-3 h-10 rounded-md border text-sm font-medium transition-colors ${locationFilter ? 'border-[#D59B2B] bg-[#FFF8ED]' : 'border-slate-300 bg-white hover:border-slate-400'}`}>
-                                    <MapPin className="w-4 h-4 text-slate-400" />
-                                    <input
-                                        type="text"
-                                        placeholder="Ville ou CP"
-                                        className="bg-transparent border-none focus:outline-none w-28 text-slate-700 placeholder-slate-400"
-                                        value={locationFilter}
-                                        onChange={(e) => setLocationFilter(e.target.value)}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Filter: Pays (Moved after Localisation) */}
+                            {/* Filter: Pays */}
                             <FilterDropdown label="Pays" active={!!countryFilter}>
                                 <div className="space-y-2">
                                     {["France", "Suisse", "Belgique", "Maroc"].map((item) => (
@@ -347,25 +348,42 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                                 </div>
                             </FilterDropdown>
 
-                        </div>
-
-                        <div className="flex items-center gap-3 w-full lg:w-auto justify-end">
                             <button
+                                aria-label="Réinitialiser les filtres"
                                 onClick={() => {
-                                    setLocationFilter("");
-                                    setCountryFilter("");
+                                    setExpertFilters({ societe: true, bureau: true, diag: true });
                                     setSelectedTechs([]);
                                     setSelectedDiags([]);
                                     setSelectedBatiments([]);
+                                    setLocationFilter("");
+                                    setCountryFilter("");
                                 }}
-                                className="text-sm text-slate-400 hover:text-[#D59B2B] flex items-center gap-1 transition-colors"
+                                className="p-2 text-slate-400 hover:text-[#D59B2B] hover:bg-slate-50 rounded-md transition-colors"
                             >
-                                <RefreshCcw className="w-4 h-4" /> <span className="hidden sm:inline">Réinitialiser</span>
+                                <RefreshCcw className="w-4 h-4" />
                             </button>
+                        </div>
 
-
-                            <Button onClick={triggerSearch} className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-10 px-6">
-                                Rechercher
+                        {/* Search Input Group */}
+                        <div className="flex items-center gap-2 w-full lg:w-auto">
+                            <div className="relative flex-1 lg:w-72">
+                                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" aria-hidden="true" />
+                                <input
+                                    type="text"
+                                    placeholder="Ville, département..."
+                                    value={locationFilter}
+                                    onChange={(e) => setLocationFilter(e.target.value)}
+                                    aria-label="Rechercher par ville ou département"
+                                    className="w-full pl-10 pr-4 h-10 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#D59B2B] focus:border-transparent text-sm"
+                                />
+                            </div>
+                            <Button
+                                aria-label="Lancer la recherche"
+                                onClick={triggerSearch}
+                                className="bg-[#D59B2B] hover:bg-[#b88622] text-white h-10 px-4 flex items-center gap-2 shadow-sm whitespace-nowrap"
+                            >
+                                <span className="hidden sm:inline">Rechercher</span>
+                                <Filter className="w-4 h-4" />
                             </Button>
                         </div>
                     </div>

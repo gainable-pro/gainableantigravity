@@ -2,13 +2,14 @@ import { CITIES_100, CityData } from "@/data/cities-100";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Star } from "lucide-react";
-import { ContactWizard } from "@/components/features/contact/contact-wizard"; // Ensure this path is correct
+import { ContactWizard } from "@/components/features/contact/contact-wizard";
 import { prisma } from "@/lib/prisma";
+import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 import fs from 'fs';
 import path from 'path';
-import Image from "next/image";
 
 // Force SSG for these pages
 export const dynamic = 'force-static';
@@ -58,9 +59,6 @@ function getNearbyCities(currentCity: CityData) {
 }
 
 // 4. Page Component
-import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
-
-// ... existing imports
 
 // 4. Page Component
 export default async function CityPage({ params }: PageProps) {

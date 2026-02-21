@@ -116,33 +116,70 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="space-y-1">
-                    <Label className="text-xs font-semibold text-slate-600">Nom complet *</Label>
-                    <Input {...register("nom")} placeholder="Votre nom" className={`h-9 ${errors.nom ? "border-red-500" : ""}`} />
-                    {errors.nom && <p className="text-xs text-red-500">{errors.nom.message}</p>}
+                    <Label htmlFor="nom" className="text-xs font-semibold text-slate-600">Nom complet *</Label>
+                    <Input
+                        id="nom"
+                        {...register("nom")}
+                        placeholder="Votre nom"
+                        className={`h-9 ${errors.nom ? "border-red-500" : ""}`}
+                        aria-required="true"
+                        aria-invalid={errors.nom ? "true" : "false"}
+                        aria-describedby={errors.nom ? "nom-error" : undefined}
+                    />
+                    {errors.nom && <p id="nom-error" className="text-xs text-red-500">{errors.nom.message}</p>}
                 </div>
 
                 <div className="space-y-1">
-                    <Label className="text-xs font-semibold text-slate-600">Téléphone *</Label>
-                    <Input {...register("telephone")} placeholder="06 12 34 56 78" className={`h-9 ${errors.telephone ? "border-red-500" : ""}`} />
-                    {errors.telephone && <p className="text-xs text-red-500">{errors.telephone.message}</p>}
+                    <Label htmlFor="telephone" className="text-xs font-semibold text-slate-600">Téléphone *</Label>
+                    <Input
+                        id="telephone"
+                        {...register("telephone")}
+                        placeholder="06 12 34 56 78"
+                        className={`h-9 ${errors.telephone ? "border-red-500" : ""}`}
+                        aria-required="true"
+                        aria-invalid={errors.telephone ? "true" : "false"}
+                        aria-describedby={errors.telephone ? "telephone-error" : undefined}
+                    />
+                    {errors.telephone && <p id="telephone-error" className="text-xs text-red-500">{errors.telephone.message}</p>}
                 </div>
             </div>
 
             <div className="space-y-1">
-                <Label className="text-xs font-semibold text-slate-600">Email *</Label>
-                <Input {...register("email")} placeholder="votre@email.com" className={`h-9 ${errors.email ? "border-red-500" : ""}`} />
-                {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+                <Label htmlFor="email_intl" className="text-xs font-semibold text-slate-600">Email *</Label>
+                <Input
+                    id="email_intl"
+                    {...register("email")}
+                    placeholder="votre@email.com"
+                    className={`h-9 ${errors.email ? "border-red-500" : ""}`}
+                    aria-required="true"
+                    aria-invalid={errors.email ? "true" : "false"}
+                    aria-describedby={errors.email ? "email-intl-error" : undefined}
+                />
+                {errors.email && <p id="email-intl-error" className="text-xs text-red-500">{errors.email.message}</p>}
             </div>
 
             <div className="space-y-1">
-                <Label className="text-xs font-semibold text-slate-600">Ville / Code Postal *</Label>
-                <Input {...register("adresse")} placeholder="Ex: Lyon 69002" className={`h-9 ${errors.adresse ? "border-red-500" : ""}`} />
-                {errors.adresse && <p className="text-xs text-red-500">{errors.adresse.message}</p>}
+                <Label htmlFor="adresse" className="text-xs font-semibold text-slate-600">Ville / Code Postal *</Label>
+                <Input
+                    id="adresse"
+                    {...register("adresse")}
+                    placeholder="Ex: Lyon 69002"
+                    className={`h-9 ${errors.adresse ? "border-red-500" : ""}`}
+                    aria-required="true"
+                    aria-invalid={errors.adresse ? "true" : "false"}
+                    aria-describedby={errors.adresse ? "adresse-error" : undefined}
+                />
+                {errors.adresse && <p id="adresse-error" className="text-xs text-red-500">{errors.adresse.message}</p>}
             </div>
 
             <div className="space-y-1">
-                <Label className="text-xs font-semibold text-slate-600">Projet (Optionnel)</Label>
-                <Textarea {...register("message")} placeholder="Besoin spécifique..." className="min-h-[60px] text-sm py-2" />
+                <Label htmlFor="message" className="text-xs font-semibold text-slate-600">Projet (Optionnel)</Label>
+                <Textarea
+                    id="message"
+                    {...register("message")}
+                    placeholder="Besoin spécifique..."
+                    className="min-h-[60px] text-sm py-2"
+                />
             </div>
 
             <Button type="submit" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-11 text-base shadow-sm transition-all" disabled={isSubmitting}>

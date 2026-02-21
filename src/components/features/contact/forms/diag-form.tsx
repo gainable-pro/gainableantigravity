@@ -87,33 +87,65 @@ export const DiagRequestForm = ({ onSubmit, isSubmitting = false }: DiagRequestF
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Nom *</Label>
-                        <Input {...register("lastName")} placeholder="Votre nom" className={errors.lastName ? "border-red-500" : ""} />
-                        {errors.lastName && <p className="text-xs text-red-500">{errors.lastName.message}</p>}
+                        <Label htmlFor="lastName">Nom *</Label>
+                        <Input
+                            id="lastName"
+                            {...register("lastName")}
+                            placeholder="Votre nom"
+                            className={errors.lastName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.lastName ? "true" : "false"}
+                            aria-describedby={errors.lastName ? "lastName-error" : undefined}
+                        />
+                        {errors.lastName && <p id="lastName-error" className="text-xs text-red-500">{errors.lastName.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Prénom *</Label>
-                        <Input {...register("firstName")} placeholder="Votre prénom" className={errors.firstName ? "border-red-500" : ""} />
-                        {errors.firstName && <p className="text-xs text-red-500">{errors.firstName.message}</p>}
+                        <Label htmlFor="firstName">Prénom *</Label>
+                        <Input
+                            id="firstName"
+                            {...register("firstName")}
+                            placeholder="Votre prénom"
+                            className={errors.firstName ? "border-red-500" : ""}
+                            aria-required="true"
+                            aria-invalid={errors.firstName ? "true" : "false"}
+                            aria-describedby={errors.firstName ? "firstName-error" : undefined}
+                        />
+                        {errors.firstName && <p id="firstName-error" className="text-xs text-red-500">{errors.firstName.message}</p>}
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label>Téléphone *</Label>
+                        <Label htmlFor="phone">Téléphone *</Label>
                         <div className="relative">
-                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("phone")} placeholder="06 12 34 56 78" className={`pl-10 ${errors.phone ? "border-red-500" : ""}`} />
+                            <Phone className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="phone"
+                                {...register("phone")}
+                                placeholder="06 12 34 56 78"
+                                className={`pl-10 ${errors.phone ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.phone ? "true" : "false"}
+                                aria-describedby={errors.phone ? "phone-error" : undefined}
+                            />
                         </div>
-                        {errors.phone && <p className="text-xs text-red-500">{errors.phone.message}</p>}
+                        {errors.phone && <p id="phone-error" className="text-xs text-red-500">{errors.phone.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label>Email *</Label>
+                        <Label htmlFor="email">Email *</Label>
                         <div className="relative">
-                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
-                            <Input {...register("email")} placeholder="votre@email.com" className={`pl-10 ${errors.email ? "border-red-500" : ""}`} />
+                            <Mail className="absolute left-3 top-3 w-4 h-4 text-slate-400" aria-hidden="true" />
+                            <Input
+                                id="email"
+                                {...register("email")}
+                                placeholder="votre@email.com"
+                                className={`pl-10 ${errors.email ? "border-red-500" : ""}`}
+                                aria-required="true"
+                                aria-invalid={errors.email ? "true" : "false"}
+                                aria-describedby={errors.email ? "email-error" : undefined}
+                            />
                         </div>
-                        {errors.email && <p className="text-xs text-red-500">{errors.email.message}</p>}
+                        {errors.email && <p id="email-error" className="text-xs text-red-500">{errors.email.message}</p>}
                     </div>
                 </div>
 
@@ -134,9 +166,9 @@ export const DiagRequestForm = ({ onSubmit, isSubmitting = false }: DiagRequestF
 
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                     <div className="space-y-2">
-                        <Label>Type d'habitation *</Label>
+                        <Label htmlFor="propertyType">Type d'habitation *</Label>
                         <Select onValueChange={(val) => setValue("propertyType", val, { shouldValidate: true })}>
-                            <SelectTrigger className={errors.propertyType ? "border-red-500" : ""}>
+                            <SelectTrigger id="propertyType" className={errors.propertyType ? "border-red-500" : ""} aria-required="true" aria-invalid={errors.propertyType ? "true" : "false"} aria-describedby={errors.propertyType ? "propertyType-error" : undefined}>
                                 <SelectValue placeholder="Sélectionnez..." />
                             </SelectTrigger>
                             <SelectContent className="bg-white">
@@ -145,31 +177,34 @@ export const DiagRequestForm = ({ onSubmit, isSubmitting = false }: DiagRequestF
                                 ))}
                             </SelectContent>
                         </Select>
-                        {errors.propertyType && <p className="text-xs text-red-500">{errors.propertyType.message}</p>}
+                        {errors.propertyType && <p id="propertyType-error" className="text-xs text-red-500">{errors.propertyType.message}</p>}
                     </div>
                 </div>
 
                 <div className="space-y-2">
                     <Label className="mb-2 block">Diagnostics souhaités *</Label>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2" role="group" aria-label="Diagnostics souhaités">
                         {EXPERT_INTERVENTIONS_DIAG.map((diag) => {
                             const isSelected = selectedDiags.includes(diag);
                             return (
-                                <div
+                                <button
                                     key={diag}
+                                    type="button"
                                     onClick={() => handleDiagToggle(diag)}
+                                    role="checkbox"
+                                    aria-checked={isSelected}
                                     className={`
                                          cursor-pointer px-3 py-2 rounded-md border text-sm flex items-center gap-2 transition-all select-none
                                          ${isSelected ? "bg-[#FFF8ED] border-[#D59B2B] text-[#D59B2B] font-bold" : "bg-white border-slate-200 text-slate-600 hover:border-[#D59B2B]"}
                                      `}
                                 >
-                                    {isSelected ? <Check className="w-4 h-4" /> : <div className="w-4 h-4 rounded-sm border border-slate-300" />}
+                                    {isSelected ? <Check className="w-4 h-4" /> : <div className="w-4 h-4 rounded-sm border border-slate-300" aria-hidden="true" />}
                                     {diag}
-                                </div>
+                                </button>
                             )
                         })}
                     </div>
-                    {errors.diagnosticTypes && <p className="text-xs text-red-500">{errors.diagnosticTypes.message}</p>}
+                    {errors.diagnosticTypes && <p id="diagnosticTypes-error" className="text-xs text-red-500">{errors.diagnosticTypes.message}</p>}
                 </div>
             </section>
 
@@ -180,13 +215,17 @@ export const DiagRequestForm = ({ onSubmit, isSubmitting = false }: DiagRequestF
                 </h3>
 
                 <div className="space-y-2">
-                    <Label>Message *</Label>
+                    <Label htmlFor="description">Message *</Label>
                     <Textarea
+                        id="description"
                         {...register("description")}
                         placeholder="Bonjour, je souhaiterais réaliser les diagnostics pour la vente de ma maison..."
                         className="h-24 resize-none"
+                        aria-required="true"
+                        aria-invalid={errors.description ? "true" : "false"}
+                        aria-describedby={errors.description ? "description-error" : undefined}
                     />
-                    {errors.description && <p className="text-xs text-red-500">{errors.description.message}</p>}
+                    {errors.description && <p id="description-error" className="text-xs text-red-500">{errors.description.message}</p>}
                 </div>
             </section>
 
