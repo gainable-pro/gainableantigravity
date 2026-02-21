@@ -31,6 +31,8 @@ function FilterDropdown({ label, children, active = false }: { label: string, ch
         <div className="relative">
             <button
                 onClick={() => setIsOpen(!isOpen)}
+                aria-haspopup="listbox"
+                aria-expanded={isOpen}
                 className={`flex items-center gap-2 px-4 h-10 rounded-md border text-sm font-medium transition-colors ${isOpen || active ? 'border-[#D59B2B] bg-[#FFF8ED] text-[#D59B2B]' : 'border-slate-300 bg-white text-slate-700 hover:border-slate-400'}`}
             >
                 {label}
@@ -204,6 +206,8 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                             <span className="text-sm font-bold text-[#1F2D3D]">Filtres :</span>
                             <button
                                 onClick={() => setShowMobileFilters(!showMobileFilters)}
+                                aria-label={showMobileFilters ? "Masquer les filtres" : "Afficher les filtres"}
+                                aria-expanded={showMobileFilters}
                                 className="flex items-center gap-2 text-sm font-medium text-[#D59B2B] border border-[#D59B2B] px-3 py-1.5 rounded-md"
                             >
                                 <Filter className="w-4 h-4" />

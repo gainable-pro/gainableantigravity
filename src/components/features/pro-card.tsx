@@ -152,7 +152,13 @@ export function ProCard({
                 {/* Verified Badge - Conditioned */}
                 {isLabeled && (
                     <div className="flex justify-center mt-3">
-                        <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-20 w-auto object-contain" />
+                        <Image
+                            src="/expert-verifie-logo-v3.jpg"
+                            alt="Expert Vérifié"
+                            width={120}
+                            height={80}
+                            className="h-20 w-auto object-contain"
+                        />
                     </div>
                 )}
             </div>

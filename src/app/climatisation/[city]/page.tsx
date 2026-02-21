@@ -8,6 +8,7 @@ import { ContactWizard } from "@/components/features/contact/contact-wizard"; //
 import { prisma } from "@/lib/prisma";
 import fs from 'fs';
 import path from 'path';
+import Image from "next/image";
 
 // Force SSG for these pages
 export const dynamic = 'force-static';
@@ -274,10 +275,13 @@ export default async function CityPage({ params }: PageProps) {
             <section className="relative h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
                 {/* Background Image with Gradient Overlay */}
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src={heroImage}
                         alt={`Climatisation gainable à ${city.name}`}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-slate-900/40"></div>
                 </div>

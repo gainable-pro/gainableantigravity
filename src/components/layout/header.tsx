@@ -18,12 +18,13 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
             <div className="container mx-auto flex py-0 items-center justify-between px-4">
                 {/* Logo */}
-                {/* Logo - Use standard anchor to force full refresh/reset on click */}
-                <a href="/" className="relative h-24 w-auto md:h-28 md:w-[250px] block transition-all">
-                    <img
+                <a href="/" className="relative h-24 w-60 md:h-28 md:w-[250px] block transition-all" aria-label="Gainable.fr - Retour à l'accueil">
+                    <Image
                         src={logoSrc}
                         alt="Gainable.fr"
-                        className="w-full h-full object-contain"
+                        fill
+                        className="object-contain"
+                        priority
                     />
                 </a>
 
@@ -65,7 +66,7 @@ function MobileMenu() {
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-                <button className="p-2 text-slate-700">
+                <button className="p-2 text-slate-700" aria-label="Menu principal">
                     <Menu className="h-6 w-6" />
                 </button>
             </SheetTrigger>
