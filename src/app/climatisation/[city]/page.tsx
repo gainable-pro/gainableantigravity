@@ -95,17 +95,25 @@ export default async function CityPage({ params }: PageProps) {
     const priceMinStr = priceMin.toLocaleString('fr-FR');
     const priceMaxStr = priceMax.toLocaleString('fr-FR');
 
-    const climateText = city.climateZone === 'mediterranean'
-        ? "Avec les étés de plus en plus chauds de la zone méditerranéenne, la climatisation est devenue indispensable pour le confort de vie."
-        : city.climateZone === 'oceanic'
-            ? "Le climat océanique apporte de l'humidité : le mode déshumidification du gainable est un véritable atout pour votre confort."
-            : "Pour affronter les écarts de température de votre région, le gainable réversible est la solution idéale (chauffage + clim).";
+    // 4. Personalized Content Mapping
+    const climateAdvice = {
+        mediterranean: "Face aux étés caniculaires, le gainable offre une puissance de refroidissement immédiate et discrète.",
+        oceanic: "Idéal pour réguler l'hygrométrie, le gainable apporte une chaleur saine et réactive lors des journées humides.",
+        continental: "Adapté aux fortes amplitudes, ce système assure une diffusion homogène de la chaleur et de la fraîcheur.",
+        mountain: "Une solution performante pour les zones d'altitude, combinant chauffage puissant et clim discrète.",
+        'semi-continental': "Le compromis idéal pour les variations saisonnières, garantissant un confort thermique stable."
+    }[city.climateZone];
 
-    const housingText = city.housingType === 'urbain-dense'
-        ? `À ${city.name}, dans les appartements ou les zones denses, le gainable est plébiscité car l'unité extérieure peut souvent être installée discrètement sur un balcon ou une toiture.`
-        : city.housingType === 'historique'
-            ? `Le patrimoine architectural de ${city.name} demande des solutions invisibles. Le gainable est parfait car il respecte les façades et les intérieurs anciens.`
-            : `Idéal pour les pavillons et villas autour de ${city.name}, le gainable permet de traiter de grands volumes sans dénaturer la décoration.`;
+    const housingAdvice = {
+        'urbain-dense': `Dans le tissu urbain de ${city.name}, le gainable préserve le cachet de vos appartements sans unité murale visible.`,
+        historique: `Parfait pour le patrimoine de ${city.name}, l'installation respecte l'architecture ancienne sans dénaturer les volumes.`,
+        pavillonnaire: `Pour votre villa, le réseau en combles permet de climatiser toutes les chambres avec un seul groupe extérieur.`,
+        mixte: `Une flexibilité totale s'adaptant aussi bien aux appartements modernes qu'aux rénovations de maisons.`
+    }[city.housingType];
+
+    const marketStatus = city.priceIndex > 1.2
+        ? "Le marché local est très dynamique avec une forte demande pour les solutions invisibles."
+        : "Le secteur propose des tarifs compétitifs avec une bonne disponibilité d'experts certifiés.";
 
 
     // Schema.org
@@ -166,17 +174,36 @@ export default async function CityPage({ params }: PageProps) {
     };
 
     // 5. Fetch Local Experts & Articles (Expanded to Department)
-    const localExperts = await prisma.expert.findMany({
-        where: {
-            status: 'active',
-            OR: [
-                { ville: { contains: city.name, mode: 'insensitive' } },
-                { code_postal: { startsWith: city.department } }
-            ]
-        },
-        take: 3,
-        select: { id: true, nom_entreprise: true, ville: true, logo_url: true, slug: true, expert_type: true }
-    });
+    const [localExperts, totalDeptExperts, globalExpertsCount] = await Promise.all([
+        prisma.expert.findMany({
+            where: {
+                status: 'active',
+                OR: [
+                    { ville: { contains: city.name, mode: 'insensitive' } },
+                    { code_postal: { startsWith: city.department } }
+                ]
+            },
+            take: 3,
+            select: {
+                id: true,
+                nom_entreprise: true,
+                ville: true,
+                logo_url: true,
+                slug: true,
+                expert_type: true,
+                certifications: { select: { value: true } }
+            }
+        }),
+        prisma.expert.count({
+            where: {
+                status: 'active',
+                code_postal: { startsWith: city.department }
+            }
+        }),
+        prisma.expert.count({
+            where: { status: 'active' }
+        })
+    ]);
 
     const relatedArticles = await prisma.article.findMany({
         where: {
@@ -255,12 +282,10 @@ export default async function CityPage({ params }: PageProps) {
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 font-montserrat tracking-tight leading-tight">
                         Climatisation Gainable <br />
-                        <span className="text-[#D59B2B]">à {city.name}</span>
+                        <span className="text-[#D59B2B]">à {city.name} ({city.zip})</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-100 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                        {city.catchphrase.charAt(0).toUpperCase() + city.catchphrase.slice(1)}.
-                        <br className="hidden md:block" />
-                        Obtenez des devis d'experts vérifiés Gainable.fr.
+                        {city.catchphrase}. {climateAdvice}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -273,8 +298,8 @@ export default async function CityPage({ params }: PageProps) {
 
                     <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-200 font-medium">
                         <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Devis Gratuits</span>
-                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Artisans Locaux</span>
-                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Experts Vérifiés</span>
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> {totalDeptExperts > 0 ? `${totalDeptExperts} Experts` : 'Experts'} Proximité</span>
+                        <span className="flex items-center gap-2"><CheckCircle className="w-5 h-5 text-[#D59B2B]" /> Vérification Gainable.fr</span>
                     </div>
                 </div>
             </section>
@@ -318,9 +343,24 @@ export default async function CityPage({ params }: PageProps) {
                                         <h3 className="font-bold text-[#1F2D3D] text-xl mb-2 group-hover:text-[#D59B2B] transition-colors">
                                             {expert.nom_entreprise}
                                         </h3>
-                                        <p className="text-sm text-slate-500 flex items-center gap-1 mb-6 bg-slate-50 px-3 py-1 rounded-full">
+                                        <p className="text-sm text-slate-500 flex items-center gap-1 mb-4 bg-slate-50 px-3 py-1 rounded-full">
                                             <MapPin className="w-3 h-3 text-[#D59B2B]" /> {expert.ville}
                                         </p>
+
+                                        {/* Certifications Badges */}
+                                        <div className="flex flex-wrap justify-center gap-2 mb-6">
+                                            {expert.certifications.length > 0 ? (
+                                                expert.certifications.slice(0, 2).map((cert, idx) => (
+                                                    <span key={idx} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-[#D59B2B]/10 text-[#D59B2B] border border-[#D59B2B]/20">
+                                                        {cert.value.replace('_', ' ')}
+                                                    </span>
+                                                ))
+                                            ) : (
+                                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-slate-100 text-slate-400 border border-slate-200">
+                                                    Expert Vérifié
+                                                </span>
+                                            )}
+                                        </div>
 
                                         <div className="mt-auto w-full">
                                             <Button variant="outline" className="w-full rounded-xl group-hover:bg-[#1F2D3D] group-hover:text-white transition-colors">Voir le profil</Button>
@@ -349,7 +389,9 @@ export default async function CityPage({ params }: PageProps) {
                                 </h2>
 
                                 <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-                                    Nous avons sélectionné des <strong>installateurs de climatisation Expert Vérifié Gainable.fr</strong> intervenant dans le secteur de <strong>{city.department}</strong>.
+                                    {totalDeptExperts > 0
+                                        ? `Bien qu'aucun expert ne soit basé directement à ${city.name}, nous référençons ${totalDeptExperts} entreprises certifiées dans le département (${city.department}) qui interviennent dans votre secteur.`
+                                        : `Nous avons sélectionné des installateurs de climatisation Expert Vérifié Gainable.fr intervenant dans le secteur de ${city.department}.`}
                                     Comparez leurs offres gratuitement.
                                 </p>
 
@@ -369,6 +411,35 @@ export default async function CityPage({ params }: PageProps) {
             )}
 
 
+            {/* MARKET STATS BLOCK */}
+            <section className="py-16 bg-slate-900 text-white overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D59B2B] to-transparent opacity-30"></div>
+                <div className="container mx-auto px-6 relative z-10">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+                        <div className="p-4 md:p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                            <div className="text-3xl md:text-4xl font-extrabold text-[#D59B2B] mb-2">
+                                {totalDeptExperts > 0 ? totalDeptExperts : (globalExpertsCount > 50 ? "50+" : globalExpertsCount)}
+                            </div>
+                            <div className="text-[10px] md:text-sm text-slate-300 font-medium uppercase tracking-wider">
+                                {totalDeptExperts > 0 ? "Installateurs Locaux" : "Experts Partenaires"}
+                            </div>
+                        </div>
+                        <div className="p-4 md:p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                            <div className="text-3xl md:text-4xl font-extrabold text-[#D59B2B] mb-2">{priceMinStr} {currency}</div>
+                            <div className="text-[10px] md:text-sm text-slate-300 font-medium uppercase tracking-wider">Prix estimé (Min)</div>
+                        </div>
+                        <div className="p-4 md:p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                            <div className="text-3xl md:text-4xl font-extrabold text-[#D59B2B] mb-2">48h</div>
+                            <div className="text-[10px] md:text-sm text-slate-300 font-medium uppercase tracking-wider">Délai moyen</div>
+                        </div>
+                        <div className="p-4 md:p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                            <div className="text-3xl md:text-4xl font-extrabold text-[#D59B2B] mb-2">{city.priceIndex > 1.1 ? 'Forte' : 'Stable'}</div>
+                            <div className="text-[10px] md:text-sm text-slate-300 font-medium uppercase tracking-wider">Demande Locale</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CONTEXTE LOCAL & PRIX */}
             <section className="py-16">
                 <div className="container mx-auto px-6 max-w-5xl">
@@ -378,13 +449,13 @@ export default async function CityPage({ params }: PageProps) {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4">
-                                    Pourquoi installer une climatisation gainable à {city.name} ?
+                                    Expertise Climatisation à {city.name}
                                 </h2>
                                 <p className="text-slate-600 leading-relaxed text-lg">
-                                    {climateText}
+                                    {housingAdvice} {marketStatus}
                                 </p>
                                 <p className="text-slate-600 leading-relaxed mt-4 text-lg">
-                                    {housingText}
+                                    Choisir un système gainable à <strong>{city.name}</strong>, c'est opter pour une technologie invisible qui valorise votre patrimoine tout en réduisant vos factures d'énergie.
                                 </p>
                             </div>
 
@@ -395,9 +466,9 @@ export default async function CityPage({ params }: PageProps) {
                                 </h3>
                                 <p className="text-slate-600 mb-4">Pour une maison standard de 100m² :</p>
                                 <div className="flex items-end gap-3 mb-2">
-                                    <span className="text-3xl font-bold text-[#1F2D3D]">{priceMin} €</span>
+                                    <span className="text-3xl font-bold text-[#1F2D3D]">{priceMinStr} {currency}</span>
                                     <span className="text-slate-400 mb-1">à</span>
-                                    <span className="text-3xl font-bold text-[#1F2D3D]">{priceMax} €</span>
+                                    <span className="text-3xl font-bold text-[#1F2D3D]">{priceMaxStr} {currency}</span>
                                 </div>
                                 <p className="text-xs text-slate-400 italic">
                                     *Estimation incluant fourniture et pose. Le prix varie selon la complexité et la marque (Daikin, Mitsubishi, Atlantic...).
