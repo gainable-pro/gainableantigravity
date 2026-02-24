@@ -15,6 +15,9 @@ import {
     FileText,
     MapPin
 } from "lucide-react";
+import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Controller } from "react-hook-form";
 
 // Schema Validation
 const simpleFormSchema = z.object({
@@ -27,6 +30,11 @@ const simpleFormSchema = z.object({
 
     // Détails
     description: z.string().min(10, "Veuillez décrire brièvement votre besoin."),
+
+    // GDPR
+    acceptTerms: z.boolean().refine(v => v === true, {
+        message: "Vous devez accepter la politique de confidentialité.",
+    }),
 });
 
 type SimpleFormValues = z.infer<typeof simpleFormSchema>;
@@ -146,6 +154,40 @@ export const SimpleRequestForm = ({ onSubmit, isSubmitting = false }: SimpleRequ
                         aria-describedby={errors.description ? "description-error" : undefined}
                     />
                     {errors.description && <p id="description-error" className="text-xs text-red-500">{errors.description.message}</p>}
+                </div>
+            </section>
+
+            {/* GDPR Consent */}
+            <section className="space-y-4 pt-2">
+                <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <Controller
+                        name="acceptTerms"
+                        control={form.control}
+                        render={({ field }) => (
+                            <Checkbox
+                                id="acceptTerms"
+                                checked={field.value || false}
+                                onCheckedChange={field.onChange}
+                                className="mt-1"
+                            />
+                        )}
+                    />
+                    <div className="space-y-1">
+                        <Label
+                            htmlFor="acceptTerms"
+                            className="text-sm font-medium leading-relaxed text-slate-600 cursor-pointer"
+                        >
+                            J’accepte que mes données soient traitées pour répondre à ma demande et j'ai lu la{" "}
+                            <Link href="/politique-confidentialite" className="text-[#D59B2B] hover:underline font-semibold">
+                                politique de confidentialité
+                            </Link>.
+                        </Label>
+                        {errors.acceptTerms && (
+                            <p className="text-xs text-red-500 font-medium">
+                                {errors.acceptTerms.message}
+                            </p>
+                        )}
+                    </div>
                 </div>
             </section>
 

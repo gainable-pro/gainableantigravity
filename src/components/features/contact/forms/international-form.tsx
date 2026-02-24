@@ -10,6 +10,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle, MapPin, Phone, Mail, User } from "lucide-react";
+import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Controller } from "react-hook-form";
 
 const formSchema = z.object({
     nom: z.string().min(2, "Le nom est requis"),
@@ -19,6 +22,9 @@ const formSchema = z.object({
     message: z.string().optional(),
     ville: z.string().optional(),
     source: z.string().optional(),
+    acceptTerms: z.boolean().refine(v => v === true, {
+        message: "Vous devez accepter la politique de confidentialité.",
+    }),
 });
 
 interface InternationalLeadFormProps {
@@ -30,7 +36,7 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const { register, handleSubmit, formState: { errors } } = useForm<z.infer<typeof formSchema>>({
+    const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             nom: "",
@@ -40,8 +46,11 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
             message: "",
             ville: city,
             source: `Landing Page ${city}`,
+            acceptTerms: false,
         },
     });
+
+    const { register, handleSubmit, formState: { errors }, control } = form;
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         setIsSubmitting(true);
@@ -180,6 +189,38 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
                     placeholder="Besoin spécifique..."
                     className="min-h-[60px] text-sm py-2"
                 />
+            </div>
+
+            {/* GDPR Consent */}
+            <div className="flex items-start gap-2 pt-2">
+                <Controller
+                    name="acceptTerms"
+                    control={control}
+                    render={({ field }) => (
+                        <Checkbox
+                            id="acceptTerms_intl"
+                            checked={field.value || false}
+                            onCheckedChange={field.onChange}
+                            className="mt-0.5"
+                        />
+                    )}
+                />
+                <div className="space-y-1">
+                    <Label
+                        htmlFor="acceptTerms_intl"
+                        className="text-[10px] font-medium leading-tight text-slate-500 cursor-pointer"
+                    >
+                        J'accepte que mes données soient traitées pour ma demande et j'ai lu la{" "}
+                        <Link href="/politique-confidentialite" className="text-[#D59B2B] hover:underline underline-offset-2">
+                            politique de confidentialité
+                        </Link>.
+                    </Label>
+                    {errors.acceptTerms && (
+                        <p className="text-[10px] text-red-500 font-medium leading-none">
+                            {errors.acceptTerms.message}
+                        </p>
+                    )}
+                </div>
             </div>
 
             <Button type="submit" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-11 text-base shadow-sm transition-all" disabled={isSubmitting}>

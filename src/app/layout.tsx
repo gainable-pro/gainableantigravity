@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   },
 };
 
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { headers } from "next/headers";
 
 export default async function RootLayout({
@@ -67,7 +68,8 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieBanner />
       </body>
-    </html >
+    </html>
   );
 }
