@@ -6,14 +6,10 @@ export default function MentionsLegales() {
             <section className="space-y-6 text-slate-700 leading-relaxed">
                 <div>
                     <h2 className="text-xl font-semibold mb-3">1. Éditeur du site</h2>
-                    <div className="bg-amber-50 border border-amber-200 p-4 rounded-md mb-4 text-amber-800 text-sm">
-                        <strong>IMPORTANT :</strong> Veuillez remplir les informations ci-dessous avec les détails officiels de votre entreprise.
-                    </div>
                     <p>
                         Le site <strong>gainable.fr</strong> est édité par :<br />
-                        <strong>Raison sociale :</strong> EXCEED DIGITAL<br />
+                        <strong>Raison sociale :</strong> GAINABLE.FR by EXCEED DIGITAL<br />
                         <strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)<br />
-                        <strong>Capital social :</strong> 1 000 €<br />
                         <strong>Siège social :</strong> 13140 Miramas, France<br />
                         <strong>SIREN :</strong> 101 447 944<br />
                         <strong>RCS :</strong> Salon-de-Provence<br />

@@ -91,8 +91,8 @@ export default function ConditionsGeneralesUtilisation() {
                     </div>
                 </div>
 
-                <div className="bg-red-50 p-6 rounded-xl border border-red-100 border-l-4 border-l-red-600">
-                    <h2 className="text-xl font-bold text-red-800 mb-2">ARTICLE 8 – CLAUSE PÉNALE</h2>
+                <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 border-l-4 border-l-slate-400">
+                    <h2 className="text-xl font-bold text-[#1F2D3D] mb-2">ARTICLE 8 – CLAUSE PÉNALE</h2>
                     <p className="text-sm">
                         En cas de violation des présentes CGU portant atteinte au modèle économique ou au fonctionnement normal de la plateforme, le professionnel sera redevable d’une <strong>indemnité forfaitaire de 1 500 euros par manquement constaté</strong>.
                     </p>
