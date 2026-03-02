@@ -16,6 +16,9 @@ export function Footer() {
                     <Link href="/politique-confidentialite" className="hover:text-amber-500 transition-colors">
                         Politique de Confidentialité
                     </Link>
+                    <Link href="/cgu" className="hover:text-amber-500 transition-colors">
+                        Conditions Générales d'Utilisation
+                    </Link>
                     <Link href="/faq-visibilite-referencement" className="hover:text-amber-500 transition-colors text-amber-500/90 font-semibold">
                         FAQ Visibilité & Référencement
                     </Link>

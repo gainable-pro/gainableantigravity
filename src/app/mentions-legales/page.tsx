@@ -11,12 +11,13 @@ export default function MentionsLegales() {
                     </div>
                     <p>
                         Le site <strong>gainable.fr</strong> est édité par :<br />
-                        <strong>Raison sociale :</strong> [NOM DE VOTRE ENTREPRISE]<br />
-                        <strong>Forme juridique :</strong> [EX: SAS, SARL]<br />
-                        <strong>Capital social :</strong> [MONTANT] €<br />
-                        <strong>Siège social :</strong> [ADRESSE DU SIÈGE]<br />
-                        <strong>SIRET :</strong> [NUMÉRO SIRET]<br />
-                        <strong>Directeur de la publication :</strong> [NOM DU RESPONSABLE]
+                        <strong>Raison sociale :</strong> EXCEED DIGITAL<br />
+                        <strong>Forme juridique :</strong> SAS (Société par Actions Simplifiée)<br />
+                        <strong>Capital social :</strong> 1 000 €<br />
+                        <strong>Siège social :</strong> 13140 Miramas, France<br />
+                        <strong>SIREN :</strong> 101 447 944<br />
+                        <strong>RCS :</strong> Salon-de-Provence<br />
+                        <strong>Directeur de la publication :</strong> Direction EXCEED DIGITAL
                     </p>
                 </div>
 
