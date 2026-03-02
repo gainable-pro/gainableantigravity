@@ -115,19 +115,23 @@ export async function POST(req: Request) {
 
         CONTEXTE
         Entreprise : ${expert.nom_entreprise}
-        Ville principale : ${ville}
-        Zone d’intervention : ${zone}
+        Ville de base de l'expert : ${ville}
+        Zone d’intervention habituelle : ${zone}
         Spécialité : ${specialite}
         Sujet de l'article : "${topic}"
 
         CONSIGNES STRICTES
-        1. Génère UN SEUL H1, optimisé SEO, intégrant naturellement la ville et la thématique.
-        2. Génère 4 à 6 H2, avec un ordre variable (ne jamais suivre toujours le même plan).
-        3. Ne jamais utiliser systématiquement : Introduction → Avantages → Prix → FAQ.
-        4. Le contenu doit être réellement différencié d’un article similaire dans une autre ville.
+        1. IDENTIFICATION DE LA VILLE : Analyse le sujet de l'article : "${topic}".
+           - Si une ville y est mentionnée (ex: "à Marseille", "sur Lyon"), c'est la VILLE CIBLÉE.
+           - Si aucune ville n'est mentionnée, la VILLE CIBLÉE par défaut est "${ville}".
+        2. Génère UN SEUL H1, optimisé SEO, intégrant naturellement la VILLE CIBLÉE et la thématique.
+        3. Génère 4 à 6 H2, avec un ordre variable.
+        4. Ne jamais utiliser systématiquement : Introduction → Avantages → Prix → FAQ.
+        5. Le contenu doit être réellement différencié d’un article similaire dans une autre ville.
+        6. Mentionne "${expert.nom_entreprise}" comme l'expert intervenant dans la VILLE CIBLÉE.
 
         CONTENU À PRODUIRE
-        - Adapter le discours au contexte local (climat, type d’habitat, usages courants).
+        - Adapter le discours au contexte local de la VILLE CIBLÉE (climat, type d’habitat, usages courants).
         - Mettre en avant la méthode de travail de l'entreprise : "${expert.description?.slice(0, 150) || 'Service de qualité, expert qualifié'}".
         - Varier les angles possibles : confort thermique, contraintes techniques locales, rénovation vs neuf, choix des marques, attentes des clients.
 
@@ -137,22 +141,18 @@ export async function POST(req: Request) {
         - Pas de paragraphes trop courts ou vides.
 
         FORMAT DE RÉPONSE ATTENDU (JSON STRICT)
-        Tu dois ABSOLUMENT répondre avec ce format JSON pour que l'affichage fonctionne (Zig-Zag).
+        Tu dois ABSOLUMENT répondre avec ce format JSON :
 
         {
-            "title": "Titre H1 (Optimisé)",
+            "title": "Titre H1 (Optimisé avec la Ville Ciblée)",
             "slug": "slug-url-friendly",
-            "targetCity": "${ville}",
-            "metaDesc": "Meta description unique (max 160 chars) incitant au clic.",
+            "targetCity": "NOM_DE_LA_VILLE_CIBLEE_EXTRAITE",
+            "metaDesc": "Meta description unique (max 160 chars) inclitant au clic.",
             "introduction": "Introduction engageante (pas de H2 ici)...",
             "sections": [
                 {
                     "title": "Titre H2 (Variable)",
                     "content": "Contenu riche et détaillé (300 mots min)..."
-                },
-                {
-                    "title": "Autre H2 (Variable)",
-                    "content": "..."
                 }
             ],
             "faq": [

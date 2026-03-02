@@ -6,7 +6,6 @@ import { prisma } from "@/lib/prisma";
 import OpenAI from "openai";
 
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // HELPER: Verify User
 async function getUserIdFromToken() {
@@ -22,6 +21,7 @@ async function getUserIdFromToken() {
 }
 
 export async function POST(req: Request) {
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const userId = await getUserIdFromToken();
     if (!userId) return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 
