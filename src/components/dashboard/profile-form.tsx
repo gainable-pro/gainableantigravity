@@ -62,6 +62,7 @@ export default function ProfileForm() {
         lng: 0,
 
         intervention_radius: 50,
+        national_coverage: false,
         adresse_indep: false,
         adresse_inter: "",
         ville_inter: "",
@@ -113,6 +114,7 @@ export default function ProfileForm() {
                     lat: data.lat || 0,
                     lng: data.lng || 0,
                     intervention_radius: data.intervention_radius || 50,
+                    national_coverage: data.national_coverage || false,
                     adresse_indep: data.adresse_indep || false,
                     adresse_inter: data.adresse_inter || "",
                     ville_inter: data.ville_inter || "",
@@ -390,8 +392,26 @@ export default function ProfileForm() {
                         )}
                     </div>
 
-                    <div className="space-y-4">
-                        <div className="flex justify-between items-center bg-slate-50 p-4 rounded-lg">
+                    {/* NATIONAL COVERAGE FOR BUREAU ETUDE */}
+                    {(expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
+                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
+                            <div className="flex items-center space-x-3">
+                                <Checkbox
+                                    id="national_coverage"
+                                    checked={formData.national_coverage}
+                                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, national_coverage: checked as boolean }))}
+                                />
+                                <label htmlFor="national_coverage" className="text-sm font-semibold text-blue-900 cursor-pointer">
+                                    ⚡ J'interviens sur toute la France (Études sur plans, etc.)
+                                </label>
+                            </div>
+                        </div>
+                    )}
+
+                    {!formData.national_coverage && (
+                        <>
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center bg-slate-50 p-4 rounded-lg">
                             <div>
                                 <Label className="block mb-1 font-bold text-base">Rayon d'intervention</Label>
                                 <p className="text-sm text-slate-500">Jusqu'à quelle distance intervenez-vous ?</p>
@@ -429,10 +449,12 @@ export default function ProfileForm() {
                             />
                         ) : (
                             <div className="h-full flex items-center justify-center bg-slate-100 text-slate-400">
-                                Renseignez votre ville pour afficher la carte
-                            </div>
-                        )}
-                    </div>
+                                    Renseignez votre ville pour afficher la carte
+                                </div>
+                            )}
+                        </div>
+                        </>
+                    )}
                 </CardContent>
             </Card>
 

@@ -49,6 +49,7 @@ model Expert {
   lat              Float?
   lng              Float?
   intervention_radius Int?     @default(50)
+  national_coverage   Boolean  @default(false)
 
   // Adresse d'intervention (si différente du siège)
   adresse_indep    Boolean     @default(false)

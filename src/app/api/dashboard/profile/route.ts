@@ -87,6 +87,7 @@ export async function PUT(req: Request) {
                     lat: body.lat,
                     lng: body.lng,
                     intervention_radius: body.intervention_radius ? parseInt(body.intervention_radius) : 50,
+                    national_coverage: body.national_coverage !== undefined ? Boolean(body.national_coverage) : false,
                     // Adresse d'intervention
                     adresse_indep: body.adresse_indep,
                     adresse_inter: body.adresse_inter,

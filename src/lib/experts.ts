@@ -53,7 +53,15 @@ export async function getExperts(filters: ExpertFilters) {
         // Only ignore strict city match if we have Radial Coordinates (lat/lng)
         // Otherwise, fallback to text match.
         if (filters.city && (!filters.lat || !filters.lng)) {
-            where.ville = { contains: filters.city, mode: 'insensitive' };
+            where.AND = [
+                ...(where.AND ? (Array.isArray(where.AND) ? where.AND : [where.AND]) : []),
+                {
+                    OR: [
+                        { ville: { contains: filters.city, mode: 'insensitive' } },
+                        { national_coverage: true }
+                    ]
+                }
+            ];
         }
 
         // 3. Country Filter
@@ -123,6 +131,9 @@ export async function getExperts(filters: ExpertFilters) {
             const searchLng = filters.lng;
 
             experts = experts.filter(expert => {
+                // If national coverage is enabled, bypass location distance check completely
+                if ((expert as any).national_coverage) return true;
+
                 // Determine expert location (Intervention Address vs Main Address)
                 let expLat = expert.lat || 0;
                 let expLng = expert.lng || 0;
