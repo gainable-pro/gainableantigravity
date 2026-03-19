@@ -393,7 +393,7 @@ export default function ProfileForm() {
                     </div>
 
                     {/* NATIONAL COVERAGE FOR BUREAU ETUDE */}
-                    {(expertType === 'bureau_etude' || expertType === "Bureau d'étude") && (
+                    {(expertType === 'bureau_etude' || expertType === "Bureau d'étude" || expertType === 'bureau_detude') && (
                         <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
                             <div className="flex items-center space-x-3">
                                 <Checkbox
