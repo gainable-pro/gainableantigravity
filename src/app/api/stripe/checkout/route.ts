@@ -56,6 +56,7 @@ export async function POST(req: NextRequest) {
                         currency: 'eur',
                         product_data: {
                             name: productName,
+                            tax_code: 'txcd_10103001', // SaaS / Digital Services
                         },
                         unit_amount: unitAmount,
                         recurring: {
