@@ -261,10 +261,10 @@ export function SignUpForm() {
 
     const getPlanPrice = (p: string) => {
         if (p === 'societe') {
-            return billingInterval === 'yearly' ? "520 € HT / an" : "39,90 € HT / mois";
+            return billingInterval === 'yearly' ? "650 € HT / an" : "50 € HT / mois";
         }
         if (p === 'bureau_etude') return "Gratuit";
-        if (p === 'diagnostiqueur') return "200 € HT / an";
+        if (p === 'diagnostiqueur') return "380 € HT / an";
         return "";
     };
 
@@ -298,7 +298,8 @@ export function SignUpForm() {
                                 "0 vente de contact",
                                 "Visibilité sur Gainable.fr",
                                 "Page dédiée",
-                                "Création 3 articles / mois (Optimisé SEO)",
+                                "Création 10 articles / mois (Optimisé SEO)",
+                                "Zone d'intervention possible élargie sur toute la France",
                                 "Assistant IA : Génération intégrale du contenu",
                                 "SEO standard",
                                 "Leads & contacts illimités",
@@ -347,7 +348,7 @@ export function SignUpForm() {
 
                             <div className="mt-2">
                                 <span className="text-[#D59B2B] font-bold text-3xl">
-                                    {billingInterval === 'yearly' ? '520 €' : '39,90 €'}
+                                    {billingInterval === 'yearly' ? '650 €' : '50 €'}
                                 </span>
                                 <span className="text-sm text-slate-500 font-medium">
                                     {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
@@ -370,7 +371,7 @@ export function SignUpForm() {
                                 "Priorité SEO réelle et mesurable",
                                 "Mise en avant Premium (Site + Carte)",
                                 "Badge Expert visible (Confiance)",
-                                "Création 3 articles / mois (Optimisé SEO)",
+                                "Création 10 articles / mois (Optimisé SEO)",
                                 "Assistant IA : Génération intégrale du contenu",
                                 "Leads qualifiés orientés installation",
                                 "Le client choisit lui-même",
@@ -397,7 +398,7 @@ export function SignUpForm() {
                                 <FileText className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
-                            <div className="text-purple-600 font-bold text-xl mt-1">200 € <span className="text-xs text-slate-500 font-normal">/ an HT</span></div>
+                            <div className="text-purple-600 font-bold text-xl mt-1">380 € <span className="text-xs text-slate-500 font-normal">/ an HT</span></div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
@@ -405,7 +406,7 @@ export function SignUpForm() {
                                 "0 vente de contact",
                                 "Visibilité locale sur Gainable.fr",
                                 "Page PRO dédiée",
-                                "Création 3 articles / mois (Optimisé SEO)",
+                                "Création 10 articles / mois (Optimisé SEO)",
                                 "Assistant IA : Génération intégrale du contenu",
                                 "Carte interactive",
                                 "Leads & contacts illimités",

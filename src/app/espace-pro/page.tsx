@@ -89,7 +89,8 @@ export default function EspaceProPage() {
                                 {[
                                     "Visibilité sur Gainable.fr",
                                     "Page dédiée",
-                                    "Création 3 articles / mois (Optimisé SEO)",
+                                    "Création 10 articles / mois (Optimisé SEO)",
+                                    "Zone d'intervention possible élargie sur toute la France",
                                     "SEO standard",
                                     "Leads & contacts illimités",
                                     "Accès codes APE dédiés BE",
@@ -122,7 +123,7 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">520 €</span> <span className="text-sm text-slate-500 font-normal">/ an TTC</span>
+                                    <span className="text-[#D59B2B] font-bold text-3xl">650 €</span> <span className="text-sm text-slate-500 font-normal">/ an HT</span>
                                 </div>
                                 <div className="text-sm font-bold text-white mb-4 bg-[#D59B2B] inline-block px-3 py-1 rounded-sm shadow-sm">
                                     🟨 Expert Gainable certifié
@@ -136,7 +137,7 @@ export default function EspaceProPage() {
                                 {[
                                     "Priorité SEO réelle et mesurable",
                                     "Mise en avant Premium",
-                                    "Création 3 articles / mois (Optimisé SEO)",
+                                    "Création 10 articles / mois (Optimisé SEO)",
                                     "Badge Expert visible",
                                     "Leads qualifiés",
                                     "Aucun intermédiaire",
@@ -166,7 +167,7 @@ export default function EspaceProPage() {
                                     <FileText className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Diagnostiqueur</h3>
-                                <div className="text-4xl font-bold text-gray-900 mb-2">200 € <span className="text-lg font-normal text-gray-500">/ an TTC</span></div>
+                                <div className="text-4xl font-bold text-gray-900 mb-2">380 € <span className="text-lg font-normal text-gray-500">/ an HT</span></div>
                                 <p className="text-slate-500 text-sm">
                                     Pour les diagnostiqueurs CVC / Audit / Conseil.
                                 </p>
@@ -176,7 +177,7 @@ export default function EspaceProPage() {
                                 {[
                                     "Visibilité locale sur Gainable.fr",
                                     "Page PRO dédiée",
-                                    "Création 3 articles / mois (Optimisé SEO)",
+                                    "Création 10 articles / mois (Optimisé SEO)",
                                     "Carte interactive",
                                     "Leads & contacts illimités",
                                     "Missions de diagnostic",

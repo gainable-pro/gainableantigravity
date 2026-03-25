@@ -21,25 +21,26 @@ export async function POST(req: NextRequest) {
         // Basic validation
         if (!planId) return NextResponse.json({ error: "Missing planId" }, { status: 400 });
 
-        // Determine price ID
-        let priceId = "";
+        // Determine price dynamically instead of env vars
+        let unitAmount = 0;
+        let intervalType: 'year' | 'month' = 'year';
+        let productName = '';
 
         if (planId === 'cvc') {
+            productName = 'Société Expert CVC';
             if (interval === 'monthly') {
-                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || '';
+                unitAmount = 5000; // 50.00 € HT
+                intervalType = 'month';
             } else {
-                priceId = process.env.STRIPE_PRICE_CVC || '';
+                unitAmount = 65000; // 650.00 € HT
+                intervalType = 'year';
             }
         } else if (planId === 'diag') {
-            priceId = process.env.STRIPE_PRICE_DIAG || '';
+            productName = 'Diagnostiqueur';
+            unitAmount = 38000; // 380.00 € HT
+            intervalType = 'year';
         } else {
-            // Fallback if direct ID sent (rare case)
-            priceId = planId;
-        }
-
-        if (!priceId) {
-            console.error("Stripe Config Error: Missing Price ID for", planId, interval);
-            return NextResponse.json({ error: "Invalid Price ID configuration" }, { status: 500 });
+            return NextResponse.json({ error: "Invalid plan ID configuration" }, { status: 400 });
         }
 
         // Determine base URL dynamically or use env
@@ -51,7 +52,17 @@ export async function POST(req: NextRequest) {
             payment_method_types: ['card'],
             line_items: [
                 {
-                    price: priceId,
+                    price_data: {
+                        currency: 'eur',
+                        product_data: {
+                            name: productName,
+                        },
+                        unit_amount: unitAmount,
+                        recurring: {
+                            interval: intervalType,
+                        },
+                        tax_behavior: 'exclusive',
+                    },
                     quantity: 1,
                 },
             ],
