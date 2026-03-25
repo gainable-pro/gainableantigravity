@@ -651,26 +651,6 @@ export function SignUpForm() {
                                                         <div className="font-bold text-xl">{getPlanPrice(selectedPlan)}</div>
                                                     </div>
                                                 </div>
-                                                {/* TTC breakdown for paid plans */}
-                                                {getTTCPrice(selectedPlan) && (() => {
-                                                    const prices = getTTCPrice(selectedPlan)!;
-                                                    return (
-                                                        <div className="bg-slate-800/60 rounded-xl p-4 text-sm space-y-2">
-                                                            <div className="flex justify-between text-slate-400">
-                                                                <span>Sous-total HT</span>
-                                                                <span>{prices.ht}</span>
-                                                            </div>
-                                                            <div className="flex justify-between text-slate-400">
-                                                                <span>TVA 20%</span>
-                                                                <span>+ {prices.tva}</span>
-                                                            </div>
-                                                            <div className="flex justify-between font-bold text-white border-t border-slate-600 pt-2">
-                                                                <span>Total TTC</span>
-                                                                <span className="text-[#D59B2B]">{prices.ttc} {prices.period}</span>
-                                                            </div>
-                                                        </div>
-                                                    );
-                                                })()}
                                             </div>
 
                                             <ul className="space-y-3">
