@@ -21,49 +21,31 @@ export async function POST(req: NextRequest) {
         // Basic validation
         if (!planId) return NextResponse.json({ error: "Missing planId" }, { status: 400 });
 
-        // Determine price dynamically instead of env vars
-        let unitAmount = 0;
-        let intervalType: 'year' | 'month' = 'year';
-        let productName = '';
+        // Use Stripe catalog Price IDs (managed via Stripe Dashboard)
+        let priceId = '';
 
         if (planId === 'cvc') {
-            productName = 'Société Expert CVC';
             if (interval === 'monthly') {
-                unitAmount = 5000; // 50.00 € HT
-                intervalType = 'month';
+                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || 'price_1T8hJqGfw444kXxv99Kosa0S';
             } else {
-                unitAmount = 65000; // 650.00 € HT
-                intervalType = 'year';
+                priceId = process.env.STRIPE_PRICE_CVC || 'price_1T8hJqGfw444kXxvrjmaGSFL';
             }
         } else if (planId === 'diag') {
-            productName = 'Diagnostiqueur';
-            unitAmount = 38000; // 380.00 € HT
-            intervalType = 'year';
+            priceId = process.env.STRIPE_PRICE_DIAG || 'price_1T8hJmGfw444kXxvsMWeMh7d';
         } else {
             return NextResponse.json({ error: "Invalid plan ID configuration" }, { status: 400 });
         }
 
         // Determine base URL dynamically or use env
         const origin = req.headers.get('origin');
-        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || origin || "https://www.gainable.ch";
+        const baseUrl = process.env.NEXT_PUBLIC_APP_URL || origin || "https://www.gainable.fr";
 
         const session = await stripe.checkout.sessions.create({
             mode: 'subscription',
             payment_method_types: ['card'],
             line_items: [
                 {
-                    price_data: {
-                        currency: 'eur',
-                        product_data: {
-                            name: productName,
-                            tax_code: 'txcd_10103001', // SaaS / Digital Services
-                        },
-                        unit_amount: unitAmount,
-                        recurring: {
-                            interval: intervalType,
-                        },
-                        tax_behavior: 'exclusive',
-                    },
+                    price: priceId,
                     quantity: 1,
                 },
             ],
