@@ -159,8 +159,8 @@ export default function PourquoiGainablePage() {
                     </div>
 
                     <div className="text-center mb-20">
-                        <div className="inline-block bg-[#1F2D3D] text-white px-6 py-2 rounded-full font-bold shadow-lg transform -rotate-1">
-                            👉 Ce décalage n’était plus acceptable.
+                        <div className="inline-block bg-[#1F2D3D] text-white px-8 py-4 rounded-full font-bold text-xl shadow-lg">
+                            Ce décalage n'était plus acceptable.
                         </div>
                     </div>
 
@@ -411,8 +411,8 @@ export default function PourquoiGainablePage() {
                             </div>
                         </div>
 
-                        <div className="mt-10 inline-block px-4 py-2 bg-[#D59B2B]/10 text-[#D59B2B] text-sm font-bold rounded-lg">
-                            👉 Moins de profils, plus de visibilité pour chacun.
+                        <div className="mt-10 inline-block px-6 py-3 bg-[#D59B2B]/10 text-[#D59B2B] text-base font-bold rounded-lg">
+                            Moins de profils, plus de visibilité pour chacun.
                         </div>
                     </div>
                 </div>
