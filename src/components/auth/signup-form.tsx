@@ -356,13 +356,13 @@ export function SignUpForm() {
                             </div>
 
                             {/* Commitment Note */}
-                            {billingInterval === 'monthly' && (
-                                <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
-                                    <span className="text-[#D59B2B] font-bold">Engagement 12 mois reconductible.</span>
-                                    <br />
-                                    Résiliation possible 1 mois avant la fin du contrat.
-                                </div>
-                            )}
+                            <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
+                                <span className="text-[#D59B2B] font-bold">
+                                    {billingInterval === 'monthly' ? 'Engagement 12 mois reconductible.' : 'Abonnement annuel reconductible.'}
+                                </span>
+                                <br />
+                                Résiliation possible 1 mois avant la {billingInterval === 'monthly' ? 'fin du contrat' : "date d'anniversaire"}.
+                            </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
@@ -399,6 +399,13 @@ export function SignUpForm() {
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
                             <div className="text-purple-600 font-bold text-xl mt-1">380 € <span className="text-xs text-slate-500 font-normal">/ an HT</span></div>
+                            
+                            {/* Commitment Note */}
+                            <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
+                                <span className="text-[#D59B2B] font-bold">Abonnement annuel reconductible.</span>
+                                <br />
+                                Résiliation possible 1 mois avant la date d'anniversaire.
+                            </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
