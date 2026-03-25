@@ -268,6 +268,18 @@ export function SignUpForm() {
         return "";
     };
 
+    const getTTCPrice = (p: string) => {
+        if (p === 'societe') {
+            return billingInterval === 'yearly'
+                ? { ht: "650 €", tva: "130 €", ttc: "780 €", period: "/an" }
+                : { ht: "50 €", tva: "10 €", ttc: "60 €", period: "/mois" };
+        }
+        if (p === 'diagnostiqueur') {
+            return { ht: "380 €", tva: "76 €", ttc: "456 €", period: "/an" };
+        }
+        return null;
+    };
+
     return (
         <div className="w-full">
 
@@ -629,14 +641,36 @@ export function SignUpForm() {
                                         </h3>
 
                                         <div className="space-y-6">
-                                            <div className="flex justify-between items-start pb-6 border-b border-slate-700">
-                                                <div>
-                                                    <div className="text-slate-400 text-sm mb-1">Offre sélectionnée</div>
-                                                    <div className="font-bold text-lg text-[#D59B2B]">{getPlanName(selectedPlan)}</div>
+                                            <div className="pb-6 border-b border-slate-700">
+                                                <div className="flex justify-between items-start mb-4">
+                                                    <div>
+                                                        <div className="text-slate-400 text-sm mb-1">Offre sélectionnée</div>
+                                                        <div className="font-bold text-lg text-[#D59B2B]">{getPlanName(selectedPlan)}</div>
+                                                    </div>
+                                                    <div className="text-right">
+                                                        <div className="font-bold text-xl">{getPlanPrice(selectedPlan)}</div>
+                                                    </div>
                                                 </div>
-                                                <div className="text-right">
-                                                    <div className="font-bold text-xl">{getPlanPrice(selectedPlan)}</div>
-                                                </div>
+                                                {/* TTC breakdown for paid plans */}
+                                                {getTTCPrice(selectedPlan) && (() => {
+                                                    const prices = getTTCPrice(selectedPlan)!;
+                                                    return (
+                                                        <div className="bg-slate-800/60 rounded-xl p-4 text-sm space-y-2">
+                                                            <div className="flex justify-between text-slate-400">
+                                                                <span>Sous-total HT</span>
+                                                                <span>{prices.ht}</span>
+                                                            </div>
+                                                            <div className="flex justify-between text-slate-400">
+                                                                <span>TVA 20%</span>
+                                                                <span>+ {prices.tva}</span>
+                                                            </div>
+                                                            <div className="flex justify-between font-bold text-white border-t border-slate-600 pt-2">
+                                                                <span>Total TTC</span>
+                                                                <span className="text-[#D59B2B]">{prices.ttc} {prices.period}</span>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })()}
                                             </div>
 
                                             <ul className="space-y-3">
