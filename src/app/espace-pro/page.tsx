@@ -36,13 +36,13 @@ export default function EspaceProPage() {
                         <p className="text-lg text-slate-200 mb-6 leading-relaxed">
                             À cela s’ajoutent les plateformes traditionnelles de mise en relation qui revendent souvent les mêmes leads à plusieurs prestataires, générant une concurrence centrée uniquement sur le prix, au détriment de la qualité.
                         </p>
-                        <div className="bg-white/10 p-6 rounded-xl border-l-4 border-[#D59B2B] mb-8">
-                            <p className="font-medium text-white mb-2">Gainable.fr est né pour répondre à un besoin simple :</p>
-                            <ul className="space-y-1 text-slate-200">
-                                <li>👉 valoriser les vrais professionnels,</li>
-                                <li>👉 apporter des contacts réellement qualifiés,</li>
-                                <li>👉 rétablir la confiance entre artisans et clients,</li>
-                                <li>👉 donner aux TPE/PME les outils pour rivaliser avec les grands acteurs du web.</li>
+                        <div className="bg-white/10 p-8 rounded-xl border-l-4 border-[#D59B2B] mb-8 shadow-md">
+                            <p className="font-bold text-white text-xl mb-4">Gainable.fr est né pour répondre à un besoin simple :</p>
+                            <ul className="space-y-3 text-lg text-slate-100 list-disc pl-6 leading-relaxed">
+                                <li>valoriser les vrais professionnels,</li>
+                                <li>apporter des contacts réellement qualifiés,</li>
+                                <li>rétablir la confiance entre artisans et clients,</li>
+                                <li>donner aux TPE/PME les outils pour rivaliser avec les grands acteurs du web.</li>
                             </ul>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4">
@@ -124,6 +124,10 @@ export default function EspaceProPage() {
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
                                     <span className="text-[#D59B2B] font-bold text-3xl">650 €</span> <span className="text-sm text-slate-500 font-normal">/ an HT</span>
+                                    <div className="text-xs text-slate-500 mt-2 font-medium">
+                                        Abonnement annuel reconductible.<br/>
+                                        Résiliation 1 mois avant la date d'anniversaire.
+                                    </div>
                                 </div>
                                 <div className="text-sm font-bold text-white mb-4 bg-[#D59B2B] inline-block px-3 py-1 rounded-sm shadow-sm">
                                     🟨 Expert Gainable certifié
@@ -168,6 +172,10 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Diagnostiqueur</h3>
                                 <div className="text-4xl font-bold text-gray-900 mb-2">380 € <span className="text-lg font-normal text-gray-500">/ an HT</span></div>
+                                <div className="text-xs text-slate-500 mt-2 font-medium mb-4">
+                                    Abonnement annuel reconductible.<br/>
+                                    Résiliation 1 mois avant la date d'anniversaire.
+                                </div>
                                 <p className="text-slate-500 text-sm">
                                     Pour les diagnostiqueurs CVC / Audit / Conseil.
                                 </p>
