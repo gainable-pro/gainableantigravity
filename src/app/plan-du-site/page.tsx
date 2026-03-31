@@ -1,5 +1,6 @@
 
 import { CITIES_100, CityData } from "@/data/cities-100";
+import { CITIES_EXTENDED } from "@/data/cities-extended";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -13,6 +14,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-static';
 
+const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+
 export default function SitemapPage() {
     // 1. Group by Country
     const countries = {
@@ -22,7 +25,7 @@ export default function SitemapPage() {
         MA: { name: "Maroc", cities: [] as CityData[] },
     };
 
-    CITIES_100.forEach(city => {
+    ALL_CITIES.forEach(city => {
         const countryCode = city.country || 'FR';
         if (countries[countryCode]) {
             countries[countryCode].cities.push(city);
