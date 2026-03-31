@@ -1,0 +1,3 @@
+scripts/seed-seo-massive.ts(155,17): error TS2322: Type '{ slug: string; }' is not assignable to type 'ArticleWhereUniqueInput'.
+  Type '{ slug: string; }' is not assignable to type '{ expertId_slug: ArticleExpertIdSlugCompoundUniqueInput; } & { id?: string; expertId_slug?: ArticleExpertIdSlugCompoundUniqueInput; ... 20 more ...; expert?: (Without<...> & ExpertWhereInput) | (Without<...> & ExpertRelationFilter); }'.
+    Property 'expertId_slug' is missing in type '{ slug: string; }' but required in type '{ expertId_slug: ArticleExpertIdSlugCompoundUniqueInput; }'.

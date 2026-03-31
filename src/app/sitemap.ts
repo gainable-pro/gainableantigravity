@@ -55,10 +55,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
     // 4. City Landing Pages (SSG)
-    // We import CITIES_100 to generate these
+    // We import both city lists to generate these
     const { CITIES_100 } = await import('@/data/cities-100');
+    const { CITIES_EXTENDED } = await import('@/data/cities-extended');
 
-    const cityRoutes = CITIES_100.map((city) => ({
+    const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+
+    const cityRoutes = ALL_CITIES.map((city) => ({
         url: `${baseUrl}/climatisation/${city.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,

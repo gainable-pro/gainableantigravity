@@ -503,12 +503,12 @@ export default function Home() {
       </section >
 
       {/* BLOC: NOS ZONES D'INTERVENTION (SEO MAILLAGE) */}
-      <section className="py-16 bg-white border-t border-slate-100">
+      <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-[#1F2D3D] mb-8">
             Installation Climatisation Gainable : Nos zones d'intervention
           </h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-8">
             <Link href="/climatisation/paris" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Paris</Link>
             <span className="text-slate-300">•</span>
             <Link href="/climatisation/marseille" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Marseille</Link>
@@ -521,26 +521,26 @@ export default function Home() {
             <span className="text-slate-300">•</span>
             <Link href="/climatisation/nantes" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Nantes</Link>
             <span className="text-slate-300">•</span>
-            <Link href="/climatisation/montpellier" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Montpellier</Link>
-            <span className="text-slate-300">•</span>
             <Link href="/climatisation/strasbourg" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Strasbourg</Link>
             <span className="text-slate-300">•</span>
             <Link href="/climatisation/bordeaux" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Bordeaux</Link>
             <span className="text-slate-300">•</span>
-            <Link href="/climatisation/lille" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Lille</Link>
+            <Link href="/climatisation/lausanne" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors border-b border-dashed border-slate-300">Lausanne (CH)</Link>
             <span className="text-slate-300">•</span>
-            <Link href="/climatisation/rennes" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Rennes</Link>
-            <span className="text-slate-300">•</span>
-            <Link href="/climatisation/reims" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Reims</Link>
-            <span className="text-slate-300">•</span>
-            <Link href="/climatisation/toulon" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Toulon</Link>
-            <span className="text-slate-300">•</span>
-            <Link href="/climatisation/saint-etienne" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Saint-Étienne</Link>
-            <span className="text-slate-300">•</span>
-            <Link href="/climatisation/le-havre" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Le Havre</Link>
+            <Link href="/climatisation/bruxelles" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors border-b border-dashed border-slate-300">Bruxelles (BE)</Link>
           </div>
-          <p className="mt-6 text-sm text-slate-400">
-            Intervention dans toute la France avec nos installateurs partenaires RGE.
+          
+          <div className="flex justify-center mt-8">
+            <Link href="/climatisation/villes">
+              <Button variant="outline" className="border-2 border-[#1F2D3D] text-[#1F2D3D] hover:bg-[#1F2D3D] hover:text-white font-bold py-6 px-8 rounded-full shadow-md hover:shadow-xl transition-all h-auto text-lg flex items-center gap-2">
+                <MapPin className="w-5 h-5" />
+                Voir nos 550+ Villes Couvertes (France, Suisse, Belgique)
+              </Button>
+            </Link>
+          </div>
+          
+          <p className="mt-8 text-sm text-slate-500 max-w-2xl mx-auto">
+            Intervention dans toute l'Europe francophone avec notre réseau exclusif d'installateurs partenaires locaux vérifiés.
           </p>
         </div>
       </section>

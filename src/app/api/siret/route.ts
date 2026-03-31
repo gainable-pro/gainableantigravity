@@ -11,10 +11,25 @@ export async function GET(request: Request) {
 
     try {
         // Use the official, free, open French Government API
-        const response = await fetch(`https://recherche-entreprises.api.gouv.fr/search?q=${siret}&limit=1`);
+        let response;
+        let retries = 3;
+        
+        while (retries > 0) {
+            try {
+                response = await fetch(`https://recherche-entreprises.api.gouv.fr/search?q=${siret}&limit=1`, { cache: 'no-store' });
+                if (response.ok) break; // Success!
+            } catch (e) {
+                console.error("Fetch failed (network error):", e);
+            }
+            
+            retries--;
+            if (retries > 0) {
+                await new Promise(resolve => setTimeout(resolve, 1000)); // wait 1s before next try
+            }
+        }
 
-        if (!response.ok) {
-            return NextResponse.json({ error: 'Erreur API Gouvernementale' }, { status: response.status });
+        if (!response || !response.ok) {
+            return NextResponse.json({ error: 'Erreur API Gouvernementale' }, { status: response?.status || 500 });
         }
 
         const data = await response.json();

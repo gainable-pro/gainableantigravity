@@ -1,0 +1,25 @@
+Starting MASSIVE Article Generation...
+PrismaClientInitializationError: 
+Invalid `prisma.expert.findFirst()` invocation in
+C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\scripts\seed-seo-massive.ts:86:38
+
+  83 console.log("Starting MASSIVE Article Generation...");
+  84 
+  85 // Expert setup
+→ 86 let expert = await prisma.expert.findFirst(
+error: Environment variable not found: DATABASE_URL.
+  -->  schema.prisma:7
+   | 
+ 6 |   provider  = "postgresql"
+ 7 |   url       = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+    at $n.handleRequestError (C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\node_modules\@prisma\client\runtime\library.js:121:7615)
+    at $n.handleAndLogRequestError (C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async main (C:\Users\ghari\.gemini\antigravity\scratch\gainable-fr\scripts\seed-seo-massive.ts:86:18) {
+  clientVersion: '5.22.0',
+  errorCode: undefined
+}

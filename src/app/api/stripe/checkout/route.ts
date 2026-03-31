@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
                 },
             ],
             customer_email: email, // Pre-fill email if available
+            customer_update: { address: 'auto', name: 'auto' }, // Required for automatic_tax
             metadata: {
                 expertId: expertId || "pending_creation", // If expert created before, pass ID. If not, handle differently.
                 // Based on user flow: Form -> DB (Pending) -> Payment. So expertId SHOULD be present.
