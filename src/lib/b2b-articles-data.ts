@@ -3,22 +3,22 @@ export const b2bArticles = [
         title: "La Fin de l'Âge d'Or de l'Achat de Leads : Pourquoi vous êtes esclave du système",
         slug: "fin-age-or-achat-leads-esclavage-systeme",
         intro: "Acheter un contact à 40€ pour s'apercevoir qu'il a été revendu à 5 autres entreprises... C'est le quotidien de milliers d'artisans. Il est temps de briser les chaînes.",
-        mainImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+        mainImage: "/blog/art1-hero.png",
         contentHtml: `
             <h2>Le Piège de la Non-Exclusivité</h2>
             <p>Quand un particulier cherche un artisan pour installer une pompe à chaleur, il remplit un formulaire sur une grande plateforme. Ses coordonnées sont vendues à prix d'or à plusieurs entreprises simultanément.</p>
             <p>Le résultat ? Vous payez entre 30€ et 60€ pour un "lead", mais vous devez engager une bataille avec 5 confrères locaux.</p>
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80" alt="Bataille commerciale" />
+            <img src="/blog/art1-bataille.png" alt="Bataille commerciale" />
 
             <h2>La Guerre des Prix : Une Course Vers le Bas</h2>
             <p>Quand 5 entreprises appellent le même client dans l'heure, le client se retrouve en position de force absolue. Son seul critère de choix devient bien souvent le prix le plus bas.</p>
-            <p>Vous êtes contraint de rogner sur votre marge. Vous travaillez plus, pour gagner moins. Finalement, seule la plateforme s'enrichit.</p>
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Baisse des marges" />
+            <p>Vous êtes contraint de rogner sur votre marge. Vous travaillez plus, pour gagner moins. Finalement, seules les plateformes de vente de contact ou de vente de lead s'enrichissent.</p>
+            <img src="/blog/art1-baisse.png" alt="Baisse des marges" />
 
             <h2>La Solution Gainable.fr</h2>
             <p>C'est exactement pour lutter contre ce système que Gainable.fr a été conçu. Contrairement aux vendeurs de leads, nous proposons des contacts 100% exclusifs.</p>
             <p>Le client parcours votre profil (vos vidéos, vos réalisations) et décide de vous contacter VOUS. 0 commission, pas de revente.</p>
-            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Solution exclusive" />
+            <img src="/blog/art1-solution.png" alt="Solution exclusive" />
         `
     },
     {
