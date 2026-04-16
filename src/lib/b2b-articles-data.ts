@@ -1,6 +1,6 @@
 export const b2bArticles = [
     {
-        title: "La Fin de l'Âge d'Or de l'Achat de Leads : Pourquoi vous êtes esclave du système",
+        title: "La fin de l'âge d'or de l'achat de leads : Pourquoi vous êtes esclave du système",
         slug: "fin-age-or-achat-leads-esclavage-systeme",
         intro: "Acheter un contact à 40€ pour s'apercevoir qu'il a été revendu à 5 autres entreprises... C'est le quotidien de milliers d'artisans. Il est temps de briser les chaînes.",
         mainImage: "/blog/art1-hero.png",
