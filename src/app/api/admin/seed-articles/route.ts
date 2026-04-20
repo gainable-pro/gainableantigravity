@@ -21,51 +21,44 @@ export async function GET(req: Request) {
         const stats = { created: 0, updated: 0 };
         const results = [];
 
-        for (const article of b2bArticles) {
+        const results = await Promise.all(b2bArticles.map(async (article) => {
+            const articleData = {
+                title: article.title,
+                slug: article.slug,
+                expertId: expert.id,
+                introduction: article.intro,
+                content: article.contentHtml,
+                status: 'PUBLISHED' as any,
+                mainImage: article.mainImage,
+                jsonContent: {
+                    sections: [{ title: article.title, content: article.contentHtml }],
+                    faq: []
+                }
+            };
+
             const existing = await prisma.article.findUnique({
                 where: { expertId_slug: { expertId: expert.id, slug: article.slug } }
             });
 
             if (existing) {
-                console.log(`Article "${article.slug}" already exists, updating...`);
                 await prisma.article.update({
                     where: { id: existing.id },
-                    data: {
-                        title: article.title,
-                        introduction: article.intro,
-                        content: article.contentHtml,
-                        status: 'PUBLISHED',
-                        mainImage: article.mainImage,
-                        jsonContent: {
-                            sections: [{ title: article.title, content: article.contentHtml }],
-                            faq: []
-                        }
-                    }
+                    data: articleData
                 });
-                stats.updated++;
-                results.push({ slug: article.slug, action: 'updated', url: `https://www.gainable.fr/entreprise/gainable-fr/articles/${article.slug}` });
+                return { slug: article.slug, action: 'updated', url: `https://www.gainable.fr/entreprise/gainable-fr/articles/${article.slug}` };
             } else {
-                console.log(`Creating new article "${article.slug}"...`);
                 await prisma.article.create({
                     data: {
-                        title: article.title,
-                        slug: article.slug,
-                        expertId: expert.id,
-                        introduction: article.intro,
-                        content: article.contentHtml,
-                        status: 'PUBLISHED',
-                        publishedAt: new Date(),
-                        mainImage: article.mainImage,
-                        jsonContent: {
-                            sections: [{ title: article.title, content: article.contentHtml }],
-                            faq: []
-                        }
+                        ...articleData,
+                        publishedAt: new Date()
                     }
                 });
-                stats.created++;
-                results.push({ slug: article.slug, action: 'created', url: `https://www.gainable.fr/entreprise/gainable-fr/articles/${article.slug}` });
+                return { slug: article.slug, action: 'created', url: `https://www.gainable.fr/entreprise/gainable-fr/articles/${article.slug}` };
             }
-        }
+        }));
+
+        stats.updated = results.filter(r => r.action === 'updated').length;
+        stats.created = results.filter(r => r.action === 'created').length;
 
         return NextResponse.json({ success: true, stats, results });
     } catch (e) {
