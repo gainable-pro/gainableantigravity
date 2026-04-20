@@ -110,17 +110,28 @@ export const b2bArticles = [
     {
         title: "Guerre des prix : pourquoi le moins cher a toujours tort",
         slug: "guerre-des-prix-pourquoi-le-moins-cher-a-tort",
-        intro: "Batailler sur les prix est la stratégie des perdants. Voici comment justifier un tarif plus élevé tout en signant plus de chantiers.",
-        mainImage: "https://images.unsplash.com/photo-1611095973763-414019e72400?auto=format&fit=crop&w=1200&q=80",
+        intro: "Batailler sur les prix est la stratégie des perdants. Dans le secteur de la climatisation, casser ses marges pour remporter un chantier conduit inévitablement à la faillite. Voici comment justifier un tarif plus élevé tout en signant plus de clients.",
+        mainImage: "/blog/art6-hero.png",
         contentHtml: `
             <h2>Le mythe du prix comme seul arbitre.</h2>
-            <p>Si tous les clients ne cherchaient que le moins cher, il n'y aurait plus d'artisans haut de gamme. Ce que le client cherche vraiment, c'est la <strong>réassurance</strong>.</p>
-            <p>Se battre avec 5 confrères sur le prix vous tire vers le bas et détruit votre qualité de vie.</p>
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80" alt="Discussion houleuse" />
+            <p>Si tous les clients ne cherchaient que le moins cher, il n'y aurait plus d'artisans haut de gamme ni de matériel premium. Ce que le client cherche vraiment lorsqu'il investit des milliers d'euros dans son confort, c'est la <strong>réassurance</strong>.</p>
+            <p>Accepter de se battre avec 5 confrères locaux sur le prix vous tire inexorablement vers le bas : vous finissez par rogner sur la qualité, ce qui détruit votre satisfaction et celle de votre client.</p>
+            <img src="/blog/art6-mythe.png" alt="Concurrence sur les prix" />
 
-            <h2>Vendre de la valeur, pas un prix.</h2>
-            <p>Quand vous êtes le seul contact du client (exclusivité), vous avez le temps d'expliquer votre expertise, et de valoriser vos finitions ou votre SAV. Vous ne vendez plus une machine, vous vendez de la tranquillité.</p>
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Signature avec sourire" />
+            <h2>Les dangers cachés d'un tarif low-cost.</h2>
+            <p>Lorsqu'un prospect choisit le devis d'installation le moins disant, il ignore souvent les conséquences : malfaçons, SAV inexistant, ou matériel sous-dimensionné.</p>
+            <p>C'est votre devoir d'éduquer le prospect. En assumant des prix justes, vous filtrez naturellement les "chasseurs de prix" toxiques pour ne garder que la clientèle qui respecte votre savoir-faire technique.</p>
+            <img src="/blog/art6-danger.png" alt="Dangers d'une mauvaise installation" />
+
+            <h2>Vendre de la valeur, pas un chiffre.</h2>
+            <p>Quand vous avez l'opportunité d'échapper à la comparaison sauvage, vous avez le temps d'expliquer votre expertise. Vous ne vendez plus une simple machine qui souffle de l'air froid.</p>
+            <p>Vous vendez une installation réalisée dans les règles de l'art, des finitions esthétiques invisibles et une tranquillité d'esprit sur 15 ans. Ce niveau d'accompagnement justifie pleinement un devis plus cher que la concurrence.</p>
+            <img src="/blog/art6-valeur.png" alt="Vendre de la valeur" />
+
+            <h2>L'exclusivité Gainable pour protéger vos marges.</h2>
+            <p>Sur les plateformes de leads classiques, vous êtes mis en concurrence directe avec des casseurs de prix. Sur Gainable.fr, le client fait la démarche de contacter un seul expert basé sur ses réalisations.</p>
+            <p>Vous n'êtes plus un numéro parmi d'autres, vous êtes l'expert sélectionné en priorité. Cette position d'autorité vous permet d'imposer vos tarifs sans avoir à justifier le moindre centime.</p>
+            <img src="/blog/art6-exclu.png" alt="Exclusivité de service" />
         `
     },
     {
