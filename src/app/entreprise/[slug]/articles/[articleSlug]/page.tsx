@@ -219,8 +219,8 @@ export default async function PublicArticlePage({ params }: PageProps) {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Article Image - Optimized */}
-            {article.mainImage ? (
+            {/* Article Image - Exclu pour les articles B2B Gainable.fr (plus de sobriété) */}
+            {article.mainImage && expert.slug !== 'gainable-fr' && (
                 <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-xl">
                     <Image
                         src={article.mainImage.startsWith('http') || article.mainImage.startsWith('/') ? article.mainImage : `/${article.mainImage}`}
@@ -230,14 +230,10 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         priority
                     />
                 </div>
-            ) : (
-                <div className="relative w-full h-[300px] md:h-[400px] bg-slate-300 flex items-center justify-center text-slate-500">
-                    Pas d'image
-                </div>
             )}
 
             {/* HEADER CONTENT (Below Image) */}
-            <div className="max-w-4xl mx-auto w-full px-6 -mt-12 relative z-10">
+            <div className={`max-w-4xl mx-auto w-full px-6 relative z-10 ${expert.slug !== 'gainable-fr' && article.mainImage ? '-mt-12' : 'mt-8'}`}>
                 <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 space-y-6">
                     <div className="flex items-center justify-between flex-wrap gap-4">
                         <div className="flex flex-wrap items-center gap-4 text-sm md:text-base">
