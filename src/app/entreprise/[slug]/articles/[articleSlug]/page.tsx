@@ -410,22 +410,37 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     <div className="bg-[#1F2D3D] p-8 rounded-2xl shadow-lg text-white text-center space-y-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#D59B2B]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-                        <h3 className="text-xl font-bold relative z-10">
-                            Besoin d'un conseil ou d'un devis ?
-                        </h3>
-                        <p className="text-slate-300 text-sm relative z-10">
-                            Contactez <strong>{expert.nom_entreprise}</strong> pour votre projet de climatisation gainable.
-                        </p>
-
-                        <Link
-                            href={expert.slug === 'gainable-fr' ? '/trouver-installateur' : `/pro/${expert.slug}#contact`}
-                            className="block relative z-10"
-                        >
-                            <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
-                                {expert.slug === 'gainable-fr' ? "Contacter un expert" : "Contacter cet expert"}
-                                <ArrowRight className="ml-2 w-4 h-4" />
-                            </Button>
-                        </Link>
+                        {expert.slug === 'gainable-fr' ? (
+                            <>
+                                <h3 className="text-xl font-bold relative z-10">
+                                    Développez votre activité CVC
+                                </h3>
+                                <p className="text-slate-300 text-sm relative z-10">
+                                    Rejoignez la plateforme dédiée aux installateurs et générez des contacts exclusifs sans commission.
+                                </p>
+                                <Link href="/pourquoi-gainable" className="block relative z-10">
+                                    <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
+                                        Rejoindre Gainable.fr
+                                        <ArrowRight className="ml-2 w-4 h-4" />
+                                    </Button>
+                                </Link>
+                            </>
+                        ) : (
+                            <>
+                                <h3 className="text-xl font-bold relative z-10">
+                                    Besoin d'un conseil ou d'un devis ?
+                                </h3>
+                                <p className="text-slate-300 text-sm relative z-10">
+                                    Contactez <strong>{expert.nom_entreprise}</strong> pour votre projet de climatisation gainable.
+                                </p>
+                                <Link href={`/pro/${expert.slug}#contact`} className="block relative z-10">
+                                    <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
+                                        Contacter cet expert
+                                        <ArrowRight className="ml-2 w-4 h-4" />
+                                    </Button>
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </aside>
             </div>
