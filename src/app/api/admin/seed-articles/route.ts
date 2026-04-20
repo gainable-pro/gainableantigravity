@@ -19,7 +19,6 @@ export async function GET(req: Request) {
         }
 
         const stats = { created: 0, updated: 0 };
-        const results = [];
 
         const results = await Promise.all(b2bArticles.map(async (article) => {
             const articleData = {
