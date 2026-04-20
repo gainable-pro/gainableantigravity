@@ -254,5 +254,29 @@ export const b2bArticles = [
             <h2>L'ère de la prise de contrat sans grand effort.</h2>
             <p>Dès votre premier coup de fil le lendemain matin, le client ne négocie rien du tout. Il veut juste valider la date de l'intervention. Il a lu vos prix indicatifs de la veille. Bienvenue dans la matrice Gainable.</p>
         `
+    },
+    {
+        title: "Devenez l'Expert Certifié Gainable : Demandez votre Badge et sortez du lot",
+        slug: "devenir-expert-certifie-gainable-badge-exclusivite",
+        intro: "Vous maîtrisez l'aéraulique, les systèmes VRV/DRV et le confort thermique pointu ? Arrêtez d'être comparé aux artisans généralistes. Arborez le Badge Expert Gainable.fr.",
+        mainImage: "/blog/art12-hero-badge.png",
+        contentHtml: `
+            <h2>L'expertise technique n'est pas une commodité.</h2>
+            <p>Vous réalisez principalement des installations complexes de Gainable, de systèmes VRV ou DRV ? Vous possédez une véritable expertise de la ventilation et de l'aéraulique ? Alors sortez du lot !</p>
+            <p>Le plus grand drame de votre métier est d'être constamment comparé sur le prix à d'autres artisans qui n'ont pas cette expertise spécifique (programmation de pointe, gestion globale du confort thermique).</p>
+            <img src="/blog/art12-expert.png" alt="Expert technique en intervention VRV" />
+
+            <h2>Ouvrez-vous à tous les secteurs d'activité (Tertiaire et Industriel).</h2>
+            <p>Une véritable expertise en froid ne se limite pas au résidentiel classique. Aujourd'hui, Gainable.fr cible et attire tous les secteurs d'activité générateurs de marges : industriel, restauration, hôtellerie, ainsi que les projets résidentiels haut de gamme.</p>
+            <p>En rejoignant notre écosystème, vous accédez à des donneurs d'ordres qui recherchent et paient le prix fort pour l'excellence technique que vous avez à offrir.</p>
+
+            <h2>La réassurance 360° : une étape incontournable.</h2>
+            <p>Aujourd'hui, c'est inévitable : dès qu'un client (particulier ou pro) recherche une installation, il vérifie le professionnel sur internet. Il va inévitablement croiser votre présence digitale.</p>
+            <p>Nous conseillons fermement d'avoir une présence web infaillible à la fois sur vos avis Google, sur votre site, et dans les grands annuaires. Mais le coup de grâce psychologique pour écraser la concurrence, c'est l'étiquette d'expert reconnu.</p>
+
+            <h2>Demandez votre badge et rejoignez l'élite du froid.</h2>
+            <p>Soyez officiellement référencé en tant que partenaire premium. Gainable.fr est la première plateforme de mise en relation 100% dédiée aux experts du froid et de la climatisation.</p>
+            <p>Demandez votre badge de certification. Affichez fièrement votre statut exclusif, laissez votre autorité parler pour vous, sortez définitivement du lot, et ne laissez plus un chantier vous échapper.</p>
+        `
     }
 ];
