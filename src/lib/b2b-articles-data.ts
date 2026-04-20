@@ -270,13 +270,18 @@ export const b2bArticles = [
             <p>Une véritable expertise en froid ne se limite pas au résidentiel classique. Aujourd'hui, Gainable.fr cible et attire tous les secteurs d'activité générateurs de marges : industriel, restauration, hôtellerie, ainsi que les projets résidentiels haut de gamme.</p>
             <p>En rejoignant notre écosystème, vous accédez à des donneurs d'ordres qui recherchent et paient le prix fort pour l'excellence technique que vous avez à offrir.</p>
 
-            <h2>La réassurance 360° : une étape incontournable.</h2>
-            <p>Aujourd'hui, c'est inévitable : dès qu'un client (particulier ou pro) recherche une installation, il vérifie le professionnel sur internet. Il va inévitablement croiser votre présence digitale.</p>
-            <p>Nous conseillons fermement d'avoir une présence web infaillible à la fois sur vos avis Google, sur votre site, et dans les grands annuaires. Mais le coup de grâce psychologique pour écraser la concurrence, c'est l'étiquette d'expert reconnu.</p>
+            <h2>Les garanties du Label Expert Vérifié.</h2>
+            <p>Ce badge n'est pas qu'un logo, c'est un véritable gage de transparence et d'engagement qualité pour le client. En rejoignant le réseau, Gainable.fr valorise votre sérieux en mettant en avant :</p>
+            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Garantie administrative :</strong> Assurances RC Pro et informations légales vérifiées.</li>
+                <li><strong>Engagement technique :</strong> Installation conforme aux normes et maîtrise parfaite de vos marques.</li>
+                <li><strong>Preuve sociale :</strong> Mise en avant de vos réalisations et de votre zone d'intervention précise.</li>
+            </ul>
+            <img src="/expert-verifie-logo-final.png" alt="Logo Expert Vérifié Gainable" />
 
             <h2>Demandez votre badge et rejoignez l'élite du froid.</h2>
-            <p>Soyez officiellement référencé en tant que partenaire premium. Gainable.fr est la première plateforme de mise en relation 100% dédiée aux experts du froid et de la climatisation.</p>
-            <p>Demandez votre badge de certification. Affichez fièrement votre statut exclusif, laissez votre autorité parler pour vous, sortez définitivement du lot, et ne laissez plus un chantier vous échapper.</p>
+            <p>Soyez officiellement référencé en tant que partenaire premium. Gainable.fr est la première plateforme de mise en relation 100% dédiée aux experts du froid et de l'aéraulique.</p>
+            <p>Demandez votre badge de certification. Affichez fièrement votre statut exclusif, laissez votre autorité parler pour vous, sortez définitivement du lot, et ne laissez plus un chantier qualifié vous échapper.</p>
         `
     }
 ];
