@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { b2bArticles } from "@/lib/b2b-articles-data";
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(req: Request) {
     try {
         console.log('Starting B2B Articles Generation...');

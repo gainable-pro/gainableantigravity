@@ -137,17 +137,28 @@ export const b2bArticles = [
     {
         title: "Calculez le vrai coût d'acquisition de vos chantiers",
         slug: "calcul-vrai-cout-acquisition-client-artisan",
-        intro: "Avez-vous déjà calculé combien vous coûte réellement un chantier signé via un revendeur de leads ? Sortez vos calculettes, les résultats font mal.",
-        mainImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+        intro: "Avez-vous déjà pris le temps de calculer combien vous coûte réellement un chantier signé via un revendeur de contacts ? Au-delà du prix unitaire du lead, sortez vos calculettes. Les résultats cachés font mal.",
+        mainImage: "/blog/art7-hero.png",
         contentHtml: `
-            <h2>Les coûts cachés.</h2>
-            <p>Un lead coûte 40€. Et si vous convertissez 1 prospect sur 10 (parce qu'ils sont revendus à la pelle), votre chantier vous a en réalité coûté 400€ d'acquisition.</p>
-            <p>Ajoutez à cela le temps (votre taux horaire) passé au téléphone à batailler pour obtenir un \"non\" ou un devis refusé. Vous êtes perdant.</p>
-            <img src="https://images.unsplash.com/photo-1580519542036-ed474161b6e1?auto=format&fit=crop&w=800&q=80" alt="Artisan faisant ses comptes" />
+            <h2>L'illusion mathématique du lead à 40€.</h2>
+            <p>Sur le papier, acheter une demande de devis à 40€ pour vendre une installation à 8000€ semble être une affaire en or. Mais c'est une illusion d'optique. Lorsqu'un lead est revendu à 5 confrères simultanément, votre taux de conversion chute drastiquement.</p>
+            <p>Si vous signez seulement 1 prospect sur 10 (parce que les autres vous ont court-circuité sur le prix), ce chantier vous a en réalité coûté 400€.</p>
+            <img src="/blog/art7-illusion.png" alt="Factures jetées" />
 
-            <h2>Divisez votre coût par 10.</h2>
-            <p>En concentrant vos efforts sur du référencement naturel organique (via un profil Gainable optimisé), vous investissez votre temps de façon pérenne.</p>
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Graphique ascendant" />
+            <h2>Votre temps de prospection a un prix direct.</h2>
+            <p>Il n'y a pas que l'achat pur qui saigne votre marge. Calculez votre taux horaire d'expert CVC : 60€/h ? 80€/h ? Combien de temps passez-vous au téléphone à argumenter et rassurer un client fuyant ?</p>
+            <p>Si vous passez 3 heures de gestion commerciale infructueuse pour chaque lead jeté à la corbeille, le vrai coût de votre chantier signé dépasse allègrement les 1000€.</p>
+            <img src="/blog/art7-temps.png" alt="Temps perdu au téléphone" />
+
+            <h2>La spirale infernale du besoin d'appels.</h2>
+            <p>Ce modèle économique vous oblige à acheter sans cesse de nouveaux leads pour espérer amortir les pertes précédentes. Vous devenez rentier du système.</p>
+            <p>Et le mois où vous arrêtez de payer, votre carnet de commandes tombe instantanément à zéro, car vous n'avez construit aucune fondation ni aucune image de marque.</p>
+            <img src="/blog/art7-spirale.png" alt="Perte financière" />
+
+            <h2>Le changement de paradigme : la rentabilité organique.</h2>
+            <p>En concentrant votre budget sur un référencement local performant (votre propre profil Gainable), vous construisez un actif. Un article rédigé sur une installation spécifique continuera d'attirer des appels gratuits pendant des mois.</p>
+            <p>Vous divisez votre coût d'acquisition par 10 et vous retrouvez la maîtrise de votre temps. Vos marges sont protégées.</p>
+            <img src="/blog/art7-rentabilite.png" alt="Rentabilité ascendante" />
         `
     },
     {
