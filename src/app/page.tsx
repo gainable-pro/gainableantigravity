@@ -2,6 +2,12 @@ import { Metadata } from 'next';
 import { headers } from 'next/headers';
 import SearchPageClient from '@/app/trouver-installateur/search-client';
 import { getExperts } from '@/lib/experts';
+import { CITIES_100 } from "@/data/cities-100";
+import { CITIES_EXTENDED } from "@/data/cities-extended";
+import { slugify } from '@/lib/utils';
+import Link from 'next/link';
+
+const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
 
 export const dynamic = 'force-dynamic';
 
@@ -127,6 +133,46 @@ export default async function SearchPage({
                     <p className="text-sm text-slate-500 italic">
                         Gainable.fr : La référence des experts vérifiés du génie climatique.
                     </p>
+                </div>
+            </section>
+
+            {/* Regions Directory Hub */}
+            <section className="bg-slate-50 py-16 border-t border-slate-200">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#1F2D3D] mb-10 text-center">Nos zones d'intervention par région</h2>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {['FR', 'CH', 'BE', 'MA'].map((countryKey) => {
+                            const regions = Array.from(new Set(
+                                ALL_CITIES.filter(c => (c.country || 'FR') === countryKey).map(c => c.region)
+                            )).sort();
+
+                            if (regions.length === 0) return null;
+
+                            const flagMap: Record<string, string> = { 'FR': '🇫🇷', 'CH': '🇨🇭', 'BE': '🇧🇪', 'MA': '🇲🇦' };
+                            const nameMap: Record<string, string> = { 'FR': 'France', 'CH': 'Suisse', 'BE': 'Belgique', 'MA': 'Maroc' };
+
+                            return (
+                                <div key={countryKey} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                    <h3 className="font-bold text-lg text-[#1F2D3D] mb-4 pb-3 border-b border-slate-100 flex items-center gap-2">
+                                        <span className="text-xl">{flagMap[countryKey]}</span> {nameMap[countryKey]}
+                                    </h3>
+                                    <ul className="space-y-3">
+                                        {regions.map(region => (
+                                            <li key={region}>
+                                                <Link 
+                                                    href={`/trouver-installateur/${slugify(region)}`}
+                                                    className="text-slate-600 hover:text-[#D59B2B] hover:translate-x-1 transition-transform inline-block text-sm font-medium"
+                                                >
+                                                    {region}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </section>
         </div>

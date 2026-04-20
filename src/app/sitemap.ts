@@ -58,8 +58,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // We import both city lists to generate these
     const { CITIES_100 } = await import('@/data/cities-100');
     const { CITIES_EXTENDED } = await import('@/data/cities-extended');
+    const { slugify } = await import('@/lib/utils');
 
     const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+
+    // 5. Region Hub Pages
+    const regions = Array.from(new Set(ALL_CITIES.map(c => c.region)));
+    const regionRoutes = regions.map(region => ({
+        url: `${baseUrl}/trouver-installateur/${slugify(region)}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.95,
+    }));
 
     const cityRoutes = ALL_CITIES.map((city) => ({
         url: `${baseUrl}/climatisation/${city.slug}`,
@@ -68,6 +78,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
     }));
 
-    return [...routes, ...expertRoutes, ...articleRoutes, ...cityRoutes];
+    return [...routes, ...expertRoutes, ...articleRoutes, ...regionRoutes, ...cityRoutes];
 
 }
