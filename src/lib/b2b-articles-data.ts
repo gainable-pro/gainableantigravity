@@ -24,23 +24,23 @@ export const b2bArticles = [
     {
         title: "Nouvelle loi du 11 août sur la prospection : ce qui va changer",
         slug: "nouvelle-loi-11-aout-prospection-artisan-changement",
-        intro: "La réglementation se durcit concernant le démarchage téléphonique et la vente de contacts. Découvrez comment adapter votre stratégie pour ne pas disparaître.",
-        mainImage: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=1200&q=80",
+        intro: "La réglementation se durcit concernant le démarchage téléphonique. Entre exigences strictes en BtoC et tolérances en BtoB, l'adaptation digitale est vitale pour maintenir votre activité.",
+        mainImage: "/blog/art2-hero.png",
         contentHtml: `
-            <h2>Une réglementation toujours plus stricte.</h2>
-            <p>Le démarchage téléphonique agressif vit ses dernières heures. La nouvelle loi du 11 août encadre encore plus drastiquement la façon dont les entreprises peuvent contacter les particuliers.</p>
-            <p>Acheter des listes de numéros ou spammer des prospects froids vous expose désormais à de lourdes sanctions financières.</p>
-            <img src="https://images.unsplash.com/photo-1505664124508-3edc4501a4db?auto=format&fit=crop&w=800&q=80" alt="Réglementation et lois" />
+            <h2>Démarchage BtoC vs BtoB : une réglementation à deux vitesses.</h2>
+            <p>Pour la vente aux professionnels (BtoB), les appels restent autorisés sous certaines conditions strictes. En revanche, pour les particuliers (BtoC), la règle est devenue intraitable, particulièrement dans le secteur de la rénovation énergétique où le démarchage à froid est totalement interdit.</p>
+            <p>Acheter des listes de numéros pour appeler des particuliers au hasard vous expose désormais à des amendes considérables et à la destruction de votre image.</p>
+            <img src="/blog/art2-loi.png" alt="Réglementation et interdictions" />
 
-            <h2>L'outbound est mort, vive l'inbound.</h2>
-            <p>La prospection "forcée" (aller chercher le client) doit laisser sa place à l'inbound marketing (faire venir le client à soi).</p>
-            <p>Vous n'avez plus le choix : vous devez être visible organiquement sur Google lorsqu'un particulier a un besoin réel et immédiat.</p>
-            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80" alt="Stratégie digitale SEO" />
+            <h2>Le consentement obligatoire via le digital.</h2>
+            <p>Vous n'avez plus le choix : le seul moyen légal de contacter un particulier pour des travaux est d'obtenir son "consentement obligatoire" au préalable.</p>
+            <p>Concrètement, la digitalisation n'est plus seulement une vitrine pour rassurer le client, c'est devenu l'unique moyen de maintenir votre prospection. Le client doit lui-même valider une demande via une page internet (landing page) avec une case à cocher.</p>
+            <img src="/blog/art2-consent.png" alt="Consentement obligatoire" />
 
-            <h2>Prenez les devants avec Gainable.</h2>
-            <p>En rejoignant notre plateforme, vous investissez dans une présence digitale pérenne et totalement légale. Le prospect prend l'initiative de vous appeler.</p>
-            <p>Vous respectez non seulement la loi, mais vous gagnez un temps précieux en traitant des appels de clients déjà engagés !</p>
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Client confiant" />
+            <h2>Prenez les devants avec l'inbound marketing.</h2>
+            <p>La prospection forcée (aller chercher le client) doit laisser sa place à l'inbound (faire venir le client à soi en toute légalité).</p>
+            <p>En publiant vos chantiers sur Gainable.fr, le prospect découvre votre expertise et remplit de lui-même la demande d'information. Vous recevez un contact exclusif et 100% légal, en gagnant un temps précieux !</p>
+            <img src="/blog/art2-solution.png" alt="Prospection digitale légale" />
         `
     },
     {
