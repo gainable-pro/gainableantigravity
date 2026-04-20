@@ -54,28 +54,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     const seed = simpleHash(citySlug);
 
+    // Optimized CTR Titles (Using brackets and strong action words)
     const titleChoices = [
-        `Installation Climatisation Gainable à ${city.name} | Devis Gratuit`,
-        `Climatisation Réversible à ${city.name} : Trouvez un Installateur RGE`,
-        `Votre Expert en Pompe à Chaleur Gainable à ${city.name} (${city.zip})`,
-        `Pose et Dépannage Climatisation à ${city.name} | Prix et Devis`
+        `[Devez Gratuit] Climatisation Gainable à ${city.name} | Prix 2026`,
+        `Climatisation Réversible à ${city.name} : Artisans Locaux Certifiés`,
+        `Installation Climatisation Gainable à ${city.name} (${city.zip}) ⚡`,
+        `Pose & Dépannage Climatisation à ${city.name} | [Tarifs & Devis]`
     ];
 
     return {
         title: pick(seed, titleChoices, 0),
-        description: `Gainable.fr, 1ère plateforme dédiée à la climatisation gainable & VRV. Trouvez un installateur expert certifié et recommandé à ${city.name} (${city.zip}).`,
+        description: `▶ Besoin d'une clim à ${city.name} (${city.zip}) ? Gainable.fr est le réseau n°1. Contactez un artisan expert, obtenez un devis local gratuit et comparez les prix !`,
         alternates: {
             canonical: `https://www.gainable.fr/climatisation/${city.slug}`,
         },
         openGraph: {
             title: `Installateur Climatisation à ${city.name}`,
-            description: `1ère plateforme internationale de climatisation. Trouvez les meilleurs experts à ${city.name}.`,
+            description: `Le réseau national des experts du froid. Trouvez les meilleurs artisans locaux à ${city.name}.`,
             url: `https://www.gainable.fr/climatisation/${city.slug}`,
             type: 'website',
             images: ['/hero-villa.png'],
         }
     };
 }
+
+import { B2bCaptureBanner } from "@/components/features/b2b-capture-banner";
 
 function getNearbyCities(currentCity: typeof ALL_CITIES[0]) {
     return ALL_CITIES
@@ -438,6 +441,14 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                 </section>
             )}
+
+            <div className="container mx-auto px-6 max-w-5xl">
+                <B2bCaptureBanner 
+                    cityName={city.name} 
+                    department={city.department} 
+                    countryCode={city.country} 
+                />
+            </div>
 
             <section className="py-16 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-6 max-w-4xl">
