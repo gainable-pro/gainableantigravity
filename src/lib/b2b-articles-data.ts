@@ -12,7 +12,7 @@ export const b2bArticles = [
 
             <h2>La guerre des prix : une course vers le bas.</h2>
             <p>Quand 5 entreprises appellent le même client dans l'heure, le client se retrouve en position de force absolue. Son seul critère de choix devient bien souvent le prix le plus bas.</p>
-            <p>Vous êtes contraint de rogner sur votre marge. Vous travaillez plus, pour gagner moins. Finalement, seules les plateformes de vente de contact ou de vente de lead s'enrichissent.</p>
+            <p>Vous êtes contraint de rogner sur votre marge. Vous travaillez plus, pour gagner moins. Finalement, seules les plateformes de vente de contact s'enrichissent.</p>
             <img src="/blog/art1-baisse.png" alt="Baisse des marges" />
 
             <h2>La solution Gainable.fr.</h2>
@@ -46,65 +46,71 @@ export const b2bArticles = [
     {
         title: "Bouche-à-oreille et site vitrine : pourquoi ça ne suffit plus",
         slug: "site-vitrine-bouche-a-oreille-insuffisant-2024",
-        intro: "Vous comptez uniquement sur les recommandations de vos anciens clients ? C'est dangereux. En 2024, le particulier est ultra-méfiant et vérifie tout.",
-        mainImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        intro: "Vous comptez uniquement sur les recommandations de vos anciens clients ? C'est dangereux. En 2024, le particulier est ultra-méfiant et vérifie tout en ligne.",
+        mainImage: "/blog/art3-hero.png",
         contentHtml: `
             <h2>Le mythe du bouche-à-oreille infini.</h2>
-            <p>Oui, vos clients satisfaits parlent de vous. Mais que fait un nouveau prospect quand il entend votre nom ? Il va sur Google.</p>
-            <p>S'il ne trouve pas de site professionnel, d'avis clients récents ou de photos de vos réalisations, le doute s'installe. Le bouche-à-oreille sans présence digitale ne transforme plus.</p>
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Recherche sur mobile" />
+            <p>Le bouche-à-oreille est fantastique, mais il a ses limites. Si un client potentiel entend parler de vous, son tout premier réflexe sera de taper votre nom sur Google.</p>
+            <p>S'il ne trouve rien d'autre qu'une page jaune ou pire, des avis mitigés non gérés, le doute s'installe. En 2024, le bouche-à-oreille sans preuve digitale est un coup d'épée dans l'eau.</p>
+            <img src="/blog/art3-web.png" alt="Ancien site obsolète" />
 
-            <h2>Le site vitrine mort.</h2>
-            <p>Un site internet créé il y a 5 ans et jamais mis à jour est presque pire que de ne pas avoir de site. Google ne le mettra jamais en avant.</p>
-            <p>Aujourd'hui, il faut du contenu de marque, de l'humain. Le client veut voir votre visage en vidéo, vos camions, vos chantiers en temps réel pour être rassuré.</p>
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Ecran web" />
+            <h2>Le site vitrine "mort".</h2>
+            <p>Un site internet créé il y a 5 ans coûte de l'argent en hébergement mais ne vous rapporte rien s'il n'est pas actif. Pire, un design archaïque effraie le client de la nouvelle génération.</p>
+            <p>Il faut de l'humain, des vidéos, des chantiers en temps réel pour rassurer instantanément ce client de plus en plus exigeant.</p>
 
-            <h2>Votre profil Gainable, votre nouvelle vitrine.</h2>
-            <p>C'est pourquoi Gainable.fr transforme votre simple profil en une véritable vitrine dynamique, avec présentation vidéo et génération instantanée d'articles de chantiers par IA.</p>
-            <p>Vous créez de la confiance avant même le premier coup de fil.</p>
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Confiance artisan" />
+            <h2>L'ère de la preuve sociale instantanée.</h2>
+            <p>Aujourd'hui, le client veut pouvoir comparer très vite. Il ne cherche plus juste un plombier ou un chauffagiste : il cherche un partenaire de confiance.</p>
+            <p>Vos réalisations documentées et vos photos avant/après sur Gainable.fr deviennent de loin votre meilleur agent commercial 24h/24.</p>
+
+            <h2>Votre profil Gainable, la vitrine 3.0.</h2>
+            <p>Gainable.fr transforme votre profil en une machine à rassurer. Vidéo de présentation, derniers chantiers, avis certifiés : tout est pensé pour instaurer une confiance aveugle avant même le premier appel.</p>
         `
     },
     {
         title: "Apprenez à pêcher : le marathon SEO pour les installateurs",
         slug: "marathon-seo-artisan-installateur-climatisation",
-        intro: "Plutôt que d'acheter des contacts au jour le jour (un sprint épuisant), découvrez comment construire une machine à prospects autonomes.",
-        mainImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+        intro: "Plutôt que d'acheter des contacts au jour le jour (un sprint épuisant), découvrez comment construire une machine à prospects autonomes grâce au référencement organique.",
+        mainImage: "/blog/art4-hero.png",
         contentHtml: `
-            <h2>Sprint contre marathon.</h2>
-            <p>Quand vous achetez un lead, vous avez le contact tout de suite, mais vous devez payer à chaque fois. Dès que vous arrêtez de payer, votre entreprise n'a plus aucun contact.</p>
-            <p>Le SEO (référencement naturel), c'est l'inverse. C'est un marathon. Vous publiez du contenu, cela prend quelques semaines à s'indexer, mais ensuite, cela draine des clients gratuitement, des mois durant.</p>
-            <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&w=800&q=80" alt="Graphique SEO" />
+            <h2>Sprint toxique contre marathon rentable.</h2>
+            <p>Acheter un lead est un sprint court et épuisant. À l'inverse, le référencement naturel (SEO) est un marathon.</p>
+            <p>Vous publiez du contenu, vous optimisez votre visibilité, et au bout de quelques semaines, vous récoltez des contacts exclusifs sans dépenser un centime de plus par lead. C'est l'investissement le plus sain pour votre TPE.</p>
+            <img src="/blog/art4-seo.png" alt="Croissance SEO et résultats" />
 
-            <h2>Construisez votre cocon.</h2>
-            <p>Chaque nouvelle réalisation que vous détaillez sur le web est une \"canne à pêche\" supplémentaire lancée dans l'océan de Google.</p>
-            <p>Un client potentiel tape \"Installateur PAC Air Air [Votre Ville]\" et tombe directement sur votre article. C'est le Graal de l'acquisition.</p>
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Travail de référencement" />
+            <h2>Chaque réalisation est un actif.</h2>
+            <p>Chaque article publié sur un chantier ou une problématique est une nouvelle porte d'entrée vers votre entreprise sur la toile.</p>
+            <p>Si vous détaillez l'installation d'une pompe à chaleur à Lyon, tous les lyonnais cherchant ce service sur Google ont de fortes chances de tomber directement sur votre profil.</p>
 
-            <h2>Comment Gainable vous aide à courir.</h2>
-            <p>Courir un marathon, c'est dur si on n'a pas les bonnes chaussures. Gainable.fr est votre équipement ultra-performant. Grâce à notre moteur IA, la rédaction d'un article SEO de 600 mots ne vous prend plus que 2 minutes.</p>
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Équipement de travail" />
+            <h2>Construisez votre cocon local.</h2>
+            <p>Le maillage de mots-clés hyper-locaux (nom de votre ville + votre métier technique) est une arme redoutable. Vous n'avez pas besoin de dominer toute la France.</p>
+            <p>Dominez seulement votre zone d'intervention directe (30 km). C'est l'essence même d'une prospection locale ultra-qualifiée.</p>
+
+            <h2>Gagnez la course avec le bon équipement.</h2>
+            <p>Gainable.fr vous fournit l'infrastructure SEO de pointe sans que vous ayez à payer une agence 2000€ par mois.</p>
+            <p>Publiez vos chantiers en 3 clics et laissez la structure ultra-optimisée de nos serveurs capter le trafic de Google pour vous faire résonner dans votre région.</p>
         `
     },
     {
         title: "Gainable.fr : l'outil 100% exclusif aux artisans (zéro commission)",
         slug: "gainable-outil-artisans-exclusif-zero-commission",
-        intro: "Marre des intermédiaires qui grignotent vos marges ? Gainable.fr propose un modèle économique sain et juste pour l'artisan.",
-        mainImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+        intro: "Marre des intermédiaires qui grignotent vos marges ? Gainable.fr propose un modèle économique sain, juste et transparent, redonnant le pouvoir à l'artisan.",
+        mainImage: "/blog/art5-hero.png",
         contentHtml: `
-            <h2>Fini les commissions abusives.</h2>
-            <p>Le modèle des plateformes classiques est simple : elles se rémunèrent sur votre dos. Que le chantier soit signé ou non, elles prennent leur part.</p>
-            <p>Ce système a détruit la rentabilité de nombreuses PME du bâtiment.</p>
-            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="Paiement factures" />
+            <h2>Fini la taxe sur votre travail.</h2>
+            <p>Le modèle des plateformes de mise en relation classiques est simple : l'intermédiaire se nourrit sur la bête. Qu'un chantier soit réussi ou annulé, ils empochent leur commission ou vendent leur lead.</p>
+            <p>Ce modèle archaïque vampirise la rentabilité finale des PME du bâtiment et détruit le sens même du métier d'installateur.</p>
+            <img src="/blog/art5-outil.png" alt="Poignée de main artisan client" />
 
-            <h2>Un modèle d'abonnement juste.</h2>
-            <p>Gainable.fr ne facture aucune commission sur vos chantiers. Vous gardez 100% du fruit de votre travail.</p>
-            <p>Nous fournissons un outil technologique de pointe (Dashboard métier, assistant IA SEO, mise en avant vidéo) contre un système transparent. Tous les contacts générés sur votre profil vous appartiennent exclusivement.</p>
-            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Equipe d'experts" />
+            <h2>L'exclusivité ou rien du tout.</h2>
+            <p>Chez Gainable.fr, aucun contact n'est revendu. Lorsqu'un particulier fait une demande de devis sur votre page de présentation, vous êtes le seul et l'unique à recevoir son numéro.</p>
+            <p>Cette véritable exclusivité restaure un rapport commercial sain et qualitatif, et nous éloigne définitivement de la chasse infernale aux prix bas.</p>
 
-            <h2>Reprenez le pouvoir.</h2>
-            <p>Il est temps d'innover et de vous équiper comme une agence de marketing digitale, sans en avoir les coûts insupportables. Rejoignez les artisans nouvelle génération.</p>
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Equipe motivée" />
+            <h2>L'indépendance technologique assurée.</h2>
+            <p>Un bon artisan en 2024 doit être équipé des meilleurs outils digitaux sans pour autant devoir s'abonner à 15 logiciels complexes et chers.</p>
+            <p>Dashboard métier, aide rédactionnelle dopée à l'IA, visibilité locale : toutes ces fonctionnalités vitales sont réunies en un seul endroit, pensé pour le technicien moderne.</p>
+
+            <h2>Reprenez le pouvoir sur votre carnet de commande.</h2>
+            <p>Il est grand temps de ne plus dépendre des vendeurs de leads. Prenez votre destin numérique en main grâce à un outil transparent, équitable et pensé pour récompenser la qualité du travail rendu.</p>
         `
     },
     {
@@ -164,56 +170,89 @@ export const b2bArticles = [
     {
         title: "L'IA au service de l'installateur : gagnez 10h par semaine",
         slug: "ia-service-installateur-gagnez-temps-entreprise",
-        intro: "L'intelligence artificielle n'est pas réservée qu'aux développeurs. Découvrez comment elle peut booster votre petite entreprise du bâtiment.",
-        mainImage: "https://images.unsplash.com/photo-1485083269755-a7b559a4bb5e?auto=format&fit=crop&w=1200&q=80",
+        intro: "L'intelligence artificielle n'est pas réservée qu'aux développeurs de startups parisiennes. Découvrez comment elle peut booster votre petite entreprise du bâtiment et vous faire gagner un temps précieux.",
+        mainImage: "/blog/art8-hero.png",
         contentHtml: `
-            <h2>L'IA, votre nouvel assistant.</h2>
-            <p>Vous êtes fatigué après votre chantier, la dernière chose que vous souhaitez faire, c'est passer 2 heures à rédiger un article expliquant cette belle installation de gainable.</p>
-            <p>Avec l'assistant Gainable, vous jetez 3 informations (Type de machine, Lieu, Puissance) et l'IA rédige tout un article structuré pour plaire à Google, tout en gardant votre ton.</p>
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Robot IA assistant" />
+            <h2>Le cauchemar administratif après le chantier.</h2>
+            <p>Vous rentrez épuisé après 10 heures passées sur les toits ou dans les combles poussiéreux. La dernière chose que vous avez la force de faire, c'est de réfléchir pendant une heure devant un clavier pour taper un texte promotionnel.</p>
+            <p>Pourtant, publier vos belles réalisations est d'une importance capitale pour exister numériquement.</p>
+            <img src="/blog/art8-ia.png" alt="Artisan rédigé par IA" />
+
+            <h2>L'IA, votre nouvel assistant invisible.</h2>
+            <p>L'Intelligence Artificielle générative est la solution miracle des artisans débordés. Elle prend vos brouillons, vos notes hachées ou dictées oralement, et les transforme en articles vendeurs, clairs et structurés.</p>
+
+            <h2>L'optimisation native pour les moteurs de recherche.</h2>
+            <p>L'assistant intelligent intégré dans le Dashboard Gainable ne se contente pas de corriger les fautes. Il reformule chaque phrase spécifiquement pour plaire aux robots de Google.</p>
+            <p>Il insère tout seul vos mots-clés techniques : DAIKIN, Climatisation gainable Airzone, thermodynamique, et garantit un référencement intraitable sur votre département local.</p>
+
+            <h2>Une rentabilité temporelle absolue.</h2>
+            <p>Ce qui auparavant exigeait 2 heures de prise de tête vous prend désormais 3 minutes, montre en main. Ce temps dégagé sur l'année vous libère de l'espace mental pour mieux organiser vos poses ou pour profiter de votre famille.</p>
         `
     },
     {
         title: "Étude de cas : rentabilité sans aucun achat de leads",
         slug: "etude-de-cas-rentabilite-artisan-sans-achat-leads",
-        intro: "Comment Maxime, installateur CVC à Lyon, a multiplié sa marge nette par 2 après avoir coupé ses abonnements aux vendeurs de leads.",
-        mainImage: "https://images.unsplash.com/photo-1542382103-605809dfb010?auto=format&fit=crop&w=1200&q=80",
+        intro: "Découvrez comment Maxime, un installateur CVC situé à Toulouse, a réussi l'exploit de doubler sa marge nette globale après avoir totalement coupé ses abonnements aux vendeurs de devis froids.",
+        mainImage: "/blog/art9-hero.png",
         contentHtml: `
-            <h2>Le constat de départ.</h2>
-            <p>Maxime travaillait 60 heures par semaine, mais générait très peu de bénéfices à la fin de l'année. Les intermédiaires siphonnaient sa rentabilité.</p>
-            <p>En passant en 100% Inbound avec Gainable, il a publié 2 articles par mois.</p>
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipe sur un chantier" />
+            <h2>Le constat de départ d'une PME essoufflée.</h2>
+            <p>Maxime travaillait 60 heures par semaine. Ses équipes faisaient un travail irréprochable sur le terrain, et pourtant, son entreprise peinait à dégager du profit. Ses marges s'érodaient inexorablement au fil de l'année.</p>
+            <p>Le coupable ? 15% de son budget mensuel s'écoulait dans l'achat désespéré de contacts froids, qu'il devait disputer âprement face à 5 confrères agressifs sur les prix.</p>
 
-            <h2>Le résultat.</h2>
-            <p>Aujourd'hui, Google lui envoie 5 à 10 demandes de devis qualifiées et exclusives chaque mois sur son secteur lyonnais. Il signe 80% de ces contacts au prix juste.</p>
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80" alt="Contrat signé" />
+            <h2>Le virage total vers l'acquisition propre.</h2>
+            <p>À bout, Maxime prend la décision radicale de résilier ses abonnements vampiriques. Il sécurise sa trésorerie et la réalloue intelligemment sur son Profil Expert Gainable, misant tout sur la méthode Inbound complète.</p>
+            <img src="/blog/art9-case.png" alt="Croissance financière par SEO" />
+
+            <h2>La puissance du trafic qualifié sans pression.</h2>
+            <p>Désormais, Maxime prend 5 minutes chaque vendredi pour poster les photos de l'installation de la semaine. Il s'appuie sur l'IA de Gainable pour lui écrire un article qualitatif et Google l'indexe instantanément.</p>
+            <p>Trois mois plus tard, Maxime figure dans les premiers résultats régionaux sur les grosses volumétries de recherches type pompe à chaleur.</p>
+
+            <h2>Une marge nette tout simplement doublée.</h2>
+            <p>C'est purement mathématique : son coût d'acquisition client (CAC) a approché de très près du zéro, tandis que tous les devis qu'il signe le sont au prix juste, sans l'ombre d'une contestation ou d'une renégociation toxique.</p>
         `
     },
     {
         title: "Maillage local : devenir le seul pro recommandé par Google",
         slug: "maillage-local-google-recommandation-visibilite",
-        intro: "Comprendre le fonctionnement du référencement local pour dominer instantanément vos concurrents dans un rayon de 30 km.",
-        mainImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
+        intro: "Comprendre le fonctionnement complexe du référencement local vous permettra de dominer silencieusement mais instantanément vos concurrents dans un rayon décisif de 30 km.",
+        mainImage: "/blog/art10-hero.png",
         contentHtml: `
-            <h2>La synergie Google Business / Gainable.</h2>
-            <p>Avoir une fiche Google Business c'est bien, mais si elle ne pointe vers aucun contenu pertinent, elle restera invisible face aux géants locaux.</p>
-            <p>La puissance du maillage local est de lier vos avis Google directement à la plateforme Gainable pour prouver que vous êtes actif sur le terrain.</p>
-            <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=80" alt="Map GPS smartphone" />
+            <h2>La guerre de proximité (Local Search).</h2>
+            <p>Quand une grosse unité tombe en panne au milieu du mois de juillet, le dernier souhait du client est de faire appel à une multinationale implantée à Paris. On cherche urgemment un dépanneur ou installateur fiable dans son propre code postal.</p>
+            <p>Le référencement local, ou SEO Local, est fondamental. Les particuliers vous chercheront systématiquement sur Google Maps. Si vous n'êtes pas dans le "Top 3", vous n'existez pas.</p>
+            <img src="/blog/art10-map.png" alt="Preuve sociale Google Avis" />
+
+            <h2>Sortez de l'anonymat de Google Business.</h2>
+            <p>Créer ou revendiquer une fiche Google d'Établissement ne suffit plus : 30 autres de vos concurrents locaux l'ont fait aussi. Ce qui fera pencher la balance vers vous, ce sont vos liens depuis Gainable.</p>
+            <p>En orientant votre page d'expert bien structurée vers votre propre fiche d'avis certifiés, vous envoyez des "signaux" positifs majeurs aux algorithmes de classement.</p>
+
+            <h2>L'effet de halo produit par la preuve sociale.</h2>
+            <p>Lorsque vos divers travaux sont bien documentés, bien structurés et que les avis de clients réels fusent, vous créez un bouclier en acier massif autour de votre réputation digitale.</p>
+            <p>Le prospect sera impressionné par votre sérieux avant même de l'entendre dans le combiné. L'affaire est verrouillée à la première impression.</p>
+
+            <h2>La domination géographique totale.</h2>
+            <p>Peu de PME maîtrisent le maillage web. En vous alliant à la technologie de l'annuaire nouvelle génération Gainable, chaque texte fait l'effet d'un drapeau dominant un pan de votre territoire, jusqu'à l'hégémonie de votre image locale.</p>
         `
     },
     {
         title: "La digitalisation complète : de la recherche Google à la signature",
         slug: "digitalisation-complete-artisan-recherche-google-signature",
-        intro: "Visualisez le parcours parfait (et ultra-rentable) d'un prospect qui trouve un artisan nouvelle génération. L'ère de la fluidité.",
-        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        intro: "Visualisez à présent le parcours absolument parfait (et ultra-rentable) d'un prospect qui croise la route d'un artisan équipé de notre technologie : fluidité, autorité, et zéro friciton.",
+        mainImage: "/blog/art11-hero.png",
         contentHtml: `
-            <h2>1. La séduction digitale.</h2>
-            <p>Le particulier tape \"problème pompe à chaleur\" et tombe sur votre article d'expert hébergé sur Gainable.fr. Il voit votre vidéo de présentation, il est rassuré.</p>
-            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80" alt="Personne lisant sur tablette" />
+            <h2>La séduction digitale autonome.</h2>
+            <p>Aujourd'hui, le travail de qualification commerciale ne commence plus avec la voix ni avec un rendez-vous physique. Il se passe en plein soir, quand le particulier scrolle sur son écran.</p>
+            <p>Lorsqu'il tape le fameux souci technique, c'est sur votre article d'expert hébergé sur le vaste domaine d'autorité Gainable qu'il vient s'échouer, tombant face à un site sécurisé, professionnel, chaleureux.</p>
 
-            <h2>2. La demande exclusive.</h2>
-            <p>Il clique sur \"Contacter cet expert\". Vous, et SEULEMENT VOUS, recevez ce contact qualifié. La signature est à portée de main, aucune compétition déloyale.</p>
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Poignée de main client artisan" />
+            <h2>Le déferlement du besoin émotionnel.</h2>
+            <p>Le particulier regarde curieusement l'une de vos vidéos YouTube nichées dans la page, lit vos garanties décennales rassurantes et vérifie si vous opérez dans son petit village.</p>
+            <img src="/blog/art11-digi.png" alt="Signature fluide 100% digitale" />
+
+            <h2>Une signature électronique fluide sans accroc.</h2>
+            <p>Grâce au formulaire express connecté à votre profil, le client soumet sa demande d'intervention, qui atterrit tel un don inespéré directement dans vos mails personnels, sans aucune agence tierce pour lire les données du prospect.</p>
+
+            <h2>L'ère de la prise de contrat sans grand effort.</h2>
+            <p>Dès votre premier coup de fil le lendemain matin, le client ne négocie rien du tout. Il veut juste valider la date de l'intervention. Il a lu vos prix indicatifs de la veille. Bienvenue dans la matrice Gainable.</p>
         `
     }
 ];
