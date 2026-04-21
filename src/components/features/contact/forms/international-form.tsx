@@ -1,31 +1,9 @@
-
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Loader2, CheckCircle, MapPin, Phone, Mail, User } from "lucide-react";
-import Link from "next/link";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Controller } from "react-hook-form";
-
-const formSchema = z.object({
-    nom: z.string().min(2, "Le nom est requis"),
-    email: z.string().email("Email invalide"),
-    telephone: z.string().min(10, "Numéro de téléphone invalide"),
-    adresse: z.string().min(5, "L'adresse est requise"),
-    message: z.string().optional(),
-    ville: z.string().optional(),
-    source: z.string().optional(),
-    acceptTerms: z.boolean().refine(v => v === true, {
-        message: "Vous devez accepter la politique de confidentialité.",
-    }),
-});
+import { CvcRequestForm } from "./cvc-form";
 
 interface InternationalLeadFormProps {
     city: string;
@@ -36,43 +14,30 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            nom: "",
-            email: "",
-            telephone: "",
-            adresse: "",
-            message: "",
-            ville: city,
-            source: `Landing Page ${city}`,
-            acceptTerms: false,
-        },
-    });
-
-    const { register, handleSubmit, formState: { errors }, control } = form;
-
-    async function onSubmit(values: z.infer<typeof formSchema>) {
+    const handleSubmitCVC = async (data: any) => {
         setIsSubmitting(true);
         try {
-            // Prepare payload for /api/leads
-            // Based on ContactWizard logic: code_postal is needed, we'll try to extract or default.
-            // Since we don't ask for generic Zip in this form, we'll default to "00000" or extract from address if possible mentally/regex, 
-            // but for now let's just send what we have. API might need adjustment or we send "00000".
-            // The API likely expects { type, nom, email, telephone, ... }
+            const address = data.address || "";
+            const zipMatch = address.match(/\b\d{4,5}\b/);
+            const extractedZip = zipMatch ? zipMatch[0] : "00000";
 
             const payload = {
-                type: 'simple', // Generic lead type
-                nom: values.nom,
-                prenom: "", // merged in nom or split? API usually handles one or both. Let's send nom as Name.
-                email: values.email,
-                telephone: values.telephone,
-                adresse: values.adresse,
-                ville: values.ville || city,
-                code_postal: "00000", // Fallback, strict validation might fail?
-                message: values.message,
-                projet: "Installation Climatisation (Page Ville)",
-                source: values.source
+                type: 'cvc',
+                nom: data.lastName,
+                prenom: data.firstName,
+                email: data.email,
+                telephone: data.phone,
+                code_postal: extractedZip,
+                ville: address.replace(extractedZip, "").replace(/,/g, "").trim() || city,
+                adresse: address,
+                message: data.description || "",
+                projet: data.propertyType || "Non spécifié",
+                surface: data.surface ? String(data.surface) : undefined,
+                source: `Landing Page ${city}`,
+                details: {
+                    technologies: data.technologies,
+                    files: data.files
+                }
             };
 
             const response = await fetch("/api/leads", {
@@ -94,20 +59,22 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
         } finally {
             setIsSubmitting(false);
         }
-    }
+    };
 
     if (isSuccess) {
         return (
-            <div className="text-center py-10 space-y-4 animate-in fade-in zoom-in duration-500 bg-white/90 backdrop-blur rounded-xl p-6 shadow-sm">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+            <div className="text-center py-12 space-y-6 bg-white p-8 rounded-xl shadow-lg border border-slate-100">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-800">Demande envoyée !</h3>
-                <p className="text-slate-600 text-sm">
-                    Merci, votre demande pour {city} a bien été prise en compte.
-                    <br />Un expert vous recontactera sous 24h.
-                </p>
-                <Button onClick={() => setIsSuccess(false)} variant="outline" size="sm" className="mt-2">
+                <div>
+                    <h3 className="text-2xl font-bold text-[#1F2D3D]">Merci pour votre demande !</h3>
+                    <p className="text-slate-600 mt-2">
+                        Votre dossier pour {city} a bien été transmis à nos experts locaux.
+                        <br />Ils vous contacteront prochainement par téléphone ou email pour votre devis.
+                    </p>
+                </div>
+                <Button onClick={() => setIsSuccess(false)} variant="outline" className="mt-4">
                     Nouvelle demande
                 </Button>
             </div>
@@ -115,127 +82,19 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-left bg-white p-6 rounded-xl shadow-lg border border-slate-100">
-            <div className="mb-4">
-                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
-                    <User className="w-5 h-5 text-[#D59B2B]" /> Recevoir mes devis
+        <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-slate-100">
+            <div className="mb-8 text-center border-b pb-6 border-slate-100">
+                <h3 className="text-2xl font-extrabold text-[#1F2D3D] flex items-center justify-center gap-2 mb-2">
+                    Obtenez votre devis à {city}
                 </h3>
-                <p className="text-sm text-slate-500">Remplissez ce formulaire pour être contacté rapidement.</p>
+                <p className="text-slate-500">Renseignez les détails de votre projet pour être contacté par nos artisans qualifiés.</p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <div className="space-y-1">
-                    <Label htmlFor="nom" className="text-xs font-semibold text-slate-600">Nom complet *</Label>
-                    <Input
-                        id="nom"
-                        {...register("nom")}
-                        placeholder="Votre nom"
-                        className={`h-9 ${errors.nom ? "border-red-500" : ""}`}
-                        aria-required="true"
-                        aria-invalid={errors.nom ? "true" : "false"}
-                        aria-describedby={errors.nom ? "nom-error" : undefined}
-                    />
-                    {errors.nom && <p id="nom-error" className="text-xs text-red-500">{errors.nom.message}</p>}
-                </div>
-
-                <div className="space-y-1">
-                    <Label htmlFor="telephone" className="text-xs font-semibold text-slate-600">Téléphone *</Label>
-                    <Input
-                        id="telephone"
-                        {...register("telephone")}
-                        placeholder="06 12 34 56 78"
-                        className={`h-9 ${errors.telephone ? "border-red-500" : ""}`}
-                        aria-required="true"
-                        aria-invalid={errors.telephone ? "true" : "false"}
-                        aria-describedby={errors.telephone ? "telephone-error" : undefined}
-                    />
-                    {errors.telephone && <p id="telephone-error" className="text-xs text-red-500">{errors.telephone.message}</p>}
-                </div>
-
-                <div className="space-y-1">
-                    <Label htmlFor="email_intl" className="text-xs font-semibold text-slate-600">Email *</Label>
-                    <Input
-                        id="email_intl"
-                        {...register("email")}
-                        placeholder="votre@email.com"
-                        className={`h-9 ${errors.email ? "border-red-500" : ""}`}
-                        aria-required="true"
-                        aria-invalid={errors.email ? "true" : "false"}
-                        aria-describedby={errors.email ? "email-intl-error" : undefined}
-                    />
-                    {errors.email && <p id="email-intl-error" className="text-xs text-red-500">{errors.email.message}</p>}
-                </div>
-
-                <div className="space-y-1">
-                    <Label htmlFor="adresse" className="text-xs font-semibold text-slate-600">Ville / Code Postal *</Label>
-                    <Input
-                        id="adresse"
-                        {...register("adresse")}
-                        placeholder="Ex: Lyon 69002"
-                        className={`h-9 ${errors.adresse ? "border-red-500" : ""}`}
-                        aria-required="true"
-                        aria-invalid={errors.adresse ? "true" : "false"}
-                        aria-describedby={errors.adresse ? "adresse-error" : undefined}
-                    />
-                    {errors.adresse && <p id="adresse-error" className="text-xs text-red-500">{errors.adresse.message}</p>}
-                </div>
-            </div>
-
-            <div className="space-y-1">
-                <Label htmlFor="message" className="text-xs font-semibold text-slate-600">Projet (Optionnel)</Label>
-                <Textarea
-                    id="message"
-                    {...register("message")}
-                    placeholder="Besoin spécifique..."
-                    className="min-h-[60px] text-sm py-2"
-                />
-            </div>
-
-            {/* GDPR Consent */}
-            <div className="flex items-start gap-2 pt-2">
-                <Controller
-                    name="acceptTerms"
-                    control={control}
-                    render={({ field }) => (
-                        <Checkbox
-                            id="acceptTerms_intl"
-                            checked={field.value || false}
-                            onCheckedChange={field.onChange}
-                            className="mt-0.5"
-                        />
-                    )}
-                />
-                <div className="space-y-1">
-                    <Label
-                        htmlFor="acceptTerms_intl"
-                        className="text-[10px] font-medium leading-tight text-slate-500 cursor-pointer"
-                    >
-                        J'accepte que mes données soient traitées pour ma demande et j'ai lu la{" "}
-                        <Link href="/politique-confidentialite" className="text-[#D59B2B] hover:underline underline-offset-2">
-                            politique de confidentialité
-                        </Link>.
-                    </Label>
-                    {errors.acceptTerms && (
-                        <p className="text-[10px] text-red-500 font-medium leading-none">
-                            {errors.acceptTerms.message}
-                        </p>
-                    )}
-                </div>
-            </div>
-
-            <Button type="submit" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-11 text-base shadow-sm transition-all" disabled={isSubmitting}>
-                {isSubmitting ? (
-                    <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Envoi...
-                    </>
-                ) : (
-                    `Recevoir mes devis gratuits`
-                )}
-            </Button>
-
-            <p className="text-[10px] text-center text-slate-400 mt-2">
-                Vos données sont sécurisées et transmises uniquement aux artisans sélectionnés.
-            </p>
-        </form>
+            
+            <CvcRequestForm 
+                onSubmit={handleSubmitCVC} 
+                isSubmitting={isSubmitting} 
+                defaultCity={city} 
+            />
+        </div>
     );
 }
