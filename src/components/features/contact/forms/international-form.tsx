@@ -151,34 +151,34 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
                     />
                     {errors.telephone && <p id="telephone-error" className="text-xs text-red-500">{errors.telephone.message}</p>}
                 </div>
-            </div>
 
-            <div className="space-y-1">
-                <Label htmlFor="email_intl" className="text-xs font-semibold text-slate-600">Email *</Label>
-                <Input
-                    id="email_intl"
-                    {...register("email")}
-                    placeholder="votre@email.com"
-                    className={`h-9 ${errors.email ? "border-red-500" : ""}`}
-                    aria-required="true"
-                    aria-invalid={errors.email ? "true" : "false"}
-                    aria-describedby={errors.email ? "email-intl-error" : undefined}
-                />
-                {errors.email && <p id="email-intl-error" className="text-xs text-red-500">{errors.email.message}</p>}
-            </div>
+                <div className="space-y-1">
+                    <Label htmlFor="email_intl" className="text-xs font-semibold text-slate-600">Email *</Label>
+                    <Input
+                        id="email_intl"
+                        {...register("email")}
+                        placeholder="votre@email.com"
+                        className={`h-9 ${errors.email ? "border-red-500" : ""}`}
+                        aria-required="true"
+                        aria-invalid={errors.email ? "true" : "false"}
+                        aria-describedby={errors.email ? "email-intl-error" : undefined}
+                    />
+                    {errors.email && <p id="email-intl-error" className="text-xs text-red-500">{errors.email.message}</p>}
+                </div>
 
-            <div className="space-y-1">
-                <Label htmlFor="adresse" className="text-xs font-semibold text-slate-600">Ville / Code Postal *</Label>
-                <Input
-                    id="adresse"
-                    {...register("adresse")}
-                    placeholder="Ex: Lyon 69002"
-                    className={`h-9 ${errors.adresse ? "border-red-500" : ""}`}
-                    aria-required="true"
-                    aria-invalid={errors.adresse ? "true" : "false"}
-                    aria-describedby={errors.adresse ? "adresse-error" : undefined}
-                />
-                {errors.adresse && <p id="adresse-error" className="text-xs text-red-500">{errors.adresse.message}</p>}
+                <div className="space-y-1">
+                    <Label htmlFor="adresse" className="text-xs font-semibold text-slate-600">Ville / Code Postal *</Label>
+                    <Input
+                        id="adresse"
+                        {...register("adresse")}
+                        placeholder="Ex: Lyon 69002"
+                        className={`h-9 ${errors.adresse ? "border-red-500" : ""}`}
+                        aria-required="true"
+                        aria-invalid={errors.adresse ? "true" : "false"}
+                        aria-describedby={errors.adresse ? "adresse-error" : undefined}
+                    />
+                    {errors.adresse && <p id="adresse-error" className="text-xs text-red-500">{errors.adresse.message}</p>}
+                </div>
             </div>
 
             <div className="space-y-1">

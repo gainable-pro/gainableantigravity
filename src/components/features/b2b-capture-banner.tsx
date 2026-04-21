@@ -51,7 +51,7 @@ export function B2bCaptureBanner({ cityName, department, countryCode }: B2bCaptu
                         </Button>
                     </Link>
                     <p className="text-xs text-slate-400 text-center uppercase tracking-wider font-semibold">
-                        Zéro abonnement caché
+                        0 commission, 0 revente de contact
                     </p>
                 </div>
             </div>

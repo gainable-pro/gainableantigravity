@@ -347,7 +347,7 @@ export default async function CityPage({ params }: PageProps) {
                                     Nous avons sélectionné des installateurs de climatisation confirmés intervenant dans le secteur de {city.department}. Comparez leurs offres gratuitement.
                                 </p>
                                 <div className="flex justify-center mt-8">
-                                    <div className="w-full max-w-lg text-left">
+                                    <div className="w-full max-w-2xl text-left">
                                         <InternationalLeadForm city={city.name} />
                                     </div>
                                 </div>
@@ -483,7 +483,7 @@ export default async function CityPage({ params }: PageProps) {
                     <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">Recevez jusqu'à 3 devis gratuits d'artisans locaux, rigoureusement sélectionnés.</p>
                     <div className="flex justify-center">
                         {isInternational ? (
-                            <div className="w-full max-w-md bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-slate-800 text-left"><InternationalLeadForm city={city.name} /></div>
+                            <div className="w-full max-w-2xl bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-slate-800 text-left"><InternationalLeadForm city={city.name} /></div>
                         ) : (
                             <ContactWizard triggerButton={<Button size="lg" className="bg-white text-[#D59B2B] hover:bg-slate-100 font-bold h-16 px-12 text-xl rounded-full shadow-2xl">Demander mes devis gratuits</Button>} />
                         )}
