@@ -24,9 +24,10 @@ interface PageProps {
     }>;
 }
 
-// 1. Generate Static Params for SSG - ALL CITIES
+// 1. Generate Static Params for SSG - We only pre-build the top 100 cities to avoid Prisma pool timeouts during Vercel build.
+// The other 2,000+ cities will be generated lazily on-demand (ISR) upon first visit.
 export async function generateStaticParams() {
-    return ALL_CITIES.map((city) => ({
+    return CITIES_100.map((city) => ({
         city: city.slug,
     }));
 }
