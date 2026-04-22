@@ -1,12 +1,13 @@
 import { config } from 'dotenv';
 config({ path: '.env.local' });
 import { PrismaClient } from '@prisma/client';
-import { CITIES_EXTENDED } from '../src/data/cities-extended';
-import { CITIES_100 } from '../src/data/cities-100';
+import { CITIES_EXTENDED } from '../src/data/cities-extended.ts';
+import { CITIES_100 } from '../src/data/cities-100.ts';
+import { CITIES_MEDIUM } from '../src/data/cities-medium.ts';
 
 const prisma = new PrismaClient();
 
-const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
 
 const KEYWORDS = [
     "climatisation réversible",
@@ -178,8 +179,15 @@ async function main() {
                     }
                 ];
 
-                await prisma.article.create({
-                    data: {
+                await prisma.article.upsert({
+                    where: {
+                        expertId_slug: {
+                            expertId: expert.id,
+                            slug: slug
+                        }
+                    },
+                    update: {}, // Don't overwrite existing ones to save DB writes, or update if we wanted to
+                    create: {
                         title: title,
                         slug: slug,
                         introduction: intro,

@@ -1,0 +1,30349 @@
+import { CityData } from './cities-100';
+
+export const CITIES_MEDIUM: CityData[] = [
+    {
+        "name": "Ambérieu-en-Bugey",
+        "slug": "amberieu-en-bugey",
+        "zip": "01500",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ambérieu-en-Bugey"
+    },
+    {
+        "name": "Valserhône",
+        "slug": "valserhone",
+        "zip": "01200",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valserhône"
+    },
+    {
+        "name": "Belley",
+        "slug": "belley",
+        "zip": "01300",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Belley"
+    },
+    {
+        "name": "Beynost",
+        "slug": "beynost",
+        "zip": "01700",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beynost"
+    },
+    {
+        "name": "Bourg-en-Bresse",
+        "slug": "bourg-en-bresse",
+        "zip": "01000",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-en-Bresse"
+    },
+    {
+        "name": "Cessy",
+        "slug": "cessy",
+        "zip": "01170",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cessy"
+    },
+    {
+        "name": "Châtillon-sur-Chalaronne",
+        "slug": "chatillon-sur-chalaronne",
+        "zip": "01400",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtillon-sur-Chalaronne"
+    },
+    {
+        "name": "Divonne-les-Bains",
+        "slug": "divonne-les-bains",
+        "zip": "01220",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Divonne-les-Bains"
+    },
+    {
+        "name": "Ferney-Voltaire",
+        "slug": "ferney-voltaire",
+        "zip": "01210",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ferney-Voltaire"
+    },
+    {
+        "name": "Gex",
+        "slug": "gex",
+        "zip": "01170",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gex"
+    },
+    {
+        "name": "Jassans-Riottier",
+        "slug": "jassans-riottier",
+        "zip": "01480",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jassans-Riottier"
+    },
+    {
+        "name": "Lagnieu",
+        "slug": "lagnieu",
+        "zip": "01150",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lagnieu"
+    },
+    {
+        "name": "Meximieux",
+        "slug": "meximieux",
+        "zip": "01800",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meximieux"
+    },
+    {
+        "name": "Miribel",
+        "slug": "miribel",
+        "zip": "01700",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Miribel"
+    },
+    {
+        "name": "Montluel",
+        "slug": "montluel",
+        "zip": "01120",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montluel"
+    },
+    {
+        "name": "Ornex",
+        "slug": "ornex",
+        "zip": "01210",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ornex"
+    },
+    {
+        "name": "Oyonnax",
+        "slug": "oyonnax",
+        "zip": "01100",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oyonnax"
+    },
+    {
+        "name": "Péronnas",
+        "slug": "peronnas",
+        "zip": "01960",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Péronnas"
+    },
+    {
+        "name": "Prévessin-Moëns",
+        "slug": "prevessin-moens",
+        "zip": "01280",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Prévessin-Moëns"
+    },
+    {
+        "name": "Reyrieux",
+        "slug": "reyrieux",
+        "zip": "01600",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Reyrieux"
+    },
+    {
+        "name": "Saint-Denis-lès-Bourg",
+        "slug": "saint-denis-les-bourg",
+        "zip": "01000",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Denis-lès-Bourg"
+    },
+    {
+        "name": "Saint-Genis-Pouilly",
+        "slug": "saint-genis-pouilly",
+        "zip": "01630",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Genis-Pouilly"
+    },
+    {
+        "name": "Thoiry",
+        "slug": "thoiry",
+        "zip": "01710",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thoiry"
+    },
+    {
+        "name": "Trévoux",
+        "slug": "trevoux",
+        "zip": "01600",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trévoux"
+    },
+    {
+        "name": "Villars-les-Dombes",
+        "slug": "villars-les-dombes",
+        "zip": "01330",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villars-les-Dombes"
+    },
+    {
+        "name": "Viriat",
+        "slug": "viriat",
+        "zip": "01440",
+        "department": {
+            "code": "01",
+            "nom": "Ain"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Viriat"
+    },
+    {
+        "name": "Bohain-en-Vermandois",
+        "slug": "bohain-en-vermandois",
+        "zip": "02110",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bohain-en-Vermandois"
+    },
+    {
+        "name": "Château-Thierry",
+        "slug": "chateau-thierry",
+        "zip": "02400",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Château-Thierry"
+    },
+    {
+        "name": "Chauny",
+        "slug": "chauny",
+        "zip": "02300",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chauny"
+    },
+    {
+        "name": "Gauchy",
+        "slug": "gauchy",
+        "zip": "02430",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gauchy"
+    },
+    {
+        "name": "Hirson",
+        "slug": "hirson",
+        "zip": "02500",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hirson"
+    },
+    {
+        "name": "Laon",
+        "slug": "laon",
+        "zip": "02000",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laon"
+    },
+    {
+        "name": "Soissons",
+        "slug": "soissons",
+        "zip": "02200",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soissons"
+    },
+    {
+        "name": "Tergnier",
+        "slug": "tergnier",
+        "zip": "02700",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tergnier"
+    },
+    {
+        "name": "Villers-Cotterêts",
+        "slug": "villers-cotterets",
+        "zip": "02600",
+        "department": {
+            "code": "02",
+            "nom": "Aisne"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villers-Cotterêts"
+    },
+    {
+        "name": "Bellerive-sur-Allier",
+        "slug": "bellerive-sur-allier",
+        "zip": "03700",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bellerive-sur-Allier"
+    },
+    {
+        "name": "Commentry",
+        "slug": "commentry",
+        "zip": "03600",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Commentry"
+    },
+    {
+        "name": "Cusset",
+        "slug": "cusset",
+        "zip": "03300",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cusset"
+    },
+    {
+        "name": "Domérat",
+        "slug": "domerat",
+        "zip": "03410",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Domérat"
+    },
+    {
+        "name": "Gannat",
+        "slug": "gannat",
+        "zip": "03800",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gannat"
+    },
+    {
+        "name": "Montluçon",
+        "slug": "montlucon",
+        "zip": "03100",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montluçon"
+    },
+    {
+        "name": "Moulins",
+        "slug": "moulins",
+        "zip": "03000",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moulins"
+    },
+    {
+        "name": "Yzeure",
+        "slug": "yzeure",
+        "zip": "03400",
+        "department": {
+            "code": "03",
+            "nom": "Allier"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yzeure"
+    },
+    {
+        "name": "Château-Arnoux-Saint-Auban",
+        "slug": "chateau-arnoux-saint-auban",
+        "zip": "04160",
+        "department": {
+            "code": "04",
+            "nom": "Alpes-de-Haute-Provence"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Château-Arnoux-Saint-Auban"
+    },
+    {
+        "name": "Biot",
+        "slug": "biot",
+        "zip": "06410",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Biot"
+    },
+    {
+        "name": "Le Cannet",
+        "slug": "le-cannet",
+        "zip": "06110",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Cannet"
+    },
+    {
+        "name": "Carros",
+        "slug": "carros",
+        "zip": "06510",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carros"
+    },
+    {
+        "name": "La Colle-sur-Loup",
+        "slug": "la-colle-sur-loup",
+        "zip": "06480",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Colle-sur-Loup"
+    },
+    {
+        "name": "Contes",
+        "slug": "contes",
+        "zip": "06390",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Contes"
+    },
+    {
+        "name": "Drap",
+        "slug": "drap",
+        "zip": "06340",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Drap"
+    },
+    {
+        "name": "La Gaude",
+        "slug": "la-gaude",
+        "zip": "06610",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Gaude"
+    },
+    {
+        "name": "Levens",
+        "slug": "levens",
+        "zip": "06670",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Levens"
+    },
+    {
+        "name": "Mouans-Sartoux",
+        "slug": "mouans-sartoux",
+        "zip": "06370",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouans-Sartoux"
+    },
+    {
+        "name": "Pégomas",
+        "slug": "pegomas",
+        "zip": "06580",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pégomas"
+    },
+    {
+        "name": "Peymeinade",
+        "slug": "peymeinade",
+        "zip": "06530",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Peymeinade"
+    },
+    {
+        "name": "Roquefort-les-Pins",
+        "slug": "roquefort-les-pins",
+        "zip": "06330",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roquefort-les-Pins"
+    },
+    {
+        "name": "La Roquette-sur-Siagne",
+        "slug": "la-roquette-sur-siagne",
+        "zip": "06550",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Roquette-sur-Siagne"
+    },
+    {
+        "name": "Saint-André-de-la-Roche",
+        "slug": "saint-andre-de-la-roche",
+        "zip": "06730",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-de-la-Roche"
+    },
+    {
+        "name": "La Trinité",
+        "slug": "la-trinite",
+        "zip": "06340",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Trinité"
+    },
+    {
+        "name": "Valbonne",
+        "slug": "valbonne",
+        "zip": "06560",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valbonne"
+    },
+    {
+        "name": "Villefranche-sur-Mer",
+        "slug": "villefranche-sur-mer",
+        "zip": "06230",
+        "department": {
+            "code": "06",
+            "nom": "Alpes-Maritimes"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villefranche-sur-Mer"
+    },
+    {
+        "name": "Annonay",
+        "slug": "annonay",
+        "zip": "07100",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Annonay"
+    },
+    {
+        "name": "Aubenas",
+        "slug": "aubenas",
+        "zip": "07200",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubenas"
+    },
+    {
+        "name": "Bourg-Saint-Andéol",
+        "slug": "bourg-saint-andeol",
+        "zip": "07700",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-Saint-Andéol"
+    },
+    {
+        "name": "Guilherand-Granges",
+        "slug": "guilherand-granges",
+        "zip": "07500",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guilherand-Granges"
+    },
+    {
+        "name": "Privas",
+        "slug": "privas",
+        "zip": "07000",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Privas"
+    },
+    {
+        "name": "Saint-Péray",
+        "slug": "saint-peray",
+        "zip": "07130",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Péray"
+    },
+    {
+        "name": "Le Teil",
+        "slug": "le-teil",
+        "zip": "07400",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Teil"
+    },
+    {
+        "name": "Tournon-sur-Rhône",
+        "slug": "tournon-sur-rhone",
+        "zip": "07300",
+        "department": {
+            "code": "07",
+            "nom": "Ardèche"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tournon-sur-Rhône"
+    },
+    {
+        "name": "Givet",
+        "slug": "givet",
+        "zip": "08600",
+        "department": {
+            "code": "08",
+            "nom": "Ardennes"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Givet"
+    },
+    {
+        "name": "Nouzonville",
+        "slug": "nouzonville",
+        "zip": "08700",
+        "department": {
+            "code": "08",
+            "nom": "Ardennes"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nouzonville"
+    },
+    {
+        "name": "Rethel",
+        "slug": "rethel",
+        "zip": "08300",
+        "department": {
+            "code": "08",
+            "nom": "Ardennes"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rethel"
+    },
+    {
+        "name": "Revin",
+        "slug": "revin",
+        "zip": "08500",
+        "department": {
+            "code": "08",
+            "nom": "Ardennes"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Revin"
+    },
+    {
+        "name": "Sedan",
+        "slug": "sedan",
+        "zip": "08200",
+        "department": {
+            "code": "08",
+            "nom": "Ardennes"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sedan"
+    },
+    {
+        "name": "Foix",
+        "slug": "foix",
+        "zip": "09000",
+        "department": {
+            "code": "09",
+            "nom": "Ariège"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Foix"
+    },
+    {
+        "name": "Lavelanet",
+        "slug": "lavelanet",
+        "zip": "09300",
+        "department": {
+            "code": "09",
+            "nom": "Ariège"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lavelanet"
+    },
+    {
+        "name": "Pamiers",
+        "slug": "pamiers",
+        "zip": "09100",
+        "department": {
+            "code": "09",
+            "nom": "Ariège"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pamiers"
+    },
+    {
+        "name": "Saint-Girons",
+        "slug": "saint-girons",
+        "zip": "09200",
+        "department": {
+            "code": "09",
+            "nom": "Ariège"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Girons"
+    },
+    {
+        "name": "La Chapelle-Saint-Luc",
+        "slug": "la-chapelle-saint-luc",
+        "zip": "10600",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Chapelle-Saint-Luc"
+    },
+    {
+        "name": "Nogent-sur-Seine",
+        "slug": "nogent-sur-seine",
+        "zip": "10400",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nogent-sur-Seine"
+    },
+    {
+        "name": "Pont-Sainte-Marie",
+        "slug": "pont-sainte-marie",
+        "zip": "10150",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-Sainte-Marie"
+    },
+    {
+        "name": "Romilly-sur-Seine",
+        "slug": "romilly-sur-seine",
+        "zip": "10100",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Romilly-sur-Seine"
+    },
+    {
+        "name": "Saint-André-les-Vergers",
+        "slug": "saint-andre-les-vergers",
+        "zip": "10120",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-les-Vergers"
+    },
+    {
+        "name": "Saint-Julien-les-Villas",
+        "slug": "saint-julien-les-villas",
+        "zip": "10800",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Julien-les-Villas"
+    },
+    {
+        "name": "Sainte-Savine",
+        "slug": "sainte-savine",
+        "zip": "10300",
+        "department": {
+            "code": "10",
+            "nom": "Aube"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Savine"
+    },
+    {
+        "name": "Coursan",
+        "slug": "coursan",
+        "zip": "11110",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coursan"
+    },
+    {
+        "name": "Gruissan",
+        "slug": "gruissan",
+        "zip": "11430",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gruissan"
+    },
+    {
+        "name": "Lézignan-Corbières",
+        "slug": "lezignan-corbieres",
+        "zip": "11200",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lézignan-Corbières"
+    },
+    {
+        "name": "Limoux",
+        "slug": "limoux",
+        "zip": "11300",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Limoux"
+    },
+    {
+        "name": "Port-la-Nouvelle",
+        "slug": "port-la-nouvelle",
+        "zip": "11210",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Port-la-Nouvelle"
+    },
+    {
+        "name": "Sigean",
+        "slug": "sigean",
+        "zip": "11130",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sigean"
+    },
+    {
+        "name": "Trèbes",
+        "slug": "trebes",
+        "zip": "11800",
+        "department": {
+            "code": "11",
+            "nom": "Aude"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trèbes"
+    },
+    {
+        "name": "Decazeville",
+        "slug": "decazeville",
+        "zip": "12300",
+        "department": {
+            "code": "12",
+            "nom": "Aveyron"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Decazeville"
+    },
+    {
+        "name": "Luc-la-Primaube",
+        "slug": "luc-la-primaube",
+        "zip": "12450",
+        "department": {
+            "code": "12",
+            "nom": "Aveyron"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luc-la-Primaube"
+    },
+    {
+        "name": "Onet-le-Château",
+        "slug": "onet-le-chateau",
+        "zip": "12000",
+        "department": {
+            "code": "12",
+            "nom": "Aveyron"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Onet-le-Château"
+    },
+    {
+        "name": "Saint-Affrique",
+        "slug": "saint-affrique",
+        "zip": "12400",
+        "department": {
+            "code": "12",
+            "nom": "Aveyron"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Affrique"
+    },
+    {
+        "name": "Villefranche-de-Rouergue",
+        "slug": "villefranche-de-rouergue",
+        "zip": "12200",
+        "department": {
+            "code": "12",
+            "nom": "Aveyron"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villefranche-de-Rouergue"
+    },
+    {
+        "name": "Allauch",
+        "slug": "allauch",
+        "zip": "13190",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Allauch"
+    },
+    {
+        "name": "Arles",
+        "slug": "arles",
+        "zip": "13104",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arles"
+    },
+    {
+        "name": "Aubagne",
+        "slug": "aubagne",
+        "zip": "13400",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubagne"
+    },
+    {
+        "name": "Auriol",
+        "slug": "auriol",
+        "zip": "13390",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auriol"
+    },
+    {
+        "name": "Bouc-Bel-Air",
+        "slug": "bouc-bel-air",
+        "zip": "13320",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouc-Bel-Air"
+    },
+    {
+        "name": "La Bouilladisse",
+        "slug": "la-bouilladisse",
+        "zip": "13720",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Bouilladisse"
+    },
+    {
+        "name": "Cabriès",
+        "slug": "cabries",
+        "zip": "13480",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cabriès"
+    },
+    {
+        "name": "Châteaurenard",
+        "slug": "chateaurenard",
+        "zip": "13160",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaurenard"
+    },
+    {
+        "name": "Cuges-les-Pins",
+        "slug": "cuges-les-pins",
+        "zip": "13780",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cuges-les-Pins"
+    },
+    {
+        "name": "Éguilles",
+        "slug": "eguilles",
+        "zip": "13510",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Éguilles"
+    },
+    {
+        "name": "Eyguières",
+        "slug": "eyguieres",
+        "zip": "13430",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eyguières"
+    },
+    {
+        "name": "Fuveau",
+        "slug": "fuveau",
+        "zip": "13710",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fuveau"
+    },
+    {
+        "name": "Gardanne",
+        "slug": "gardanne",
+        "zip": "13120",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gardanne"
+    },
+    {
+        "name": "Gémenos",
+        "slug": "gemenos",
+        "zip": "13420",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gémenos"
+    },
+    {
+        "name": "Gignac-la-Nerthe",
+        "slug": "gignac-la-nerthe",
+        "zip": "13180",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gignac-la-Nerthe"
+    },
+    {
+        "name": "Lambesc",
+        "slug": "lambesc",
+        "zip": "13410",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lambesc"
+    },
+    {
+        "name": "Mallemort",
+        "slug": "mallemort",
+        "zip": "13370",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mallemort"
+    },
+    {
+        "name": "Meyreuil",
+        "slug": "meyreuil",
+        "zip": "13590",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meyreuil"
+    },
+    {
+        "name": "Noves",
+        "slug": "noves",
+        "zip": "13550",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noves"
+    },
+    {
+        "name": "La Penne-sur-Huveaune",
+        "slug": "la-penne-sur-huveaune",
+        "zip": "13821",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Penne-sur-Huveaune"
+    },
+    {
+        "name": "Les Pennes-Mirabeau",
+        "slug": "les-pennes-mirabeau",
+        "zip": "13170",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Pennes-Mirabeau"
+    },
+    {
+        "name": "Peypin",
+        "slug": "peypin",
+        "zip": "13124",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Peypin"
+    },
+    {
+        "name": "Peyrolles-en-Provence",
+        "slug": "peyrolles-en-provence",
+        "zip": "13860",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Peyrolles-en-Provence"
+    },
+    {
+        "name": "Plan-de-Cuques",
+        "slug": "plan-de-cuques",
+        "zip": "13380",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plan-de-Cuques"
+    },
+    {
+        "name": "Port-Saint-Louis-du-Rhône",
+        "slug": "port-saint-louis-du-rhone",
+        "zip": "13230",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Port-Saint-Louis-du-Rhône"
+    },
+    {
+        "name": "Le Puy-Sainte-Réparade",
+        "slug": "le-puy-sainte-reparade",
+        "zip": "13610",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Puy-Sainte-Réparade"
+    },
+    {
+        "name": "La Roque-d'Anthéron",
+        "slug": "la-roque-d-antheron",
+        "zip": "13640",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Roque-d'Anthéron"
+    },
+    {
+        "name": "Roquefort-la-Bédoule",
+        "slug": "roquefort-la-bedoule",
+        "zip": "13830",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roquefort-la-Bédoule"
+    },
+    {
+        "name": "Roquevaire",
+        "slug": "roquevaire",
+        "zip": "13360",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roquevaire"
+    },
+    {
+        "name": "Rousset",
+        "slug": "rousset",
+        "zip": "13790",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rousset"
+    },
+    {
+        "name": "Le Rove",
+        "slug": "le-rove",
+        "zip": "13740",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Rove"
+    },
+    {
+        "name": "Saint-Cannat",
+        "slug": "saint-cannat",
+        "zip": "13760",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cannat"
+    },
+    {
+        "name": "Saint-Martin-de-Crau",
+        "slug": "saint-martin-de-crau",
+        "zip": "13310",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-de-Crau"
+    },
+    {
+        "name": "Saint-Mitre-les-Remparts",
+        "slug": "saint-mitre-les-remparts",
+        "zip": "13920",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Mitre-les-Remparts"
+    },
+    {
+        "name": "Saint-Rémy-de-Provence",
+        "slug": "saint-remy-de-provence",
+        "zip": "13210",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Rémy-de-Provence"
+    },
+    {
+        "name": "Saint-Victoret",
+        "slug": "saint-victoret",
+        "zip": "13730",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Victoret"
+    },
+    {
+        "name": "Sénas",
+        "slug": "senas",
+        "zip": "13560",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sénas"
+    },
+    {
+        "name": "Septèmes-les-Vallons",
+        "slug": "septemes-les-vallons",
+        "zip": "13240",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Septèmes-les-Vallons"
+    },
+    {
+        "name": "Simiane-Collongue",
+        "slug": "simiane-collongue",
+        "zip": "13109",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Simiane-Collongue"
+    },
+    {
+        "name": "Tarascon",
+        "slug": "tarascon",
+        "zip": "13150",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tarascon"
+    },
+    {
+        "name": "Trets",
+        "slug": "trets",
+        "zip": "13530",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trets"
+    },
+    {
+        "name": "Venelles",
+        "slug": "venelles",
+        "zip": "13770",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Venelles"
+    },
+    {
+        "name": "Ventabren",
+        "slug": "ventabren",
+        "zip": "13122",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ventabren"
+    },
+    {
+        "name": "Carnoux-en-Provence",
+        "slug": "carnoux-en-provence",
+        "zip": "13470",
+        "department": {
+            "code": "13",
+            "nom": "Bouches-du-Rhône"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carnoux-en-Provence"
+    },
+    {
+        "name": "Bayeux",
+        "slug": "bayeux",
+        "zip": "14400",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bayeux"
+    },
+    {
+        "name": "Souleuvre en Bocage",
+        "slug": "souleuvre-en-bocage",
+        "zip": "14260",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Souleuvre en Bocage"
+    },
+    {
+        "name": "Blainville-sur-Orne",
+        "slug": "blainville-sur-orne",
+        "zip": "14550",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blainville-sur-Orne"
+    },
+    {
+        "name": "Thue et Mue",
+        "slug": "thue-et-mue",
+        "zip": "14210",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thue et Mue"
+    },
+    {
+        "name": "Colombelles",
+        "slug": "colombelles",
+        "zip": "14460",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Colombelles"
+    },
+    {
+        "name": "Condé-en-Normandie",
+        "slug": "conde-en-normandie",
+        "zip": "14110",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Condé-en-Normandie"
+    },
+    {
+        "name": "Cormelles-le-Royal",
+        "slug": "cormelles-le-royal",
+        "zip": "14123",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cormelles-le-Royal"
+    },
+    {
+        "name": "Dives-sur-Mer",
+        "slug": "dives-sur-mer",
+        "zip": "14160",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dives-sur-Mer"
+    },
+    {
+        "name": "Douvres-la-Délivrande",
+        "slug": "douvres-la-delivrande",
+        "zip": "14440",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Douvres-la-Délivrande"
+    },
+    {
+        "name": "Falaise",
+        "slug": "falaise",
+        "zip": "14700",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Falaise"
+    },
+    {
+        "name": "Fleury-sur-Orne",
+        "slug": "fleury-sur-orne",
+        "zip": "14123",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fleury-sur-Orne"
+    },
+    {
+        "name": "Giberville",
+        "slug": "giberville",
+        "zip": "14730",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Giberville"
+    },
+    {
+        "name": "Hérouville-Saint-Clair",
+        "slug": "herouville-saint-clair",
+        "zip": "14200",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hérouville-Saint-Clair"
+    },
+    {
+        "name": "Ifs",
+        "slug": "ifs",
+        "zip": "14123",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ifs"
+    },
+    {
+        "name": "Lisieux",
+        "slug": "lisieux",
+        "zip": "14100",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lisieux"
+    },
+    {
+        "name": "Livarot-Pays-d'Auge",
+        "slug": "livarot-pays-d-auge",
+        "zip": "14140",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Livarot-Pays-d'Auge"
+    },
+    {
+        "name": "Mézidon Vallée d'Auge",
+        "slug": "mezidon-vallee-d-auge",
+        "zip": "14140",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mézidon Vallée d'Auge"
+    },
+    {
+        "name": "Mondeville",
+        "slug": "mondeville",
+        "zip": "14120",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mondeville"
+    },
+    {
+        "name": "Ouistreham",
+        "slug": "ouistreham",
+        "zip": "14150",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ouistreham"
+    },
+    {
+        "name": "Pont-l'Évêque",
+        "slug": "pont-l-eveque",
+        "zip": "14130",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-l'Évêque"
+    },
+    {
+        "name": "Saint-Pierre-en-Auge",
+        "slug": "saint-pierre-en-auge",
+        "zip": "14140",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-en-Auge"
+    },
+    {
+        "name": "Valdallière",
+        "slug": "valdalliere",
+        "zip": "14350",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valdallière"
+    },
+    {
+        "name": "Vire Normandie",
+        "slug": "vire-normandie",
+        "zip": "14500",
+        "department": {
+            "code": "14",
+            "nom": "Calvados"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vire Normandie"
+    },
+    {
+        "name": "Arpajon-sur-Cère",
+        "slug": "arpajon-sur-cere",
+        "zip": "15130",
+        "department": {
+            "code": "15",
+            "nom": "Cantal"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arpajon-sur-Cère"
+    },
+    {
+        "name": "Aurillac",
+        "slug": "aurillac",
+        "zip": "15000",
+        "department": {
+            "code": "15",
+            "nom": "Cantal"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aurillac"
+    },
+    {
+        "name": "Saint-Flour",
+        "slug": "saint-flour",
+        "zip": "15100",
+        "department": {
+            "code": "15",
+            "nom": "Cantal"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Flour"
+    },
+    {
+        "name": "Angoulême",
+        "slug": "angouleme",
+        "zip": "16000",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Angoulême"
+    },
+    {
+        "name": "Champniers",
+        "slug": "champniers",
+        "zip": "16430",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champniers"
+    },
+    {
+        "name": "Cognac",
+        "slug": "cognac",
+        "zip": "16100",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cognac"
+    },
+    {
+        "name": "La Couronne",
+        "slug": "la-couronne",
+        "zip": "16400",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Couronne"
+    },
+    {
+        "name": "Gond-Pontouvre",
+        "slug": "gond-pontouvre",
+        "zip": "16160",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gond-Pontouvre"
+    },
+    {
+        "name": "L'Isle-d'Espagnac",
+        "slug": "l-isle-d-espagnac",
+        "zip": "16340",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Isle-d'Espagnac"
+    },
+    {
+        "name": "Ruelle-sur-Touvre",
+        "slug": "ruelle-sur-touvre",
+        "zip": "16600",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ruelle-sur-Touvre"
+    },
+    {
+        "name": "Saint-Yrieix-sur-Charente",
+        "slug": "saint-yrieix-sur-charente",
+        "zip": "16710",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Yrieix-sur-Charente"
+    },
+    {
+        "name": "Soyaux",
+        "slug": "soyaux",
+        "zip": "16800",
+        "department": {
+            "code": "16",
+            "nom": "Charente"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soyaux"
+    },
+    {
+        "name": "Aytré",
+        "slug": "aytre",
+        "zip": "17440",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aytré"
+    },
+    {
+        "name": "Châtelaillon-Plage",
+        "slug": "chatelaillon-plage",
+        "zip": "17340",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtelaillon-Plage"
+    },
+    {
+        "name": "Dompierre-sur-Mer",
+        "slug": "dompierre-sur-mer",
+        "zip": "17139",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dompierre-sur-Mer"
+    },
+    {
+        "name": "Lagord",
+        "slug": "lagord",
+        "zip": "17140",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lagord"
+    },
+    {
+        "name": "Marennes-Hiers-Brouage",
+        "slug": "marennes-hiers-brouage",
+        "zip": "17320",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marennes-Hiers-Brouage"
+    },
+    {
+        "name": "Nieul-sur-Mer",
+        "slug": "nieul-sur-mer",
+        "zip": "17137",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nieul-sur-Mer"
+    },
+    {
+        "name": "Périgny",
+        "slug": "perigny",
+        "zip": "17180",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Périgny"
+    },
+    {
+        "name": "Puilboreau",
+        "slug": "puilboreau",
+        "zip": "17138",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Puilboreau"
+    },
+    {
+        "name": "Saint-Georges-de-Didonne",
+        "slug": "saint-georges-de-didonne",
+        "zip": "17110",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Georges-de-Didonne"
+    },
+    {
+        "name": "Saint-Jean-d'Angély",
+        "slug": "saint-jean-d-angely",
+        "zip": "17400",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-d'Angély"
+    },
+    {
+        "name": "Saint-Pierre-d'Oléron",
+        "slug": "saint-pierre-d-oleron",
+        "zip": "17310",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-d'Oléron"
+    },
+    {
+        "name": "Sainte-Soulle",
+        "slug": "sainte-soulle",
+        "zip": "17220",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Soulle"
+    },
+    {
+        "name": "Saint-Xandre",
+        "slug": "saint-xandre",
+        "zip": "17138",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Xandre"
+    },
+    {
+        "name": "Saujon",
+        "slug": "saujon",
+        "zip": "17600",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saujon"
+    },
+    {
+        "name": "Surgères",
+        "slug": "surgeres",
+        "zip": "17700",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Surgères"
+    },
+    {
+        "name": "Tonnay-Charente",
+        "slug": "tonnay-charente",
+        "zip": "17430",
+        "department": {
+            "code": "17",
+            "nom": "Charente-Maritime"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tonnay-Charente"
+    },
+    {
+        "name": "Aubigny-sur-Nère",
+        "slug": "aubigny-sur-nere",
+        "zip": "18700",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubigny-sur-Nère"
+    },
+    {
+        "name": "Bourges",
+        "slug": "bourges",
+        "zip": "18000",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourges"
+    },
+    {
+        "name": "Mehun-sur-Yèvre",
+        "slug": "mehun-sur-yevre",
+        "zip": "18500",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mehun-sur-Yèvre"
+    },
+    {
+        "name": "Saint-Amand-Montrond",
+        "slug": "saint-amand-montrond",
+        "zip": "18200",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Amand-Montrond"
+    },
+    {
+        "name": "Saint-Doulchard",
+        "slug": "saint-doulchard",
+        "zip": "18230",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Doulchard"
+    },
+    {
+        "name": "Saint-Florent-sur-Cher",
+        "slug": "saint-florent-sur-cher",
+        "zip": "18400",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Florent-sur-Cher"
+    },
+    {
+        "name": "Vierzon",
+        "slug": "vierzon",
+        "zip": "18100",
+        "department": {
+            "code": "18",
+            "nom": "Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vierzon"
+    },
+    {
+        "name": "Malemort",
+        "slug": "malemort",
+        "zip": "19360",
+        "department": {
+            "code": "19",
+            "nom": "Corrèze"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Malemort"
+    },
+    {
+        "name": "Saint-Pantaléon-de-Larche",
+        "slug": "saint-pantaleon-de-larche",
+        "zip": "19600",
+        "department": {
+            "code": "19",
+            "nom": "Corrèze"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pantaléon-de-Larche"
+    },
+    {
+        "name": "Tulle",
+        "slug": "tulle",
+        "zip": "19000",
+        "department": {
+            "code": "19",
+            "nom": "Corrèze"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tulle"
+    },
+    {
+        "name": "Ussel",
+        "slug": "ussel",
+        "zip": "19200",
+        "department": {
+            "code": "19",
+            "nom": "Corrèze"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ussel"
+    },
+    {
+        "name": "Auxonne",
+        "slug": "auxonne",
+        "zip": "21130",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auxonne"
+    },
+    {
+        "name": "Beaune",
+        "slug": "beaune",
+        "zip": "21200",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaune"
+    },
+    {
+        "name": "Châtillon-sur-Seine",
+        "slug": "chatillon-sur-seine",
+        "zip": "21400",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtillon-sur-Seine"
+    },
+    {
+        "name": "Chenôve",
+        "slug": "chenove",
+        "zip": "21300",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chenôve"
+    },
+    {
+        "name": "Chevigny-Saint-Sauveur",
+        "slug": "chevigny-saint-sauveur",
+        "zip": "21800",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chevigny-Saint-Sauveur"
+    },
+    {
+        "name": "Fontaine-lès-Dijon",
+        "slug": "fontaine-les-dijon",
+        "zip": "21121",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontaine-lès-Dijon"
+    },
+    {
+        "name": "Genlis",
+        "slug": "genlis",
+        "zip": "21110",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Genlis"
+    },
+    {
+        "name": "Longvic",
+        "slug": "longvic",
+        "zip": "21600",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longvic"
+    },
+    {
+        "name": "Marsannay-la-Côte",
+        "slug": "marsannay-la-cote",
+        "zip": "21160",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marsannay-la-Côte"
+    },
+    {
+        "name": "Nuits-Saint-Georges",
+        "slug": "nuits-saint-georges",
+        "zip": "21700",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nuits-Saint-Georges"
+    },
+    {
+        "name": "Quetigny",
+        "slug": "quetigny",
+        "zip": "21800",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quetigny"
+    },
+    {
+        "name": "Saint-Apollinaire",
+        "slug": "saint-apollinaire",
+        "zip": "21850",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Apollinaire"
+    },
+    {
+        "name": "Talant",
+        "slug": "talant",
+        "zip": "21240",
+        "department": {
+            "code": "21",
+            "nom": "Côte-d'Or"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Talant"
+    },
+    {
+        "name": "Le Mené",
+        "slug": "le-mene",
+        "zip": "22330",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mené"
+    },
+    {
+        "name": "Dinan",
+        "slug": "dinan",
+        "zip": "22100",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dinan"
+    },
+    {
+        "name": "Binic-Étables-sur-Mer",
+        "slug": "binic-etables-sur-mer",
+        "zip": "22520",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Binic-Étables-sur-Mer"
+    },
+    {
+        "name": "Guingamp",
+        "slug": "guingamp",
+        "zip": "22200",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guingamp"
+    },
+    {
+        "name": "Lamballe-Armor",
+        "slug": "lamballe-armor",
+        "zip": "22400",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lamballe-Armor"
+    },
+    {
+        "name": "Langueux",
+        "slug": "langueux",
+        "zip": "22360",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Langueux"
+    },
+    {
+        "name": "Loudéac",
+        "slug": "loudeac",
+        "zip": "22600",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loudéac"
+    },
+    {
+        "name": "Paimpol",
+        "slug": "paimpol",
+        "zip": "22500",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Paimpol"
+    },
+    {
+        "name": "Perros-Guirec",
+        "slug": "perros-guirec",
+        "zip": "22700",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Perros-Guirec"
+    },
+    {
+        "name": "Plédran",
+        "slug": "pledran",
+        "zip": "22960",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plédran"
+    },
+    {
+        "name": "Plérin",
+        "slug": "plerin",
+        "zip": "22190",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plérin"
+    },
+    {
+        "name": "Ploufragan",
+        "slug": "ploufragan",
+        "zip": "22440",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ploufragan"
+    },
+    {
+        "name": "Ploumagoar",
+        "slug": "ploumagoar",
+        "zip": "22970",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ploumagoar"
+    },
+    {
+        "name": "Pordic",
+        "slug": "pordic",
+        "zip": "22590",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pordic"
+    },
+    {
+        "name": "Trégueux",
+        "slug": "tregueux",
+        "zip": "22950",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trégueux"
+    },
+    {
+        "name": "Yffiniac",
+        "slug": "yffiniac",
+        "zip": "22120",
+        "department": {
+            "code": "22",
+            "nom": "Côtes-d'Armor"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yffiniac"
+    },
+    {
+        "name": "Guéret",
+        "slug": "gueret",
+        "zip": "23000",
+        "department": {
+            "code": "23",
+            "nom": "Creuse"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guéret"
+    },
+    {
+        "name": "Boulazac Isle Manoire",
+        "slug": "boulazac-isle-manoire",
+        "zip": "24330",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boulazac Isle Manoire"
+    },
+    {
+        "name": "Coulounieix-Chamiers",
+        "slug": "coulounieix-chamiers",
+        "zip": "24660",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coulounieix-Chamiers"
+    },
+    {
+        "name": "Montpon-Ménestérol",
+        "slug": "montpon-menesterol",
+        "zip": "24700",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montpon-Ménestérol"
+    },
+    {
+        "name": "Saint-Astier",
+        "slug": "saint-astier",
+        "zip": "24110",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Astier"
+    },
+    {
+        "name": "Terrasson-Lavilledieu",
+        "slug": "terrasson-lavilledieu",
+        "zip": "24120",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Terrasson-Lavilledieu"
+    },
+    {
+        "name": "Trélissac",
+        "slug": "trelissac",
+        "zip": "24750",
+        "department": {
+            "code": "24",
+            "nom": "Dordogne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trélissac"
+    },
+    {
+        "name": "Audincourt",
+        "slug": "audincourt",
+        "zip": "25400",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Audincourt"
+    },
+    {
+        "name": "Baume-les-Dames",
+        "slug": "baume-les-dames",
+        "zip": "25110",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baume-les-Dames"
+    },
+    {
+        "name": "Bethoncourt",
+        "slug": "bethoncourt",
+        "zip": "25200",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bethoncourt"
+    },
+    {
+        "name": "Grand-Charmont",
+        "slug": "grand-charmont",
+        "zip": "25200",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grand-Charmont"
+    },
+    {
+        "name": "Villers-le-Lac",
+        "slug": "villers-le-lac",
+        "zip": "25130",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villers-le-Lac"
+    },
+    {
+        "name": "Morteau",
+        "slug": "morteau",
+        "zip": "25500",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morteau"
+    },
+    {
+        "name": "Pontarlier",
+        "slug": "pontarlier",
+        "zip": "25300",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pontarlier"
+    },
+    {
+        "name": "Saint-Vit",
+        "slug": "saint-vit",
+        "zip": "25410",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Vit"
+    },
+    {
+        "name": "Seloncourt",
+        "slug": "seloncourt",
+        "zip": "25230",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seloncourt"
+    },
+    {
+        "name": "Valdahon",
+        "slug": "valdahon",
+        "zip": "25800",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valdahon"
+    },
+    {
+        "name": "Valentigney",
+        "slug": "valentigney",
+        "zip": "25700",
+        "department": {
+            "code": "25",
+            "nom": "Doubs"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valentigney"
+    },
+    {
+        "name": "Bourg-de-Péage",
+        "slug": "bourg-de-peage",
+        "zip": "26300",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-de-Péage"
+    },
+    {
+        "name": "Bourg-lès-Valence",
+        "slug": "bourg-les-valence",
+        "zip": "26500",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-lès-Valence"
+    },
+    {
+        "name": "Chabeuil",
+        "slug": "chabeuil",
+        "zip": "26120",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chabeuil"
+    },
+    {
+        "name": "Chatuzange-le-Goubet",
+        "slug": "chatuzange-le-goubet",
+        "zip": "26300",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chatuzange-le-Goubet"
+    },
+    {
+        "name": "Crest",
+        "slug": "crest",
+        "zip": "26400",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crest"
+    },
+    {
+        "name": "Donzère",
+        "slug": "donzere",
+        "zip": "26290",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Donzère"
+    },
+    {
+        "name": "Étoile-sur-Rhône",
+        "slug": "etoile-sur-rhone",
+        "zip": "26800",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Étoile-sur-Rhône"
+    },
+    {
+        "name": "Livron-sur-Drôme",
+        "slug": "livron-sur-drome",
+        "zip": "26250",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Livron-sur-Drôme"
+    },
+    {
+        "name": "Loriol-sur-Drôme",
+        "slug": "loriol-sur-drome",
+        "zip": "26270",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loriol-sur-Drôme"
+    },
+    {
+        "name": "Nyons",
+        "slug": "nyons",
+        "zip": "26110",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nyons"
+    },
+    {
+        "name": "Pierrelatte",
+        "slug": "pierrelatte",
+        "zip": "26700",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pierrelatte"
+    },
+    {
+        "name": "Portes-lès-Valence",
+        "slug": "portes-les-valence",
+        "zip": "26800",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Portes-lès-Valence"
+    },
+    {
+        "name": "Saint-Marcel-lès-Valence",
+        "slug": "saint-marcel-les-valence",
+        "zip": "26320",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Marcel-lès-Valence"
+    },
+    {
+        "name": "Saint-Paul-Trois-Châteaux",
+        "slug": "saint-paul-trois-chateaux",
+        "zip": "26130",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Paul-Trois-Châteaux"
+    },
+    {
+        "name": "Saint-Rambert-d'Albon",
+        "slug": "saint-rambert-d-albon",
+        "zip": "26140",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Rambert-d'Albon"
+    },
+    {
+        "name": "Tain-l'Hermitage",
+        "slug": "tain-l-hermitage",
+        "zip": "26600",
+        "department": {
+            "code": "26",
+            "nom": "Drôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tain-l'Hermitage"
+    },
+    {
+        "name": "Les Andelys",
+        "slug": "les-andelys",
+        "zip": "27700",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Andelys"
+    },
+    {
+        "name": "Le Val d'Hazey",
+        "slug": "le-val-d-hazey",
+        "zip": "27600",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Val d'Hazey"
+    },
+    {
+        "name": "Bernay",
+        "slug": "bernay",
+        "zip": "27300",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bernay"
+    },
+    {
+        "name": "Mesnils-sur-Iton",
+        "slug": "mesnils-sur-iton",
+        "zip": "27160",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mesnils-sur-Iton"
+    },
+    {
+        "name": "Vexin-sur-Epte",
+        "slug": "vexin-sur-epte",
+        "zip": "27420",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vexin-sur-Epte"
+    },
+    {
+        "name": "Évreux",
+        "slug": "evreux",
+        "zip": "27000",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Évreux"
+    },
+    {
+        "name": "Gaillon",
+        "slug": "gaillon",
+        "zip": "27600",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gaillon"
+    },
+    {
+        "name": "Gisors",
+        "slug": "gisors",
+        "zip": "27140",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gisors"
+    },
+    {
+        "name": "Louviers",
+        "slug": "louviers",
+        "zip": "27400",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Louviers"
+    },
+    {
+        "name": "Pacy-sur-Eure",
+        "slug": "pacy-sur-eure",
+        "zip": "27120",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pacy-sur-Eure"
+    },
+    {
+        "name": "Pont-Audemer",
+        "slug": "pont-audemer",
+        "zip": "27500",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-Audemer"
+    },
+    {
+        "name": "Saint-Sébastien-de-Morsent",
+        "slug": "saint-sebastien-de-morsent",
+        "zip": "27180",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Sébastien-de-Morsent"
+    },
+    {
+        "name": "Verneuil d'Avre et d'Iton",
+        "slug": "verneuil-d-avre-et-d-iton",
+        "zip": "27130",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Verneuil d'Avre et d'Iton"
+    },
+    {
+        "name": "Vernon",
+        "slug": "vernon",
+        "zip": "27200",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vernon"
+    },
+    {
+        "name": "Val-de-Reuil",
+        "slug": "val-de-reuil",
+        "zip": "27100",
+        "department": {
+            "code": "27",
+            "nom": "Eure"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Val-de-Reuil"
+    },
+    {
+        "name": "Auneau-Bleury-Saint-Symphorien",
+        "slug": "auneau-bleury-saint-symphorien",
+        "zip": "28700",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auneau-Bleury-Saint-Symphorien"
+    },
+    {
+        "name": "Chartres",
+        "slug": "chartres",
+        "zip": "28000",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chartres"
+    },
+    {
+        "name": "Châteaudun",
+        "slug": "chateaudun",
+        "zip": "28200",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaudun"
+    },
+    {
+        "name": "Cloyes-les-Trois-Rivières",
+        "slug": "cloyes-les-trois-rivieres",
+        "zip": "28220",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cloyes-les-Trois-Rivières"
+    },
+    {
+        "name": "Dreux",
+        "slug": "dreux",
+        "zip": "28100",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dreux"
+    },
+    {
+        "name": "Épernon",
+        "slug": "epernon",
+        "zip": "28230",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épernon"
+    },
+    {
+        "name": "Lèves",
+        "slug": "leves",
+        "zip": "28300",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lèves"
+    },
+    {
+        "name": "Lucé",
+        "slug": "luce",
+        "zip": "28110",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lucé"
+    },
+    {
+        "name": "Luisant",
+        "slug": "luisant",
+        "zip": "28600",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luisant"
+    },
+    {
+        "name": "Mainvilliers",
+        "slug": "mainvilliers",
+        "zip": "28300",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mainvilliers"
+    },
+    {
+        "name": "Nogent-le-Rotrou",
+        "slug": "nogent-le-rotrou",
+        "zip": "28400",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nogent-le-Rotrou"
+    },
+    {
+        "name": "Vernouillet",
+        "slug": "vernouillet",
+        "zip": "28500",
+        "department": {
+            "code": "28",
+            "nom": "Eure-et-Loir"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vernouillet"
+    },
+    {
+        "name": "Bannalec",
+        "slug": "bannalec",
+        "zip": "29380",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bannalec"
+    },
+    {
+        "name": "Briec",
+        "slug": "briec",
+        "zip": "29510",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Briec"
+    },
+    {
+        "name": "Carhaix-Plouguer",
+        "slug": "carhaix-plouguer",
+        "zip": "29270",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carhaix-Plouguer"
+    },
+    {
+        "name": "Châteaulin",
+        "slug": "chateaulin",
+        "zip": "29150",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaulin"
+    },
+    {
+        "name": "Crozon",
+        "slug": "crozon",
+        "zip": "29160",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crozon"
+    },
+    {
+        "name": "Douarnenez",
+        "slug": "douarnenez",
+        "zip": "29100",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Douarnenez"
+    },
+    {
+        "name": "Ergué-Gabéric",
+        "slug": "ergue-gaberic",
+        "zip": "29500",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ergué-Gabéric"
+    },
+    {
+        "name": "Fouesnant",
+        "slug": "fouesnant",
+        "zip": "29170",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fouesnant"
+    },
+    {
+        "name": "Gouesnou",
+        "slug": "gouesnou",
+        "zip": "29850",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gouesnou"
+    },
+    {
+        "name": "Guilers",
+        "slug": "guilers",
+        "zip": "29820",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guilers"
+    },
+    {
+        "name": "Guipavas",
+        "slug": "guipavas",
+        "zip": "29490",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guipavas"
+    },
+    {
+        "name": "Landerneau",
+        "slug": "landerneau",
+        "zip": "29800",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Landerneau"
+    },
+    {
+        "name": "Landivisiau",
+        "slug": "landivisiau",
+        "zip": "29400",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Landivisiau"
+    },
+    {
+        "name": "Lannilis",
+        "slug": "lannilis",
+        "zip": "29870",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lannilis"
+    },
+    {
+        "name": "Lesneven",
+        "slug": "lesneven",
+        "zip": "29260",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lesneven"
+    },
+    {
+        "name": "Locmaria-Plouzané",
+        "slug": "locmaria-plouzane",
+        "zip": "29280",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Locmaria-Plouzané"
+    },
+    {
+        "name": "Moëlan-sur-Mer",
+        "slug": "moelan-sur-mer",
+        "zip": "29350",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moëlan-sur-Mer"
+    },
+    {
+        "name": "Morlaix",
+        "slug": "morlaix",
+        "zip": "29600",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morlaix"
+    },
+    {
+        "name": "Penmarch",
+        "slug": "penmarch",
+        "zip": "29760",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Penmarch"
+    },
+    {
+        "name": "Plabennec",
+        "slug": "plabennec",
+        "zip": "29860",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plabennec"
+    },
+    {
+        "name": "Plonéour-Lanvern",
+        "slug": "ploneour-lanvern",
+        "zip": "29720",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plonéour-Lanvern"
+    },
+    {
+        "name": "Ploudalmézeau",
+        "slug": "ploudalmezeau",
+        "zip": "29830",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ploudalmézeau"
+    },
+    {
+        "name": "Plougastel-Daoulas",
+        "slug": "plougastel-daoulas",
+        "zip": "29470",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plougastel-Daoulas"
+    },
+    {
+        "name": "Plouguerneau",
+        "slug": "plouguerneau",
+        "zip": "29880",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plouguerneau"
+    },
+    {
+        "name": "Plouigneau",
+        "slug": "plouigneau",
+        "zip": "29610",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plouigneau"
+    },
+    {
+        "name": "Plouzané",
+        "slug": "plouzane",
+        "zip": "29280",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plouzané"
+    },
+    {
+        "name": "Pont-l'Abbé",
+        "slug": "pont-l-abbe",
+        "zip": "29120",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-l'Abbé"
+    },
+    {
+        "name": "Quimperlé",
+        "slug": "quimperle",
+        "zip": "29300",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quimperlé"
+    },
+    {
+        "name": "Le Relecq-Kerhuon",
+        "slug": "le-relecq-kerhuon",
+        "zip": "29480",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Relecq-Kerhuon"
+    },
+    {
+        "name": "Rosporden",
+        "slug": "rosporden",
+        "zip": "29140",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rosporden"
+    },
+    {
+        "name": "Saint-Pol-de-Léon",
+        "slug": "saint-pol-de-leon",
+        "zip": "29250",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pol-de-Léon"
+    },
+    {
+        "name": "Saint-Renan",
+        "slug": "saint-renan",
+        "zip": "29290",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Renan"
+    },
+    {
+        "name": "Scaër",
+        "slug": "scaer",
+        "zip": "29390",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Scaër"
+    },
+    {
+        "name": "Trégunc",
+        "slug": "tregunc",
+        "zip": "29910",
+        "department": {
+            "code": "29",
+            "nom": "Finistère"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trégunc"
+    },
+    {
+        "name": "Porto-Vecchio",
+        "slug": "porto-vecchio",
+        "zip": "20137",
+        "department": {
+            "code": "2A",
+            "nom": "Corse-du-Sud"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Porto-Vecchio"
+    },
+    {
+        "name": "Biguglia",
+        "slug": "biguglia",
+        "zip": "20620",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Biguglia"
+    },
+    {
+        "name": "Borgo",
+        "slug": "borgo",
+        "zip": "20290",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Borgo"
+    },
+    {
+        "name": "Calvi",
+        "slug": "calvi",
+        "zip": "20260",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Calvi"
+    },
+    {
+        "name": "Corte",
+        "slug": "corte",
+        "zip": "20250",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Corte"
+    },
+    {
+        "name": "Furiani",
+        "slug": "furiani",
+        "zip": "20600",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Furiani"
+    },
+    {
+        "name": "Lucciana",
+        "slug": "lucciana",
+        "zip": "20290",
+        "department": {
+            "code": "2B",
+            "nom": "Haute-Corse"
+        },
+        "region": "Corse",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lucciana"
+    },
+    {
+        "name": "Aigues-Mortes",
+        "slug": "aigues-mortes",
+        "zip": "30220",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aigues-Mortes"
+    },
+    {
+        "name": "Aimargues",
+        "slug": "aimargues",
+        "zip": "30470",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aimargues"
+    },
+    {
+        "name": "Beauvoisin",
+        "slug": "beauvoisin",
+        "zip": "30640",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beauvoisin"
+    },
+    {
+        "name": "Bellegarde",
+        "slug": "bellegarde",
+        "zip": "30127",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bellegarde"
+    },
+    {
+        "name": "Bouillargues",
+        "slug": "bouillargues",
+        "zip": "30230",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouillargues"
+    },
+    {
+        "name": "Calvisson",
+        "slug": "calvisson",
+        "zip": "30420",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Calvisson"
+    },
+    {
+        "name": "Garons",
+        "slug": "garons",
+        "zip": "30128",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Garons"
+    },
+    {
+        "name": "Le Grau-du-Roi",
+        "slug": "le-grau-du-roi",
+        "zip": "30240",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Grau-du-Roi"
+    },
+    {
+        "name": "Laudun-l'Ardoise",
+        "slug": "laudun-l-ardoise",
+        "zip": "30290",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laudun-l'Ardoise"
+    },
+    {
+        "name": "Manduel",
+        "slug": "manduel",
+        "zip": "30129",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Manduel"
+    },
+    {
+        "name": "Marguerittes",
+        "slug": "marguerittes",
+        "zip": "30320",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marguerittes"
+    },
+    {
+        "name": "Milhaud",
+        "slug": "milhaud",
+        "zip": "30540",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Milhaud"
+    },
+    {
+        "name": "Rochefort-du-Gard",
+        "slug": "rochefort-du-gard",
+        "zip": "30650",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rochefort-du-Gard"
+    },
+    {
+        "name": "Saint-Christol-lez-Alès",
+        "slug": "saint-christol-lez-ales",
+        "zip": "30380",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Christol-lez-Alès"
+    },
+    {
+        "name": "Saint-Privat-des-Vieux",
+        "slug": "saint-privat-des-vieux",
+        "zip": "30340",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Privat-des-Vieux"
+    },
+    {
+        "name": "Vergèze",
+        "slug": "vergeze",
+        "zip": "30310",
+        "department": {
+            "code": "30",
+            "nom": "Gard"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vergèze"
+    },
+    {
+        "name": "Aucamville",
+        "slug": "aucamville",
+        "zip": "31140",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aucamville"
+    },
+    {
+        "name": "Aussonne",
+        "slug": "aussonne",
+        "zip": "31840",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aussonne"
+    },
+    {
+        "name": "Auterive",
+        "slug": "auterive",
+        "zip": "31190",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auterive"
+    },
+    {
+        "name": "Balma",
+        "slug": "balma",
+        "zip": "31130",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Balma"
+    },
+    {
+        "name": "Beauzelle",
+        "slug": "beauzelle",
+        "zip": "31700",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beauzelle"
+    },
+    {
+        "name": "Blagnac",
+        "slug": "blagnac",
+        "zip": "31700",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blagnac"
+    },
+    {
+        "name": "Bruguières",
+        "slug": "bruguieres",
+        "zip": "31150",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bruguières"
+    },
+    {
+        "name": "Carbonne",
+        "slug": "carbonne",
+        "zip": "31390",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carbonne"
+    },
+    {
+        "name": "Castanet-Tolosan",
+        "slug": "castanet-tolosan",
+        "zip": "31320",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Castanet-Tolosan"
+    },
+    {
+        "name": "Castelginest",
+        "slug": "castelginest",
+        "zip": "31780",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Castelginest"
+    },
+    {
+        "name": "Castelnau-d'Estrétefonds",
+        "slug": "castelnau-d-estretefonds",
+        "zip": "31620",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Castelnau-d'Estrétefonds"
+    },
+    {
+        "name": "Colomiers",
+        "slug": "colomiers",
+        "zip": "31770",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Colomiers"
+    },
+    {
+        "name": "Cornebarrieu",
+        "slug": "cornebarrieu",
+        "zip": "31700",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cornebarrieu"
+    },
+    {
+        "name": "Cugnaux",
+        "slug": "cugnaux",
+        "zip": "31270",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cugnaux"
+    },
+    {
+        "name": "Eaunes",
+        "slug": "eaunes",
+        "zip": "31600",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eaunes"
+    },
+    {
+        "name": "Escalquens",
+        "slug": "escalquens",
+        "zip": "31750",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Escalquens"
+    },
+    {
+        "name": "Fenouillet",
+        "slug": "fenouillet",
+        "zip": "31150",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fenouillet"
+    },
+    {
+        "name": "Fonsorbes",
+        "slug": "fonsorbes",
+        "zip": "31470",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fonsorbes"
+    },
+    {
+        "name": "Fontenilles",
+        "slug": "fontenilles",
+        "zip": "31470",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenilles"
+    },
+    {
+        "name": "Fronton",
+        "slug": "fronton",
+        "zip": "31620",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fronton"
+    },
+    {
+        "name": "Frouzins",
+        "slug": "frouzins",
+        "zip": "31270",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Frouzins"
+    },
+    {
+        "name": "Grenade",
+        "slug": "grenade",
+        "zip": "31330",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grenade"
+    },
+    {
+        "name": "Labarthe-sur-Lèze",
+        "slug": "labarthe-sur-leze",
+        "zip": "31860",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Labarthe-sur-Lèze"
+    },
+    {
+        "name": "Launaguet",
+        "slug": "launaguet",
+        "zip": "31140",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Launaguet"
+    },
+    {
+        "name": "Léguevin",
+        "slug": "leguevin",
+        "zip": "31490",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Léguevin"
+    },
+    {
+        "name": "Merville",
+        "slug": "merville",
+        "zip": "31330",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Merville"
+    },
+    {
+        "name": "Mondonville",
+        "slug": "mondonville",
+        "zip": "31700",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mondonville"
+    },
+    {
+        "name": "Muret",
+        "slug": "muret",
+        "zip": "31600",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Muret"
+    },
+    {
+        "name": "Pibrac",
+        "slug": "pibrac",
+        "zip": "31820",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pibrac"
+    },
+    {
+        "name": "Plaisance-du-Touch",
+        "slug": "plaisance-du-touch",
+        "zip": "31830",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plaisance-du-Touch"
+    },
+    {
+        "name": "Portet-sur-Garonne",
+        "slug": "portet-sur-garonne",
+        "zip": "31120",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Portet-sur-Garonne"
+    },
+    {
+        "name": "Quint-Fonsegrives",
+        "slug": "quint-fonsegrives",
+        "zip": "31130",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quint-Fonsegrives"
+    },
+    {
+        "name": "Ramonville-Saint-Agne",
+        "slug": "ramonville-saint-agne",
+        "zip": "31520",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ramonville-Saint-Agne"
+    },
+    {
+        "name": "Revel",
+        "slug": "revel",
+        "zip": "31250",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Revel"
+    },
+    {
+        "name": "Roques",
+        "slug": "roques",
+        "zip": "31120",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roques"
+    },
+    {
+        "name": "Saint-Alban",
+        "slug": "saint-alban",
+        "zip": "31140",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Alban"
+    },
+    {
+        "name": "Saint-Gaudens",
+        "slug": "saint-gaudens",
+        "zip": "31800",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Gaudens"
+    },
+    {
+        "name": "Saint-Jean",
+        "slug": "saint-jean",
+        "zip": "31240",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean"
+    },
+    {
+        "name": "Saint-Jory",
+        "slug": "saint-jory",
+        "zip": "31790",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jory"
+    },
+    {
+        "name": "Saint-Lys",
+        "slug": "saint-lys",
+        "zip": "31470",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Lys"
+    },
+    {
+        "name": "Saint-Orens-de-Gameville",
+        "slug": "saint-orens-de-gameville",
+        "zip": "31650",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Orens-de-Gameville"
+    },
+    {
+        "name": "La Salvetat-Saint-Gilles",
+        "slug": "la-salvetat-saint-gilles",
+        "zip": "31880",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Salvetat-Saint-Gilles"
+    },
+    {
+        "name": "Seysses",
+        "slug": "seysses",
+        "zip": "31600",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seysses"
+    },
+    {
+        "name": "Tournefeuille",
+        "slug": "tournefeuille",
+        "zip": "31170",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tournefeuille"
+    },
+    {
+        "name": "L'Union",
+        "slug": "l-union",
+        "zip": "31240",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Union"
+    },
+    {
+        "name": "Villefranche-de-Lauragais",
+        "slug": "villefranche-de-lauragais",
+        "zip": "31290",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villefranche-de-Lauragais"
+    },
+    {
+        "name": "Villemur-sur-Tarn",
+        "slug": "villemur-sur-tarn",
+        "zip": "31340",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villemur-sur-Tarn"
+    },
+    {
+        "name": "Villeneuve-Tolosane",
+        "slug": "villeneuve-tolosane",
+        "zip": "31270",
+        "department": {
+            "code": "31",
+            "nom": "Haute-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-Tolosane"
+    },
+    {
+        "name": "Condom",
+        "slug": "condom",
+        "zip": "32100",
+        "department": {
+            "code": "32",
+            "nom": "Gers"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Condom"
+    },
+    {
+        "name": "Fleurance",
+        "slug": "fleurance",
+        "zip": "32500",
+        "department": {
+            "code": "32",
+            "nom": "Gers"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fleurance"
+    },
+    {
+        "name": "L'Isle-Jourdain",
+        "slug": "l-isle-jourdain",
+        "zip": "32600",
+        "department": {
+            "code": "32",
+            "nom": "Gers"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Isle-Jourdain"
+    },
+    {
+        "name": "Ambarès-et-Lagrave",
+        "slug": "ambares-et-lagrave",
+        "zip": "33440",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ambarès-et-Lagrave"
+    },
+    {
+        "name": "Andernos-les-Bains",
+        "slug": "andernos-les-bains",
+        "zip": "33510",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Andernos-les-Bains"
+    },
+    {
+        "name": "Arès",
+        "slug": "ares",
+        "zip": "33740",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arès"
+    },
+    {
+        "name": "Artigues-près-Bordeaux",
+        "slug": "artigues-pres-bordeaux",
+        "zip": "33370",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Artigues-près-Bordeaux"
+    },
+    {
+        "name": "Audenge",
+        "slug": "audenge",
+        "zip": "33980",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Audenge"
+    },
+    {
+        "name": "Le Barp",
+        "slug": "le-barp",
+        "zip": "33114",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Barp"
+    },
+    {
+        "name": "Bassens",
+        "slug": "bassens",
+        "zip": "33530",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bassens"
+    },
+    {
+        "name": "Belin-Béliet",
+        "slug": "belin-beliet",
+        "zip": "33830",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Belin-Béliet"
+    },
+    {
+        "name": "Biganos",
+        "slug": "biganos",
+        "zip": "33380",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Biganos"
+    },
+    {
+        "name": "Blanquefort",
+        "slug": "blanquefort",
+        "zip": "33290",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blanquefort"
+    },
+    {
+        "name": "Blaye",
+        "slug": "blaye",
+        "zip": "33390",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blaye"
+    },
+    {
+        "name": "Le Bouscat",
+        "slug": "le-bouscat",
+        "zip": "33110",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Bouscat"
+    },
+    {
+        "name": "Cadaujac",
+        "slug": "cadaujac",
+        "zip": "33140",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cadaujac"
+    },
+    {
+        "name": "Canéjan",
+        "slug": "canejan",
+        "zip": "33610",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Canéjan"
+    },
+    {
+        "name": "Carbon-Blanc",
+        "slug": "carbon-blanc",
+        "zip": "33560",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carbon-Blanc"
+    },
+    {
+        "name": "Cenon",
+        "slug": "cenon",
+        "zip": "33150",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cenon"
+    },
+    {
+        "name": "Cestas",
+        "slug": "cestas",
+        "zip": "33610",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cestas"
+    },
+    {
+        "name": "Coutras",
+        "slug": "coutras",
+        "zip": "33230",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coutras"
+    },
+    {
+        "name": "Eysines",
+        "slug": "eysines",
+        "zip": "33320",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eysines"
+    },
+    {
+        "name": "Floirac",
+        "slug": "floirac",
+        "zip": "33270",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Floirac"
+    },
+    {
+        "name": "Gradignan",
+        "slug": "gradignan",
+        "zip": "33170",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gradignan"
+    },
+    {
+        "name": "Gujan-Mestras",
+        "slug": "gujan-mestras",
+        "zip": "33470",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gujan-Mestras"
+    },
+    {
+        "name": "Le Haillan",
+        "slug": "le-haillan",
+        "zip": "33185",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Haillan"
+    },
+    {
+        "name": "Izon",
+        "slug": "izon",
+        "zip": "33450",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Izon"
+    },
+    {
+        "name": "Lacanau",
+        "slug": "lacanau",
+        "zip": "33680",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lacanau"
+    },
+    {
+        "name": "Langon",
+        "slug": "langon",
+        "zip": "33210",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Langon"
+    },
+    {
+        "name": "Lanton",
+        "slug": "lanton",
+        "zip": "33138",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lanton"
+    },
+    {
+        "name": "Léognan",
+        "slug": "leognan",
+        "zip": "33850",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Léognan"
+    },
+    {
+        "name": "Lesparre-Médoc",
+        "slug": "lesparre-medoc",
+        "zip": "33340",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lesparre-Médoc"
+    },
+    {
+        "name": "Libourne",
+        "slug": "libourne",
+        "zip": "33500",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Libourne"
+    },
+    {
+        "name": "Lormont",
+        "slug": "lormont",
+        "zip": "33310",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lormont"
+    },
+    {
+        "name": "Ludon-Médoc",
+        "slug": "ludon-medoc",
+        "zip": "33290",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ludon-Médoc"
+    },
+    {
+        "name": "Martignas-sur-Jalle",
+        "slug": "martignas-sur-jalle",
+        "zip": "33127",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Martignas-sur-Jalle"
+    },
+    {
+        "name": "Mios",
+        "slug": "mios",
+        "zip": "33380",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mios"
+    },
+    {
+        "name": "Parempuyre",
+        "slug": "parempuyre",
+        "zip": "33290",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Parempuyre"
+    },
+    {
+        "name": "Pauillac",
+        "slug": "pauillac",
+        "zip": "33250",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pauillac"
+    },
+    {
+        "name": "Le Pian-Médoc",
+        "slug": "le-pian-medoc",
+        "zip": "33290",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pian-Médoc"
+    },
+    {
+        "name": "Saint-André-de-Cubzac",
+        "slug": "saint-andre-de-cubzac",
+        "zip": "33240",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-de-Cubzac"
+    },
+    {
+        "name": "Saint-Aubin-de-Médoc",
+        "slug": "saint-aubin-de-medoc",
+        "zip": "33160",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Aubin-de-Médoc"
+    },
+    {
+        "name": "Saint-Denis-de-Pile",
+        "slug": "saint-denis-de-pile",
+        "zip": "33910",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Denis-de-Pile"
+    },
+    {
+        "name": "Saint-Jean-d'Illac",
+        "slug": "saint-jean-d-illac",
+        "zip": "33127",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-d'Illac"
+    },
+    {
+        "name": "Saint-Loubès",
+        "slug": "saint-loubes",
+        "zip": "33450",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Loubès"
+    },
+    {
+        "name": "Salles",
+        "slug": "salles",
+        "zip": "33770",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Salles"
+    },
+    {
+        "name": "Le Taillan-Médoc",
+        "slug": "le-taillan-medoc",
+        "zip": "33320",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Taillan-Médoc"
+    },
+    {
+        "name": "Le Teich",
+        "slug": "le-teich",
+        "zip": "33470",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Teich"
+    },
+    {
+        "name": "Tresses",
+        "slug": "tresses",
+        "zip": "33370",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tresses"
+    },
+    {
+        "name": "Marcheprime",
+        "slug": "marcheprime",
+        "zip": "33380",
+        "department": {
+            "code": "33",
+            "nom": "Gironde"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marcheprime"
+    },
+    {
+        "name": "Baillargues",
+        "slug": "baillargues",
+        "zip": "34670",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baillargues"
+    },
+    {
+        "name": "Balaruc-les-Bains",
+        "slug": "balaruc-les-bains",
+        "zip": "34540",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Balaruc-les-Bains"
+    },
+    {
+        "name": "Bédarieux",
+        "slug": "bedarieux",
+        "zip": "34600",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bédarieux"
+    },
+    {
+        "name": "Bessan",
+        "slug": "bessan",
+        "zip": "34550",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bessan"
+    },
+    {
+        "name": "Castries",
+        "slug": "castries",
+        "zip": "34160",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Castries"
+    },
+    {
+        "name": "Cazouls-lès-Béziers",
+        "slug": "cazouls-les-beziers",
+        "zip": "34370",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cazouls-lès-Béziers"
+    },
+    {
+        "name": "Clapiers",
+        "slug": "clapiers",
+        "zip": "34830",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clapiers"
+    },
+    {
+        "name": "Clermont-l'Hérault",
+        "slug": "clermont-l-herault",
+        "zip": "34800",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clermont-l'Hérault"
+    },
+    {
+        "name": "Cournonterral",
+        "slug": "cournonterral",
+        "zip": "34660",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cournonterral"
+    },
+    {
+        "name": "Le Crès",
+        "slug": "le-cres",
+        "zip": "34920",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Crès"
+    },
+    {
+        "name": "Fabrègues",
+        "slug": "fabregues",
+        "zip": "34690",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fabrègues"
+    },
+    {
+        "name": "Florensac",
+        "slug": "florensac",
+        "zip": "34510",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Florensac"
+    },
+    {
+        "name": "Gigean",
+        "slug": "gigean",
+        "zip": "34770",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gigean"
+    },
+    {
+        "name": "Gignac",
+        "slug": "gignac",
+        "zip": "34150",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gignac"
+    },
+    {
+        "name": "Grabels",
+        "slug": "grabels",
+        "zip": "34790",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grabels"
+    },
+    {
+        "name": "Jacou",
+        "slug": "jacou",
+        "zip": "34830",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jacou"
+    },
+    {
+        "name": "Juvignac",
+        "slug": "juvignac",
+        "zip": "34990",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Juvignac"
+    },
+    {
+        "name": "Lodève",
+        "slug": "lodeve",
+        "zip": "34700",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lodève"
+    },
+    {
+        "name": "Marseillan",
+        "slug": "marseillan",
+        "zip": "34340",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marseillan"
+    },
+    {
+        "name": "Marsillargues",
+        "slug": "marsillargues",
+        "zip": "34590",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marsillargues"
+    },
+    {
+        "name": "Mèze",
+        "slug": "meze",
+        "zip": "34140",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mèze"
+    },
+    {
+        "name": "Pérols",
+        "slug": "perols",
+        "zip": "34470",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pérols"
+    },
+    {
+        "name": "Pézenas",
+        "slug": "pezenas",
+        "zip": "34120",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pézenas"
+    },
+    {
+        "name": "Pignan",
+        "slug": "pignan",
+        "zip": "34570",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pignan"
+    },
+    {
+        "name": "Poussan",
+        "slug": "poussan",
+        "zip": "34560",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Poussan"
+    },
+    {
+        "name": "Prades-le-Lez",
+        "slug": "prades-le-lez",
+        "zip": "34730",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Prades-le-Lez"
+    },
+    {
+        "name": "Saint-André-de-Sangonis",
+        "slug": "saint-andre-de-sangonis",
+        "zip": "34725",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-de-Sangonis"
+    },
+    {
+        "name": "Saint-Clément-de-Rivière",
+        "slug": "saint-clement-de-riviere",
+        "zip": "34980",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Clément-de-Rivière"
+    },
+    {
+        "name": "Saint-Gély-du-Fesc",
+        "slug": "saint-gely-du-fesc",
+        "zip": "34980",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Gély-du-Fesc"
+    },
+    {
+        "name": "Saint-Georges-d'Orques",
+        "slug": "saint-georges-d-orques",
+        "zip": "34680",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Georges-d'Orques"
+    },
+    {
+        "name": "Saint-Jean-de-Védas",
+        "slug": "saint-jean-de-vedas",
+        "zip": "34430",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-Védas"
+    },
+    {
+        "name": "Sauvian",
+        "slug": "sauvian",
+        "zip": "34410",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sauvian"
+    },
+    {
+        "name": "Sérignan",
+        "slug": "serignan",
+        "zip": "34410",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sérignan"
+    },
+    {
+        "name": "Servian",
+        "slug": "servian",
+        "zip": "34290",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Servian"
+    },
+    {
+        "name": "Vendargues",
+        "slug": "vendargues",
+        "zip": "34740",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vendargues"
+    },
+    {
+        "name": "Vias",
+        "slug": "vias",
+        "zip": "34450",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vias"
+    },
+    {
+        "name": "Villeneuve-lès-Maguelone",
+        "slug": "villeneuve-les-maguelone",
+        "zip": "34750",
+        "department": {
+            "code": "34",
+            "nom": "Hérault"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-lès-Maguelone"
+    },
+    {
+        "name": "Acigné",
+        "slug": "acigne",
+        "zip": "35690",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Acigné"
+    },
+    {
+        "name": "Bain-de-Bretagne",
+        "slug": "bain-de-bretagne",
+        "zip": "35470",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bain-de-Bretagne"
+    },
+    {
+        "name": "Betton",
+        "slug": "betton",
+        "zip": "35830",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Betton"
+    },
+    {
+        "name": "Bréal-sous-Montfort",
+        "slug": "breal-sous-montfort",
+        "zip": "35310",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bréal-sous-Montfort"
+    },
+    {
+        "name": "Bruz",
+        "slug": "bruz",
+        "zip": "35170",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bruz"
+    },
+    {
+        "name": "Cancale",
+        "slug": "cancale",
+        "zip": "35260",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cancale"
+    },
+    {
+        "name": "Cesson-Sévigné",
+        "slug": "cesson-sevigne",
+        "zip": "35510",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cesson-Sévigné"
+    },
+    {
+        "name": "Chantepie",
+        "slug": "chantepie",
+        "zip": "35135",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chantepie"
+    },
+    {
+        "name": "Chartres-de-Bretagne",
+        "slug": "chartres-de-bretagne",
+        "zip": "35131",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chartres-de-Bretagne"
+    },
+    {
+        "name": "Châteaubourg",
+        "slug": "chateaubourg",
+        "zip": "35220",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaubourg"
+    },
+    {
+        "name": "Châteaugiron",
+        "slug": "chateaugiron",
+        "zip": "35410",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaugiron"
+    },
+    {
+        "name": "Combourg",
+        "slug": "combourg",
+        "zip": "35270",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Combourg"
+    },
+    {
+        "name": "Dol-de-Bretagne",
+        "slug": "dol-de-bretagne",
+        "zip": "35120",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dol-de-Bretagne"
+    },
+    {
+        "name": "Fougères",
+        "slug": "fougeres",
+        "zip": "35300",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fougères"
+    },
+    {
+        "name": "Gévezé",
+        "slug": "geveze",
+        "zip": "35850",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gévezé"
+    },
+    {
+        "name": "Guichen",
+        "slug": "guichen",
+        "zip": "35580",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guichen"
+    },
+    {
+        "name": "Janzé",
+        "slug": "janze",
+        "zip": "35150",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Janzé"
+    },
+    {
+        "name": "Laillé",
+        "slug": "laille",
+        "zip": "35890",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laillé"
+    },
+    {
+        "name": "Liffré",
+        "slug": "liffre",
+        "zip": "35340",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Liffré"
+    },
+    {
+        "name": "Melesse",
+        "slug": "melesse",
+        "zip": "35520",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Melesse"
+    },
+    {
+        "name": "Guipry-Messac",
+        "slug": "guipry-messac",
+        "zip": "35480",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guipry-Messac"
+    },
+    {
+        "name": "La Mézière",
+        "slug": "la-meziere",
+        "zip": "35520",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Mézière"
+    },
+    {
+        "name": "Montauban-de-Bretagne",
+        "slug": "montauban-de-bretagne",
+        "zip": "35360",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montauban-de-Bretagne"
+    },
+    {
+        "name": "Montfort-sur-Meu",
+        "slug": "montfort-sur-meu",
+        "zip": "35160",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montfort-sur-Meu"
+    },
+    {
+        "name": "Mordelles",
+        "slug": "mordelles",
+        "zip": "35310",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mordelles"
+    },
+    {
+        "name": "Noyal-Châtillon-sur-Seiche",
+        "slug": "noyal-chatillon-sur-seiche",
+        "zip": "35230",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyal-Châtillon-sur-Seiche"
+    },
+    {
+        "name": "Noyal-sur-Vilaine",
+        "slug": "noyal-sur-vilaine",
+        "zip": "35530",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyal-sur-Vilaine"
+    },
+    {
+        "name": "Orgères",
+        "slug": "orgeres",
+        "zip": "35230",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orgères"
+    },
+    {
+        "name": "Pacé",
+        "slug": "pace",
+        "zip": "35740",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pacé"
+    },
+    {
+        "name": "Pleurtuit",
+        "slug": "pleurtuit",
+        "zip": "35730",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pleurtuit"
+    },
+    {
+        "name": "Redon",
+        "slug": "redon",
+        "zip": "35600",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Redon"
+    },
+    {
+        "name": "Le Rheu",
+        "slug": "le-rheu",
+        "zip": "35650",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Rheu"
+    },
+    {
+        "name": "Maen Roch",
+        "slug": "maen-roch",
+        "zip": "35460",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maen Roch"
+    },
+    {
+        "name": "Saint-Grégoire",
+        "slug": "saint-gregoire",
+        "zip": "35760",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Grégoire"
+    },
+    {
+        "name": "Saint-Jacques-de-la-Lande",
+        "slug": "saint-jacques-de-la-lande",
+        "zip": "35136",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jacques-de-la-Lande"
+    },
+    {
+        "name": "Thorigné-Fouillard",
+        "slug": "thorigne-fouillard",
+        "zip": "35235",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thorigné-Fouillard"
+    },
+    {
+        "name": "Vern-sur-Seiche",
+        "slug": "vern-sur-seiche",
+        "zip": "35770",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vern-sur-Seiche"
+    },
+    {
+        "name": "Vezin-le-Coquet",
+        "slug": "vezin-le-coquet",
+        "zip": "35132",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vezin-le-Coquet"
+    },
+    {
+        "name": "Vitré",
+        "slug": "vitre",
+        "zip": "35500",
+        "department": {
+            "code": "35",
+            "nom": "Ille-et-Vilaine"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vitré"
+    },
+    {
+        "name": "Le Blanc",
+        "slug": "le-blanc",
+        "zip": "36300",
+        "department": {
+            "code": "36",
+            "nom": "Indre"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Blanc"
+    },
+    {
+        "name": "Châteauroux",
+        "slug": "chateauroux",
+        "zip": "36000",
+        "department": {
+            "code": "36",
+            "nom": "Indre"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteauroux"
+    },
+    {
+        "name": "Déols",
+        "slug": "deols",
+        "zip": "36130",
+        "department": {
+            "code": "36",
+            "nom": "Indre"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Déols"
+    },
+    {
+        "name": "Issoudun",
+        "slug": "issoudun",
+        "zip": "36100",
+        "department": {
+            "code": "36",
+            "nom": "Indre"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Issoudun"
+    },
+    {
+        "name": "Le Poinçonnet",
+        "slug": "le-poinconnet",
+        "zip": "36330",
+        "department": {
+            "code": "36",
+            "nom": "Indre"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Poinçonnet"
+    },
+    {
+        "name": "Amboise",
+        "slug": "amboise",
+        "zip": "37400",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Amboise"
+    },
+    {
+        "name": "Ballan-Miré",
+        "slug": "ballan-mire",
+        "zip": "37510",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ballan-Miré"
+    },
+    {
+        "name": "Bléré",
+        "slug": "blere",
+        "zip": "37150",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bléré"
+    },
+    {
+        "name": "Chambray-lès-Tours",
+        "slug": "chambray-les-tours",
+        "zip": "37170",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chambray-lès-Tours"
+    },
+    {
+        "name": "Chinon",
+        "slug": "chinon",
+        "zip": "37500",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chinon"
+    },
+    {
+        "name": "Esvres",
+        "slug": "esvres",
+        "zip": "37320",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Esvres"
+    },
+    {
+        "name": "Fondettes",
+        "slug": "fondettes",
+        "zip": "37230",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fondettes"
+    },
+    {
+        "name": "Joué-lès-Tours",
+        "slug": "joue-les-tours",
+        "zip": "37300",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Joué-lès-Tours"
+    },
+    {
+        "name": "Loches",
+        "slug": "loches",
+        "zip": "37600",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loches"
+    },
+    {
+        "name": "Luynes",
+        "slug": "luynes",
+        "zip": "37230",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luynes"
+    },
+    {
+        "name": "Montlouis-sur-Loire",
+        "slug": "montlouis-sur-loire",
+        "zip": "37270",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montlouis-sur-Loire"
+    },
+    {
+        "name": "Monts",
+        "slug": "monts",
+        "zip": "37260",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Monts"
+    },
+    {
+        "name": "La Riche",
+        "slug": "la-riche",
+        "zip": "37520",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Riche"
+    },
+    {
+        "name": "Saint-Avertin",
+        "slug": "saint-avertin",
+        "zip": "37550",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Avertin"
+    },
+    {
+        "name": "Saint-Cyr-sur-Loire",
+        "slug": "saint-cyr-sur-loire",
+        "zip": "37540",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cyr-sur-Loire"
+    },
+    {
+        "name": "Saint-Pierre-des-Corps",
+        "slug": "saint-pierre-des-corps",
+        "zip": "37700",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-des-Corps"
+    },
+    {
+        "name": "Veigné",
+        "slug": "veigne",
+        "zip": "37250",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Veigné"
+    },
+    {
+        "name": "La Ville-aux-Dames",
+        "slug": "la-ville-aux-dames",
+        "zip": "37700",
+        "department": {
+            "code": "37",
+            "nom": "Indre-et-Loire"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ville-aux-Dames"
+    },
+    {
+        "name": "Les Abrets en Dauphiné",
+        "slug": "les-abrets-en-dauphine",
+        "zip": "38490",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Abrets en Dauphiné"
+    },
+    {
+        "name": "Les Avenières Veyrins-Thuellin",
+        "slug": "les-avenieres-veyrins-thuellin",
+        "zip": "38630",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Avenières Veyrins-Thuellin"
+    },
+    {
+        "name": "Beaurepaire",
+        "slug": "beaurepaire",
+        "zip": "38270",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaurepaire"
+    },
+    {
+        "name": "Bourgoin-Jallieu",
+        "slug": "bourgoin-jallieu",
+        "zip": "38300",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourgoin-Jallieu"
+    },
+    {
+        "name": "Charvieu-Chavagneux",
+        "slug": "charvieu-chavagneux",
+        "zip": "38230",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Charvieu-Chavagneux"
+    },
+    {
+        "name": "Chasse-sur-Rhône",
+        "slug": "chasse-sur-rhone",
+        "zip": "38670",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chasse-sur-Rhône"
+    },
+    {
+        "name": "Chavanoz",
+        "slug": "chavanoz",
+        "zip": "38230",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chavanoz"
+    },
+    {
+        "name": "Claix",
+        "slug": "claix",
+        "zip": "38640",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Claix"
+    },
+    {
+        "name": "Coublevie",
+        "slug": "coublevie",
+        "zip": "38500",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coublevie"
+    },
+    {
+        "name": "Crolles",
+        "slug": "crolles",
+        "zip": "38920",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crolles"
+    },
+    {
+        "name": "Domène",
+        "slug": "domene",
+        "zip": "38420",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Domène"
+    },
+    {
+        "name": "Échirolles",
+        "slug": "echirolles",
+        "zip": "38130",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Échirolles"
+    },
+    {
+        "name": "Eybens",
+        "slug": "eybens",
+        "zip": "38320",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eybens"
+    },
+    {
+        "name": "Fontaine",
+        "slug": "fontaine",
+        "zip": "38600",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontaine"
+    },
+    {
+        "name": "Gières",
+        "slug": "gieres",
+        "zip": "38610",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gières"
+    },
+    {
+        "name": "L'Isle-d'Abeau",
+        "slug": "l-isle-d-abeau",
+        "zip": "38080",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Isle-d'Abeau"
+    },
+    {
+        "name": "Meylan",
+        "slug": "meylan",
+        "zip": "38240",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meylan"
+    },
+    {
+        "name": "Moirans",
+        "slug": "moirans",
+        "zip": "38430",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moirans"
+    },
+    {
+        "name": "Montbonnot-Saint-Martin",
+        "slug": "montbonnot-saint-martin",
+        "zip": "38330",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montbonnot-Saint-Martin"
+    },
+    {
+        "name": "Le Péage-de-Roussillon",
+        "slug": "le-peage-de-roussillon",
+        "zip": "38550",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Péage-de-Roussillon"
+    },
+    {
+        "name": "Pontcharra",
+        "slug": "pontcharra",
+        "zip": "38530",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pontcharra"
+    },
+    {
+        "name": "Pont-de-Chéruy",
+        "slug": "pont-de-cheruy",
+        "zip": "38230",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-de-Chéruy"
+    },
+    {
+        "name": "Le Pont-de-Claix",
+        "slug": "le-pont-de-claix",
+        "zip": "38800",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pont-de-Claix"
+    },
+    {
+        "name": "Pont-Évêque",
+        "slug": "pont-eveque",
+        "zip": "38780",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-Évêque"
+    },
+    {
+        "name": "Rives",
+        "slug": "rives",
+        "zip": "38140",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rives"
+    },
+    {
+        "name": "Roussillon",
+        "slug": "roussillon",
+        "zip": "38150",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roussillon"
+    },
+    {
+        "name": "Saint-Égrève",
+        "slug": "saint-egreve",
+        "zip": "38120",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Égrève"
+    },
+    {
+        "name": "Saint-Ismier",
+        "slug": "saint-ismier",
+        "zip": "38330",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Ismier"
+    },
+    {
+        "name": "Saint-Marcellin",
+        "slug": "saint-marcellin",
+        "zip": "38160",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Marcellin"
+    },
+    {
+        "name": "Saint-Martin-d'Hères",
+        "slug": "saint-martin-d-heres",
+        "zip": "38400",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-d'Hères"
+    },
+    {
+        "name": "Saint-Martin-d'Uriage",
+        "slug": "saint-martin-d-uriage",
+        "zip": "38410",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-d'Uriage"
+    },
+    {
+        "name": "Saint-Martin-le-Vinoux",
+        "slug": "saint-martin-le-vinoux",
+        "zip": "38950",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-le-Vinoux"
+    },
+    {
+        "name": "Saint-Maurice-l'Exil",
+        "slug": "saint-maurice-l-exil",
+        "zip": "38550",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Maurice-l'Exil"
+    },
+    {
+        "name": "Saint-Quentin-Fallavier",
+        "slug": "saint-quentin-fallavier",
+        "zip": "38070",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Quentin-Fallavier"
+    },
+    {
+        "name": "Sassenage",
+        "slug": "sassenage",
+        "zip": "38360",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sassenage"
+    },
+    {
+        "name": "Seyssinet-Pariset",
+        "slug": "seyssinet-pariset",
+        "zip": "38170",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seyssinet-Pariset"
+    },
+    {
+        "name": "Seyssins",
+        "slug": "seyssins",
+        "zip": "38180",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seyssins"
+    },
+    {
+        "name": "Tignieu-Jameyzieu",
+        "slug": "tignieu-jameyzieu",
+        "zip": "38230",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tignieu-Jameyzieu"
+    },
+    {
+        "name": "La Tour-du-Pin",
+        "slug": "la-tour-du-pin",
+        "zip": "38110",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Tour-du-Pin"
+    },
+    {
+        "name": "La Tronche",
+        "slug": "la-tronche",
+        "zip": "38700",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Tronche"
+    },
+    {
+        "name": "Tullins",
+        "slug": "tullins",
+        "zip": "38210",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tullins"
+    },
+    {
+        "name": "Varces-Allières-et-Risset",
+        "slug": "varces-allieres-et-risset",
+        "zip": "38760",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Varces-Allières-et-Risset"
+    },
+    {
+        "name": "La Verpillière",
+        "slug": "la-verpilliere",
+        "zip": "38290",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Verpillière"
+    },
+    {
+        "name": "Vienne",
+        "slug": "vienne",
+        "zip": "38200",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vienne"
+    },
+    {
+        "name": "Vif",
+        "slug": "vif",
+        "zip": "38450",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vif"
+    },
+    {
+        "name": "Villard-Bonnot",
+        "slug": "villard-bonnot",
+        "zip": "38190",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villard-Bonnot"
+    },
+    {
+        "name": "Villefontaine",
+        "slug": "villefontaine",
+        "zip": "38090",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villefontaine"
+    },
+    {
+        "name": "Villette-d'Anthon",
+        "slug": "villette-d-anthon",
+        "zip": "38280",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villette-d'Anthon"
+    },
+    {
+        "name": "Vizille",
+        "slug": "vizille",
+        "zip": "38220",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vizille"
+    },
+    {
+        "name": "Voiron",
+        "slug": "voiron",
+        "zip": "38500",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Voiron"
+    },
+    {
+        "name": "Voreppe",
+        "slug": "voreppe",
+        "zip": "38340",
+        "department": {
+            "code": "38",
+            "nom": "Isère"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Voreppe"
+    },
+    {
+        "name": "Champagnole",
+        "slug": "champagnole",
+        "zip": "39300",
+        "department": {
+            "code": "39",
+            "nom": "Jura"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champagnole"
+    },
+    {
+        "name": "Dole",
+        "slug": "dole",
+        "zip": "39100",
+        "department": {
+            "code": "39",
+            "nom": "Jura"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dole"
+    },
+    {
+        "name": "Lons-le-Saunier",
+        "slug": "lons-le-saunier",
+        "zip": "39000",
+        "department": {
+            "code": "39",
+            "nom": "Jura"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lons-le-Saunier"
+    },
+    {
+        "name": "Hauts de Bienne",
+        "slug": "hauts-de-bienne",
+        "zip": "39400",
+        "department": {
+            "code": "39",
+            "nom": "Jura"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hauts de Bienne"
+    },
+    {
+        "name": "Saint-Claude",
+        "slug": "saint-claude",
+        "zip": "39200",
+        "department": {
+            "code": "39",
+            "nom": "Jura"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Claude"
+    },
+    {
+        "name": "Aire-sur-l'Adour",
+        "slug": "aire-sur-l-adour",
+        "zip": "40800",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aire-sur-l'Adour"
+    },
+    {
+        "name": "Labenne",
+        "slug": "labenne",
+        "zip": "40530",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Labenne"
+    },
+    {
+        "name": "Mimizan",
+        "slug": "mimizan",
+        "zip": "40200",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mimizan"
+    },
+    {
+        "name": "Morcenx-la-Nouvelle",
+        "slug": "morcenx-la-nouvelle",
+        "zip": "40110",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morcenx-la-Nouvelle"
+    },
+    {
+        "name": "Ondres",
+        "slug": "ondres",
+        "zip": "40440",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ondres"
+    },
+    {
+        "name": "Parentis-en-Born",
+        "slug": "parentis-en-born",
+        "zip": "40160",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Parentis-en-Born"
+    },
+    {
+        "name": "Saint-Martin-de-Seignanx",
+        "slug": "saint-martin-de-seignanx",
+        "zip": "40390",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-de-Seignanx"
+    },
+    {
+        "name": "Saint-Paul-lès-Dax",
+        "slug": "saint-paul-les-dax",
+        "zip": "40990",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Paul-lès-Dax"
+    },
+    {
+        "name": "Saint-Pierre-du-Mont",
+        "slug": "saint-pierre-du-mont",
+        "zip": "40280",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-du-Mont"
+    },
+    {
+        "name": "Saint-Sever",
+        "slug": "saint-sever",
+        "zip": "40500",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Sever"
+    },
+    {
+        "name": "Saint-Vincent-de-Tyrosse",
+        "slug": "saint-vincent-de-tyrosse",
+        "zip": "40230",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Vincent-de-Tyrosse"
+    },
+    {
+        "name": "Soustons",
+        "slug": "soustons",
+        "zip": "40140",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soustons"
+    },
+    {
+        "name": "Tarnos",
+        "slug": "tarnos",
+        "zip": "40220",
+        "department": {
+            "code": "40",
+            "nom": "Landes"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tarnos"
+    },
+    {
+        "name": "Blois",
+        "slug": "blois",
+        "zip": "41000",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blois"
+    },
+    {
+        "name": "Le Controis-en-Sologne",
+        "slug": "le-controis-en-sologne",
+        "zip": "41120",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Controis-en-Sologne"
+    },
+    {
+        "name": "Mer",
+        "slug": "mer",
+        "zip": "41500",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mer"
+    },
+    {
+        "name": "Romorantin-Lanthenay",
+        "slug": "romorantin-lanthenay",
+        "zip": "41200",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Romorantin-Lanthenay"
+    },
+    {
+        "name": "Vendôme",
+        "slug": "vendome",
+        "zip": "41100",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vendôme"
+    },
+    {
+        "name": "Vineuil",
+        "slug": "vineuil",
+        "zip": "41350",
+        "department": {
+            "code": "41",
+            "nom": "Loir-et-Cher"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vineuil"
+    },
+    {
+        "name": "Andrézieux-Bouthéon",
+        "slug": "andrezieux-boutheon",
+        "zip": "42160",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Andrézieux-Bouthéon"
+    },
+    {
+        "name": "Le Chambon-Feugerolles",
+        "slug": "le-chambon-feugerolles",
+        "zip": "42500",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Chambon-Feugerolles"
+    },
+    {
+        "name": "Chazelles-sur-Lyon",
+        "slug": "chazelles-sur-lyon",
+        "zip": "42140",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chazelles-sur-Lyon"
+    },
+    {
+        "name": "Le Coteau",
+        "slug": "le-coteau",
+        "zip": "42120",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Coteau"
+    },
+    {
+        "name": "Feurs",
+        "slug": "feurs",
+        "zip": "42110",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Feurs"
+    },
+    {
+        "name": "Firminy",
+        "slug": "firminy",
+        "zip": "42700",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Firminy"
+    },
+    {
+        "name": "Mably",
+        "slug": "mably",
+        "zip": "42300",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mably"
+    },
+    {
+        "name": "Montbrison",
+        "slug": "montbrison",
+        "zip": "42600",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montbrison"
+    },
+    {
+        "name": "Montrond-les-Bains",
+        "slug": "montrond-les-bains",
+        "zip": "42210",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montrond-les-Bains"
+    },
+    {
+        "name": "La Ricamarie",
+        "slug": "la-ricamarie",
+        "zip": "42150",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ricamarie"
+    },
+    {
+        "name": "Riorges",
+        "slug": "riorges",
+        "zip": "42153",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Riorges"
+    },
+    {
+        "name": "Rive-de-Gier",
+        "slug": "rive-de-gier",
+        "zip": "42800",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rive-de-Gier"
+    },
+    {
+        "name": "Roanne",
+        "slug": "roanne",
+        "zip": "42300",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roanne"
+    },
+    {
+        "name": "Roche-la-Molière",
+        "slug": "roche-la-moliere",
+        "zip": "42230",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roche-la-Molière"
+    },
+    {
+        "name": "Saint-Chamond",
+        "slug": "saint-chamond",
+        "zip": "42400",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Chamond"
+    },
+    {
+        "name": "Saint-Galmier",
+        "slug": "saint-galmier",
+        "zip": "42330",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Galmier"
+    },
+    {
+        "name": "Saint-Genest-Lerpt",
+        "slug": "saint-genest-lerpt",
+        "zip": "42530",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Genest-Lerpt"
+    },
+    {
+        "name": "Saint-Jean-Bonnefonds",
+        "slug": "saint-jean-bonnefonds",
+        "zip": "42650",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-Bonnefonds"
+    },
+    {
+        "name": "Saint-Marcellin-en-Forez",
+        "slug": "saint-marcellin-en-forez",
+        "zip": "42680",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Marcellin-en-Forez"
+    },
+    {
+        "name": "Saint-Priest-en-Jarez",
+        "slug": "saint-priest-en-jarez",
+        "zip": "42270",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Priest-en-Jarez"
+    },
+    {
+        "name": "Saint-Just-Saint-Rambert",
+        "slug": "saint-just-saint-rambert",
+        "zip": "42170",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Just-Saint-Rambert"
+    },
+    {
+        "name": "Sorbiers",
+        "slug": "sorbiers",
+        "zip": "42290",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sorbiers"
+    },
+    {
+        "name": "Sury-le-Comtal",
+        "slug": "sury-le-comtal",
+        "zip": "42450",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sury-le-Comtal"
+    },
+    {
+        "name": "La Talaudière",
+        "slug": "la-talaudiere",
+        "zip": "42350",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Talaudière"
+    },
+    {
+        "name": "Unieux",
+        "slug": "unieux",
+        "zip": "42240",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Unieux"
+    },
+    {
+        "name": "Veauche",
+        "slug": "veauche",
+        "zip": "42340",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Veauche"
+    },
+    {
+        "name": "Villars",
+        "slug": "villars",
+        "zip": "42390",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villars"
+    },
+    {
+        "name": "Villerest",
+        "slug": "villerest",
+        "zip": "42300",
+        "department": {
+            "code": "42",
+            "nom": "Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villerest"
+    },
+    {
+        "name": "Aurec-sur-Loire",
+        "slug": "aurec-sur-loire",
+        "zip": "43110",
+        "department": {
+            "code": "43",
+            "nom": "Haute-Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aurec-sur-Loire"
+    },
+    {
+        "name": "Brioude",
+        "slug": "brioude",
+        "zip": "43100",
+        "department": {
+            "code": "43",
+            "nom": "Haute-Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brioude"
+    },
+    {
+        "name": "Monistrol-sur-Loire",
+        "slug": "monistrol-sur-loire",
+        "zip": "43120",
+        "department": {
+            "code": "43",
+            "nom": "Haute-Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Monistrol-sur-Loire"
+    },
+    {
+        "name": "Sainte-Sigolène",
+        "slug": "sainte-sigolene",
+        "zip": "43600",
+        "department": {
+            "code": "43",
+            "nom": "Haute-Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Sigolène"
+    },
+    {
+        "name": "Yssingeaux",
+        "slug": "yssingeaux",
+        "zip": "43200",
+        "department": {
+            "code": "43",
+            "nom": "Haute-Loire"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yssingeaux"
+    },
+    {
+        "name": "Ancenis-Saint-Géréon",
+        "slug": "ancenis-saint-gereon",
+        "zip": "44150",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ancenis-Saint-Géréon"
+    },
+    {
+        "name": "Chaumes-en-Retz",
+        "slug": "chaumes-en-retz",
+        "zip": "44320",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chaumes-en-Retz"
+    },
+    {
+        "name": "Basse-Goulaine",
+        "slug": "basse-goulaine",
+        "zip": "44115",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Basse-Goulaine"
+    },
+    {
+        "name": "Blain",
+        "slug": "blain",
+        "zip": "44130",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blain"
+    },
+    {
+        "name": "Bouaye",
+        "slug": "bouaye",
+        "zip": "44830",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouaye"
+    },
+    {
+        "name": "Bouguenais",
+        "slug": "bouguenais",
+        "zip": "44340",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouguenais"
+    },
+    {
+        "name": "Villeneuve-en-Retz",
+        "slug": "villeneuve-en-retz",
+        "zip": "44580",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-en-Retz"
+    },
+    {
+        "name": "Carquefou",
+        "slug": "carquefou",
+        "zip": "44470",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carquefou"
+    },
+    {
+        "name": "Divatte-sur-Loire",
+        "slug": "divatte-sur-loire",
+        "zip": "44450",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Divatte-sur-Loire"
+    },
+    {
+        "name": "La Chapelle-sur-Erdre",
+        "slug": "la-chapelle-sur-erdre",
+        "zip": "44240",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Chapelle-sur-Erdre"
+    },
+    {
+        "name": "Châteaubriant",
+        "slug": "chateaubriant",
+        "zip": "44110",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteaubriant"
+    },
+    {
+        "name": "La Chevrolière",
+        "slug": "la-chevroliere",
+        "zip": "44118",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Chevrolière"
+    },
+    {
+        "name": "Clisson",
+        "slug": "clisson",
+        "zip": "44190",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clisson"
+    },
+    {
+        "name": "Couëron",
+        "slug": "coueron",
+        "zip": "44220",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Couëron"
+    },
+    {
+        "name": "Donges",
+        "slug": "donges",
+        "zip": "44480",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Donges"
+    },
+    {
+        "name": "Gorges",
+        "slug": "gorges",
+        "zip": "44190",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gorges"
+    },
+    {
+        "name": "Grandchamp-des-Fontaines",
+        "slug": "grandchamp-des-fontaines",
+        "zip": "44119",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grandchamp-des-Fontaines"
+    },
+    {
+        "name": "Guémené-Penfao",
+        "slug": "guemene-penfao",
+        "zip": "44290",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guémené-Penfao"
+    },
+    {
+        "name": "Haute-Goulaine",
+        "slug": "haute-goulaine",
+        "zip": "44115",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Haute-Goulaine"
+    },
+    {
+        "name": "Herbignac",
+        "slug": "herbignac",
+        "zip": "44410",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Herbignac"
+    },
+    {
+        "name": "Héric",
+        "slug": "heric",
+        "zip": "44810",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Héric"
+    },
+    {
+        "name": "Ligné",
+        "slug": "ligne",
+        "zip": "44850",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ligné"
+    },
+    {
+        "name": "Le Loroux-Bottereau",
+        "slug": "le-loroux-bottereau",
+        "zip": "44430",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Loroux-Bottereau"
+    },
+    {
+        "name": "Machecoul-Saint-Même",
+        "slug": "machecoul-saint-meme",
+        "zip": "44270",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Machecoul-Saint-Même"
+    },
+    {
+        "name": "Missillac",
+        "slug": "missillac",
+        "zip": "44780",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Missillac"
+    },
+    {
+        "name": "La Montagne",
+        "slug": "la-montagne",
+        "zip": "44620",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Montagne"
+    },
+    {
+        "name": "Montoir-de-Bretagne",
+        "slug": "montoir-de-bretagne",
+        "zip": "44550",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montoir-de-Bretagne"
+    },
+    {
+        "name": "Nort-sur-Erdre",
+        "slug": "nort-sur-erdre",
+        "zip": "44390",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nort-sur-Erdre"
+    },
+    {
+        "name": "Le Pellerin",
+        "slug": "le-pellerin",
+        "zip": "44640",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pellerin"
+    },
+    {
+        "name": "Plessé",
+        "slug": "plesse",
+        "zip": "44630",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plessé"
+    },
+    {
+        "name": "Pontchâteau",
+        "slug": "pontchateau",
+        "zip": "44160",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pontchâteau"
+    },
+    {
+        "name": "Pont-Saint-Martin",
+        "slug": "pont-saint-martin",
+        "zip": "44860",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-Saint-Martin"
+    },
+    {
+        "name": "Pornichet",
+        "slug": "pornichet",
+        "zip": "44380",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pornichet"
+    },
+    {
+        "name": "Saint-André-des-Eaux",
+        "slug": "saint-andre-des-eaux",
+        "zip": "44117",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-des-Eaux"
+    },
+    {
+        "name": "Saint-Brevin-les-Pins",
+        "slug": "saint-brevin-les-pins",
+        "zip": "44250",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Brevin-les-Pins"
+    },
+    {
+        "name": "Saint-Étienne-de-Montluc",
+        "slug": "saint-etienne-de-montluc",
+        "zip": "44360",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Étienne-de-Montluc"
+    },
+    {
+        "name": "Saint-Jean-de-Boiseau",
+        "slug": "saint-jean-de-boiseau",
+        "zip": "44640",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-Boiseau"
+    },
+    {
+        "name": "Saint-Julien-de-Concelles",
+        "slug": "saint-julien-de-concelles",
+        "zip": "44450",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Julien-de-Concelles"
+    },
+    {
+        "name": "Sainte-Luce-sur-Loire",
+        "slug": "sainte-luce-sur-loire",
+        "zip": "44980",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Luce-sur-Loire"
+    },
+    {
+        "name": "Saint-Lyphard",
+        "slug": "saint-lyphard",
+        "zip": "44410",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Lyphard"
+    },
+    {
+        "name": "Saint-Mars-du-Désert",
+        "slug": "saint-mars-du-desert",
+        "zip": "44850",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Mars-du-Désert"
+    },
+    {
+        "name": "Vallons-de-l'Erdre",
+        "slug": "vallons-de-l-erdre",
+        "zip": "44540",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vallons-de-l'Erdre"
+    },
+    {
+        "name": "Saint-Michel-Chef-Chef",
+        "slug": "saint-michel-chef-chef",
+        "zip": "44730",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Michel-Chef-Chef"
+    },
+    {
+        "name": "Sainte-Pazanne",
+        "slug": "sainte-pazanne",
+        "zip": "44680",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Pazanne"
+    },
+    {
+        "name": "Saint-Philbert-de-Grand-Lieu",
+        "slug": "saint-philbert-de-grand-lieu",
+        "zip": "44310",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Philbert-de-Grand-Lieu"
+    },
+    {
+        "name": "Sautron",
+        "slug": "sautron",
+        "zip": "44880",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sautron"
+    },
+    {
+        "name": "Savenay",
+        "slug": "savenay",
+        "zip": "44260",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Savenay"
+    },
+    {
+        "name": "Les Sorinières",
+        "slug": "les-sorinieres",
+        "zip": "44840",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Sorinières"
+    },
+    {
+        "name": "Sucé-sur-Erdre",
+        "slug": "suce-sur-erdre",
+        "zip": "44240",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sucé-sur-Erdre"
+    },
+    {
+        "name": "Thouaré-sur-Loire",
+        "slug": "thouare-sur-loire",
+        "zip": "44470",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thouaré-sur-Loire"
+    },
+    {
+        "name": "Treillières",
+        "slug": "treillieres",
+        "zip": "44119",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Treillières"
+    },
+    {
+        "name": "Trignac",
+        "slug": "trignac",
+        "zip": "44570",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trignac"
+    },
+    {
+        "name": "Vallet",
+        "slug": "vallet",
+        "zip": "44330",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vallet"
+    },
+    {
+        "name": "Loireauxence",
+        "slug": "loireauxence",
+        "zip": "44370",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loireauxence"
+    },
+    {
+        "name": "Vigneux-de-Bretagne",
+        "slug": "vigneux-de-bretagne",
+        "zip": "44360",
+        "department": {
+            "code": "44",
+            "nom": "Loire-Atlantique"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vigneux-de-Bretagne"
+    },
+    {
+        "name": "Amilly",
+        "slug": "amilly",
+        "zip": "45200",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Amilly"
+    },
+    {
+        "name": "Beaugency",
+        "slug": "beaugency",
+        "zip": "45190",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaugency"
+    },
+    {
+        "name": "Châlette-sur-Loing",
+        "slug": "chalette-sur-loing",
+        "zip": "45120",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châlette-sur-Loing"
+    },
+    {
+        "name": "La Chapelle-Saint-Mesmin",
+        "slug": "la-chapelle-saint-mesmin",
+        "zip": "45380",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Chapelle-Saint-Mesmin"
+    },
+    {
+        "name": "Châteauneuf-sur-Loire",
+        "slug": "chateauneuf-sur-loire",
+        "zip": "45110",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châteauneuf-sur-Loire"
+    },
+    {
+        "name": "Chécy",
+        "slug": "checy",
+        "zip": "45430",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chécy"
+    },
+    {
+        "name": "La Ferté-Saint-Aubin",
+        "slug": "la-ferte-saint-aubin",
+        "zip": "45240",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ferté-Saint-Aubin"
+    },
+    {
+        "name": "Fleury-les-Aubrais",
+        "slug": "fleury-les-aubrais",
+        "zip": "45400",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fleury-les-Aubrais"
+    },
+    {
+        "name": "Gien",
+        "slug": "gien",
+        "zip": "45500",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gien"
+    },
+    {
+        "name": "Ingré",
+        "slug": "ingre",
+        "zip": "45140",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ingré"
+    },
+    {
+        "name": "Le Malesherbois",
+        "slug": "le-malesherbois",
+        "zip": "45300",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Malesherbois"
+    },
+    {
+        "name": "Meung-sur-Loire",
+        "slug": "meung-sur-loire",
+        "zip": "45130",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meung-sur-Loire"
+    },
+    {
+        "name": "Montargis",
+        "slug": "montargis",
+        "zip": "45200",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montargis"
+    },
+    {
+        "name": "Olivet",
+        "slug": "olivet",
+        "zip": "45160",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Olivet"
+    },
+    {
+        "name": "Pithiviers",
+        "slug": "pithiviers",
+        "zip": "45300",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pithiviers"
+    },
+    {
+        "name": "Saint-Denis-en-Val",
+        "slug": "saint-denis-en-val",
+        "zip": "45560",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Denis-en-Val"
+    },
+    {
+        "name": "Saint-Jean-de-Braye",
+        "slug": "saint-jean-de-braye",
+        "zip": "45800",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-Braye"
+    },
+    {
+        "name": "Saint-Jean-de-la-Ruelle",
+        "slug": "saint-jean-de-la-ruelle",
+        "zip": "45140",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-la-Ruelle"
+    },
+    {
+        "name": "Saint-Jean-le-Blanc",
+        "slug": "saint-jean-le-blanc",
+        "zip": "45650",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-le-Blanc"
+    },
+    {
+        "name": "Saint-Pryvé-Saint-Mesmin",
+        "slug": "saint-pryve-saint-mesmin",
+        "zip": "45750",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pryvé-Saint-Mesmin"
+    },
+    {
+        "name": "Saran",
+        "slug": "saran",
+        "zip": "45770",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saran"
+    },
+    {
+        "name": "Sully-sur-Loire",
+        "slug": "sully-sur-loire",
+        "zip": "45600",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sully-sur-Loire"
+    },
+    {
+        "name": "Villemandeur",
+        "slug": "villemandeur",
+        "zip": "45700",
+        "department": {
+            "code": "45",
+            "nom": "Loiret"
+        },
+        "region": "Centre-Val de Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villemandeur"
+    },
+    {
+        "name": "Figeac",
+        "slug": "figeac",
+        "zip": "46100",
+        "department": {
+            "code": "46",
+            "nom": "Lot"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Figeac"
+    },
+    {
+        "name": "Boé",
+        "slug": "boe",
+        "zip": "47550",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boé"
+    },
+    {
+        "name": "Bon-Encontre",
+        "slug": "bon-encontre",
+        "zip": "47240",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bon-Encontre"
+    },
+    {
+        "name": "Foulayronnes",
+        "slug": "foulayronnes",
+        "zip": "47510",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Foulayronnes"
+    },
+    {
+        "name": "Marmande",
+        "slug": "marmande",
+        "zip": "47200",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marmande"
+    },
+    {
+        "name": "Nérac",
+        "slug": "nerac",
+        "zip": "47600",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nérac"
+    },
+    {
+        "name": "Le Passage",
+        "slug": "le-passage",
+        "zip": "47520",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Passage"
+    },
+    {
+        "name": "Sainte-Livrade-sur-Lot",
+        "slug": "sainte-livrade-sur-lot",
+        "zip": "47110",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Livrade-sur-Lot"
+    },
+    {
+        "name": "Tonneins",
+        "slug": "tonneins",
+        "zip": "47400",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tonneins"
+    },
+    {
+        "name": "Villeneuve-sur-Lot",
+        "slug": "villeneuve-sur-lot",
+        "zip": "47300",
+        "department": {
+            "code": "47",
+            "nom": "Lot-et-Garonne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-sur-Lot"
+    },
+    {
+        "name": "Mende",
+        "slug": "mende",
+        "zip": "48000",
+        "department": {
+            "code": "48",
+            "nom": "Lozère"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mende"
+    },
+    {
+        "name": "Avrillé",
+        "slug": "avrille",
+        "zip": "49240",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Avrillé"
+    },
+    {
+        "name": "Baugé-en-Anjou",
+        "slug": "bauge-en-anjou",
+        "zip": "49150",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baugé-en-Anjou"
+    },
+    {
+        "name": "Beaucouzé",
+        "slug": "beaucouze",
+        "zip": "49070",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaucouzé"
+    },
+    {
+        "name": "Beaufort-en-Anjou",
+        "slug": "beaufort-en-anjou",
+        "zip": "49250",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaufort-en-Anjou"
+    },
+    {
+        "name": "Beaupréau-en-Mauges",
+        "slug": "beaupreau-en-mauges",
+        "zip": "49110",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaupréau-en-Mauges"
+    },
+    {
+        "name": "Bouchemaine",
+        "slug": "bouchemaine",
+        "zip": "49080",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouchemaine"
+    },
+    {
+        "name": "Brissac Loire Aubance",
+        "slug": "brissac-loire-aubance",
+        "zip": "49250",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brissac Loire Aubance"
+    },
+    {
+        "name": "Chalonnes-sur-Loire",
+        "slug": "chalonnes-sur-loire",
+        "zip": "49290",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chalonnes-sur-Loire"
+    },
+    {
+        "name": "Les Hauts-d'Anjou",
+        "slug": "les-hauts-d-anjou",
+        "zip": "49330",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Hauts-d'Anjou"
+    },
+    {
+        "name": "Chemillé-en-Anjou",
+        "slug": "chemille-en-anjou",
+        "zip": "49120",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chemillé-en-Anjou"
+    },
+    {
+        "name": "Cholet",
+        "slug": "cholet",
+        "zip": "49300",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cholet"
+    },
+    {
+        "name": "Doué-en-Anjou",
+        "slug": "doue-en-anjou",
+        "zip": "49700",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Doué-en-Anjou"
+    },
+    {
+        "name": "Orée d'Anjou",
+        "slug": "oree-d-anjou",
+        "zip": "49270",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orée d'Anjou"
+    },
+    {
+        "name": "Le Lion-d'Angers",
+        "slug": "le-lion-d-angers",
+        "zip": "49220",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Lion-d'Angers"
+    },
+    {
+        "name": "Longué-Jumelles",
+        "slug": "longue-jumelles",
+        "zip": "49160",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longué-Jumelles"
+    },
+    {
+        "name": "Mazé-Milon",
+        "slug": "maze-milon",
+        "zip": "49140",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mazé-Milon"
+    },
+    {
+        "name": "Longuenée-en-Anjou",
+        "slug": "longuenee-en-anjou",
+        "zip": "49220",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longuenée-en-Anjou"
+    },
+    {
+        "name": "Montreuil-Juigné",
+        "slug": "montreuil-juigne",
+        "zip": "49460",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montreuil-Juigné"
+    },
+    {
+        "name": "Montrevault-sur-Èvre",
+        "slug": "montrevault-sur-evre",
+        "zip": "49110",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montrevault-sur-Èvre"
+    },
+    {
+        "name": "Mûrs-Erigné",
+        "slug": "murs-erigne",
+        "zip": "49610",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mûrs-Erigné"
+    },
+    {
+        "name": "Noyant-Villages",
+        "slug": "noyant-villages",
+        "zip": "49390",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyant-Villages"
+    },
+    {
+        "name": "Mauges-sur-Loire",
+        "slug": "mauges-sur-loire",
+        "zip": "49110",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mauges-sur-Loire"
+    },
+    {
+        "name": "Les Ponts-de-Cé",
+        "slug": "les-ponts-de-ce",
+        "zip": "49130",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Ponts-de-Cé"
+    },
+    {
+        "name": "Ombrée d'Anjou",
+        "slug": "ombree-d-anjou",
+        "zip": "49420",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ombrée d'Anjou"
+    },
+    {
+        "name": "Gennes-Val-de-Loire",
+        "slug": "gennes-val-de-loire",
+        "zip": "49160",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gennes-Val-de-Loire"
+    },
+    {
+        "name": "Saint-Barthélemy-d'Anjou",
+        "slug": "saint-barthelemy-d-anjou",
+        "zip": "49124",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Barthélemy-d'Anjou"
+    },
+    {
+        "name": "Sèvremoine",
+        "slug": "sevremoine",
+        "zip": "49230",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sèvremoine"
+    },
+    {
+        "name": "Loire-Authion",
+        "slug": "loire-authion",
+        "zip": "49140",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loire-Authion"
+    },
+    {
+        "name": "Verrières-en-Anjou",
+        "slug": "verrieres-en-anjou",
+        "zip": "49112",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Verrières-en-Anjou"
+    },
+    {
+        "name": "Saumur",
+        "slug": "saumur",
+        "zip": "49400",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saumur"
+    },
+    {
+        "name": "Segré-en-Anjou Bleu",
+        "slug": "segre-en-anjou-bleu",
+        "zip": "49500",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Segré-en-Anjou Bleu"
+    },
+    {
+        "name": "Bellevigne-en-Layon",
+        "slug": "bellevigne-en-layon",
+        "zip": "49380",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bellevigne-en-Layon"
+    },
+    {
+        "name": "Trélazé",
+        "slug": "trelaze",
+        "zip": "49800",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trélazé"
+    },
+    {
+        "name": "Erdre-en-Anjou",
+        "slug": "erdre-en-anjou",
+        "zip": "49220",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Erdre-en-Anjou"
+    },
+    {
+        "name": "Lys-Haut-Layon",
+        "slug": "lys-haut-layon",
+        "zip": "49310",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lys-Haut-Layon"
+    },
+    {
+        "name": "Rives-du-Loir-en-Anjou",
+        "slug": "rives-du-loir-en-anjou",
+        "zip": "49140",
+        "department": {
+            "code": "49",
+            "nom": "Maine-et-Loire"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rives-du-Loir-en-Anjou"
+    },
+    {
+        "name": "Avranches",
+        "slug": "avranches",
+        "zip": "50300",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Avranches"
+    },
+    {
+        "name": "La Hague",
+        "slug": "la-hague",
+        "zip": "50440",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Hague"
+    },
+    {
+        "name": "Bricquebec-en-Cotentin",
+        "slug": "bricquebec-en-cotentin",
+        "zip": "50260",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bricquebec-en-Cotentin"
+    },
+    {
+        "name": "Carentan-les-Marais",
+        "slug": "carentan-les-marais",
+        "zip": "50480",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carentan-les-Marais"
+    },
+    {
+        "name": "Coutances",
+        "slug": "coutances",
+        "zip": "50200",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coutances"
+    },
+    {
+        "name": "Granville",
+        "slug": "granville",
+        "zip": "50400",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Granville"
+    },
+    {
+        "name": "Saint-Hilaire-du-Harcouët",
+        "slug": "saint-hilaire-du-harcouet",
+        "zip": "50600",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Hilaire-du-Harcouët"
+    },
+    {
+        "name": "Saint-James",
+        "slug": "saint-james",
+        "zip": "50240",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-James"
+    },
+    {
+        "name": "Saint-Lô",
+        "slug": "saint-lo",
+        "zip": "50000",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Lô"
+    },
+    {
+        "name": "Valognes",
+        "slug": "valognes",
+        "zip": "50700",
+        "department": {
+            "code": "50",
+            "nom": "Manche"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valognes"
+    },
+    {
+        "name": "Aÿ-Champagne",
+        "slug": "ay-champagne",
+        "zip": "51150",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aÿ-Champagne"
+    },
+    {
+        "name": "Bétheny",
+        "slug": "betheny",
+        "zip": "51450",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bétheny"
+    },
+    {
+        "name": "Bezannes",
+        "slug": "bezannes",
+        "zip": "51430",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bezannes"
+    },
+    {
+        "name": "Cormontreuil",
+        "slug": "cormontreuil",
+        "zip": "51350",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cormontreuil"
+    },
+    {
+        "name": "Épernay",
+        "slug": "epernay",
+        "zip": "51200",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épernay"
+    },
+    {
+        "name": "Fismes",
+        "slug": "fismes",
+        "zip": "51170",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fismes"
+    },
+    {
+        "name": "Saint-Memmie",
+        "slug": "saint-memmie",
+        "zip": "51470",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Memmie"
+    },
+    {
+        "name": "Tinqueux",
+        "slug": "tinqueux",
+        "zip": "51430",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tinqueux"
+    },
+    {
+        "name": "Vitry-le-François",
+        "slug": "vitry-le-francois",
+        "zip": "51300",
+        "department": {
+            "code": "51",
+            "nom": "Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vitry-le-François"
+    },
+    {
+        "name": "Chaumont",
+        "slug": "chaumont",
+        "zip": "52000",
+        "department": {
+            "code": "52",
+            "nom": "Haute-Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chaumont"
+    },
+    {
+        "name": "Langres",
+        "slug": "langres",
+        "zip": "52200",
+        "department": {
+            "code": "52",
+            "nom": "Haute-Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Langres"
+    },
+    {
+        "name": "Saint-Dizier",
+        "slug": "saint-dizier",
+        "zip": "52100",
+        "department": {
+            "code": "52",
+            "nom": "Haute-Marne"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Dizier"
+    },
+    {
+        "name": "Bonchamp-lès-Laval",
+        "slug": "bonchamp-les-laval",
+        "zip": "53960",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bonchamp-lès-Laval"
+    },
+    {
+        "name": "Changé",
+        "slug": "change",
+        "zip": "53810",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Changé"
+    },
+    {
+        "name": "Château-Gontier-sur-Mayenne",
+        "slug": "chateau-gontier-sur-mayenne",
+        "zip": "53200",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Château-Gontier-sur-Mayenne"
+    },
+    {
+        "name": "Ernée",
+        "slug": "ernee",
+        "zip": "53500",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ernée"
+    },
+    {
+        "name": "Évron",
+        "slug": "evron",
+        "zip": "53150",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Évron"
+    },
+    {
+        "name": "Laval",
+        "slug": "laval",
+        "zip": "53000",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laval"
+    },
+    {
+        "name": "Mayenne",
+        "slug": "mayenne",
+        "zip": "53100",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mayenne"
+    },
+    {
+        "name": "Saint-Berthevin",
+        "slug": "saint-berthevin",
+        "zip": "53940",
+        "department": {
+            "code": "53",
+            "nom": "Mayenne"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Berthevin"
+    },
+    {
+        "name": "Val de Briey",
+        "slug": "val-de-briey",
+        "zip": "54150",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Val de Briey"
+    },
+    {
+        "name": "Champigneulles",
+        "slug": "champigneulles",
+        "zip": "54250",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champigneulles"
+    },
+    {
+        "name": "Dombasle-sur-Meurthe",
+        "slug": "dombasle-sur-meurthe",
+        "zip": "54110",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dombasle-sur-Meurthe"
+    },
+    {
+        "name": "Essey-lès-Nancy",
+        "slug": "essey-les-nancy",
+        "zip": "54270",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Essey-lès-Nancy"
+    },
+    {
+        "name": "Frouard",
+        "slug": "frouard",
+        "zip": "54390",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Frouard"
+    },
+    {
+        "name": "Heillecourt",
+        "slug": "heillecourt",
+        "zip": "54180",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Heillecourt"
+    },
+    {
+        "name": "Homécourt",
+        "slug": "homecourt",
+        "zip": "54310",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Homécourt"
+    },
+    {
+        "name": "Jarny",
+        "slug": "jarny",
+        "zip": "54800",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jarny"
+    },
+    {
+        "name": "Jarville-la-Malgrange",
+        "slug": "jarville-la-malgrange",
+        "zip": "54140",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jarville-la-Malgrange"
+    },
+    {
+        "name": "Jœuf",
+        "slug": "j-uf",
+        "zip": "54240",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jœuf"
+    },
+    {
+        "name": "Laneuveville-devant-Nancy",
+        "slug": "laneuveville-devant-nancy",
+        "zip": "54410",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laneuveville-devant-Nancy"
+    },
+    {
+        "name": "Laxou",
+        "slug": "laxou",
+        "zip": "54520",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laxou"
+    },
+    {
+        "name": "Liverdun",
+        "slug": "liverdun",
+        "zip": "54460",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Liverdun"
+    },
+    {
+        "name": "Longuyon",
+        "slug": "longuyon",
+        "zip": "54260",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longuyon"
+    },
+    {
+        "name": "Longwy",
+        "slug": "longwy",
+        "zip": "54400",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longwy"
+    },
+    {
+        "name": "Ludres",
+        "slug": "ludres",
+        "zip": "54710",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ludres"
+    },
+    {
+        "name": "Lunéville",
+        "slug": "luneville",
+        "zip": "54300",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lunéville"
+    },
+    {
+        "name": "Malzéville",
+        "slug": "malzeville",
+        "zip": "54220",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Malzéville"
+    },
+    {
+        "name": "Maxéville",
+        "slug": "maxeville",
+        "zip": "54320",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maxéville"
+    },
+    {
+        "name": "Mont-Saint-Martin",
+        "slug": "mont-saint-martin",
+        "zip": "54350",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mont-Saint-Martin"
+    },
+    {
+        "name": "Neuves-Maisons",
+        "slug": "neuves-maisons",
+        "zip": "54230",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuves-Maisons"
+    },
+    {
+        "name": "Pont-à-Mousson",
+        "slug": "pont-a-mousson",
+        "zip": "54700",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-à-Mousson"
+    },
+    {
+        "name": "Pulnoy",
+        "slug": "pulnoy",
+        "zip": "54425",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pulnoy"
+    },
+    {
+        "name": "Saint-Max",
+        "slug": "saint-max",
+        "zip": "54130",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Max"
+    },
+    {
+        "name": "Saint-Nicolas-de-Port",
+        "slug": "saint-nicolas-de-port",
+        "zip": "54210",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Nicolas-de-Port"
+    },
+    {
+        "name": "Seichamps",
+        "slug": "seichamps",
+        "zip": "54280",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seichamps"
+    },
+    {
+        "name": "Tomblaine",
+        "slug": "tomblaine",
+        "zip": "54510",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tomblaine"
+    },
+    {
+        "name": "Toul",
+        "slug": "toul",
+        "zip": "54200",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Toul"
+    },
+    {
+        "name": "Vandœuvre-lès-Nancy",
+        "slug": "vand-uvre-les-nancy",
+        "zip": "54500",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vandœuvre-lès-Nancy"
+    },
+    {
+        "name": "Villers-lès-Nancy",
+        "slug": "villers-les-nancy",
+        "zip": "54600",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villers-lès-Nancy"
+    },
+    {
+        "name": "Villerupt",
+        "slug": "villerupt",
+        "zip": "54190",
+        "department": {
+            "code": "54",
+            "nom": "Meurthe-et-Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villerupt"
+    },
+    {
+        "name": "Bar-le-Duc",
+        "slug": "bar-le-duc",
+        "zip": "55000",
+        "department": {
+            "code": "55",
+            "nom": "Meuse"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bar-le-Duc"
+    },
+    {
+        "name": "Commercy",
+        "slug": "commercy",
+        "zip": "55200",
+        "department": {
+            "code": "55",
+            "nom": "Meuse"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Commercy"
+    },
+    {
+        "name": "Verdun",
+        "slug": "verdun",
+        "zip": "55100",
+        "department": {
+            "code": "55",
+            "nom": "Meuse"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Verdun"
+    },
+    {
+        "name": "Arradon",
+        "slug": "arradon",
+        "zip": "56610",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arradon"
+    },
+    {
+        "name": "Auray",
+        "slug": "auray",
+        "zip": "56400",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auray"
+    },
+    {
+        "name": "Baden",
+        "slug": "baden",
+        "zip": "56870",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baden"
+    },
+    {
+        "name": "Baud",
+        "slug": "baud",
+        "zip": "56150",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baud"
+    },
+    {
+        "name": "Brech",
+        "slug": "brech",
+        "zip": "56400",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brech"
+    },
+    {
+        "name": "Caudan",
+        "slug": "caudan",
+        "zip": "56850",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Caudan"
+    },
+    {
+        "name": "Elven",
+        "slug": "elven",
+        "zip": "56250",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Elven"
+    },
+    {
+        "name": "Grand-Champ",
+        "slug": "grand-champ",
+        "zip": "56390",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grand-Champ"
+    },
+    {
+        "name": "Guer",
+        "slug": "guer",
+        "zip": "56380",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guer"
+    },
+    {
+        "name": "Guidel",
+        "slug": "guidel",
+        "zip": "56520",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guidel"
+    },
+    {
+        "name": "Hennebont",
+        "slug": "hennebont",
+        "zip": "56700",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hennebont"
+    },
+    {
+        "name": "Inzinzac-Lochrist",
+        "slug": "inzinzac-lochrist",
+        "zip": "56650",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Inzinzac-Lochrist"
+    },
+    {
+        "name": "Kervignac",
+        "slug": "kervignac",
+        "zip": "56700",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Kervignac"
+    },
+    {
+        "name": "Languidic",
+        "slug": "languidic",
+        "zip": "56440",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Languidic"
+    },
+    {
+        "name": "Larmor-Plage",
+        "slug": "larmor-plage",
+        "zip": "56260",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Larmor-Plage"
+    },
+    {
+        "name": "Muzillac",
+        "slug": "muzillac",
+        "zip": "56190",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Muzillac"
+    },
+    {
+        "name": "Plescop",
+        "slug": "plescop",
+        "zip": "56890",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plescop"
+    },
+    {
+        "name": "Ploeren",
+        "slug": "ploeren",
+        "zip": "56880",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ploeren"
+    },
+    {
+        "name": "Ploërmel",
+        "slug": "ploermel",
+        "zip": "56800",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ploërmel"
+    },
+    {
+        "name": "Plouay",
+        "slug": "plouay",
+        "zip": "56240",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plouay"
+    },
+    {
+        "name": "Plouhinec",
+        "slug": "plouhinec",
+        "zip": "56680",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plouhinec"
+    },
+    {
+        "name": "Pluneret",
+        "slug": "pluneret",
+        "zip": "56400",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pluneret"
+    },
+    {
+        "name": "Pluvigner",
+        "slug": "pluvigner",
+        "zip": "56330",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pluvigner"
+    },
+    {
+        "name": "Pontivy",
+        "slug": "pontivy",
+        "zip": "56300",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pontivy"
+    },
+    {
+        "name": "Questembert",
+        "slug": "questembert",
+        "zip": "56230",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Questembert"
+    },
+    {
+        "name": "Quéven",
+        "slug": "queven",
+        "zip": "56530",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quéven"
+    },
+    {
+        "name": "Riantec",
+        "slug": "riantec",
+        "zip": "56670",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Riantec"
+    },
+    {
+        "name": "Saint-Avé",
+        "slug": "saint-ave",
+        "zip": "56890",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Avé"
+    },
+    {
+        "name": "Sarzeau",
+        "slug": "sarzeau",
+        "zip": "56370",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sarzeau"
+    },
+    {
+        "name": "Séné",
+        "slug": "sene",
+        "zip": "56860",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Séné"
+    },
+    {
+        "name": "Surzur",
+        "slug": "surzur",
+        "zip": "56450",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Surzur"
+    },
+    {
+        "name": "Theix-Noyalo",
+        "slug": "theix-noyalo",
+        "zip": "56450",
+        "department": {
+            "code": "56",
+            "nom": "Morbihan"
+        },
+        "region": "Bretagne",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Theix-Noyalo"
+    },
+    {
+        "name": "Algrange",
+        "slug": "algrange",
+        "zip": "57440",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Algrange"
+    },
+    {
+        "name": "Amnéville",
+        "slug": "amneville",
+        "zip": "57360",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Amnéville"
+    },
+    {
+        "name": "Audun-le-Tiche",
+        "slug": "audun-le-tiche",
+        "zip": "57390",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Audun-le-Tiche"
+    },
+    {
+        "name": "Behren-lès-Forbach",
+        "slug": "behren-les-forbach",
+        "zip": "57460",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Behren-lès-Forbach"
+    },
+    {
+        "name": "Boulay-Moselle",
+        "slug": "boulay-moselle",
+        "zip": "57220",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boulay-Moselle"
+    },
+    {
+        "name": "Creutzwald",
+        "slug": "creutzwald",
+        "zip": "57150",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Creutzwald"
+    },
+    {
+        "name": "Fameck",
+        "slug": "fameck",
+        "zip": "57290",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fameck"
+    },
+    {
+        "name": "Farébersviller",
+        "slug": "farebersviller",
+        "zip": "57450",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Farébersviller"
+    },
+    {
+        "name": "Faulquemont",
+        "slug": "faulquemont",
+        "zip": "57380",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Faulquemont"
+    },
+    {
+        "name": "Florange",
+        "slug": "florange",
+        "zip": "57190",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Florange"
+    },
+    {
+        "name": "Forbach",
+        "slug": "forbach",
+        "zip": "57600",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Forbach"
+    },
+    {
+        "name": "Freyming-Merlebach",
+        "slug": "freyming-merlebach",
+        "zip": "57800",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Freyming-Merlebach"
+    },
+    {
+        "name": "Guénange",
+        "slug": "guenange",
+        "zip": "57310",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guénange"
+    },
+    {
+        "name": "Hagondange",
+        "slug": "hagondange",
+        "zip": "57300",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hagondange"
+    },
+    {
+        "name": "Hayange",
+        "slug": "hayange",
+        "zip": "57700",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hayange"
+    },
+    {
+        "name": "Hettange-Grande",
+        "slug": "hettange-grande",
+        "zip": "57330",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hettange-Grande"
+    },
+    {
+        "name": "Hombourg-Haut",
+        "slug": "hombourg-haut",
+        "zip": "57470",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hombourg-Haut"
+    },
+    {
+        "name": "L'Hôpital",
+        "slug": "l-hopital",
+        "zip": "57490",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Hôpital"
+    },
+    {
+        "name": "Maizières-lès-Metz",
+        "slug": "maizieres-les-metz",
+        "zip": "57280",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maizières-lès-Metz"
+    },
+    {
+        "name": "Marange-Silvange",
+        "slug": "marange-silvange",
+        "zip": "57535",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marange-Silvange"
+    },
+    {
+        "name": "Marly",
+        "slug": "marly",
+        "zip": "57155",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marly"
+    },
+    {
+        "name": "Mondelange",
+        "slug": "mondelange",
+        "zip": "57300",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mondelange"
+    },
+    {
+        "name": "Montigny-lès-Metz",
+        "slug": "montigny-les-metz",
+        "zip": "57950",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montigny-lès-Metz"
+    },
+    {
+        "name": "Moulins-lès-Metz",
+        "slug": "moulins-les-metz",
+        "zip": "57160",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moulins-lès-Metz"
+    },
+    {
+        "name": "Moyeuvre-Grande",
+        "slug": "moyeuvre-grande",
+        "zip": "57250",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moyeuvre-Grande"
+    },
+    {
+        "name": "Petite-Rosselle",
+        "slug": "petite-rosselle",
+        "zip": "57540",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petite-Rosselle"
+    },
+    {
+        "name": "Rombas",
+        "slug": "rombas",
+        "zip": "57120",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rombas"
+    },
+    {
+        "name": "Saint-Avold",
+        "slug": "saint-avold",
+        "zip": "57500",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Avold"
+    },
+    {
+        "name": "Sarrebourg",
+        "slug": "sarrebourg",
+        "zip": "57400",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sarrebourg"
+    },
+    {
+        "name": "Sarreguemines",
+        "slug": "sarreguemines",
+        "zip": "57200",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sarreguemines"
+    },
+    {
+        "name": "Stiring-Wendel",
+        "slug": "stiring-wendel",
+        "zip": "57350",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Stiring-Wendel"
+    },
+    {
+        "name": "Talange",
+        "slug": "talange",
+        "zip": "57525",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Talange"
+    },
+    {
+        "name": "Terville",
+        "slug": "terville",
+        "zip": "57180",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Terville"
+    },
+    {
+        "name": "Uckange",
+        "slug": "uckange",
+        "zip": "57270",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Uckange"
+    },
+    {
+        "name": "Woippy",
+        "slug": "woippy",
+        "zip": "57140",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Woippy"
+    },
+    {
+        "name": "Yutz",
+        "slug": "yutz",
+        "zip": "57970",
+        "department": {
+            "code": "57",
+            "nom": "Moselle"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yutz"
+    },
+    {
+        "name": "Cosne-Cours-sur-Loire",
+        "slug": "cosne-cours-sur-loire",
+        "zip": "58200",
+        "department": {
+            "code": "58",
+            "nom": "Nièvre"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cosne-Cours-sur-Loire"
+    },
+    {
+        "name": "Varennes-Vauzelles",
+        "slug": "varennes-vauzelles",
+        "zip": "58640",
+        "department": {
+            "code": "58",
+            "nom": "Nièvre"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Varennes-Vauzelles"
+    },
+    {
+        "name": "Aniche",
+        "slug": "aniche",
+        "zip": "59580",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aniche"
+    },
+    {
+        "name": "Villeneuve-d'Ascq",
+        "slug": "villeneuve-d-ascq",
+        "zip": "59491",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-d'Ascq"
+    },
+    {
+        "name": "Annœullin",
+        "slug": "ann-ullin",
+        "zip": "59112",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Annœullin"
+    },
+    {
+        "name": "Anzin",
+        "slug": "anzin",
+        "zip": "59410",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Anzin"
+    },
+    {
+        "name": "Armentières",
+        "slug": "armentieres",
+        "zip": "59280",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Armentières"
+    },
+    {
+        "name": "Auby",
+        "slug": "auby",
+        "zip": "59950",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auby"
+    },
+    {
+        "name": "Aulnoy-lez-Valenciennes",
+        "slug": "aulnoy-lez-valenciennes",
+        "zip": "59300",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aulnoy-lez-Valenciennes"
+    },
+    {
+        "name": "Aulnoye-Aymeries",
+        "slug": "aulnoye-aymeries",
+        "zip": "59620",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aulnoye-Aymeries"
+    },
+    {
+        "name": "Bailleul",
+        "slug": "bailleul",
+        "zip": "59270",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bailleul"
+    },
+    {
+        "name": "Baisieux",
+        "slug": "baisieux",
+        "zip": "59780",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baisieux"
+    },
+    {
+        "name": "La Bassée",
+        "slug": "la-bassee",
+        "zip": "59480",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Bassée"
+    },
+    {
+        "name": "Bauvin",
+        "slug": "bauvin",
+        "zip": "59221",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bauvin"
+    },
+    {
+        "name": "Beuvrages",
+        "slug": "beuvrages",
+        "zip": "59192",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beuvrages"
+    },
+    {
+        "name": "Bondues",
+        "slug": "bondues",
+        "zip": "59910",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bondues"
+    },
+    {
+        "name": "Bourbourg",
+        "slug": "bourbourg",
+        "zip": "59630",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourbourg"
+    },
+    {
+        "name": "Bruay-sur-l'Escaut",
+        "slug": "bruay-sur-l-escaut",
+        "zip": "59860",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bruay-sur-l'Escaut"
+    },
+    {
+        "name": "Cambrai",
+        "slug": "cambrai",
+        "zip": "59400",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cambrai"
+    },
+    {
+        "name": "Cappelle-la-Grande",
+        "slug": "cappelle-la-grande",
+        "zip": "59180",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cappelle-la-Grande"
+    },
+    {
+        "name": "Le Cateau-Cambrésis",
+        "slug": "le-cateau-cambresis",
+        "zip": "59360",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Cateau-Cambrésis"
+    },
+    {
+        "name": "Caudry",
+        "slug": "caudry",
+        "zip": "59540",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Caudry"
+    },
+    {
+        "name": "La Chapelle-d'Armentières",
+        "slug": "la-chapelle-d-armentieres",
+        "zip": "59930",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Chapelle-d'Armentières"
+    },
+    {
+        "name": "Comines",
+        "slug": "comines",
+        "zip": "59560",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Comines"
+    },
+    {
+        "name": "Condé-sur-l'Escaut",
+        "slug": "conde-sur-l-escaut",
+        "zip": "59163",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Condé-sur-l'Escaut"
+    },
+    {
+        "name": "Coudekerque-Branche",
+        "slug": "coudekerque-branche",
+        "zip": "59210",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coudekerque-Branche"
+    },
+    {
+        "name": "Croix",
+        "slug": "croix",
+        "zip": "59170",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Croix"
+    },
+    {
+        "name": "Cuincy",
+        "slug": "cuincy",
+        "zip": "59553",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cuincy"
+    },
+    {
+        "name": "Dechy",
+        "slug": "dechy",
+        "zip": "59187",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dechy"
+    },
+    {
+        "name": "Denain",
+        "slug": "denain",
+        "zip": "59220",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Denain"
+    },
+    {
+        "name": "Douchy-les-Mines",
+        "slug": "douchy-les-mines",
+        "zip": "59282",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Douchy-les-Mines"
+    },
+    {
+        "name": "Erquinghem-Lys",
+        "slug": "erquinghem-lys",
+        "zip": "59193",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Erquinghem-Lys"
+    },
+    {
+        "name": "Escaudain",
+        "slug": "escaudain",
+        "zip": "59124",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Escaudain"
+    },
+    {
+        "name": "Estaires",
+        "slug": "estaires",
+        "zip": "59940",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Estaires"
+    },
+    {
+        "name": "Faches-Thumesnil",
+        "slug": "faches-thumesnil",
+        "zip": "59155",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Faches-Thumesnil"
+    },
+    {
+        "name": "Feignies",
+        "slug": "feignies",
+        "zip": "59750",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Feignies"
+    },
+    {
+        "name": "Fenain",
+        "slug": "fenain",
+        "zip": "59179",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fenain"
+    },
+    {
+        "name": "Ferrière-la-Grande",
+        "slug": "ferriere-la-grande",
+        "zip": "59680",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ferrière-la-Grande"
+    },
+    {
+        "name": "Flers-en-Escrebieux",
+        "slug": "flers-en-escrebieux",
+        "zip": "59128",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Flers-en-Escrebieux"
+    },
+    {
+        "name": "Flines-lez-Raches",
+        "slug": "flines-lez-raches",
+        "zip": "59148",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Flines-lez-Raches"
+    },
+    {
+        "name": "Fourmies",
+        "slug": "fourmies",
+        "zip": "59610",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fourmies"
+    },
+    {
+        "name": "Fresnes-sur-Escaut",
+        "slug": "fresnes-sur-escaut",
+        "zip": "59970",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fresnes-sur-Escaut"
+    },
+    {
+        "name": "La Gorgue",
+        "slug": "la-gorgue",
+        "zip": "59253",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Gorgue"
+    },
+    {
+        "name": "Grande-Synthe",
+        "slug": "grande-synthe",
+        "zip": "59760",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grande-Synthe"
+    },
+    {
+        "name": "Gravelines",
+        "slug": "gravelines",
+        "zip": "59820",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gravelines"
+    },
+    {
+        "name": "Halluin",
+        "slug": "halluin",
+        "zip": "59250",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Halluin"
+    },
+    {
+        "name": "Haubourdin",
+        "slug": "haubourdin",
+        "zip": "59320",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Haubourdin"
+    },
+    {
+        "name": "Hautmont",
+        "slug": "hautmont",
+        "zip": "59330",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hautmont"
+    },
+    {
+        "name": "Hazebrouck",
+        "slug": "hazebrouck",
+        "zip": "59190",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hazebrouck"
+    },
+    {
+        "name": "Hem",
+        "slug": "hem",
+        "zip": "59510",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hem"
+    },
+    {
+        "name": "Houplines",
+        "slug": "houplines",
+        "zip": "59116",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Houplines"
+    },
+    {
+        "name": "Jeumont",
+        "slug": "jeumont",
+        "zip": "59460",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jeumont"
+    },
+    {
+        "name": "Lallaing",
+        "slug": "lallaing",
+        "zip": "59167",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lallaing"
+    },
+    {
+        "name": "Lambersart",
+        "slug": "lambersart",
+        "zip": "59130",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lambersart"
+    },
+    {
+        "name": "Leers",
+        "slug": "leers",
+        "zip": "59115",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Leers"
+    },
+    {
+        "name": "Lesquin",
+        "slug": "lesquin",
+        "zip": "59810",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lesquin"
+    },
+    {
+        "name": "Linselles",
+        "slug": "linselles",
+        "zip": "59126",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Linselles"
+    },
+    {
+        "name": "Loon-Plage",
+        "slug": "loon-plage",
+        "zip": "59279",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loon-Plage"
+    },
+    {
+        "name": "Loos",
+        "slug": "loos",
+        "zip": "59120",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loos"
+    },
+    {
+        "name": "Louvroil",
+        "slug": "louvroil",
+        "zip": "59720",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Louvroil"
+    },
+    {
+        "name": "Lys-lez-Lannoy",
+        "slug": "lys-lez-lannoy",
+        "zip": "59390",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lys-lez-Lannoy"
+    },
+    {
+        "name": "La Madeleine",
+        "slug": "la-madeleine",
+        "zip": "59110",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Madeleine"
+    },
+    {
+        "name": "Marcq-en-Barœul",
+        "slug": "marcq-en-bar-ul",
+        "zip": "59700",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marcq-en-Barœul"
+    },
+    {
+        "name": "Marquette-lez-Lille",
+        "slug": "marquette-lez-lille",
+        "zip": "59520",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marquette-lez-Lille"
+    },
+    {
+        "name": "Maubeuge",
+        "slug": "maubeuge",
+        "zip": "59600",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maubeuge"
+    },
+    {
+        "name": "Mons-en-Barœul",
+        "slug": "mons-en-bar-ul",
+        "zip": "59370",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mons-en-Barœul"
+    },
+    {
+        "name": "Mouvaux",
+        "slug": "mouvaux",
+        "zip": "59420",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouvaux"
+    },
+    {
+        "name": "Neuville-en-Ferrain",
+        "slug": "neuville-en-ferrain",
+        "zip": "59960",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuville-en-Ferrain"
+    },
+    {
+        "name": "Nieppe",
+        "slug": "nieppe",
+        "zip": "59850",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nieppe"
+    },
+    {
+        "name": "Onnaing",
+        "slug": "onnaing",
+        "zip": "59264",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Onnaing"
+    },
+    {
+        "name": "Orchies",
+        "slug": "orchies",
+        "zip": "59310",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orchies"
+    },
+    {
+        "name": "Ostricourt",
+        "slug": "ostricourt",
+        "zip": "59162",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ostricourt"
+    },
+    {
+        "name": "Pecquencourt",
+        "slug": "pecquencourt",
+        "zip": "59146",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pecquencourt"
+    },
+    {
+        "name": "Pérenchies",
+        "slug": "perenchies",
+        "zip": "59840",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pérenchies"
+    },
+    {
+        "name": "Petite-Forêt",
+        "slug": "petite-foret",
+        "zip": "59494",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petite-Forêt"
+    },
+    {
+        "name": "Quesnoy-sur-Deûle",
+        "slug": "quesnoy-sur-deule",
+        "zip": "59890",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quesnoy-sur-Deûle"
+    },
+    {
+        "name": "Quiévrechain",
+        "slug": "quievrechain",
+        "zip": "59920",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quiévrechain"
+    },
+    {
+        "name": "Raismes",
+        "slug": "raismes",
+        "zip": "59590",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Raismes"
+    },
+    {
+        "name": "Ronchin",
+        "slug": "ronchin",
+        "zip": "59790",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ronchin"
+    },
+    {
+        "name": "Roncq",
+        "slug": "roncq",
+        "zip": "59223",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roncq"
+    },
+    {
+        "name": "Roost-Warendin",
+        "slug": "roost-warendin",
+        "zip": "59286",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roost-Warendin"
+    },
+    {
+        "name": "Sainghin-en-Weppes",
+        "slug": "sainghin-en-weppes",
+        "zip": "59184",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainghin-en-Weppes"
+    },
+    {
+        "name": "Saint-Amand-les-Eaux",
+        "slug": "saint-amand-les-eaux",
+        "zip": "59230",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Amand-les-Eaux"
+    },
+    {
+        "name": "Saint-André-lez-Lille",
+        "slug": "saint-andre-lez-lille",
+        "zip": "59350",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André-lez-Lille"
+    },
+    {
+        "name": "Saint-Saulve",
+        "slug": "saint-saulve",
+        "zip": "59880",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Saulve"
+    },
+    {
+        "name": "Santes",
+        "slug": "santes",
+        "zip": "59211",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Santes"
+    },
+    {
+        "name": "Seclin",
+        "slug": "seclin",
+        "zip": "59113",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Seclin"
+    },
+    {
+        "name": "Sin-le-Noble",
+        "slug": "sin-le-noble",
+        "zip": "59450",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sin-le-Noble"
+    },
+    {
+        "name": "Somain",
+        "slug": "somain",
+        "zip": "59490",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Somain"
+    },
+    {
+        "name": "Templeuve-en-Pévèle",
+        "slug": "templeuve-en-pevele",
+        "zip": "59242",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Templeuve-en-Pévèle"
+    },
+    {
+        "name": "Téteghem-Coudekerque-Village",
+        "slug": "teteghem-coudekerque-village",
+        "zip": "59229",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Téteghem-Coudekerque-Village"
+    },
+    {
+        "name": "Trith-Saint-Léger",
+        "slug": "trith-saint-leger",
+        "zip": "59125",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trith-Saint-Léger"
+    },
+    {
+        "name": "Vieux-Condé",
+        "slug": "vieux-conde",
+        "zip": "59690",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vieux-Condé"
+    },
+    {
+        "name": "Wallers",
+        "slug": "wallers",
+        "zip": "59135",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wallers"
+    },
+    {
+        "name": "Wambrechies",
+        "slug": "wambrechies",
+        "zip": "59118",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wambrechies"
+    },
+    {
+        "name": "Wasquehal",
+        "slug": "wasquehal",
+        "zip": "59290",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wasquehal"
+    },
+    {
+        "name": "Wattignies",
+        "slug": "wattignies",
+        "zip": "59139",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wattignies"
+    },
+    {
+        "name": "Wattrelos",
+        "slug": "wattrelos",
+        "zip": "59150",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wattrelos"
+    },
+    {
+        "name": "Wavrin",
+        "slug": "wavrin",
+        "zip": "59136",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wavrin"
+    },
+    {
+        "name": "Waziers",
+        "slug": "waziers",
+        "zip": "59119",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Waziers"
+    },
+    {
+        "name": "Wervicq-Sud",
+        "slug": "wervicq-sud",
+        "zip": "59117",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wervicq-Sud"
+    },
+    {
+        "name": "Wormhout",
+        "slug": "wormhout",
+        "zip": "59470",
+        "department": {
+            "code": "59",
+            "nom": "Nord"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wormhout"
+    },
+    {
+        "name": "Chambly",
+        "slug": "chambly",
+        "zip": "60230",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chambly"
+    },
+    {
+        "name": "Chantilly",
+        "slug": "chantilly",
+        "zip": "60500",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chantilly"
+    },
+    {
+        "name": "Clermont",
+        "slug": "clermont",
+        "zip": "60600",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clermont"
+    },
+    {
+        "name": "Crépy-en-Valois",
+        "slug": "crepy-en-valois",
+        "zip": "60800",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crépy-en-Valois"
+    },
+    {
+        "name": "Gouvieux",
+        "slug": "gouvieux",
+        "zip": "60270",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gouvieux"
+    },
+    {
+        "name": "Lacroix-Saint-Ouen",
+        "slug": "lacroix-saint-ouen",
+        "zip": "60610",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lacroix-Saint-Ouen"
+    },
+    {
+        "name": "Lamorlaye",
+        "slug": "lamorlaye",
+        "zip": "60260",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lamorlaye"
+    },
+    {
+        "name": "Liancourt",
+        "slug": "liancourt",
+        "zip": "60140",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Liancourt"
+    },
+    {
+        "name": "Margny-lès-Compiègne",
+        "slug": "margny-les-compiegne",
+        "zip": "60280",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Margny-lès-Compiègne"
+    },
+    {
+        "name": "Méru",
+        "slug": "meru",
+        "zip": "60110",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Méru"
+    },
+    {
+        "name": "Montataire",
+        "slug": "montataire",
+        "zip": "60160",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montataire"
+    },
+    {
+        "name": "Mouy",
+        "slug": "mouy",
+        "zip": "60250",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouy"
+    },
+    {
+        "name": "Nogent-sur-Oise",
+        "slug": "nogent-sur-oise",
+        "zip": "60180",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nogent-sur-Oise"
+    },
+    {
+        "name": "Noyon",
+        "slug": "noyon",
+        "zip": "60400",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyon"
+    },
+    {
+        "name": "Pont-Sainte-Maxence",
+        "slug": "pont-sainte-maxence",
+        "zip": "60700",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-Sainte-Maxence"
+    },
+    {
+        "name": "Saint-Just-en-Chaussée",
+        "slug": "saint-just-en-chaussee",
+        "zip": "60130",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Just-en-Chaussée"
+    },
+    {
+        "name": "Senlis",
+        "slug": "senlis",
+        "zip": "60300",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Senlis"
+    },
+    {
+        "name": "Villers-Saint-Paul",
+        "slug": "villers-saint-paul",
+        "zip": "60870",
+        "department": {
+            "code": "60",
+            "nom": "Oise"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villers-Saint-Paul"
+    },
+    {
+        "name": "Alençon",
+        "slug": "alencon",
+        "zip": "61000",
+        "department": {
+            "code": "61",
+            "nom": "Orne"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Alençon"
+    },
+    {
+        "name": "Argentan",
+        "slug": "argentan",
+        "zip": "61200",
+        "department": {
+            "code": "61",
+            "nom": "Orne"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Argentan"
+    },
+    {
+        "name": "La Ferté Macé",
+        "slug": "la-ferte-mace",
+        "zip": "61410",
+        "department": {
+            "code": "61",
+            "nom": "Orne"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ferté Macé"
+    },
+    {
+        "name": "Flers",
+        "slug": "flers",
+        "zip": "61100",
+        "department": {
+            "code": "61",
+            "nom": "Orne"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Flers"
+    },
+    {
+        "name": "L'Aigle",
+        "slug": "l-aigle",
+        "zip": "61300",
+        "department": {
+            "code": "61",
+            "nom": "Orne"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Aigle"
+    },
+    {
+        "name": "Achicourt",
+        "slug": "achicourt",
+        "zip": "62217",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Achicourt"
+    },
+    {
+        "name": "Aire-sur-la-Lys",
+        "slug": "aire-sur-la-lys",
+        "zip": "62120",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aire-sur-la-Lys"
+    },
+    {
+        "name": "Annezin",
+        "slug": "annezin",
+        "zip": "62232",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Annezin"
+    },
+    {
+        "name": "Arques",
+        "slug": "arques",
+        "zip": "62510",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arques"
+    },
+    {
+        "name": "Auchel",
+        "slug": "auchel",
+        "zip": "62260",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auchel"
+    },
+    {
+        "name": "Audruicq",
+        "slug": "audruicq",
+        "zip": "62370",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Audruicq"
+    },
+    {
+        "name": "Avion",
+        "slug": "avion",
+        "zip": "62210",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Avion"
+    },
+    {
+        "name": "Barlin",
+        "slug": "barlin",
+        "zip": "62620",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Barlin"
+    },
+    {
+        "name": "Beaurains",
+        "slug": "beaurains",
+        "zip": "62217",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaurains"
+    },
+    {
+        "name": "Berck",
+        "slug": "berck",
+        "zip": "62600",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Berck"
+    },
+    {
+        "name": "Béthune",
+        "slug": "bethune",
+        "zip": "62400",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Béthune"
+    },
+    {
+        "name": "Beuvry",
+        "slug": "beuvry",
+        "zip": "62660",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beuvry"
+    },
+    {
+        "name": "Billy-Berclau",
+        "slug": "billy-berclau",
+        "zip": "62138",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Billy-Berclau"
+    },
+    {
+        "name": "Billy-Montigny",
+        "slug": "billy-montigny",
+        "zip": "62420",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Billy-Montigny"
+    },
+    {
+        "name": "Brebières",
+        "slug": "brebieres",
+        "zip": "62117",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brebières"
+    },
+    {
+        "name": "Bruay-la-Buissière",
+        "slug": "bruay-la-buissiere",
+        "zip": "62700",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bruay-la-Buissière"
+    },
+    {
+        "name": "Bully-les-Mines",
+        "slug": "bully-les-mines",
+        "zip": "62160",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bully-les-Mines"
+    },
+    {
+        "name": "Calonne-Ricouart",
+        "slug": "calonne-ricouart",
+        "zip": "62470",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Calonne-Ricouart"
+    },
+    {
+        "name": "Carvin",
+        "slug": "carvin",
+        "zip": "62220",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carvin"
+    },
+    {
+        "name": "Coulogne",
+        "slug": "coulogne",
+        "zip": "62137",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coulogne"
+    },
+    {
+        "name": "Courcelles-lès-Lens",
+        "slug": "courcelles-les-lens",
+        "zip": "62970",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Courcelles-lès-Lens"
+    },
+    {
+        "name": "Courrières",
+        "slug": "courrieres",
+        "zip": "62710",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Courrières"
+    },
+    {
+        "name": "Cucq",
+        "slug": "cucq",
+        "zip": "62780",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cucq"
+    },
+    {
+        "name": "Dainville",
+        "slug": "dainville",
+        "zip": "62000",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dainville"
+    },
+    {
+        "name": "Divion",
+        "slug": "divion",
+        "zip": "62460",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Divion"
+    },
+    {
+        "name": "Dourges",
+        "slug": "dourges",
+        "zip": "62119",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dourges"
+    },
+    {
+        "name": "Douvrin",
+        "slug": "douvrin",
+        "zip": "62138",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Douvrin"
+    },
+    {
+        "name": "Étaples",
+        "slug": "etaples",
+        "zip": "62630",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Étaples"
+    },
+    {
+        "name": "Fouquières-lès-Lens",
+        "slug": "fouquieres-les-lens",
+        "zip": "62740",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fouquières-lès-Lens"
+    },
+    {
+        "name": "Grenay",
+        "slug": "grenay",
+        "zip": "62160",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grenay"
+    },
+    {
+        "name": "Guînes",
+        "slug": "guines",
+        "zip": "62340",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guînes"
+    },
+    {
+        "name": "Haillicourt",
+        "slug": "haillicourt",
+        "zip": "62940",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Haillicourt"
+    },
+    {
+        "name": "Harnes",
+        "slug": "harnes",
+        "zip": "62440",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Harnes"
+    },
+    {
+        "name": "Hénin-Beaumont",
+        "slug": "henin-beaumont",
+        "zip": "62110",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hénin-Beaumont"
+    },
+    {
+        "name": "Hersin-Coupigny",
+        "slug": "hersin-coupigny",
+        "zip": "62530",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hersin-Coupigny"
+    },
+    {
+        "name": "Houdain",
+        "slug": "houdain",
+        "zip": "62150",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Houdain"
+    },
+    {
+        "name": "Isbergues",
+        "slug": "isbergues",
+        "zip": "62330",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Isbergues"
+    },
+    {
+        "name": "Laventie",
+        "slug": "laventie",
+        "zip": "62840",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Laventie"
+    },
+    {
+        "name": "Leforest",
+        "slug": "leforest",
+        "zip": "62790",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Leforest"
+    },
+    {
+        "name": "Lestrem",
+        "slug": "lestrem",
+        "zip": "62136",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lestrem"
+    },
+    {
+        "name": "Lillers",
+        "slug": "lillers",
+        "zip": "62190",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lillers"
+    },
+    {
+        "name": "Loison-sous-Lens",
+        "slug": "loison-sous-lens",
+        "zip": "62218",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loison-sous-Lens"
+    },
+    {
+        "name": "Longuenesse",
+        "slug": "longuenesse",
+        "zip": "62219",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longuenesse"
+    },
+    {
+        "name": "Loos-en-Gohelle",
+        "slug": "loos-en-gohelle",
+        "zip": "62750",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loos-en-Gohelle"
+    },
+    {
+        "name": "Marck",
+        "slug": "marck",
+        "zip": "62730",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marck"
+    },
+    {
+        "name": "Marles-les-Mines",
+        "slug": "marles-les-mines",
+        "zip": "62540",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marles-les-Mines"
+    },
+    {
+        "name": "Marquise",
+        "slug": "marquise",
+        "zip": "62250",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marquise"
+    },
+    {
+        "name": "Mazingarbe",
+        "slug": "mazingarbe",
+        "zip": "62670",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mazingarbe"
+    },
+    {
+        "name": "Méricourt",
+        "slug": "mericourt",
+        "zip": "62680",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Méricourt"
+    },
+    {
+        "name": "Montigny-en-Gohelle",
+        "slug": "montigny-en-gohelle",
+        "zip": "62640",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montigny-en-Gohelle"
+    },
+    {
+        "name": "Nœux-les-Mines",
+        "slug": "n-ux-les-mines",
+        "zip": "62290",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nœux-les-Mines"
+    },
+    {
+        "name": "Noyelles-Godault",
+        "slug": "noyelles-godault",
+        "zip": "62950",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyelles-Godault"
+    },
+    {
+        "name": "Noyelles-sous-Lens",
+        "slug": "noyelles-sous-lens",
+        "zip": "62221",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noyelles-sous-Lens"
+    },
+    {
+        "name": "Oignies",
+        "slug": "oignies",
+        "zip": "62590",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oignies"
+    },
+    {
+        "name": "Outreau",
+        "slug": "outreau",
+        "zip": "62230",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Outreau"
+    },
+    {
+        "name": "Oye-Plage",
+        "slug": "oye-plage",
+        "zip": "62215",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oye-Plage"
+    },
+    {
+        "name": "Le Portel",
+        "slug": "le-portel",
+        "zip": "62480",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Portel"
+    },
+    {
+        "name": "Rouvroy",
+        "slug": "rouvroy",
+        "zip": "62320",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rouvroy"
+    },
+    {
+        "name": "Sains-en-Gohelle",
+        "slug": "sains-en-gohelle",
+        "zip": "62114",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sains-en-Gohelle"
+    },
+    {
+        "name": "Saint-Étienne-au-Mont",
+        "slug": "saint-etienne-au-mont",
+        "zip": "62360",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Étienne-au-Mont"
+    },
+    {
+        "name": "Saint-Laurent-Blangy",
+        "slug": "saint-laurent-blangy",
+        "zip": "62223",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Laurent-Blangy"
+    },
+    {
+        "name": "Saint-Martin-lez-Tatinghem",
+        "slug": "saint-martin-lez-tatinghem",
+        "zip": "62500",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-lez-Tatinghem"
+    },
+    {
+        "name": "Saint-Martin-Boulogne",
+        "slug": "saint-martin-boulogne",
+        "zip": "62280",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-Boulogne"
+    },
+    {
+        "name": "Saint-Omer",
+        "slug": "saint-omer",
+        "zip": "62500",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Omer"
+    },
+    {
+        "name": "Sallaumines",
+        "slug": "sallaumines",
+        "zip": "62430",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sallaumines"
+    },
+    {
+        "name": "Vendin-le-Vieil",
+        "slug": "vendin-le-vieil",
+        "zip": "62880",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vendin-le-Vieil"
+    },
+    {
+        "name": "Wimereux",
+        "slug": "wimereux",
+        "zip": "62930",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wimereux"
+    },
+    {
+        "name": "Wingles",
+        "slug": "wingles",
+        "zip": "62410",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wingles"
+    },
+    {
+        "name": "Libercourt",
+        "slug": "libercourt",
+        "zip": "62820",
+        "department": {
+            "code": "62",
+            "nom": "Pas-de-Calais"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Libercourt"
+    },
+    {
+        "name": "Ambert",
+        "slug": "ambert",
+        "zip": "63600",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ambert"
+    },
+    {
+        "name": "Aubière",
+        "slug": "aubiere",
+        "zip": "63170",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubière"
+    },
+    {
+        "name": "Beaumont",
+        "slug": "beaumont",
+        "zip": "63110",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaumont"
+    },
+    {
+        "name": "Cébazat",
+        "slug": "cebazat",
+        "zip": "63118",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cébazat"
+    },
+    {
+        "name": "Le Cendre",
+        "slug": "le-cendre",
+        "zip": "63670",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Cendre"
+    },
+    {
+        "name": "Ceyrat",
+        "slug": "ceyrat",
+        "zip": "63122",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ceyrat"
+    },
+    {
+        "name": "Chamalières",
+        "slug": "chamalieres",
+        "zip": "63400",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chamalières"
+    },
+    {
+        "name": "Châtel-Guyon",
+        "slug": "chatel-guyon",
+        "zip": "63140",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtel-Guyon"
+    },
+    {
+        "name": "Cournon-d'Auvergne",
+        "slug": "cournon-d-auvergne",
+        "zip": "63800",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cournon-d'Auvergne"
+    },
+    {
+        "name": "Gerzat",
+        "slug": "gerzat",
+        "zip": "63360",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gerzat"
+    },
+    {
+        "name": "Issoire",
+        "slug": "issoire",
+        "zip": "63500",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Issoire"
+    },
+    {
+        "name": "Lempdes",
+        "slug": "lempdes",
+        "zip": "63370",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lempdes"
+    },
+    {
+        "name": "Lezoux",
+        "slug": "lezoux",
+        "zip": "63190",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lezoux"
+    },
+    {
+        "name": "Pont-du-Château",
+        "slug": "pont-du-chateau",
+        "zip": "63430",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pont-du-Château"
+    },
+    {
+        "name": "Riom",
+        "slug": "riom",
+        "zip": "63200",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Riom"
+    },
+    {
+        "name": "Romagnat",
+        "slug": "romagnat",
+        "zip": "63540",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Romagnat"
+    },
+    {
+        "name": "Thiers",
+        "slug": "thiers",
+        "zip": "63300",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thiers"
+    },
+    {
+        "name": "Vic-le-Comte",
+        "slug": "vic-le-comte",
+        "zip": "63270",
+        "department": {
+            "code": "63",
+            "nom": "Puy-de-Dôme"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vic-le-Comte"
+    },
+    {
+        "name": "Bidart",
+        "slug": "bidart",
+        "zip": "64210",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bidart"
+    },
+    {
+        "name": "Billère",
+        "slug": "billere",
+        "zip": "64140",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Billère"
+    },
+    {
+        "name": "Boucau",
+        "slug": "boucau",
+        "zip": "64340",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boucau"
+    },
+    {
+        "name": "Cambo-les-Bains",
+        "slug": "cambo-les-bains",
+        "zip": "64250",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cambo-les-Bains"
+    },
+    {
+        "name": "Ciboure",
+        "slug": "ciboure",
+        "zip": "64500",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ciboure"
+    },
+    {
+        "name": "Gan",
+        "slug": "gan",
+        "zip": "64290",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gan"
+    },
+    {
+        "name": "Hasparren",
+        "slug": "hasparren",
+        "zip": "64240",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hasparren"
+    },
+    {
+        "name": "Idron",
+        "slug": "idron",
+        "zip": "64320",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Idron"
+    },
+    {
+        "name": "Jurançon",
+        "slug": "jurancon",
+        "zip": "64110",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jurançon"
+    },
+    {
+        "name": "Lescar",
+        "slug": "lescar",
+        "zip": "64230",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lescar"
+    },
+    {
+        "name": "Lons",
+        "slug": "lons",
+        "zip": "64140",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lons"
+    },
+    {
+        "name": "Mouguerre",
+        "slug": "mouguerre",
+        "zip": "64990",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouguerre"
+    },
+    {
+        "name": "Mourenx",
+        "slug": "mourenx",
+        "zip": "64150",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mourenx"
+    },
+    {
+        "name": "Oloron-Sainte-Marie",
+        "slug": "oloron-sainte-marie",
+        "zip": "64400",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oloron-Sainte-Marie"
+    },
+    {
+        "name": "Orthez",
+        "slug": "orthez",
+        "zip": "64300",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orthez"
+    },
+    {
+        "name": "Saint-Pée-sur-Nivelle",
+        "slug": "saint-pee-sur-nivelle",
+        "zip": "64310",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pée-sur-Nivelle"
+    },
+    {
+        "name": "Saint-Pierre-d'Irube",
+        "slug": "saint-pierre-d-irube",
+        "zip": "64990",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-d'Irube"
+    },
+    {
+        "name": "Urrugne",
+        "slug": "urrugne",
+        "zip": "64122",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Urrugne"
+    },
+    {
+        "name": "Ustaritz",
+        "slug": "ustaritz",
+        "zip": "64480",
+        "department": {
+            "code": "64",
+            "nom": "Pyrénées-Atlantiques"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ustaritz"
+    },
+    {
+        "name": "Aureilhan",
+        "slug": "aureilhan",
+        "zip": "65800",
+        "department": {
+            "code": "65",
+            "nom": "Hautes-Pyrénées"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aureilhan"
+    },
+    {
+        "name": "Bagnères-de-Bigorre",
+        "slug": "bagneres-de-bigorre",
+        "zip": "65200",
+        "department": {
+            "code": "65",
+            "nom": "Hautes-Pyrénées"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bagnères-de-Bigorre"
+    },
+    {
+        "name": "Bordères-sur-l'Échez",
+        "slug": "borderes-sur-l-echez",
+        "zip": "65320",
+        "department": {
+            "code": "65",
+            "nom": "Hautes-Pyrénées"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bordères-sur-l'Échez"
+    },
+    {
+        "name": "Lannemezan",
+        "slug": "lannemezan",
+        "zip": "65300",
+        "department": {
+            "code": "65",
+            "nom": "Hautes-Pyrénées"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lannemezan"
+    },
+    {
+        "name": "Séméac",
+        "slug": "semeac",
+        "zip": "65600",
+        "department": {
+            "code": "65",
+            "nom": "Hautes-Pyrénées"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Séméac"
+    },
+    {
+        "name": "Argelès-sur-Mer",
+        "slug": "argeles-sur-mer",
+        "zip": "66700",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Argelès-sur-Mer"
+    },
+    {
+        "name": "Le Barcarès",
+        "slug": "le-barcares",
+        "zip": "66420",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Barcarès"
+    },
+    {
+        "name": "Bompas",
+        "slug": "bompas",
+        "zip": "66430",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bompas"
+    },
+    {
+        "name": "Le Boulou",
+        "slug": "le-boulou",
+        "zip": "66160",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Boulou"
+    },
+    {
+        "name": "Cabestany",
+        "slug": "cabestany",
+        "zip": "66330",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cabestany"
+    },
+    {
+        "name": "Canet-en-Roussillon",
+        "slug": "canet-en-roussillon",
+        "zip": "66140",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Canet-en-Roussillon"
+    },
+    {
+        "name": "Canohès",
+        "slug": "canohes",
+        "zip": "66680",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Canohès"
+    },
+    {
+        "name": "Céret",
+        "slug": "ceret",
+        "zip": "66400",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Céret"
+    },
+    {
+        "name": "Elne",
+        "slug": "elne",
+        "zip": "66200",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Elne"
+    },
+    {
+        "name": "Ille-sur-Têt",
+        "slug": "ille-sur-tet",
+        "zip": "66130",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ille-sur-Têt"
+    },
+    {
+        "name": "Pia",
+        "slug": "pia",
+        "zip": "66380",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pia"
+    },
+    {
+        "name": "Pollestres",
+        "slug": "pollestres",
+        "zip": "66450",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pollestres"
+    },
+    {
+        "name": "Prades",
+        "slug": "prades",
+        "zip": "66500",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Prades"
+    },
+    {
+        "name": "Rivesaltes",
+        "slug": "rivesaltes",
+        "zip": "66600",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rivesaltes"
+    },
+    {
+        "name": "Saint-Cyprien",
+        "slug": "saint-cyprien",
+        "zip": "66750",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cyprien"
+    },
+    {
+        "name": "Saint-Estève",
+        "slug": "saint-esteve",
+        "zip": "66240",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Estève"
+    },
+    {
+        "name": "Saint-Laurent-de-la-Salanque",
+        "slug": "saint-laurent-de-la-salanque",
+        "zip": "66250",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Laurent-de-la-Salanque"
+    },
+    {
+        "name": "Saleilles",
+        "slug": "saleilles",
+        "zip": "66280",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saleilles"
+    },
+    {
+        "name": "Le Soler",
+        "slug": "le-soler",
+        "zip": "66270",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Soler"
+    },
+    {
+        "name": "Thuir",
+        "slug": "thuir",
+        "zip": "66300",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thuir"
+    },
+    {
+        "name": "Toulouges",
+        "slug": "toulouges",
+        "zip": "66350",
+        "department": {
+            "code": "66",
+            "nom": "Pyrénées-Orientales"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Toulouges"
+    },
+    {
+        "name": "Barr",
+        "slug": "barr",
+        "zip": "67140",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Barr"
+    },
+    {
+        "name": "Benfeld",
+        "slug": "benfeld",
+        "zip": "67230",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Benfeld"
+    },
+    {
+        "name": "Bischheim",
+        "slug": "bischheim",
+        "zip": "67800",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bischheim"
+    },
+    {
+        "name": "Bischwiller",
+        "slug": "bischwiller",
+        "zip": "67240",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bischwiller"
+    },
+    {
+        "name": "Brumath",
+        "slug": "brumath",
+        "zip": "67170",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brumath"
+    },
+    {
+        "name": "Drusenheim",
+        "slug": "drusenheim",
+        "zip": "67410",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Drusenheim"
+    },
+    {
+        "name": "Eckbolsheim",
+        "slug": "eckbolsheim",
+        "zip": "67201",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eckbolsheim"
+    },
+    {
+        "name": "Erstein",
+        "slug": "erstein",
+        "zip": "67150",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Erstein"
+    },
+    {
+        "name": "Eschau",
+        "slug": "eschau",
+        "zip": "67114",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eschau"
+    },
+    {
+        "name": "Fegersheim",
+        "slug": "fegersheim",
+        "zip": "67640",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fegersheim"
+    },
+    {
+        "name": "Gambsheim",
+        "slug": "gambsheim",
+        "zip": "67760",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gambsheim"
+    },
+    {
+        "name": "Geispolsheim",
+        "slug": "geispolsheim",
+        "zip": "67118",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Geispolsheim"
+    },
+    {
+        "name": "Hœnheim",
+        "slug": "h-nheim",
+        "zip": "67800",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hœnheim"
+    },
+    {
+        "name": "Lingolsheim",
+        "slug": "lingolsheim",
+        "zip": "67380",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lingolsheim"
+    },
+    {
+        "name": "Molsheim",
+        "slug": "molsheim",
+        "zip": "67120",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Molsheim"
+    },
+    {
+        "name": "Mundolsheim",
+        "slug": "mundolsheim",
+        "zip": "67450",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mundolsheim"
+    },
+    {
+        "name": "Mutzig",
+        "slug": "mutzig",
+        "zip": "67190",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mutzig"
+    },
+    {
+        "name": "Oberhausbergen",
+        "slug": "oberhausbergen",
+        "zip": "67205",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oberhausbergen"
+    },
+    {
+        "name": "Obernai",
+        "slug": "obernai",
+        "zip": "67210",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Obernai"
+    },
+    {
+        "name": "Ostwald",
+        "slug": "ostwald",
+        "zip": "67540",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ostwald"
+    },
+    {
+        "name": "Val-de-Moder",
+        "slug": "val-de-moder",
+        "zip": "67350",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Val-de-Moder"
+    },
+    {
+        "name": "Reichshoffen",
+        "slug": "reichshoffen",
+        "zip": "67110",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Reichshoffen"
+    },
+    {
+        "name": "Rosheim",
+        "slug": "rosheim",
+        "zip": "67560",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rosheim"
+    },
+    {
+        "name": "Saverne",
+        "slug": "saverne",
+        "zip": "67700",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saverne"
+    },
+    {
+        "name": "Schweighouse-sur-Moder",
+        "slug": "schweighouse-sur-moder",
+        "zip": "67590",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Schweighouse-sur-Moder"
+    },
+    {
+        "name": "Sélestat",
+        "slug": "selestat",
+        "zip": "67600",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sélestat"
+    },
+    {
+        "name": "Souffelweyersheim",
+        "slug": "souffelweyersheim",
+        "zip": "67460",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Souffelweyersheim"
+    },
+    {
+        "name": "Vendenheim",
+        "slug": "vendenheim",
+        "zip": "67550",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vendenheim"
+    },
+    {
+        "name": "La Wantzenau",
+        "slug": "la-wantzenau",
+        "zip": "67610",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Wantzenau"
+    },
+    {
+        "name": "Wasselonne",
+        "slug": "wasselonne",
+        "zip": "67310",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wasselonne"
+    },
+    {
+        "name": "Wissembourg",
+        "slug": "wissembourg",
+        "zip": "67160",
+        "department": {
+            "code": "67",
+            "nom": "Bas-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wissembourg"
+    },
+    {
+        "name": "Altkirch",
+        "slug": "altkirch",
+        "zip": "68130",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Altkirch"
+    },
+    {
+        "name": "Blotzheim",
+        "slug": "blotzheim",
+        "zip": "68730",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blotzheim"
+    },
+    {
+        "name": "Brunstatt-Didenheim",
+        "slug": "brunstatt-didenheim",
+        "zip": "68350",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brunstatt-Didenheim"
+    },
+    {
+        "name": "Cernay",
+        "slug": "cernay",
+        "zip": "68700",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cernay"
+    },
+    {
+        "name": "Ensisheim",
+        "slug": "ensisheim",
+        "zip": "68190",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ensisheim"
+    },
+    {
+        "name": "Guebwiller",
+        "slug": "guebwiller",
+        "zip": "68500",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guebwiller"
+    },
+    {
+        "name": "Habsheim",
+        "slug": "habsheim",
+        "zip": "68440",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Habsheim"
+    },
+    {
+        "name": "Horbourg-Wihr",
+        "slug": "horbourg-wihr",
+        "zip": "68180",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Horbourg-Wihr"
+    },
+    {
+        "name": "Huningue",
+        "slug": "huningue",
+        "zip": "68330",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Huningue"
+    },
+    {
+        "name": "Illzach",
+        "slug": "illzach",
+        "zip": "68110",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Illzach"
+    },
+    {
+        "name": "Kembs",
+        "slug": "kembs",
+        "zip": "68680",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Kembs"
+    },
+    {
+        "name": "Kingersheim",
+        "slug": "kingersheim",
+        "zip": "68260",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Kingersheim"
+    },
+    {
+        "name": "Lutterbach",
+        "slug": "lutterbach",
+        "zip": "68460",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lutterbach"
+    },
+    {
+        "name": "Pfastatt",
+        "slug": "pfastatt",
+        "zip": "68120",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pfastatt"
+    },
+    {
+        "name": "Riedisheim",
+        "slug": "riedisheim",
+        "zip": "68400",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Riedisheim"
+    },
+    {
+        "name": "Rixheim",
+        "slug": "rixheim",
+        "zip": "68170",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rixheim"
+    },
+    {
+        "name": "Saint-Louis",
+        "slug": "saint-louis",
+        "zip": "68300",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Louis"
+    },
+    {
+        "name": "Sausheim",
+        "slug": "sausheim",
+        "zip": "68390",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sausheim"
+    },
+    {
+        "name": "Soultz-Haut-Rhin",
+        "slug": "soultz-haut-rhin",
+        "zip": "68360",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soultz-Haut-Rhin"
+    },
+    {
+        "name": "Thann",
+        "slug": "thann",
+        "zip": "68800",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thann"
+    },
+    {
+        "name": "Wintzenheim",
+        "slug": "wintzenheim",
+        "zip": "68124",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wintzenheim"
+    },
+    {
+        "name": "Wittelsheim",
+        "slug": "wittelsheim",
+        "zip": "68310",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wittelsheim"
+    },
+    {
+        "name": "Wittenheim",
+        "slug": "wittenheim",
+        "zip": "68270",
+        "department": {
+            "code": "68",
+            "nom": "Haut-Rhin"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wittenheim"
+    },
+    {
+        "name": "Anse",
+        "slug": "anse",
+        "zip": "69480",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Anse"
+    },
+    {
+        "name": "L'Arbresle",
+        "slug": "l-arbresle",
+        "zip": "69210",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Arbresle"
+    },
+    {
+        "name": "Belleville-en-Beaujolais",
+        "slug": "belleville-en-beaujolais",
+        "zip": "69220",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Belleville-en-Beaujolais"
+    },
+    {
+        "name": "Brignais",
+        "slug": "brignais",
+        "zip": "69530",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brignais"
+    },
+    {
+        "name": "Brindas",
+        "slug": "brindas",
+        "zip": "69126",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brindas"
+    },
+    {
+        "name": "Champagne-au-Mont-d'Or",
+        "slug": "champagne-au-mont-d-or",
+        "zip": "69410",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champagne-au-Mont-d'Or"
+    },
+    {
+        "name": "Chaponost",
+        "slug": "chaponost",
+        "zip": "69630",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chaponost"
+    },
+    {
+        "name": "Charbonnières-les-Bains",
+        "slug": "charbonnieres-les-bains",
+        "zip": "69260",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Charbonnières-les-Bains"
+    },
+    {
+        "name": "Craponne",
+        "slug": "craponne",
+        "zip": "69290",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Craponne"
+    },
+    {
+        "name": "Dardilly",
+        "slug": "dardilly",
+        "zip": "69570",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dardilly"
+    },
+    {
+        "name": "Écully",
+        "slug": "ecully",
+        "zip": "69130",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Écully"
+    },
+    {
+        "name": "Fontaines-sur-Saône",
+        "slug": "fontaines-sur-saone",
+        "zip": "69270",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontaines-sur-Saône"
+    },
+    {
+        "name": "Francheville",
+        "slug": "francheville",
+        "zip": "69340",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Francheville"
+    },
+    {
+        "name": "Givors",
+        "slug": "givors",
+        "zip": "69700",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Givors"
+    },
+    {
+        "name": "Gleizé",
+        "slug": "gleize",
+        "zip": "69400",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gleizé"
+    },
+    {
+        "name": "Grézieu-la-Varenne",
+        "slug": "grezieu-la-varenne",
+        "zip": "69290",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grézieu-la-Varenne"
+    },
+    {
+        "name": "Grigny-sur-Rhône",
+        "slug": "grigny-sur-rhone",
+        "zip": "69520",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grigny-sur-Rhône"
+    },
+    {
+        "name": "Irigny",
+        "slug": "irigny",
+        "zip": "69540",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Irigny"
+    },
+    {
+        "name": "Lentilly",
+        "slug": "lentilly",
+        "zip": "69210",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lentilly"
+    },
+    {
+        "name": "Mornant",
+        "slug": "mornant",
+        "zip": "69440",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mornant"
+    },
+    {
+        "name": "La Mulatière",
+        "slug": "la-mulatiere",
+        "zip": "69350",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Mulatière"
+    },
+    {
+        "name": "Neuville-sur-Saône",
+        "slug": "neuville-sur-saone",
+        "zip": "69250",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuville-sur-Saône"
+    },
+    {
+        "name": "Oullins-Pierre-Bénite",
+        "slug": "oullins-pierre-benite",
+        "zip": "69310",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oullins-Pierre-Bénite"
+    },
+    {
+        "name": "Vindry-sur-Turdine",
+        "slug": "vindry-sur-turdine",
+        "zip": "69490",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vindry-sur-Turdine"
+    },
+    {
+        "name": "Saint-Cyr-au-Mont-d'Or",
+        "slug": "saint-cyr-au-mont-d-or",
+        "zip": "69450",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cyr-au-Mont-d'Or"
+    },
+    {
+        "name": "Saint-Didier-au-Mont-d'Or",
+        "slug": "saint-didier-au-mont-d-or",
+        "zip": "69370",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Didier-au-Mont-d'Or"
+    },
+    {
+        "name": "Saint-Fons",
+        "slug": "saint-fons",
+        "zip": "69190",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Fons"
+    },
+    {
+        "name": "Sainte-Foy-lès-Lyon",
+        "slug": "sainte-foy-les-lyon",
+        "zip": "69110",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Foy-lès-Lyon"
+    },
+    {
+        "name": "Saint-Genis-Laval",
+        "slug": "saint-genis-laval",
+        "zip": "69230",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Genis-Laval"
+    },
+    {
+        "name": "Saint-Genis-les-Ollières",
+        "slug": "saint-genis-les-ollieres",
+        "zip": "69290",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Genis-les-Ollières"
+    },
+    {
+        "name": "Tarare",
+        "slug": "tarare",
+        "zip": "69170",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tarare"
+    },
+    {
+        "name": "Tassin-la-Demi-Lune",
+        "slug": "tassin-la-demi-lune",
+        "zip": "69160",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tassin-la-Demi-Lune"
+    },
+    {
+        "name": "Thizy-les-Bourgs",
+        "slug": "thizy-les-bourgs",
+        "zip": "69240",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thizy-les-Bourgs"
+    },
+    {
+        "name": "Vaugneray",
+        "slug": "vaugneray",
+        "zip": "69670",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaugneray"
+    },
+    {
+        "name": "Vernaison",
+        "slug": "vernaison",
+        "zip": "69390",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vernaison"
+    },
+    {
+        "name": "Villefranche-sur-Saône",
+        "slug": "villefranche-sur-saone",
+        "zip": "69400",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villefranche-sur-Saône"
+    },
+    {
+        "name": "Chassieu",
+        "slug": "chassieu",
+        "zip": "69680",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chassieu"
+    },
+    {
+        "name": "Corbas",
+        "slug": "corbas",
+        "zip": "69960",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Corbas"
+    },
+    {
+        "name": "Décines-Charpieu",
+        "slug": "decines-charpieu",
+        "zip": "69150",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Décines-Charpieu"
+    },
+    {
+        "name": "Feyzin",
+        "slug": "feyzin",
+        "zip": "69320",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Feyzin"
+    },
+    {
+        "name": "Genas",
+        "slug": "genas",
+        "zip": "69740",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Genas"
+    },
+    {
+        "name": "Genay",
+        "slug": "genay",
+        "zip": "69730",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Genay"
+    },
+    {
+        "name": "Jonage",
+        "slug": "jonage",
+        "zip": "69330",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jonage"
+    },
+    {
+        "name": "Mions",
+        "slug": "mions",
+        "zip": "69780",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mions"
+    },
+    {
+        "name": "Rillieux-la-Pape",
+        "slug": "rillieux-la-pape",
+        "zip": "69140",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rillieux-la-Pape"
+    },
+    {
+        "name": "Saint-Bonnet-de-Mure",
+        "slug": "saint-bonnet-de-mure",
+        "zip": "69720",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Bonnet-de-Mure"
+    },
+    {
+        "name": "Saint-Laurent-de-Mure",
+        "slug": "saint-laurent-de-mure",
+        "zip": "69720",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Laurent-de-Mure"
+    },
+    {
+        "name": "Saint-Symphorien-d'Ozon",
+        "slug": "saint-symphorien-d-ozon",
+        "zip": "69360",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Symphorien-d'Ozon"
+    },
+    {
+        "name": "Sathonay-Camp",
+        "slug": "sathonay-camp",
+        "zip": "69580",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sathonay-Camp"
+    },
+    {
+        "name": "Ternay",
+        "slug": "ternay",
+        "zip": "69360",
+        "department": {
+            "code": "69",
+            "nom": "Rhône"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ternay"
+    },
+    {
+        "name": "Gray",
+        "slug": "gray",
+        "zip": "70100",
+        "department": {
+            "code": "70",
+            "nom": "Haute-Saône"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gray"
+    },
+    {
+        "name": "Héricourt",
+        "slug": "hericourt",
+        "zip": "70400",
+        "department": {
+            "code": "70",
+            "nom": "Haute-Saône"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Héricourt"
+    },
+    {
+        "name": "Lure",
+        "slug": "lure",
+        "zip": "70200",
+        "department": {
+            "code": "70",
+            "nom": "Haute-Saône"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lure"
+    },
+    {
+        "name": "Luxeuil-les-Bains",
+        "slug": "luxeuil-les-bains",
+        "zip": "70300",
+        "department": {
+            "code": "70",
+            "nom": "Haute-Saône"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luxeuil-les-Bains"
+    },
+    {
+        "name": "Vesoul",
+        "slug": "vesoul",
+        "zip": "70000",
+        "department": {
+            "code": "70",
+            "nom": "Haute-Saône"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vesoul"
+    },
+    {
+        "name": "Autun",
+        "slug": "autun",
+        "zip": "71400",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Autun"
+    },
+    {
+        "name": "Blanzy",
+        "slug": "blanzy",
+        "zip": "71450",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Blanzy"
+    },
+    {
+        "name": "Chagny",
+        "slug": "chagny",
+        "zip": "71150",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chagny"
+    },
+    {
+        "name": "Charnay-lès-Mâcon",
+        "slug": "charnay-les-macon",
+        "zip": "71850",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Charnay-lès-Mâcon"
+    },
+    {
+        "name": "Châtenoy-le-Royal",
+        "slug": "chatenoy-le-royal",
+        "zip": "71880",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtenoy-le-Royal"
+    },
+    {
+        "name": "Le Creusot",
+        "slug": "le-creusot",
+        "zip": "71200",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Creusot"
+    },
+    {
+        "name": "Digoin",
+        "slug": "digoin",
+        "zip": "71160",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Digoin"
+    },
+    {
+        "name": "Gueugnon",
+        "slug": "gueugnon",
+        "zip": "71130",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gueugnon"
+    },
+    {
+        "name": "Louhans-Châteaurenaud",
+        "slug": "louhans-chateaurenaud",
+        "zip": "71500",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Louhans-Châteaurenaud"
+    },
+    {
+        "name": "Montceau-les-Mines",
+        "slug": "montceau-les-mines",
+        "zip": "71300",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montceau-les-Mines"
+    },
+    {
+        "name": "Paray-le-Monial",
+        "slug": "paray-le-monial",
+        "zip": "71600",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Paray-le-Monial"
+    },
+    {
+        "name": "Saint-Marcel",
+        "slug": "saint-marcel",
+        "zip": "71380",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Marcel"
+    },
+    {
+        "name": "Saint-Rémy",
+        "slug": "saint-remy",
+        "zip": "71100",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Rémy"
+    },
+    {
+        "name": "Saint-Vallier",
+        "slug": "saint-vallier",
+        "zip": "71230",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Vallier"
+    },
+    {
+        "name": "Tournus",
+        "slug": "tournus",
+        "zip": "71700",
+        "department": {
+            "code": "71",
+            "nom": "Saône-et-Loire"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tournus"
+    },
+    {
+        "name": "Allonnes",
+        "slug": "allonnes",
+        "zip": "72700",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Allonnes"
+    },
+    {
+        "name": "Arnage",
+        "slug": "arnage",
+        "zip": "72230",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arnage"
+    },
+    {
+        "name": "Montval-sur-Loir",
+        "slug": "montval-sur-loir",
+        "zip": "72500",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montval-sur-Loir"
+    },
+    {
+        "name": "Coulaines",
+        "slug": "coulaines",
+        "zip": "72190",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coulaines"
+    },
+    {
+        "name": "La Ferté-Bernard",
+        "slug": "la-ferte-bernard",
+        "zip": "72400",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ferté-Bernard"
+    },
+    {
+        "name": "La Flèche",
+        "slug": "la-fleche",
+        "zip": "72200",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Flèche"
+    },
+    {
+        "name": "Mulsanne",
+        "slug": "mulsanne",
+        "zip": "72230",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mulsanne"
+    },
+    {
+        "name": "Parigné-l'Évêque",
+        "slug": "parigne-l-eveque",
+        "zip": "72250",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Parigné-l'Évêque"
+    },
+    {
+        "name": "Sablé-sur-Sarthe",
+        "slug": "sable-sur-sarthe",
+        "zip": "72300",
+        "department": {
+            "code": "72",
+            "nom": "Sarthe"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sablé-sur-Sarthe"
+    },
+    {
+        "name": "Entrelacs",
+        "slug": "entrelacs",
+        "zip": "73410",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Entrelacs"
+    },
+    {
+        "name": "Albertville",
+        "slug": "albertville",
+        "zip": "73200",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Albertville"
+    },
+    {
+        "name": "Barberaz",
+        "slug": "barberaz",
+        "zip": "73000",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Barberaz"
+    },
+    {
+        "name": "Le Bourget-du-Lac",
+        "slug": "le-bourget-du-lac",
+        "zip": "73370",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Bourget-du-Lac"
+    },
+    {
+        "name": "Bourg-Saint-Maurice",
+        "slug": "bourg-saint-maurice",
+        "zip": "73700",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-Saint-Maurice"
+    },
+    {
+        "name": "Challes-les-Eaux",
+        "slug": "challes-les-eaux",
+        "zip": "73190",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Challes-les-Eaux"
+    },
+    {
+        "name": "Cognin",
+        "slug": "cognin",
+        "zip": "73160",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cognin"
+    },
+    {
+        "name": "La Motte-Servolex",
+        "slug": "la-motte-servolex",
+        "zip": "73290",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Motte-Servolex"
+    },
+    {
+        "name": "La Ravoire",
+        "slug": "la-ravoire",
+        "zip": "73490",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ravoire"
+    },
+    {
+        "name": "Saint-Alban-Leysse",
+        "slug": "saint-alban-leysse",
+        "zip": "73230",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Alban-Leysse"
+    },
+    {
+        "name": "Saint-Jean-de-Maurienne",
+        "slug": "saint-jean-de-maurienne",
+        "zip": "73300",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-Maurienne"
+    },
+    {
+        "name": "Ugine",
+        "slug": "ugine",
+        "zip": "73400",
+        "department": {
+            "code": "73",
+            "nom": "Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ugine"
+    },
+    {
+        "name": "Allinges",
+        "slug": "allinges",
+        "zip": "74200",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Allinges"
+    },
+    {
+        "name": "Ambilly",
+        "slug": "ambilly",
+        "zip": "74100",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ambilly"
+    },
+    {
+        "name": "La Balme-de-Sillingy",
+        "slug": "la-balme-de-sillingy",
+        "zip": "74330",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Balme-de-Sillingy"
+    },
+    {
+        "name": "Bonneville",
+        "slug": "bonneville",
+        "zip": "74130",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bonneville"
+    },
+    {
+        "name": "Bons-en-Chablais",
+        "slug": "bons-en-chablais",
+        "zip": "74890",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bons-en-Chablais"
+    },
+    {
+        "name": "Cluses",
+        "slug": "cluses",
+        "zip": "74300",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cluses"
+    },
+    {
+        "name": "Cranves-Sales",
+        "slug": "cranves-sales",
+        "zip": "74380",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cranves-Sales"
+    },
+    {
+        "name": "Cruseilles",
+        "slug": "cruseilles",
+        "zip": "74350",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cruseilles"
+    },
+    {
+        "name": "Douvaine",
+        "slug": "douvaine",
+        "zip": "74140",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Douvaine"
+    },
+    {
+        "name": "Epagny Metz-Tessy",
+        "slug": "epagny-metz-tessy",
+        "zip": "74330",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Epagny Metz-Tessy"
+    },
+    {
+        "name": "Évian-les-Bains",
+        "slug": "evian-les-bains",
+        "zip": "74500",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Évian-les-Bains"
+    },
+    {
+        "name": "Faverges-Seythenex",
+        "slug": "faverges-seythenex",
+        "zip": "74210",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Faverges-Seythenex"
+    },
+    {
+        "name": "Gaillard",
+        "slug": "gaillard",
+        "zip": "74240",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gaillard"
+    },
+    {
+        "name": "Marignier",
+        "slug": "marignier",
+        "zip": "74970",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marignier"
+    },
+    {
+        "name": "Marnaz",
+        "slug": "marnaz",
+        "zip": "74460",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marnaz"
+    },
+    {
+        "name": "Passy",
+        "slug": "passy",
+        "zip": "74190",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Passy"
+    },
+    {
+        "name": "Poisy",
+        "slug": "poisy",
+        "zip": "74330",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Poisy"
+    },
+    {
+        "name": "Publier",
+        "slug": "publier",
+        "zip": "74500",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Publier"
+    },
+    {
+        "name": "Reignier-Ésery",
+        "slug": "reignier-esery",
+        "zip": "74930",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Reignier-Ésery"
+    },
+    {
+        "name": "La Roche-sur-Foron",
+        "slug": "la-roche-sur-foron",
+        "zip": "74800",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Roche-sur-Foron"
+    },
+    {
+        "name": "Rumilly",
+        "slug": "rumilly",
+        "zip": "74150",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rumilly"
+    },
+    {
+        "name": "Saint-Gervais-les-Bains",
+        "slug": "saint-gervais-les-bains",
+        "zip": "74170",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Gervais-les-Bains"
+    },
+    {
+        "name": "Saint-Jorioz",
+        "slug": "saint-jorioz",
+        "zip": "74410",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jorioz"
+    },
+    {
+        "name": "Saint-Julien-en-Genevois",
+        "slug": "saint-julien-en-genevois",
+        "zip": "74160",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Julien-en-Genevois"
+    },
+    {
+        "name": "Saint-Pierre-en-Faucigny",
+        "slug": "saint-pierre-en-faucigny",
+        "zip": "74800",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-en-Faucigny"
+    },
+    {
+        "name": "Sallanches",
+        "slug": "sallanches",
+        "zip": "74700",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sallanches"
+    },
+    {
+        "name": "Sciez",
+        "slug": "sciez",
+        "zip": "74140",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sciez"
+    },
+    {
+        "name": "Scionzier",
+        "slug": "scionzier",
+        "zip": "74950",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Scionzier"
+    },
+    {
+        "name": "Sillingy",
+        "slug": "sillingy",
+        "zip": "74330",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sillingy"
+    },
+    {
+        "name": "Thyez",
+        "slug": "thyez",
+        "zip": "74300",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thyez"
+    },
+    {
+        "name": "Thônes",
+        "slug": "thones",
+        "zip": "74230",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thônes"
+    },
+    {
+        "name": "Fillière",
+        "slug": "filliere",
+        "zip": "74370",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fillière"
+    },
+    {
+        "name": "Valleiry",
+        "slug": "valleiry",
+        "zip": "74520",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valleiry"
+    },
+    {
+        "name": "Vétraz-Monthoux",
+        "slug": "vetraz-monthoux",
+        "zip": "74100",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vétraz-Monthoux"
+    },
+    {
+        "name": "Ville-la-Grand",
+        "slug": "ville-la-grand",
+        "zip": "74100",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ville-la-Grand"
+    },
+    {
+        "name": "Viry",
+        "slug": "viry",
+        "zip": "74580",
+        "department": {
+            "code": "74",
+            "nom": "Haute-Savoie"
+        },
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Viry"
+    },
+    {
+        "name": "Barentin",
+        "slug": "barentin",
+        "zip": "76360",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Barentin"
+    },
+    {
+        "name": "Bihorel",
+        "slug": "bihorel",
+        "zip": "76420",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bihorel"
+    },
+    {
+        "name": "Bonsecours",
+        "slug": "bonsecours",
+        "zip": "76240",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bonsecours"
+    },
+    {
+        "name": "Bois-Guillaume",
+        "slug": "bois-guillaume",
+        "zip": "76230",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bois-Guillaume"
+    },
+    {
+        "name": "Bolbec",
+        "slug": "bolbec",
+        "zip": "76210",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bolbec"
+    },
+    {
+        "name": "Canteleu",
+        "slug": "canteleu",
+        "zip": "76380",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Canteleu"
+    },
+    {
+        "name": "Caudebec-lès-Elbeuf",
+        "slug": "caudebec-les-elbeuf",
+        "zip": "76320",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Caudebec-lès-Elbeuf"
+    },
+    {
+        "name": "Darnétal",
+        "slug": "darnetal",
+        "zip": "76160",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Darnétal"
+    },
+    {
+        "name": "Déville-lès-Rouen",
+        "slug": "deville-les-rouen",
+        "zip": "76250",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Déville-lès-Rouen"
+    },
+    {
+        "name": "Dieppe",
+        "slug": "dieppe",
+        "zip": "76200",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dieppe"
+    },
+    {
+        "name": "Elbeuf",
+        "slug": "elbeuf",
+        "zip": "76500",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Elbeuf"
+    },
+    {
+        "name": "Eu",
+        "slug": "eu",
+        "zip": "76260",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eu"
+    },
+    {
+        "name": "Fécamp",
+        "slug": "fecamp",
+        "zip": "76400",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fécamp"
+    },
+    {
+        "name": "Gonfreville-l'Orcher",
+        "slug": "gonfreville-l-orcher",
+        "zip": "76700",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gonfreville-l'Orcher"
+    },
+    {
+        "name": "Gournay-en-Bray",
+        "slug": "gournay-en-bray",
+        "zip": "76220",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gournay-en-Bray"
+    },
+    {
+        "name": "Grand-Couronne",
+        "slug": "grand-couronne",
+        "zip": "76530",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grand-Couronne"
+    },
+    {
+        "name": "Le Grand-Quevilly",
+        "slug": "le-grand-quevilly",
+        "zip": "76120",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Grand-Quevilly"
+    },
+    {
+        "name": "Harfleur",
+        "slug": "harfleur",
+        "zip": "76700",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Harfleur"
+    },
+    {
+        "name": "Lillebonne",
+        "slug": "lillebonne",
+        "zip": "76170",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lillebonne"
+    },
+    {
+        "name": "Malaunay",
+        "slug": "malaunay",
+        "zip": "76770",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Malaunay"
+    },
+    {
+        "name": "Maromme",
+        "slug": "maromme",
+        "zip": "76150",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maromme"
+    },
+    {
+        "name": "Le Mesnil-Esnard",
+        "slug": "le-mesnil-esnard",
+        "zip": "76240",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mesnil-Esnard"
+    },
+    {
+        "name": "Montivilliers",
+        "slug": "montivilliers",
+        "zip": "76290",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montivilliers"
+    },
+    {
+        "name": "Mont-Saint-Aignan",
+        "slug": "mont-saint-aignan",
+        "zip": "76130",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mont-Saint-Aignan"
+    },
+    {
+        "name": "Notre-Dame-de-Bondeville",
+        "slug": "notre-dame-de-bondeville",
+        "zip": "76960",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Notre-Dame-de-Bondeville"
+    },
+    {
+        "name": "Franqueville-Saint-Pierre",
+        "slug": "franqueville-saint-pierre",
+        "zip": "76520",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Franqueville-Saint-Pierre"
+    },
+    {
+        "name": "Port-Jérôme-sur-Seine",
+        "slug": "port-jerome-sur-seine",
+        "zip": "76170",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Port-Jérôme-sur-Seine"
+    },
+    {
+        "name": "Octeville-sur-Mer",
+        "slug": "octeville-sur-mer",
+        "zip": "76930",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Octeville-sur-Mer"
+    },
+    {
+        "name": "Oissel-sur-Seine",
+        "slug": "oissel-sur-seine",
+        "zip": "76350",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Oissel-sur-Seine"
+    },
+    {
+        "name": "Pavilly",
+        "slug": "pavilly",
+        "zip": "76570",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pavilly"
+    },
+    {
+        "name": "Petit-Couronne",
+        "slug": "petit-couronne",
+        "zip": "76650",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petit-Couronne"
+    },
+    {
+        "name": "Le Petit-Quevilly",
+        "slug": "le-petit-quevilly",
+        "zip": "76140",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Petit-Quevilly"
+    },
+    {
+        "name": "Sainte-Adresse",
+        "slug": "sainte-adresse",
+        "zip": "76310",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Adresse"
+    },
+    {
+        "name": "Saint-Aubin-lès-Elbeuf",
+        "slug": "saint-aubin-les-elbeuf",
+        "zip": "76410",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Aubin-lès-Elbeuf"
+    },
+    {
+        "name": "Saint-Étienne-du-Rouvray",
+        "slug": "saint-etienne-du-rouvray",
+        "zip": "76800",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Étienne-du-Rouvray"
+    },
+    {
+        "name": "Petit-Caux",
+        "slug": "petit-caux",
+        "zip": "76370",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petit-Caux"
+    },
+    {
+        "name": "Saint-Pierre-lès-Elbeuf",
+        "slug": "saint-pierre-les-elbeuf",
+        "zip": "76320",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-lès-Elbeuf"
+    },
+    {
+        "name": "Sotteville-lès-Rouen",
+        "slug": "sotteville-les-rouen",
+        "zip": "76300",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sotteville-lès-Rouen"
+    },
+    {
+        "name": "Yvetot",
+        "slug": "yvetot",
+        "zip": "76190",
+        "department": {
+            "code": "76",
+            "nom": "Seine-Maritime"
+        },
+        "region": "Normandie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yvetot"
+    },
+    {
+        "name": "Avon",
+        "slug": "avon",
+        "zip": "77210",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Avon"
+    },
+    {
+        "name": "Bailly-Romainvilliers",
+        "slug": "bailly-romainvilliers",
+        "zip": "77700",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bailly-Romainvilliers"
+    },
+    {
+        "name": "Bois-le-Roi",
+        "slug": "bois-le-roi",
+        "zip": "77590",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bois-le-Roi"
+    },
+    {
+        "name": "Brie-Comte-Robert",
+        "slug": "brie-comte-robert",
+        "zip": "77170",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brie-Comte-Robert"
+    },
+    {
+        "name": "Brou-sur-Chantereine",
+        "slug": "brou-sur-chantereine",
+        "zip": "77177",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brou-sur-Chantereine"
+    },
+    {
+        "name": "Bussy-Saint-Georges",
+        "slug": "bussy-saint-georges",
+        "zip": "77600",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bussy-Saint-Georges"
+    },
+    {
+        "name": "Cesson",
+        "slug": "cesson",
+        "zip": "77240",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cesson"
+    },
+    {
+        "name": "Champagne-sur-Seine",
+        "slug": "champagne-sur-seine",
+        "zip": "77430",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champagne-sur-Seine"
+    },
+    {
+        "name": "Champs-sur-Marne",
+        "slug": "champs-sur-marne",
+        "zip": "77420",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champs-sur-Marne"
+    },
+    {
+        "name": "Chessy",
+        "slug": "chessy",
+        "zip": "77700",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chessy"
+    },
+    {
+        "name": "Claye-Souilly",
+        "slug": "claye-souilly",
+        "zip": "77410",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Claye-Souilly"
+    },
+    {
+        "name": "Combs-la-Ville",
+        "slug": "combs-la-ville",
+        "zip": "77380",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Combs-la-Ville"
+    },
+    {
+        "name": "Coulommiers",
+        "slug": "coulommiers",
+        "zip": "77120",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coulommiers"
+    },
+    {
+        "name": "Courtry",
+        "slug": "courtry",
+        "zip": "77181",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Courtry"
+    },
+    {
+        "name": "Crégy-lès-Meaux",
+        "slug": "cregy-les-meaux",
+        "zip": "77124",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crégy-lès-Meaux"
+    },
+    {
+        "name": "Dammarie-les-Lys",
+        "slug": "dammarie-les-lys",
+        "zip": "77190",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dammarie-les-Lys"
+    },
+    {
+        "name": "Dammartin-en-Goële",
+        "slug": "dammartin-en-goele",
+        "zip": "77230",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dammartin-en-Goële"
+    },
+    {
+        "name": "Émerainville",
+        "slug": "emerainville",
+        "zip": "77184",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Émerainville"
+    },
+    {
+        "name": "Esbly",
+        "slug": "esbly",
+        "zip": "77450",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Esbly"
+    },
+    {
+        "name": "La Ferté-sous-Jouarre",
+        "slug": "la-ferte-sous-jouarre",
+        "zip": "77260",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ferté-sous-Jouarre"
+    },
+    {
+        "name": "Fontainebleau",
+        "slug": "fontainebleau",
+        "zip": "77300",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontainebleau"
+    },
+    {
+        "name": "Fontenay-Trésigny",
+        "slug": "fontenay-tresigny",
+        "zip": "77610",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenay-Trésigny"
+    },
+    {
+        "name": "Gretz-Armainvilliers",
+        "slug": "gretz-armainvilliers",
+        "zip": "77220",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gretz-Armainvilliers"
+    },
+    {
+        "name": "Lagny-sur-Marne",
+        "slug": "lagny-sur-marne",
+        "zip": "77400",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lagny-sur-Marne"
+    },
+    {
+        "name": "Lésigny",
+        "slug": "lesigny",
+        "zip": "77150",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lésigny"
+    },
+    {
+        "name": "Lieusaint",
+        "slug": "lieusaint",
+        "zip": "77127",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lieusaint"
+    },
+    {
+        "name": "Lognes",
+        "slug": "lognes",
+        "zip": "77185",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lognes"
+    },
+    {
+        "name": "Magny-le-Hongre",
+        "slug": "magny-le-hongre",
+        "zip": "77700",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Magny-le-Hongre"
+    },
+    {
+        "name": "Le Mée-sur-Seine",
+        "slug": "le-mee-sur-seine",
+        "zip": "77350",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mée-sur-Seine"
+    },
+    {
+        "name": "Mitry-Mory",
+        "slug": "mitry-mory",
+        "zip": "77290",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mitry-Mory"
+    },
+    {
+        "name": "Moissy-Cramayel",
+        "slug": "moissy-cramayel",
+        "zip": "77550",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moissy-Cramayel"
+    },
+    {
+        "name": "Montereau-Fault-Yonne",
+        "slug": "montereau-fault-yonne",
+        "zip": "77130",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montereau-Fault-Yonne"
+    },
+    {
+        "name": "Montévrain",
+        "slug": "montevrain",
+        "zip": "77144",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montévrain"
+    },
+    {
+        "name": "Moret-Loing-et-Orvanne",
+        "slug": "moret-loing-et-orvanne",
+        "zip": "77250",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moret-Loing-et-Orvanne"
+    },
+    {
+        "name": "Mormant",
+        "slug": "mormant",
+        "zip": "77720",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mormant"
+    },
+    {
+        "name": "Mouroux",
+        "slug": "mouroux",
+        "zip": "77120",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouroux"
+    },
+    {
+        "name": "Nandy",
+        "slug": "nandy",
+        "zip": "77176",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nandy"
+    },
+    {
+        "name": "Nangis",
+        "slug": "nangis",
+        "zip": "77370",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nangis"
+    },
+    {
+        "name": "Nanteuil-lès-Meaux",
+        "slug": "nanteuil-les-meaux",
+        "zip": "77100",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nanteuil-lès-Meaux"
+    },
+    {
+        "name": "Nemours",
+        "slug": "nemours",
+        "zip": "77140",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nemours"
+    },
+    {
+        "name": "Noisiel",
+        "slug": "noisiel",
+        "zip": "77186",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noisiel"
+    },
+    {
+        "name": "Othis",
+        "slug": "othis",
+        "zip": "77280",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Othis"
+    },
+    {
+        "name": "Ozoir-la-Ferrière",
+        "slug": "ozoir-la-ferriere",
+        "zip": "77330",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ozoir-la-Ferrière"
+    },
+    {
+        "name": "Provins",
+        "slug": "provins",
+        "zip": "77160",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Provins"
+    },
+    {
+        "name": "Quincy-Voisins",
+        "slug": "quincy-voisins",
+        "zip": "77860",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quincy-Voisins"
+    },
+    {
+        "name": "Roissy-en-Brie",
+        "slug": "roissy-en-brie",
+        "zip": "77680",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roissy-en-Brie"
+    },
+    {
+        "name": "Saint-Fargeau-Ponthierry",
+        "slug": "saint-fargeau-ponthierry",
+        "zip": "77310",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Fargeau-Ponthierry"
+    },
+    {
+        "name": "Saint-Pathus",
+        "slug": "saint-pathus",
+        "zip": "77178",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pathus"
+    },
+    {
+        "name": "Saint-Pierre-lès-Nemours",
+        "slug": "saint-pierre-les-nemours",
+        "zip": "77140",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-lès-Nemours"
+    },
+    {
+        "name": "Saint-Thibault-des-Vignes",
+        "slug": "saint-thibault-des-vignes",
+        "zip": "77400",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Thibault-des-Vignes"
+    },
+    {
+        "name": "Savigny-le-Temple",
+        "slug": "savigny-le-temple",
+        "zip": "77176",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Savigny-le-Temple"
+    },
+    {
+        "name": "Serris",
+        "slug": "serris",
+        "zip": "77700",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Serris"
+    },
+    {
+        "name": "Thorigny-sur-Marne",
+        "slug": "thorigny-sur-marne",
+        "zip": "77400",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thorigny-sur-Marne"
+    },
+    {
+        "name": "Torcy",
+        "slug": "torcy",
+        "zip": "77200",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Torcy"
+    },
+    {
+        "name": "Tournan-en-Brie",
+        "slug": "tournan-en-brie",
+        "zip": "77220",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tournan-en-Brie"
+    },
+    {
+        "name": "Trilport",
+        "slug": "trilport",
+        "zip": "77470",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trilport"
+    },
+    {
+        "name": "Vaires-sur-Marne",
+        "slug": "vaires-sur-marne",
+        "zip": "77360",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaires-sur-Marne"
+    },
+    {
+        "name": "Vaux-le-Pénil",
+        "slug": "vaux-le-penil",
+        "zip": "77000",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaux-le-Pénil"
+    },
+    {
+        "name": "Vert-Saint-Denis",
+        "slug": "vert-saint-denis",
+        "zip": "77240",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vert-Saint-Denis"
+    },
+    {
+        "name": "Villenoy",
+        "slug": "villenoy",
+        "zip": "77124",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villenoy"
+    },
+    {
+        "name": "Villeparisis",
+        "slug": "villeparisis",
+        "zip": "77270",
+        "department": {
+            "code": "77",
+            "nom": "Seine-et-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeparisis"
+    },
+    {
+        "name": "Achères",
+        "slug": "acheres",
+        "zip": "78260",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Achères"
+    },
+    {
+        "name": "Andrésy",
+        "slug": "andresy",
+        "zip": "78570",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Andrésy"
+    },
+    {
+        "name": "Aubergenville",
+        "slug": "aubergenville",
+        "zip": "78410",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubergenville"
+    },
+    {
+        "name": "Beynes",
+        "slug": "beynes",
+        "zip": "78650",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beynes"
+    },
+    {
+        "name": "Bois-d'Arcy",
+        "slug": "bois-d-arcy",
+        "zip": "78390",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bois-d'Arcy"
+    },
+    {
+        "name": "Bonnières-sur-Seine",
+        "slug": "bonnieres-sur-seine",
+        "zip": "78270",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bonnières-sur-Seine"
+    },
+    {
+        "name": "Bougival",
+        "slug": "bougival",
+        "zip": "78380",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bougival"
+    },
+    {
+        "name": "Buc",
+        "slug": "buc",
+        "zip": "78530",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Buc"
+    },
+    {
+        "name": "Carrières-sous-Poissy",
+        "slug": "carrieres-sous-poissy",
+        "zip": "78955",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carrières-sous-Poissy"
+    },
+    {
+        "name": "Carrières-sur-Seine",
+        "slug": "carrieres-sur-seine",
+        "zip": "78420",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carrières-sur-Seine"
+    },
+    {
+        "name": "La Celle-Saint-Cloud",
+        "slug": "la-celle-saint-cloud",
+        "zip": "78170",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Celle-Saint-Cloud"
+    },
+    {
+        "name": "Chambourcy",
+        "slug": "chambourcy",
+        "zip": "78240",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chambourcy"
+    },
+    {
+        "name": "Chanteloup-les-Vignes",
+        "slug": "chanteloup-les-vignes",
+        "zip": "78570",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chanteloup-les-Vignes"
+    },
+    {
+        "name": "Chatou",
+        "slug": "chatou",
+        "zip": "78400",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chatou"
+    },
+    {
+        "name": "Le Chesnay-Rocquencourt",
+        "slug": "le-chesnay-rocquencourt",
+        "zip": "78150",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Chesnay-Rocquencourt"
+    },
+    {
+        "name": "Chevreuse",
+        "slug": "chevreuse",
+        "zip": "78460",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chevreuse"
+    },
+    {
+        "name": "Les Clayes-sous-Bois",
+        "slug": "les-clayes-sous-bois",
+        "zip": "78340",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Clayes-sous-Bois"
+    },
+    {
+        "name": "Conflans-Sainte-Honorine",
+        "slug": "conflans-sainte-honorine",
+        "zip": "78700",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Conflans-Sainte-Honorine"
+    },
+    {
+        "name": "Croissy-sur-Seine",
+        "slug": "croissy-sur-seine",
+        "zip": "78290",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Croissy-sur-Seine"
+    },
+    {
+        "name": "Élancourt",
+        "slug": "elancourt",
+        "zip": "78990",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Élancourt"
+    },
+    {
+        "name": "Épône",
+        "slug": "epone",
+        "zip": "78680",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épône"
+    },
+    {
+        "name": "Les Essarts-le-Roi",
+        "slug": "les-essarts-le-roi",
+        "zip": "78690",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Essarts-le-Roi"
+    },
+    {
+        "name": "L'Étang-la-Ville",
+        "slug": "l-etang-la-ville",
+        "zip": "78620",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Étang-la-Ville"
+    },
+    {
+        "name": "Fontenay-le-Fleury",
+        "slug": "fontenay-le-fleury",
+        "zip": "78330",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenay-le-Fleury"
+    },
+    {
+        "name": "Gargenville",
+        "slug": "gargenville",
+        "zip": "78440",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gargenville"
+    },
+    {
+        "name": "Guyancourt",
+        "slug": "guyancourt",
+        "zip": "78280",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Guyancourt"
+    },
+    {
+        "name": "Houilles",
+        "slug": "houilles",
+        "zip": "78800",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Houilles"
+    },
+    {
+        "name": "Jouars-Pontchartrain",
+        "slug": "jouars-pontchartrain",
+        "zip": "78760",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jouars-Pontchartrain"
+    },
+    {
+        "name": "Jouy-en-Josas",
+        "slug": "jouy-en-josas",
+        "zip": "78350",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jouy-en-Josas"
+    },
+    {
+        "name": "Limay",
+        "slug": "limay",
+        "zip": "78520",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Limay"
+    },
+    {
+        "name": "Louveciennes",
+        "slug": "louveciennes",
+        "zip": "78430",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Louveciennes"
+    },
+    {
+        "name": "Magnanville",
+        "slug": "magnanville",
+        "zip": "78200",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Magnanville"
+    },
+    {
+        "name": "Magny-les-Hameaux",
+        "slug": "magny-les-hameaux",
+        "zip": "78114",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Magny-les-Hameaux"
+    },
+    {
+        "name": "Maisons-Laffitte",
+        "slug": "maisons-laffitte",
+        "zip": "78600",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maisons-Laffitte"
+    },
+    {
+        "name": "Mantes-la-Ville",
+        "slug": "mantes-la-ville",
+        "zip": "78711",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mantes-la-Ville"
+    },
+    {
+        "name": "Marly-le-Roi",
+        "slug": "marly-le-roi",
+        "zip": "78160",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marly-le-Roi"
+    },
+    {
+        "name": "Maule",
+        "slug": "maule",
+        "zip": "78580",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maule"
+    },
+    {
+        "name": "Maurepas",
+        "slug": "maurepas",
+        "zip": "78310",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maurepas"
+    },
+    {
+        "name": "Le Mesnil-le-Roi",
+        "slug": "le-mesnil-le-roi",
+        "zip": "78600",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mesnil-le-Roi"
+    },
+    {
+        "name": "Le Mesnil-Saint-Denis",
+        "slug": "le-mesnil-saint-denis",
+        "zip": "78320",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mesnil-Saint-Denis"
+    },
+    {
+        "name": "Meulan-en-Yvelines",
+        "slug": "meulan-en-yvelines",
+        "zip": "78250",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meulan-en-Yvelines"
+    },
+    {
+        "name": "Montesson",
+        "slug": "montesson",
+        "zip": "78360",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montesson"
+    },
+    {
+        "name": "Montigny-le-Bretonneux",
+        "slug": "montigny-le-bretonneux",
+        "zip": "78180",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montigny-le-Bretonneux"
+    },
+    {
+        "name": "Les Mureaux",
+        "slug": "les-mureaux",
+        "zip": "78130",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Mureaux"
+    },
+    {
+        "name": "Noisy-le-Roi",
+        "slug": "noisy-le-roi",
+        "zip": "78590",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noisy-le-Roi"
+    },
+    {
+        "name": "Orgeval",
+        "slug": "orgeval",
+        "zip": "78630",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orgeval"
+    },
+    {
+        "name": "Le Pecq",
+        "slug": "le-pecq",
+        "zip": "78230",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pecq"
+    },
+    {
+        "name": "Le Perray-en-Yvelines",
+        "slug": "le-perray-en-yvelines",
+        "zip": "78610",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Perray-en-Yvelines"
+    },
+    {
+        "name": "Plaisir",
+        "slug": "plaisir",
+        "zip": "78370",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Plaisir"
+    },
+    {
+        "name": "Le Port-Marly",
+        "slug": "le-port-marly",
+        "zip": "78560",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Port-Marly"
+    },
+    {
+        "name": "Rambouillet",
+        "slug": "rambouillet",
+        "zip": "78120",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rambouillet"
+    },
+    {
+        "name": "Rosny-sur-Seine",
+        "slug": "rosny-sur-seine",
+        "zip": "78710",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rosny-sur-Seine"
+    },
+    {
+        "name": "Saint-Arnoult-en-Yvelines",
+        "slug": "saint-arnoult-en-yvelines",
+        "zip": "78730",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Arnoult-en-Yvelines"
+    },
+    {
+        "name": "Saint-Cyr-l'École",
+        "slug": "saint-cyr-l-ecole",
+        "zip": "78210",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cyr-l'École"
+    },
+    {
+        "name": "Saint-Rémy-lès-Chevreuse",
+        "slug": "saint-remy-les-chevreuse",
+        "zip": "78470",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Rémy-lès-Chevreuse"
+    },
+    {
+        "name": "Trappes",
+        "slug": "trappes",
+        "zip": "78190",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trappes"
+    },
+    {
+        "name": "Triel-sur-Seine",
+        "slug": "triel-sur-seine",
+        "zip": "78510",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Triel-sur-Seine"
+    },
+    {
+        "name": "Vaux-sur-Seine",
+        "slug": "vaux-sur-seine",
+        "zip": "78740",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaux-sur-Seine"
+    },
+    {
+        "name": "Vélizy-Villacoublay",
+        "slug": "velizy-villacoublay",
+        "zip": "78140",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vélizy-Villacoublay"
+    },
+    {
+        "name": "Verneuil-sur-Seine",
+        "slug": "verneuil-sur-seine",
+        "zip": "78480",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Verneuil-sur-Seine"
+    },
+    {
+        "name": "La Verrière",
+        "slug": "la-verriere",
+        "zip": "78320",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Verrière"
+    },
+    {
+        "name": "Le Vésinet",
+        "slug": "le-vesinet",
+        "zip": "78110",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Vésinet"
+    },
+    {
+        "name": "Villennes-sur-Seine",
+        "slug": "villennes-sur-seine",
+        "zip": "78670",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villennes-sur-Seine"
+    },
+    {
+        "name": "Villepreux",
+        "slug": "villepreux",
+        "zip": "78450",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villepreux"
+    },
+    {
+        "name": "Viroflay",
+        "slug": "viroflay",
+        "zip": "78220",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Viroflay"
+    },
+    {
+        "name": "Voisins-le-Bretonneux",
+        "slug": "voisins-le-bretonneux",
+        "zip": "78960",
+        "department": {
+            "code": "78",
+            "nom": "Yvelines"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Voisins-le-Bretonneux"
+    },
+    {
+        "name": "Aiffres",
+        "slug": "aiffres",
+        "zip": "79230",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aiffres"
+    },
+    {
+        "name": "La Crèche",
+        "slug": "la-creche",
+        "zip": "79260",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Crèche"
+    },
+    {
+        "name": "Bressuire",
+        "slug": "bressuire",
+        "zip": "79300",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bressuire"
+    },
+    {
+        "name": "Mauléon",
+        "slug": "mauleon",
+        "zip": "79700",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mauléon"
+    },
+    {
+        "name": "Chauray",
+        "slug": "chauray",
+        "zip": "79180",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chauray"
+    },
+    {
+        "name": "Melle",
+        "slug": "melle",
+        "zip": "79500",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Melle"
+    },
+    {
+        "name": "Moncoutant-sur-Sèvre",
+        "slug": "moncoutant-sur-sevre",
+        "zip": "79240",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moncoutant-sur-Sèvre"
+    },
+    {
+        "name": "Nueil-les-Aubiers",
+        "slug": "nueil-les-aubiers",
+        "zip": "79250",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nueil-les-Aubiers"
+    },
+    {
+        "name": "Parthenay",
+        "slug": "parthenay",
+        "zip": "79200",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Parthenay"
+    },
+    {
+        "name": "Saint-Maixent-l'École",
+        "slug": "saint-maixent-l-ecole",
+        "zip": "79400",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Maixent-l'École"
+    },
+    {
+        "name": "Thouars",
+        "slug": "thouars",
+        "zip": "79100",
+        "department": {
+            "code": "79",
+            "nom": "Deux-Sèvres"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thouars"
+    },
+    {
+        "name": "Abbeville",
+        "slug": "abbeville",
+        "zip": "80100",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Abbeville"
+    },
+    {
+        "name": "Albert",
+        "slug": "albert",
+        "zip": "80300",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Albert"
+    },
+    {
+        "name": "Corbie",
+        "slug": "corbie",
+        "zip": "80800",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Corbie"
+    },
+    {
+        "name": "Doullens",
+        "slug": "doullens",
+        "zip": "80600",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Doullens"
+    },
+    {
+        "name": "Longueau",
+        "slug": "longueau",
+        "zip": "80330",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longueau"
+    },
+    {
+        "name": "Montdidier",
+        "slug": "montdidier",
+        "zip": "80500",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montdidier"
+    },
+    {
+        "name": "Péronne",
+        "slug": "peronne",
+        "zip": "80200",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Péronne"
+    },
+    {
+        "name": "Roye",
+        "slug": "roye",
+        "zip": "80700",
+        "department": {
+            "code": "80",
+            "nom": "Somme"
+        },
+        "region": "Hauts-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roye"
+    },
+    {
+        "name": "Aussillon",
+        "slug": "aussillon",
+        "zip": "81200",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aussillon"
+    },
+    {
+        "name": "Carmaux",
+        "slug": "carmaux",
+        "zip": "81400",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Carmaux"
+    },
+    {
+        "name": "Gaillac",
+        "slug": "gaillac",
+        "zip": "81600",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gaillac"
+    },
+    {
+        "name": "Graulhet",
+        "slug": "graulhet",
+        "zip": "81300",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Graulhet"
+    },
+    {
+        "name": "Labruguière",
+        "slug": "labruguiere",
+        "zip": "81290",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Labruguière"
+    },
+    {
+        "name": "Lavaur",
+        "slug": "lavaur",
+        "zip": "81500",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lavaur"
+    },
+    {
+        "name": "Mazamet",
+        "slug": "mazamet",
+        "zip": "81200",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mazamet"
+    },
+    {
+        "name": "Rabastens",
+        "slug": "rabastens",
+        "zip": "81800",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rabastens"
+    },
+    {
+        "name": "Saint-Juéry",
+        "slug": "saint-juery",
+        "zip": "81160",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Juéry"
+    },
+    {
+        "name": "Saint-Sulpice-la-Pointe",
+        "slug": "saint-sulpice-la-pointe",
+        "zip": "81370",
+        "department": {
+            "code": "81",
+            "nom": "Tarn"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Sulpice-la-Pointe"
+    },
+    {
+        "name": "Castelsarrasin",
+        "slug": "castelsarrasin",
+        "zip": "82100",
+        "department": {
+            "code": "82",
+            "nom": "Tarn-et-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Castelsarrasin"
+    },
+    {
+        "name": "Caussade",
+        "slug": "caussade",
+        "zip": "82300",
+        "department": {
+            "code": "82",
+            "nom": "Tarn-et-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Caussade"
+    },
+    {
+        "name": "Moissac",
+        "slug": "moissac",
+        "zip": "82200",
+        "department": {
+            "code": "82",
+            "nom": "Tarn-et-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moissac"
+    },
+    {
+        "name": "Montech",
+        "slug": "montech",
+        "zip": "82700",
+        "department": {
+            "code": "82",
+            "nom": "Tarn-et-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montech"
+    },
+    {
+        "name": "Nègrepelisse",
+        "slug": "negrepelisse",
+        "zip": "82800",
+        "department": {
+            "code": "82",
+            "nom": "Tarn-et-Garonne"
+        },
+        "region": "Occitanie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nègrepelisse"
+    },
+    {
+        "name": "Les Arcs",
+        "slug": "les-arcs",
+        "zip": "83460",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Arcs"
+    },
+    {
+        "name": "Le Beausset",
+        "slug": "le-beausset",
+        "zip": "83330",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Beausset"
+    },
+    {
+        "name": "Bormes-les-Mimosas",
+        "slug": "bormes-les-mimosas",
+        "zip": "83230",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bormes-les-Mimosas"
+    },
+    {
+        "name": "Brignoles",
+        "slug": "brignoles",
+        "zip": "83170",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brignoles"
+    },
+    {
+        "name": "La Cadière-d'Azur",
+        "slug": "la-cadiere-d-azur",
+        "zip": "83740",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Cadière-d'Azur"
+    },
+    {
+        "name": "Le Cannet-des-Maures",
+        "slug": "le-cannet-des-maures",
+        "zip": "83340",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Cannet-des-Maures"
+    },
+    {
+        "name": "Le Castellet",
+        "slug": "le-castellet",
+        "zip": "83330",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Castellet"
+    },
+    {
+        "name": "La Crau",
+        "slug": "la-crau",
+        "zip": "83260",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Crau"
+    },
+    {
+        "name": "Cuers",
+        "slug": "cuers",
+        "zip": "83390",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cuers"
+    },
+    {
+        "name": "La Farlède",
+        "slug": "la-farlede",
+        "zip": "83210",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Farlède"
+    },
+    {
+        "name": "Fayence",
+        "slug": "fayence",
+        "zip": "83440",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fayence"
+    },
+    {
+        "name": "Garéoult",
+        "slug": "gareoult",
+        "zip": "83136",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Garéoult"
+    },
+    {
+        "name": "Lorgues",
+        "slug": "lorgues",
+        "zip": "83510",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lorgues"
+    },
+    {
+        "name": "Le Luc",
+        "slug": "le-luc",
+        "zip": "83340",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Luc"
+    },
+    {
+        "name": "Montauroux",
+        "slug": "montauroux",
+        "zip": "83440",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montauroux"
+    },
+    {
+        "name": "Le Muy",
+        "slug": "le-muy",
+        "zip": "83490",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Muy"
+    },
+    {
+        "name": "Nans-les-Pins",
+        "slug": "nans-les-pins",
+        "zip": "83860",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nans-les-Pins"
+    },
+    {
+        "name": "Pierrefeu-du-Var",
+        "slug": "pierrefeu-du-var",
+        "zip": "83390",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pierrefeu-du-Var"
+    },
+    {
+        "name": "Pourrières",
+        "slug": "pourrieres",
+        "zip": "83910",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pourrières"
+    },
+    {
+        "name": "Puget-sur-Argens",
+        "slug": "puget-sur-argens",
+        "zip": "83480",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Puget-sur-Argens"
+    },
+    {
+        "name": "Rocbaron",
+        "slug": "rocbaron",
+        "zip": "83136",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rocbaron"
+    },
+    {
+        "name": "Roquebrune-sur-Argens",
+        "slug": "roquebrune-sur-argens",
+        "zip": "83380",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Roquebrune-sur-Argens"
+    },
+    {
+        "name": "Saint-Cyr-sur-Mer",
+        "slug": "saint-cyr-sur-mer",
+        "zip": "83270",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cyr-sur-Mer"
+    },
+    {
+        "name": "Saint-Maximin-la-Sainte-Baume",
+        "slug": "saint-maximin-la-sainte-baume",
+        "zip": "83470",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Maximin-la-Sainte-Baume"
+    },
+    {
+        "name": "Saint-Zacharie",
+        "slug": "saint-zacharie",
+        "zip": "83640",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Zacharie"
+    },
+    {
+        "name": "Solliès-Pont",
+        "slug": "sollies-pont",
+        "zip": "83210",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Solliès-Pont"
+    },
+    {
+        "name": "Solliès-Toucas",
+        "slug": "sollies-toucas",
+        "zip": "83210",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Solliès-Toucas"
+    },
+    {
+        "name": "Tourves",
+        "slug": "tourves",
+        "zip": "83170",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tourves"
+    },
+    {
+        "name": "Trans-en-Provence",
+        "slug": "trans-en-provence",
+        "zip": "83720",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trans-en-Provence"
+    },
+    {
+        "name": "Vidauban",
+        "slug": "vidauban",
+        "zip": "83550",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vidauban"
+    },
+    {
+        "name": "Saint-Mandrier-sur-Mer",
+        "slug": "saint-mandrier-sur-mer",
+        "zip": "83430",
+        "department": {
+            "code": "83",
+            "nom": "Var"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Mandrier-sur-Mer"
+    },
+    {
+        "name": "Aubignan",
+        "slug": "aubignan",
+        "zip": "84810",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubignan"
+    },
+    {
+        "name": "Bédarrides",
+        "slug": "bedarrides",
+        "zip": "84370",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bédarrides"
+    },
+    {
+        "name": "Caumont-sur-Durance",
+        "slug": "caumont-sur-durance",
+        "zip": "84510",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Caumont-sur-Durance"
+    },
+    {
+        "name": "Courthézon",
+        "slug": "courthezon",
+        "zip": "84350",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Courthézon"
+    },
+    {
+        "name": "Entraigues-sur-la-Sorgue",
+        "slug": "entraigues-sur-la-sorgue",
+        "zip": "84320",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Entraigues-sur-la-Sorgue"
+    },
+    {
+        "name": "Jonquières",
+        "slug": "jonquieres",
+        "zip": "84150",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jonquières"
+    },
+    {
+        "name": "Mazan",
+        "slug": "mazan",
+        "zip": "84380",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mazan"
+    },
+    {
+        "name": "Monteux",
+        "slug": "monteux",
+        "zip": "84170",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Monteux"
+    },
+    {
+        "name": "Morières-lès-Avignon",
+        "slug": "morieres-les-avignon",
+        "zip": "84310",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morières-lès-Avignon"
+    },
+    {
+        "name": "Pernes-les-Fontaines",
+        "slug": "pernes-les-fontaines",
+        "zip": "84210",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pernes-les-Fontaines"
+    },
+    {
+        "name": "Piolenc",
+        "slug": "piolenc",
+        "zip": "84420",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Piolenc"
+    },
+    {
+        "name": "Le Pontet",
+        "slug": "le-pontet",
+        "zip": "84130",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pontet"
+    },
+    {
+        "name": "Saint-Saturnin-lès-Avignon",
+        "slug": "saint-saturnin-les-avignon",
+        "zip": "84450",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Saturnin-lès-Avignon"
+    },
+    {
+        "name": "Sarrians",
+        "slug": "sarrians",
+        "zip": "84260",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sarrians"
+    },
+    {
+        "name": "Le Thor",
+        "slug": "le-thor",
+        "zip": "84250",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Thor"
+    },
+    {
+        "name": "Vedène",
+        "slug": "vedene",
+        "zip": "84270",
+        "department": {
+            "code": "84",
+            "nom": "Vaucluse"
+        },
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vedène"
+    },
+    {
+        "name": "Aizenay",
+        "slug": "aizenay",
+        "zip": "85190",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aizenay"
+    },
+    {
+        "name": "Aubigny-Les Clouzeaux",
+        "slug": "aubigny-les-clouzeaux",
+        "zip": "85430",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aubigny-Les Clouzeaux"
+    },
+    {
+        "name": "Bellevigny",
+        "slug": "bellevigny",
+        "zip": "85170",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bellevigny"
+    },
+    {
+        "name": "Bretignolles-sur-Mer",
+        "slug": "bretignolles-sur-mer",
+        "zip": "85470",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bretignolles-sur-Mer"
+    },
+    {
+        "name": "Chantonnay",
+        "slug": "chantonnay",
+        "zip": "85110",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chantonnay"
+    },
+    {
+        "name": "Cugand-la-Bernardière",
+        "slug": "cugand-la-bernardiere",
+        "zip": "85610",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cugand-la-Bernardière"
+    },
+    {
+        "name": "Essarts-en-Bocage",
+        "slug": "essarts-en-bocage",
+        "zip": "85140",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Essarts-en-Bocage"
+    },
+    {
+        "name": "La Ferrière",
+        "slug": "la-ferriere",
+        "zip": "85280",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ferrière"
+    },
+    {
+        "name": "Sèvremont",
+        "slug": "sevremont",
+        "zip": "85700",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sèvremont"
+    },
+    {
+        "name": "Fontenay-le-Comte",
+        "slug": "fontenay-le-comte",
+        "zip": "85200",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenay-le-Comte"
+    },
+    {
+        "name": "La Garnache",
+        "slug": "la-garnache",
+        "zip": "85710",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Garnache"
+    },
+    {
+        "name": "Les Herbiers",
+        "slug": "les-herbiers",
+        "zip": "85500",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Herbiers"
+    },
+    {
+        "name": "Luçon",
+        "slug": "lucon",
+        "zip": "85400",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luçon"
+    },
+    {
+        "name": "Montaigu-Vendée",
+        "slug": "montaigu-vendee",
+        "zip": "85600",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montaigu-Vendée"
+    },
+    {
+        "name": "Mortagne-sur-Sèvre",
+        "slug": "mortagne-sur-sevre",
+        "zip": "85290",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mortagne-sur-Sèvre"
+    },
+    {
+        "name": "Les Achards",
+        "slug": "les-achards",
+        "zip": "85150",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Achards"
+    },
+    {
+        "name": "Mouilleron-le-Captif",
+        "slug": "mouilleron-le-captif",
+        "zip": "85000",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mouilleron-le-Captif"
+    },
+    {
+        "name": "Le Poiré-sur-Vie",
+        "slug": "le-poire-sur-vie",
+        "zip": "85170",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Poiré-sur-Vie"
+    },
+    {
+        "name": "Pouzauges",
+        "slug": "pouzauges",
+        "zip": "85700",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pouzauges"
+    },
+    {
+        "name": "Saint-Gilles-Croix-de-Vie",
+        "slug": "saint-gilles-croix-de-vie",
+        "zip": "85800",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Gilles-Croix-de-Vie"
+    },
+    {
+        "name": "Saint-Jean-de-Monts",
+        "slug": "saint-jean-de-monts",
+        "zip": "85160",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Jean-de-Monts"
+    },
+    {
+        "name": "Talmont-Saint-Hilaire",
+        "slug": "talmont-saint-hilaire",
+        "zip": "85440",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Talmont-Saint-Hilaire"
+    },
+    {
+        "name": "Chanverrie",
+        "slug": "chanverrie",
+        "zip": "85130",
+        "department": {
+            "code": "85",
+            "nom": "Vendée"
+        },
+        "region": "Pays de la Loire",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chanverrie"
+    },
+    {
+        "name": "Buxerolles",
+        "slug": "buxerolles",
+        "zip": "86180",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Buxerolles"
+    },
+    {
+        "name": "Châtellerault",
+        "slug": "chatellerault",
+        "zip": "86100",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtellerault"
+    },
+    {
+        "name": "Chauvigny",
+        "slug": "chauvigny",
+        "zip": "86300",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chauvigny"
+    },
+    {
+        "name": "Jaunay-Marigny",
+        "slug": "jaunay-marigny",
+        "zip": "86130",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jaunay-Marigny"
+    },
+    {
+        "name": "Loudun",
+        "slug": "loudun",
+        "zip": "86200",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Loudun"
+    },
+    {
+        "name": "Mignaloux-Beauvoir",
+        "slug": "mignaloux-beauvoir",
+        "zip": "86550",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mignaloux-Beauvoir"
+    },
+    {
+        "name": "Migné-Auxances",
+        "slug": "migne-auxances",
+        "zip": "86440",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Migné-Auxances"
+    },
+    {
+        "name": "Montmorillon",
+        "slug": "montmorillon",
+        "zip": "86500",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montmorillon"
+    },
+    {
+        "name": "Naintré",
+        "slug": "naintre",
+        "zip": "86530",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Naintré"
+    },
+    {
+        "name": "Neuville-de-Poitou",
+        "slug": "neuville-de-poitou",
+        "zip": "86170",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuville-de-Poitou"
+    },
+    {
+        "name": "Saint-Benoît",
+        "slug": "saint-benoit",
+        "zip": "86280",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Benoît"
+    },
+    {
+        "name": "Saint-Martin-la-Pallu",
+        "slug": "saint-martin-la-pallu",
+        "zip": "86110",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin-la-Pallu"
+    },
+    {
+        "name": "Vouneuil-sous-Biard",
+        "slug": "vouneuil-sous-biard",
+        "zip": "86580",
+        "department": {
+            "code": "86",
+            "nom": "Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vouneuil-sous-Biard"
+    },
+    {
+        "name": "Aixe-sur-Vienne",
+        "slug": "aixe-sur-vienne",
+        "zip": "87700",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Aixe-sur-Vienne"
+    },
+    {
+        "name": "Ambazac",
+        "slug": "ambazac",
+        "zip": "87240",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ambazac"
+    },
+    {
+        "name": "Condat-sur-Vienne",
+        "slug": "condat-sur-vienne",
+        "zip": "87920",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Condat-sur-Vienne"
+    },
+    {
+        "name": "Couzeix",
+        "slug": "couzeix",
+        "zip": "87270",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Couzeix"
+    },
+    {
+        "name": "Feytiat",
+        "slug": "feytiat",
+        "zip": "87220",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Feytiat"
+    },
+    {
+        "name": "Isle",
+        "slug": "isle",
+        "zip": "87170",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Isle"
+    },
+    {
+        "name": "Le Palais-sur-Vienne",
+        "slug": "le-palais-sur-vienne",
+        "zip": "87410",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Palais-sur-Vienne"
+    },
+    {
+        "name": "Panazol",
+        "slug": "panazol",
+        "zip": "87350",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Panazol"
+    },
+    {
+        "name": "Saint-Junien",
+        "slug": "saint-junien",
+        "zip": "87200",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Junien"
+    },
+    {
+        "name": "Saint-Yrieix-la-Perche",
+        "slug": "saint-yrieix-la-perche",
+        "zip": "87500",
+        "department": {
+            "code": "87",
+            "nom": "Haute-Vienne"
+        },
+        "region": "Nouvelle-Aquitaine",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Yrieix-la-Perche"
+    },
+    {
+        "name": "Gérardmer",
+        "slug": "gerardmer",
+        "zip": "88400",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gérardmer"
+    },
+    {
+        "name": "Golbey",
+        "slug": "golbey",
+        "zip": "88190",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Golbey"
+    },
+    {
+        "name": "Rambervillers",
+        "slug": "rambervillers",
+        "zip": "88700",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rambervillers"
+    },
+    {
+        "name": "Raon-l'Étape",
+        "slug": "raon-l-etape",
+        "zip": "88110",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Raon-l'Étape"
+    },
+    {
+        "name": "Remiremont",
+        "slug": "remiremont",
+        "zip": "88200",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Remiremont"
+    },
+    {
+        "name": "Saint-Dié-des-Vosges",
+        "slug": "saint-die-des-vosges",
+        "zip": "88100",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Dié-des-Vosges"
+    },
+    {
+        "name": "Thaon-les-Vosges",
+        "slug": "thaon-les-vosges",
+        "zip": "88150",
+        "department": {
+            "code": "88",
+            "nom": "Vosges"
+        },
+        "region": "Grand Est",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thaon-les-Vosges"
+    },
+    {
+        "name": "Avallon",
+        "slug": "avallon",
+        "zip": "89200",
+        "department": {
+            "code": "89",
+            "nom": "Yonne"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Avallon"
+    },
+    {
+        "name": "Joigny",
+        "slug": "joigny",
+        "zip": "89300",
+        "department": {
+            "code": "89",
+            "nom": "Yonne"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Joigny"
+    },
+    {
+        "name": "Migennes",
+        "slug": "migennes",
+        "zip": "89400",
+        "department": {
+            "code": "89",
+            "nom": "Yonne"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Migennes"
+    },
+    {
+        "name": "Sens",
+        "slug": "sens",
+        "zip": "89100",
+        "department": {
+            "code": "89",
+            "nom": "Yonne"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sens"
+    },
+    {
+        "name": "Villeneuve-sur-Yonne",
+        "slug": "villeneuve-sur-yonne",
+        "zip": "89500",
+        "department": {
+            "code": "89",
+            "nom": "Yonne"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-sur-Yonne"
+    },
+    {
+        "name": "Delle",
+        "slug": "delle",
+        "zip": "90100",
+        "department": {
+            "code": "90",
+            "nom": "Territoire de Belfort"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Delle"
+    },
+    {
+        "name": "Valdoie",
+        "slug": "valdoie",
+        "zip": "90300",
+        "department": {
+            "code": "90",
+            "nom": "Territoire de Belfort"
+        },
+        "region": "Bourgogne-Franche-Comté",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valdoie"
+    },
+    {
+        "name": "Arpajon",
+        "slug": "arpajon",
+        "zip": "91290",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arpajon"
+    },
+    {
+        "name": "Athis-Mons",
+        "slug": "athis-mons",
+        "zip": "91200",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Athis-Mons"
+    },
+    {
+        "name": "Ballancourt-sur-Essonne",
+        "slug": "ballancourt-sur-essonne",
+        "zip": "91610",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ballancourt-sur-Essonne"
+    },
+    {
+        "name": "Bondoufle",
+        "slug": "bondoufle",
+        "zip": "91070",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bondoufle"
+    },
+    {
+        "name": "Boussy-Saint-Antoine",
+        "slug": "boussy-saint-antoine",
+        "zip": "91800",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boussy-Saint-Antoine"
+    },
+    {
+        "name": "Brétigny-sur-Orge",
+        "slug": "bretigny-sur-orge",
+        "zip": "91220",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brétigny-sur-Orge"
+    },
+    {
+        "name": "Breuillet",
+        "slug": "breuillet",
+        "zip": "91650",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Breuillet"
+    },
+    {
+        "name": "Brunoy",
+        "slug": "brunoy",
+        "zip": "91800",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Brunoy"
+    },
+    {
+        "name": "Bures-sur-Yvette",
+        "slug": "bures-sur-yvette",
+        "zip": "91440",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bures-sur-Yvette"
+    },
+    {
+        "name": "Chilly-Mazarin",
+        "slug": "chilly-mazarin",
+        "zip": "91380",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chilly-Mazarin"
+    },
+    {
+        "name": "Crosne",
+        "slug": "crosne",
+        "zip": "91560",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Crosne"
+    },
+    {
+        "name": "Dourdan",
+        "slug": "dourdan",
+        "zip": "91410",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dourdan"
+    },
+    {
+        "name": "Draveil",
+        "slug": "draveil",
+        "zip": "91210",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Draveil"
+    },
+    {
+        "name": "Égly",
+        "slug": "egly",
+        "zip": "91520",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Égly"
+    },
+    {
+        "name": "Épinay-sous-Sénart",
+        "slug": "epinay-sous-senart",
+        "zip": "91860",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épinay-sous-Sénart"
+    },
+    {
+        "name": "Épinay-sur-Orge",
+        "slug": "epinay-sur-orge",
+        "zip": "91360",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épinay-sur-Orge"
+    },
+    {
+        "name": "Étampes",
+        "slug": "etampes",
+        "zip": "91150",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Étampes"
+    },
+    {
+        "name": "Étréchy",
+        "slug": "etrechy",
+        "zip": "91580",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Étréchy"
+    },
+    {
+        "name": "Fleury-Mérogis",
+        "slug": "fleury-merogis",
+        "zip": "91700",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fleury-Mérogis"
+    },
+    {
+        "name": "Gif-sur-Yvette",
+        "slug": "gif-sur-yvette",
+        "zip": "91190",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gif-sur-Yvette"
+    },
+    {
+        "name": "Grigny",
+        "slug": "grigny",
+        "zip": "91350",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grigny"
+    },
+    {
+        "name": "Igny",
+        "slug": "igny",
+        "zip": "91430",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Igny"
+    },
+    {
+        "name": "Itteville",
+        "slug": "itteville",
+        "zip": "91760",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Itteville"
+    },
+    {
+        "name": "Juvisy-sur-Orge",
+        "slug": "juvisy-sur-orge",
+        "zip": "91260",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Juvisy-sur-Orge"
+    },
+    {
+        "name": "Lardy",
+        "slug": "lardy",
+        "zip": "91510",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lardy"
+    },
+    {
+        "name": "Limours",
+        "slug": "limours",
+        "zip": "91470",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Limours"
+    },
+    {
+        "name": "Linas",
+        "slug": "linas",
+        "zip": "91310",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Linas"
+    },
+    {
+        "name": "Lisses",
+        "slug": "lisses",
+        "zip": "91090",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lisses"
+    },
+    {
+        "name": "Longjumeau",
+        "slug": "longjumeau",
+        "zip": "91160",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longjumeau"
+    },
+    {
+        "name": "Longpont-sur-Orge",
+        "slug": "longpont-sur-orge",
+        "zip": "91310",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Longpont-sur-Orge"
+    },
+    {
+        "name": "Marcoussis",
+        "slug": "marcoussis",
+        "zip": "91460",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marcoussis"
+    },
+    {
+        "name": "Marolles-en-Hurepoix",
+        "slug": "marolles-en-hurepoix",
+        "zip": "91630",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marolles-en-Hurepoix"
+    },
+    {
+        "name": "Mennecy",
+        "slug": "mennecy",
+        "zip": "91540",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mennecy"
+    },
+    {
+        "name": "Montgeron",
+        "slug": "montgeron",
+        "zip": "91230",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montgeron"
+    },
+    {
+        "name": "Montlhéry",
+        "slug": "montlhery",
+        "zip": "91310",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montlhéry"
+    },
+    {
+        "name": "Morangis",
+        "slug": "morangis",
+        "zip": "91420",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morangis"
+    },
+    {
+        "name": "Morsang-sur-Orge",
+        "slug": "morsang-sur-orge",
+        "zip": "91390",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morsang-sur-Orge"
+    },
+    {
+        "name": "Ollainville",
+        "slug": "ollainville",
+        "zip": "91340",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ollainville"
+    },
+    {
+        "name": "Orsay",
+        "slug": "orsay",
+        "zip": "91400",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orsay"
+    },
+    {
+        "name": "Palaiseau",
+        "slug": "palaiseau",
+        "zip": "91120",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Palaiseau"
+    },
+    {
+        "name": "Paray-Vieille-Poste",
+        "slug": "paray-vieille-poste",
+        "zip": "91550",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Paray-Vieille-Poste"
+    },
+    {
+        "name": "Quincy-sous-Sénart",
+        "slug": "quincy-sous-senart",
+        "zip": "91480",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Quincy-sous-Sénart"
+    },
+    {
+        "name": "Ris-Orangis",
+        "slug": "ris-orangis",
+        "zip": "91130",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ris-Orangis"
+    },
+    {
+        "name": "Saint-Chéron",
+        "slug": "saint-cheron",
+        "zip": "91530",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Chéron"
+    },
+    {
+        "name": "Sainte-Geneviève-des-Bois",
+        "slug": "sainte-genevieve-des-bois",
+        "zip": "91700",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Geneviève-des-Bois"
+    },
+    {
+        "name": "Saint-Germain-lès-Arpajon",
+        "slug": "saint-germain-les-arpajon",
+        "zip": "91180",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Germain-lès-Arpajon"
+    },
+    {
+        "name": "Saint-Germain-lès-Corbeil",
+        "slug": "saint-germain-les-corbeil",
+        "zip": "91250",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Germain-lès-Corbeil"
+    },
+    {
+        "name": "Saint-Michel-sur-Orge",
+        "slug": "saint-michel-sur-orge",
+        "zip": "91240",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Michel-sur-Orge"
+    },
+    {
+        "name": "Saint-Pierre-du-Perray",
+        "slug": "saint-pierre-du-perray",
+        "zip": "91280",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre-du-Perray"
+    },
+    {
+        "name": "Saintry-sur-Seine",
+        "slug": "saintry-sur-seine",
+        "zip": "91250",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saintry-sur-Seine"
+    },
+    {
+        "name": "Saulx-les-Chartreux",
+        "slug": "saulx-les-chartreux",
+        "zip": "91160",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saulx-les-Chartreux"
+    },
+    {
+        "name": "Savigny-sur-Orge",
+        "slug": "savigny-sur-orge",
+        "zip": "91600",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Savigny-sur-Orge"
+    },
+    {
+        "name": "Soisy-sur-Seine",
+        "slug": "soisy-sur-seine",
+        "zip": "91450",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soisy-sur-Seine"
+    },
+    {
+        "name": "Verrières-le-Buisson",
+        "slug": "verrieres-le-buisson",
+        "zip": "91370",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Verrières-le-Buisson"
+    },
+    {
+        "name": "Vigneux-sur-Seine",
+        "slug": "vigneux-sur-seine",
+        "zip": "91270",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vigneux-sur-Seine"
+    },
+    {
+        "name": "Villabé",
+        "slug": "villabe",
+        "zip": "91100",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villabé"
+    },
+    {
+        "name": "Villebon-sur-Yvette",
+        "slug": "villebon-sur-yvette",
+        "zip": "91140",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villebon-sur-Yvette"
+    },
+    {
+        "name": "La Ville-du-Bois",
+        "slug": "la-ville-du-bois",
+        "zip": "91620",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Ville-du-Bois"
+    },
+    {
+        "name": "Villemoisson-sur-Orge",
+        "slug": "villemoisson-sur-orge",
+        "zip": "91360",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villemoisson-sur-Orge"
+    },
+    {
+        "name": "Viry-Châtillon",
+        "slug": "viry-chatillon",
+        "zip": "91170",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Viry-Châtillon"
+    },
+    {
+        "name": "Wissous",
+        "slug": "wissous",
+        "zip": "91320",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Wissous"
+    },
+    {
+        "name": "Yerres",
+        "slug": "yerres",
+        "zip": "91330",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Yerres"
+    },
+    {
+        "name": "Les Ulis",
+        "slug": "les-ulis",
+        "zip": "91940",
+        "department": {
+            "code": "91",
+            "nom": "Essonne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Ulis"
+    },
+    {
+        "name": "Antony",
+        "slug": "antony",
+        "zip": "92160",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Antony"
+    },
+    {
+        "name": "Bagneux",
+        "slug": "bagneux",
+        "zip": "92220",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bagneux"
+    },
+    {
+        "name": "Bois-Colombes",
+        "slug": "bois-colombes",
+        "zip": "92270",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bois-Colombes"
+    },
+    {
+        "name": "Bourg-la-Reine",
+        "slug": "bourg-la-reine",
+        "zip": "92340",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourg-la-Reine"
+    },
+    {
+        "name": "Châtenay-Malabry",
+        "slug": "chatenay-malabry",
+        "zip": "92290",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtenay-Malabry"
+    },
+    {
+        "name": "Châtillon",
+        "slug": "chatillon",
+        "zip": "92320",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Châtillon"
+    },
+    {
+        "name": "Chaville",
+        "slug": "chaville",
+        "zip": "92370",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chaville"
+    },
+    {
+        "name": "Clamart",
+        "slug": "clamart",
+        "zip": "92140",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clamart"
+    },
+    {
+        "name": "Clichy",
+        "slug": "clichy",
+        "zip": "92110",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clichy"
+    },
+    {
+        "name": "Fontenay-aux-Roses",
+        "slug": "fontenay-aux-roses",
+        "zip": "92260",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenay-aux-Roses"
+    },
+    {
+        "name": "Garches",
+        "slug": "garches",
+        "zip": "92380",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Garches"
+    },
+    {
+        "name": "La Garenne-Colombes",
+        "slug": "la-garenne-colombes",
+        "zip": "92250",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Garenne-Colombes"
+    },
+    {
+        "name": "Gennevilliers",
+        "slug": "gennevilliers",
+        "zip": "92230",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gennevilliers"
+    },
+    {
+        "name": "Issy-les-Moulineaux",
+        "slug": "issy-les-moulineaux",
+        "zip": "92130",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Issy-les-Moulineaux"
+    },
+    {
+        "name": "Levallois-Perret",
+        "slug": "levallois-perret",
+        "zip": "92300",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Levallois-Perret"
+    },
+    {
+        "name": "Malakoff",
+        "slug": "malakoff",
+        "zip": "92240",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Malakoff"
+    },
+    {
+        "name": "Meudon",
+        "slug": "meudon",
+        "zip": "92190",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Meudon"
+    },
+    {
+        "name": "Montrouge",
+        "slug": "montrouge",
+        "zip": "92120",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montrouge"
+    },
+    {
+        "name": "Neuilly-sur-Seine",
+        "slug": "neuilly-sur-seine",
+        "zip": "92200",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuilly-sur-Seine"
+    },
+    {
+        "name": "Le Plessis-Robinson",
+        "slug": "le-plessis-robinson",
+        "zip": "92350",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Plessis-Robinson"
+    },
+    {
+        "name": "Puteaux",
+        "slug": "puteaux",
+        "zip": "92800",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Puteaux"
+    },
+    {
+        "name": "Saint-Cloud",
+        "slug": "saint-cloud",
+        "zip": "92210",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Cloud"
+    },
+    {
+        "name": "Sceaux",
+        "slug": "sceaux",
+        "zip": "92330",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sceaux"
+    },
+    {
+        "name": "Sèvres",
+        "slug": "sevres",
+        "zip": "92310",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sèvres"
+    },
+    {
+        "name": "Suresnes",
+        "slug": "suresnes",
+        "zip": "92150",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Suresnes"
+    },
+    {
+        "name": "Vanves",
+        "slug": "vanves",
+        "zip": "92170",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vanves"
+    },
+    {
+        "name": "Vaucresson",
+        "slug": "vaucresson",
+        "zip": "92420",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaucresson"
+    },
+    {
+        "name": "Ville-d'Avray",
+        "slug": "ville-d-avray",
+        "zip": "92410",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ville-d'Avray"
+    },
+    {
+        "name": "Villeneuve-la-Garenne",
+        "slug": "villeneuve-la-garenne",
+        "zip": "92390",
+        "department": {
+            "code": "92",
+            "nom": "Hauts-de-Seine"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-la-Garenne"
+    },
+    {
+        "name": "Bagnolet",
+        "slug": "bagnolet",
+        "zip": "93170",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bagnolet"
+    },
+    {
+        "name": "Le Blanc-Mesnil",
+        "slug": "le-blanc-mesnil",
+        "zip": "93150",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Blanc-Mesnil"
+    },
+    {
+        "name": "Bobigny",
+        "slug": "bobigny",
+        "zip": "93000",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bobigny"
+    },
+    {
+        "name": "Bondy",
+        "slug": "bondy",
+        "zip": "93140",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bondy"
+    },
+    {
+        "name": "Le Bourget",
+        "slug": "le-bourget",
+        "zip": "93350",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Bourget"
+    },
+    {
+        "name": "Clichy-sous-Bois",
+        "slug": "clichy-sous-bois",
+        "zip": "93390",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Clichy-sous-Bois"
+    },
+    {
+        "name": "Coubron",
+        "slug": "coubron",
+        "zip": "93470",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Coubron"
+    },
+    {
+        "name": "La Courneuve",
+        "slug": "la-courneuve",
+        "zip": "93120",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Courneuve"
+    },
+    {
+        "name": "Drancy",
+        "slug": "drancy",
+        "zip": "93700",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Drancy"
+    },
+    {
+        "name": "Dugny",
+        "slug": "dugny",
+        "zip": "93440",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dugny"
+    },
+    {
+        "name": "Épinay-sur-Seine",
+        "slug": "epinay-sur-seine",
+        "zip": "93800",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Épinay-sur-Seine"
+    },
+    {
+        "name": "Gagny",
+        "slug": "gagny",
+        "zip": "93220",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gagny"
+    },
+    {
+        "name": "Gournay-sur-Marne",
+        "slug": "gournay-sur-marne",
+        "zip": "93460",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gournay-sur-Marne"
+    },
+    {
+        "name": "L'Île-Saint-Denis",
+        "slug": "l-ile-saint-denis",
+        "zip": "93450",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Île-Saint-Denis"
+    },
+    {
+        "name": "Les Lilas",
+        "slug": "les-lilas",
+        "zip": "93260",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Lilas"
+    },
+    {
+        "name": "Livry-Gargan",
+        "slug": "livry-gargan",
+        "zip": "93190",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Livry-Gargan"
+    },
+    {
+        "name": "Montfermeil",
+        "slug": "montfermeil",
+        "zip": "93370",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montfermeil"
+    },
+    {
+        "name": "Neuilly-Plaisance",
+        "slug": "neuilly-plaisance",
+        "zip": "93360",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuilly-Plaisance"
+    },
+    {
+        "name": "Neuilly-sur-Marne",
+        "slug": "neuilly-sur-marne",
+        "zip": "93330",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Neuilly-sur-Marne"
+    },
+    {
+        "name": "Noisy-le-Grand",
+        "slug": "noisy-le-grand",
+        "zip": "93160",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noisy-le-Grand"
+    },
+    {
+        "name": "Noisy-le-Sec",
+        "slug": "noisy-le-sec",
+        "zip": "93130",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Noisy-le-Sec"
+    },
+    {
+        "name": "Pantin",
+        "slug": "pantin",
+        "zip": "93500",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pantin"
+    },
+    {
+        "name": "Les Pavillons-sous-Bois",
+        "slug": "les-pavillons-sous-bois",
+        "zip": "93320",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Pavillons-sous-Bois"
+    },
+    {
+        "name": "Le Pré-Saint-Gervais",
+        "slug": "le-pre-saint-gervais",
+        "zip": "93310",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Pré-Saint-Gervais"
+    },
+    {
+        "name": "Le Raincy",
+        "slug": "le-raincy",
+        "zip": "93340",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Raincy"
+    },
+    {
+        "name": "Romainville",
+        "slug": "romainville",
+        "zip": "93230",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Romainville"
+    },
+    {
+        "name": "Rosny-sous-Bois",
+        "slug": "rosny-sous-bois",
+        "zip": "93110",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rosny-sous-Bois"
+    },
+    {
+        "name": "Saint-Ouen-sur-Seine",
+        "slug": "saint-ouen-sur-seine",
+        "zip": "93400",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Ouen-sur-Seine"
+    },
+    {
+        "name": "Sevran",
+        "slug": "sevran",
+        "zip": "93270",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sevran"
+    },
+    {
+        "name": "Stains",
+        "slug": "stains",
+        "zip": "93240",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Stains"
+    },
+    {
+        "name": "Tremblay-en-France",
+        "slug": "tremblay-en-france",
+        "zip": "93290",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tremblay-en-France"
+    },
+    {
+        "name": "Vaujours",
+        "slug": "vaujours",
+        "zip": "93410",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vaujours"
+    },
+    {
+        "name": "Villemomble",
+        "slug": "villemomble",
+        "zip": "93250",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villemomble"
+    },
+    {
+        "name": "Villepinte",
+        "slug": "villepinte",
+        "zip": "93420",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villepinte"
+    },
+    {
+        "name": "Villetaneuse",
+        "slug": "villetaneuse",
+        "zip": "93430",
+        "department": {
+            "code": "93",
+            "nom": "Seine-Saint-Denis"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villetaneuse"
+    },
+    {
+        "name": "Ablon-sur-Seine",
+        "slug": "ablon-sur-seine",
+        "zip": "94480",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ablon-sur-Seine"
+    },
+    {
+        "name": "Alfortville",
+        "slug": "alfortville",
+        "zip": "94140",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Alfortville"
+    },
+    {
+        "name": "Arcueil",
+        "slug": "arcueil",
+        "zip": "94110",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arcueil"
+    },
+    {
+        "name": "Boissy-Saint-Léger",
+        "slug": "boissy-saint-leger",
+        "zip": "94470",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Boissy-Saint-Léger"
+    },
+    {
+        "name": "Bonneuil-sur-Marne",
+        "slug": "bonneuil-sur-marne",
+        "zip": "94380",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bonneuil-sur-Marne"
+    },
+    {
+        "name": "Bry-sur-Marne",
+        "slug": "bry-sur-marne",
+        "zip": "94360",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bry-sur-Marne"
+    },
+    {
+        "name": "Cachan",
+        "slug": "cachan",
+        "zip": "94230",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cachan"
+    },
+    {
+        "name": "Charenton-le-Pont",
+        "slug": "charenton-le-pont",
+        "zip": "94220",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Charenton-le-Pont"
+    },
+    {
+        "name": "Chennevières-sur-Marne",
+        "slug": "chennevieres-sur-marne",
+        "zip": "94430",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chennevières-sur-Marne"
+    },
+    {
+        "name": "Chevilly-Larue",
+        "slug": "chevilly-larue",
+        "zip": "94550",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chevilly-Larue"
+    },
+    {
+        "name": "Choisy-le-Roi",
+        "slug": "choisy-le-roi",
+        "zip": "94600",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Choisy-le-Roi"
+    },
+    {
+        "name": "Fontenay-sous-Bois",
+        "slug": "fontenay-sous-bois",
+        "zip": "94120",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fontenay-sous-Bois"
+    },
+    {
+        "name": "Fresnes",
+        "slug": "fresnes",
+        "zip": "94260",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fresnes"
+    },
+    {
+        "name": "Gentilly",
+        "slug": "gentilly",
+        "zip": "94250",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gentilly"
+    },
+    {
+        "name": "L'Haÿ-les-Roses",
+        "slug": "l-hay-les-roses",
+        "zip": "94240",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Haÿ-les-Roses"
+    },
+    {
+        "name": "Ivry-sur-Seine",
+        "slug": "ivry-sur-seine",
+        "zip": "94200",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ivry-sur-Seine"
+    },
+    {
+        "name": "Joinville-le-Pont",
+        "slug": "joinville-le-pont",
+        "zip": "94340",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Joinville-le-Pont"
+    },
+    {
+        "name": "Le Kremlin-Bicêtre",
+        "slug": "le-kremlin-bicetre",
+        "zip": "94270",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Kremlin-Bicêtre"
+    },
+    {
+        "name": "Limeil-Brévannes",
+        "slug": "limeil-brevannes",
+        "zip": "94450",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Limeil-Brévannes"
+    },
+    {
+        "name": "Maisons-Alfort",
+        "slug": "maisons-alfort",
+        "zip": "94700",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maisons-Alfort"
+    },
+    {
+        "name": "Nogent-sur-Marne",
+        "slug": "nogent-sur-marne",
+        "zip": "94130",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nogent-sur-Marne"
+    },
+    {
+        "name": "Orly",
+        "slug": "orly",
+        "zip": "94310",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Orly"
+    },
+    {
+        "name": "Ormesson-sur-Marne",
+        "slug": "ormesson-sur-marne",
+        "zip": "94490",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ormesson-sur-Marne"
+    },
+    {
+        "name": "Le Perreux-sur-Marne",
+        "slug": "le-perreux-sur-marne",
+        "zip": "94170",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Perreux-sur-Marne"
+    },
+    {
+        "name": "Le Plessis-Trévise",
+        "slug": "le-plessis-trevise",
+        "zip": "94420",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Plessis-Trévise"
+    },
+    {
+        "name": "La Queue-en-Brie",
+        "slug": "la-queue-en-brie",
+        "zip": "94510",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Queue-en-Brie"
+    },
+    {
+        "name": "Rungis",
+        "slug": "rungis",
+        "zip": "94150",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rungis"
+    },
+    {
+        "name": "Saint-Mandé",
+        "slug": "saint-mande",
+        "zip": "94160",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Mandé"
+    },
+    {
+        "name": "Sucy-en-Brie",
+        "slug": "sucy-en-brie",
+        "zip": "94370",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sucy-en-Brie"
+    },
+    {
+        "name": "Thiais",
+        "slug": "thiais",
+        "zip": "94320",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Thiais"
+    },
+    {
+        "name": "Valenton",
+        "slug": "valenton",
+        "zip": "94460",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Valenton"
+    },
+    {
+        "name": "Villecresnes",
+        "slug": "villecresnes",
+        "zip": "94440",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villecresnes"
+    },
+    {
+        "name": "Villejuif",
+        "slug": "villejuif",
+        "zip": "94800",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villejuif"
+    },
+    {
+        "name": "Villeneuve-le-Roi",
+        "slug": "villeneuve-le-roi",
+        "zip": "94290",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-le-Roi"
+    },
+    {
+        "name": "Villeneuve-Saint-Georges",
+        "slug": "villeneuve-saint-georges",
+        "zip": "94190",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villeneuve-Saint-Georges"
+    },
+    {
+        "name": "Villiers-sur-Marne",
+        "slug": "villiers-sur-marne",
+        "zip": "94350",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villiers-sur-Marne"
+    },
+    {
+        "name": "Vincennes",
+        "slug": "vincennes",
+        "zip": "94300",
+        "department": {
+            "code": "94",
+            "nom": "Val-de-Marne"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vincennes"
+    },
+    {
+        "name": "Arnouville",
+        "slug": "arnouville",
+        "zip": "95400",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arnouville"
+    },
+    {
+        "name": "Auvers-sur-Oise",
+        "slug": "auvers-sur-oise",
+        "zip": "95430",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Auvers-sur-Oise"
+    },
+    {
+        "name": "Beauchamp",
+        "slug": "beauchamp",
+        "zip": "95250",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beauchamp"
+    },
+    {
+        "name": "Beaumont-sur-Oise",
+        "slug": "beaumont-sur-oise",
+        "zip": "95260",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Beaumont-sur-Oise"
+    },
+    {
+        "name": "Bessancourt",
+        "slug": "bessancourt",
+        "zip": "95550",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bessancourt"
+    },
+    {
+        "name": "Bezons",
+        "slug": "bezons",
+        "zip": "95870",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bezons"
+    },
+    {
+        "name": "Bouffémont",
+        "slug": "bouffemont",
+        "zip": "95570",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouffémont"
+    },
+    {
+        "name": "Champagne-sur-Oise",
+        "slug": "champagne-sur-oise",
+        "zip": "95660",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Champagne-sur-Oise"
+    },
+    {
+        "name": "Cormeilles-en-Parisis",
+        "slug": "cormeilles-en-parisis",
+        "zip": "95240",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cormeilles-en-Parisis"
+    },
+    {
+        "name": "Courdimanche",
+        "slug": "courdimanche",
+        "zip": "95800",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Courdimanche"
+    },
+    {
+        "name": "Deuil-la-Barre",
+        "slug": "deuil-la-barre",
+        "zip": "95170",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Deuil-la-Barre"
+    },
+    {
+        "name": "Domont",
+        "slug": "domont",
+        "zip": "95330",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Domont"
+    },
+    {
+        "name": "Eaubonne",
+        "slug": "eaubonne",
+        "zip": "95600",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Eaubonne"
+    },
+    {
+        "name": "Écouen",
+        "slug": "ecouen",
+        "zip": "95440",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Écouen"
+    },
+    {
+        "name": "Enghien-les-Bains",
+        "slug": "enghien-les-bains",
+        "zip": "95880",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Enghien-les-Bains"
+    },
+    {
+        "name": "Éragny-sur-Oise",
+        "slug": "eragny-sur-oise",
+        "zip": "95610",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Éragny-sur-Oise"
+    },
+    {
+        "name": "Ermont",
+        "slug": "ermont",
+        "zip": "95120",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ermont"
+    },
+    {
+        "name": "Ézanville",
+        "slug": "ezanville",
+        "zip": "95460",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ézanville"
+    },
+    {
+        "name": "Fosses",
+        "slug": "fosses",
+        "zip": "95470",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fosses"
+    },
+    {
+        "name": "Franconville",
+        "slug": "franconville",
+        "zip": "95130",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Franconville"
+    },
+    {
+        "name": "Gonesse",
+        "slug": "gonesse",
+        "zip": "95500",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gonesse"
+    },
+    {
+        "name": "Goussainville",
+        "slug": "goussainville",
+        "zip": "95190",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Goussainville"
+    },
+    {
+        "name": "Groslay",
+        "slug": "groslay",
+        "zip": "95410",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Groslay"
+    },
+    {
+        "name": "Herblay-sur-Seine",
+        "slug": "herblay-sur-seine",
+        "zip": "95220",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Herblay-sur-Seine"
+    },
+    {
+        "name": "L'Isle-Adam",
+        "slug": "l-isle-adam",
+        "zip": "95290",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Isle-Adam"
+    },
+    {
+        "name": "Jouy-le-Moutier",
+        "slug": "jouy-le-moutier",
+        "zip": "95280",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Jouy-le-Moutier"
+    },
+    {
+        "name": "Louvres",
+        "slug": "louvres",
+        "zip": "95380",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Louvres"
+    },
+    {
+        "name": "Luzarches",
+        "slug": "luzarches",
+        "zip": "95270",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Luzarches"
+    },
+    {
+        "name": "Magny-en-Vexin",
+        "slug": "magny-en-vexin",
+        "zip": "95420",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Magny-en-Vexin"
+    },
+    {
+        "name": "Marly-la-Ville",
+        "slug": "marly-la-ville",
+        "zip": "95670",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Marly-la-Ville"
+    },
+    {
+        "name": "Menucourt",
+        "slug": "menucourt",
+        "zip": "95180",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Menucourt"
+    },
+    {
+        "name": "Mériel",
+        "slug": "meriel",
+        "zip": "95630",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mériel"
+    },
+    {
+        "name": "Méry-sur-Oise",
+        "slug": "mery-sur-oise",
+        "zip": "95540",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Méry-sur-Oise"
+    },
+    {
+        "name": "Montigny-lès-Cormeilles",
+        "slug": "montigny-les-cormeilles",
+        "zip": "95370",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montigny-lès-Cormeilles"
+    },
+    {
+        "name": "Montmagny",
+        "slug": "montmagny",
+        "zip": "95360",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montmagny"
+    },
+    {
+        "name": "Montmorency",
+        "slug": "montmorency",
+        "zip": "95160",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Montmorency"
+    },
+    {
+        "name": "Osny",
+        "slug": "osny",
+        "zip": "95520",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Osny"
+    },
+    {
+        "name": "Parmain",
+        "slug": "parmain",
+        "zip": "95620",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Parmain"
+    },
+    {
+        "name": "Persan",
+        "slug": "persan",
+        "zip": "95340",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Persan"
+    },
+    {
+        "name": "Pierrelaye",
+        "slug": "pierrelaye",
+        "zip": "95220",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pierrelaye"
+    },
+    {
+        "name": "Le Plessis-Bouchard",
+        "slug": "le-plessis-bouchard",
+        "zip": "95130",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Plessis-Bouchard"
+    },
+    {
+        "name": "Pontoise",
+        "slug": "pontoise",
+        "zip": "95000",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pontoise"
+    },
+    {
+        "name": "Saint-Brice-sous-Forêt",
+        "slug": "saint-brice-sous-foret",
+        "zip": "95350",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Brice-sous-Forêt"
+    },
+    {
+        "name": "Saint-Gratien",
+        "slug": "saint-gratien",
+        "zip": "95210",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Gratien"
+    },
+    {
+        "name": "Saint-Leu-la-Forêt",
+        "slug": "saint-leu-la-foret",
+        "zip": "95320",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Leu-la-Forêt"
+    },
+    {
+        "name": "Saint-Ouen-l'Aumône",
+        "slug": "saint-ouen-l-aumone",
+        "zip": "95310",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Ouen-l'Aumône"
+    },
+    {
+        "name": "Saint-Prix",
+        "slug": "saint-prix",
+        "zip": "95390",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Prix"
+    },
+    {
+        "name": "Sannois",
+        "slug": "sannois",
+        "zip": "95110",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sannois"
+    },
+    {
+        "name": "Soisy-sous-Montmorency",
+        "slug": "soisy-sous-montmorency",
+        "zip": "95230",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Soisy-sous-Montmorency"
+    },
+    {
+        "name": "Taverny",
+        "slug": "taverny",
+        "zip": "95150",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Taverny"
+    },
+    {
+        "name": "Vauréal",
+        "slug": "vaureal",
+        "zip": "95490",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vauréal"
+    },
+    {
+        "name": "Viarmes",
+        "slug": "viarmes",
+        "zip": "95270",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Viarmes"
+    },
+    {
+        "name": "Villiers-le-Bel",
+        "slug": "villiers-le-bel",
+        "zip": "95400",
+        "department": {
+            "code": "95",
+            "nom": "Val-d'Oise"
+        },
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Villiers-le-Bel"
+    },
+    {
+        "name": "Les Abymes",
+        "slug": "les-abymes",
+        "zip": "97139",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Abymes"
+    },
+    {
+        "name": "Baie-Mahault",
+        "slug": "baie-mahault",
+        "zip": "97122",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baie-Mahault"
+    },
+    {
+        "name": "Baillif",
+        "slug": "baillif",
+        "zip": "97123",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Baillif"
+    },
+    {
+        "name": "Basse-Terre",
+        "slug": "basse-terre",
+        "zip": "97100",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Basse-Terre"
+    },
+    {
+        "name": "Bouillante",
+        "slug": "bouillante",
+        "zip": "97125",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouillante"
+    },
+    {
+        "name": "Capesterre-Belle-Eau",
+        "slug": "capesterre-belle-eau",
+        "zip": "97130",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Capesterre-Belle-Eau"
+    },
+    {
+        "name": "Gourbeyre",
+        "slug": "gourbeyre",
+        "zip": "97113",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gourbeyre"
+    },
+    {
+        "name": "Le Gosier",
+        "slug": "le-gosier",
+        "zip": "97190",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Gosier"
+    },
+    {
+        "name": "Goyave",
+        "slug": "goyave",
+        "zip": "97128",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Goyave"
+    },
+    {
+        "name": "Lamentin",
+        "slug": "lamentin",
+        "zip": "97129",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lamentin"
+    },
+    {
+        "name": "Morne-à-l'Eau",
+        "slug": "morne-a-l-eau",
+        "zip": "97111",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Morne-à-l'Eau"
+    },
+    {
+        "name": "Le Moule",
+        "slug": "le-moule",
+        "zip": "97160",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Moule"
+    },
+    {
+        "name": "Petit-Bourg",
+        "slug": "petit-bourg",
+        "zip": "97170",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petit-Bourg"
+    },
+    {
+        "name": "Petit-Canal",
+        "slug": "petit-canal",
+        "zip": "97131",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petit-Canal"
+    },
+    {
+        "name": "Pointe-à-Pitre",
+        "slug": "pointe-a-pitre",
+        "zip": "97110",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pointe-à-Pitre"
+    },
+    {
+        "name": "Pointe-Noire",
+        "slug": "pointe-noire",
+        "zip": "97116",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pointe-Noire"
+    },
+    {
+        "name": "Port-Louis",
+        "slug": "port-louis",
+        "zip": "97117",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Port-Louis"
+    },
+    {
+        "name": "Saint-François",
+        "slug": "saint-francois",
+        "zip": "97118",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-François"
+    },
+    {
+        "name": "Sainte-Anne",
+        "slug": "sainte-anne",
+        "zip": "97180",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Anne"
+    },
+    {
+        "name": "Sainte-Rose",
+        "slug": "sainte-rose",
+        "zip": "97115",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Rose"
+    },
+    {
+        "name": "Trois-Rivières",
+        "slug": "trois-rivieres",
+        "zip": "97114",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Trois-Rivières"
+    },
+    {
+        "name": "Vieux-Habitants",
+        "slug": "vieux-habitants",
+        "zip": "97119",
+        "department": {
+            "code": "971",
+            "nom": "Guadeloupe"
+        },
+        "region": "Guadeloupe",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Vieux-Habitants"
+    },
+    {
+        "name": "Le Diamant",
+        "slug": "le-diamant",
+        "zip": "97223",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Diamant"
+    },
+    {
+        "name": "Ducos",
+        "slug": "ducos",
+        "zip": "97224",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ducos"
+    },
+    {
+        "name": "Fort-de-France",
+        "slug": "fort-de-france",
+        "zip": "97200",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Fort-de-France"
+    },
+    {
+        "name": "Le François",
+        "slug": "le-francois",
+        "zip": "97240",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le François"
+    },
+    {
+        "name": "Gros-Morne",
+        "slug": "gros-morne",
+        "zip": "97213",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Gros-Morne"
+    },
+    {
+        "name": "Le Lamentin",
+        "slug": "le-lamentin",
+        "zip": "97232",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Lamentin"
+    },
+    {
+        "name": "Le Lorrain",
+        "slug": "le-lorrain",
+        "zip": "97214",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Lorrain"
+    },
+    {
+        "name": "Le Marin",
+        "slug": "le-marin",
+        "zip": "97290",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Marin"
+    },
+    {
+        "name": "Rivière-Pilote",
+        "slug": "riviere-pilote",
+        "zip": "97211",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rivière-Pilote"
+    },
+    {
+        "name": "Rivière-Salée",
+        "slug": "riviere-salee",
+        "zip": "97215",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Rivière-Salée"
+    },
+    {
+        "name": "Le Robert",
+        "slug": "le-robert",
+        "zip": "97231",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Robert"
+    },
+    {
+        "name": "Saint-Esprit",
+        "slug": "saint-esprit",
+        "zip": "97270",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Esprit"
+    },
+    {
+        "name": "Saint-Joseph",
+        "slug": "saint-joseph",
+        "zip": "97212",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Joseph"
+    },
+    {
+        "name": "Sainte-Luce",
+        "slug": "sainte-luce",
+        "zip": "97228",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Luce"
+    },
+    {
+        "name": "Sainte-Marie",
+        "slug": "sainte-marie",
+        "zip": "97230",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Marie"
+    },
+    {
+        "name": "Schœlcher",
+        "slug": "sch-lcher",
+        "zip": "97233",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Schœlcher"
+    },
+    {
+        "name": "Les Trois-Îlets",
+        "slug": "les-trois-ilets",
+        "zip": "97229",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Trois-Îlets"
+    },
+    {
+        "name": "Le Vauclin",
+        "slug": "le-vauclin",
+        "zip": "97280",
+        "department": {
+            "code": "972",
+            "nom": "Martinique"
+        },
+        "region": "Martinique",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Vauclin"
+    },
+    {
+        "name": "Cayenne",
+        "slug": "cayenne",
+        "zip": "97300",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cayenne"
+    },
+    {
+        "name": "Kourou",
+        "slug": "kourou",
+        "zip": "97310",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Kourou"
+    },
+    {
+        "name": "Macouria",
+        "slug": "macouria",
+        "zip": "97355",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Macouria"
+    },
+    {
+        "name": "Mana",
+        "slug": "mana",
+        "zip": "97318",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mana"
+    },
+    {
+        "name": "Matoury",
+        "slug": "matoury",
+        "zip": "97351",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Matoury"
+    },
+    {
+        "name": "Remire-Montjoly",
+        "slug": "remire-montjoly",
+        "zip": "97354",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Remire-Montjoly"
+    },
+    {
+        "name": "Saint-Laurent-du-Maroni",
+        "slug": "saint-laurent-du-maroni",
+        "zip": "97320",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Laurent-du-Maroni"
+    },
+    {
+        "name": "Maripasoula",
+        "slug": "maripasoula",
+        "zip": "97370",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maripasoula"
+    },
+    {
+        "name": "Grand-Santi",
+        "slug": "grand-santi",
+        "zip": "97340",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Grand-Santi"
+    },
+    {
+        "name": "Apatou",
+        "slug": "apatou",
+        "zip": "97317",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Apatou"
+    },
+    {
+        "name": "Papaichton",
+        "slug": "papaichton",
+        "zip": "97316",
+        "department": {
+            "code": "973",
+            "nom": "Guyane"
+        },
+        "region": "Guyane",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Papaichton"
+    },
+    {
+        "name": "Les Avirons",
+        "slug": "les-avirons",
+        "zip": "97425",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Avirons"
+    },
+    {
+        "name": "Bras-Panon",
+        "slug": "bras-panon",
+        "zip": "97412",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bras-Panon"
+    },
+    {
+        "name": "Entre-Deux",
+        "slug": "entre-deux",
+        "zip": "97414",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Entre-Deux"
+    },
+    {
+        "name": "L'Étang-Salé",
+        "slug": "l-etang-sale",
+        "zip": "97427",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour L'Étang-Salé"
+    },
+    {
+        "name": "Petite-Île",
+        "slug": "petite-ile",
+        "zip": "97429",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Petite-Île"
+    },
+    {
+        "name": "La Plaine-des-Palmistes",
+        "slug": "la-plaine-des-palmistes",
+        "zip": "97431",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Plaine-des-Palmistes"
+    },
+    {
+        "name": "Le Port",
+        "slug": "le-port",
+        "zip": "97420",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Port"
+    },
+    {
+        "name": "La Possession",
+        "slug": "la-possession",
+        "zip": "97419",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour La Possession"
+    },
+    {
+        "name": "Saint-André",
+        "slug": "saint-andre",
+        "zip": "97440",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-André"
+    },
+    {
+        "name": "Saint-Leu",
+        "slug": "saint-leu",
+        "zip": "97416",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Leu"
+    },
+    {
+        "name": "Saint-Pierre",
+        "slug": "saint-pierre",
+        "zip": "97410",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Pierre"
+    },
+    {
+        "name": "Saint-Philippe",
+        "slug": "saint-philippe",
+        "zip": "97442",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Philippe"
+    },
+    {
+        "name": "Sainte-Suzanne",
+        "slug": "sainte-suzanne",
+        "zip": "97441",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sainte-Suzanne"
+    },
+    {
+        "name": "Salazie",
+        "slug": "salazie",
+        "zip": "97433",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Salazie"
+    },
+    {
+        "name": "Le Tampon",
+        "slug": "le-tampon",
+        "zip": "97418",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Tampon"
+    },
+    {
+        "name": "Les Trois-Bassins",
+        "slug": "les-trois-bassins",
+        "zip": "97426",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Les Trois-Bassins"
+    },
+    {
+        "name": "Cilaos",
+        "slug": "cilaos",
+        "zip": "97413",
+        "department": {
+            "code": "974",
+            "nom": "La Réunion"
+        },
+        "region": "La Réunion",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Cilaos"
+    },
+    {
+        "name": "Acoua",
+        "slug": "acoua",
+        "zip": "97630",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Acoua"
+    },
+    {
+        "name": "Bandraboua",
+        "slug": "bandraboua",
+        "zip": "97650",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bandraboua"
+    },
+    {
+        "name": "Bandrele",
+        "slug": "bandrele",
+        "zip": "97660",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bandrele"
+    },
+    {
+        "name": "Bouéni",
+        "slug": "boueni",
+        "zip": "97620",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bouéni"
+    },
+    {
+        "name": "Chiconi",
+        "slug": "chiconi",
+        "zip": "97670",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chiconi"
+    },
+    {
+        "name": "Chirongui",
+        "slug": "chirongui",
+        "zip": "97620",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Chirongui"
+    },
+    {
+        "name": "Dembeni",
+        "slug": "dembeni",
+        "zip": "97660",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dembeni"
+    },
+    {
+        "name": "Dzaoudzi",
+        "slug": "dzaoudzi",
+        "zip": "97615",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dzaoudzi"
+    },
+    {
+        "name": "Kani-Kéli",
+        "slug": "kani-keli",
+        "zip": "97625",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Kani-Kéli"
+    },
+    {
+        "name": "Koungou",
+        "slug": "koungou",
+        "zip": "97600",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Koungou"
+    },
+    {
+        "name": "Mamoudzou",
+        "slug": "mamoudzou",
+        "zip": "97600",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mamoudzou"
+    },
+    {
+        "name": "Mtsamboro",
+        "slug": "mtsamboro",
+        "zip": "97630",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mtsamboro"
+    },
+    {
+        "name": "M'Tsangamouji",
+        "slug": "m-tsangamouji",
+        "zip": "97650",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour M'Tsangamouji"
+    },
+    {
+        "name": "Ouangani",
+        "slug": "ouangani",
+        "zip": "97670",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Ouangani"
+    },
+    {
+        "name": "Pamandzi",
+        "slug": "pamandzi",
+        "zip": "97615",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pamandzi"
+    },
+    {
+        "name": "Sada",
+        "slug": "sada",
+        "zip": "97640",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Sada"
+    },
+    {
+        "name": "Tsingoni",
+        "slug": "tsingoni",
+        "zip": "97680",
+        "department": {
+            "code": "976",
+            "nom": "Mayotte"
+        },
+        "region": "Mayotte",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tsingoni"
+    },
+    {
+        "name": "Saint-Barthélemy",
+        "slug": "saint-barthelemy",
+        "zip": "97133",
+        "department": {
+            "code": "977",
+            "nom": "Saint-Barthélemy"
+        },
+        "region": "Saint-Barthélemy",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Barthélemy"
+    },
+    {
+        "name": "Saint-Martin",
+        "slug": "saint-martin",
+        "zip": "97150",
+        "department": {
+            "code": "978",
+            "nom": "Saint-Martin"
+        },
+        "region": "Saint-Martin",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Saint-Martin"
+    },
+    {
+        "name": "Uvea",
+        "slug": "uvea",
+        "zip": "98600",
+        "department": {
+            "code": "986",
+            "nom": "Wallis et Futuna"
+        },
+        "region": "Wallis et Futuna",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Uvea"
+    },
+    {
+        "name": "Arue",
+        "slug": "arue",
+        "zip": "98701",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Arue"
+    },
+    {
+        "name": "Bora-Bora",
+        "slug": "bora-bora",
+        "zip": "98730",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bora-Bora"
+    },
+    {
+        "name": "Faaa",
+        "slug": "faaa",
+        "zip": "98704",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Faaa"
+    },
+    {
+        "name": "Hitiaa O Te Ra",
+        "slug": "hitiaa-o-te-ra",
+        "zip": "98705",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Hitiaa O Te Ra"
+    },
+    {
+        "name": "Huahine",
+        "slug": "huahine",
+        "zip": "98731",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Huahine"
+    },
+    {
+        "name": "Mahina",
+        "slug": "mahina",
+        "zip": "98709",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Mahina"
+    },
+    {
+        "name": "Moorea-Maiao",
+        "slug": "moorea-maiao",
+        "zip": "98728",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Moorea-Maiao"
+    },
+    {
+        "name": "Paea",
+        "slug": "paea",
+        "zip": "98711",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Paea"
+    },
+    {
+        "name": "Papara",
+        "slug": "papara",
+        "zip": "98712",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Papara"
+    },
+    {
+        "name": "Papeete",
+        "slug": "papeete",
+        "zip": "98714",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Papeete"
+    },
+    {
+        "name": "Pirae",
+        "slug": "pirae",
+        "zip": "98716",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Pirae"
+    },
+    {
+        "name": "Punaauia",
+        "slug": "punaauia",
+        "zip": "98703",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Punaauia"
+    },
+    {
+        "name": "Tahaa",
+        "slug": "tahaa",
+        "zip": "98733",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Tahaa"
+    },
+    {
+        "name": "Taiarapu-Est",
+        "slug": "taiarapu-est",
+        "zip": "98719",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Taiarapu-Est"
+    },
+    {
+        "name": "Taiarapu-Ouest",
+        "slug": "taiarapu-ouest",
+        "zip": "98723",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Taiarapu-Ouest"
+    },
+    {
+        "name": "Taputapuatea",
+        "slug": "taputapuatea",
+        "zip": "98735",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Taputapuatea"
+    },
+    {
+        "name": "Teva I Uta",
+        "slug": "teva-i-uta",
+        "zip": "98726",
+        "department": {
+            "code": "987",
+            "nom": "Polynésie française"
+        },
+        "region": "Polynésie française",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Teva I Uta"
+    },
+    {
+        "name": "Bourail",
+        "slug": "bourail",
+        "zip": "98870",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Bourail"
+    },
+    {
+        "name": "Dumbéa",
+        "slug": "dumbea",
+        "zip": "98835",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Dumbéa"
+    },
+    {
+        "name": "Koné",
+        "slug": "kone",
+        "zip": "98859",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Koné"
+    },
+    {
+        "name": "Lifou",
+        "slug": "lifou",
+        "zip": "98820",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Lifou"
+    },
+    {
+        "name": "Maré",
+        "slug": "mare",
+        "zip": "98828",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "pavillonnaire",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Maré"
+    },
+    {
+        "name": "Le Mont-Dore",
+        "slug": "le-mont-dore",
+        "zip": "98809",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Le Mont-Dore"
+    },
+    {
+        "name": "Nouméa",
+        "slug": "noumea",
+        "zip": "98800",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Nouméa"
+    },
+    {
+        "name": "Païta",
+        "slug": "paita",
+        "zip": "98889",
+        "department": {
+            "code": "988",
+            "nom": "Nouvelle-Calédonie"
+        },
+        "region": "Nouvelle-Calédonie",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "mixte",
+        "priceIndex": 1,
+        "catchphrase": "confort thermique optimisé pour Païta"
+    },
+    {
+        "name": "Paris 1e Arrondissement",
+        "slug": "paris-1e-arrondissement",
+        "zip": "75001",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 2e Arrondissement",
+        "slug": "paris-2e-arrondissement",
+        "zip": "75002",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 3e Arrondissement",
+        "slug": "paris-3e-arrondissement",
+        "zip": "75003",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 4e Arrondissement",
+        "slug": "paris-4e-arrondissement",
+        "zip": "75004",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 5e Arrondissement",
+        "slug": "paris-5e-arrondissement",
+        "zip": "75005",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 6e Arrondissement",
+        "slug": "paris-6e-arrondissement",
+        "zip": "75006",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 7e Arrondissement",
+        "slug": "paris-7e-arrondissement",
+        "zip": "75007",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 8e Arrondissement",
+        "slug": "paris-8e-arrondissement",
+        "zip": "75008",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 9e Arrondissement",
+        "slug": "paris-9e-arrondissement",
+        "zip": "75009",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 10e Arrondissement",
+        "slug": "paris-10e-arrondissement",
+        "zip": "75010",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 11e Arrondissement",
+        "slug": "paris-11e-arrondissement",
+        "zip": "75011",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 12e Arrondissement",
+        "slug": "paris-12e-arrondissement",
+        "zip": "75012",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 13e Arrondissement",
+        "slug": "paris-13e-arrondissement",
+        "zip": "75013",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 14e Arrondissement",
+        "slug": "paris-14e-arrondissement",
+        "zip": "75014",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 15e Arrondissement",
+        "slug": "paris-15e-arrondissement",
+        "zip": "75015",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 16e Arrondissement",
+        "slug": "paris-16e-arrondissement",
+        "zip": "75016",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 17e Arrondissement",
+        "slug": "paris-17e-arrondissement",
+        "zip": "75017",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 18e Arrondissement",
+        "slug": "paris-18e-arrondissement",
+        "zip": "75018",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 19e Arrondissement",
+        "slug": "paris-19e-arrondissement",
+        "zip": "75019",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Paris 20e Arrondissement",
+        "slug": "paris-20e-arrondissement",
+        "zip": "75020",
+        "department": "75",
+        "region": "Île-de-France",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "historique",
+        "priceIndex": 1.3,
+        "catchphrase": "dépannage urgent hyper-centre au propre"
+    },
+    {
+        "name": "Marseille 1e Arrondissement",
+        "slug": "marseille-1e-arrondissement",
+        "zip": "13001",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 2e Arrondissement",
+        "slug": "marseille-2e-arrondissement",
+        "zip": "13002",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 3e Arrondissement",
+        "slug": "marseille-3e-arrondissement",
+        "zip": "13003",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 4e Arrondissement",
+        "slug": "marseille-4e-arrondissement",
+        "zip": "13004",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 5e Arrondissement",
+        "slug": "marseille-5e-arrondissement",
+        "zip": "13005",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 6e Arrondissement",
+        "slug": "marseille-6e-arrondissement",
+        "zip": "13006",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 7e Arrondissement",
+        "slug": "marseille-7e-arrondissement",
+        "zip": "13007",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 8e Arrondissement",
+        "slug": "marseille-8e-arrondissement",
+        "zip": "13008",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 9e Arrondissement",
+        "slug": "marseille-9e-arrondissement",
+        "zip": "13009",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 10e Arrondissement",
+        "slug": "marseille-10e-arrondissement",
+        "zip": "13010",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 11e Arrondissement",
+        "slug": "marseille-11e-arrondissement",
+        "zip": "13011",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 12e Arrondissement",
+        "slug": "marseille-12e-arrondissement",
+        "zip": "13012",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 13e Arrondissement",
+        "slug": "marseille-13e-arrondissement",
+        "zip": "13013",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 14e Arrondissement",
+        "slug": "marseille-14e-arrondissement",
+        "zip": "13014",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 15e Arrondissement",
+        "slug": "marseille-15e-arrondissement",
+        "zip": "13015",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Marseille 16e Arrondissement",
+        "slug": "marseille-16e-arrondissement",
+        "zip": "13016",
+        "department": "13",
+        "region": "Provence-Alpes-Côte d'Azur",
+        "country": "FR",
+        "climateZone": "mediterranean",
+        "housingType": "mixte",
+        "priceIndex": 1.3,
+        "catchphrase": "votre intérieur au frais face au sud"
+    },
+    {
+        "name": "Lyon 1e Arrondissement",
+        "slug": "lyon-1e-arrondissement",
+        "zip": "69001",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 2e Arrondissement",
+        "slug": "lyon-2e-arrondissement",
+        "zip": "69002",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 3e Arrondissement",
+        "slug": "lyon-3e-arrondissement",
+        "zip": "69003",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 4e Arrondissement",
+        "slug": "lyon-4e-arrondissement",
+        "zip": "69004",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 5e Arrondissement",
+        "slug": "lyon-5e-arrondissement",
+        "zip": "69005",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 6e Arrondissement",
+        "slug": "lyon-6e-arrondissement",
+        "zip": "69006",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 7e Arrondissement",
+        "slug": "lyon-7e-arrondissement",
+        "zip": "69007",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 8e Arrondissement",
+        "slug": "lyon-8e-arrondissement",
+        "zip": "69008",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    },
+    {
+        "name": "Lyon 9e Arrondissement",
+        "slug": "lyon-9e-arrondissement",
+        "zip": "69009",
+        "department": "69",
+        "region": "Auvergne-Rhône-Alpes",
+        "country": "FR",
+        "climateZone": "semi-continental",
+        "housingType": "urbain-dense",
+        "priceIndex": 1.3,
+        "catchphrase": "clim réversible pour appartement lyonnais"
+    }
+];

@@ -55,12 +55,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
     // 4. City Landing Pages (SSG)
-    // We import both city lists to generate these
+    // We import all city lists to generate these
     const { CITIES_100 } = await import('@/data/cities-100');
     const { CITIES_EXTENDED } = await import('@/data/cities-extended');
+    const { CITIES_MEDIUM } = await import('@/data/cities-medium');
     const { slugify } = await import('@/lib/utils');
 
-    const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+    const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
 
     // 5. Region Hub Pages
     const regions = Array.from(new Set(ALL_CITIES.map(c => c.region)));
