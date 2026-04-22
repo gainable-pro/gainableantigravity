@@ -283,7 +283,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         )}
                         <div className="font-medium text-slate-600">
                             Par{' '}
-                            {expert.slug === 'gainable-fr' || expert.slug.includes('redaction') ? (
+                            {expert.slug === 'gainable-fr' || expert.slug.includes('redaction') || expert.slug === 'bureau-etude-gainable' ? (
                                 <span className="text-[#D59B2B] font-bold">
                                     {expert.nom_entreprise}
                                 </span>
@@ -377,8 +377,8 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         />
                     )}
 
-                    {/* DYNAMIC LEAD FORM FOR CITY ARTICLES */}
-                    {article.targetCity ? (
+                    {/* DYNAMIC LEAD FORM FOR CITY OR CATALOG ARTICLES */}
+                    {(article.targetCity || expert.slug === 'bureau-etude-gainable') ? (
                         <div className="mt-16 w-full max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                             
@@ -387,13 +387,17 @@ export default async function PublicArticlePage({ params }: PageProps) {
                                     Estimation Gratuite
                                 </span>
                                 <h3 className="text-3xl font-bold text-slate-800">
-                                    Démarrer votre projet à <span className="text-[#D59B2B]">{article.targetCity}</span>
+                                    {article.targetCity ? (
+                                        <>Démarrer votre projet à <span className="text-[#D59B2B]">{article.targetCity}</span></>
+                                    ) : (
+                                        <>Besoin d'un expert ? <span className="text-[#D59B2B]">Faites votre demande</span></>
+                                    )}
                                 </h3>
                                 <p className="text-slate-500 mt-2">Décrivez votre besoin pour recevoir des offres exclusives d'installateurs locaux certifiés RGE.</p>
                             </div>
                             
                             <div className="relative z-10">
-                                <InternationalLeadForm city={article.targetCity} />
+                                <InternationalLeadForm city={article.targetCity || undefined} />
                             </div>
                         </div>
                     ) : null}
@@ -427,7 +431,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                             </p>
                         </div>
 
-                        {expert.slug !== 'gainable-fr' && !expert.slug.includes('redaction') && (
+                        {expert.slug !== 'gainable-fr' && !expert.slug.includes('redaction') && expert.slug !== 'bureau-etude-gainable' && (
                             <Link href={`/pro/${expert.slug}`} className="w-full">
                                 <Button variant="outline" className="w-full">
                                     Voir le profil
@@ -440,7 +444,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     <div className="bg-[#1F2D3D] p-8 rounded-2xl shadow-lg text-white text-center space-y-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#D59B2B]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-                        {(expert.slug === 'gainable-fr' || expert.slug.includes('redaction')) ? (
+                        {(expert.slug === 'gainable-fr' || expert.slug.includes('redaction') || expert.slug === 'bureau-etude-gainable') ? (
                             <>
                                 <h3 className="text-xl font-bold relative z-10">
                                     Développez votre activité CVC

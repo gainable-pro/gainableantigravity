@@ -1,0 +1,5749 @@
+[
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-RZ",
+    "type": "Mural",
+    "features": [
+      "Hyper Heating",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "REZ-DE",
+    "type": "Mural",
+    "features": [
+      "Hyper Heating",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MONO-SPLIT",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-3010FT",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2490FT",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1300RC",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-RZ25VU",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-RZ35VU",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-RZ50VU",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "LSRL-83023",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "NRCC-54013",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FBA-A9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXM-A9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FDXM-F9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FNA-A9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXP-N9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXA-CW",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXA-A8",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXJ-AW",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXJ-A9",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXJ-AB9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXJ-AW9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXJ-AS9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXA-CB",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXA-CS",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXJ-A9",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "MWXM-A9",
+    "type": "VRV",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "MXM-A9",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "KLIC-DDV3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RTD-RA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RTD-NET",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FTXP-N9",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CTXA-CW",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FFA-A9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FHA-A9",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CTXA-AW",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "VRV-WIII",
+    "type": "VRV",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RTD-10",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LU-2023",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "BI-BLOC",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "SCU-CL1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CC-ESLIM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LREQ-BY1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CYVL-DK",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CYVM-DK",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CYVS-DK",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FXMQ-MB",
+    "type": "Gainable",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "FXMQ-P7",
+    "type": "Gainable",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "FXKQ-MA",
+    "type": "Gainable",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "BF-R3T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "UNE-EN",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ZCC-3613",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "HIGH-Q1000",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FREE-MATCH",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GO-COOL",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "CHES-DU",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "TICK-MARK",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GRS-CQ4",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GRS-CQ6",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GRS-CQ8",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "ALL-IN",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-121WL",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-141WL",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-160WL",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-120WL",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-140WL",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-224WL",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-280WL",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-335WL",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-224WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-280WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-335WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-400WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-450WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-504WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-560WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-615WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-Y120WL",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-Y140WL",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-Y160WL",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND15T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND22T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND28T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND36T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND45T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND50T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND56T",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND63T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND71T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND80T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND90T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND100T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND112T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND125T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND140T",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND28TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND36TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND45TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND50TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND56TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND63TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND71TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND80TS",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND22TD",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND28TD",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND36TD",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND45TD",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND50TD",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND22C",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND28C",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND36C",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND45C",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND50C",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND22ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND28ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND36ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND45ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND56ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND63ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND71ZA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND100L",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-ND140L",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-N140U",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-N280U",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-N560U",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-VDR5PH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-VDR8PH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "GMV-NX450P",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-22LM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-34LM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-51LM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-68LM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-85LM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-102LM",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-119LM",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-136LM",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-170LM",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-204LM",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-34WAHT",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-51WAHT",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-68WAHT",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-85WAHT",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-136WAH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-170WAH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-204WAH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-34WAH",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-51WAH",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-51WAHS",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-68WAHS",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-102WAH",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-51XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-68XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-85XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-102XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-119XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-136XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-170XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-204XD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-68XDT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-85XDT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-125XDT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-180XDT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-34BA3",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-51BA3",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-68BA3",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FP-85BA3",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-34ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-51ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-68ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-85ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-102ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-136ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-170ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "FPD-204ZD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "WK-010PW",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Hitachi",
+    "model": "WK-010PS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ECP-15",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOFA-V2",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HODS-V2",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCEP-25",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCEP-35",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCEP-50",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCIP-25",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCIP-35",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HCIP-50",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HXEH-2X40",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HXEH-3X50",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HXEH-3X70",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HXEH-4X80",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HXEH-4X100",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HGIS-35",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HGIS-50",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HKIS-35",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HKIS-50",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PREM-V1",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MOD-V1",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-6S140",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-4S85",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-6S85",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-4S71",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-6S71",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-4S50",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HPZE-4S35",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHMP-80M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHMP-160M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHO-AP45",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHMP-120M",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SND-V1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EXP-V1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ECS-V1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHMP-100M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHIP-100M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHIP-160M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHEP-80M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHEP-100M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHEP-120M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HHEP-160M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "TH-148",
+    "type": "Chauffe-eau",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HTMP-270",
+    "type": "Chauffe-eau",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HTMP-200",
+    "type": "Chauffe-eau",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOFA-LK",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOHC-SOLA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOHC-SOND",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOHS-SOND",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HOHC-BOUT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PRE-REGLEE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "CB-HFT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "BAR-TH",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EWYK-QZ",
+    "type": "VRV",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AFAQ-AFNOR",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "MXM-A8",
+    "type": "Multisplit",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXP-N8",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXF-D9",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXM-A8",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RXA-B8",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AZAS-MY",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AZAS-MV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RZA-DY1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RZAG-NY1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RZAG-NV1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "BAT-TH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RZAG-NV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CTXA-CS",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CTXA-CB",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CBH-20",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CBH-30",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CBS-10",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CBH-15",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CTXF-F25",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "KLIC-DD",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RTD-HO",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "RTD-20",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPVX-A4V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ELVX-E6V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPBX-A4V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ELBX-E6V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ETBH-E6V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPSK-AV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERRA-EV37",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-EV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-DV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EHBH-E6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBBH-D6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-03DV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERGA-EV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-DV3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LA-E3V3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LA-D3V3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPVX-14S23A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPVX-14S18A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPVX-10S23A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPVX-10S18A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPSK-AW1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERRA-E7",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ELVX-12S23E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ELVX-12S18E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERRA-EW17",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "DCOM-LT",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-DV37",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-DW17",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-EW1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-DV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EHVZ-E6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERGA-EVH7",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EHVH-E6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBBH-D9W",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-DW17",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-DV37",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBVH-D9W",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBVH-D6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBVZ-D9W",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBVZ-D6V",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERLA-DW1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EDLA-DW17",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EDLA-DV37",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBLA-DW17",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EBLA-DV37",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LA-DV3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LA-DW1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "LA-D3W1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXV-ABTV3R",
+    "type": "Mural",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXT-ABTV3C",
+    "type": "Mural",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXM-ATV3",
+    "type": "Mural",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXV-ABTV3",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXV-ATV3",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXT-ATV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "FWXT-ABTV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ETBH-E7",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EPRA-D7",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EJHA-AV3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERA-AY",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERA-AYF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "CYA-DK",
+    "type": "VRV",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Daikin",
+    "model": "ELBH-E6V",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "ERRA-EV3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AL-CCD07",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "DIII-NET",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "TH-173",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AAA-LRG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AA-LR6",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EHY-2KOMB",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "DROM-COM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "AIX-EN",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "SUR-MARNE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "DU-VAR",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "NICE-CORSE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Daikin",
+    "model": "EN-BAR",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "IEC-60335",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EN-378",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BAR-TH166",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BAR-TH169",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BAR-TH145",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERSE-YM9EE",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-SHW",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-SHWM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-SW",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-SWM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Hyper Heating",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-SHWM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Hyper Heating",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-SWM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Hyper Heating",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PACK-DLMV",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MEHP-IB",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-VM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-5871F",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Technologie Inverter",
+      "Contrôle Wi-Fi",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-587IF",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ANTI-TARTRE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-WT60R",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-WR61R",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SG-READY",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-IF081B",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-SWM40",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-SHWM30",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERSD-VM6E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERSF-VM6E",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-TH011",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-SW160",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-SWM100",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-SWM80",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERSF-YM9E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG73RJ",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-SHWM80",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERPX-VM6E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ50",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ120V",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ100V",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ85V",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ85",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ100",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WZ120",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ERPX-YM9E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WM60",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WM85",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-BYL",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SAG1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-TZ02",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-KIT2Z",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SE41TS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-EHMZ2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-EHMZ1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EAC-MT",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "TW-TH16",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-W31MAA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "CAHV-R450",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-IH03V2",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-RC02",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AC-IF081B",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-001FN",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ83DP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AC-SH97DP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG64DP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH95A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH63AG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK52ST",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH96SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-890SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-882SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG61DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ82AT",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH95AG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH97DP",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter",
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG59SG",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-WM50",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-SW200",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-HWM140",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-SHW230",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "WIRE-100M",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "WIRE-15M",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "TH-LITE",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "TH-THINK",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE100",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ACE-WIRED",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE80",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE60H",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE60",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE40",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE30H",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-HE30",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "CAHV-R450YA",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EW-C50",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-C400",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-200E",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-50E",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-200",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EW-50E",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "NE-ALPES",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Système",
+    "model": "JEAN-DE",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Système",
+    "model": "LA-RUELLE",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LON-LMAP04",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BAC-HD150",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SE55RA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SF40",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1702",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1710",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ95MA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ96MA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-397IF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-334IF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-567IF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AT-50B",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-U02",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-CT01",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-40MAA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YT52",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL97",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL100",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ96",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-40",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SA9CA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL100A",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL94B",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M71HA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M140KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M125KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M100KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M71KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M60KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M50KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M100KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M71KA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M60KA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M50HA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M35HA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M140JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M125JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M100JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M71JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M60JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M50JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M35JA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M140EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M125EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M100EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M71EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M60EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M50EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M35EA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M50DA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M35DA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M25DA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M60FA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M50FA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M35FA",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M25FA",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M15FA",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL97A",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AR-40MA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AR-SL97",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AR-40MAA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-RP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SC51",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-334",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ95",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AC-SJ96MA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AC-SJ95MA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-567",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-LN",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1702RA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1710RA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SF40RM",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SE55",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUHZ-ZRP",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LMAP-04",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-397",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP50VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP35VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP25VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KT50VG",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KT35VG",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KT25VG",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR71VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR60VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR50VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR42VF",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR35VF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR25VF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSY-TP50VF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSY-TP35VF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF50VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF42VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF35VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF25VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF22VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-EF18VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP50VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP42VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP35VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP25VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP20VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP15VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-LN50VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-LN35VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-LN25VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-LN18VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-4E83VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-4E72VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-3E68VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-3E54VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-2D53VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-2D33VA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SA88HA",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG63",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG66",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG60",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG10H",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-20OE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-FL32",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-FA32",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-FL32MA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VFM-E1",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-FA32MA",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-CT01MA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG10",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-YG10HA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SF46",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ENO-OUV",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ENO-TEMP",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ENO-CARTE",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SA88",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "KNX-15",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MBS-50",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-RZ",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-AP25VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-AY25VG",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-41MAA",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-SM",
+    "type": "Console",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PXZ-5F",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EST-20",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AY",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KW",
+    "type": "Gainable",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KT",
+    "type": "Gainable",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-M250",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-M200",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM",
+    "type": "Gainable",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-M200",
+    "type": "Mural",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-RW",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUFZ-KW",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-LN",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-FT",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-EF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-AP",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-AY",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUZ-HR",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-FT",
+    "type": "Console",
+    "features": [
+      "Hyper Heating"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KY",
+    "type": "Console",
+    "features": [
+      "Hyper Heating"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-RW",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-SP112",
+    "type": "Gainable",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VL-100EU5",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VL-50ES2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-IF013",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HP-RDX",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSY-TP",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM200",
+    "type": "Gainable",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM100",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM60",
+    "type": "Console",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-M100",
+    "type": "Console",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M60",
+    "type": "Console",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M25",
+    "type": "Console",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-100FT",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-VFHZ",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Hyper Heating"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-286RH",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1400RC",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-497IF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-41",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2470FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AY15",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AY25",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-FT25",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SARS-COV",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SARS-COV2",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-886SG",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-881SG",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-883SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-CT01SB",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "CL-HA1",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-597IF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2460FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEE-SENSOR",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MEFR-00045",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M25VA2",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M35VA2",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M50VA2",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M60VA2",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SE42TS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL103A",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SUZ-M71VA2",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SFZ-M25VA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SFZ-M35VA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SFZ-M50VA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SFZ-M60VA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SFZ-M71VA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-HR25",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-P250",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-P200",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-P112",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-SM112",
+    "type": "Mural",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUMY-SP",
+    "type": "Gainable",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MK",
+    "type": "DRV",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-5F102",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-3F68",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-2HA",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-HA",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KW25",
+    "type": "Mural",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KT25",
+    "type": "Mural",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLP-444W",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KY20VG",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-R32",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLP-448W",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M35JA3",
+    "type": "Cassette",
+    "features": [
+      "Gaz R32 écologique",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M50JA3",
+    "type": "Gainable",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M60JA3",
+    "type": "Gainable",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M71JA3",
+    "type": "Gainable",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M71",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M50KA3",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M60KA3",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M71KA3",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M50",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLP-6EAL",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLP-6EALE",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLP-6EAJE",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLP-6EAB",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M50EA3",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M60EA3",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M71EA3",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M60FA3",
+    "type": "Cassette",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLP-2FAL",
+    "type": "Cassette",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLP-2FALE",
+    "type": "Cassette",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A",
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M15FA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M25FA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M35FA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SLZ-M50FA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MMK40",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MK34",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ71FM",
+    "type": "DRV",
+    "features": [
+      "Ultra Silencieux"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-LV11M",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSY-AY",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-42MAAB",
+    "type": "Plafonnier",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SL72SA",
+    "type": "Plafonnier",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDD-50AR2",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDD-50BR",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R32 écologique",
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKFY-MS",
+    "type": "Gainable",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDD-50AR",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MK34BC",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MK54BC",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK21AG",
+    "type": "Gainable",
+    "features": [
+      "Gaz R410A"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M60",
+    "type": "Cassette",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M60DA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M50DA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M35DA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M25DA3",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP50VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP35VG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MLZ-KP25VG",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ06AG",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-KE07DM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ07SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-889SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "DUAL-WIFI",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-6G125",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-6B125",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-6G100",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-6B100",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5G125",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5B125",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5G100",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5B100",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5G71",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5B71",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5G60",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-5B60",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4G71",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4B71",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4G60",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4B60",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4G50",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4B50",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4G35",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-4B35",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-3G50",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-3B50",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-3G35",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MELZ-3B35",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLP-6EAP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK36HK",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK51FT",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK54KF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK53KF",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM35",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-881",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH65OF",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ41TM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ65AS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ37SP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-MAC",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-M35EA3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SF28OF",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M100",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M60",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH53AG",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ94DM",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ93DM",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ92DM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL95B",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG38KF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M71HA3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MEXT-G00",
+    "type": "Mural",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK19DM",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1416",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M35LA3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M50LA3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M60KA3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M71KA3",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1701RA",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MUY-TP",
+    "type": "Mural",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDF-1111R3",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDT-111R4",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDD-50WR3",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSDD-50TR2",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-M125",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-M140",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-M250",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM71",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM125",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM140",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PUZ-ZM250",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique",
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "JT-S2AP",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "CHE-MAINS",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VL-50SR2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VL-80EU5",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-IF013B",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PZ-62DR",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PZ-43SMF",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "HP-1000",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-15RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-25RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-35RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-50RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-65RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "LGH-80RVX3",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK15MA",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "AE-C400E",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EW-C50E",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAA-SB",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ON-SW1",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK15",
+    "type": "Pompe à chaleur",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BACS-AP50E",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M35",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEA-M200",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M35",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKA-M60",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M50",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PSA-M100",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-172",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "ANTI-ALLERG",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-3010",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK22",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK21",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ07",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-886",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-882",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SA",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SF",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SE",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SA",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-SL",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAR-CT01PB",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-5F",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-2F",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-3HA",
+    "type": "Pompe à chaleur",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-3F",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MXZ-4F",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Technologie Inverter"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-MMK",
+    "type": "Gainable",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M71JA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M60DA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M60JA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M50DA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M50JA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M35DA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEAD-M35JA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "SEZ-M25DA2",
+    "type": "Gainable",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-6EALE",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PLA-6EAL",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "VL-220",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "BY-PASS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1200RC",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MINI-A1M",
+    "type": "Cassette",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2471FT",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKFY-P10",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKFY-WL32",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP25",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP60",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKFY-MAC",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2450FT",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-AP15",
+    "type": "Mural",
+    "features": [
+      "Contrôle Wi-Fi"
+    ]
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-1416FT",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PKFY-P63",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK57KF",
+    "type": "Mural",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK56KF",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK55KF",
+    "type": "Plafonnier",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PEFY-WP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-SL100M",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH90KF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH89KF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH88KF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SH59KF",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK01DM",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2390FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M60KA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2370FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-2360FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MSZ-GF60",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PCA-M50KA2",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-172FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-408FT",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MFZ-KJ",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EPAC-SK52ST",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SL15DP",
+    "type": "Console",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG63DP",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SL14DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SG60DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK27DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SJ08DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "EPAC-SJ08DS",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SL13AG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK22SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-857SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "MAC-856SG",
+    "type": "Climatisation Réversible",
+    "features": []
+  },
+  {
+    "brand": "Mitsubishi",
+    "model": "PAC-SK88RJ",
+    "type": "Climatisation Réversible",
+    "features": [
+      "Gaz R32 écologique"
+    ]
+  }
+]
