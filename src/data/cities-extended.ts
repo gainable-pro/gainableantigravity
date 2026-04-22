@@ -100,4 +100,10 @@ export const CITIES_EXTENDED: CityData[] = [
     { name: "Verbier", slug: "verbier", zip: "1936", department: "VS", region: "Valais", country: "CH", climateZone: "mountain", housingType: "historique", priceIndex: 1.5, catchphrase: "Contrôlez l'ambiance de votre luxueux chalet 4 Vallées" },
     { name: "Knokke-Heist", slug: "knokke-heist", zip: "8300", department: "VWV", region: "Flandre", country: "BE", climateZone: "oceanic", housingType: "mixte", priceIndex: 1.3, catchphrase: "Confort 5 étoiles caché pour les villas du littoral belge" },
     { name: "Spa", slug: "spa", zip: "4900", department: "WLG", region: "Wallonie", country: "BE", climateZone: "semi-continental", housingType: "historique", priceIndex: 1.1, catchphrase: "La discrétion et la performance dans des lieux thermaux majestueux" }
+,
+    { name: "Brigue", slug: "brigue", zip: "3900", department: "VS", region: "Valais", country: "CH", climateZone: "mountain", housingType: "historique", priceIndex: 1.5, catchphrase: "Le confort immobilier en Suisse romande" },
+    { name: "Zoug", slug: "zoug", zip: "6300", department: "ZG", region: "Zoug", country: "CH", climateZone: "semi-continental", housingType: "historique", priceIndex: 1.5, catchphrase: "Le confort immobilier en Suisse romande" },
+    { name: "Schwyz", slug: "schwyz", zip: "6400", department: "SZ", region: "Schwytz", country: "CH", climateZone: "mountain", housingType: "historique", priceIndex: 1.5, catchphrase: "Le confort immobilier en Suisse romande" },
+    { name: "Locarno", slug: "locarno", zip: "6600", department: "TI", region: "Tessin", country: "CH", climateZone: "mediterranean", housingType: "historique", priceIndex: 1.5, catchphrase: "Le confort immobilier en Suisse romande" },
+    { name: "Coire", slug: "coire", zip: "7000", department: "GR", region: "Grisons", country: "CH", climateZone: "mountain", housingType: "historique", priceIndex: 1.5, catchphrase: "Le confort immobilier en Suisse romande" }
 ];
