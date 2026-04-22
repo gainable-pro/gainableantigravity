@@ -8,6 +8,7 @@ import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { MapPin, ArrowRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -85,6 +86,12 @@ export default async function PublicArticlePage({ params }: PageProps) {
 
     const { expert, article } = data;
 
+    let articleContent = article.content || "";
+    if (article.targetCity) {
+        // Strip out the hardcoded Spintax HTML button so we can render the dynamic React form instead
+        articleContent = articleContent.replace(/<div class="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center shadow-lg hover:shadow-2xl transition-all">[\s\S]*?<\/div>/, '');
+    }
+
     // Resolve Content Blocks (New System)
     let blocks: any[] = [];
     try {
@@ -146,9 +153,9 @@ export default async function PublicArticlePage({ params }: PageProps) {
                 currentSection.content.push(block);
             }
         });
-    } else if (article.content) {
+    } else if (articleContent) {
         // Fallback: Parse Legacy HTML to Zig-Zag Sections
-        const parts = article.content.split(/<h2.*?>/i);
+        const parts = articleContent.split(/<h2.*?>/i);
         parts.forEach((part: string, index: number) => {
             if (index === 0) {
                 // Introduction (text before first H2)
@@ -209,7 +216,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
             }
         },
         "description": article.metaDesc || article.introduction,
-        "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : article.content
+        "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
 
     return (
@@ -366,9 +373,30 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     ) : (
                         <div
                             className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-headings:text-[#1F2D3D] prose-a:text-[#D59B2B] prose-img:rounded-xl prose-p:leading-relaxed prose-p:mb-6"
-                            dangerouslySetInnerHTML={{ __html: article.content }}
+                            dangerouslySetInnerHTML={{ __html: articleContent }}
                         />
                     )}
+
+                    {/* DYNAMIC LEAD FORM FOR CITY ARTICLES */}
+                    {article.targetCity ? (
+                        <div className="mt-16 w-full max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                            
+                            <div className="text-center mb-8 relative z-10">
+                                <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                                    Estimation Gratuite
+                                </span>
+                                <h3 className="text-3xl font-bold text-slate-800">
+                                    Démarrer votre projet à <span className="text-[#D59B2B]">{article.targetCity}</span>
+                                </h3>
+                                <p className="text-slate-500 mt-2">Décrivez votre besoin pour recevoir des offres exclusives d'installateurs locaux certifiés RGE.</p>
+                            </div>
+                            
+                            <div className="relative z-10">
+                                <InternationalLeadForm city={article.targetCity} />
+                            </div>
+                        </div>
+                    ) : null}
 
                 </article>
 
