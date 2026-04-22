@@ -422,7 +422,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                                 </p>
                                 <Link href="/pourquoi-gainable" className="block relative z-10">
                                     <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
-                                        Découvrir les offres
+                                        Devenir membre
                                         <ArrowRight className="ml-2 w-4 h-4" />
                                     </Button>
                                 </Link>
