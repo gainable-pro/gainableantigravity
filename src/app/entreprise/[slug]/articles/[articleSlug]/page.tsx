@@ -276,9 +276,15 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         )}
                         <div className="font-medium text-slate-600">
                             Par{' '}
-                            <Link href={`/pro/${expert.slug}`} className="text-[#D59B2B] hover:underline underline-offset-4">
-                                {expert.nom_entreprise}
-                            </Link>
+                            {expert.slug === 'gainable-fr' || expert.slug.includes('redaction') ? (
+                                <span className="text-[#D59B2B] font-bold">
+                                    {expert.nom_entreprise}
+                                </span>
+                            ) : (
+                                <Link href={`/pro/${expert.slug}`} className="text-[#D59B2B] hover:underline underline-offset-4">
+                                    {expert.nom_entreprise}
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -393,7 +399,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                             </p>
                         </div>
 
-                        {expert.slug !== 'gainable-fr' && (
+                        {expert.slug !== 'gainable-fr' && !expert.slug.includes('redaction') && (
                             <Link href={`/pro/${expert.slug}`} className="w-full">
                                 <Button variant="outline" className="w-full">
                                     Voir le profil
@@ -406,20 +412,23 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     <div className="bg-[#1F2D3D] p-8 rounded-2xl shadow-lg text-white text-center space-y-6 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#D59B2B]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-                        {expert.slug === 'gainable-fr' ? (
+                        {(expert.slug === 'gainable-fr' || expert.slug.includes('redaction')) ? (
                             <>
                                 <h3 className="text-xl font-bold relative z-10">
                                     Développez votre activité CVC
                                 </h3>
                                 <p className="text-slate-300 text-sm relative z-10">
-                                    Rejoignez la plateforme dédiée aux installateurs et générez des contacts exclusifs sans commission.
+                                    Rejoignez la plateforme dédiée aux professionnels et générez des chantiers rentables sans commission.
                                 </p>
                                 <Link href="/pourquoi-gainable" className="block relative z-10">
                                     <Button size="lg" className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-12 text-base">
-                                        Rejoindre Gainable.fr
+                                        Découvrir les offres
                                         <ArrowRight className="ml-2 w-4 h-4" />
                                     </Button>
                                 </Link>
+                                <p className="text-xs text-slate-400 mt-4 relative z-10">
+                                    Comparez nos formules d'abonnement et prenez le contrôle de votre visibilité locale.
+                                </p>
                             </>
                         ) : (
                             <>

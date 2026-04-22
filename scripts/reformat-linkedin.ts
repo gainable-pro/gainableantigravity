@@ -3,9 +3,13 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const IMAGES = [
-    "/blog/b2b-growth.png",
-    "/blog/b2b-strategy.png",
-    "/blog/b2b-success.png"
+    "/blog/gainable-salon.jpg",
+    "/blog/installation-combles.jpg",
+    "/blog/bouche-soufflage.jpg",
+    "/blog/thermostat-mur.jpg",
+    "/blog/groupe-exterieur.jpg",
+    "/blog/clim-reversible.jpg",
+    "/hero-hvac.png"
 ];
 
 function getRandomImage() {
@@ -13,68 +17,57 @@ function getRandomImage() {
 }
 
 async function main() {
-    console.log("Starting Article Reformatting (B2B ACQUISITION FUNNEL WITH BUSINESS IMAGES)...");
+    console.log("Starting Article Reformatting (LINKEDIN ARTICLES B2B ACQUISITION FUNNEL)...");
 
-    const expert = await prisma.expert.findUnique({
-        where: { slug: "redaction-gainable" }
-    });
-
-    if (!expert) {
-        console.error("Expert not found.");
-        return;
-    }
-
+    // Fetch the 12 LinkedIn articles we found
     const articles = await prisma.article.findMany({
         where: { 
-            expertId: expert.id,
-            slug: { startsWith: 'b2b-conseil-' }
+            targetCity: null, 
+            slug: { not: { startsWith: 'b2b-conseil-' } }
         }
     });
 
-    console.log(`Found ${articles.length} B2B articles to reconstruct into funnels...`);
+    console.log(`Found ${articles.length} LinkedIn B2B articles to reconstruct into funnels.`);
 
     let updatedCount = 0;
 
     for (const article of articles) {
         let content = article.content || "";
-        
         let paragraphs: string[] = [];
 
         if (article.jsonContent && typeof article.jsonContent === 'object') {
             const blocks = (article.jsonContent as any).blocks || [];
             paragraphs = blocks.filter((b: any) => b.type === 'text').map((b: any) => b.value);
         } else {
-            content = content.replace(/<div class="email-article-content">|<\/div>|<div class="email-fallback">/gi, "");
-            content = content.replace(/<p>Bonjour,?<\/p>/gi, "");
-            content = content.replace(/Bonjour,?\s*/gi, ""); 
-            content = content.replace(/Cordialement,?.*/gi, "");
-            content = content.replace(/L'équipe Gainable.*/gi, "");
-            content = content.trim();
-
+            content = content.replace(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi, ""); 
             const pMatches = content.match(/<p[^>]*>([\s\S]*?)<\/p>/gi);
             if (pMatches && pMatches.length > 0) {
                 paragraphs = pMatches.map(p => p.replace(/<\/?[^>]+(>|$)/g, "").trim()).filter(p => p.length > 20);
+            } else {
+                paragraphs = content.split('\n').filter(p => p.trim().length > 20);
             }
         }
 
         if (paragraphs.length < 2) {
-            console.log(`Skipping ${article.slug}, not enough content.`);
+            console.log(`Skipping ${article.slug}, not enough content to funnelize.`);
             continue;
         }
 
         const blocks: any[] = [];
 
         const introText = paragraphs.shift() || article.title;
-        blocks.push({ type: "h2", value: "Le marché évolue, avec ou sans vous" });
+        blocks.push({ type: "h2", value: "Une évolution incontournable du marché" });
         blocks.push({ type: "text", value: introText });
-        blocks.push({ type: "image", value: getRandomImage(), alt: `Stratégie B2B et Acquisition` });
+        blocks.push({ type: "image", value: getRandomImage(), alt: `Problématique CVC` });
 
-        const chunk1 = paragraphs.splice(0, 2).join('\n\n'); 
-        blocks.push({ type: "h2", value: "La réalité du marché aujourd'hui" });
+        const half = Math.ceil(paragraphs.length / 2);
+        const chunk1 = paragraphs.splice(0, half).join('\n\n');
+        
+        blocks.push({ type: "h2", value: "La réalité du terrain" });
         blocks.push({ type: "text", value: chunk1 });
-        blocks.push({ type: "image", value: getRandomImage(), alt: `Vision stratégique du marché` });
+        blocks.push({ type: "image", value: getRandomImage(), alt: `Options Stratégiques` });
 
-        const chunk2 = paragraphs.length > 0 ? paragraphs.join('\n\n') : "C'est pourquoi nous avons créé Gainable.fr, pour vous redonner le pouvoir sur votre activité et vous libérer des achats de leads inutiles.";
+        const chunk2 = paragraphs.length > 0 ? paragraphs.join('\n\n') : "C'est pourquoi nous avons créé Gainable.fr, pour vous redonner le pouvoir.";
         blocks.push({ type: "h2", value: "Notre analyse approfondie" });
         blocks.push({ type: "text", value: chunk2 });
 
@@ -95,16 +88,17 @@ async function main() {
         await prisma.article.update({
             where: { id: article.id },
             data: {
+                content: "", 
                 jsonContent: { blocks },
                 introduction: introText.substring(0, 200) + "..."
             }
         });
 
-        console.log(`Updated images for: ${article.slug}`);
+        console.log(`Funnelized: ${article.slug}`);
         updatedCount++;
     }
 
-    console.log(`\nDONE! ${updatedCount} B2B articles mapped with exclusive Business Images!`);
+    console.log(`\nDONE! ${updatedCount} LinkedIn articles converted into aggressive funnels.`);
 }
 
 main().catch(console.error).finally(() => prisma.$disconnect());
