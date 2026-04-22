@@ -1,5 +1,6 @@
 import { CITIES_100 } from "@/data/cities-100";
 import { CITIES_EXTENDED } from "@/data/cities-extended";
+import { CITIES_MEDIUM } from "@/data/cities-medium";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -16,7 +17,7 @@ import path from 'path';
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
 
 interface PageProps {
     params: Promise<{

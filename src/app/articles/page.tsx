@@ -18,6 +18,7 @@ async function getArticles() {
     return await prisma.article.findMany({
         where: { status: 'PUBLISHED' },
         orderBy: { createdAt: 'desc' }, // Sort by creation date (most recent first)
+        take: 36, // STRICT LIMIT to prevent crashing with 15,000+ articles
         include: {
             expert: {
                 select: {
