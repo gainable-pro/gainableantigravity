@@ -5,10 +5,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ambérieu-en-Bugey",
         "slug": "amberieu-en-bugey",
         "zip": "01500",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20,10 +17,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valserhône",
         "slug": "valserhone",
         "zip": "01200",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -35,10 +29,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Belley",
         "slug": "belley",
         "zip": "01300",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -50,10 +41,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beynost",
         "slug": "beynost",
         "zip": "01700",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -65,10 +53,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-en-Bresse",
         "slug": "bourg-en-bresse",
         "zip": "01000",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -80,10 +65,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cessy",
         "slug": "cessy",
         "zip": "01170",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -95,10 +77,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtillon-sur-Chalaronne",
         "slug": "chatillon-sur-chalaronne",
         "zip": "01400",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -110,10 +89,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Divonne-les-Bains",
         "slug": "divonne-les-bains",
         "zip": "01220",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -125,10 +101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ferney-Voltaire",
         "slug": "ferney-voltaire",
         "zip": "01210",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -140,10 +113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gex",
         "slug": "gex",
         "zip": "01170",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -155,10 +125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jassans-Riottier",
         "slug": "jassans-riottier",
         "zip": "01480",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -170,10 +137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lagnieu",
         "slug": "lagnieu",
         "zip": "01150",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -185,10 +149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meximieux",
         "slug": "meximieux",
         "zip": "01800",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -200,10 +161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Miribel",
         "slug": "miribel",
         "zip": "01700",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -215,10 +173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montluel",
         "slug": "montluel",
         "zip": "01120",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -230,10 +185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ornex",
         "slug": "ornex",
         "zip": "01210",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -245,10 +197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oyonnax",
         "slug": "oyonnax",
         "zip": "01100",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -260,10 +209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Péronnas",
         "slug": "peronnas",
         "zip": "01960",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -275,10 +221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Prévessin-Moëns",
         "slug": "prevessin-moens",
         "zip": "01280",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -290,10 +233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Reyrieux",
         "slug": "reyrieux",
         "zip": "01600",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -305,10 +245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Denis-lès-Bourg",
         "slug": "saint-denis-les-bourg",
         "zip": "01000",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -320,10 +257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Genis-Pouilly",
         "slug": "saint-genis-pouilly",
         "zip": "01630",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -335,10 +269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thoiry",
         "slug": "thoiry",
         "zip": "01710",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -350,10 +281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trévoux",
         "slug": "trevoux",
         "zip": "01600",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -365,10 +293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villars-les-Dombes",
         "slug": "villars-les-dombes",
         "zip": "01330",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -380,10 +305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Viriat",
         "slug": "viriat",
         "zip": "01440",
-        "department": {
-            "code": "01",
-            "nom": "Ain"
-        },
+        "department": "01",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -395,10 +317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bohain-en-Vermandois",
         "slug": "bohain-en-vermandois",
         "zip": "02110",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -410,10 +329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Château-Thierry",
         "slug": "chateau-thierry",
         "zip": "02400",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -425,10 +341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chauny",
         "slug": "chauny",
         "zip": "02300",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -440,10 +353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gauchy",
         "slug": "gauchy",
         "zip": "02430",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -455,10 +365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hirson",
         "slug": "hirson",
         "zip": "02500",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -470,10 +377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laon",
         "slug": "laon",
         "zip": "02000",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -485,10 +389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soissons",
         "slug": "soissons",
         "zip": "02200",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -500,10 +401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tergnier",
         "slug": "tergnier",
         "zip": "02700",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -515,10 +413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villers-Cotterêts",
         "slug": "villers-cotterets",
         "zip": "02600",
-        "department": {
-            "code": "02",
-            "nom": "Aisne"
-        },
+        "department": "02",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -530,10 +425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bellerive-sur-Allier",
         "slug": "bellerive-sur-allier",
         "zip": "03700",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -545,10 +437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Commentry",
         "slug": "commentry",
         "zip": "03600",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -560,10 +449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cusset",
         "slug": "cusset",
         "zip": "03300",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -575,10 +461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Domérat",
         "slug": "domerat",
         "zip": "03410",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -590,10 +473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gannat",
         "slug": "gannat",
         "zip": "03800",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -605,10 +485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montluçon",
         "slug": "montlucon",
         "zip": "03100",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -620,10 +497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moulins",
         "slug": "moulins",
         "zip": "03000",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -635,10 +509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yzeure",
         "slug": "yzeure",
         "zip": "03400",
-        "department": {
-            "code": "03",
-            "nom": "Allier"
-        },
+        "department": "03",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -650,10 +521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Château-Arnoux-Saint-Auban",
         "slug": "chateau-arnoux-saint-auban",
         "zip": "04160",
-        "department": {
-            "code": "04",
-            "nom": "Alpes-de-Haute-Provence"
-        },
+        "department": "04",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -665,10 +533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Biot",
         "slug": "biot",
         "zip": "06410",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -680,10 +545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Cannet",
         "slug": "le-cannet",
         "zip": "06110",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -695,10 +557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carros",
         "slug": "carros",
         "zip": "06510",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -710,10 +569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Colle-sur-Loup",
         "slug": "la-colle-sur-loup",
         "zip": "06480",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -725,10 +581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Contes",
         "slug": "contes",
         "zip": "06390",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -740,10 +593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Drap",
         "slug": "drap",
         "zip": "06340",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -755,10 +605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Gaude",
         "slug": "la-gaude",
         "zip": "06610",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -770,10 +617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Levens",
         "slug": "levens",
         "zip": "06670",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -785,10 +629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouans-Sartoux",
         "slug": "mouans-sartoux",
         "zip": "06370",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -800,10 +641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pégomas",
         "slug": "pegomas",
         "zip": "06580",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -815,10 +653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Peymeinade",
         "slug": "peymeinade",
         "zip": "06530",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -830,10 +665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roquefort-les-Pins",
         "slug": "roquefort-les-pins",
         "zip": "06330",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -845,10 +677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Roquette-sur-Siagne",
         "slug": "la-roquette-sur-siagne",
         "zip": "06550",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -860,10 +689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-de-la-Roche",
         "slug": "saint-andre-de-la-roche",
         "zip": "06730",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -875,10 +701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Trinité",
         "slug": "la-trinite",
         "zip": "06340",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -890,10 +713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valbonne",
         "slug": "valbonne",
         "zip": "06560",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -905,10 +725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villefranche-sur-Mer",
         "slug": "villefranche-sur-mer",
         "zip": "06230",
-        "department": {
-            "code": "06",
-            "nom": "Alpes-Maritimes"
-        },
+        "department": "06",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -920,10 +737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Annonay",
         "slug": "annonay",
         "zip": "07100",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -935,10 +749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubenas",
         "slug": "aubenas",
         "zip": "07200",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -950,10 +761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-Saint-Andéol",
         "slug": "bourg-saint-andeol",
         "zip": "07700",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -965,10 +773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guilherand-Granges",
         "slug": "guilherand-granges",
         "zip": "07500",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -980,10 +785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Privas",
         "slug": "privas",
         "zip": "07000",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -995,10 +797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Péray",
         "slug": "saint-peray",
         "zip": "07130",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1010,10 +809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Teil",
         "slug": "le-teil",
         "zip": "07400",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1025,10 +821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tournon-sur-Rhône",
         "slug": "tournon-sur-rhone",
         "zip": "07300",
-        "department": {
-            "code": "07",
-            "nom": "Ardèche"
-        },
+        "department": "07",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1040,10 +833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Givet",
         "slug": "givet",
         "zip": "08600",
-        "department": {
-            "code": "08",
-            "nom": "Ardennes"
-        },
+        "department": "08",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1055,10 +845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nouzonville",
         "slug": "nouzonville",
         "zip": "08700",
-        "department": {
-            "code": "08",
-            "nom": "Ardennes"
-        },
+        "department": "08",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1070,10 +857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rethel",
         "slug": "rethel",
         "zip": "08300",
-        "department": {
-            "code": "08",
-            "nom": "Ardennes"
-        },
+        "department": "08",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1085,10 +869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Revin",
         "slug": "revin",
         "zip": "08500",
-        "department": {
-            "code": "08",
-            "nom": "Ardennes"
-        },
+        "department": "08",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1100,10 +881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sedan",
         "slug": "sedan",
         "zip": "08200",
-        "department": {
-            "code": "08",
-            "nom": "Ardennes"
-        },
+        "department": "08",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1115,10 +893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Foix",
         "slug": "foix",
         "zip": "09000",
-        "department": {
-            "code": "09",
-            "nom": "Ariège"
-        },
+        "department": "09",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1130,10 +905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lavelanet",
         "slug": "lavelanet",
         "zip": "09300",
-        "department": {
-            "code": "09",
-            "nom": "Ariège"
-        },
+        "department": "09",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1145,10 +917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pamiers",
         "slug": "pamiers",
         "zip": "09100",
-        "department": {
-            "code": "09",
-            "nom": "Ariège"
-        },
+        "department": "09",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1160,10 +929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Girons",
         "slug": "saint-girons",
         "zip": "09200",
-        "department": {
-            "code": "09",
-            "nom": "Ariège"
-        },
+        "department": "09",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1175,10 +941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Chapelle-Saint-Luc",
         "slug": "la-chapelle-saint-luc",
         "zip": "10600",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1190,10 +953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nogent-sur-Seine",
         "slug": "nogent-sur-seine",
         "zip": "10400",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1205,10 +965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-Sainte-Marie",
         "slug": "pont-sainte-marie",
         "zip": "10150",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1220,10 +977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Romilly-sur-Seine",
         "slug": "romilly-sur-seine",
         "zip": "10100",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1235,10 +989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-les-Vergers",
         "slug": "saint-andre-les-vergers",
         "zip": "10120",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1250,10 +1001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Julien-les-Villas",
         "slug": "saint-julien-les-villas",
         "zip": "10800",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1265,10 +1013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Savine",
         "slug": "sainte-savine",
         "zip": "10300",
-        "department": {
-            "code": "10",
-            "nom": "Aube"
-        },
+        "department": "10",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1280,10 +1025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coursan",
         "slug": "coursan",
         "zip": "11110",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1295,10 +1037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gruissan",
         "slug": "gruissan",
         "zip": "11430",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1310,10 +1049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lézignan-Corbières",
         "slug": "lezignan-corbieres",
         "zip": "11200",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1325,10 +1061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Limoux",
         "slug": "limoux",
         "zip": "11300",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1340,10 +1073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Port-la-Nouvelle",
         "slug": "port-la-nouvelle",
         "zip": "11210",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1355,10 +1085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sigean",
         "slug": "sigean",
         "zip": "11130",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1370,10 +1097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trèbes",
         "slug": "trebes",
         "zip": "11800",
-        "department": {
-            "code": "11",
-            "nom": "Aude"
-        },
+        "department": "11",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1385,10 +1109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Decazeville",
         "slug": "decazeville",
         "zip": "12300",
-        "department": {
-            "code": "12",
-            "nom": "Aveyron"
-        },
+        "department": "12",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1400,10 +1121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luc-la-Primaube",
         "slug": "luc-la-primaube",
         "zip": "12450",
-        "department": {
-            "code": "12",
-            "nom": "Aveyron"
-        },
+        "department": "12",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1415,10 +1133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Onet-le-Château",
         "slug": "onet-le-chateau",
         "zip": "12000",
-        "department": {
-            "code": "12",
-            "nom": "Aveyron"
-        },
+        "department": "12",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1430,10 +1145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Affrique",
         "slug": "saint-affrique",
         "zip": "12400",
-        "department": {
-            "code": "12",
-            "nom": "Aveyron"
-        },
+        "department": "12",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1445,10 +1157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villefranche-de-Rouergue",
         "slug": "villefranche-de-rouergue",
         "zip": "12200",
-        "department": {
-            "code": "12",
-            "nom": "Aveyron"
-        },
+        "department": "12",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1460,10 +1169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Allauch",
         "slug": "allauch",
         "zip": "13190",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1475,10 +1181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arles",
         "slug": "arles",
         "zip": "13104",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1490,10 +1193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubagne",
         "slug": "aubagne",
         "zip": "13400",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1505,10 +1205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auriol",
         "slug": "auriol",
         "zip": "13390",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1520,10 +1217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouc-Bel-Air",
         "slug": "bouc-bel-air",
         "zip": "13320",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1535,10 +1229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Bouilladisse",
         "slug": "la-bouilladisse",
         "zip": "13720",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1550,10 +1241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cabriès",
         "slug": "cabries",
         "zip": "13480",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1565,10 +1253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaurenard",
         "slug": "chateaurenard",
         "zip": "13160",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1580,10 +1265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cuges-les-Pins",
         "slug": "cuges-les-pins",
         "zip": "13780",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1595,10 +1277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Éguilles",
         "slug": "eguilles",
         "zip": "13510",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1610,10 +1289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eyguières",
         "slug": "eyguieres",
         "zip": "13430",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1625,10 +1301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fuveau",
         "slug": "fuveau",
         "zip": "13710",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1640,10 +1313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gardanne",
         "slug": "gardanne",
         "zip": "13120",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1655,10 +1325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gémenos",
         "slug": "gemenos",
         "zip": "13420",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1670,10 +1337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gignac-la-Nerthe",
         "slug": "gignac-la-nerthe",
         "zip": "13180",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1685,10 +1349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lambesc",
         "slug": "lambesc",
         "zip": "13410",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1700,10 +1361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mallemort",
         "slug": "mallemort",
         "zip": "13370",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1715,10 +1373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meyreuil",
         "slug": "meyreuil",
         "zip": "13590",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1730,10 +1385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noves",
         "slug": "noves",
         "zip": "13550",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1745,10 +1397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Penne-sur-Huveaune",
         "slug": "la-penne-sur-huveaune",
         "zip": "13821",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1760,10 +1409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Pennes-Mirabeau",
         "slug": "les-pennes-mirabeau",
         "zip": "13170",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1775,10 +1421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Peypin",
         "slug": "peypin",
         "zip": "13124",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1790,10 +1433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Peyrolles-en-Provence",
         "slug": "peyrolles-en-provence",
         "zip": "13860",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1805,10 +1445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plan-de-Cuques",
         "slug": "plan-de-cuques",
         "zip": "13380",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1820,10 +1457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Port-Saint-Louis-du-Rhône",
         "slug": "port-saint-louis-du-rhone",
         "zip": "13230",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1835,10 +1469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Puy-Sainte-Réparade",
         "slug": "le-puy-sainte-reparade",
         "zip": "13610",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1850,10 +1481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Roque-d'Anthéron",
         "slug": "la-roque-d-antheron",
         "zip": "13640",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1865,10 +1493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roquefort-la-Bédoule",
         "slug": "roquefort-la-bedoule",
         "zip": "13830",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1880,10 +1505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roquevaire",
         "slug": "roquevaire",
         "zip": "13360",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1895,10 +1517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rousset",
         "slug": "rousset",
         "zip": "13790",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1910,10 +1529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Rove",
         "slug": "le-rove",
         "zip": "13740",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1925,10 +1541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cannat",
         "slug": "saint-cannat",
         "zip": "13760",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1940,10 +1553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-de-Crau",
         "slug": "saint-martin-de-crau",
         "zip": "13310",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1955,10 +1565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Mitre-les-Remparts",
         "slug": "saint-mitre-les-remparts",
         "zip": "13920",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1970,10 +1577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Rémy-de-Provence",
         "slug": "saint-remy-de-provence",
         "zip": "13210",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -1985,10 +1589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Victoret",
         "slug": "saint-victoret",
         "zip": "13730",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2000,10 +1601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sénas",
         "slug": "senas",
         "zip": "13560",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2015,10 +1613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Septèmes-les-Vallons",
         "slug": "septemes-les-vallons",
         "zip": "13240",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2030,10 +1625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Simiane-Collongue",
         "slug": "simiane-collongue",
         "zip": "13109",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2045,10 +1637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tarascon",
         "slug": "tarascon",
         "zip": "13150",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2060,10 +1649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trets",
         "slug": "trets",
         "zip": "13530",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2075,10 +1661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Venelles",
         "slug": "venelles",
         "zip": "13770",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2090,10 +1673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ventabren",
         "slug": "ventabren",
         "zip": "13122",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2105,10 +1685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carnoux-en-Provence",
         "slug": "carnoux-en-provence",
         "zip": "13470",
-        "department": {
-            "code": "13",
-            "nom": "Bouches-du-Rhône"
-        },
+        "department": "13",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2120,10 +1697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bayeux",
         "slug": "bayeux",
         "zip": "14400",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2135,10 +1709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Souleuvre en Bocage",
         "slug": "souleuvre-en-bocage",
         "zip": "14260",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2150,10 +1721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blainville-sur-Orne",
         "slug": "blainville-sur-orne",
         "zip": "14550",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2165,10 +1733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thue et Mue",
         "slug": "thue-et-mue",
         "zip": "14210",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2180,10 +1745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Colombelles",
         "slug": "colombelles",
         "zip": "14460",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2195,10 +1757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Condé-en-Normandie",
         "slug": "conde-en-normandie",
         "zip": "14110",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2210,10 +1769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cormelles-le-Royal",
         "slug": "cormelles-le-royal",
         "zip": "14123",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2225,10 +1781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dives-sur-Mer",
         "slug": "dives-sur-mer",
         "zip": "14160",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2240,10 +1793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Douvres-la-Délivrande",
         "slug": "douvres-la-delivrande",
         "zip": "14440",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2255,10 +1805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Falaise",
         "slug": "falaise",
         "zip": "14700",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2270,10 +1817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fleury-sur-Orne",
         "slug": "fleury-sur-orne",
         "zip": "14123",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2285,10 +1829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Giberville",
         "slug": "giberville",
         "zip": "14730",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2300,10 +1841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hérouville-Saint-Clair",
         "slug": "herouville-saint-clair",
         "zip": "14200",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2315,10 +1853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ifs",
         "slug": "ifs",
         "zip": "14123",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2330,10 +1865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lisieux",
         "slug": "lisieux",
         "zip": "14100",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2345,10 +1877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Livarot-Pays-d'Auge",
         "slug": "livarot-pays-d-auge",
         "zip": "14140",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2360,10 +1889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mézidon Vallée d'Auge",
         "slug": "mezidon-vallee-d-auge",
         "zip": "14140",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2375,10 +1901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mondeville",
         "slug": "mondeville",
         "zip": "14120",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2390,10 +1913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ouistreham",
         "slug": "ouistreham",
         "zip": "14150",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2405,10 +1925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-l'Évêque",
         "slug": "pont-l-eveque",
         "zip": "14130",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2420,10 +1937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-en-Auge",
         "slug": "saint-pierre-en-auge",
         "zip": "14140",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2435,10 +1949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valdallière",
         "slug": "valdalliere",
         "zip": "14350",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2450,10 +1961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vire Normandie",
         "slug": "vire-normandie",
         "zip": "14500",
-        "department": {
-            "code": "14",
-            "nom": "Calvados"
-        },
+        "department": "14",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2465,10 +1973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arpajon-sur-Cère",
         "slug": "arpajon-sur-cere",
         "zip": "15130",
-        "department": {
-            "code": "15",
-            "nom": "Cantal"
-        },
+        "department": "15",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2480,10 +1985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aurillac",
         "slug": "aurillac",
         "zip": "15000",
-        "department": {
-            "code": "15",
-            "nom": "Cantal"
-        },
+        "department": "15",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2495,10 +1997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Flour",
         "slug": "saint-flour",
         "zip": "15100",
-        "department": {
-            "code": "15",
-            "nom": "Cantal"
-        },
+        "department": "15",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2510,10 +2009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Angoulême",
         "slug": "angouleme",
         "zip": "16000",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2525,10 +2021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champniers",
         "slug": "champniers",
         "zip": "16430",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2540,10 +2033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cognac",
         "slug": "cognac",
         "zip": "16100",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2555,10 +2045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Couronne",
         "slug": "la-couronne",
         "zip": "16400",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2570,10 +2057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gond-Pontouvre",
         "slug": "gond-pontouvre",
         "zip": "16160",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2585,10 +2069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Isle-d'Espagnac",
         "slug": "l-isle-d-espagnac",
         "zip": "16340",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2600,10 +2081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ruelle-sur-Touvre",
         "slug": "ruelle-sur-touvre",
         "zip": "16600",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2615,10 +2093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Yrieix-sur-Charente",
         "slug": "saint-yrieix-sur-charente",
         "zip": "16710",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2630,10 +2105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soyaux",
         "slug": "soyaux",
         "zip": "16800",
-        "department": {
-            "code": "16",
-            "nom": "Charente"
-        },
+        "department": "16",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2645,10 +2117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aytré",
         "slug": "aytre",
         "zip": "17440",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2660,10 +2129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtelaillon-Plage",
         "slug": "chatelaillon-plage",
         "zip": "17340",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2675,10 +2141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dompierre-sur-Mer",
         "slug": "dompierre-sur-mer",
         "zip": "17139",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2690,10 +2153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lagord",
         "slug": "lagord",
         "zip": "17140",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2705,10 +2165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marennes-Hiers-Brouage",
         "slug": "marennes-hiers-brouage",
         "zip": "17320",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2720,10 +2177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nieul-sur-Mer",
         "slug": "nieul-sur-mer",
         "zip": "17137",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2735,10 +2189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Périgny",
         "slug": "perigny",
         "zip": "17180",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2750,10 +2201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Puilboreau",
         "slug": "puilboreau",
         "zip": "17138",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2765,10 +2213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Georges-de-Didonne",
         "slug": "saint-georges-de-didonne",
         "zip": "17110",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2780,10 +2225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-d'Angély",
         "slug": "saint-jean-d-angely",
         "zip": "17400",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2795,10 +2237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-d'Oléron",
         "slug": "saint-pierre-d-oleron",
         "zip": "17310",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2810,10 +2249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Soulle",
         "slug": "sainte-soulle",
         "zip": "17220",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2825,10 +2261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Xandre",
         "slug": "saint-xandre",
         "zip": "17138",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2840,10 +2273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saujon",
         "slug": "saujon",
         "zip": "17600",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2855,10 +2285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Surgères",
         "slug": "surgeres",
         "zip": "17700",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2870,10 +2297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tonnay-Charente",
         "slug": "tonnay-charente",
         "zip": "17430",
-        "department": {
-            "code": "17",
-            "nom": "Charente-Maritime"
-        },
+        "department": "17",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2885,10 +2309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubigny-sur-Nère",
         "slug": "aubigny-sur-nere",
         "zip": "18700",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2900,10 +2321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourges",
         "slug": "bourges",
         "zip": "18000",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2915,10 +2333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mehun-sur-Yèvre",
         "slug": "mehun-sur-yevre",
         "zip": "18500",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2930,10 +2345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Amand-Montrond",
         "slug": "saint-amand-montrond",
         "zip": "18200",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2945,10 +2357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Doulchard",
         "slug": "saint-doulchard",
         "zip": "18230",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2960,10 +2369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Florent-sur-Cher",
         "slug": "saint-florent-sur-cher",
         "zip": "18400",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2975,10 +2381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vierzon",
         "slug": "vierzon",
         "zip": "18100",
-        "department": {
-            "code": "18",
-            "nom": "Cher"
-        },
+        "department": "18",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -2990,10 +2393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Malemort",
         "slug": "malemort",
         "zip": "19360",
-        "department": {
-            "code": "19",
-            "nom": "Corrèze"
-        },
+        "department": "19",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3005,10 +2405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pantaléon-de-Larche",
         "slug": "saint-pantaleon-de-larche",
         "zip": "19600",
-        "department": {
-            "code": "19",
-            "nom": "Corrèze"
-        },
+        "department": "19",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3020,10 +2417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tulle",
         "slug": "tulle",
         "zip": "19000",
-        "department": {
-            "code": "19",
-            "nom": "Corrèze"
-        },
+        "department": "19",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3035,10 +2429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ussel",
         "slug": "ussel",
         "zip": "19200",
-        "department": {
-            "code": "19",
-            "nom": "Corrèze"
-        },
+        "department": "19",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3050,10 +2441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auxonne",
         "slug": "auxonne",
         "zip": "21130",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3065,10 +2453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaune",
         "slug": "beaune",
         "zip": "21200",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3080,10 +2465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtillon-sur-Seine",
         "slug": "chatillon-sur-seine",
         "zip": "21400",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3095,10 +2477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chenôve",
         "slug": "chenove",
         "zip": "21300",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3110,10 +2489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chevigny-Saint-Sauveur",
         "slug": "chevigny-saint-sauveur",
         "zip": "21800",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3125,10 +2501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontaine-lès-Dijon",
         "slug": "fontaine-les-dijon",
         "zip": "21121",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3140,10 +2513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Genlis",
         "slug": "genlis",
         "zip": "21110",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3155,10 +2525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longvic",
         "slug": "longvic",
         "zip": "21600",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3170,10 +2537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marsannay-la-Côte",
         "slug": "marsannay-la-cote",
         "zip": "21160",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3185,10 +2549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nuits-Saint-Georges",
         "slug": "nuits-saint-georges",
         "zip": "21700",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3200,10 +2561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quetigny",
         "slug": "quetigny",
         "zip": "21800",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3215,10 +2573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Apollinaire",
         "slug": "saint-apollinaire",
         "zip": "21850",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3230,10 +2585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Talant",
         "slug": "talant",
         "zip": "21240",
-        "department": {
-            "code": "21",
-            "nom": "Côte-d'Or"
-        },
+        "department": "21",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3245,10 +2597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mené",
         "slug": "le-mene",
         "zip": "22330",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3260,10 +2609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dinan",
         "slug": "dinan",
         "zip": "22100",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3275,10 +2621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Binic-Étables-sur-Mer",
         "slug": "binic-etables-sur-mer",
         "zip": "22520",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3290,10 +2633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guingamp",
         "slug": "guingamp",
         "zip": "22200",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3305,10 +2645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lamballe-Armor",
         "slug": "lamballe-armor",
         "zip": "22400",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3320,10 +2657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Langueux",
         "slug": "langueux",
         "zip": "22360",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3335,10 +2669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loudéac",
         "slug": "loudeac",
         "zip": "22600",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3350,10 +2681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Paimpol",
         "slug": "paimpol",
         "zip": "22500",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3365,10 +2693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Perros-Guirec",
         "slug": "perros-guirec",
         "zip": "22700",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3380,10 +2705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plédran",
         "slug": "pledran",
         "zip": "22960",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3395,10 +2717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plérin",
         "slug": "plerin",
         "zip": "22190",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3410,10 +2729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ploufragan",
         "slug": "ploufragan",
         "zip": "22440",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3425,10 +2741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ploumagoar",
         "slug": "ploumagoar",
         "zip": "22970",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3440,10 +2753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pordic",
         "slug": "pordic",
         "zip": "22590",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3455,10 +2765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trégueux",
         "slug": "tregueux",
         "zip": "22950",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3470,10 +2777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yffiniac",
         "slug": "yffiniac",
         "zip": "22120",
-        "department": {
-            "code": "22",
-            "nom": "Côtes-d'Armor"
-        },
+        "department": "22",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3485,10 +2789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guéret",
         "slug": "gueret",
         "zip": "23000",
-        "department": {
-            "code": "23",
-            "nom": "Creuse"
-        },
+        "department": "23",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3500,10 +2801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boulazac Isle Manoire",
         "slug": "boulazac-isle-manoire",
         "zip": "24330",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3515,10 +2813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coulounieix-Chamiers",
         "slug": "coulounieix-chamiers",
         "zip": "24660",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3530,10 +2825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montpon-Ménestérol",
         "slug": "montpon-menesterol",
         "zip": "24700",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3545,10 +2837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Astier",
         "slug": "saint-astier",
         "zip": "24110",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3560,10 +2849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Terrasson-Lavilledieu",
         "slug": "terrasson-lavilledieu",
         "zip": "24120",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3575,10 +2861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trélissac",
         "slug": "trelissac",
         "zip": "24750",
-        "department": {
-            "code": "24",
-            "nom": "Dordogne"
-        },
+        "department": "24",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3590,10 +2873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Audincourt",
         "slug": "audincourt",
         "zip": "25400",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3605,10 +2885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baume-les-Dames",
         "slug": "baume-les-dames",
         "zip": "25110",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3620,10 +2897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bethoncourt",
         "slug": "bethoncourt",
         "zip": "25200",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3635,10 +2909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grand-Charmont",
         "slug": "grand-charmont",
         "zip": "25200",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3650,10 +2921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villers-le-Lac",
         "slug": "villers-le-lac",
         "zip": "25130",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3665,10 +2933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morteau",
         "slug": "morteau",
         "zip": "25500",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3680,10 +2945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pontarlier",
         "slug": "pontarlier",
         "zip": "25300",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3695,10 +2957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Vit",
         "slug": "saint-vit",
         "zip": "25410",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3710,10 +2969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seloncourt",
         "slug": "seloncourt",
         "zip": "25230",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3725,10 +2981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valdahon",
         "slug": "valdahon",
         "zip": "25800",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3740,10 +2993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valentigney",
         "slug": "valentigney",
         "zip": "25700",
-        "department": {
-            "code": "25",
-            "nom": "Doubs"
-        },
+        "department": "25",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3755,10 +3005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-de-Péage",
         "slug": "bourg-de-peage",
         "zip": "26300",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3770,10 +3017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-lès-Valence",
         "slug": "bourg-les-valence",
         "zip": "26500",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3785,10 +3029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chabeuil",
         "slug": "chabeuil",
         "zip": "26120",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3800,10 +3041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chatuzange-le-Goubet",
         "slug": "chatuzange-le-goubet",
         "zip": "26300",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3815,10 +3053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crest",
         "slug": "crest",
         "zip": "26400",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3830,10 +3065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Donzère",
         "slug": "donzere",
         "zip": "26290",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3845,10 +3077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Étoile-sur-Rhône",
         "slug": "etoile-sur-rhone",
         "zip": "26800",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3860,10 +3089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Livron-sur-Drôme",
         "slug": "livron-sur-drome",
         "zip": "26250",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3875,10 +3101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loriol-sur-Drôme",
         "slug": "loriol-sur-drome",
         "zip": "26270",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3890,10 +3113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nyons",
         "slug": "nyons",
         "zip": "26110",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3905,10 +3125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pierrelatte",
         "slug": "pierrelatte",
         "zip": "26700",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3920,10 +3137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Portes-lès-Valence",
         "slug": "portes-les-valence",
         "zip": "26800",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3935,10 +3149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Marcel-lès-Valence",
         "slug": "saint-marcel-les-valence",
         "zip": "26320",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3950,10 +3161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Paul-Trois-Châteaux",
         "slug": "saint-paul-trois-chateaux",
         "zip": "26130",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3965,10 +3173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Rambert-d'Albon",
         "slug": "saint-rambert-d-albon",
         "zip": "26140",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3980,10 +3185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tain-l'Hermitage",
         "slug": "tain-l-hermitage",
         "zip": "26600",
-        "department": {
-            "code": "26",
-            "nom": "Drôme"
-        },
+        "department": "26",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -3995,10 +3197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Andelys",
         "slug": "les-andelys",
         "zip": "27700",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4010,10 +3209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Val d'Hazey",
         "slug": "le-val-d-hazey",
         "zip": "27600",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4025,10 +3221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bernay",
         "slug": "bernay",
         "zip": "27300",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4040,10 +3233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mesnils-sur-Iton",
         "slug": "mesnils-sur-iton",
         "zip": "27160",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4055,10 +3245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vexin-sur-Epte",
         "slug": "vexin-sur-epte",
         "zip": "27420",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4070,10 +3257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Évreux",
         "slug": "evreux",
         "zip": "27000",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4085,10 +3269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gaillon",
         "slug": "gaillon",
         "zip": "27600",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4100,10 +3281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gisors",
         "slug": "gisors",
         "zip": "27140",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4115,10 +3293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Louviers",
         "slug": "louviers",
         "zip": "27400",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4130,10 +3305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pacy-sur-Eure",
         "slug": "pacy-sur-eure",
         "zip": "27120",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4145,10 +3317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-Audemer",
         "slug": "pont-audemer",
         "zip": "27500",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4160,10 +3329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Sébastien-de-Morsent",
         "slug": "saint-sebastien-de-morsent",
         "zip": "27180",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4175,10 +3341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Verneuil d'Avre et d'Iton",
         "slug": "verneuil-d-avre-et-d-iton",
         "zip": "27130",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4190,10 +3353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vernon",
         "slug": "vernon",
         "zip": "27200",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4205,10 +3365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Val-de-Reuil",
         "slug": "val-de-reuil",
         "zip": "27100",
-        "department": {
-            "code": "27",
-            "nom": "Eure"
-        },
+        "department": "27",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4220,10 +3377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auneau-Bleury-Saint-Symphorien",
         "slug": "auneau-bleury-saint-symphorien",
         "zip": "28700",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4235,10 +3389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chartres",
         "slug": "chartres",
         "zip": "28000",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4250,10 +3401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaudun",
         "slug": "chateaudun",
         "zip": "28200",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4265,10 +3413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cloyes-les-Trois-Rivières",
         "slug": "cloyes-les-trois-rivieres",
         "zip": "28220",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4280,10 +3425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dreux",
         "slug": "dreux",
         "zip": "28100",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4295,10 +3437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épernon",
         "slug": "epernon",
         "zip": "28230",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4310,10 +3449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lèves",
         "slug": "leves",
         "zip": "28300",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4325,10 +3461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lucé",
         "slug": "luce",
         "zip": "28110",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4340,10 +3473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luisant",
         "slug": "luisant",
         "zip": "28600",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4355,10 +3485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mainvilliers",
         "slug": "mainvilliers",
         "zip": "28300",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4370,10 +3497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nogent-le-Rotrou",
         "slug": "nogent-le-rotrou",
         "zip": "28400",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4385,10 +3509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vernouillet",
         "slug": "vernouillet",
         "zip": "28500",
-        "department": {
-            "code": "28",
-            "nom": "Eure-et-Loir"
-        },
+        "department": "28",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4400,10 +3521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bannalec",
         "slug": "bannalec",
         "zip": "29380",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4415,10 +3533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Briec",
         "slug": "briec",
         "zip": "29510",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4430,10 +3545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carhaix-Plouguer",
         "slug": "carhaix-plouguer",
         "zip": "29270",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4445,10 +3557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaulin",
         "slug": "chateaulin",
         "zip": "29150",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4460,10 +3569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crozon",
         "slug": "crozon",
         "zip": "29160",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4475,10 +3581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Douarnenez",
         "slug": "douarnenez",
         "zip": "29100",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4490,10 +3593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ergué-Gabéric",
         "slug": "ergue-gaberic",
         "zip": "29500",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4505,10 +3605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fouesnant",
         "slug": "fouesnant",
         "zip": "29170",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4520,10 +3617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gouesnou",
         "slug": "gouesnou",
         "zip": "29850",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4535,10 +3629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guilers",
         "slug": "guilers",
         "zip": "29820",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4550,10 +3641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guipavas",
         "slug": "guipavas",
         "zip": "29490",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4565,10 +3653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Landerneau",
         "slug": "landerneau",
         "zip": "29800",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4580,10 +3665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Landivisiau",
         "slug": "landivisiau",
         "zip": "29400",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4595,10 +3677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lannilis",
         "slug": "lannilis",
         "zip": "29870",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4610,10 +3689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lesneven",
         "slug": "lesneven",
         "zip": "29260",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4625,10 +3701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Locmaria-Plouzané",
         "slug": "locmaria-plouzane",
         "zip": "29280",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4640,10 +3713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moëlan-sur-Mer",
         "slug": "moelan-sur-mer",
         "zip": "29350",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4655,10 +3725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morlaix",
         "slug": "morlaix",
         "zip": "29600",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4670,10 +3737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Penmarch",
         "slug": "penmarch",
         "zip": "29760",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4685,10 +3749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plabennec",
         "slug": "plabennec",
         "zip": "29860",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4700,10 +3761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plonéour-Lanvern",
         "slug": "ploneour-lanvern",
         "zip": "29720",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4715,10 +3773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ploudalmézeau",
         "slug": "ploudalmezeau",
         "zip": "29830",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4730,10 +3785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plougastel-Daoulas",
         "slug": "plougastel-daoulas",
         "zip": "29470",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4745,10 +3797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plouguerneau",
         "slug": "plouguerneau",
         "zip": "29880",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4760,10 +3809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plouigneau",
         "slug": "plouigneau",
         "zip": "29610",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4775,10 +3821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plouzané",
         "slug": "plouzane",
         "zip": "29280",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4790,10 +3833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-l'Abbé",
         "slug": "pont-l-abbe",
         "zip": "29120",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4805,10 +3845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quimperlé",
         "slug": "quimperle",
         "zip": "29300",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4820,10 +3857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Relecq-Kerhuon",
         "slug": "le-relecq-kerhuon",
         "zip": "29480",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4835,10 +3869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rosporden",
         "slug": "rosporden",
         "zip": "29140",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4850,10 +3881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pol-de-Léon",
         "slug": "saint-pol-de-leon",
         "zip": "29250",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4865,10 +3893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Renan",
         "slug": "saint-renan",
         "zip": "29290",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4880,10 +3905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Scaër",
         "slug": "scaer",
         "zip": "29390",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4895,10 +3917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trégunc",
         "slug": "tregunc",
         "zip": "29910",
-        "department": {
-            "code": "29",
-            "nom": "Finistère"
-        },
+        "department": "29",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4910,10 +3929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Porto-Vecchio",
         "slug": "porto-vecchio",
         "zip": "20137",
-        "department": {
-            "code": "2A",
-            "nom": "Corse-du-Sud"
-        },
+        "department": "2A",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4925,10 +3941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Biguglia",
         "slug": "biguglia",
         "zip": "20620",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4940,10 +3953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Borgo",
         "slug": "borgo",
         "zip": "20290",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4955,10 +3965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Calvi",
         "slug": "calvi",
         "zip": "20260",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4970,10 +3977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Corte",
         "slug": "corte",
         "zip": "20250",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -4985,10 +3989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Furiani",
         "slug": "furiani",
         "zip": "20600",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5000,10 +4001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lucciana",
         "slug": "lucciana",
         "zip": "20290",
-        "department": {
-            "code": "2B",
-            "nom": "Haute-Corse"
-        },
+        "department": "2B",
         "region": "Corse",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5015,10 +4013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aigues-Mortes",
         "slug": "aigues-mortes",
         "zip": "30220",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5030,10 +4025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aimargues",
         "slug": "aimargues",
         "zip": "30470",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5045,10 +4037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beauvoisin",
         "slug": "beauvoisin",
         "zip": "30640",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5060,10 +4049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bellegarde",
         "slug": "bellegarde",
         "zip": "30127",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5075,10 +4061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouillargues",
         "slug": "bouillargues",
         "zip": "30230",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5090,10 +4073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Calvisson",
         "slug": "calvisson",
         "zip": "30420",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5105,10 +4085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Garons",
         "slug": "garons",
         "zip": "30128",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5120,10 +4097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Grau-du-Roi",
         "slug": "le-grau-du-roi",
         "zip": "30240",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5135,10 +4109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laudun-l'Ardoise",
         "slug": "laudun-l-ardoise",
         "zip": "30290",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5150,10 +4121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Manduel",
         "slug": "manduel",
         "zip": "30129",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5165,10 +4133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marguerittes",
         "slug": "marguerittes",
         "zip": "30320",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5180,10 +4145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Milhaud",
         "slug": "milhaud",
         "zip": "30540",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5195,10 +4157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rochefort-du-Gard",
         "slug": "rochefort-du-gard",
         "zip": "30650",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5210,10 +4169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Christol-lez-Alès",
         "slug": "saint-christol-lez-ales",
         "zip": "30380",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5225,10 +4181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Privat-des-Vieux",
         "slug": "saint-privat-des-vieux",
         "zip": "30340",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5240,10 +4193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vergèze",
         "slug": "vergeze",
         "zip": "30310",
-        "department": {
-            "code": "30",
-            "nom": "Gard"
-        },
+        "department": "30",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5255,10 +4205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aucamville",
         "slug": "aucamville",
         "zip": "31140",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5270,10 +4217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aussonne",
         "slug": "aussonne",
         "zip": "31840",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5285,10 +4229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auterive",
         "slug": "auterive",
         "zip": "31190",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5300,10 +4241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Balma",
         "slug": "balma",
         "zip": "31130",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5315,10 +4253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beauzelle",
         "slug": "beauzelle",
         "zip": "31700",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5330,10 +4265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blagnac",
         "slug": "blagnac",
         "zip": "31700",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5345,10 +4277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bruguières",
         "slug": "bruguieres",
         "zip": "31150",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5360,10 +4289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carbonne",
         "slug": "carbonne",
         "zip": "31390",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5375,10 +4301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Castanet-Tolosan",
         "slug": "castanet-tolosan",
         "zip": "31320",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5390,10 +4313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Castelginest",
         "slug": "castelginest",
         "zip": "31780",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5405,10 +4325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Castelnau-d'Estrétefonds",
         "slug": "castelnau-d-estretefonds",
         "zip": "31620",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5420,10 +4337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Colomiers",
         "slug": "colomiers",
         "zip": "31770",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5435,10 +4349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cornebarrieu",
         "slug": "cornebarrieu",
         "zip": "31700",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5450,10 +4361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cugnaux",
         "slug": "cugnaux",
         "zip": "31270",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5465,10 +4373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eaunes",
         "slug": "eaunes",
         "zip": "31600",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5480,10 +4385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Escalquens",
         "slug": "escalquens",
         "zip": "31750",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5495,10 +4397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fenouillet",
         "slug": "fenouillet",
         "zip": "31150",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5510,10 +4409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fonsorbes",
         "slug": "fonsorbes",
         "zip": "31470",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5525,10 +4421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenilles",
         "slug": "fontenilles",
         "zip": "31470",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5540,10 +4433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fronton",
         "slug": "fronton",
         "zip": "31620",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5555,10 +4445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Frouzins",
         "slug": "frouzins",
         "zip": "31270",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5570,10 +4457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grenade",
         "slug": "grenade",
         "zip": "31330",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5585,10 +4469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Labarthe-sur-Lèze",
         "slug": "labarthe-sur-leze",
         "zip": "31860",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5600,10 +4481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Launaguet",
         "slug": "launaguet",
         "zip": "31140",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5615,10 +4493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Léguevin",
         "slug": "leguevin",
         "zip": "31490",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5630,10 +4505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Merville",
         "slug": "merville",
         "zip": "31330",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5645,10 +4517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mondonville",
         "slug": "mondonville",
         "zip": "31700",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5660,10 +4529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Muret",
         "slug": "muret",
         "zip": "31600",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5675,10 +4541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pibrac",
         "slug": "pibrac",
         "zip": "31820",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5690,10 +4553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plaisance-du-Touch",
         "slug": "plaisance-du-touch",
         "zip": "31830",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5705,10 +4565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Portet-sur-Garonne",
         "slug": "portet-sur-garonne",
         "zip": "31120",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5720,10 +4577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quint-Fonsegrives",
         "slug": "quint-fonsegrives",
         "zip": "31130",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5735,10 +4589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ramonville-Saint-Agne",
         "slug": "ramonville-saint-agne",
         "zip": "31520",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5750,10 +4601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Revel",
         "slug": "revel",
         "zip": "31250",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5765,10 +4613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roques",
         "slug": "roques",
         "zip": "31120",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5780,10 +4625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Alban",
         "slug": "saint-alban",
         "zip": "31140",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5795,10 +4637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Gaudens",
         "slug": "saint-gaudens",
         "zip": "31800",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5810,10 +4649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean",
         "slug": "saint-jean",
         "zip": "31240",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5825,10 +4661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jory",
         "slug": "saint-jory",
         "zip": "31790",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5840,10 +4673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Lys",
         "slug": "saint-lys",
         "zip": "31470",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5855,10 +4685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Orens-de-Gameville",
         "slug": "saint-orens-de-gameville",
         "zip": "31650",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5870,10 +4697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Salvetat-Saint-Gilles",
         "slug": "la-salvetat-saint-gilles",
         "zip": "31880",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5885,10 +4709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seysses",
         "slug": "seysses",
         "zip": "31600",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5900,10 +4721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tournefeuille",
         "slug": "tournefeuille",
         "zip": "31170",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5915,10 +4733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Union",
         "slug": "l-union",
         "zip": "31240",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5930,10 +4745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villefranche-de-Lauragais",
         "slug": "villefranche-de-lauragais",
         "zip": "31290",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5945,10 +4757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villemur-sur-Tarn",
         "slug": "villemur-sur-tarn",
         "zip": "31340",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5960,10 +4769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-Tolosane",
         "slug": "villeneuve-tolosane",
         "zip": "31270",
-        "department": {
-            "code": "31",
-            "nom": "Haute-Garonne"
-        },
+        "department": "31",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5975,10 +4781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Condom",
         "slug": "condom",
         "zip": "32100",
-        "department": {
-            "code": "32",
-            "nom": "Gers"
-        },
+        "department": "32",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -5990,10 +4793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fleurance",
         "slug": "fleurance",
         "zip": "32500",
-        "department": {
-            "code": "32",
-            "nom": "Gers"
-        },
+        "department": "32",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6005,10 +4805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Isle-Jourdain",
         "slug": "l-isle-jourdain",
         "zip": "32600",
-        "department": {
-            "code": "32",
-            "nom": "Gers"
-        },
+        "department": "32",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6020,10 +4817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ambarès-et-Lagrave",
         "slug": "ambares-et-lagrave",
         "zip": "33440",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6035,10 +4829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Andernos-les-Bains",
         "slug": "andernos-les-bains",
         "zip": "33510",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6050,10 +4841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arès",
         "slug": "ares",
         "zip": "33740",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6065,10 +4853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Artigues-près-Bordeaux",
         "slug": "artigues-pres-bordeaux",
         "zip": "33370",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6080,10 +4865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Audenge",
         "slug": "audenge",
         "zip": "33980",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6095,10 +4877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Barp",
         "slug": "le-barp",
         "zip": "33114",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6110,10 +4889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bassens",
         "slug": "bassens",
         "zip": "33530",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6125,10 +4901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Belin-Béliet",
         "slug": "belin-beliet",
         "zip": "33830",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6140,10 +4913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Biganos",
         "slug": "biganos",
         "zip": "33380",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6155,10 +4925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blanquefort",
         "slug": "blanquefort",
         "zip": "33290",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6170,10 +4937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blaye",
         "slug": "blaye",
         "zip": "33390",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6185,10 +4949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Bouscat",
         "slug": "le-bouscat",
         "zip": "33110",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6200,10 +4961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cadaujac",
         "slug": "cadaujac",
         "zip": "33140",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6215,10 +4973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Canéjan",
         "slug": "canejan",
         "zip": "33610",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6230,10 +4985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carbon-Blanc",
         "slug": "carbon-blanc",
         "zip": "33560",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6245,10 +4997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cenon",
         "slug": "cenon",
         "zip": "33150",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6260,10 +5009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cestas",
         "slug": "cestas",
         "zip": "33610",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6275,10 +5021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coutras",
         "slug": "coutras",
         "zip": "33230",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6290,10 +5033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eysines",
         "slug": "eysines",
         "zip": "33320",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6305,10 +5045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Floirac",
         "slug": "floirac",
         "zip": "33270",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6320,10 +5057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gradignan",
         "slug": "gradignan",
         "zip": "33170",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6335,10 +5069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gujan-Mestras",
         "slug": "gujan-mestras",
         "zip": "33470",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6350,10 +5081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Haillan",
         "slug": "le-haillan",
         "zip": "33185",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6365,10 +5093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Izon",
         "slug": "izon",
         "zip": "33450",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6380,10 +5105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lacanau",
         "slug": "lacanau",
         "zip": "33680",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6395,10 +5117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Langon",
         "slug": "langon",
         "zip": "33210",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6410,10 +5129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lanton",
         "slug": "lanton",
         "zip": "33138",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6425,10 +5141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Léognan",
         "slug": "leognan",
         "zip": "33850",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6440,10 +5153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lesparre-Médoc",
         "slug": "lesparre-medoc",
         "zip": "33340",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6455,10 +5165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Libourne",
         "slug": "libourne",
         "zip": "33500",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6470,10 +5177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lormont",
         "slug": "lormont",
         "zip": "33310",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6485,10 +5189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ludon-Médoc",
         "slug": "ludon-medoc",
         "zip": "33290",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6500,10 +5201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Martignas-sur-Jalle",
         "slug": "martignas-sur-jalle",
         "zip": "33127",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6515,10 +5213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mios",
         "slug": "mios",
         "zip": "33380",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6530,10 +5225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Parempuyre",
         "slug": "parempuyre",
         "zip": "33290",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6545,10 +5237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pauillac",
         "slug": "pauillac",
         "zip": "33250",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6560,10 +5249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pian-Médoc",
         "slug": "le-pian-medoc",
         "zip": "33290",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6575,10 +5261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-de-Cubzac",
         "slug": "saint-andre-de-cubzac",
         "zip": "33240",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6590,10 +5273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Aubin-de-Médoc",
         "slug": "saint-aubin-de-medoc",
         "zip": "33160",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6605,10 +5285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Denis-de-Pile",
         "slug": "saint-denis-de-pile",
         "zip": "33910",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6620,10 +5297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-d'Illac",
         "slug": "saint-jean-d-illac",
         "zip": "33127",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6635,10 +5309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Loubès",
         "slug": "saint-loubes",
         "zip": "33450",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6650,10 +5321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Salles",
         "slug": "salles",
         "zip": "33770",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6665,10 +5333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Taillan-Médoc",
         "slug": "le-taillan-medoc",
         "zip": "33320",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6680,10 +5345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Teich",
         "slug": "le-teich",
         "zip": "33470",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6695,10 +5357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tresses",
         "slug": "tresses",
         "zip": "33370",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6710,10 +5369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marcheprime",
         "slug": "marcheprime",
         "zip": "33380",
-        "department": {
-            "code": "33",
-            "nom": "Gironde"
-        },
+        "department": "33",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6725,10 +5381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baillargues",
         "slug": "baillargues",
         "zip": "34670",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6740,10 +5393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Balaruc-les-Bains",
         "slug": "balaruc-les-bains",
         "zip": "34540",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6755,10 +5405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bédarieux",
         "slug": "bedarieux",
         "zip": "34600",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6770,10 +5417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bessan",
         "slug": "bessan",
         "zip": "34550",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6785,10 +5429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Castries",
         "slug": "castries",
         "zip": "34160",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6800,10 +5441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cazouls-lès-Béziers",
         "slug": "cazouls-les-beziers",
         "zip": "34370",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6815,10 +5453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clapiers",
         "slug": "clapiers",
         "zip": "34830",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6830,10 +5465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clermont-l'Hérault",
         "slug": "clermont-l-herault",
         "zip": "34800",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6845,10 +5477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cournonterral",
         "slug": "cournonterral",
         "zip": "34660",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6860,10 +5489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Crès",
         "slug": "le-cres",
         "zip": "34920",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6875,10 +5501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fabrègues",
         "slug": "fabregues",
         "zip": "34690",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6890,10 +5513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Florensac",
         "slug": "florensac",
         "zip": "34510",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6905,10 +5525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gigean",
         "slug": "gigean",
         "zip": "34770",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6920,10 +5537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gignac",
         "slug": "gignac",
         "zip": "34150",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6935,10 +5549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grabels",
         "slug": "grabels",
         "zip": "34790",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6950,10 +5561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jacou",
         "slug": "jacou",
         "zip": "34830",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6965,10 +5573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Juvignac",
         "slug": "juvignac",
         "zip": "34990",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6980,10 +5585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lodève",
         "slug": "lodeve",
         "zip": "34700",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -6995,10 +5597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marseillan",
         "slug": "marseillan",
         "zip": "34340",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7010,10 +5609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marsillargues",
         "slug": "marsillargues",
         "zip": "34590",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7025,10 +5621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mèze",
         "slug": "meze",
         "zip": "34140",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7040,10 +5633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pérols",
         "slug": "perols",
         "zip": "34470",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7055,10 +5645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pézenas",
         "slug": "pezenas",
         "zip": "34120",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7070,10 +5657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pignan",
         "slug": "pignan",
         "zip": "34570",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7085,10 +5669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Poussan",
         "slug": "poussan",
         "zip": "34560",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7100,10 +5681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Prades-le-Lez",
         "slug": "prades-le-lez",
         "zip": "34730",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7115,10 +5693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-de-Sangonis",
         "slug": "saint-andre-de-sangonis",
         "zip": "34725",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7130,10 +5705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Clément-de-Rivière",
         "slug": "saint-clement-de-riviere",
         "zip": "34980",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7145,10 +5717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Gély-du-Fesc",
         "slug": "saint-gely-du-fesc",
         "zip": "34980",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7160,10 +5729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Georges-d'Orques",
         "slug": "saint-georges-d-orques",
         "zip": "34680",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7175,10 +5741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-Védas",
         "slug": "saint-jean-de-vedas",
         "zip": "34430",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7190,10 +5753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sauvian",
         "slug": "sauvian",
         "zip": "34410",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7205,10 +5765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sérignan",
         "slug": "serignan",
         "zip": "34410",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7220,10 +5777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Servian",
         "slug": "servian",
         "zip": "34290",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7235,10 +5789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vendargues",
         "slug": "vendargues",
         "zip": "34740",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7250,10 +5801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vias",
         "slug": "vias",
         "zip": "34450",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7265,10 +5813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-lès-Maguelone",
         "slug": "villeneuve-les-maguelone",
         "zip": "34750",
-        "department": {
-            "code": "34",
-            "nom": "Hérault"
-        },
+        "department": "34",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7280,10 +5825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Acigné",
         "slug": "acigne",
         "zip": "35690",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7295,10 +5837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bain-de-Bretagne",
         "slug": "bain-de-bretagne",
         "zip": "35470",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7310,10 +5849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Betton",
         "slug": "betton",
         "zip": "35830",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7325,10 +5861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bréal-sous-Montfort",
         "slug": "breal-sous-montfort",
         "zip": "35310",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7340,10 +5873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bruz",
         "slug": "bruz",
         "zip": "35170",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7355,10 +5885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cancale",
         "slug": "cancale",
         "zip": "35260",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7370,10 +5897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cesson-Sévigné",
         "slug": "cesson-sevigne",
         "zip": "35510",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7385,10 +5909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chantepie",
         "slug": "chantepie",
         "zip": "35135",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7400,10 +5921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chartres-de-Bretagne",
         "slug": "chartres-de-bretagne",
         "zip": "35131",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7415,10 +5933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaubourg",
         "slug": "chateaubourg",
         "zip": "35220",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7430,10 +5945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaugiron",
         "slug": "chateaugiron",
         "zip": "35410",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7445,10 +5957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Combourg",
         "slug": "combourg",
         "zip": "35270",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7460,10 +5969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dol-de-Bretagne",
         "slug": "dol-de-bretagne",
         "zip": "35120",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7475,10 +5981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fougères",
         "slug": "fougeres",
         "zip": "35300",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7490,10 +5993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gévezé",
         "slug": "geveze",
         "zip": "35850",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7505,10 +6005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guichen",
         "slug": "guichen",
         "zip": "35580",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7520,10 +6017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Janzé",
         "slug": "janze",
         "zip": "35150",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7535,10 +6029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laillé",
         "slug": "laille",
         "zip": "35890",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7550,10 +6041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Liffré",
         "slug": "liffre",
         "zip": "35340",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7565,10 +6053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Melesse",
         "slug": "melesse",
         "zip": "35520",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7580,10 +6065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guipry-Messac",
         "slug": "guipry-messac",
         "zip": "35480",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7595,10 +6077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Mézière",
         "slug": "la-meziere",
         "zip": "35520",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7610,10 +6089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montauban-de-Bretagne",
         "slug": "montauban-de-bretagne",
         "zip": "35360",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7625,10 +6101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montfort-sur-Meu",
         "slug": "montfort-sur-meu",
         "zip": "35160",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7640,10 +6113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mordelles",
         "slug": "mordelles",
         "zip": "35310",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7655,10 +6125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyal-Châtillon-sur-Seiche",
         "slug": "noyal-chatillon-sur-seiche",
         "zip": "35230",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7670,10 +6137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyal-sur-Vilaine",
         "slug": "noyal-sur-vilaine",
         "zip": "35530",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7685,10 +6149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orgères",
         "slug": "orgeres",
         "zip": "35230",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7700,10 +6161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pacé",
         "slug": "pace",
         "zip": "35740",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7715,10 +6173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pleurtuit",
         "slug": "pleurtuit",
         "zip": "35730",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7730,10 +6185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Redon",
         "slug": "redon",
         "zip": "35600",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7745,10 +6197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Rheu",
         "slug": "le-rheu",
         "zip": "35650",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7760,10 +6209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maen Roch",
         "slug": "maen-roch",
         "zip": "35460",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7775,10 +6221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Grégoire",
         "slug": "saint-gregoire",
         "zip": "35760",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7790,10 +6233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jacques-de-la-Lande",
         "slug": "saint-jacques-de-la-lande",
         "zip": "35136",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7805,10 +6245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thorigné-Fouillard",
         "slug": "thorigne-fouillard",
         "zip": "35235",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7820,10 +6257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vern-sur-Seiche",
         "slug": "vern-sur-seiche",
         "zip": "35770",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7835,10 +6269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vezin-le-Coquet",
         "slug": "vezin-le-coquet",
         "zip": "35132",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7850,10 +6281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vitré",
         "slug": "vitre",
         "zip": "35500",
-        "department": {
-            "code": "35",
-            "nom": "Ille-et-Vilaine"
-        },
+        "department": "35",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7865,10 +6293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Blanc",
         "slug": "le-blanc",
         "zip": "36300",
-        "department": {
-            "code": "36",
-            "nom": "Indre"
-        },
+        "department": "36",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7880,10 +6305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteauroux",
         "slug": "chateauroux",
         "zip": "36000",
-        "department": {
-            "code": "36",
-            "nom": "Indre"
-        },
+        "department": "36",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7895,10 +6317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Déols",
         "slug": "deols",
         "zip": "36130",
-        "department": {
-            "code": "36",
-            "nom": "Indre"
-        },
+        "department": "36",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7910,10 +6329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Issoudun",
         "slug": "issoudun",
         "zip": "36100",
-        "department": {
-            "code": "36",
-            "nom": "Indre"
-        },
+        "department": "36",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7925,10 +6341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Poinçonnet",
         "slug": "le-poinconnet",
         "zip": "36330",
-        "department": {
-            "code": "36",
-            "nom": "Indre"
-        },
+        "department": "36",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7940,10 +6353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Amboise",
         "slug": "amboise",
         "zip": "37400",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7955,10 +6365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ballan-Miré",
         "slug": "ballan-mire",
         "zip": "37510",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7970,10 +6377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bléré",
         "slug": "blere",
         "zip": "37150",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -7985,10 +6389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chambray-lès-Tours",
         "slug": "chambray-les-tours",
         "zip": "37170",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8000,10 +6401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chinon",
         "slug": "chinon",
         "zip": "37500",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8015,10 +6413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Esvres",
         "slug": "esvres",
         "zip": "37320",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8030,10 +6425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fondettes",
         "slug": "fondettes",
         "zip": "37230",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8045,10 +6437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Joué-lès-Tours",
         "slug": "joue-les-tours",
         "zip": "37300",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8060,10 +6449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loches",
         "slug": "loches",
         "zip": "37600",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8075,10 +6461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luynes",
         "slug": "luynes",
         "zip": "37230",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8090,10 +6473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montlouis-sur-Loire",
         "slug": "montlouis-sur-loire",
         "zip": "37270",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8105,10 +6485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Monts",
         "slug": "monts",
         "zip": "37260",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8120,10 +6497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Riche",
         "slug": "la-riche",
         "zip": "37520",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8135,10 +6509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Avertin",
         "slug": "saint-avertin",
         "zip": "37550",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8150,10 +6521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cyr-sur-Loire",
         "slug": "saint-cyr-sur-loire",
         "zip": "37540",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8165,10 +6533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-des-Corps",
         "slug": "saint-pierre-des-corps",
         "zip": "37700",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8180,10 +6545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Veigné",
         "slug": "veigne",
         "zip": "37250",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8195,10 +6557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ville-aux-Dames",
         "slug": "la-ville-aux-dames",
         "zip": "37700",
-        "department": {
-            "code": "37",
-            "nom": "Indre-et-Loire"
-        },
+        "department": "37",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8210,10 +6569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Abrets en Dauphiné",
         "slug": "les-abrets-en-dauphine",
         "zip": "38490",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8225,10 +6581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Avenières Veyrins-Thuellin",
         "slug": "les-avenieres-veyrins-thuellin",
         "zip": "38630",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8240,10 +6593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaurepaire",
         "slug": "beaurepaire",
         "zip": "38270",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8255,10 +6605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourgoin-Jallieu",
         "slug": "bourgoin-jallieu",
         "zip": "38300",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8270,10 +6617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Charvieu-Chavagneux",
         "slug": "charvieu-chavagneux",
         "zip": "38230",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8285,10 +6629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chasse-sur-Rhône",
         "slug": "chasse-sur-rhone",
         "zip": "38670",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8300,10 +6641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chavanoz",
         "slug": "chavanoz",
         "zip": "38230",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8315,10 +6653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Claix",
         "slug": "claix",
         "zip": "38640",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8330,10 +6665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coublevie",
         "slug": "coublevie",
         "zip": "38500",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8345,10 +6677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crolles",
         "slug": "crolles",
         "zip": "38920",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8360,10 +6689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Domène",
         "slug": "domene",
         "zip": "38420",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8375,10 +6701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Échirolles",
         "slug": "echirolles",
         "zip": "38130",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8390,10 +6713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eybens",
         "slug": "eybens",
         "zip": "38320",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8405,10 +6725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontaine",
         "slug": "fontaine",
         "zip": "38600",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8420,10 +6737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gières",
         "slug": "gieres",
         "zip": "38610",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8435,10 +6749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Isle-d'Abeau",
         "slug": "l-isle-d-abeau",
         "zip": "38080",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8450,10 +6761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meylan",
         "slug": "meylan",
         "zip": "38240",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8465,10 +6773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moirans",
         "slug": "moirans",
         "zip": "38430",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8480,10 +6785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montbonnot-Saint-Martin",
         "slug": "montbonnot-saint-martin",
         "zip": "38330",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8495,10 +6797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Péage-de-Roussillon",
         "slug": "le-peage-de-roussillon",
         "zip": "38550",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8510,10 +6809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pontcharra",
         "slug": "pontcharra",
         "zip": "38530",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8525,10 +6821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-de-Chéruy",
         "slug": "pont-de-cheruy",
         "zip": "38230",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8540,10 +6833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pont-de-Claix",
         "slug": "le-pont-de-claix",
         "zip": "38800",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8555,10 +6845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-Évêque",
         "slug": "pont-eveque",
         "zip": "38780",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8570,10 +6857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rives",
         "slug": "rives",
         "zip": "38140",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8585,10 +6869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roussillon",
         "slug": "roussillon",
         "zip": "38150",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8600,10 +6881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Égrève",
         "slug": "saint-egreve",
         "zip": "38120",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8615,10 +6893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Ismier",
         "slug": "saint-ismier",
         "zip": "38330",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8630,10 +6905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Marcellin",
         "slug": "saint-marcellin",
         "zip": "38160",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8645,10 +6917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-d'Hères",
         "slug": "saint-martin-d-heres",
         "zip": "38400",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8660,10 +6929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-d'Uriage",
         "slug": "saint-martin-d-uriage",
         "zip": "38410",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8675,10 +6941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-le-Vinoux",
         "slug": "saint-martin-le-vinoux",
         "zip": "38950",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8690,10 +6953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Maurice-l'Exil",
         "slug": "saint-maurice-l-exil",
         "zip": "38550",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8705,10 +6965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Quentin-Fallavier",
         "slug": "saint-quentin-fallavier",
         "zip": "38070",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8720,10 +6977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sassenage",
         "slug": "sassenage",
         "zip": "38360",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8735,10 +6989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seyssinet-Pariset",
         "slug": "seyssinet-pariset",
         "zip": "38170",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8750,10 +7001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seyssins",
         "slug": "seyssins",
         "zip": "38180",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8765,10 +7013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tignieu-Jameyzieu",
         "slug": "tignieu-jameyzieu",
         "zip": "38230",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8780,10 +7025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Tour-du-Pin",
         "slug": "la-tour-du-pin",
         "zip": "38110",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8795,10 +7037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Tronche",
         "slug": "la-tronche",
         "zip": "38700",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8810,10 +7049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tullins",
         "slug": "tullins",
         "zip": "38210",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8825,10 +7061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Varces-Allières-et-Risset",
         "slug": "varces-allieres-et-risset",
         "zip": "38760",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8840,10 +7073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Verpillière",
         "slug": "la-verpilliere",
         "zip": "38290",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8855,10 +7085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vienne",
         "slug": "vienne",
         "zip": "38200",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8870,10 +7097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vif",
         "slug": "vif",
         "zip": "38450",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8885,10 +7109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villard-Bonnot",
         "slug": "villard-bonnot",
         "zip": "38190",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8900,10 +7121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villefontaine",
         "slug": "villefontaine",
         "zip": "38090",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8915,10 +7133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villette-d'Anthon",
         "slug": "villette-d-anthon",
         "zip": "38280",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8930,10 +7145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vizille",
         "slug": "vizille",
         "zip": "38220",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8945,10 +7157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Voiron",
         "slug": "voiron",
         "zip": "38500",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8960,10 +7169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Voreppe",
         "slug": "voreppe",
         "zip": "38340",
-        "department": {
-            "code": "38",
-            "nom": "Isère"
-        },
+        "department": "38",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8975,10 +7181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champagnole",
         "slug": "champagnole",
         "zip": "39300",
-        "department": {
-            "code": "39",
-            "nom": "Jura"
-        },
+        "department": "39",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -8990,10 +7193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dole",
         "slug": "dole",
         "zip": "39100",
-        "department": {
-            "code": "39",
-            "nom": "Jura"
-        },
+        "department": "39",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9005,10 +7205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lons-le-Saunier",
         "slug": "lons-le-saunier",
         "zip": "39000",
-        "department": {
-            "code": "39",
-            "nom": "Jura"
-        },
+        "department": "39",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9020,10 +7217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hauts de Bienne",
         "slug": "hauts-de-bienne",
         "zip": "39400",
-        "department": {
-            "code": "39",
-            "nom": "Jura"
-        },
+        "department": "39",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9035,10 +7229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Claude",
         "slug": "saint-claude",
         "zip": "39200",
-        "department": {
-            "code": "39",
-            "nom": "Jura"
-        },
+        "department": "39",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9050,10 +7241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aire-sur-l'Adour",
         "slug": "aire-sur-l-adour",
         "zip": "40800",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9065,10 +7253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Labenne",
         "slug": "labenne",
         "zip": "40530",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9080,10 +7265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mimizan",
         "slug": "mimizan",
         "zip": "40200",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9095,10 +7277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morcenx-la-Nouvelle",
         "slug": "morcenx-la-nouvelle",
         "zip": "40110",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9110,10 +7289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ondres",
         "slug": "ondres",
         "zip": "40440",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9125,10 +7301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Parentis-en-Born",
         "slug": "parentis-en-born",
         "zip": "40160",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9140,10 +7313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-de-Seignanx",
         "slug": "saint-martin-de-seignanx",
         "zip": "40390",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9155,10 +7325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Paul-lès-Dax",
         "slug": "saint-paul-les-dax",
         "zip": "40990",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9170,10 +7337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-du-Mont",
         "slug": "saint-pierre-du-mont",
         "zip": "40280",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9185,10 +7349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Sever",
         "slug": "saint-sever",
         "zip": "40500",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9200,10 +7361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Vincent-de-Tyrosse",
         "slug": "saint-vincent-de-tyrosse",
         "zip": "40230",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9215,10 +7373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soustons",
         "slug": "soustons",
         "zip": "40140",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9230,10 +7385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tarnos",
         "slug": "tarnos",
         "zip": "40220",
-        "department": {
-            "code": "40",
-            "nom": "Landes"
-        },
+        "department": "40",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9245,10 +7397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blois",
         "slug": "blois",
         "zip": "41000",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9260,10 +7409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Controis-en-Sologne",
         "slug": "le-controis-en-sologne",
         "zip": "41120",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9275,10 +7421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mer",
         "slug": "mer",
         "zip": "41500",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9290,10 +7433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Romorantin-Lanthenay",
         "slug": "romorantin-lanthenay",
         "zip": "41200",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9305,10 +7445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vendôme",
         "slug": "vendome",
         "zip": "41100",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9320,10 +7457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vineuil",
         "slug": "vineuil",
         "zip": "41350",
-        "department": {
-            "code": "41",
-            "nom": "Loir-et-Cher"
-        },
+        "department": "41",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9335,10 +7469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Andrézieux-Bouthéon",
         "slug": "andrezieux-boutheon",
         "zip": "42160",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9350,10 +7481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Chambon-Feugerolles",
         "slug": "le-chambon-feugerolles",
         "zip": "42500",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9365,10 +7493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chazelles-sur-Lyon",
         "slug": "chazelles-sur-lyon",
         "zip": "42140",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9380,10 +7505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Coteau",
         "slug": "le-coteau",
         "zip": "42120",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9395,10 +7517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Feurs",
         "slug": "feurs",
         "zip": "42110",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9410,10 +7529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Firminy",
         "slug": "firminy",
         "zip": "42700",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9425,10 +7541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mably",
         "slug": "mably",
         "zip": "42300",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9440,10 +7553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montbrison",
         "slug": "montbrison",
         "zip": "42600",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9455,10 +7565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montrond-les-Bains",
         "slug": "montrond-les-bains",
         "zip": "42210",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9470,10 +7577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ricamarie",
         "slug": "la-ricamarie",
         "zip": "42150",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9485,10 +7589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Riorges",
         "slug": "riorges",
         "zip": "42153",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9500,10 +7601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rive-de-Gier",
         "slug": "rive-de-gier",
         "zip": "42800",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9515,10 +7613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roanne",
         "slug": "roanne",
         "zip": "42300",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9530,10 +7625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roche-la-Molière",
         "slug": "roche-la-moliere",
         "zip": "42230",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9545,10 +7637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Chamond",
         "slug": "saint-chamond",
         "zip": "42400",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9560,10 +7649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Galmier",
         "slug": "saint-galmier",
         "zip": "42330",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9575,10 +7661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Genest-Lerpt",
         "slug": "saint-genest-lerpt",
         "zip": "42530",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9590,10 +7673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-Bonnefonds",
         "slug": "saint-jean-bonnefonds",
         "zip": "42650",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9605,10 +7685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Marcellin-en-Forez",
         "slug": "saint-marcellin-en-forez",
         "zip": "42680",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9620,10 +7697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Priest-en-Jarez",
         "slug": "saint-priest-en-jarez",
         "zip": "42270",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9635,10 +7709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Just-Saint-Rambert",
         "slug": "saint-just-saint-rambert",
         "zip": "42170",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9650,10 +7721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sorbiers",
         "slug": "sorbiers",
         "zip": "42290",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9665,10 +7733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sury-le-Comtal",
         "slug": "sury-le-comtal",
         "zip": "42450",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9680,10 +7745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Talaudière",
         "slug": "la-talaudiere",
         "zip": "42350",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9695,10 +7757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Unieux",
         "slug": "unieux",
         "zip": "42240",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9710,10 +7769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Veauche",
         "slug": "veauche",
         "zip": "42340",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9725,10 +7781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villars",
         "slug": "villars",
         "zip": "42390",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9740,10 +7793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villerest",
         "slug": "villerest",
         "zip": "42300",
-        "department": {
-            "code": "42",
-            "nom": "Loire"
-        },
+        "department": "42",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9755,10 +7805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aurec-sur-Loire",
         "slug": "aurec-sur-loire",
         "zip": "43110",
-        "department": {
-            "code": "43",
-            "nom": "Haute-Loire"
-        },
+        "department": "43",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9770,10 +7817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brioude",
         "slug": "brioude",
         "zip": "43100",
-        "department": {
-            "code": "43",
-            "nom": "Haute-Loire"
-        },
+        "department": "43",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9785,10 +7829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Monistrol-sur-Loire",
         "slug": "monistrol-sur-loire",
         "zip": "43120",
-        "department": {
-            "code": "43",
-            "nom": "Haute-Loire"
-        },
+        "department": "43",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9800,10 +7841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Sigolène",
         "slug": "sainte-sigolene",
         "zip": "43600",
-        "department": {
-            "code": "43",
-            "nom": "Haute-Loire"
-        },
+        "department": "43",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9815,10 +7853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yssingeaux",
         "slug": "yssingeaux",
         "zip": "43200",
-        "department": {
-            "code": "43",
-            "nom": "Haute-Loire"
-        },
+        "department": "43",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9830,10 +7865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ancenis-Saint-Géréon",
         "slug": "ancenis-saint-gereon",
         "zip": "44150",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9845,10 +7877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chaumes-en-Retz",
         "slug": "chaumes-en-retz",
         "zip": "44320",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9860,10 +7889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Basse-Goulaine",
         "slug": "basse-goulaine",
         "zip": "44115",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9875,10 +7901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blain",
         "slug": "blain",
         "zip": "44130",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9890,10 +7913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouaye",
         "slug": "bouaye",
         "zip": "44830",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9905,10 +7925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouguenais",
         "slug": "bouguenais",
         "zip": "44340",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9920,10 +7937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-en-Retz",
         "slug": "villeneuve-en-retz",
         "zip": "44580",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9935,10 +7949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carquefou",
         "slug": "carquefou",
         "zip": "44470",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9950,10 +7961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Divatte-sur-Loire",
         "slug": "divatte-sur-loire",
         "zip": "44450",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9965,10 +7973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Chapelle-sur-Erdre",
         "slug": "la-chapelle-sur-erdre",
         "zip": "44240",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9980,10 +7985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteaubriant",
         "slug": "chateaubriant",
         "zip": "44110",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -9995,10 +7997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Chevrolière",
         "slug": "la-chevroliere",
         "zip": "44118",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10010,10 +8009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clisson",
         "slug": "clisson",
         "zip": "44190",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10025,10 +8021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Couëron",
         "slug": "coueron",
         "zip": "44220",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10040,10 +8033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Donges",
         "slug": "donges",
         "zip": "44480",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10055,10 +8045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gorges",
         "slug": "gorges",
         "zip": "44190",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10070,10 +8057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grandchamp-des-Fontaines",
         "slug": "grandchamp-des-fontaines",
         "zip": "44119",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10085,10 +8069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guémené-Penfao",
         "slug": "guemene-penfao",
         "zip": "44290",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10100,10 +8081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Haute-Goulaine",
         "slug": "haute-goulaine",
         "zip": "44115",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10115,10 +8093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Herbignac",
         "slug": "herbignac",
         "zip": "44410",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10130,10 +8105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Héric",
         "slug": "heric",
         "zip": "44810",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10145,10 +8117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ligné",
         "slug": "ligne",
         "zip": "44850",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10160,10 +8129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Loroux-Bottereau",
         "slug": "le-loroux-bottereau",
         "zip": "44430",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10175,10 +8141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Machecoul-Saint-Même",
         "slug": "machecoul-saint-meme",
         "zip": "44270",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10190,10 +8153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Missillac",
         "slug": "missillac",
         "zip": "44780",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10205,10 +8165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Montagne",
         "slug": "la-montagne",
         "zip": "44620",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10220,10 +8177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montoir-de-Bretagne",
         "slug": "montoir-de-bretagne",
         "zip": "44550",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10235,10 +8189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nort-sur-Erdre",
         "slug": "nort-sur-erdre",
         "zip": "44390",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10250,10 +8201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pellerin",
         "slug": "le-pellerin",
         "zip": "44640",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10265,10 +8213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plessé",
         "slug": "plesse",
         "zip": "44630",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10280,10 +8225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pontchâteau",
         "slug": "pontchateau",
         "zip": "44160",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10295,10 +8237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-Saint-Martin",
         "slug": "pont-saint-martin",
         "zip": "44860",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10310,10 +8249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pornichet",
         "slug": "pornichet",
         "zip": "44380",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10325,10 +8261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-des-Eaux",
         "slug": "saint-andre-des-eaux",
         "zip": "44117",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10340,10 +8273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Brevin-les-Pins",
         "slug": "saint-brevin-les-pins",
         "zip": "44250",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10355,10 +8285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Étienne-de-Montluc",
         "slug": "saint-etienne-de-montluc",
         "zip": "44360",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10370,10 +8297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-Boiseau",
         "slug": "saint-jean-de-boiseau",
         "zip": "44640",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10385,10 +8309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Julien-de-Concelles",
         "slug": "saint-julien-de-concelles",
         "zip": "44450",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10400,10 +8321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Luce-sur-Loire",
         "slug": "sainte-luce-sur-loire",
         "zip": "44980",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10415,10 +8333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Lyphard",
         "slug": "saint-lyphard",
         "zip": "44410",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10430,10 +8345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Mars-du-Désert",
         "slug": "saint-mars-du-desert",
         "zip": "44850",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10445,10 +8357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vallons-de-l'Erdre",
         "slug": "vallons-de-l-erdre",
         "zip": "44540",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10460,10 +8369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Michel-Chef-Chef",
         "slug": "saint-michel-chef-chef",
         "zip": "44730",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10475,10 +8381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Pazanne",
         "slug": "sainte-pazanne",
         "zip": "44680",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10490,10 +8393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Philbert-de-Grand-Lieu",
         "slug": "saint-philbert-de-grand-lieu",
         "zip": "44310",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10505,10 +8405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sautron",
         "slug": "sautron",
         "zip": "44880",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10520,10 +8417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Savenay",
         "slug": "savenay",
         "zip": "44260",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10535,10 +8429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Sorinières",
         "slug": "les-sorinieres",
         "zip": "44840",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10550,10 +8441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sucé-sur-Erdre",
         "slug": "suce-sur-erdre",
         "zip": "44240",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10565,10 +8453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thouaré-sur-Loire",
         "slug": "thouare-sur-loire",
         "zip": "44470",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10580,10 +8465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Treillières",
         "slug": "treillieres",
         "zip": "44119",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10595,10 +8477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trignac",
         "slug": "trignac",
         "zip": "44570",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10610,10 +8489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vallet",
         "slug": "vallet",
         "zip": "44330",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10625,10 +8501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loireauxence",
         "slug": "loireauxence",
         "zip": "44370",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10640,10 +8513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vigneux-de-Bretagne",
         "slug": "vigneux-de-bretagne",
         "zip": "44360",
-        "department": {
-            "code": "44",
-            "nom": "Loire-Atlantique"
-        },
+        "department": "44",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10655,10 +8525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Amilly",
         "slug": "amilly",
         "zip": "45200",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10670,10 +8537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaugency",
         "slug": "beaugency",
         "zip": "45190",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10685,10 +8549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châlette-sur-Loing",
         "slug": "chalette-sur-loing",
         "zip": "45120",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10700,10 +8561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Chapelle-Saint-Mesmin",
         "slug": "la-chapelle-saint-mesmin",
         "zip": "45380",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10715,10 +8573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châteauneuf-sur-Loire",
         "slug": "chateauneuf-sur-loire",
         "zip": "45110",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10730,10 +8585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chécy",
         "slug": "checy",
         "zip": "45430",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10745,10 +8597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ferté-Saint-Aubin",
         "slug": "la-ferte-saint-aubin",
         "zip": "45240",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10760,10 +8609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fleury-les-Aubrais",
         "slug": "fleury-les-aubrais",
         "zip": "45400",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10775,10 +8621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gien",
         "slug": "gien",
         "zip": "45500",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10790,10 +8633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ingré",
         "slug": "ingre",
         "zip": "45140",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10805,10 +8645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Malesherbois",
         "slug": "le-malesherbois",
         "zip": "45300",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10820,10 +8657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meung-sur-Loire",
         "slug": "meung-sur-loire",
         "zip": "45130",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10835,10 +8669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montargis",
         "slug": "montargis",
         "zip": "45200",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10850,10 +8681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Olivet",
         "slug": "olivet",
         "zip": "45160",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10865,10 +8693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pithiviers",
         "slug": "pithiviers",
         "zip": "45300",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10880,10 +8705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Denis-en-Val",
         "slug": "saint-denis-en-val",
         "zip": "45560",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10895,10 +8717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-Braye",
         "slug": "saint-jean-de-braye",
         "zip": "45800",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10910,10 +8729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-la-Ruelle",
         "slug": "saint-jean-de-la-ruelle",
         "zip": "45140",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10925,10 +8741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-le-Blanc",
         "slug": "saint-jean-le-blanc",
         "zip": "45650",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10940,10 +8753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pryvé-Saint-Mesmin",
         "slug": "saint-pryve-saint-mesmin",
         "zip": "45750",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10955,10 +8765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saran",
         "slug": "saran",
         "zip": "45770",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10970,10 +8777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sully-sur-Loire",
         "slug": "sully-sur-loire",
         "zip": "45600",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -10985,10 +8789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villemandeur",
         "slug": "villemandeur",
         "zip": "45700",
-        "department": {
-            "code": "45",
-            "nom": "Loiret"
-        },
+        "department": "45",
         "region": "Centre-Val de Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11000,10 +8801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Figeac",
         "slug": "figeac",
         "zip": "46100",
-        "department": {
-            "code": "46",
-            "nom": "Lot"
-        },
+        "department": "46",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11015,10 +8813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boé",
         "slug": "boe",
         "zip": "47550",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11030,10 +8825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bon-Encontre",
         "slug": "bon-encontre",
         "zip": "47240",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11045,10 +8837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Foulayronnes",
         "slug": "foulayronnes",
         "zip": "47510",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11060,10 +8849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marmande",
         "slug": "marmande",
         "zip": "47200",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11075,10 +8861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nérac",
         "slug": "nerac",
         "zip": "47600",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11090,10 +8873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Passage",
         "slug": "le-passage",
         "zip": "47520",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11105,10 +8885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Livrade-sur-Lot",
         "slug": "sainte-livrade-sur-lot",
         "zip": "47110",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11120,10 +8897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tonneins",
         "slug": "tonneins",
         "zip": "47400",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11135,10 +8909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-sur-Lot",
         "slug": "villeneuve-sur-lot",
         "zip": "47300",
-        "department": {
-            "code": "47",
-            "nom": "Lot-et-Garonne"
-        },
+        "department": "47",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11150,10 +8921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mende",
         "slug": "mende",
         "zip": "48000",
-        "department": {
-            "code": "48",
-            "nom": "Lozère"
-        },
+        "department": "48",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11165,10 +8933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Avrillé",
         "slug": "avrille",
         "zip": "49240",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11180,10 +8945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baugé-en-Anjou",
         "slug": "bauge-en-anjou",
         "zip": "49150",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11195,10 +8957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaucouzé",
         "slug": "beaucouze",
         "zip": "49070",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11210,10 +8969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaufort-en-Anjou",
         "slug": "beaufort-en-anjou",
         "zip": "49250",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11225,10 +8981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaupréau-en-Mauges",
         "slug": "beaupreau-en-mauges",
         "zip": "49110",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11240,10 +8993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouchemaine",
         "slug": "bouchemaine",
         "zip": "49080",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11255,10 +9005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brissac Loire Aubance",
         "slug": "brissac-loire-aubance",
         "zip": "49250",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11270,10 +9017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chalonnes-sur-Loire",
         "slug": "chalonnes-sur-loire",
         "zip": "49290",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11285,10 +9029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Hauts-d'Anjou",
         "slug": "les-hauts-d-anjou",
         "zip": "49330",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11300,10 +9041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chemillé-en-Anjou",
         "slug": "chemille-en-anjou",
         "zip": "49120",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11315,10 +9053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cholet",
         "slug": "cholet",
         "zip": "49300",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11330,10 +9065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Doué-en-Anjou",
         "slug": "doue-en-anjou",
         "zip": "49700",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11345,10 +9077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orée d'Anjou",
         "slug": "oree-d-anjou",
         "zip": "49270",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11360,10 +9089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Lion-d'Angers",
         "slug": "le-lion-d-angers",
         "zip": "49220",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11375,10 +9101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longué-Jumelles",
         "slug": "longue-jumelles",
         "zip": "49160",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11390,10 +9113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mazé-Milon",
         "slug": "maze-milon",
         "zip": "49140",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11405,10 +9125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longuenée-en-Anjou",
         "slug": "longuenee-en-anjou",
         "zip": "49220",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11420,10 +9137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montreuil-Juigné",
         "slug": "montreuil-juigne",
         "zip": "49460",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11435,10 +9149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montrevault-sur-Èvre",
         "slug": "montrevault-sur-evre",
         "zip": "49110",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11450,10 +9161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mûrs-Erigné",
         "slug": "murs-erigne",
         "zip": "49610",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11465,10 +9173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyant-Villages",
         "slug": "noyant-villages",
         "zip": "49390",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11480,10 +9185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mauges-sur-Loire",
         "slug": "mauges-sur-loire",
         "zip": "49110",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11495,10 +9197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Ponts-de-Cé",
         "slug": "les-ponts-de-ce",
         "zip": "49130",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11510,10 +9209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ombrée d'Anjou",
         "slug": "ombree-d-anjou",
         "zip": "49420",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11525,10 +9221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gennes-Val-de-Loire",
         "slug": "gennes-val-de-loire",
         "zip": "49160",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11540,10 +9233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Barthélemy-d'Anjou",
         "slug": "saint-barthelemy-d-anjou",
         "zip": "49124",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11555,10 +9245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sèvremoine",
         "slug": "sevremoine",
         "zip": "49230",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11570,10 +9257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loire-Authion",
         "slug": "loire-authion",
         "zip": "49140",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11585,10 +9269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Verrières-en-Anjou",
         "slug": "verrieres-en-anjou",
         "zip": "49112",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11600,10 +9281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saumur",
         "slug": "saumur",
         "zip": "49400",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11615,10 +9293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Segré-en-Anjou Bleu",
         "slug": "segre-en-anjou-bleu",
         "zip": "49500",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11630,10 +9305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bellevigne-en-Layon",
         "slug": "bellevigne-en-layon",
         "zip": "49380",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11645,10 +9317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trélazé",
         "slug": "trelaze",
         "zip": "49800",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11660,10 +9329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Erdre-en-Anjou",
         "slug": "erdre-en-anjou",
         "zip": "49220",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11675,10 +9341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lys-Haut-Layon",
         "slug": "lys-haut-layon",
         "zip": "49310",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11690,10 +9353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rives-du-Loir-en-Anjou",
         "slug": "rives-du-loir-en-anjou",
         "zip": "49140",
-        "department": {
-            "code": "49",
-            "nom": "Maine-et-Loire"
-        },
+        "department": "49",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11705,10 +9365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Avranches",
         "slug": "avranches",
         "zip": "50300",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11720,10 +9377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Hague",
         "slug": "la-hague",
         "zip": "50440",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11735,10 +9389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bricquebec-en-Cotentin",
         "slug": "bricquebec-en-cotentin",
         "zip": "50260",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11750,10 +9401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carentan-les-Marais",
         "slug": "carentan-les-marais",
         "zip": "50480",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11765,10 +9413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coutances",
         "slug": "coutances",
         "zip": "50200",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11780,10 +9425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Granville",
         "slug": "granville",
         "zip": "50400",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11795,10 +9437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Hilaire-du-Harcouët",
         "slug": "saint-hilaire-du-harcouet",
         "zip": "50600",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11810,10 +9449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-James",
         "slug": "saint-james",
         "zip": "50240",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11825,10 +9461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Lô",
         "slug": "saint-lo",
         "zip": "50000",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11840,10 +9473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valognes",
         "slug": "valognes",
         "zip": "50700",
-        "department": {
-            "code": "50",
-            "nom": "Manche"
-        },
+        "department": "50",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11855,10 +9485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aÿ-Champagne",
         "slug": "ay-champagne",
         "zip": "51150",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11870,10 +9497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bétheny",
         "slug": "betheny",
         "zip": "51450",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11885,10 +9509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bezannes",
         "slug": "bezannes",
         "zip": "51430",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11900,10 +9521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cormontreuil",
         "slug": "cormontreuil",
         "zip": "51350",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11915,10 +9533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épernay",
         "slug": "epernay",
         "zip": "51200",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11930,10 +9545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fismes",
         "slug": "fismes",
         "zip": "51170",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11945,10 +9557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Memmie",
         "slug": "saint-memmie",
         "zip": "51470",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11960,10 +9569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tinqueux",
         "slug": "tinqueux",
         "zip": "51430",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11975,10 +9581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vitry-le-François",
         "slug": "vitry-le-francois",
         "zip": "51300",
-        "department": {
-            "code": "51",
-            "nom": "Marne"
-        },
+        "department": "51",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -11990,10 +9593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chaumont",
         "slug": "chaumont",
         "zip": "52000",
-        "department": {
-            "code": "52",
-            "nom": "Haute-Marne"
-        },
+        "department": "52",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12005,10 +9605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Langres",
         "slug": "langres",
         "zip": "52200",
-        "department": {
-            "code": "52",
-            "nom": "Haute-Marne"
-        },
+        "department": "52",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12020,10 +9617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Dizier",
         "slug": "saint-dizier",
         "zip": "52100",
-        "department": {
-            "code": "52",
-            "nom": "Haute-Marne"
-        },
+        "department": "52",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12035,10 +9629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bonchamp-lès-Laval",
         "slug": "bonchamp-les-laval",
         "zip": "53960",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12050,10 +9641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Changé",
         "slug": "change",
         "zip": "53810",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12065,10 +9653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Château-Gontier-sur-Mayenne",
         "slug": "chateau-gontier-sur-mayenne",
         "zip": "53200",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12080,10 +9665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ernée",
         "slug": "ernee",
         "zip": "53500",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12095,10 +9677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Évron",
         "slug": "evron",
         "zip": "53150",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12110,10 +9689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laval",
         "slug": "laval",
         "zip": "53000",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12125,10 +9701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mayenne",
         "slug": "mayenne",
         "zip": "53100",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12140,10 +9713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Berthevin",
         "slug": "saint-berthevin",
         "zip": "53940",
-        "department": {
-            "code": "53",
-            "nom": "Mayenne"
-        },
+        "department": "53",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12155,10 +9725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Val de Briey",
         "slug": "val-de-briey",
         "zip": "54150",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12170,10 +9737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champigneulles",
         "slug": "champigneulles",
         "zip": "54250",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12185,10 +9749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dombasle-sur-Meurthe",
         "slug": "dombasle-sur-meurthe",
         "zip": "54110",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12200,10 +9761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Essey-lès-Nancy",
         "slug": "essey-les-nancy",
         "zip": "54270",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12215,10 +9773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Frouard",
         "slug": "frouard",
         "zip": "54390",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12230,10 +9785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Heillecourt",
         "slug": "heillecourt",
         "zip": "54180",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12245,10 +9797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Homécourt",
         "slug": "homecourt",
         "zip": "54310",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12260,10 +9809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jarny",
         "slug": "jarny",
         "zip": "54800",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12275,10 +9821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jarville-la-Malgrange",
         "slug": "jarville-la-malgrange",
         "zip": "54140",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12290,10 +9833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jœuf",
         "slug": "j-uf",
         "zip": "54240",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12305,10 +9845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laneuveville-devant-Nancy",
         "slug": "laneuveville-devant-nancy",
         "zip": "54410",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12320,10 +9857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laxou",
         "slug": "laxou",
         "zip": "54520",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12335,10 +9869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Liverdun",
         "slug": "liverdun",
         "zip": "54460",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12350,10 +9881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longuyon",
         "slug": "longuyon",
         "zip": "54260",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12365,10 +9893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longwy",
         "slug": "longwy",
         "zip": "54400",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12380,10 +9905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ludres",
         "slug": "ludres",
         "zip": "54710",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12395,10 +9917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lunéville",
         "slug": "luneville",
         "zip": "54300",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12410,10 +9929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Malzéville",
         "slug": "malzeville",
         "zip": "54220",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12425,10 +9941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maxéville",
         "slug": "maxeville",
         "zip": "54320",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12440,10 +9953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mont-Saint-Martin",
         "slug": "mont-saint-martin",
         "zip": "54350",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12455,10 +9965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuves-Maisons",
         "slug": "neuves-maisons",
         "zip": "54230",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12470,10 +9977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-à-Mousson",
         "slug": "pont-a-mousson",
         "zip": "54700",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12485,10 +9989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pulnoy",
         "slug": "pulnoy",
         "zip": "54425",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12500,10 +10001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Max",
         "slug": "saint-max",
         "zip": "54130",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12515,10 +10013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Nicolas-de-Port",
         "slug": "saint-nicolas-de-port",
         "zip": "54210",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12530,10 +10025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seichamps",
         "slug": "seichamps",
         "zip": "54280",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12545,10 +10037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tomblaine",
         "slug": "tomblaine",
         "zip": "54510",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12560,10 +10049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Toul",
         "slug": "toul",
         "zip": "54200",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12575,10 +10061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vandœuvre-lès-Nancy",
         "slug": "vand-uvre-les-nancy",
         "zip": "54500",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12590,10 +10073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villers-lès-Nancy",
         "slug": "villers-les-nancy",
         "zip": "54600",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12605,10 +10085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villerupt",
         "slug": "villerupt",
         "zip": "54190",
-        "department": {
-            "code": "54",
-            "nom": "Meurthe-et-Moselle"
-        },
+        "department": "54",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12620,10 +10097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bar-le-Duc",
         "slug": "bar-le-duc",
         "zip": "55000",
-        "department": {
-            "code": "55",
-            "nom": "Meuse"
-        },
+        "department": "55",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12635,10 +10109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Commercy",
         "slug": "commercy",
         "zip": "55200",
-        "department": {
-            "code": "55",
-            "nom": "Meuse"
-        },
+        "department": "55",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12650,10 +10121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Verdun",
         "slug": "verdun",
         "zip": "55100",
-        "department": {
-            "code": "55",
-            "nom": "Meuse"
-        },
+        "department": "55",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12665,10 +10133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arradon",
         "slug": "arradon",
         "zip": "56610",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12680,10 +10145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auray",
         "slug": "auray",
         "zip": "56400",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12695,10 +10157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baden",
         "slug": "baden",
         "zip": "56870",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12710,10 +10169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baud",
         "slug": "baud",
         "zip": "56150",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12725,10 +10181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brech",
         "slug": "brech",
         "zip": "56400",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12740,10 +10193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Caudan",
         "slug": "caudan",
         "zip": "56850",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12755,10 +10205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Elven",
         "slug": "elven",
         "zip": "56250",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12770,10 +10217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grand-Champ",
         "slug": "grand-champ",
         "zip": "56390",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12785,10 +10229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guer",
         "slug": "guer",
         "zip": "56380",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12800,10 +10241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guidel",
         "slug": "guidel",
         "zip": "56520",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12815,10 +10253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hennebont",
         "slug": "hennebont",
         "zip": "56700",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12830,10 +10265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Inzinzac-Lochrist",
         "slug": "inzinzac-lochrist",
         "zip": "56650",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12845,10 +10277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Kervignac",
         "slug": "kervignac",
         "zip": "56700",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12860,10 +10289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Languidic",
         "slug": "languidic",
         "zip": "56440",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12875,10 +10301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Larmor-Plage",
         "slug": "larmor-plage",
         "zip": "56260",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12890,10 +10313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Muzillac",
         "slug": "muzillac",
         "zip": "56190",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12905,10 +10325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plescop",
         "slug": "plescop",
         "zip": "56890",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12920,10 +10337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ploeren",
         "slug": "ploeren",
         "zip": "56880",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12935,10 +10349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ploërmel",
         "slug": "ploermel",
         "zip": "56800",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12950,10 +10361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plouay",
         "slug": "plouay",
         "zip": "56240",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12965,10 +10373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plouhinec",
         "slug": "plouhinec",
         "zip": "56680",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12980,10 +10385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pluneret",
         "slug": "pluneret",
         "zip": "56400",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -12995,10 +10397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pluvigner",
         "slug": "pluvigner",
         "zip": "56330",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13010,10 +10409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pontivy",
         "slug": "pontivy",
         "zip": "56300",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13025,10 +10421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Questembert",
         "slug": "questembert",
         "zip": "56230",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13040,10 +10433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quéven",
         "slug": "queven",
         "zip": "56530",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13055,10 +10445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Riantec",
         "slug": "riantec",
         "zip": "56670",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13070,10 +10457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Avé",
         "slug": "saint-ave",
         "zip": "56890",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13085,10 +10469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sarzeau",
         "slug": "sarzeau",
         "zip": "56370",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13100,10 +10481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Séné",
         "slug": "sene",
         "zip": "56860",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13115,10 +10493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Surzur",
         "slug": "surzur",
         "zip": "56450",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13130,10 +10505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Theix-Noyalo",
         "slug": "theix-noyalo",
         "zip": "56450",
-        "department": {
-            "code": "56",
-            "nom": "Morbihan"
-        },
+        "department": "56",
         "region": "Bretagne",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13145,10 +10517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Algrange",
         "slug": "algrange",
         "zip": "57440",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13160,10 +10529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Amnéville",
         "slug": "amneville",
         "zip": "57360",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13175,10 +10541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Audun-le-Tiche",
         "slug": "audun-le-tiche",
         "zip": "57390",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13190,10 +10553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Behren-lès-Forbach",
         "slug": "behren-les-forbach",
         "zip": "57460",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13205,10 +10565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boulay-Moselle",
         "slug": "boulay-moselle",
         "zip": "57220",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13220,10 +10577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Creutzwald",
         "slug": "creutzwald",
         "zip": "57150",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13235,10 +10589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fameck",
         "slug": "fameck",
         "zip": "57290",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13250,10 +10601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Farébersviller",
         "slug": "farebersviller",
         "zip": "57450",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13265,10 +10613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Faulquemont",
         "slug": "faulquemont",
         "zip": "57380",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13280,10 +10625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Florange",
         "slug": "florange",
         "zip": "57190",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13295,10 +10637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Forbach",
         "slug": "forbach",
         "zip": "57600",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13310,10 +10649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Freyming-Merlebach",
         "slug": "freyming-merlebach",
         "zip": "57800",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13325,10 +10661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guénange",
         "slug": "guenange",
         "zip": "57310",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13340,10 +10673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hagondange",
         "slug": "hagondange",
         "zip": "57300",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13355,10 +10685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hayange",
         "slug": "hayange",
         "zip": "57700",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13370,10 +10697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hettange-Grande",
         "slug": "hettange-grande",
         "zip": "57330",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13385,10 +10709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hombourg-Haut",
         "slug": "hombourg-haut",
         "zip": "57470",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13400,10 +10721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Hôpital",
         "slug": "l-hopital",
         "zip": "57490",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13415,10 +10733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maizières-lès-Metz",
         "slug": "maizieres-les-metz",
         "zip": "57280",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13430,10 +10745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marange-Silvange",
         "slug": "marange-silvange",
         "zip": "57535",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13445,10 +10757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marly",
         "slug": "marly",
         "zip": "57155",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13460,10 +10769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mondelange",
         "slug": "mondelange",
         "zip": "57300",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13475,10 +10781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montigny-lès-Metz",
         "slug": "montigny-les-metz",
         "zip": "57950",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13490,10 +10793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moulins-lès-Metz",
         "slug": "moulins-les-metz",
         "zip": "57160",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13505,10 +10805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moyeuvre-Grande",
         "slug": "moyeuvre-grande",
         "zip": "57250",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13520,10 +10817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petite-Rosselle",
         "slug": "petite-rosselle",
         "zip": "57540",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13535,10 +10829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rombas",
         "slug": "rombas",
         "zip": "57120",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13550,10 +10841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Avold",
         "slug": "saint-avold",
         "zip": "57500",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13565,10 +10853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sarrebourg",
         "slug": "sarrebourg",
         "zip": "57400",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13580,10 +10865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sarreguemines",
         "slug": "sarreguemines",
         "zip": "57200",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13595,10 +10877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Stiring-Wendel",
         "slug": "stiring-wendel",
         "zip": "57350",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13610,10 +10889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Talange",
         "slug": "talange",
         "zip": "57525",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13625,10 +10901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Terville",
         "slug": "terville",
         "zip": "57180",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13640,10 +10913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Uckange",
         "slug": "uckange",
         "zip": "57270",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13655,10 +10925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Woippy",
         "slug": "woippy",
         "zip": "57140",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13670,10 +10937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yutz",
         "slug": "yutz",
         "zip": "57970",
-        "department": {
-            "code": "57",
-            "nom": "Moselle"
-        },
+        "department": "57",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13685,10 +10949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cosne-Cours-sur-Loire",
         "slug": "cosne-cours-sur-loire",
         "zip": "58200",
-        "department": {
-            "code": "58",
-            "nom": "Nièvre"
-        },
+        "department": "58",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13700,10 +10961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Varennes-Vauzelles",
         "slug": "varennes-vauzelles",
         "zip": "58640",
-        "department": {
-            "code": "58",
-            "nom": "Nièvre"
-        },
+        "department": "58",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13715,10 +10973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aniche",
         "slug": "aniche",
         "zip": "59580",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13730,10 +10985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-d'Ascq",
         "slug": "villeneuve-d-ascq",
         "zip": "59491",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13745,10 +10997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Annœullin",
         "slug": "ann-ullin",
         "zip": "59112",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13760,10 +11009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Anzin",
         "slug": "anzin",
         "zip": "59410",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13775,10 +11021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Armentières",
         "slug": "armentieres",
         "zip": "59280",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13790,10 +11033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auby",
         "slug": "auby",
         "zip": "59950",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13805,10 +11045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aulnoy-lez-Valenciennes",
         "slug": "aulnoy-lez-valenciennes",
         "zip": "59300",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13820,10 +11057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aulnoye-Aymeries",
         "slug": "aulnoye-aymeries",
         "zip": "59620",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13835,10 +11069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bailleul",
         "slug": "bailleul",
         "zip": "59270",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13850,10 +11081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baisieux",
         "slug": "baisieux",
         "zip": "59780",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13865,10 +11093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Bassée",
         "slug": "la-bassee",
         "zip": "59480",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13880,10 +11105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bauvin",
         "slug": "bauvin",
         "zip": "59221",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13895,10 +11117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beuvrages",
         "slug": "beuvrages",
         "zip": "59192",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13910,10 +11129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bondues",
         "slug": "bondues",
         "zip": "59910",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13925,10 +11141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourbourg",
         "slug": "bourbourg",
         "zip": "59630",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13940,10 +11153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bruay-sur-l'Escaut",
         "slug": "bruay-sur-l-escaut",
         "zip": "59860",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13955,10 +11165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cambrai",
         "slug": "cambrai",
         "zip": "59400",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13970,10 +11177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cappelle-la-Grande",
         "slug": "cappelle-la-grande",
         "zip": "59180",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -13985,10 +11189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Cateau-Cambrésis",
         "slug": "le-cateau-cambresis",
         "zip": "59360",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14000,10 +11201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Caudry",
         "slug": "caudry",
         "zip": "59540",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14015,10 +11213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Chapelle-d'Armentières",
         "slug": "la-chapelle-d-armentieres",
         "zip": "59930",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14030,10 +11225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Comines",
         "slug": "comines",
         "zip": "59560",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14045,10 +11237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Condé-sur-l'Escaut",
         "slug": "conde-sur-l-escaut",
         "zip": "59163",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14060,10 +11249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coudekerque-Branche",
         "slug": "coudekerque-branche",
         "zip": "59210",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14075,10 +11261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Croix",
         "slug": "croix",
         "zip": "59170",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14090,10 +11273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cuincy",
         "slug": "cuincy",
         "zip": "59553",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14105,10 +11285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dechy",
         "slug": "dechy",
         "zip": "59187",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14120,10 +11297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Denain",
         "slug": "denain",
         "zip": "59220",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14135,10 +11309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Douchy-les-Mines",
         "slug": "douchy-les-mines",
         "zip": "59282",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14150,10 +11321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Erquinghem-Lys",
         "slug": "erquinghem-lys",
         "zip": "59193",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14165,10 +11333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Escaudain",
         "slug": "escaudain",
         "zip": "59124",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14180,10 +11345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Estaires",
         "slug": "estaires",
         "zip": "59940",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14195,10 +11357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Faches-Thumesnil",
         "slug": "faches-thumesnil",
         "zip": "59155",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14210,10 +11369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Feignies",
         "slug": "feignies",
         "zip": "59750",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14225,10 +11381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fenain",
         "slug": "fenain",
         "zip": "59179",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14240,10 +11393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ferrière-la-Grande",
         "slug": "ferriere-la-grande",
         "zip": "59680",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14255,10 +11405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Flers-en-Escrebieux",
         "slug": "flers-en-escrebieux",
         "zip": "59128",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14270,10 +11417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Flines-lez-Raches",
         "slug": "flines-lez-raches",
         "zip": "59148",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14285,10 +11429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fourmies",
         "slug": "fourmies",
         "zip": "59610",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14300,10 +11441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fresnes-sur-Escaut",
         "slug": "fresnes-sur-escaut",
         "zip": "59970",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14315,10 +11453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Gorgue",
         "slug": "la-gorgue",
         "zip": "59253",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14330,10 +11465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grande-Synthe",
         "slug": "grande-synthe",
         "zip": "59760",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14345,10 +11477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gravelines",
         "slug": "gravelines",
         "zip": "59820",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14360,10 +11489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Halluin",
         "slug": "halluin",
         "zip": "59250",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14375,10 +11501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Haubourdin",
         "slug": "haubourdin",
         "zip": "59320",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14390,10 +11513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hautmont",
         "slug": "hautmont",
         "zip": "59330",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14405,10 +11525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hazebrouck",
         "slug": "hazebrouck",
         "zip": "59190",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14420,10 +11537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hem",
         "slug": "hem",
         "zip": "59510",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14435,10 +11549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Houplines",
         "slug": "houplines",
         "zip": "59116",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14450,10 +11561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jeumont",
         "slug": "jeumont",
         "zip": "59460",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14465,10 +11573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lallaing",
         "slug": "lallaing",
         "zip": "59167",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14480,10 +11585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lambersart",
         "slug": "lambersart",
         "zip": "59130",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14495,10 +11597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Leers",
         "slug": "leers",
         "zip": "59115",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14510,10 +11609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lesquin",
         "slug": "lesquin",
         "zip": "59810",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14525,10 +11621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Linselles",
         "slug": "linselles",
         "zip": "59126",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14540,10 +11633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loon-Plage",
         "slug": "loon-plage",
         "zip": "59279",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14555,10 +11645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loos",
         "slug": "loos",
         "zip": "59120",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14570,10 +11657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Louvroil",
         "slug": "louvroil",
         "zip": "59720",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14585,10 +11669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lys-lez-Lannoy",
         "slug": "lys-lez-lannoy",
         "zip": "59390",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14600,10 +11681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Madeleine",
         "slug": "la-madeleine",
         "zip": "59110",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14615,10 +11693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marcq-en-Barœul",
         "slug": "marcq-en-bar-ul",
         "zip": "59700",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14630,10 +11705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marquette-lez-Lille",
         "slug": "marquette-lez-lille",
         "zip": "59520",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14645,10 +11717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maubeuge",
         "slug": "maubeuge",
         "zip": "59600",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14660,10 +11729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mons-en-Barœul",
         "slug": "mons-en-bar-ul",
         "zip": "59370",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14675,10 +11741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouvaux",
         "slug": "mouvaux",
         "zip": "59420",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14690,10 +11753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuville-en-Ferrain",
         "slug": "neuville-en-ferrain",
         "zip": "59960",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14705,10 +11765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nieppe",
         "slug": "nieppe",
         "zip": "59850",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14720,10 +11777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Onnaing",
         "slug": "onnaing",
         "zip": "59264",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14735,10 +11789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orchies",
         "slug": "orchies",
         "zip": "59310",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14750,10 +11801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ostricourt",
         "slug": "ostricourt",
         "zip": "59162",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14765,10 +11813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pecquencourt",
         "slug": "pecquencourt",
         "zip": "59146",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14780,10 +11825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pérenchies",
         "slug": "perenchies",
         "zip": "59840",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14795,10 +11837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petite-Forêt",
         "slug": "petite-foret",
         "zip": "59494",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14810,10 +11849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quesnoy-sur-Deûle",
         "slug": "quesnoy-sur-deule",
         "zip": "59890",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14825,10 +11861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quiévrechain",
         "slug": "quievrechain",
         "zip": "59920",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14840,10 +11873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Raismes",
         "slug": "raismes",
         "zip": "59590",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14855,10 +11885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ronchin",
         "slug": "ronchin",
         "zip": "59790",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14870,10 +11897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roncq",
         "slug": "roncq",
         "zip": "59223",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14885,10 +11909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roost-Warendin",
         "slug": "roost-warendin",
         "zip": "59286",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14900,10 +11921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainghin-en-Weppes",
         "slug": "sainghin-en-weppes",
         "zip": "59184",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14915,10 +11933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Amand-les-Eaux",
         "slug": "saint-amand-les-eaux",
         "zip": "59230",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14930,10 +11945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André-lez-Lille",
         "slug": "saint-andre-lez-lille",
         "zip": "59350",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14945,10 +11957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Saulve",
         "slug": "saint-saulve",
         "zip": "59880",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14960,10 +11969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Santes",
         "slug": "santes",
         "zip": "59211",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14975,10 +11981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Seclin",
         "slug": "seclin",
         "zip": "59113",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -14990,10 +11993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sin-le-Noble",
         "slug": "sin-le-noble",
         "zip": "59450",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15005,10 +12005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Somain",
         "slug": "somain",
         "zip": "59490",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15020,10 +12017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Templeuve-en-Pévèle",
         "slug": "templeuve-en-pevele",
         "zip": "59242",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15035,10 +12029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Téteghem-Coudekerque-Village",
         "slug": "teteghem-coudekerque-village",
         "zip": "59229",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15050,10 +12041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trith-Saint-Léger",
         "slug": "trith-saint-leger",
         "zip": "59125",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15065,10 +12053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vieux-Condé",
         "slug": "vieux-conde",
         "zip": "59690",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15080,10 +12065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wallers",
         "slug": "wallers",
         "zip": "59135",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15095,10 +12077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wambrechies",
         "slug": "wambrechies",
         "zip": "59118",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15110,10 +12089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wasquehal",
         "slug": "wasquehal",
         "zip": "59290",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15125,10 +12101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wattignies",
         "slug": "wattignies",
         "zip": "59139",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15140,10 +12113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wattrelos",
         "slug": "wattrelos",
         "zip": "59150",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15155,10 +12125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wavrin",
         "slug": "wavrin",
         "zip": "59136",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15170,10 +12137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Waziers",
         "slug": "waziers",
         "zip": "59119",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15185,10 +12149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wervicq-Sud",
         "slug": "wervicq-sud",
         "zip": "59117",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15200,10 +12161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wormhout",
         "slug": "wormhout",
         "zip": "59470",
-        "department": {
-            "code": "59",
-            "nom": "Nord"
-        },
+        "department": "59",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15215,10 +12173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chambly",
         "slug": "chambly",
         "zip": "60230",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15230,10 +12185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chantilly",
         "slug": "chantilly",
         "zip": "60500",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15245,10 +12197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clermont",
         "slug": "clermont",
         "zip": "60600",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15260,10 +12209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crépy-en-Valois",
         "slug": "crepy-en-valois",
         "zip": "60800",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15275,10 +12221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gouvieux",
         "slug": "gouvieux",
         "zip": "60270",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15290,10 +12233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lacroix-Saint-Ouen",
         "slug": "lacroix-saint-ouen",
         "zip": "60610",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15305,10 +12245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lamorlaye",
         "slug": "lamorlaye",
         "zip": "60260",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15320,10 +12257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Liancourt",
         "slug": "liancourt",
         "zip": "60140",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15335,10 +12269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Margny-lès-Compiègne",
         "slug": "margny-les-compiegne",
         "zip": "60280",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15350,10 +12281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Méru",
         "slug": "meru",
         "zip": "60110",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15365,10 +12293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montataire",
         "slug": "montataire",
         "zip": "60160",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15380,10 +12305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouy",
         "slug": "mouy",
         "zip": "60250",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15395,10 +12317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nogent-sur-Oise",
         "slug": "nogent-sur-oise",
         "zip": "60180",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15410,10 +12329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyon",
         "slug": "noyon",
         "zip": "60400",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15425,10 +12341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-Sainte-Maxence",
         "slug": "pont-sainte-maxence",
         "zip": "60700",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15440,10 +12353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Just-en-Chaussée",
         "slug": "saint-just-en-chaussee",
         "zip": "60130",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15455,10 +12365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Senlis",
         "slug": "senlis",
         "zip": "60300",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15470,10 +12377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villers-Saint-Paul",
         "slug": "villers-saint-paul",
         "zip": "60870",
-        "department": {
-            "code": "60",
-            "nom": "Oise"
-        },
+        "department": "60",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15485,10 +12389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Alençon",
         "slug": "alencon",
         "zip": "61000",
-        "department": {
-            "code": "61",
-            "nom": "Orne"
-        },
+        "department": "61",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15500,10 +12401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Argentan",
         "slug": "argentan",
         "zip": "61200",
-        "department": {
-            "code": "61",
-            "nom": "Orne"
-        },
+        "department": "61",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15515,10 +12413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ferté Macé",
         "slug": "la-ferte-mace",
         "zip": "61410",
-        "department": {
-            "code": "61",
-            "nom": "Orne"
-        },
+        "department": "61",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15530,10 +12425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Flers",
         "slug": "flers",
         "zip": "61100",
-        "department": {
-            "code": "61",
-            "nom": "Orne"
-        },
+        "department": "61",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15545,10 +12437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Aigle",
         "slug": "l-aigle",
         "zip": "61300",
-        "department": {
-            "code": "61",
-            "nom": "Orne"
-        },
+        "department": "61",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15560,10 +12449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Achicourt",
         "slug": "achicourt",
         "zip": "62217",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15575,10 +12461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aire-sur-la-Lys",
         "slug": "aire-sur-la-lys",
         "zip": "62120",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15590,10 +12473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Annezin",
         "slug": "annezin",
         "zip": "62232",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15605,10 +12485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arques",
         "slug": "arques",
         "zip": "62510",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15620,10 +12497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auchel",
         "slug": "auchel",
         "zip": "62260",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15635,10 +12509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Audruicq",
         "slug": "audruicq",
         "zip": "62370",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15650,10 +12521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Avion",
         "slug": "avion",
         "zip": "62210",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15665,10 +12533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Barlin",
         "slug": "barlin",
         "zip": "62620",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15680,10 +12545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaurains",
         "slug": "beaurains",
         "zip": "62217",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15695,10 +12557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Berck",
         "slug": "berck",
         "zip": "62600",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15710,10 +12569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Béthune",
         "slug": "bethune",
         "zip": "62400",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15725,10 +12581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beuvry",
         "slug": "beuvry",
         "zip": "62660",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15740,10 +12593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Billy-Berclau",
         "slug": "billy-berclau",
         "zip": "62138",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15755,10 +12605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Billy-Montigny",
         "slug": "billy-montigny",
         "zip": "62420",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15770,10 +12617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brebières",
         "slug": "brebieres",
         "zip": "62117",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15785,10 +12629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bruay-la-Buissière",
         "slug": "bruay-la-buissiere",
         "zip": "62700",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15800,10 +12641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bully-les-Mines",
         "slug": "bully-les-mines",
         "zip": "62160",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15815,10 +12653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Calonne-Ricouart",
         "slug": "calonne-ricouart",
         "zip": "62470",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15830,10 +12665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carvin",
         "slug": "carvin",
         "zip": "62220",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15845,10 +12677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coulogne",
         "slug": "coulogne",
         "zip": "62137",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15860,10 +12689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Courcelles-lès-Lens",
         "slug": "courcelles-les-lens",
         "zip": "62970",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15875,10 +12701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Courrières",
         "slug": "courrieres",
         "zip": "62710",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15890,10 +12713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cucq",
         "slug": "cucq",
         "zip": "62780",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15905,10 +12725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dainville",
         "slug": "dainville",
         "zip": "62000",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15920,10 +12737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Divion",
         "slug": "divion",
         "zip": "62460",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15935,10 +12749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dourges",
         "slug": "dourges",
         "zip": "62119",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15950,10 +12761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Douvrin",
         "slug": "douvrin",
         "zip": "62138",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15965,10 +12773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Étaples",
         "slug": "etaples",
         "zip": "62630",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15980,10 +12785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fouquières-lès-Lens",
         "slug": "fouquieres-les-lens",
         "zip": "62740",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -15995,10 +12797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grenay",
         "slug": "grenay",
         "zip": "62160",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16010,10 +12809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guînes",
         "slug": "guines",
         "zip": "62340",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16025,10 +12821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Haillicourt",
         "slug": "haillicourt",
         "zip": "62940",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16040,10 +12833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Harnes",
         "slug": "harnes",
         "zip": "62440",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16055,10 +12845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hénin-Beaumont",
         "slug": "henin-beaumont",
         "zip": "62110",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16070,10 +12857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hersin-Coupigny",
         "slug": "hersin-coupigny",
         "zip": "62530",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16085,10 +12869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Houdain",
         "slug": "houdain",
         "zip": "62150",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16100,10 +12881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Isbergues",
         "slug": "isbergues",
         "zip": "62330",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16115,10 +12893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Laventie",
         "slug": "laventie",
         "zip": "62840",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16130,10 +12905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Leforest",
         "slug": "leforest",
         "zip": "62790",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16145,10 +12917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lestrem",
         "slug": "lestrem",
         "zip": "62136",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16160,10 +12929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lillers",
         "slug": "lillers",
         "zip": "62190",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16175,10 +12941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loison-sous-Lens",
         "slug": "loison-sous-lens",
         "zip": "62218",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16190,10 +12953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longuenesse",
         "slug": "longuenesse",
         "zip": "62219",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16205,10 +12965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loos-en-Gohelle",
         "slug": "loos-en-gohelle",
         "zip": "62750",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16220,10 +12977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marck",
         "slug": "marck",
         "zip": "62730",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16235,10 +12989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marles-les-Mines",
         "slug": "marles-les-mines",
         "zip": "62540",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16250,10 +13001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marquise",
         "slug": "marquise",
         "zip": "62250",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16265,10 +13013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mazingarbe",
         "slug": "mazingarbe",
         "zip": "62670",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16280,10 +13025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Méricourt",
         "slug": "mericourt",
         "zip": "62680",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16295,10 +13037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montigny-en-Gohelle",
         "slug": "montigny-en-gohelle",
         "zip": "62640",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16310,10 +13049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nœux-les-Mines",
         "slug": "n-ux-les-mines",
         "zip": "62290",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16325,10 +13061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyelles-Godault",
         "slug": "noyelles-godault",
         "zip": "62950",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16340,10 +13073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noyelles-sous-Lens",
         "slug": "noyelles-sous-lens",
         "zip": "62221",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16355,10 +13085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oignies",
         "slug": "oignies",
         "zip": "62590",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16370,10 +13097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Outreau",
         "slug": "outreau",
         "zip": "62230",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16385,10 +13109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oye-Plage",
         "slug": "oye-plage",
         "zip": "62215",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16400,10 +13121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Portel",
         "slug": "le-portel",
         "zip": "62480",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16415,10 +13133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rouvroy",
         "slug": "rouvroy",
         "zip": "62320",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16430,10 +13145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sains-en-Gohelle",
         "slug": "sains-en-gohelle",
         "zip": "62114",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16445,10 +13157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Étienne-au-Mont",
         "slug": "saint-etienne-au-mont",
         "zip": "62360",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16460,10 +13169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Laurent-Blangy",
         "slug": "saint-laurent-blangy",
         "zip": "62223",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16475,10 +13181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-lez-Tatinghem",
         "slug": "saint-martin-lez-tatinghem",
         "zip": "62500",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16490,10 +13193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-Boulogne",
         "slug": "saint-martin-boulogne",
         "zip": "62280",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16505,10 +13205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Omer",
         "slug": "saint-omer",
         "zip": "62500",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16520,10 +13217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sallaumines",
         "slug": "sallaumines",
         "zip": "62430",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16535,10 +13229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vendin-le-Vieil",
         "slug": "vendin-le-vieil",
         "zip": "62880",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16550,10 +13241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wimereux",
         "slug": "wimereux",
         "zip": "62930",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16565,10 +13253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wingles",
         "slug": "wingles",
         "zip": "62410",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16580,10 +13265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Libercourt",
         "slug": "libercourt",
         "zip": "62820",
-        "department": {
-            "code": "62",
-            "nom": "Pas-de-Calais"
-        },
+        "department": "62",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16595,10 +13277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ambert",
         "slug": "ambert",
         "zip": "63600",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16610,10 +13289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubière",
         "slug": "aubiere",
         "zip": "63170",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16625,10 +13301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaumont",
         "slug": "beaumont",
         "zip": "63110",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16640,10 +13313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cébazat",
         "slug": "cebazat",
         "zip": "63118",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16655,10 +13325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Cendre",
         "slug": "le-cendre",
         "zip": "63670",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16670,10 +13337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ceyrat",
         "slug": "ceyrat",
         "zip": "63122",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16685,10 +13349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chamalières",
         "slug": "chamalieres",
         "zip": "63400",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16700,10 +13361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtel-Guyon",
         "slug": "chatel-guyon",
         "zip": "63140",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16715,10 +13373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cournon-d'Auvergne",
         "slug": "cournon-d-auvergne",
         "zip": "63800",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16730,10 +13385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gerzat",
         "slug": "gerzat",
         "zip": "63360",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16745,10 +13397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Issoire",
         "slug": "issoire",
         "zip": "63500",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16760,10 +13409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lempdes",
         "slug": "lempdes",
         "zip": "63370",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16775,10 +13421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lezoux",
         "slug": "lezoux",
         "zip": "63190",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16790,10 +13433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pont-du-Château",
         "slug": "pont-du-chateau",
         "zip": "63430",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16805,10 +13445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Riom",
         "slug": "riom",
         "zip": "63200",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16820,10 +13457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Romagnat",
         "slug": "romagnat",
         "zip": "63540",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16835,10 +13469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thiers",
         "slug": "thiers",
         "zip": "63300",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16850,10 +13481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vic-le-Comte",
         "slug": "vic-le-comte",
         "zip": "63270",
-        "department": {
-            "code": "63",
-            "nom": "Puy-de-Dôme"
-        },
+        "department": "63",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16865,10 +13493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bidart",
         "slug": "bidart",
         "zip": "64210",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16880,10 +13505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Billère",
         "slug": "billere",
         "zip": "64140",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16895,10 +13517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boucau",
         "slug": "boucau",
         "zip": "64340",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16910,10 +13529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cambo-les-Bains",
         "slug": "cambo-les-bains",
         "zip": "64250",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16925,10 +13541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ciboure",
         "slug": "ciboure",
         "zip": "64500",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16940,10 +13553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gan",
         "slug": "gan",
         "zip": "64290",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16955,10 +13565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hasparren",
         "slug": "hasparren",
         "zip": "64240",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16970,10 +13577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Idron",
         "slug": "idron",
         "zip": "64320",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -16985,10 +13589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jurançon",
         "slug": "jurancon",
         "zip": "64110",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17000,10 +13601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lescar",
         "slug": "lescar",
         "zip": "64230",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17015,10 +13613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lons",
         "slug": "lons",
         "zip": "64140",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17030,10 +13625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouguerre",
         "slug": "mouguerre",
         "zip": "64990",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17045,10 +13637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mourenx",
         "slug": "mourenx",
         "zip": "64150",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17060,10 +13649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oloron-Sainte-Marie",
         "slug": "oloron-sainte-marie",
         "zip": "64400",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17075,10 +13661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orthez",
         "slug": "orthez",
         "zip": "64300",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17090,10 +13673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pée-sur-Nivelle",
         "slug": "saint-pee-sur-nivelle",
         "zip": "64310",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17105,10 +13685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-d'Irube",
         "slug": "saint-pierre-d-irube",
         "zip": "64990",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17120,10 +13697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Urrugne",
         "slug": "urrugne",
         "zip": "64122",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17135,10 +13709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ustaritz",
         "slug": "ustaritz",
         "zip": "64480",
-        "department": {
-            "code": "64",
-            "nom": "Pyrénées-Atlantiques"
-        },
+        "department": "64",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17150,10 +13721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aureilhan",
         "slug": "aureilhan",
         "zip": "65800",
-        "department": {
-            "code": "65",
-            "nom": "Hautes-Pyrénées"
-        },
+        "department": "65",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17165,10 +13733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bagnères-de-Bigorre",
         "slug": "bagneres-de-bigorre",
         "zip": "65200",
-        "department": {
-            "code": "65",
-            "nom": "Hautes-Pyrénées"
-        },
+        "department": "65",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17180,10 +13745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bordères-sur-l'Échez",
         "slug": "borderes-sur-l-echez",
         "zip": "65320",
-        "department": {
-            "code": "65",
-            "nom": "Hautes-Pyrénées"
-        },
+        "department": "65",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17195,10 +13757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lannemezan",
         "slug": "lannemezan",
         "zip": "65300",
-        "department": {
-            "code": "65",
-            "nom": "Hautes-Pyrénées"
-        },
+        "department": "65",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17210,10 +13769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Séméac",
         "slug": "semeac",
         "zip": "65600",
-        "department": {
-            "code": "65",
-            "nom": "Hautes-Pyrénées"
-        },
+        "department": "65",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17225,10 +13781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Argelès-sur-Mer",
         "slug": "argeles-sur-mer",
         "zip": "66700",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17240,10 +13793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Barcarès",
         "slug": "le-barcares",
         "zip": "66420",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17255,10 +13805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bompas",
         "slug": "bompas",
         "zip": "66430",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17270,10 +13817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Boulou",
         "slug": "le-boulou",
         "zip": "66160",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17285,10 +13829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cabestany",
         "slug": "cabestany",
         "zip": "66330",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17300,10 +13841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Canet-en-Roussillon",
         "slug": "canet-en-roussillon",
         "zip": "66140",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17315,10 +13853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Canohès",
         "slug": "canohes",
         "zip": "66680",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17330,10 +13865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Céret",
         "slug": "ceret",
         "zip": "66400",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17345,10 +13877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Elne",
         "slug": "elne",
         "zip": "66200",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17360,10 +13889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ille-sur-Têt",
         "slug": "ille-sur-tet",
         "zip": "66130",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17375,10 +13901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pia",
         "slug": "pia",
         "zip": "66380",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17390,10 +13913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pollestres",
         "slug": "pollestres",
         "zip": "66450",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17405,10 +13925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Prades",
         "slug": "prades",
         "zip": "66500",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17420,10 +13937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rivesaltes",
         "slug": "rivesaltes",
         "zip": "66600",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17435,10 +13949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cyprien",
         "slug": "saint-cyprien",
         "zip": "66750",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17450,10 +13961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Estève",
         "slug": "saint-esteve",
         "zip": "66240",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17465,10 +13973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Laurent-de-la-Salanque",
         "slug": "saint-laurent-de-la-salanque",
         "zip": "66250",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17480,10 +13985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saleilles",
         "slug": "saleilles",
         "zip": "66280",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17495,10 +13997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Soler",
         "slug": "le-soler",
         "zip": "66270",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17510,10 +14009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thuir",
         "slug": "thuir",
         "zip": "66300",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17525,10 +14021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Toulouges",
         "slug": "toulouges",
         "zip": "66350",
-        "department": {
-            "code": "66",
-            "nom": "Pyrénées-Orientales"
-        },
+        "department": "66",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17540,10 +14033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Barr",
         "slug": "barr",
         "zip": "67140",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17555,10 +14045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Benfeld",
         "slug": "benfeld",
         "zip": "67230",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17570,10 +14057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bischheim",
         "slug": "bischheim",
         "zip": "67800",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17585,10 +14069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bischwiller",
         "slug": "bischwiller",
         "zip": "67240",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17600,10 +14081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brumath",
         "slug": "brumath",
         "zip": "67170",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17615,10 +14093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Drusenheim",
         "slug": "drusenheim",
         "zip": "67410",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17630,10 +14105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eckbolsheim",
         "slug": "eckbolsheim",
         "zip": "67201",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17645,10 +14117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Erstein",
         "slug": "erstein",
         "zip": "67150",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17660,10 +14129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eschau",
         "slug": "eschau",
         "zip": "67114",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17675,10 +14141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fegersheim",
         "slug": "fegersheim",
         "zip": "67640",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17690,10 +14153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gambsheim",
         "slug": "gambsheim",
         "zip": "67760",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17705,10 +14165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Geispolsheim",
         "slug": "geispolsheim",
         "zip": "67118",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17720,10 +14177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hœnheim",
         "slug": "h-nheim",
         "zip": "67800",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17735,10 +14189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lingolsheim",
         "slug": "lingolsheim",
         "zip": "67380",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17750,10 +14201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Molsheim",
         "slug": "molsheim",
         "zip": "67120",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17765,10 +14213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mundolsheim",
         "slug": "mundolsheim",
         "zip": "67450",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17780,10 +14225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mutzig",
         "slug": "mutzig",
         "zip": "67190",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17795,10 +14237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oberhausbergen",
         "slug": "oberhausbergen",
         "zip": "67205",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17810,10 +14249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Obernai",
         "slug": "obernai",
         "zip": "67210",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17825,10 +14261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ostwald",
         "slug": "ostwald",
         "zip": "67540",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17840,10 +14273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Val-de-Moder",
         "slug": "val-de-moder",
         "zip": "67350",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17855,10 +14285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Reichshoffen",
         "slug": "reichshoffen",
         "zip": "67110",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17870,10 +14297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rosheim",
         "slug": "rosheim",
         "zip": "67560",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17885,10 +14309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saverne",
         "slug": "saverne",
         "zip": "67700",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17900,10 +14321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Schweighouse-sur-Moder",
         "slug": "schweighouse-sur-moder",
         "zip": "67590",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17915,10 +14333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sélestat",
         "slug": "selestat",
         "zip": "67600",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17930,10 +14345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Souffelweyersheim",
         "slug": "souffelweyersheim",
         "zip": "67460",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17945,10 +14357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vendenheim",
         "slug": "vendenheim",
         "zip": "67550",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17960,10 +14369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Wantzenau",
         "slug": "la-wantzenau",
         "zip": "67610",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17975,10 +14381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wasselonne",
         "slug": "wasselonne",
         "zip": "67310",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -17990,10 +14393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wissembourg",
         "slug": "wissembourg",
         "zip": "67160",
-        "department": {
-            "code": "67",
-            "nom": "Bas-Rhin"
-        },
+        "department": "67",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18005,10 +14405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Altkirch",
         "slug": "altkirch",
         "zip": "68130",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18020,10 +14417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blotzheim",
         "slug": "blotzheim",
         "zip": "68730",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18035,10 +14429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brunstatt-Didenheim",
         "slug": "brunstatt-didenheim",
         "zip": "68350",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18050,10 +14441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cernay",
         "slug": "cernay",
         "zip": "68700",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18065,10 +14453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ensisheim",
         "slug": "ensisheim",
         "zip": "68190",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18080,10 +14465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guebwiller",
         "slug": "guebwiller",
         "zip": "68500",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18095,10 +14477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Habsheim",
         "slug": "habsheim",
         "zip": "68440",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18110,10 +14489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Horbourg-Wihr",
         "slug": "horbourg-wihr",
         "zip": "68180",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18125,10 +14501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Huningue",
         "slug": "huningue",
         "zip": "68330",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18140,10 +14513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Illzach",
         "slug": "illzach",
         "zip": "68110",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18155,10 +14525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Kembs",
         "slug": "kembs",
         "zip": "68680",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18170,10 +14537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Kingersheim",
         "slug": "kingersheim",
         "zip": "68260",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18185,10 +14549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lutterbach",
         "slug": "lutterbach",
         "zip": "68460",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18200,10 +14561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pfastatt",
         "slug": "pfastatt",
         "zip": "68120",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18215,10 +14573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Riedisheim",
         "slug": "riedisheim",
         "zip": "68400",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18230,10 +14585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rixheim",
         "slug": "rixheim",
         "zip": "68170",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18245,10 +14597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Louis",
         "slug": "saint-louis",
         "zip": "68300",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18260,10 +14609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sausheim",
         "slug": "sausheim",
         "zip": "68390",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18275,10 +14621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soultz-Haut-Rhin",
         "slug": "soultz-haut-rhin",
         "zip": "68360",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18290,10 +14633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thann",
         "slug": "thann",
         "zip": "68800",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18305,10 +14645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wintzenheim",
         "slug": "wintzenheim",
         "zip": "68124",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18320,10 +14657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wittelsheim",
         "slug": "wittelsheim",
         "zip": "68310",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18335,10 +14669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wittenheim",
         "slug": "wittenheim",
         "zip": "68270",
-        "department": {
-            "code": "68",
-            "nom": "Haut-Rhin"
-        },
+        "department": "68",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18350,10 +14681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Anse",
         "slug": "anse",
         "zip": "69480",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18365,10 +14693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Arbresle",
         "slug": "l-arbresle",
         "zip": "69210",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18380,10 +14705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Belleville-en-Beaujolais",
         "slug": "belleville-en-beaujolais",
         "zip": "69220",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18395,10 +14717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brignais",
         "slug": "brignais",
         "zip": "69530",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18410,10 +14729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brindas",
         "slug": "brindas",
         "zip": "69126",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18425,10 +14741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champagne-au-Mont-d'Or",
         "slug": "champagne-au-mont-d-or",
         "zip": "69410",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18440,10 +14753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chaponost",
         "slug": "chaponost",
         "zip": "69630",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18455,10 +14765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Charbonnières-les-Bains",
         "slug": "charbonnieres-les-bains",
         "zip": "69260",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18470,10 +14777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Craponne",
         "slug": "craponne",
         "zip": "69290",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18485,10 +14789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dardilly",
         "slug": "dardilly",
         "zip": "69570",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18500,10 +14801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Écully",
         "slug": "ecully",
         "zip": "69130",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18515,10 +14813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontaines-sur-Saône",
         "slug": "fontaines-sur-saone",
         "zip": "69270",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18530,10 +14825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Francheville",
         "slug": "francheville",
         "zip": "69340",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18545,10 +14837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Givors",
         "slug": "givors",
         "zip": "69700",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18560,10 +14849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gleizé",
         "slug": "gleize",
         "zip": "69400",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18575,10 +14861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grézieu-la-Varenne",
         "slug": "grezieu-la-varenne",
         "zip": "69290",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18590,10 +14873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grigny-sur-Rhône",
         "slug": "grigny-sur-rhone",
         "zip": "69520",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18605,10 +14885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Irigny",
         "slug": "irigny",
         "zip": "69540",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18620,10 +14897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lentilly",
         "slug": "lentilly",
         "zip": "69210",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18635,10 +14909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mornant",
         "slug": "mornant",
         "zip": "69440",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18650,10 +14921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Mulatière",
         "slug": "la-mulatiere",
         "zip": "69350",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18665,10 +14933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuville-sur-Saône",
         "slug": "neuville-sur-saone",
         "zip": "69250",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18680,10 +14945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oullins-Pierre-Bénite",
         "slug": "oullins-pierre-benite",
         "zip": "69310",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18695,10 +14957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vindry-sur-Turdine",
         "slug": "vindry-sur-turdine",
         "zip": "69490",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18710,10 +14969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cyr-au-Mont-d'Or",
         "slug": "saint-cyr-au-mont-d-or",
         "zip": "69450",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18725,10 +14981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Didier-au-Mont-d'Or",
         "slug": "saint-didier-au-mont-d-or",
         "zip": "69370",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18740,10 +14993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Fons",
         "slug": "saint-fons",
         "zip": "69190",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18755,10 +15005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Foy-lès-Lyon",
         "slug": "sainte-foy-les-lyon",
         "zip": "69110",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18770,10 +15017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Genis-Laval",
         "slug": "saint-genis-laval",
         "zip": "69230",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18785,10 +15029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Genis-les-Ollières",
         "slug": "saint-genis-les-ollieres",
         "zip": "69290",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18800,10 +15041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tarare",
         "slug": "tarare",
         "zip": "69170",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18815,10 +15053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tassin-la-Demi-Lune",
         "slug": "tassin-la-demi-lune",
         "zip": "69160",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18830,10 +15065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thizy-les-Bourgs",
         "slug": "thizy-les-bourgs",
         "zip": "69240",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18845,10 +15077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaugneray",
         "slug": "vaugneray",
         "zip": "69670",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18860,10 +15089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vernaison",
         "slug": "vernaison",
         "zip": "69390",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18875,10 +15101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villefranche-sur-Saône",
         "slug": "villefranche-sur-saone",
         "zip": "69400",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18890,10 +15113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chassieu",
         "slug": "chassieu",
         "zip": "69680",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18905,10 +15125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Corbas",
         "slug": "corbas",
         "zip": "69960",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18920,10 +15137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Décines-Charpieu",
         "slug": "decines-charpieu",
         "zip": "69150",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18935,10 +15149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Feyzin",
         "slug": "feyzin",
         "zip": "69320",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18950,10 +15161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Genas",
         "slug": "genas",
         "zip": "69740",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18965,10 +15173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Genay",
         "slug": "genay",
         "zip": "69730",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18980,10 +15185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jonage",
         "slug": "jonage",
         "zip": "69330",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -18995,10 +15197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mions",
         "slug": "mions",
         "zip": "69780",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19010,10 +15209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rillieux-la-Pape",
         "slug": "rillieux-la-pape",
         "zip": "69140",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19025,10 +15221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Bonnet-de-Mure",
         "slug": "saint-bonnet-de-mure",
         "zip": "69720",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19040,10 +15233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Laurent-de-Mure",
         "slug": "saint-laurent-de-mure",
         "zip": "69720",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19055,10 +15245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Symphorien-d'Ozon",
         "slug": "saint-symphorien-d-ozon",
         "zip": "69360",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19070,10 +15257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sathonay-Camp",
         "slug": "sathonay-camp",
         "zip": "69580",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19085,10 +15269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ternay",
         "slug": "ternay",
         "zip": "69360",
-        "department": {
-            "code": "69",
-            "nom": "Rhône"
-        },
+        "department": "69",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19100,10 +15281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gray",
         "slug": "gray",
         "zip": "70100",
-        "department": {
-            "code": "70",
-            "nom": "Haute-Saône"
-        },
+        "department": "70",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19115,10 +15293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Héricourt",
         "slug": "hericourt",
         "zip": "70400",
-        "department": {
-            "code": "70",
-            "nom": "Haute-Saône"
-        },
+        "department": "70",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19130,10 +15305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lure",
         "slug": "lure",
         "zip": "70200",
-        "department": {
-            "code": "70",
-            "nom": "Haute-Saône"
-        },
+        "department": "70",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19145,10 +15317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luxeuil-les-Bains",
         "slug": "luxeuil-les-bains",
         "zip": "70300",
-        "department": {
-            "code": "70",
-            "nom": "Haute-Saône"
-        },
+        "department": "70",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19160,10 +15329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vesoul",
         "slug": "vesoul",
         "zip": "70000",
-        "department": {
-            "code": "70",
-            "nom": "Haute-Saône"
-        },
+        "department": "70",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19175,10 +15341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Autun",
         "slug": "autun",
         "zip": "71400",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19190,10 +15353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Blanzy",
         "slug": "blanzy",
         "zip": "71450",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19205,10 +15365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chagny",
         "slug": "chagny",
         "zip": "71150",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19220,10 +15377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Charnay-lès-Mâcon",
         "slug": "charnay-les-macon",
         "zip": "71850",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19235,10 +15389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtenoy-le-Royal",
         "slug": "chatenoy-le-royal",
         "zip": "71880",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19250,10 +15401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Creusot",
         "slug": "le-creusot",
         "zip": "71200",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19265,10 +15413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Digoin",
         "slug": "digoin",
         "zip": "71160",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19280,10 +15425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gueugnon",
         "slug": "gueugnon",
         "zip": "71130",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19295,10 +15437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Louhans-Châteaurenaud",
         "slug": "louhans-chateaurenaud",
         "zip": "71500",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19310,10 +15449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montceau-les-Mines",
         "slug": "montceau-les-mines",
         "zip": "71300",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19325,10 +15461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Paray-le-Monial",
         "slug": "paray-le-monial",
         "zip": "71600",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19340,10 +15473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Marcel",
         "slug": "saint-marcel",
         "zip": "71380",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19355,10 +15485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Rémy",
         "slug": "saint-remy",
         "zip": "71100",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19370,10 +15497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Vallier",
         "slug": "saint-vallier",
         "zip": "71230",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19385,10 +15509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tournus",
         "slug": "tournus",
         "zip": "71700",
-        "department": {
-            "code": "71",
-            "nom": "Saône-et-Loire"
-        },
+        "department": "71",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19400,10 +15521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Allonnes",
         "slug": "allonnes",
         "zip": "72700",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19415,10 +15533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arnage",
         "slug": "arnage",
         "zip": "72230",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19430,10 +15545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montval-sur-Loir",
         "slug": "montval-sur-loir",
         "zip": "72500",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19445,10 +15557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coulaines",
         "slug": "coulaines",
         "zip": "72190",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19460,10 +15569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ferté-Bernard",
         "slug": "la-ferte-bernard",
         "zip": "72400",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19475,10 +15581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Flèche",
         "slug": "la-fleche",
         "zip": "72200",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19490,10 +15593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mulsanne",
         "slug": "mulsanne",
         "zip": "72230",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19505,10 +15605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Parigné-l'Évêque",
         "slug": "parigne-l-eveque",
         "zip": "72250",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19520,10 +15617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sablé-sur-Sarthe",
         "slug": "sable-sur-sarthe",
         "zip": "72300",
-        "department": {
-            "code": "72",
-            "nom": "Sarthe"
-        },
+        "department": "72",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19535,10 +15629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Entrelacs",
         "slug": "entrelacs",
         "zip": "73410",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19550,10 +15641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Albertville",
         "slug": "albertville",
         "zip": "73200",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19565,10 +15653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Barberaz",
         "slug": "barberaz",
         "zip": "73000",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19580,10 +15665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Bourget-du-Lac",
         "slug": "le-bourget-du-lac",
         "zip": "73370",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19595,10 +15677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-Saint-Maurice",
         "slug": "bourg-saint-maurice",
         "zip": "73700",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19610,10 +15689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Challes-les-Eaux",
         "slug": "challes-les-eaux",
         "zip": "73190",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19625,10 +15701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cognin",
         "slug": "cognin",
         "zip": "73160",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19640,10 +15713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Motte-Servolex",
         "slug": "la-motte-servolex",
         "zip": "73290",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19655,10 +15725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ravoire",
         "slug": "la-ravoire",
         "zip": "73490",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19670,10 +15737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Alban-Leysse",
         "slug": "saint-alban-leysse",
         "zip": "73230",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19685,10 +15749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-Maurienne",
         "slug": "saint-jean-de-maurienne",
         "zip": "73300",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19700,10 +15761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ugine",
         "slug": "ugine",
         "zip": "73400",
-        "department": {
-            "code": "73",
-            "nom": "Savoie"
-        },
+        "department": "73",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19715,10 +15773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Allinges",
         "slug": "allinges",
         "zip": "74200",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19730,10 +15785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ambilly",
         "slug": "ambilly",
         "zip": "74100",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19745,10 +15797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Balme-de-Sillingy",
         "slug": "la-balme-de-sillingy",
         "zip": "74330",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19760,10 +15809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bonneville",
         "slug": "bonneville",
         "zip": "74130",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19775,10 +15821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bons-en-Chablais",
         "slug": "bons-en-chablais",
         "zip": "74890",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19790,10 +15833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cluses",
         "slug": "cluses",
         "zip": "74300",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19805,10 +15845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cranves-Sales",
         "slug": "cranves-sales",
         "zip": "74380",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19820,10 +15857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cruseilles",
         "slug": "cruseilles",
         "zip": "74350",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19835,10 +15869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Douvaine",
         "slug": "douvaine",
         "zip": "74140",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19850,10 +15881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Epagny Metz-Tessy",
         "slug": "epagny-metz-tessy",
         "zip": "74330",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19865,10 +15893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Évian-les-Bains",
         "slug": "evian-les-bains",
         "zip": "74500",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19880,10 +15905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Faverges-Seythenex",
         "slug": "faverges-seythenex",
         "zip": "74210",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19895,10 +15917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gaillard",
         "slug": "gaillard",
         "zip": "74240",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19910,10 +15929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marignier",
         "slug": "marignier",
         "zip": "74970",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19925,10 +15941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marnaz",
         "slug": "marnaz",
         "zip": "74460",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19940,10 +15953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Passy",
         "slug": "passy",
         "zip": "74190",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19955,10 +15965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Poisy",
         "slug": "poisy",
         "zip": "74330",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19970,10 +15977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Publier",
         "slug": "publier",
         "zip": "74500",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -19985,10 +15989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Reignier-Ésery",
         "slug": "reignier-esery",
         "zip": "74930",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20000,10 +16001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Roche-sur-Foron",
         "slug": "la-roche-sur-foron",
         "zip": "74800",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20015,10 +16013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rumilly",
         "slug": "rumilly",
         "zip": "74150",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20030,10 +16025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Gervais-les-Bains",
         "slug": "saint-gervais-les-bains",
         "zip": "74170",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20045,10 +16037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jorioz",
         "slug": "saint-jorioz",
         "zip": "74410",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20060,10 +16049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Julien-en-Genevois",
         "slug": "saint-julien-en-genevois",
         "zip": "74160",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20075,10 +16061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-en-Faucigny",
         "slug": "saint-pierre-en-faucigny",
         "zip": "74800",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20090,10 +16073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sallanches",
         "slug": "sallanches",
         "zip": "74700",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20105,10 +16085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sciez",
         "slug": "sciez",
         "zip": "74140",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20120,10 +16097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Scionzier",
         "slug": "scionzier",
         "zip": "74950",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20135,10 +16109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sillingy",
         "slug": "sillingy",
         "zip": "74330",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20150,10 +16121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thyez",
         "slug": "thyez",
         "zip": "74300",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20165,10 +16133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thônes",
         "slug": "thones",
         "zip": "74230",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20180,10 +16145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fillière",
         "slug": "filliere",
         "zip": "74370",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20195,10 +16157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valleiry",
         "slug": "valleiry",
         "zip": "74520",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20210,10 +16169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vétraz-Monthoux",
         "slug": "vetraz-monthoux",
         "zip": "74100",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20225,10 +16181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ville-la-Grand",
         "slug": "ville-la-grand",
         "zip": "74100",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20240,10 +16193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Viry",
         "slug": "viry",
         "zip": "74580",
-        "department": {
-            "code": "74",
-            "nom": "Haute-Savoie"
-        },
+        "department": "74",
         "region": "Auvergne-Rhône-Alpes",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20255,10 +16205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Barentin",
         "slug": "barentin",
         "zip": "76360",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20270,10 +16217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bihorel",
         "slug": "bihorel",
         "zip": "76420",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20285,10 +16229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bonsecours",
         "slug": "bonsecours",
         "zip": "76240",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20300,10 +16241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bois-Guillaume",
         "slug": "bois-guillaume",
         "zip": "76230",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20315,10 +16253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bolbec",
         "slug": "bolbec",
         "zip": "76210",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20330,10 +16265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Canteleu",
         "slug": "canteleu",
         "zip": "76380",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20345,10 +16277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Caudebec-lès-Elbeuf",
         "slug": "caudebec-les-elbeuf",
         "zip": "76320",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20360,10 +16289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Darnétal",
         "slug": "darnetal",
         "zip": "76160",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20375,10 +16301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Déville-lès-Rouen",
         "slug": "deville-les-rouen",
         "zip": "76250",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20390,10 +16313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dieppe",
         "slug": "dieppe",
         "zip": "76200",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20405,10 +16325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Elbeuf",
         "slug": "elbeuf",
         "zip": "76500",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20420,10 +16337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eu",
         "slug": "eu",
         "zip": "76260",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20435,10 +16349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fécamp",
         "slug": "fecamp",
         "zip": "76400",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20450,10 +16361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gonfreville-l'Orcher",
         "slug": "gonfreville-l-orcher",
         "zip": "76700",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20465,10 +16373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gournay-en-Bray",
         "slug": "gournay-en-bray",
         "zip": "76220",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20480,10 +16385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grand-Couronne",
         "slug": "grand-couronne",
         "zip": "76530",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20495,10 +16397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Grand-Quevilly",
         "slug": "le-grand-quevilly",
         "zip": "76120",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20510,10 +16409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Harfleur",
         "slug": "harfleur",
         "zip": "76700",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20525,10 +16421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lillebonne",
         "slug": "lillebonne",
         "zip": "76170",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20540,10 +16433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Malaunay",
         "slug": "malaunay",
         "zip": "76770",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20555,10 +16445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maromme",
         "slug": "maromme",
         "zip": "76150",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20570,10 +16457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mesnil-Esnard",
         "slug": "le-mesnil-esnard",
         "zip": "76240",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20585,10 +16469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montivilliers",
         "slug": "montivilliers",
         "zip": "76290",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20600,10 +16481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mont-Saint-Aignan",
         "slug": "mont-saint-aignan",
         "zip": "76130",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20615,10 +16493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Notre-Dame-de-Bondeville",
         "slug": "notre-dame-de-bondeville",
         "zip": "76960",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20630,10 +16505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Franqueville-Saint-Pierre",
         "slug": "franqueville-saint-pierre",
         "zip": "76520",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20645,10 +16517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Port-Jérôme-sur-Seine",
         "slug": "port-jerome-sur-seine",
         "zip": "76170",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20660,10 +16529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Octeville-sur-Mer",
         "slug": "octeville-sur-mer",
         "zip": "76930",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20675,10 +16541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Oissel-sur-Seine",
         "slug": "oissel-sur-seine",
         "zip": "76350",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20690,10 +16553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pavilly",
         "slug": "pavilly",
         "zip": "76570",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20705,10 +16565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petit-Couronne",
         "slug": "petit-couronne",
         "zip": "76650",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20720,10 +16577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Petit-Quevilly",
         "slug": "le-petit-quevilly",
         "zip": "76140",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20735,10 +16589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Adresse",
         "slug": "sainte-adresse",
         "zip": "76310",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20750,10 +16601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Aubin-lès-Elbeuf",
         "slug": "saint-aubin-les-elbeuf",
         "zip": "76410",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20765,10 +16613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Étienne-du-Rouvray",
         "slug": "saint-etienne-du-rouvray",
         "zip": "76800",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20780,10 +16625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petit-Caux",
         "slug": "petit-caux",
         "zip": "76370",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20795,10 +16637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-lès-Elbeuf",
         "slug": "saint-pierre-les-elbeuf",
         "zip": "76320",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20810,10 +16649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sotteville-lès-Rouen",
         "slug": "sotteville-les-rouen",
         "zip": "76300",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20825,10 +16661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yvetot",
         "slug": "yvetot",
         "zip": "76190",
-        "department": {
-            "code": "76",
-            "nom": "Seine-Maritime"
-        },
+        "department": "76",
         "region": "Normandie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20840,10 +16673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Avon",
         "slug": "avon",
         "zip": "77210",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20855,10 +16685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bailly-Romainvilliers",
         "slug": "bailly-romainvilliers",
         "zip": "77700",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20870,10 +16697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bois-le-Roi",
         "slug": "bois-le-roi",
         "zip": "77590",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20885,10 +16709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brie-Comte-Robert",
         "slug": "brie-comte-robert",
         "zip": "77170",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20900,10 +16721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brou-sur-Chantereine",
         "slug": "brou-sur-chantereine",
         "zip": "77177",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20915,10 +16733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bussy-Saint-Georges",
         "slug": "bussy-saint-georges",
         "zip": "77600",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20930,10 +16745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cesson",
         "slug": "cesson",
         "zip": "77240",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20945,10 +16757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champagne-sur-Seine",
         "slug": "champagne-sur-seine",
         "zip": "77430",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20960,10 +16769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champs-sur-Marne",
         "slug": "champs-sur-marne",
         "zip": "77420",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20975,10 +16781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chessy",
         "slug": "chessy",
         "zip": "77700",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -20990,10 +16793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Claye-Souilly",
         "slug": "claye-souilly",
         "zip": "77410",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21005,10 +16805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Combs-la-Ville",
         "slug": "combs-la-ville",
         "zip": "77380",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21020,10 +16817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coulommiers",
         "slug": "coulommiers",
         "zip": "77120",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21035,10 +16829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Courtry",
         "slug": "courtry",
         "zip": "77181",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21050,10 +16841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crégy-lès-Meaux",
         "slug": "cregy-les-meaux",
         "zip": "77124",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21065,10 +16853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dammarie-les-Lys",
         "slug": "dammarie-les-lys",
         "zip": "77190",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21080,10 +16865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dammartin-en-Goële",
         "slug": "dammartin-en-goele",
         "zip": "77230",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21095,10 +16877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Émerainville",
         "slug": "emerainville",
         "zip": "77184",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21110,10 +16889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Esbly",
         "slug": "esbly",
         "zip": "77450",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21125,10 +16901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ferté-sous-Jouarre",
         "slug": "la-ferte-sous-jouarre",
         "zip": "77260",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21140,10 +16913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontainebleau",
         "slug": "fontainebleau",
         "zip": "77300",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21155,10 +16925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenay-Trésigny",
         "slug": "fontenay-tresigny",
         "zip": "77610",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21170,10 +16937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gretz-Armainvilliers",
         "slug": "gretz-armainvilliers",
         "zip": "77220",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21185,10 +16949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lagny-sur-Marne",
         "slug": "lagny-sur-marne",
         "zip": "77400",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21200,10 +16961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lésigny",
         "slug": "lesigny",
         "zip": "77150",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21215,10 +16973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lieusaint",
         "slug": "lieusaint",
         "zip": "77127",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21230,10 +16985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lognes",
         "slug": "lognes",
         "zip": "77185",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21245,10 +16997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Magny-le-Hongre",
         "slug": "magny-le-hongre",
         "zip": "77700",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21260,10 +17009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mée-sur-Seine",
         "slug": "le-mee-sur-seine",
         "zip": "77350",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21275,10 +17021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mitry-Mory",
         "slug": "mitry-mory",
         "zip": "77290",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21290,10 +17033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moissy-Cramayel",
         "slug": "moissy-cramayel",
         "zip": "77550",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21305,10 +17045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montereau-Fault-Yonne",
         "slug": "montereau-fault-yonne",
         "zip": "77130",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21320,10 +17057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montévrain",
         "slug": "montevrain",
         "zip": "77144",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21335,10 +17069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moret-Loing-et-Orvanne",
         "slug": "moret-loing-et-orvanne",
         "zip": "77250",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21350,10 +17081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mormant",
         "slug": "mormant",
         "zip": "77720",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21365,10 +17093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouroux",
         "slug": "mouroux",
         "zip": "77120",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21380,10 +17105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nandy",
         "slug": "nandy",
         "zip": "77176",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21395,10 +17117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nangis",
         "slug": "nangis",
         "zip": "77370",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21410,10 +17129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nanteuil-lès-Meaux",
         "slug": "nanteuil-les-meaux",
         "zip": "77100",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21425,10 +17141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nemours",
         "slug": "nemours",
         "zip": "77140",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21440,10 +17153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noisiel",
         "slug": "noisiel",
         "zip": "77186",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21455,10 +17165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Othis",
         "slug": "othis",
         "zip": "77280",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21470,10 +17177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ozoir-la-Ferrière",
         "slug": "ozoir-la-ferriere",
         "zip": "77330",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21485,10 +17189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Provins",
         "slug": "provins",
         "zip": "77160",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21500,10 +17201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quincy-Voisins",
         "slug": "quincy-voisins",
         "zip": "77860",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21515,10 +17213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roissy-en-Brie",
         "slug": "roissy-en-brie",
         "zip": "77680",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21530,10 +17225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Fargeau-Ponthierry",
         "slug": "saint-fargeau-ponthierry",
         "zip": "77310",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21545,10 +17237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pathus",
         "slug": "saint-pathus",
         "zip": "77178",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21560,10 +17249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-lès-Nemours",
         "slug": "saint-pierre-les-nemours",
         "zip": "77140",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21575,10 +17261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Thibault-des-Vignes",
         "slug": "saint-thibault-des-vignes",
         "zip": "77400",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21590,10 +17273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Savigny-le-Temple",
         "slug": "savigny-le-temple",
         "zip": "77176",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21605,10 +17285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Serris",
         "slug": "serris",
         "zip": "77700",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21620,10 +17297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thorigny-sur-Marne",
         "slug": "thorigny-sur-marne",
         "zip": "77400",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21635,10 +17309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Torcy",
         "slug": "torcy",
         "zip": "77200",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21650,10 +17321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tournan-en-Brie",
         "slug": "tournan-en-brie",
         "zip": "77220",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21665,10 +17333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trilport",
         "slug": "trilport",
         "zip": "77470",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21680,10 +17345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaires-sur-Marne",
         "slug": "vaires-sur-marne",
         "zip": "77360",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21695,10 +17357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaux-le-Pénil",
         "slug": "vaux-le-penil",
         "zip": "77000",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21710,10 +17369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vert-Saint-Denis",
         "slug": "vert-saint-denis",
         "zip": "77240",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21725,10 +17381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villenoy",
         "slug": "villenoy",
         "zip": "77124",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21740,10 +17393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeparisis",
         "slug": "villeparisis",
         "zip": "77270",
-        "department": {
-            "code": "77",
-            "nom": "Seine-et-Marne"
-        },
+        "department": "77",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21755,10 +17405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Achères",
         "slug": "acheres",
         "zip": "78260",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21770,10 +17417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Andrésy",
         "slug": "andresy",
         "zip": "78570",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21785,10 +17429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubergenville",
         "slug": "aubergenville",
         "zip": "78410",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21800,10 +17441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beynes",
         "slug": "beynes",
         "zip": "78650",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21815,10 +17453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bois-d'Arcy",
         "slug": "bois-d-arcy",
         "zip": "78390",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21830,10 +17465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bonnières-sur-Seine",
         "slug": "bonnieres-sur-seine",
         "zip": "78270",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21845,10 +17477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bougival",
         "slug": "bougival",
         "zip": "78380",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21860,10 +17489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Buc",
         "slug": "buc",
         "zip": "78530",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21875,10 +17501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carrières-sous-Poissy",
         "slug": "carrieres-sous-poissy",
         "zip": "78955",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21890,10 +17513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carrières-sur-Seine",
         "slug": "carrieres-sur-seine",
         "zip": "78420",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21905,10 +17525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Celle-Saint-Cloud",
         "slug": "la-celle-saint-cloud",
         "zip": "78170",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21920,10 +17537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chambourcy",
         "slug": "chambourcy",
         "zip": "78240",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21935,10 +17549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chanteloup-les-Vignes",
         "slug": "chanteloup-les-vignes",
         "zip": "78570",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21950,10 +17561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chatou",
         "slug": "chatou",
         "zip": "78400",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21965,10 +17573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Chesnay-Rocquencourt",
         "slug": "le-chesnay-rocquencourt",
         "zip": "78150",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21980,10 +17585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chevreuse",
         "slug": "chevreuse",
         "zip": "78460",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -21995,10 +17597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Clayes-sous-Bois",
         "slug": "les-clayes-sous-bois",
         "zip": "78340",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22010,10 +17609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Conflans-Sainte-Honorine",
         "slug": "conflans-sainte-honorine",
         "zip": "78700",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22025,10 +17621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Croissy-sur-Seine",
         "slug": "croissy-sur-seine",
         "zip": "78290",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22040,10 +17633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Élancourt",
         "slug": "elancourt",
         "zip": "78990",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22055,10 +17645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épône",
         "slug": "epone",
         "zip": "78680",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22070,10 +17657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Essarts-le-Roi",
         "slug": "les-essarts-le-roi",
         "zip": "78690",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22085,10 +17669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Étang-la-Ville",
         "slug": "l-etang-la-ville",
         "zip": "78620",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22100,10 +17681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenay-le-Fleury",
         "slug": "fontenay-le-fleury",
         "zip": "78330",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22115,10 +17693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gargenville",
         "slug": "gargenville",
         "zip": "78440",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22130,10 +17705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Guyancourt",
         "slug": "guyancourt",
         "zip": "78280",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22145,10 +17717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Houilles",
         "slug": "houilles",
         "zip": "78800",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22160,10 +17729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jouars-Pontchartrain",
         "slug": "jouars-pontchartrain",
         "zip": "78760",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22175,10 +17741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jouy-en-Josas",
         "slug": "jouy-en-josas",
         "zip": "78350",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22190,10 +17753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Limay",
         "slug": "limay",
         "zip": "78520",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22205,10 +17765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Louveciennes",
         "slug": "louveciennes",
         "zip": "78430",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22220,10 +17777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Magnanville",
         "slug": "magnanville",
         "zip": "78200",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22235,10 +17789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Magny-les-Hameaux",
         "slug": "magny-les-hameaux",
         "zip": "78114",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22250,10 +17801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maisons-Laffitte",
         "slug": "maisons-laffitte",
         "zip": "78600",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22265,10 +17813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mantes-la-Ville",
         "slug": "mantes-la-ville",
         "zip": "78711",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22280,10 +17825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marly-le-Roi",
         "slug": "marly-le-roi",
         "zip": "78160",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22295,10 +17837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maule",
         "slug": "maule",
         "zip": "78580",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22310,10 +17849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maurepas",
         "slug": "maurepas",
         "zip": "78310",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22325,10 +17861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mesnil-le-Roi",
         "slug": "le-mesnil-le-roi",
         "zip": "78600",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22340,10 +17873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mesnil-Saint-Denis",
         "slug": "le-mesnil-saint-denis",
         "zip": "78320",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22355,10 +17885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meulan-en-Yvelines",
         "slug": "meulan-en-yvelines",
         "zip": "78250",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22370,10 +17897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montesson",
         "slug": "montesson",
         "zip": "78360",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22385,10 +17909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montigny-le-Bretonneux",
         "slug": "montigny-le-bretonneux",
         "zip": "78180",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22400,10 +17921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Mureaux",
         "slug": "les-mureaux",
         "zip": "78130",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22415,10 +17933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noisy-le-Roi",
         "slug": "noisy-le-roi",
         "zip": "78590",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22430,10 +17945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orgeval",
         "slug": "orgeval",
         "zip": "78630",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22445,10 +17957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pecq",
         "slug": "le-pecq",
         "zip": "78230",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22460,10 +17969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Perray-en-Yvelines",
         "slug": "le-perray-en-yvelines",
         "zip": "78610",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22475,10 +17981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Plaisir",
         "slug": "plaisir",
         "zip": "78370",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22490,10 +17993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Port-Marly",
         "slug": "le-port-marly",
         "zip": "78560",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22505,10 +18005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rambouillet",
         "slug": "rambouillet",
         "zip": "78120",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22520,10 +18017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rosny-sur-Seine",
         "slug": "rosny-sur-seine",
         "zip": "78710",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22535,10 +18029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Arnoult-en-Yvelines",
         "slug": "saint-arnoult-en-yvelines",
         "zip": "78730",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22550,10 +18041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cyr-l'École",
         "slug": "saint-cyr-l-ecole",
         "zip": "78210",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22565,10 +18053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Rémy-lès-Chevreuse",
         "slug": "saint-remy-les-chevreuse",
         "zip": "78470",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22580,10 +18065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trappes",
         "slug": "trappes",
         "zip": "78190",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22595,10 +18077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Triel-sur-Seine",
         "slug": "triel-sur-seine",
         "zip": "78510",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22610,10 +18089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaux-sur-Seine",
         "slug": "vaux-sur-seine",
         "zip": "78740",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22625,10 +18101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vélizy-Villacoublay",
         "slug": "velizy-villacoublay",
         "zip": "78140",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22640,10 +18113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Verneuil-sur-Seine",
         "slug": "verneuil-sur-seine",
         "zip": "78480",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22655,10 +18125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Verrière",
         "slug": "la-verriere",
         "zip": "78320",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22670,10 +18137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Vésinet",
         "slug": "le-vesinet",
         "zip": "78110",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22685,10 +18149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villennes-sur-Seine",
         "slug": "villennes-sur-seine",
         "zip": "78670",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22700,10 +18161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villepreux",
         "slug": "villepreux",
         "zip": "78450",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22715,10 +18173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Viroflay",
         "slug": "viroflay",
         "zip": "78220",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22730,10 +18185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Voisins-le-Bretonneux",
         "slug": "voisins-le-bretonneux",
         "zip": "78960",
-        "department": {
-            "code": "78",
-            "nom": "Yvelines"
-        },
+        "department": "78",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22745,10 +18197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aiffres",
         "slug": "aiffres",
         "zip": "79230",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22760,10 +18209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Crèche",
         "slug": "la-creche",
         "zip": "79260",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22775,10 +18221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bressuire",
         "slug": "bressuire",
         "zip": "79300",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22790,10 +18233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mauléon",
         "slug": "mauleon",
         "zip": "79700",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22805,10 +18245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chauray",
         "slug": "chauray",
         "zip": "79180",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22820,10 +18257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Melle",
         "slug": "melle",
         "zip": "79500",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22835,10 +18269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moncoutant-sur-Sèvre",
         "slug": "moncoutant-sur-sevre",
         "zip": "79240",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22850,10 +18281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nueil-les-Aubiers",
         "slug": "nueil-les-aubiers",
         "zip": "79250",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22865,10 +18293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Parthenay",
         "slug": "parthenay",
         "zip": "79200",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22880,10 +18305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Maixent-l'École",
         "slug": "saint-maixent-l-ecole",
         "zip": "79400",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22895,10 +18317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thouars",
         "slug": "thouars",
         "zip": "79100",
-        "department": {
-            "code": "79",
-            "nom": "Deux-Sèvres"
-        },
+        "department": "79",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22910,10 +18329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Abbeville",
         "slug": "abbeville",
         "zip": "80100",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22925,10 +18341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Albert",
         "slug": "albert",
         "zip": "80300",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22940,10 +18353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Corbie",
         "slug": "corbie",
         "zip": "80800",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22955,10 +18365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Doullens",
         "slug": "doullens",
         "zip": "80600",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22970,10 +18377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longueau",
         "slug": "longueau",
         "zip": "80330",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -22985,10 +18389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montdidier",
         "slug": "montdidier",
         "zip": "80500",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23000,10 +18401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Péronne",
         "slug": "peronne",
         "zip": "80200",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23015,10 +18413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roye",
         "slug": "roye",
         "zip": "80700",
-        "department": {
-            "code": "80",
-            "nom": "Somme"
-        },
+        "department": "80",
         "region": "Hauts-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23030,10 +18425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aussillon",
         "slug": "aussillon",
         "zip": "81200",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23045,10 +18437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Carmaux",
         "slug": "carmaux",
         "zip": "81400",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23060,10 +18449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gaillac",
         "slug": "gaillac",
         "zip": "81600",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23075,10 +18461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Graulhet",
         "slug": "graulhet",
         "zip": "81300",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23090,10 +18473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Labruguière",
         "slug": "labruguiere",
         "zip": "81290",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23105,10 +18485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lavaur",
         "slug": "lavaur",
         "zip": "81500",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23120,10 +18497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mazamet",
         "slug": "mazamet",
         "zip": "81200",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23135,10 +18509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rabastens",
         "slug": "rabastens",
         "zip": "81800",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23150,10 +18521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Juéry",
         "slug": "saint-juery",
         "zip": "81160",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23165,10 +18533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Sulpice-la-Pointe",
         "slug": "saint-sulpice-la-pointe",
         "zip": "81370",
-        "department": {
-            "code": "81",
-            "nom": "Tarn"
-        },
+        "department": "81",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23180,10 +18545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Castelsarrasin",
         "slug": "castelsarrasin",
         "zip": "82100",
-        "department": {
-            "code": "82",
-            "nom": "Tarn-et-Garonne"
-        },
+        "department": "82",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23195,10 +18557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Caussade",
         "slug": "caussade",
         "zip": "82300",
-        "department": {
-            "code": "82",
-            "nom": "Tarn-et-Garonne"
-        },
+        "department": "82",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23210,10 +18569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moissac",
         "slug": "moissac",
         "zip": "82200",
-        "department": {
-            "code": "82",
-            "nom": "Tarn-et-Garonne"
-        },
+        "department": "82",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23225,10 +18581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montech",
         "slug": "montech",
         "zip": "82700",
-        "department": {
-            "code": "82",
-            "nom": "Tarn-et-Garonne"
-        },
+        "department": "82",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23240,10 +18593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nègrepelisse",
         "slug": "negrepelisse",
         "zip": "82800",
-        "department": {
-            "code": "82",
-            "nom": "Tarn-et-Garonne"
-        },
+        "department": "82",
         "region": "Occitanie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23255,10 +18605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Arcs",
         "slug": "les-arcs",
         "zip": "83460",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23270,10 +18617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Beausset",
         "slug": "le-beausset",
         "zip": "83330",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23285,10 +18629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bormes-les-Mimosas",
         "slug": "bormes-les-mimosas",
         "zip": "83230",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23300,10 +18641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brignoles",
         "slug": "brignoles",
         "zip": "83170",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23315,10 +18653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Cadière-d'Azur",
         "slug": "la-cadiere-d-azur",
         "zip": "83740",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23330,10 +18665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Cannet-des-Maures",
         "slug": "le-cannet-des-maures",
         "zip": "83340",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23345,10 +18677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Castellet",
         "slug": "le-castellet",
         "zip": "83330",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23360,10 +18689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Crau",
         "slug": "la-crau",
         "zip": "83260",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23375,10 +18701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cuers",
         "slug": "cuers",
         "zip": "83390",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23390,10 +18713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Farlède",
         "slug": "la-farlede",
         "zip": "83210",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23405,10 +18725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fayence",
         "slug": "fayence",
         "zip": "83440",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23420,10 +18737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Garéoult",
         "slug": "gareoult",
         "zip": "83136",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23435,10 +18749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lorgues",
         "slug": "lorgues",
         "zip": "83510",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23450,10 +18761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Luc",
         "slug": "le-luc",
         "zip": "83340",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23465,10 +18773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montauroux",
         "slug": "montauroux",
         "zip": "83440",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23480,10 +18785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Muy",
         "slug": "le-muy",
         "zip": "83490",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23495,10 +18797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nans-les-Pins",
         "slug": "nans-les-pins",
         "zip": "83860",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23510,10 +18809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pierrefeu-du-Var",
         "slug": "pierrefeu-du-var",
         "zip": "83390",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23525,10 +18821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pourrières",
         "slug": "pourrieres",
         "zip": "83910",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23540,10 +18833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Puget-sur-Argens",
         "slug": "puget-sur-argens",
         "zip": "83480",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23555,10 +18845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rocbaron",
         "slug": "rocbaron",
         "zip": "83136",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23570,10 +18857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Roquebrune-sur-Argens",
         "slug": "roquebrune-sur-argens",
         "zip": "83380",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23585,10 +18869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cyr-sur-Mer",
         "slug": "saint-cyr-sur-mer",
         "zip": "83270",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23600,10 +18881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Maximin-la-Sainte-Baume",
         "slug": "saint-maximin-la-sainte-baume",
         "zip": "83470",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23615,10 +18893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Zacharie",
         "slug": "saint-zacharie",
         "zip": "83640",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23630,10 +18905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Solliès-Pont",
         "slug": "sollies-pont",
         "zip": "83210",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23645,10 +18917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Solliès-Toucas",
         "slug": "sollies-toucas",
         "zip": "83210",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23660,10 +18929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tourves",
         "slug": "tourves",
         "zip": "83170",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23675,10 +18941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trans-en-Provence",
         "slug": "trans-en-provence",
         "zip": "83720",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23690,10 +18953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vidauban",
         "slug": "vidauban",
         "zip": "83550",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23705,10 +18965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Mandrier-sur-Mer",
         "slug": "saint-mandrier-sur-mer",
         "zip": "83430",
-        "department": {
-            "code": "83",
-            "nom": "Var"
-        },
+        "department": "83",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23720,10 +18977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubignan",
         "slug": "aubignan",
         "zip": "84810",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23735,10 +18989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bédarrides",
         "slug": "bedarrides",
         "zip": "84370",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23750,10 +19001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Caumont-sur-Durance",
         "slug": "caumont-sur-durance",
         "zip": "84510",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23765,10 +19013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Courthézon",
         "slug": "courthezon",
         "zip": "84350",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23780,10 +19025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Entraigues-sur-la-Sorgue",
         "slug": "entraigues-sur-la-sorgue",
         "zip": "84320",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23795,10 +19037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jonquières",
         "slug": "jonquieres",
         "zip": "84150",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23810,10 +19049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mazan",
         "slug": "mazan",
         "zip": "84380",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23825,10 +19061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Monteux",
         "slug": "monteux",
         "zip": "84170",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23840,10 +19073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morières-lès-Avignon",
         "slug": "morieres-les-avignon",
         "zip": "84310",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23855,10 +19085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pernes-les-Fontaines",
         "slug": "pernes-les-fontaines",
         "zip": "84210",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23870,10 +19097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Piolenc",
         "slug": "piolenc",
         "zip": "84420",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23885,10 +19109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pontet",
         "slug": "le-pontet",
         "zip": "84130",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23900,10 +19121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Saturnin-lès-Avignon",
         "slug": "saint-saturnin-les-avignon",
         "zip": "84450",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23915,10 +19133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sarrians",
         "slug": "sarrians",
         "zip": "84260",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23930,10 +19145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Thor",
         "slug": "le-thor",
         "zip": "84250",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23945,10 +19157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vedène",
         "slug": "vedene",
         "zip": "84270",
-        "department": {
-            "code": "84",
-            "nom": "Vaucluse"
-        },
+        "department": "84",
         "region": "Provence-Alpes-Côte d'Azur",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23960,10 +19169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aizenay",
         "slug": "aizenay",
         "zip": "85190",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23975,10 +19181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aubigny-Les Clouzeaux",
         "slug": "aubigny-les-clouzeaux",
         "zip": "85430",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -23990,10 +19193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bellevigny",
         "slug": "bellevigny",
         "zip": "85170",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24005,10 +19205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bretignolles-sur-Mer",
         "slug": "bretignolles-sur-mer",
         "zip": "85470",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24020,10 +19217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chantonnay",
         "slug": "chantonnay",
         "zip": "85110",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24035,10 +19229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cugand-la-Bernardière",
         "slug": "cugand-la-bernardiere",
         "zip": "85610",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24050,10 +19241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Essarts-en-Bocage",
         "slug": "essarts-en-bocage",
         "zip": "85140",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24065,10 +19253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ferrière",
         "slug": "la-ferriere",
         "zip": "85280",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24080,10 +19265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sèvremont",
         "slug": "sevremont",
         "zip": "85700",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24095,10 +19277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenay-le-Comte",
         "slug": "fontenay-le-comte",
         "zip": "85200",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24110,10 +19289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Garnache",
         "slug": "la-garnache",
         "zip": "85710",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24125,10 +19301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Herbiers",
         "slug": "les-herbiers",
         "zip": "85500",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24140,10 +19313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luçon",
         "slug": "lucon",
         "zip": "85400",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24155,10 +19325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montaigu-Vendée",
         "slug": "montaigu-vendee",
         "zip": "85600",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24170,10 +19337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mortagne-sur-Sèvre",
         "slug": "mortagne-sur-sevre",
         "zip": "85290",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24185,10 +19349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Achards",
         "slug": "les-achards",
         "zip": "85150",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24200,10 +19361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mouilleron-le-Captif",
         "slug": "mouilleron-le-captif",
         "zip": "85000",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24215,10 +19373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Poiré-sur-Vie",
         "slug": "le-poire-sur-vie",
         "zip": "85170",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24230,10 +19385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pouzauges",
         "slug": "pouzauges",
         "zip": "85700",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24245,10 +19397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Gilles-Croix-de-Vie",
         "slug": "saint-gilles-croix-de-vie",
         "zip": "85800",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24260,10 +19409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Jean-de-Monts",
         "slug": "saint-jean-de-monts",
         "zip": "85160",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24275,10 +19421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Talmont-Saint-Hilaire",
         "slug": "talmont-saint-hilaire",
         "zip": "85440",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24290,10 +19433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chanverrie",
         "slug": "chanverrie",
         "zip": "85130",
-        "department": {
-            "code": "85",
-            "nom": "Vendée"
-        },
+        "department": "85",
         "region": "Pays de la Loire",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24305,10 +19445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Buxerolles",
         "slug": "buxerolles",
         "zip": "86180",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24320,10 +19457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtellerault",
         "slug": "chatellerault",
         "zip": "86100",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24335,10 +19469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chauvigny",
         "slug": "chauvigny",
         "zip": "86300",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24350,10 +19481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jaunay-Marigny",
         "slug": "jaunay-marigny",
         "zip": "86130",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24365,10 +19493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Loudun",
         "slug": "loudun",
         "zip": "86200",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24380,10 +19505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mignaloux-Beauvoir",
         "slug": "mignaloux-beauvoir",
         "zip": "86550",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24395,10 +19517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Migné-Auxances",
         "slug": "migne-auxances",
         "zip": "86440",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24410,10 +19529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montmorillon",
         "slug": "montmorillon",
         "zip": "86500",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24425,10 +19541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Naintré",
         "slug": "naintre",
         "zip": "86530",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24440,10 +19553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuville-de-Poitou",
         "slug": "neuville-de-poitou",
         "zip": "86170",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24455,10 +19565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Benoît",
         "slug": "saint-benoit",
         "zip": "86280",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24470,10 +19577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin-la-Pallu",
         "slug": "saint-martin-la-pallu",
         "zip": "86110",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24485,10 +19589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vouneuil-sous-Biard",
         "slug": "vouneuil-sous-biard",
         "zip": "86580",
-        "department": {
-            "code": "86",
-            "nom": "Vienne"
-        },
+        "department": "86",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24500,10 +19601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Aixe-sur-Vienne",
         "slug": "aixe-sur-vienne",
         "zip": "87700",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24515,10 +19613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ambazac",
         "slug": "ambazac",
         "zip": "87240",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24530,10 +19625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Condat-sur-Vienne",
         "slug": "condat-sur-vienne",
         "zip": "87920",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24545,10 +19637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Couzeix",
         "slug": "couzeix",
         "zip": "87270",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24560,10 +19649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Feytiat",
         "slug": "feytiat",
         "zip": "87220",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24575,10 +19661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Isle",
         "slug": "isle",
         "zip": "87170",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24590,10 +19673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Palais-sur-Vienne",
         "slug": "le-palais-sur-vienne",
         "zip": "87410",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24605,10 +19685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Panazol",
         "slug": "panazol",
         "zip": "87350",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24620,10 +19697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Junien",
         "slug": "saint-junien",
         "zip": "87200",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24635,10 +19709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Yrieix-la-Perche",
         "slug": "saint-yrieix-la-perche",
         "zip": "87500",
-        "department": {
-            "code": "87",
-            "nom": "Haute-Vienne"
-        },
+        "department": "87",
         "region": "Nouvelle-Aquitaine",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24650,10 +19721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gérardmer",
         "slug": "gerardmer",
         "zip": "88400",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24665,10 +19733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Golbey",
         "slug": "golbey",
         "zip": "88190",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24680,10 +19745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rambervillers",
         "slug": "rambervillers",
         "zip": "88700",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24695,10 +19757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Raon-l'Étape",
         "slug": "raon-l-etape",
         "zip": "88110",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24710,10 +19769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Remiremont",
         "slug": "remiremont",
         "zip": "88200",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24725,10 +19781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Dié-des-Vosges",
         "slug": "saint-die-des-vosges",
         "zip": "88100",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24740,10 +19793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thaon-les-Vosges",
         "slug": "thaon-les-vosges",
         "zip": "88150",
-        "department": {
-            "code": "88",
-            "nom": "Vosges"
-        },
+        "department": "88",
         "region": "Grand Est",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24755,10 +19805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Avallon",
         "slug": "avallon",
         "zip": "89200",
-        "department": {
-            "code": "89",
-            "nom": "Yonne"
-        },
+        "department": "89",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24770,10 +19817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Joigny",
         "slug": "joigny",
         "zip": "89300",
-        "department": {
-            "code": "89",
-            "nom": "Yonne"
-        },
+        "department": "89",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24785,10 +19829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Migennes",
         "slug": "migennes",
         "zip": "89400",
-        "department": {
-            "code": "89",
-            "nom": "Yonne"
-        },
+        "department": "89",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24800,10 +19841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sens",
         "slug": "sens",
         "zip": "89100",
-        "department": {
-            "code": "89",
-            "nom": "Yonne"
-        },
+        "department": "89",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24815,10 +19853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-sur-Yonne",
         "slug": "villeneuve-sur-yonne",
         "zip": "89500",
-        "department": {
-            "code": "89",
-            "nom": "Yonne"
-        },
+        "department": "89",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24830,10 +19865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Delle",
         "slug": "delle",
         "zip": "90100",
-        "department": {
-            "code": "90",
-            "nom": "Territoire de Belfort"
-        },
+        "department": "90",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24845,10 +19877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valdoie",
         "slug": "valdoie",
         "zip": "90300",
-        "department": {
-            "code": "90",
-            "nom": "Territoire de Belfort"
-        },
+        "department": "90",
         "region": "Bourgogne-Franche-Comté",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24860,10 +19889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arpajon",
         "slug": "arpajon",
         "zip": "91290",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24875,10 +19901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Athis-Mons",
         "slug": "athis-mons",
         "zip": "91200",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24890,10 +19913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ballancourt-sur-Essonne",
         "slug": "ballancourt-sur-essonne",
         "zip": "91610",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24905,10 +19925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bondoufle",
         "slug": "bondoufle",
         "zip": "91070",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24920,10 +19937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boussy-Saint-Antoine",
         "slug": "boussy-saint-antoine",
         "zip": "91800",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24935,10 +19949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brétigny-sur-Orge",
         "slug": "bretigny-sur-orge",
         "zip": "91220",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24950,10 +19961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Breuillet",
         "slug": "breuillet",
         "zip": "91650",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24965,10 +19973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Brunoy",
         "slug": "brunoy",
         "zip": "91800",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24980,10 +19985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bures-sur-Yvette",
         "slug": "bures-sur-yvette",
         "zip": "91440",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -24995,10 +19997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chilly-Mazarin",
         "slug": "chilly-mazarin",
         "zip": "91380",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25010,10 +20009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Crosne",
         "slug": "crosne",
         "zip": "91560",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25025,10 +20021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dourdan",
         "slug": "dourdan",
         "zip": "91410",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25040,10 +20033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Draveil",
         "slug": "draveil",
         "zip": "91210",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25055,10 +20045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Égly",
         "slug": "egly",
         "zip": "91520",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25070,10 +20057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épinay-sous-Sénart",
         "slug": "epinay-sous-senart",
         "zip": "91860",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25085,10 +20069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épinay-sur-Orge",
         "slug": "epinay-sur-orge",
         "zip": "91360",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25100,10 +20081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Étampes",
         "slug": "etampes",
         "zip": "91150",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25115,10 +20093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Étréchy",
         "slug": "etrechy",
         "zip": "91580",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25130,10 +20105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fleury-Mérogis",
         "slug": "fleury-merogis",
         "zip": "91700",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25145,10 +20117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gif-sur-Yvette",
         "slug": "gif-sur-yvette",
         "zip": "91190",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25160,10 +20129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grigny",
         "slug": "grigny",
         "zip": "91350",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25175,10 +20141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Igny",
         "slug": "igny",
         "zip": "91430",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25190,10 +20153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Itteville",
         "slug": "itteville",
         "zip": "91760",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25205,10 +20165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Juvisy-sur-Orge",
         "slug": "juvisy-sur-orge",
         "zip": "91260",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25220,10 +20177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lardy",
         "slug": "lardy",
         "zip": "91510",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25235,10 +20189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Limours",
         "slug": "limours",
         "zip": "91470",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25250,10 +20201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Linas",
         "slug": "linas",
         "zip": "91310",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25265,10 +20213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lisses",
         "slug": "lisses",
         "zip": "91090",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25280,10 +20225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longjumeau",
         "slug": "longjumeau",
         "zip": "91160",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25295,10 +20237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Longpont-sur-Orge",
         "slug": "longpont-sur-orge",
         "zip": "91310",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25310,10 +20249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marcoussis",
         "slug": "marcoussis",
         "zip": "91460",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25325,10 +20261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marolles-en-Hurepoix",
         "slug": "marolles-en-hurepoix",
         "zip": "91630",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25340,10 +20273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mennecy",
         "slug": "mennecy",
         "zip": "91540",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25355,10 +20285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montgeron",
         "slug": "montgeron",
         "zip": "91230",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25370,10 +20297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montlhéry",
         "slug": "montlhery",
         "zip": "91310",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25385,10 +20309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morangis",
         "slug": "morangis",
         "zip": "91420",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25400,10 +20321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morsang-sur-Orge",
         "slug": "morsang-sur-orge",
         "zip": "91390",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25415,10 +20333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ollainville",
         "slug": "ollainville",
         "zip": "91340",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25430,10 +20345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orsay",
         "slug": "orsay",
         "zip": "91400",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25445,10 +20357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Palaiseau",
         "slug": "palaiseau",
         "zip": "91120",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25460,10 +20369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Paray-Vieille-Poste",
         "slug": "paray-vieille-poste",
         "zip": "91550",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25475,10 +20381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Quincy-sous-Sénart",
         "slug": "quincy-sous-senart",
         "zip": "91480",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25490,10 +20393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ris-Orangis",
         "slug": "ris-orangis",
         "zip": "91130",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25505,10 +20405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Chéron",
         "slug": "saint-cheron",
         "zip": "91530",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25520,10 +20417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Geneviève-des-Bois",
         "slug": "sainte-genevieve-des-bois",
         "zip": "91700",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25535,10 +20429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Germain-lès-Arpajon",
         "slug": "saint-germain-les-arpajon",
         "zip": "91180",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25550,10 +20441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Germain-lès-Corbeil",
         "slug": "saint-germain-les-corbeil",
         "zip": "91250",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25565,10 +20453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Michel-sur-Orge",
         "slug": "saint-michel-sur-orge",
         "zip": "91240",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25580,10 +20465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre-du-Perray",
         "slug": "saint-pierre-du-perray",
         "zip": "91280",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25595,10 +20477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saintry-sur-Seine",
         "slug": "saintry-sur-seine",
         "zip": "91250",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25610,10 +20489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saulx-les-Chartreux",
         "slug": "saulx-les-chartreux",
         "zip": "91160",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25625,10 +20501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Savigny-sur-Orge",
         "slug": "savigny-sur-orge",
         "zip": "91600",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25640,10 +20513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soisy-sur-Seine",
         "slug": "soisy-sur-seine",
         "zip": "91450",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25655,10 +20525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Verrières-le-Buisson",
         "slug": "verrieres-le-buisson",
         "zip": "91370",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25670,10 +20537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vigneux-sur-Seine",
         "slug": "vigneux-sur-seine",
         "zip": "91270",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25685,10 +20549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villabé",
         "slug": "villabe",
         "zip": "91100",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25700,10 +20561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villebon-sur-Yvette",
         "slug": "villebon-sur-yvette",
         "zip": "91140",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25715,10 +20573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Ville-du-Bois",
         "slug": "la-ville-du-bois",
         "zip": "91620",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25730,10 +20585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villemoisson-sur-Orge",
         "slug": "villemoisson-sur-orge",
         "zip": "91360",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25745,10 +20597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Viry-Châtillon",
         "slug": "viry-chatillon",
         "zip": "91170",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25760,10 +20609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Wissous",
         "slug": "wissous",
         "zip": "91320",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25775,10 +20621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Yerres",
         "slug": "yerres",
         "zip": "91330",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25790,10 +20633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Ulis",
         "slug": "les-ulis",
         "zip": "91940",
-        "department": {
-            "code": "91",
-            "nom": "Essonne"
-        },
+        "department": "91",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25805,10 +20645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Antony",
         "slug": "antony",
         "zip": "92160",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25820,10 +20657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bagneux",
         "slug": "bagneux",
         "zip": "92220",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25835,10 +20669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bois-Colombes",
         "slug": "bois-colombes",
         "zip": "92270",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25850,10 +20681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourg-la-Reine",
         "slug": "bourg-la-reine",
         "zip": "92340",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25865,10 +20693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtenay-Malabry",
         "slug": "chatenay-malabry",
         "zip": "92290",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25880,10 +20705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Châtillon",
         "slug": "chatillon",
         "zip": "92320",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25895,10 +20717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chaville",
         "slug": "chaville",
         "zip": "92370",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25910,10 +20729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clamart",
         "slug": "clamart",
         "zip": "92140",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25925,10 +20741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clichy",
         "slug": "clichy",
         "zip": "92110",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25940,10 +20753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenay-aux-Roses",
         "slug": "fontenay-aux-roses",
         "zip": "92260",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25955,10 +20765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Garches",
         "slug": "garches",
         "zip": "92380",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25970,10 +20777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Garenne-Colombes",
         "slug": "la-garenne-colombes",
         "zip": "92250",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -25985,10 +20789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gennevilliers",
         "slug": "gennevilliers",
         "zip": "92230",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26000,10 +20801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Issy-les-Moulineaux",
         "slug": "issy-les-moulineaux",
         "zip": "92130",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26015,10 +20813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Levallois-Perret",
         "slug": "levallois-perret",
         "zip": "92300",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26030,10 +20825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Malakoff",
         "slug": "malakoff",
         "zip": "92240",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26045,10 +20837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Meudon",
         "slug": "meudon",
         "zip": "92190",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26060,10 +20849,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montrouge",
         "slug": "montrouge",
         "zip": "92120",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26075,10 +20861,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuilly-sur-Seine",
         "slug": "neuilly-sur-seine",
         "zip": "92200",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26090,10 +20873,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Plessis-Robinson",
         "slug": "le-plessis-robinson",
         "zip": "92350",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26105,10 +20885,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Puteaux",
         "slug": "puteaux",
         "zip": "92800",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26120,10 +20897,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Cloud",
         "slug": "saint-cloud",
         "zip": "92210",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26135,10 +20909,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sceaux",
         "slug": "sceaux",
         "zip": "92330",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26150,10 +20921,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sèvres",
         "slug": "sevres",
         "zip": "92310",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26165,10 +20933,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Suresnes",
         "slug": "suresnes",
         "zip": "92150",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26180,10 +20945,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vanves",
         "slug": "vanves",
         "zip": "92170",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26195,10 +20957,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaucresson",
         "slug": "vaucresson",
         "zip": "92420",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26210,10 +20969,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ville-d'Avray",
         "slug": "ville-d-avray",
         "zip": "92410",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26225,10 +20981,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-la-Garenne",
         "slug": "villeneuve-la-garenne",
         "zip": "92390",
-        "department": {
-            "code": "92",
-            "nom": "Hauts-de-Seine"
-        },
+        "department": "92",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26240,10 +20993,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bagnolet",
         "slug": "bagnolet",
         "zip": "93170",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26255,10 +21005,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Blanc-Mesnil",
         "slug": "le-blanc-mesnil",
         "zip": "93150",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26270,10 +21017,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bobigny",
         "slug": "bobigny",
         "zip": "93000",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26285,10 +21029,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bondy",
         "slug": "bondy",
         "zip": "93140",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26300,10 +21041,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Bourget",
         "slug": "le-bourget",
         "zip": "93350",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26315,10 +21053,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Clichy-sous-Bois",
         "slug": "clichy-sous-bois",
         "zip": "93390",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26330,10 +21065,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Coubron",
         "slug": "coubron",
         "zip": "93470",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26345,10 +21077,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Courneuve",
         "slug": "la-courneuve",
         "zip": "93120",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26360,10 +21089,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Drancy",
         "slug": "drancy",
         "zip": "93700",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26375,10 +21101,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dugny",
         "slug": "dugny",
         "zip": "93440",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26390,10 +21113,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Épinay-sur-Seine",
         "slug": "epinay-sur-seine",
         "zip": "93800",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26405,10 +21125,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gagny",
         "slug": "gagny",
         "zip": "93220",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26420,10 +21137,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gournay-sur-Marne",
         "slug": "gournay-sur-marne",
         "zip": "93460",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26435,10 +21149,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Île-Saint-Denis",
         "slug": "l-ile-saint-denis",
         "zip": "93450",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26450,10 +21161,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Lilas",
         "slug": "les-lilas",
         "zip": "93260",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26465,10 +21173,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Livry-Gargan",
         "slug": "livry-gargan",
         "zip": "93190",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26480,10 +21185,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montfermeil",
         "slug": "montfermeil",
         "zip": "93370",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26495,10 +21197,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuilly-Plaisance",
         "slug": "neuilly-plaisance",
         "zip": "93360",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26510,10 +21209,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Neuilly-sur-Marne",
         "slug": "neuilly-sur-marne",
         "zip": "93330",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26525,10 +21221,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noisy-le-Grand",
         "slug": "noisy-le-grand",
         "zip": "93160",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26540,10 +21233,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Noisy-le-Sec",
         "slug": "noisy-le-sec",
         "zip": "93130",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26555,10 +21245,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pantin",
         "slug": "pantin",
         "zip": "93500",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26570,10 +21257,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Pavillons-sous-Bois",
         "slug": "les-pavillons-sous-bois",
         "zip": "93320",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26585,10 +21269,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Pré-Saint-Gervais",
         "slug": "le-pre-saint-gervais",
         "zip": "93310",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26600,10 +21281,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Raincy",
         "slug": "le-raincy",
         "zip": "93340",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26615,10 +21293,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Romainville",
         "slug": "romainville",
         "zip": "93230",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26630,10 +21305,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rosny-sous-Bois",
         "slug": "rosny-sous-bois",
         "zip": "93110",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26645,10 +21317,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Ouen-sur-Seine",
         "slug": "saint-ouen-sur-seine",
         "zip": "93400",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26660,10 +21329,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sevran",
         "slug": "sevran",
         "zip": "93270",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26675,10 +21341,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Stains",
         "slug": "stains",
         "zip": "93240",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26690,10 +21353,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tremblay-en-France",
         "slug": "tremblay-en-france",
         "zip": "93290",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26705,10 +21365,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vaujours",
         "slug": "vaujours",
         "zip": "93410",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26720,10 +21377,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villemomble",
         "slug": "villemomble",
         "zip": "93250",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26735,10 +21389,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villepinte",
         "slug": "villepinte",
         "zip": "93420",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26750,10 +21401,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villetaneuse",
         "slug": "villetaneuse",
         "zip": "93430",
-        "department": {
-            "code": "93",
-            "nom": "Seine-Saint-Denis"
-        },
+        "department": "93",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26765,10 +21413,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ablon-sur-Seine",
         "slug": "ablon-sur-seine",
         "zip": "94480",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26780,10 +21425,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Alfortville",
         "slug": "alfortville",
         "zip": "94140",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26795,10 +21437,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arcueil",
         "slug": "arcueil",
         "zip": "94110",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26810,10 +21449,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Boissy-Saint-Léger",
         "slug": "boissy-saint-leger",
         "zip": "94470",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26825,10 +21461,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bonneuil-sur-Marne",
         "slug": "bonneuil-sur-marne",
         "zip": "94380",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26840,10 +21473,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bry-sur-Marne",
         "slug": "bry-sur-marne",
         "zip": "94360",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26855,10 +21485,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cachan",
         "slug": "cachan",
         "zip": "94230",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26870,10 +21497,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Charenton-le-Pont",
         "slug": "charenton-le-pont",
         "zip": "94220",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26885,10 +21509,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chennevières-sur-Marne",
         "slug": "chennevieres-sur-marne",
         "zip": "94430",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26900,10 +21521,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chevilly-Larue",
         "slug": "chevilly-larue",
         "zip": "94550",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26915,10 +21533,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Choisy-le-Roi",
         "slug": "choisy-le-roi",
         "zip": "94600",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26930,10 +21545,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fontenay-sous-Bois",
         "slug": "fontenay-sous-bois",
         "zip": "94120",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26945,10 +21557,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fresnes",
         "slug": "fresnes",
         "zip": "94260",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26960,10 +21569,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gentilly",
         "slug": "gentilly",
         "zip": "94250",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26975,10 +21581,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Haÿ-les-Roses",
         "slug": "l-hay-les-roses",
         "zip": "94240",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -26990,10 +21593,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ivry-sur-Seine",
         "slug": "ivry-sur-seine",
         "zip": "94200",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27005,10 +21605,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Joinville-le-Pont",
         "slug": "joinville-le-pont",
         "zip": "94340",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27020,10 +21617,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Kremlin-Bicêtre",
         "slug": "le-kremlin-bicetre",
         "zip": "94270",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27035,10 +21629,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Limeil-Brévannes",
         "slug": "limeil-brevannes",
         "zip": "94450",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27050,10 +21641,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maisons-Alfort",
         "slug": "maisons-alfort",
         "zip": "94700",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27065,10 +21653,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nogent-sur-Marne",
         "slug": "nogent-sur-marne",
         "zip": "94130",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27080,10 +21665,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Orly",
         "slug": "orly",
         "zip": "94310",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27095,10 +21677,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ormesson-sur-Marne",
         "slug": "ormesson-sur-marne",
         "zip": "94490",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27110,10 +21689,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Perreux-sur-Marne",
         "slug": "le-perreux-sur-marne",
         "zip": "94170",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27125,10 +21701,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Plessis-Trévise",
         "slug": "le-plessis-trevise",
         "zip": "94420",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27140,10 +21713,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Queue-en-Brie",
         "slug": "la-queue-en-brie",
         "zip": "94510",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27155,10 +21725,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rungis",
         "slug": "rungis",
         "zip": "94150",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27170,10 +21737,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Mandé",
         "slug": "saint-mande",
         "zip": "94160",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27185,10 +21749,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sucy-en-Brie",
         "slug": "sucy-en-brie",
         "zip": "94370",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27200,10 +21761,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Thiais",
         "slug": "thiais",
         "zip": "94320",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27215,10 +21773,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Valenton",
         "slug": "valenton",
         "zip": "94460",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27230,10 +21785,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villecresnes",
         "slug": "villecresnes",
         "zip": "94440",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27245,10 +21797,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villejuif",
         "slug": "villejuif",
         "zip": "94800",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27260,10 +21809,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-le-Roi",
         "slug": "villeneuve-le-roi",
         "zip": "94290",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27275,10 +21821,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villeneuve-Saint-Georges",
         "slug": "villeneuve-saint-georges",
         "zip": "94190",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27290,10 +21833,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villiers-sur-Marne",
         "slug": "villiers-sur-marne",
         "zip": "94350",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27305,10 +21845,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vincennes",
         "slug": "vincennes",
         "zip": "94300",
-        "department": {
-            "code": "94",
-            "nom": "Val-de-Marne"
-        },
+        "department": "94",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27320,10 +21857,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arnouville",
         "slug": "arnouville",
         "zip": "95400",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27335,10 +21869,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Auvers-sur-Oise",
         "slug": "auvers-sur-oise",
         "zip": "95430",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27350,10 +21881,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beauchamp",
         "slug": "beauchamp",
         "zip": "95250",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27365,10 +21893,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Beaumont-sur-Oise",
         "slug": "beaumont-sur-oise",
         "zip": "95260",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27380,10 +21905,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bessancourt",
         "slug": "bessancourt",
         "zip": "95550",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27395,10 +21917,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bezons",
         "slug": "bezons",
         "zip": "95870",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27410,10 +21929,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouffémont",
         "slug": "bouffemont",
         "zip": "95570",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27425,10 +21941,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Champagne-sur-Oise",
         "slug": "champagne-sur-oise",
         "zip": "95660",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27440,10 +21953,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cormeilles-en-Parisis",
         "slug": "cormeilles-en-parisis",
         "zip": "95240",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27455,10 +21965,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Courdimanche",
         "slug": "courdimanche",
         "zip": "95800",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27470,10 +21977,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Deuil-la-Barre",
         "slug": "deuil-la-barre",
         "zip": "95170",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27485,10 +21989,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Domont",
         "slug": "domont",
         "zip": "95330",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27500,10 +22001,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Eaubonne",
         "slug": "eaubonne",
         "zip": "95600",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27515,10 +22013,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Écouen",
         "slug": "ecouen",
         "zip": "95440",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27530,10 +22025,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Enghien-les-Bains",
         "slug": "enghien-les-bains",
         "zip": "95880",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27545,10 +22037,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Éragny-sur-Oise",
         "slug": "eragny-sur-oise",
         "zip": "95610",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27560,10 +22049,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ermont",
         "slug": "ermont",
         "zip": "95120",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27575,10 +22061,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ézanville",
         "slug": "ezanville",
         "zip": "95460",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27590,10 +22073,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fosses",
         "slug": "fosses",
         "zip": "95470",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27605,10 +22085,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Franconville",
         "slug": "franconville",
         "zip": "95130",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27620,10 +22097,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gonesse",
         "slug": "gonesse",
         "zip": "95500",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27635,10 +22109,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Goussainville",
         "slug": "goussainville",
         "zip": "95190",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27650,10 +22121,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Groslay",
         "slug": "groslay",
         "zip": "95410",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27665,10 +22133,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Herblay-sur-Seine",
         "slug": "herblay-sur-seine",
         "zip": "95220",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27680,10 +22145,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Isle-Adam",
         "slug": "l-isle-adam",
         "zip": "95290",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27695,10 +22157,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Jouy-le-Moutier",
         "slug": "jouy-le-moutier",
         "zip": "95280",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27710,10 +22169,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Louvres",
         "slug": "louvres",
         "zip": "95380",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27725,10 +22181,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Luzarches",
         "slug": "luzarches",
         "zip": "95270",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27740,10 +22193,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Magny-en-Vexin",
         "slug": "magny-en-vexin",
         "zip": "95420",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27755,10 +22205,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Marly-la-Ville",
         "slug": "marly-la-ville",
         "zip": "95670",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27770,10 +22217,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Menucourt",
         "slug": "menucourt",
         "zip": "95180",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27785,10 +22229,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mériel",
         "slug": "meriel",
         "zip": "95630",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27800,10 +22241,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Méry-sur-Oise",
         "slug": "mery-sur-oise",
         "zip": "95540",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27815,10 +22253,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montigny-lès-Cormeilles",
         "slug": "montigny-les-cormeilles",
         "zip": "95370",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27830,10 +22265,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montmagny",
         "slug": "montmagny",
         "zip": "95360",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27845,10 +22277,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Montmorency",
         "slug": "montmorency",
         "zip": "95160",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27860,10 +22289,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Osny",
         "slug": "osny",
         "zip": "95520",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27875,10 +22301,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Parmain",
         "slug": "parmain",
         "zip": "95620",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27890,10 +22313,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Persan",
         "slug": "persan",
         "zip": "95340",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27905,10 +22325,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pierrelaye",
         "slug": "pierrelaye",
         "zip": "95220",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27920,10 +22337,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Plessis-Bouchard",
         "slug": "le-plessis-bouchard",
         "zip": "95130",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27935,10 +22349,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pontoise",
         "slug": "pontoise",
         "zip": "95000",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27950,10 +22361,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Brice-sous-Forêt",
         "slug": "saint-brice-sous-foret",
         "zip": "95350",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27965,10 +22373,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Gratien",
         "slug": "saint-gratien",
         "zip": "95210",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27980,10 +22385,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Leu-la-Forêt",
         "slug": "saint-leu-la-foret",
         "zip": "95320",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -27995,10 +22397,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Ouen-l'Aumône",
         "slug": "saint-ouen-l-aumone",
         "zip": "95310",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28010,10 +22409,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Prix",
         "slug": "saint-prix",
         "zip": "95390",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28025,10 +22421,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sannois",
         "slug": "sannois",
         "zip": "95110",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28040,10 +22433,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Soisy-sous-Montmorency",
         "slug": "soisy-sous-montmorency",
         "zip": "95230",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28055,10 +22445,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Taverny",
         "slug": "taverny",
         "zip": "95150",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28070,10 +22457,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vauréal",
         "slug": "vaureal",
         "zip": "95490",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28085,10 +22469,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Viarmes",
         "slug": "viarmes",
         "zip": "95270",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28100,10 +22481,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Villiers-le-Bel",
         "slug": "villiers-le-bel",
         "zip": "95400",
-        "department": {
-            "code": "95",
-            "nom": "Val-d'Oise"
-        },
+        "department": "95",
         "region": "Île-de-France",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28115,10 +22493,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Abymes",
         "slug": "les-abymes",
         "zip": "97139",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28130,10 +22505,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baie-Mahault",
         "slug": "baie-mahault",
         "zip": "97122",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28145,10 +22517,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Baillif",
         "slug": "baillif",
         "zip": "97123",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28160,10 +22529,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Basse-Terre",
         "slug": "basse-terre",
         "zip": "97100",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28175,10 +22541,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouillante",
         "slug": "bouillante",
         "zip": "97125",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28190,10 +22553,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Capesterre-Belle-Eau",
         "slug": "capesterre-belle-eau",
         "zip": "97130",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28205,10 +22565,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gourbeyre",
         "slug": "gourbeyre",
         "zip": "97113",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28220,10 +22577,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Gosier",
         "slug": "le-gosier",
         "zip": "97190",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28235,10 +22589,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Goyave",
         "slug": "goyave",
         "zip": "97128",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28250,10 +22601,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lamentin",
         "slug": "lamentin",
         "zip": "97129",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28265,10 +22613,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Morne-à-l'Eau",
         "slug": "morne-a-l-eau",
         "zip": "97111",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28280,10 +22625,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Moule",
         "slug": "le-moule",
         "zip": "97160",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28295,10 +22637,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petit-Bourg",
         "slug": "petit-bourg",
         "zip": "97170",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28310,10 +22649,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petit-Canal",
         "slug": "petit-canal",
         "zip": "97131",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28325,10 +22661,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pointe-à-Pitre",
         "slug": "pointe-a-pitre",
         "zip": "97110",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28340,10 +22673,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pointe-Noire",
         "slug": "pointe-noire",
         "zip": "97116",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28355,10 +22685,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Port-Louis",
         "slug": "port-louis",
         "zip": "97117",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28370,10 +22697,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-François",
         "slug": "saint-francois",
         "zip": "97118",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28385,10 +22709,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Anne",
         "slug": "sainte-anne",
         "zip": "97180",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28400,10 +22721,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Rose",
         "slug": "sainte-rose",
         "zip": "97115",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28415,10 +22733,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Trois-Rivières",
         "slug": "trois-rivieres",
         "zip": "97114",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28430,10 +22745,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Vieux-Habitants",
         "slug": "vieux-habitants",
         "zip": "97119",
-        "department": {
-            "code": "971",
-            "nom": "Guadeloupe"
-        },
+        "department": "971",
         "region": "Guadeloupe",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28445,10 +22757,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Diamant",
         "slug": "le-diamant",
         "zip": "97223",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28460,10 +22769,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ducos",
         "slug": "ducos",
         "zip": "97224",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28475,10 +22781,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Fort-de-France",
         "slug": "fort-de-france",
         "zip": "97200",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28490,10 +22793,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le François",
         "slug": "le-francois",
         "zip": "97240",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28505,10 +22805,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Gros-Morne",
         "slug": "gros-morne",
         "zip": "97213",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28520,10 +22817,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Lamentin",
         "slug": "le-lamentin",
         "zip": "97232",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28535,10 +22829,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Lorrain",
         "slug": "le-lorrain",
         "zip": "97214",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28550,10 +22841,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Marin",
         "slug": "le-marin",
         "zip": "97290",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28565,10 +22853,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rivière-Pilote",
         "slug": "riviere-pilote",
         "zip": "97211",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28580,10 +22865,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Rivière-Salée",
         "slug": "riviere-salee",
         "zip": "97215",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28595,10 +22877,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Robert",
         "slug": "le-robert",
         "zip": "97231",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28610,10 +22889,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Esprit",
         "slug": "saint-esprit",
         "zip": "97270",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28625,10 +22901,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Joseph",
         "slug": "saint-joseph",
         "zip": "97212",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28640,10 +22913,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Luce",
         "slug": "sainte-luce",
         "zip": "97228",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28655,10 +22925,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Marie",
         "slug": "sainte-marie",
         "zip": "97230",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28670,10 +22937,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Schœlcher",
         "slug": "sch-lcher",
         "zip": "97233",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28685,10 +22949,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Trois-Îlets",
         "slug": "les-trois-ilets",
         "zip": "97229",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28700,10 +22961,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Vauclin",
         "slug": "le-vauclin",
         "zip": "97280",
-        "department": {
-            "code": "972",
-            "nom": "Martinique"
-        },
+        "department": "972",
         "region": "Martinique",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28715,10 +22973,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cayenne",
         "slug": "cayenne",
         "zip": "97300",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28730,10 +22985,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Kourou",
         "slug": "kourou",
         "zip": "97310",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28745,10 +22997,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Macouria",
         "slug": "macouria",
         "zip": "97355",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28760,10 +23009,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mana",
         "slug": "mana",
         "zip": "97318",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28775,10 +23021,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Matoury",
         "slug": "matoury",
         "zip": "97351",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28790,10 +23033,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Remire-Montjoly",
         "slug": "remire-montjoly",
         "zip": "97354",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28805,10 +23045,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Laurent-du-Maroni",
         "slug": "saint-laurent-du-maroni",
         "zip": "97320",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28820,10 +23057,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maripasoula",
         "slug": "maripasoula",
         "zip": "97370",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28835,10 +23069,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Grand-Santi",
         "slug": "grand-santi",
         "zip": "97340",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28850,10 +23081,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Apatou",
         "slug": "apatou",
         "zip": "97317",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28865,10 +23093,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Papaichton",
         "slug": "papaichton",
         "zip": "97316",
-        "department": {
-            "code": "973",
-            "nom": "Guyane"
-        },
+        "department": "973",
         "region": "Guyane",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28880,10 +23105,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Avirons",
         "slug": "les-avirons",
         "zip": "97425",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28895,10 +23117,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bras-Panon",
         "slug": "bras-panon",
         "zip": "97412",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28910,10 +23129,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Entre-Deux",
         "slug": "entre-deux",
         "zip": "97414",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28925,10 +23141,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "L'Étang-Salé",
         "slug": "l-etang-sale",
         "zip": "97427",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28940,10 +23153,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Petite-Île",
         "slug": "petite-ile",
         "zip": "97429",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28955,10 +23165,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Plaine-des-Palmistes",
         "slug": "la-plaine-des-palmistes",
         "zip": "97431",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28970,10 +23177,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Port",
         "slug": "le-port",
         "zip": "97420",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -28985,10 +23189,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "La Possession",
         "slug": "la-possession",
         "zip": "97419",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29000,10 +23201,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-André",
         "slug": "saint-andre",
         "zip": "97440",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29015,10 +23213,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Leu",
         "slug": "saint-leu",
         "zip": "97416",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29030,10 +23225,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Pierre",
         "slug": "saint-pierre",
         "zip": "97410",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29045,10 +23237,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Philippe",
         "slug": "saint-philippe",
         "zip": "97442",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29060,10 +23249,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sainte-Suzanne",
         "slug": "sainte-suzanne",
         "zip": "97441",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29075,10 +23261,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Salazie",
         "slug": "salazie",
         "zip": "97433",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29090,10 +23273,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Tampon",
         "slug": "le-tampon",
         "zip": "97418",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29105,10 +23285,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Les Trois-Bassins",
         "slug": "les-trois-bassins",
         "zip": "97426",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29120,10 +23297,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Cilaos",
         "slug": "cilaos",
         "zip": "97413",
-        "department": {
-            "code": "974",
-            "nom": "La Réunion"
-        },
+        "department": "974",
         "region": "La Réunion",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29135,10 +23309,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Acoua",
         "slug": "acoua",
         "zip": "97630",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29150,10 +23321,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bandraboua",
         "slug": "bandraboua",
         "zip": "97650",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29165,10 +23333,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bandrele",
         "slug": "bandrele",
         "zip": "97660",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29180,10 +23345,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bouéni",
         "slug": "boueni",
         "zip": "97620",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29195,10 +23357,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chiconi",
         "slug": "chiconi",
         "zip": "97670",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29210,10 +23369,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Chirongui",
         "slug": "chirongui",
         "zip": "97620",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29225,10 +23381,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dembeni",
         "slug": "dembeni",
         "zip": "97660",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29240,10 +23393,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dzaoudzi",
         "slug": "dzaoudzi",
         "zip": "97615",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29255,10 +23405,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Kani-Kéli",
         "slug": "kani-keli",
         "zip": "97625",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29270,10 +23417,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Koungou",
         "slug": "koungou",
         "zip": "97600",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29285,10 +23429,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mamoudzou",
         "slug": "mamoudzou",
         "zip": "97600",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29300,10 +23441,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mtsamboro",
         "slug": "mtsamboro",
         "zip": "97630",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29315,10 +23453,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "M'Tsangamouji",
         "slug": "m-tsangamouji",
         "zip": "97650",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29330,10 +23465,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Ouangani",
         "slug": "ouangani",
         "zip": "97670",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29345,10 +23477,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pamandzi",
         "slug": "pamandzi",
         "zip": "97615",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29360,10 +23489,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Sada",
         "slug": "sada",
         "zip": "97640",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29375,10 +23501,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tsingoni",
         "slug": "tsingoni",
         "zip": "97680",
-        "department": {
-            "code": "976",
-            "nom": "Mayotte"
-        },
+        "department": "976",
         "region": "Mayotte",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29390,10 +23513,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Barthélemy",
         "slug": "saint-barthelemy",
         "zip": "97133",
-        "department": {
-            "code": "977",
-            "nom": "Saint-Barthélemy"
-        },
+        "department": "977",
         "region": "Saint-Barthélemy",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29405,10 +23525,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Saint-Martin",
         "slug": "saint-martin",
         "zip": "97150",
-        "department": {
-            "code": "978",
-            "nom": "Saint-Martin"
-        },
+        "department": "978",
         "region": "Saint-Martin",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29420,10 +23537,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Uvea",
         "slug": "uvea",
         "zip": "98600",
-        "department": {
-            "code": "986",
-            "nom": "Wallis et Futuna"
-        },
+        "department": "986",
         "region": "Wallis et Futuna",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29435,10 +23549,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Arue",
         "slug": "arue",
         "zip": "98701",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29450,10 +23561,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bora-Bora",
         "slug": "bora-bora",
         "zip": "98730",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29465,10 +23573,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Faaa",
         "slug": "faaa",
         "zip": "98704",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29480,10 +23585,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Hitiaa O Te Ra",
         "slug": "hitiaa-o-te-ra",
         "zip": "98705",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29495,10 +23597,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Huahine",
         "slug": "huahine",
         "zip": "98731",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29510,10 +23609,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Mahina",
         "slug": "mahina",
         "zip": "98709",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29525,10 +23621,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Moorea-Maiao",
         "slug": "moorea-maiao",
         "zip": "98728",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29540,10 +23633,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Paea",
         "slug": "paea",
         "zip": "98711",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29555,10 +23645,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Papara",
         "slug": "papara",
         "zip": "98712",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29570,10 +23657,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Papeete",
         "slug": "papeete",
         "zip": "98714",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29585,10 +23669,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Pirae",
         "slug": "pirae",
         "zip": "98716",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29600,10 +23681,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Punaauia",
         "slug": "punaauia",
         "zip": "98703",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29615,10 +23693,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Tahaa",
         "slug": "tahaa",
         "zip": "98733",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29630,10 +23705,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Taiarapu-Est",
         "slug": "taiarapu-est",
         "zip": "98719",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29645,10 +23717,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Taiarapu-Ouest",
         "slug": "taiarapu-ouest",
         "zip": "98723",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29660,10 +23729,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Taputapuatea",
         "slug": "taputapuatea",
         "zip": "98735",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29675,10 +23741,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Teva I Uta",
         "slug": "teva-i-uta",
         "zip": "98726",
-        "department": {
-            "code": "987",
-            "nom": "Polynésie française"
-        },
+        "department": "987",
         "region": "Polynésie française",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29690,10 +23753,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Bourail",
         "slug": "bourail",
         "zip": "98870",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29705,10 +23765,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Dumbéa",
         "slug": "dumbea",
         "zip": "98835",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29720,10 +23777,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Koné",
         "slug": "kone",
         "zip": "98859",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29735,10 +23789,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Lifou",
         "slug": "lifou",
         "zip": "98820",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29750,10 +23801,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Maré",
         "slug": "mare",
         "zip": "98828",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29765,10 +23813,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Le Mont-Dore",
         "slug": "le-mont-dore",
         "zip": "98809",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29780,10 +23825,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Nouméa",
         "slug": "noumea",
         "zip": "98800",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",
@@ -29795,10 +23837,7 @@ export const CITIES_MEDIUM: CityData[] = [
         "name": "Païta",
         "slug": "paita",
         "zip": "98889",
-        "department": {
-            "code": "988",
-            "nom": "Nouvelle-Calédonie"
-        },
+        "department": "988",
         "region": "Nouvelle-Calédonie",
         "country": "FR",
         "climateZone": "semi-continental",

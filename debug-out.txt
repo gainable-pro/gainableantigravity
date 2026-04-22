@@ -1,0 +1,6 @@
+Expert: undefined | ID: undefined
+Article: b2b-conseil-pourquoi-certains-artisans-n-ont-jamais-besoin-de-leads
+Article Status: PUBLISHED
+Article Expert ID: 867ef7d2-f39d-4d96-87a2-ae1203800ded
+Matches Expert ? false
+Article title : Pourquoi certains artisans n’ont jamais besoin de leads
