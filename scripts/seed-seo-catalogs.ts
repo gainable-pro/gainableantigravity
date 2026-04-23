@@ -86,6 +86,51 @@ async function main() {
         // Création de l'introduction
         const intro = `Le système **${product.model}** conçu par le fabricant de renommée mondiale **${product.brand}** fait partie des équipements très recherchés pour les projets d'optimisation thermique. Vous vous demandez si ce modèle de ${product.type?.toLowerCase()} correspond réellement à vos besoins en matière de confort, d'économies d'énergie et de design ? Notre bureau d'étude a décortiqué la documentation intégrale de ${product.brand} pour vous livrer un avis technique, neutre et précis sur le modèle ${product.model}.`;
 
+        // Détermination de l'image principale (mainImage) et des images additionnelles
+        let mainImage = "https://images.unsplash.com/photo-1621259587440-27a1f59ad025?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"; // Default fallback
+        let outdoorImage = "";
+        let remoteImage = "";
+        
+        const brandL = product.brand.toLowerCase();
+        const modelL = product.model.toLowerCase();
+        const typeL = (product.type || "").toLowerCase();
+
+        // MAPPING INTELLIGENT
+        if (brandL.includes('daikin')) {
+            if (modelL.includes('fdxm') || modelL.includes('fba') || typeL.includes('gainable')) mainImage = "/images/catalogues/222305-121025_FDXM25F9_1.jpg";
+            else if (typeL.includes('console') || modelL.includes('fna')) mainImage = "/images/catalogues/221302-300025_FNA25A9_3.jpg";
+            else if (typeL.includes('cassette') || modelL.includes('ffa') || modelL.includes('fca')) mainImage = "/images/catalogues/222206-300036_FCAG35B_3_4.jpg";
+            else if (modelL.includes('ftxa') || typeL.includes('stylish')) mainImage = "/images/catalogues/ftxa35cb_mural_stylish_noir_3_5_kw_r32.jpg";
+            else if (modelL.includes('ftxm') || typeL.includes('perfera')) mainImage = "/images/catalogues/ftxm60a_unite_interieur_r32_mural_wifi_perfera.jpg";
+            else mainImage = "/images/catalogues/climatiseur_mural_daikin_ftxa20aw_1_1.png"; // defaut Daikin
+            
+            outdoorImage = "/images/catalogues/unite-exterieure-2mxm40m-inverter-daikin (1).jpg";
+            remoteImage = "/images/catalogues/220011-000519_BRC1H519K_3_1.jpg"; // Télécommande Madoka
+        } 
+        else if (brandL.includes('mitsubishi')) {
+            if (modelL.includes('pead') || typeL.includes('gainable')) mainImage = "/images/catalogues/pead-.jpg";
+            else if (modelL.includes('ln')) mainImage = "/images/catalogues/021301-420025_MSZ-LN25VGB_1_1.jpg";
+            else if (modelL.includes('ef')) mainImage = "/images/catalogues/021301-313018_msz-ef18vgkw_1.jpg";
+            else if (modelL.includes('hr')) mainImage = "/images/catalogues/MSZ-HR.jpg";
+            else if (modelL.includes('ap')) mainImage = "/images/catalogues/msz-ap.jpg";
+            else if (modelL.includes('mfz') || typeL.includes('console')) mainImage = "/images/catalogues/rac-mfz-kt-kw25-35-50vg-visuel-avant-v1_1.png";
+            else if (typeL.includes('cassette') || modelL.includes('pla')) mainImage = "/images/catalogues/pla-m140ea2.jpg";
+            else mainImage = "/images/catalogues/021301-313018_msz-ef18vgkw_1.jpg"; // defaut Mitsubishi (image légère)
+            
+            outdoorImage = "/images/catalogues/PUHZ-SW100VHA_3_2.jpg";
+            remoteImage = "/images/catalogues/021301-420025_MSZ-LN25VGB__T_l_commande_4.jpg";
+        }
+        else if (brandL.includes('airzone')) {
+            mainImage = "/images/catalogues/1541 (1) airzone thermostat.png";
+            outdoorImage = "";
+            remoteImage = "/images/catalogues/airq_sensor_blueface_1_4.jpg";
+        }
+        else if (brandL.includes('heiwa')) {
+            mainImage = "/images/catalogues/281301-002020_ (1)heiwa.png";
+            outdoorImage = "/images/catalogues/281310-202040_hxes2-2x40-v1.jpg";
+            remoteImage = "";
+        }
+
         // Construction du contenu HTML avec la structure UX ultra-vendeuse
         let contenuHtml = `
             <h2>1. Explications & Caractéristiques du ${product.brand} ${product.model}</h2>
@@ -104,8 +149,10 @@ async function main() {
             <h2>2. Quels sont les vrais avantages de ce système ?</h2>
             <p>Opter pour le ${product.model} n'est pas un choix anodin. Sa conception permet de résoudre plusieurs défis architecturaux ou énergétiques majeurs. Grâce à ses excellentes performances nominales, que ce soit en mode rafraîchissement ou chauffage, il assure un confort stable toute l'année. Les équipements ${product.brand} sont d'ailleurs reconnus par de nombreux installateurs RGE pour leur résilience face aux températures extrêmes.</p>
             
-            ${product.features.includes("Ultra Silencieux") ? `<p><strong>Le gros point fort : l'acoustique.</strong> Ce modèle a été pensé pour réduire drastiquement la pression sonore, un critère fondamental si vous prévoyez une installation près d'une chambre à coucher ou dans un salon ouvert.</p>` : ''}
+            ${product.features && product.features.includes("Ultra Silencieux") ? `<p><strong>Le gros point fort : l'acoustique.</strong> Ce modèle a été pensé pour réduire drastiquement la pression sonore, un critère fondamental si vous prévoyez une installation près d'une chambre à coucher ou dans un salon ouvert.</p>` : ''}
             
+            ${outdoorImage ? `<figure class="my-8"><img src="${outdoorImage}" alt="Groupe extérieur ${product.brand}" loading="lazy" decoding="async" class="rounded-xl shadow-md mx-auto max-h-96 object-contain" /><figcaption class="text-center text-sm text-gray-500 mt-2">Unité extérieure haute performance</figcaption></figure>` : ''}
+
             <h2>3. À qui s'adresse ce modèle ? (Cas d'usage)</h2>
             <p>Le système ${product.model} est particulièrement recommandé si vous vous trouvez dans l'une de ces situations :</p>
             <ul>
@@ -113,6 +160,8 @@ async function main() {
                 <li>Vos factures de chauffage actuelles s'envolent et vous cherchez une pompe à chaleur air-air au rendement énergétique optimisé.</li>
                 <li>Vous faites construire et avez besoin d'une intégration parfaite (RT2012 / RE2020).</li>
             </ul>
+            
+            ${remoteImage ? `<figure class="my-8"><img src="${remoteImage}" alt="Interface de contrôle ${product.brand}" loading="lazy" decoding="async" class="rounded-xl shadow-md mx-auto max-h-72 object-contain" /><figcaption class="text-center text-sm text-gray-500 mt-2">Pilotage intelligent et interface de régulation</figcaption></figure>` : ''}
 
             <hr class="my-10" />
 
@@ -123,13 +172,6 @@ async function main() {
             
             <!-- Le bloc d'acquisition B2C Dynamique se chargera ici via React -->
         `;
-
-        // Détermination d'une d'image générique selon la marque
-        let mainImage = "https://images.unsplash.com/photo-1621259587440-27a1f59ad025?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"; // Default
-        const brandL = product.brand.toLowerCase();
-        if (brandL.includes('daikin')) mainImage = "https://images.unsplash.com/photo-1618218168350-6e7c81151b64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
-        else if (brandL.includes('mitsubishi')) mainImage = "https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
-        else if (brandL.includes('hitachi')) mainImage = "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80";
 
         // Upsert dans la base de données
         try {
