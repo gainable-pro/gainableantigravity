@@ -6,6 +6,7 @@ import { CITIES_100 } from "@/data/cities-100";
 import { CITIES_EXTENDED } from "@/data/cities-extended";
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
+import { MapPin } from 'lucide-react';
 
 const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
 
@@ -136,43 +137,46 @@ export default async function SearchPage({
                 </div>
             </section>
 
-            {/* Regions Directory Hub */}
-            <section className="bg-slate-50 py-16 border-t border-slate-200">
-                <div className="container mx-auto px-4 max-w-5xl">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#1F2D3D] mb-10 text-center">Nos zones d'intervention par région</h2>
-                    
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {['FR', 'CH', 'BE', 'MA'].map((countryKey) => {
-                            const regions = Array.from(new Set(
-                                ALL_CITIES.filter(c => (c.country || 'FR') === countryKey).map(c => c.region)
-                            )).sort();
-
-                            if (regions.length === 0) return null;
-
-                            const flagMap: Record<string, string> = { 'FR': '🇫🇷', 'CH': '🇨🇭', 'BE': '🇧🇪', 'MA': '🇲🇦' };
-                            const nameMap: Record<string, string> = { 'FR': 'France', 'CH': 'Suisse', 'BE': 'Belgique', 'MA': 'Maroc' };
-
-                            return (
-                                <div key={countryKey} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                                    <h3 className="font-bold text-lg text-[#1F2D3D] mb-4 pb-3 border-b border-slate-100 flex items-center gap-2">
-                                        <span className="text-xl">{flagMap[countryKey]}</span> {nameMap[countryKey]}
-                                    </h3>
-                                    <ul className="space-y-3">
-                                        {regions.map(region => (
-                                            <li key={region}>
-                                                <Link 
-                                                    href={`/trouver-installateur/${slugify(region)}`}
-                                                    className="text-slate-600 hover:text-[#D59B2B] hover:translate-x-1 transition-transform inline-block text-sm font-medium"
-                                                >
-                                                    {region}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            );
-                        })}
+            {/* BLOC: NOS ZONES D'INTERVENTION (SEO MAILLAGE) */}
+            <section className="py-16 bg-slate-50 border-t border-slate-200">
+                <div className="container mx-auto px-4 text-center">
+                    <h2 className="text-2xl font-bold text-[#1F2D3D] mb-8">
+                        Installation Climatisation Gainable : Nos zones d'intervention
+                    </h2>
+                    <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-8">
+                        <Link href="/climatisation/paris" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Paris</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/marseille" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Marseille</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/lyon" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Lyon</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/toulouse" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Toulouse</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/nice" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Nice</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/nantes" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Nantes</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/strasbourg" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Strasbourg</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/bordeaux" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors">Bordeaux</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/lausanne" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors border-b border-dashed border-slate-300">Lausanne (CH)</Link>
+                        <span className="text-slate-300">•</span>
+                        <Link href="/climatisation/bruxelles" className="text-slate-600 hover:text-[#D59B2B] font-medium transition-colors border-b border-dashed border-slate-300">Bruxelles (BE)</Link>
                     </div>
+                
+                    <div className="flex justify-center mt-8">
+                        <Link href="/climatisation/villes">
+                            <Button variant="outline" className="border-2 border-[#1F2D3D] text-[#1F2D3D] hover:bg-[#1F2D3D] hover:text-white font-bold py-6 px-8 shadow-md hover:shadow-xl transition-all h-auto text-lg flex items-center gap-2 rounded-full">
+                                <MapPin className="w-5 h-5" />
+                                Voir nos 550+ Villes Couvertes (France, Suisse, Belgique)
+                            </Button>
+                        </Link>
+                    </div>
+                
+                    <p className="mt-8 text-sm text-slate-500 max-w-2xl mx-auto">
+                        Intervention dans toute l'Europe francophone avec notre réseau exclusif d'installateurs partenaires locaux vérifiés.
+                    </p>
                 </div>
             </section>
         </div>
