@@ -7,6 +7,7 @@ import { CITIES_EXTENDED } from "@/data/cities-extended";
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
 
