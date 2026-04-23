@@ -121,11 +121,11 @@ export function ProCard({
 
             {/* Actions */}
             <div className="flex flex-col gap-2 justify-center lg:min-w-[150px] xl:min-w-[180px]">
-                <Link href={`/pro/${slug}`} className="w-full">
+                <a href={`/pro/${slug}`} className="w-full">
                     <Button variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 transition-colors">
                         Voir la fiche
                     </Button>
-                </Link>
+                </a>
 
                 <Button
                     variant={showPhone ? "default" : "outline"}
