@@ -359,12 +359,20 @@ export function SignUpForm() {
                             </div>
 
                             <div className="mt-2">
-                                <span className="text-[#D59B2B] font-bold text-3xl">
-                                    {billingInterval === 'yearly' ? '650 €' : '50 €'}
-                                </span>
-                                <span className="text-sm text-slate-500 font-medium">
-                                    {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
-                                </span>
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-[#D59B2B] font-bold text-3xl">
+                                        {billingInterval === 'yearly' ? '650 €' : '50 €'}
+                                    </span>
+                                    <span className="text-lg text-slate-400 line-through font-medium">
+                                        {billingInterval === 'yearly' ? '850 €' : '75 €'}
+                                    </span>
+                                </div>
+                                <div className="flex items-center gap-2 mt-1">
+                                    <span className="text-sm text-slate-500 font-medium">
+                                        {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
+                                    </span>
+                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Tarif lancement</span>
+                                </div>
                             </div>
 
                             {/* Commitment Note */}
@@ -410,7 +418,16 @@ export function SignUpForm() {
                                 <FileText className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
-                            <div className="text-purple-600 font-bold text-xl mt-1">380 € <span className="text-xs text-slate-500 font-normal">/ an HT</span></div>
+                            <div className="mt-2">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-purple-600 font-bold text-2xl">380 €</span>
+                                    <span className="text-base text-slate-400 line-through font-medium">680 €</span>
+                                </div>
+                                <div className="flex items-center gap-2 mt-1">
+                                    <span className="text-sm text-slate-500 font-medium">/ an HT</span>
+                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Tarif lancement</span>
+                                </div>
+                            </div>
                             
                             {/* Commitment Note */}
                             <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
