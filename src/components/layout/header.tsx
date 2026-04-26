@@ -10,8 +10,6 @@ import { usePathname } from "next/navigation";
 import * as React from "react";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
-    const pathname = usePathname();
-    if (pathname?.startsWith('/dashboard')) return null;
     // Dynamic Logo based on Country
     let logoSrc = "/logo.png"; // Default (FR/Global)
     if (countryCode === 'CH') logoSrc = "/logo-ch.png"; // Suisse
