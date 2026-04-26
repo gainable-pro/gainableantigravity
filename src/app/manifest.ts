@@ -2,8 +2,8 @@ import { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Gainable.fr Pro',
-    short_name: 'Gainable Pro',
+    name: 'Gainable.fr',
+    short_name: 'Gainable.fr',
     description: 'Espace professionnel Gainable.fr pour la gestion de vos demandes et articles SEO',
     start_url: '/dashboard',
     display: 'standalone',

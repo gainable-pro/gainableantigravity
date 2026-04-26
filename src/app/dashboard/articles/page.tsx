@@ -101,70 +101,62 @@ export default function ArticlesPage() {
                     </Button>
                 </div>
             ) : (
-                <div className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
-                    <table className="w-full text-left text-sm">
-                        <thead className="bg-slate-50 text-slate-500 border-b border-slate-100">
-                            <tr>
-                                <th className="p-4 font-medium">Titre</th>
-                                <th className="p-4 font-medium">Statut</th>
-                                <th className="p-4 font-medium">Date de création</th>
-                                <th className="p-4 font-medium text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100">
-                            {articles.map((article) => (
-                                <tr key={article.id} className="hover:bg-slate-50/50 transition-colors">
-                                    <td className="p-4">
-                                        <div className="font-semibold text-slate-800">{article.title}</div>
-                                        <div className="text-xs text-slate-400">/{article.slug}</div>
-                                        {article.status === 'REJECTED' && article.rejectionReason && (
-                                            <div className="text-xs text-red-500 mt-1 flex items-center gap-1">
-                                                <AlertCircle className="w-3 h-3" />
-                                                Motif : {article.rejectionReason}
-                                            </div>
-                                        )}
-                                    </td>
-                                    <td className="p-4">
-                                        {getStatusBadge(article.status)}
-                                    </td>
-                                    <td className="p-4 text-slate-500">
-                                        {format(new Date(article.createdAt), "d MMMM yyyy", { locale: fr })}
-                                    </td>
-                                    <td className="p-4 text-right space-x-2">
-                                        {article.status === 'PUBLISHED' && expertSlug && (
-                                            <Button asChild variant="outline" size="sm" className="text-blue-600 border-blue-200 hover:bg-blue-50">
-                                                <Link href={`/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank">
-                                                    Voir
-                                                </Link>
-                                            </Button>
-                                        )}
-                                        <Button asChild variant="ghost" size="sm">
-                                            <Link href={`/dashboard/articles/${article.id}`}>
-                                                Modifier
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            onClick={() => {
-                                                if (confirm("Supprimer cet article ?")) {
-                                                    fetch(`/api/dashboard/articles/${article.id}`, { method: "DELETE" })
-                                                        .then(res => {
-                                                            if (res.ok) fetchArticles();
-                                                            else alert("Erreur suppression");
-                                                        });
-                                                }
-                                            }}
-                                            className="text-red-500 hover:text-red-700 hover:bg-red-50"
-                                        >
-                                            <Trash2 className="w-4 h-4 mr-1" />
-                                            Supprimer
-                                        </Button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <div className="grid gap-4">
+                    {articles.map((article) => (
+                        <div key={article.id} className="bg-white rounded-xl shadow-sm border border-slate-100 p-4 md:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="space-y-2 flex-1">
+                                <div className="flex items-start justify-between gap-2">
+                                    <div className="font-bold text-slate-800 text-lg leading-tight">{article.title}</div>
+                                    <div className="shrink-0">{getStatusBadge(article.status)}</div>
+                                </div>
+                                
+                                <div className="text-xs text-slate-400 font-mono break-all">/{article.slug}</div>
+                                
+                                {article.status === 'REJECTED' && article.rejectionReason && (
+                                    <div className="text-sm text-red-600 bg-red-50 p-2 rounded-md flex items-start gap-2">
+                                        <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
+                                        <span>Motif : {article.rejectionReason}</span>
+                                    </div>
+                                )}
+                                
+                                <div className="text-xs text-slate-500 font-medium flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    {format(new Date(article.createdAt), "d MMMM yyyy", { locale: fr })}
+                                </div>
+                            </div>
+                            
+                            <div className="flex items-center gap-2 pt-3 border-t border-slate-50 md:border-t-0 md:pt-0 shrink-0 self-end md:self-center">
+                                {article.status === 'PUBLISHED' && expertSlug && (
+                                    <Button asChild variant="outline" size="sm" className="text-blue-600 border-blue-200 hover:bg-blue-50">
+                                        <Link href={`/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank">
+                                            Voir
+                                        </Link>
+                                    </Button>
+                                )}
+                                <Button asChild variant="secondary" size="sm">
+                                    <Link href={`/dashboard/articles/${article.id}`}>
+                                        Modifier
+                                    </Link>
+                                </Button>
+                                <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => {
+                                        if (confirm("Supprimer cet article ?")) {
+                                            fetch(`/api/dashboard/articles/${article.id}`, { method: "DELETE" })
+                                                .then(res => {
+                                                    if (res.ok) fetchArticles();
+                                                    else alert("Erreur suppression");
+                                                });
+                                        }
+                                    }}
+                                    className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                                >
+                                    <Trash2 className="w-4 h-4" />
+                                </Button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
