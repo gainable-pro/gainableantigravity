@@ -6,9 +6,11 @@ import { Globe, Menu } from "lucide-react";
 import Image from "next/image";
 import { LoginDropdown } from "@/components/layout/login-dropdown";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
-import * as React from "react";
+import { usePathname } from "next/navigation";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
+    const pathname = usePathname();
+    if (pathname?.startsWith('/dashboard')) return null;
     // Dynamic Logo based on Country
     let logoSrc = "/logo.png"; // Default (FR/Global)
     if (countryCode === 'CH') logoSrc = "/logo-ch.png"; // Suisse

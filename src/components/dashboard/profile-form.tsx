@@ -22,6 +22,7 @@ import {
     EXPERT_BATIMENTS,
     EXPERT_CERTIFICATIONS
 } from "@/lib/constants";
+import Link from "next/link";
 
 // Map constants to ID/Label format
 const TECH_LIST = EXPERT_TECHNOLOGIES.map(t => ({ id: t, label: t }));
@@ -603,6 +604,21 @@ export default function ProfileForm() {
                     </Card>
                 )
             }
+
+            {/* FACTURATION REDIRECT */}
+            <Card className="bg-slate-50 border-slate-200">
+                <CardContent className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <h3 className="font-semibold text-lg text-[#1F2D3D]">Facturation & Abonnement</h3>
+                        <p className="text-sm text-slate-500">Gérez vos factures, moyens de paiement et abonnements.</p>
+                    </div>
+                    <Link href="/dashboard/factures" className="w-full md:w-auto">
+                        <Button variant="outline" className="w-full text-slate-700 border-slate-300 hover:bg-slate-100 whitespace-nowrap">
+                            Accéder à la facturation
+                        </Button>
+                    </Link>
+                </CardContent>
+            </Card>
 
             <div className="flex justify-end pt-6">
                 <Button onClick={handleSave} disabled={isSaving} className="bg-[#D59B2B] hover:bg-[#b88622] text-white size-lg text-lg px-8">

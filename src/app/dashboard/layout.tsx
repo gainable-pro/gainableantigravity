@@ -95,20 +95,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col">
             {/* Mobile Header */}
-            <div className="md:hidden bg-white border-b border-slate-200 p-4 flex items-center justify-between sticky top-0 z-40">
-                <div className="flex items-center gap-2">
-                    <h1 className="text-lg font-bold text-[#1F2D3D]">Espace Pro</h1>
-                </div>
-                <Sheet open={open} onOpenChange={setOpen}>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon">
-                            <Menu className="w-6 h-6 text-[#1F2D3D]" />
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent side="left" className="p-0 w-[300px]">
-                        <NavigationContent />
-                    </SheetContent>
-                </Sheet>
+            <div className="md:hidden bg-white border-b border-slate-200 p-4 flex items-center justify-center sticky top-0 z-40">
+                <h1 className="text-lg font-bold text-[#1F2D3D]">Espace Pro</h1>
             </div>
 
             <div className="flex flex-1">
