@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, FileText, CheckCircle2, Clock, AlertCircle, Trash2 } from "lucide-react";
+import { PlusCircle, FileText, CheckCircle2, Clock, AlertCircle, Trash2, Facebook, Linkedin, Instagram, Share2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -107,7 +107,30 @@ export default function ArticlesPage() {
                             <div className="space-y-2 flex-1">
                                 <div className="flex items-start justify-between gap-2">
                                     <div className="font-bold text-slate-800 text-lg leading-tight">{article.title}</div>
-                                    <div className="shrink-0">{getStatusBadge(article.status)}</div>
+                                    <div className="shrink-0 flex flex-col items-end gap-2">
+                                        {getStatusBadge(article.status)}
+                                        {article.status === 'PUBLISHED' && expertSlug && (
+                                            <div className="flex items-center gap-1 mt-1">
+                                                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://www.gainable.fr/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-[#1877F2]/10 text-[#1877F2] rounded-full hover:bg-[#1877F2]/20 transition-colors" title="Partager sur Facebook">
+                                                    <Facebook className="w-3.5 h-3.5" />
+                                                </a>
+                                                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://www.gainable.fr/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-[#0A66C2]/10 text-[#0A66C2] rounded-full hover:bg-[#0A66C2]/20 transition-colors" title="Partager sur LinkedIn">
+                                                    <Linkedin className="w-3.5 h-3.5" />
+                                                </a>
+                                                <button onClick={() => {
+                                                    const url = `https://www.gainable.fr/entreprise/${expertSlug}/articles/${article.slug}`;
+                                                    if (navigator.share) {
+                                                        navigator.share({ title: article.title, url });
+                                                    } else {
+                                                        navigator.clipboard.writeText(url);
+                                                        alert("Lien de l'article copié !");
+                                                    }
+                                                }} className="p-1.5 bg-pink-50 text-pink-600 rounded-full hover:bg-pink-100 transition-colors" title="Partager sur Instagram / Mobile">
+                                                    <Instagram className="w-3.5 h-3.5" />
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                                 
                                 <div className="text-xs text-slate-400 font-mono break-all">/{article.slug}</div>
