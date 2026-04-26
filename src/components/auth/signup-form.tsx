@@ -67,6 +67,9 @@ export function SignUpForm() {
     const [marques, setMarques] = useState<string[]>([]);
     const [certifications, setCertifications] = useState<string[]>([]);
 
+    const [hasDifferentApe, setHasDifferentApe] = useState(false);
+    const [attestationCapacite, setAttestationCapacite] = useState("");
+
     const [siretInput, setSiretInput] = useState("");
     const [isLoadingSiret, setIsLoadingSiret] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -144,8 +147,18 @@ export function SignUpForm() {
         if (!selectedPlan) return;
 
         // Validation APE only for France
-        if (formData.pays === 'France' && !validateApe(formData.codeApe, selectedPlan)) {
+        let isApeValid = validateApe(formData.codeApe, selectedPlan);
+        if (selectedPlan === 'societe' && hasDifferentApe && attestationCapacite.trim() !== '') {
+            isApeValid = true;
+        }
+
+        if (formData.pays === 'France' && !isApeValid) {
             alert(`Inscription bloquée: Code APE ${formData.codeApe} incompatible avec le type de compte.`);
+            return;
+        }
+
+        if (selectedPlan === 'societe' && hasDifferentApe && attestationCapacite.trim() === '') {
+            alert(`Veuillez renseigner votre numéro d'attestation de capacité fluide frigorigène.`);
             return;
         }
 
@@ -153,6 +166,7 @@ export function SignUpForm() {
         const payload = {
             ...formData,
             expertType: selectedPlan,
+            attestationCapacite: hasDifferentApe ? attestationCapacite : undefined,
             technologies: selectedPlan === 'societe' ? technologies : [],
             interventionsClim: selectedPlan === 'societe' ? interventionsClim : [],
             interventionsEtude: selectedPlan === 'bureau_etude' ? interventionsEtude : [],
@@ -563,6 +577,22 @@ export function SignUpForm() {
                                         <div className="space-y-2">
                                             <Label>Code APE</Label>
                                             <Input value={formData.codeApe} disabled className="bg-slate-50" placeholder="XXXXX" />
+                                            {selectedPlan === 'societe' && formData.pays === 'France' && (
+                                                <div className="mt-3 space-y-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                                    <div className="flex items-start space-x-2">
+                                                        <Checkbox id="differentApe" checked={hasDifferentApe} onCheckedChange={(checked) => setHasDifferentApe(!!checked)} className="mt-1" />
+                                                        <label htmlFor="differentApe" className="text-sm font-medium text-slate-700 leading-snug cursor-pointer">
+                                                            Mon code APE n'est pas lié au CVC (ex: Électricien) mais je possède une attestation de capacité fluide frigorigène
+                                                        </label>
+                                                    </div>
+                                                    {hasDifferentApe && (
+                                                        <div className="space-y-2 pt-1 pl-6">
+                                                            <Label>Numéro d'attestation de capacité <span className="text-red-500">*</span></Label>
+                                                            <Input value={attestationCapacite} onChange={(e) => setAttestationCapacite(e.target.value)} placeholder="Ex: 1234567" className="bg-white" />
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
 

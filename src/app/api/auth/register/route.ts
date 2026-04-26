@@ -16,7 +16,7 @@ export async function POST(req: Request) {
             website, linkedin, telephone,
             adresse, ville, codePostal, pays, siret, tvaNumber, codeApe,
             technologies, interventionsClim, interventionsEtude,
-            interventionsDiag, batiments, marques
+            interventionsDiag, batiments, marques, attestationCapacite
         } = body;
 
         // --- SERVER-SIDE VALIDATION ---
@@ -29,8 +29,9 @@ export async function POST(req: Request) {
         // Only validate APE if strict France context or provided
         // We relax this for International as APE is French-specific
         const isFrance = !pays || pays === 'France';
+        const bypassApeCheck = expertType === 'societe' && !!attestationCapacite;
 
-        if (isFrance && expertType && VALID_APE_PREFIXES[expertType]) {
+        if (isFrance && expertType && VALID_APE_PREFIXES[expertType] && !bypassApeCheck) {
             const allowed = VALID_APE_PREFIXES[expertType];
             // Normalize APE: remove dots and spaces
             const cleanApe = codeApe ? codeApe.replace(/[\.\s]/g, '') : '';
@@ -178,9 +179,14 @@ export async function POST(req: Request) {
             }
 
             // Certifications (Societe only typically)
-            if (expertType === 'societe' && body.certifications?.length > 0) {
+            const certsToCreate = body.certifications ? [...body.certifications] : [];
+            if (expertType === 'societe' && attestationCapacite) {
+                certsToCreate.push(`Attestation de capacité fluide frigorigène : ${attestationCapacite}`);
+            }
+
+            if (expertType === 'societe' && certsToCreate.length > 0) {
                 await tx.expertCertification.createMany({
-                    data: body.certifications.map((c: string) => ({ expert_id: expert.id, value: c }))
+                    data: certsToCreate.map((c: string) => ({ expert_id: expert.id, value: c }))
                 });
             }
 
