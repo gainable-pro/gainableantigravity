@@ -252,7 +252,6 @@ export default function MediaPage() {
                                 id="gallery-upload"
                                 type="file"
                                 accept="image/*"
-                                capture="environment"
                                 className="hidden"
                                 multiple
                                 onChange={(e) => handleFileUpload(e, 'photo')}

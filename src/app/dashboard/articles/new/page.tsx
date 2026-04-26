@@ -574,7 +574,6 @@ export default function NewArticlePage() {
                                         onChange={handleImageUpload}
                                         className="hidden"
                                         accept="image/*"
-                                        capture="environment"
                                     />
                                     {!mainImage ? (
                                         <div
@@ -604,14 +603,6 @@ export default function NewArticlePage() {
                                             placeholder="Description de l'image pour le SEO"
                                             value={altText}
                                             onChange={(e) => setAltText(e.target.value)}
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label>Lien Vidéo (YouTube)</Label>
-                                        <Input
-                                            placeholder="https://youtube.com/watch?v=..."
-                                            value={videoUrl}
-                                            onChange={(e) => setVideoUrl(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -713,7 +704,6 @@ export default function NewArticlePage() {
                                                         type="file"
                                                         className="hidden"
                                                         accept="image/*"
-                                                        capture="environment"
                                                         onChange={(e) => handleSectionImageUpload(e, index)}
                                                     />
                                                 </label>

@@ -431,7 +431,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                             {(block.type === 'image' || block.type === 'video') && (
                                                 <div className="flex gap-2">
                                                     <Input value={block.value} onChange={(e) => updateBlock(index, 'value', e.target.value)} placeholder="URL..." />
-                                                    <Input type="file" className="w-20" accept="image/*" capture="environment" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
+                                                    <Input type="file" className="w-20" accept="image/*" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
                                                 </div>
                                             )}
                                         </CardContent>
@@ -452,7 +452,6 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                 <Button variant="outline" onClick={() => addBlock('text')} className="gap-2"><AlignLeft className="w-4 h-4" /> Texte</Button>
                                 <Button variant="outline" onClick={() => addBlock('image')} className="gap-2"><ImageIcon className="w-4 h-4" /> Image</Button>
                                 <Button variant="outline" onClick={() => addBlock('h3')} className="gap-2"><Type className="w-4 h-4" /> H3</Button>
-                                <Button variant="outline" onClick={() => addBlock('video')} className="gap-2"><Video className="w-4 h-4" /> Vidéo</Button>
                             </CardContent>
                         </Card>
                     </div>
