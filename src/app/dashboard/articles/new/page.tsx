@@ -412,7 +412,7 @@ export default function NewArticlePage() {
     if (score > 80) scoreMessage = "Excellent !";
 
     return (
-        <div className="max-w-5xl mx-auto pb-24">
+        <div className="max-w-5xl mx-auto pb-[120px] md:pb-24">
             {/* Header */}
             <div className="mb-8 flex items-center gap-4">
                 <Button variant="ghost" size="icon" onClick={() => router.back()}>
@@ -441,7 +441,7 @@ export default function NewArticlePage() {
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="flex gap-4 items-end">
+                    <div className="flex flex-col md:flex-row gap-4 md:items-end">
                         <div className="flex-1 space-y-2">
                             <Label htmlFor="ai-topic">Sujet de l'article</Label>
                             <div className="relative">
@@ -467,7 +467,7 @@ export default function NewArticlePage() {
                         <Button
                             onClick={handleGenerate}
                             disabled={isGenerating}
-                            className="bg-blue-600 hover:bg-blue-700 text-white min-w-[240px] relative overflow-hidden group transition-all"
+                            className="bg-blue-600 hover:bg-blue-700 text-white w-full md:min-w-[240px] md:w-auto relative overflow-hidden group transition-all"
                             type="button"
                         >
                             {/* Progress Background Overlay */}
@@ -782,8 +782,8 @@ export default function NewArticlePage() {
                     </div>
 
                     {/* ACTIONS */}
-                    <div className="sticky bottom-6 pt-4">
-                        <div className="bg-white p-4 rounded-xl shadow-2xl border border-slate-200 flex items-center justify-between gap-4 max-w-5xl mx-auto">
+                    <div className="sticky bottom-[80px] md:bottom-6 pt-4 z-40">
+                        <div className="bg-white p-4 rounded-xl shadow-2xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
                             <div className="text-sm text-slate-500 hidden md:block">
                                 {isLoading ? "Sauvegarde en cours..." : "Modifications non enregistrées"}
                             </div>

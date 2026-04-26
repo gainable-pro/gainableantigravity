@@ -79,7 +79,7 @@ export default function ArticlesPage() {
                                 {quota.limit >= 999 ? <span className="text-green-600">Illimité</span> : `${quota.used} / ${quota.limit}`}
                             </div>
                         </div>
-                        <Button asChild disabled={quota.remaining === 0} className={quota.remaining === 0 ? "opacity-50" : ""}>
+                        <Button asChild disabled={quota.remaining === 0} className={`bg-blue-600 hover:bg-blue-700 text-white ${quota.remaining === 0 ? "opacity-50" : ""}`}>
                             <Link href="/dashboard/articles/new">
                                 <PlusCircle className="mr-2 h-4 w-4" />
                                 Rédiger

@@ -11,7 +11,7 @@ export function MobileBottomNav() {
         { label: "Profil", icon: UserCircle, href: "/dashboard" },
         { label: "Leads", icon: Inbox, href: "/dashboard/leads" },
         // Middle button reserved for quick action (FAB-like)
-        { label: "Nouveau", icon: PlusCircle, href: "/dashboard/articles/nouveau", isMain: true },
+        { label: "Nouveau", icon: PlusCircle, href: "/dashboard/articles/new", isMain: true },
         { label: "Articles", icon: FileText, href: "/dashboard/articles" },
         { label: "Médias", icon: ImageIcon, href: "/dashboard/media" },
     ];
@@ -24,10 +24,10 @@ export function MobileBottomNav() {
                     if (item.isMain) {
                         return (
                             <Link key={idx} href={item.href} className="flex flex-col items-center justify-center -mt-6">
-                                <div className="w-14 h-14 bg-[#D59B2B] rounded-full flex items-center justify-center text-white shadow-lg border-4 border-slate-50">
+                                <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg border-4 border-slate-50">
                                     <item.icon className="w-7 h-7" />
                                 </div>
-                                <span className="text-[10px] font-bold text-[#D59B2B] mt-1">{item.label}</span>
+                                <span className="text-[10px] font-bold text-blue-600 mt-1">{item.label}</span>
                             </Link>
                         );
                     }

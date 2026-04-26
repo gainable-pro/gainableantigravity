@@ -321,7 +321,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
     if (isLoading) return <div className="text-center py-20 flex justify-center"><Loader2 className="animate-spin" /></div>;
 
     return (
-        <div className="max-w-5xl mx-auto pb-24">
+        <div className="max-w-5xl mx-auto pb-[120px] md:pb-24">
             {/* Header */}
             <div className="mb-8 flex items-center gap-4">
                 <Button variant="ghost" size="icon" onClick={() => router.back()}>
