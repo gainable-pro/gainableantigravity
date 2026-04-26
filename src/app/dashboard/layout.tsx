@@ -93,20 +93,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     );
 
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col">
+        <div className="min-h-screen bg-slate-50 flex flex-col w-full overflow-x-hidden">
             {/* Mobile Header */}
             <div className="md:hidden bg-white border-b border-slate-200 p-4 flex items-center justify-center sticky top-0 z-40">
                 <h1 className="text-lg font-bold text-[#1F2D3D]">Espace Pro</h1>
             </div>
 
-            <div className="flex flex-1">
+            <div className="flex flex-1 w-full min-w-0">
                 {/* Desktop Sidebar */}
                 <aside className="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col h-full sticky top-0">
                     <NavigationContent />
                 </aside>
 
                 {/* Main Content */}
-                <main className="flex-1 p-4 md:p-8 pb-24 md:pb-8">
+                <main className="flex-1 min-w-0 overflow-x-hidden p-4 md:p-8 pb-24 md:pb-8">
                     <div className="max-w-5xl mx-auto">
                         {children}
                     </div>
