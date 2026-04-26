@@ -574,6 +574,7 @@ export default function NewArticlePage() {
                                         onChange={handleImageUpload}
                                         className="hidden"
                                         accept="image/*"
+                                        capture="environment"
                                     />
                                     {!mainImage ? (
                                         <div
@@ -712,6 +713,7 @@ export default function NewArticlePage() {
                                                         type="file"
                                                         className="hidden"
                                                         accept="image/*"
+                                                        capture="environment"
                                                         onChange={(e) => handleSectionImageUpload(e, index)}
                                                     />
                                                 </label>

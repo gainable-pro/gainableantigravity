@@ -431,7 +431,7 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                             {(block.type === 'image' || block.type === 'video') && (
                                                 <div className="flex gap-2">
                                                     <Input value={block.value} onChange={(e) => updateBlock(index, 'value', e.target.value)} placeholder="URL..." />
-                                                    <Input type="file" className="w-20" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
+                                                    <Input type="file" className="w-20" accept="image/*" capture="environment" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
                                                 </div>
                                             )}
                                         </CardContent>
