@@ -25,6 +25,7 @@ import {
     SheetClose
 } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
+import { MobileBottomNav } from "@/components/dashboard/mobile-bottom-nav";
 
 const sidebarItems = [
     { label: "Mon Profil", icon: UserCircle, href: "/dashboard" },
@@ -117,12 +118,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </aside>
 
                 {/* Main Content */}
-                <main className="flex-1 p-4 md:p-8">
+                <main className="flex-1 p-4 md:p-8 pb-24 md:pb-8">
                     <div className="max-w-5xl mx-auto">
                         {children}
                     </div>
                 </main>
             </div>
+            <MobileBottomNav />
         </div>
     );
 }

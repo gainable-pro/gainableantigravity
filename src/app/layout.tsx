@@ -10,7 +10,19 @@ const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+export const viewport = {
+  themeColor: '#1F2D3D',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Gainable Pro",
+  },
   metadataBase: new URL('https://www.gainable.fr'),
   title: {
     default: "Gainable.fr - Trouvez votre Installateur de Climatisation Gainable & VRV",
