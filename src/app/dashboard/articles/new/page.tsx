@@ -499,6 +499,48 @@ export default function NewArticlePage() {
                 </CardContent>
             </Card>
 
+            {/* SCORE SEO MOVED HERE */}
+            <Card className="bg-slate-50 border-slate-200">
+                <CardHeader className="pb-2">
+                    <CardTitle className="text-sm text-slate-700 font-bold uppercase tracking-wider flex items-center gap-2">
+                        Score SEO Global
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="text-center md:text-left shrink-0">
+                            <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
+                            <div className="text-xs font-medium px-2 py-1 bg-white rounded-full inline-block mt-1 border">
+                                {scoreMessage}
+                            </div>
+                        </div>
+                        <div className="flex-1 w-full space-y-3">
+                            <div className="h-2 bg-slate-200 rounded-full overflow-hidden w-full">
+                                <div className="h-full bg-[#D59B2B] transition-all duration-500 ease-out" style={{ width: `${score}%` }}></div>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-600">
+                                <div className="bg-white p-2 rounded border flex flex-col items-center justify-center">
+                                    <span className="text-slate-400 mb-1">Mots</span>
+                                    <span className="font-bold flex items-center gap-1">{wordCount} {wordCount >= 500 ? '✅' : '⚠️'}</span>
+                                </div>
+                                <div className="bg-white p-2 rounded border flex flex-col items-center justify-center">
+                                    <span className="text-slate-400 mb-1">Sections</span>
+                                    <span className="font-bold flex items-center gap-1">{sections.length} {sections.length >= 3 ? '✅' : '⚠️'}</span>
+                                </div>
+                                <div className="bg-white p-2 rounded border flex flex-col items-center justify-center">
+                                    <span className="text-slate-400 mb-1">FAQ</span>
+                                    <span className="font-bold flex items-center gap-1">{faq.length} {faq.length >= 2 ? '✅' : '⚠️'}</span>
+                                </div>
+                                <div className="bg-white p-2 rounded border flex flex-col items-center justify-center">
+                                    <span className="text-slate-400 mb-1">Image</span>
+                                    <span className="font-bold">{mainImage ? '✅' : '⚠️'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Main Content */}
                 <div className="lg:col-span-2 space-y-8">
@@ -773,17 +815,14 @@ export default function NewArticlePage() {
 
                     {/* ACTIONS */}
                     <div className="sticky bottom-[80px] md:bottom-6 pt-4 z-40">
-                        <div className="bg-white p-4 rounded-xl shadow-2xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
-                            <div className="text-sm text-slate-500 hidden md:block">
-                                {isLoading ? "Sauvegarde en cours..." : "Modifications non enregistrées"}
-                            </div>
-                            <div className="flex items-center gap-3 w-full md:w-auto">
-                                <Button variant="outline" className="flex-1 md:flex-none" onClick={() => handleSubmit('DRAFT')} disabled={isLoading}>
-                                    Enregistrer Brouillon
-                                </Button>
-                                <Button className="flex-1 md:flex-none bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold" onClick={() => handleSubmit('PUBLISHED')} disabled={isLoading}>
+                        <div className="bg-white p-4 rounded-xl shadow-2xl border border-slate-200 flex flex-col md:flex-row items-center justify-center gap-4 max-w-5xl mx-auto">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-3 w-full md:w-auto">
+                                <Button className="w-full md:w-auto bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold px-8" onClick={() => handleSubmit('PUBLISHED')} disabled={isLoading}>
                                     {isLoading ? <Loader2 className="animate-spin mr-2" /> : <Save className="w-4 h-4 mr-2" />}
                                     Publier l'article
+                                </Button>
+                                <Button variant="outline" className="w-full md:w-auto px-8" onClick={() => handleSubmit('DRAFT')} disabled={isLoading}>
+                                    Enregistrer Brouillon
                                 </Button>
                             </div>
                         </div>
@@ -793,26 +832,7 @@ export default function NewArticlePage() {
 
                 {/* SIDEBAR */}
                 <div className="space-y-6">
-                    <Card className="sticky top-6">
-                        <CardHeader className="bg-slate-50 pb-4">
-                            <CardTitle className="text-sm text-slate-700 font-bold uppercase tracking-wider">Score SEO</CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-6 text-center space-y-4">
-                            <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
-                            <div className="text-xs text-slate-500 font-medium px-2 py-1 bg-slate-100 rounded-full inline-block">
-                                {scoreMessage}
-                            </div>
-                            <div className="h-2 bg-slate-100 rounded-full overflow-hidden w-full">
-                                <div className="h-full bg-[#D59B2B] transition-all duration-500 ease-out" style={{ width: `${score}%` }}></div>
-                            </div>
-                            <div className="text-left text-xs space-y-2 text-slate-500 pt-2 border-t border-slate-100">
-                                <div className="flex justify-between"><span>Mots ({wordCount})</span> <span>{wordCount >= 500 ? '✅' : '⚠️ 500+'}</span></div>
-                                <div className="flex justify-between"><span>Sections ({sections.length})</span> <span>{sections.length >= 3 ? '✅' : '⚠️ 3+'}</span></div>
-                                <div className="flex justify-between"><span>FAQ ({faq.length})</span> <span>{faq.length >= 2 ? '✅' : '⚠️ 2+'}</span></div>
-                                <div className="flex justify-between"><span>Image</span> <span>{mainImage ? '✅' : '⚠️'}</span></div>
-                            </div>
-                        </CardContent>
-                    </Card>
+
 
                     <Card className="bg-purple-50 border-purple-100">
                         <CardContent className="pt-6 space-y-4">

@@ -340,9 +340,31 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                 </div>
             )}
 
-            <div className="grid lg:grid-cols-[1fr_300px] gap-8">
-                <div className="space-y-8">
-                    {/* INFO */}
+            <Card className="bg-slate-50 border-slate-200 mb-8">
+                <CardHeader className="pb-2">
+                    <CardTitle className="text-sm text-slate-700 font-bold uppercase tracking-wider flex items-center gap-2">
+                        Score SEO Global
+                    </CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="text-center md:text-left shrink-0">
+                            <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
+                            <div className="text-xs font-medium px-2 py-1 bg-white rounded-full inline-block mt-1 border">
+                                {scoreMessage}
+                            </div>
+                        </div>
+                        <div className="flex-1 w-full space-y-3">
+                            <div className="h-2 bg-slate-200 rounded-full overflow-hidden w-full">
+                                <div className="h-full bg-[#D59B2B] transition-all duration-500 ease-out" style={{ width: `${score}%` }}></div>
+                            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
+
+            <div className="space-y-8">
+                {/* INFO */}
                     <Card>
                         <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                             <CardTitle className="text-base text-slate-800">1. Informations Générales</CardTitle>
@@ -473,26 +495,17 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
 
                     {/* VALIDATION */}
                     <Card className="border-t-4 border-t-blue-500 shadow-md">
-                        <CardContent className="pt-6 flex gap-4">
-                            <Button onClick={() => handleSubmit('PUBLISHED')} className="flex-1 bg-[#D59B2B] hover:bg-[#b88622] font-bold py-6 text-white" disabled={isSaving}>
-                                {isSaving ? <Loader2 className="animate-spin" /> : <Save className="mr-2 w-5 h-5" />}
+                        <CardContent className="pt-6 flex flex-col md:flex-row items-center justify-center gap-4">
+                            <Button onClick={() => handleSubmit('PUBLISHED')} className="w-full md:w-auto bg-[#D59B2B] hover:bg-[#b88622] font-bold py-6 px-8 text-white" disabled={isSaving}>
+                                {isSaving ? <Loader2 className="animate-spin mr-2" /> : <Save className="mr-2 w-5 h-5" />}
                                 {currentStatus === 'PUBLISHED' ? "Mettre à jour" : "Publier l'article"}
                             </Button>
-                            <Button variant="outline" onClick={() => handleSubmit('DRAFT')} className="flex-1 py-6" disabled={isSaving}>
+                            <Button variant="outline" onClick={() => handleSubmit('DRAFT')} className="w-full md:w-auto py-6 px-8" disabled={isSaving}>
                                 {currentStatus === 'DRAFT' ? "Enregistrer Brouillon" : "Passer en Brouillon"}
                             </Button>
                         </CardContent>
                     </Card>
-                </div>
-
-                <div className="space-y-6 sticky top-6 self-start">
-                    <Card>
-                        <CardContent className="pt-6 text-center space-y-4">
-                            <div className="text-4xl font-bold text-[#D59B2B]">{score}%</div>
-                            <div className="text-xs text-slate-500">{scoreMessage}</div>
-                        </CardContent>
-                    </Card>
-
+                    
                     <Card className="bg-purple-50 border-purple-100">
                         <CardContent className="pt-6 space-y-4">
                             <div className="flex items-center gap-2 text-sm font-bold text-purple-700">
@@ -517,7 +530,6 @@ Structure JSON attendue :
                             </Button>
                         </CardContent>
                     </Card>
-                </div>
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ export function MobileBottomNav() {
         { label: "Profil", icon: UserCircle, href: "/dashboard" },
         { label: "Leads", icon: Inbox, href: "/dashboard/leads" },
         // Middle button reserved for quick action (FAB-like)
-        { label: "Nouveau", icon: PlusCircle, href: "/dashboard/articles/new", isMain: true },
+        { label: "Nouveau Post", icon: PlusCircle, href: "/dashboard/articles/new", isMain: true },
         { label: "Articles", icon: FileText, href: "/dashboard/articles" },
         { label: "Médias", icon: ImageIcon, href: "/dashboard/media" },
     ];

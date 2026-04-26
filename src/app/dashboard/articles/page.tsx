@@ -128,9 +128,9 @@ export default function ArticlesPage() {
                             <div className="flex items-center gap-2 pt-3 border-t border-slate-50 md:border-t-0 md:pt-0 shrink-0 self-end md:self-center">
                                 {article.status === 'PUBLISHED' && expertSlug && (
                                     <Button asChild variant="outline" size="sm" className="text-blue-600 border-blue-200 hover:bg-blue-50">
-                                        <Link href={`/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank">
+                                        <a href={`/entreprise/${expertSlug}/articles/${article.slug}`} target="_blank" rel="noopener noreferrer">
                                             Voir
-                                        </Link>
+                                        </a>
                                     </Button>
                                 )}
                                 <Button asChild variant="secondary" size="sm">
