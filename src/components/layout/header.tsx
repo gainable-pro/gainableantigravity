@@ -7,6 +7,7 @@ import Image from "next/image";
 import { LoginDropdown } from "@/components/layout/login-dropdown";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
+import * as React from "react";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
     const pathname = usePathname();
