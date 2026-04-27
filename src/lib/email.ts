@@ -208,11 +208,8 @@ L'équipe Gainable.fr`;
             </div>
 
             <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
-                <p style="margin-top: 0; font-weight: bold;">Guide d'installation rapide :</p>
-                <ul style="padding-left: 20px; font-size: 14px;">
-                    <li style="margin-bottom: 10px;"><strong>Sur iPhone (Safari) :</strong> Cliquez sur <img src="https://gainable.fr/assets/ios-share.png" alt="Partager" style="height: 18px; vertical-align: middle;" /> puis <strong>"Sur l'écran d'accueil"</strong>.</li>
-                    <li><strong>Sur Android (Chrome) :</strong> Cliquez sur les <strong>3 points</strong> en haut à droite, puis <strong>"Installer l'application"</strong>.</li>
-                </ul>
+                <p style="margin-top: 0; font-weight: bold;">L'application vous guidera :</p>
+                <p style="font-size: 14px; margin-bottom: 0;">Une fois sur votre tableau de bord, une bannière s'affichera pour vous aider à installer l'application en 2 secondes selon votre téléphone (iPhone ou Android).</p>
             </div>
 
             <p style="font-size: 13px; color: #64748b; text-align: center; margin-top: 30px;">

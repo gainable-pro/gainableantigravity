@@ -62,6 +62,7 @@ export const metadata: Metadata = {
 };
 
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { PWAInstall } from "@/components/pwa/PWAInstall";
 import { headers } from "next/headers";
 
 export default async function RootLayout({
@@ -82,6 +83,7 @@ export default async function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <PWAInstall />
       </body>
     </html>
   );
