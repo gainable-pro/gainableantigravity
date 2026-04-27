@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { MobileBottomNav } from "@/components/dashboard/mobile-bottom-nav";
+import { PWAInstall } from "@/components/pwa/PWAInstall";
 
 const sidebarItems = [
     { label: "Mon Profil", icon: UserCircle, href: "/dashboard" },
@@ -113,6 +114,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </main>
             </div>
             <MobileBottomNav />
+            <PWAInstall />
         </div>
     );
 }
