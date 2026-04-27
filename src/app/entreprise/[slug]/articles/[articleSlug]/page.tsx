@@ -10,8 +10,7 @@ import { MapPin, ArrowRight, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 3600; // Cache la page pendant 1 heure (ISR) pour soulager la base de données face à Googlebot
 
 interface PageProps {
     params: Promise<{
