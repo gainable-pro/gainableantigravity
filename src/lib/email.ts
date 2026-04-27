@@ -165,16 +165,14 @@ Le réseau Gainable.fr franchit une nouvelle étape majeure !
 Grâce à notre stratégie SEO agressive, nous comptons aujourd'hui plus de 7 500 pages indexées sur Google, et plus de 23 000 pages supplémentaires sont actuellement en cours d'indexation. Cette croissance exponentielle signifie une visibilité sans précédent pour vos services.
 
 Surfez sur la vague !
-Pour profiter pleinement de cette dynamique, nous vous encourageons à publier régulièrement des articles et des photos de vos réalisations depuis notre nouvelle application.
+Pour profiter pleinement de cette dynamique, nous vous encourageons à publier régulièrement des articles et des photos de vos réalisations. Plus vous contribuez, plus vous remontez dans les résultats de recherche locaux.
 
 Découvrez notre nouvelle Application (PWA)
-Installez Gainable.fr directement sur votre smartphone pour gérer vos articles et vos leads en un clin d'œil.
+Installez Gainable.fr directement sur votre smartphone pour gérer vos articles et vos leads en un clin d'œil. Plus besoin de passer par votre navigateur !
 
 Comment installer l'application ?
 1. Cliquez sur ce lien depuis votre téléphone : ${dashboardUrl}
-2. Suivez les instructions :
-   - Sur iPhone (Safari) : Appuyez sur l'icône "Partager", puis "Sur l'écran d'accueil".
-   - Sur Android (Chrome) : Appuyez sur le menu (3 points), puis "Installer l'application".
+2. Une fois sur le site, une bannière d'installation s'affichera automatiquement pour vous guider.
 
 L'application est 100% compatible avec tous les iPhones et smartphones Android.
 
@@ -182,46 +180,54 @@ L'application est 100% compatible avec tous les iPhones et smartphones Android.
 L'équipe Gainable.fr`;
 
     const htmlContent = `
-    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-        <div style="background-color: #1e293b; padding: 30px; text-align: center;">
-            <img src="https://gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 40px;" />
+    <div style="font-family: 'Montserrat', Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; shadow: 0 10px 25px rgba(0,0,0,0.1);">
+        <div style="background-color: #1F2D3D; padding: 40px 20px; text-align: center;">
+            <img src="https://gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 50px; margin-bottom: 20px;" />
+            <h1 style="color: white; font-size: 24px; margin: 0; font-weight: 800; letter-spacing: -0.5px;">LA RÉVOLUTION GAINABLE EST EN MARCHE</h1>
         </div>
-        <div style="padding: 30px;">
-            <h1 style="color: #1e293b; font-size: 22px; margin-top: 0;">🚀 Gainable.fr explose : Boostez votre visibilité !</h1>
+        
+        <div style="padding: 40px 30px;">
+            <p style="font-size: 16px;">Bonjour cher expert,</p>
             
-            <p>Bonjour cher expert,</p>
+            <p>Le réseau <strong>Gainable.fr</strong> explose ! 🚀</p>
             
-            <p>Le réseau <strong>Gainable.fr</strong> franchit une nouvelle étape majeure !</p>
+            <p>Grâce à notre stratégie SEO, nous comptons aujourd'hui <strong>plus de 7 500 pages indexées</strong> sur Google, et <strong>23 000 nouvelles pages</strong> sont en cours d'indexation.</p>
             
-            <p>Grâce à notre stratégie SEO agressive, nous comptons aujourd'hui <strong>plus de 7 500 pages indexées</strong> sur Google, et <strong>plus de 23 000 pages</strong> supplémentaires sont en cours d'indexation.</p>
-            
-            <div style="background-color: #f0fdf4; border-left: 4px solid #22c55e; padding: 15px; margin: 20px 0;">
-                <p style="margin: 0; font-weight: bold; color: #166534;">Surfez sur la vague !</p>
-                <p style="margin: 5px 0 0 0; font-size: 14px;">Publiez vos articles et photos directement depuis notre nouvelle application pour remonter dans les résultats de recherche locaux.</p>
+            <div style="background-color: #FFFBEB; border-left: 4px solid #D59B2B; padding: 20px; margin: 30px 0; border-radius: 0 12px 12px 0;">
+                <p style="margin: 0; font-weight: bold; color: #92400E; font-size: 18px;">Surfez sur la vague ! 🌊</p>
+                <p style="margin: 10px 0 0 0; font-size: 15px; color: #B45309;">Publiez vos articles et photos de chantiers pour dominer les résultats de recherche dans votre ville.</p>
             </div>
 
-            <h2 style="color: #1e293b; font-size: 18px;">📱 Nouvelle Application (PWA)</h2>
-            <p>Installez Gainable.fr sur votre smartphone pour un accès instantané à votre tableau de bord.</p>
+            <h2 style="color: #1F2D3D; font-size: 20px; margin-top: 40px; display: flex; items-center: center; gap: 10px;">
+                <img src="https://gainable.fr/favicon.jpg" style="width: 24px; height: 24px; border-radius: 4px;" />
+                Votre nouvelle Application Pro
+            </h2>
+            <p>Nous avons lancé l'application **Gainable.fr** pour vous permettre de gérer vos leads et vos articles directement depuis votre smartphone.</p>
             
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="${dashboardUrl}" style="background-color: #F59E0B; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;">Installer l'application</a>
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="${dashboardUrl}" style="background-color: #D59B2B; color: #1F2D3D; padding: 18px 35px; text-decoration: none; border-radius: 12px; font-weight: 900; display: inline-block; font-size: 16px; box-shadow: 0 4px 15px rgba(213, 155, 43, 0.3);">
+                    INSTALLER L'APPLICATION
+                </a>
             </div>
 
-            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
-                <p style="margin-top: 0; font-weight: bold;">L'application vous guidera :</p>
-                <p style="font-size: 14px; margin-bottom: 0;">Une fois sur votre tableau de bord, une bannière s'affichera pour vous aider à installer l'application en 2 secondes selon votre téléphone (iPhone ou Android).</p>
+            <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 25px;">
+                <p style="margin-top: 0; font-weight: bold; color: #1F2D3D;">Installation en 2 secondes :</p>
+                <p style="font-size: 14px; margin-bottom: 0; color: #64748B;">Une fois sur votre tableau de bord, une <strong>bannière intelligente</strong> apparaîtra en bas de votre écran pour vous guider dans l'installation (iPhone & Android).</p>
             </div>
 
-            <p style="font-size: 13px; color: #64748b; text-align: center; margin-top: 30px;">
-                L'application est 100% compatible avec <strong>iPhone</strong> et <strong>Android</strong>.
+            <p style="font-size: 13px; color: #94A3B8; text-align: center; margin-top: 40px; font-style: italic;">
+                L'application est 100% compatible avec tous les smartphones.
             </p>
         </div>
         
-        <div style="background-color: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-            <p style="font-size: 12px; color: #94a3b8; margin: 0;">
-                &copy; 2026 Gainable.fr - Le réseau des experts en climatisation gainable<br>
-                <a href="https://gainable.fr" style="color: #F59E0B; text-decoration: none;">www.gainable.fr</a>
+        <div style="background-color: #F8FAFC; padding: 30px; text-align: center; border-top: 1px solid #E2E8F0;">
+            <p style="font-size: 14px; color: #64748B; margin: 0;">
+                À très vite sur votre espace expert,<br>
+                <strong>L'équipe Gainable.fr</strong>
             </p>
+            <div style="margin-top: 20px;">
+                <a href="https://gainable.fr" style="color: #D59B2B; text-decoration: none; font-weight: bold; font-size: 13px;">www.gainable.fr</a>
+            </div>
         </div>
     </div>
     `;
@@ -230,7 +236,7 @@ L'équipe Gainable.fr`;
         const data = await resend.emails.send({
             from: 'Gainable.fr <contact@gainable.fr>',
             to,
-            subject: '🚀 Gainable.fr explose : Boostez votre visibilité avec notre nouvelle application !',
+            subject: '🚀 Gainable.fr explose : Votre nouvelle application est disponible !',
             html: htmlContent,
             text: textContent
         });
