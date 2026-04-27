@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { AlertCircle, ChevronLeft, Loader2, Save, UploadCloud, X, Plus, Trash2, HelpCircle, Copy, GripVertical, Sparkles, Mic } from "lucide-react";
+import { AlertCircle, ChevronLeft, Loader2, Save, UploadCloud, X, Plus, Trash2, HelpCircle, Copy, GripVertical, Sparkles, Mic, Camera, ImageIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface ArticleSection {
@@ -34,7 +34,8 @@ export default function NewArticlePage() {
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationProgress, setGenerationProgress] = useState(0);
     const [error, setError] = useState<string | null>(null);
-    const fileInputRef = useRef<HTMLInputElement>(null);
+    const galleryInputRef = useRef<HTMLInputElement>(null);
+    const cameraInputRef = useRef<HTMLInputElement>(null);
 
     // Form State
     const [topic, setTopic] = useState("");
@@ -612,27 +613,46 @@ export default function NewArticlePage() {
                                     <Label>Image de couverture <span className="text-red-500">*</span></Label>
                                     <input
                                         type="file"
-                                        ref={fileInputRef}
+                                        ref={galleryInputRef}
                                         onChange={handleImageUpload}
                                         className="hidden"
                                         accept="image/*"
                                     />
+                                    <input
+                                        type="file"
+                                        ref={cameraInputRef}
+                                        onChange={handleImageUpload}
+                                        className="hidden"
+                                        accept="image/*"
+                                        capture="environment"
+                                    />
                                     {!mainImage ? (
-                                        <div
-                                            onClick={() => fileInputRef.current?.click()}
-                                            className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50 transition-colors group"
-                                        >
-                                            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
-                                                {isUploading ? <Loader2 className="w-6 h-6 animate-spin" /> : <UploadCloud className="w-6 h-6" />}
+                                        <div className="flex gap-4">
+                                            <div
+                                                onClick={() => cameraInputRef.current?.click()}
+                                                className="flex-1 border-2 border-dashed border-slate-200 rounded-xl p-4 md:p-6 text-center cursor-pointer hover:bg-slate-50 transition-colors group"
+                                            >
+                                                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                                    {isUploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Camera className="w-5 h-5" />}
+                                                </div>
+                                                <span className="text-sm font-medium text-slate-700">Prendre une photo</span>
                                             </div>
-                                            <span className="text-sm font-medium text-slate-700">Cliquez pour importer</span>
-                                            <span className="text-xs text-slate-400 block mt-1">JPG, PNG, WEBP (Max 2MB)</span>
+                                            <div
+                                                onClick={() => galleryInputRef.current?.click()}
+                                                className="flex-1 border-2 border-dashed border-slate-200 rounded-xl p-4 md:p-6 text-center cursor-pointer hover:bg-slate-50 transition-colors group"
+                                            >
+                                                <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                                                    {isUploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <ImageIcon className="w-5 h-5" />}
+                                                </div>
+                                                <span className="text-sm font-medium text-slate-700">Choisir dans la galerie</span>
+                                            </div>
                                         </div>
                                     ) : (
                                         <div className="relative rounded-xl overflow-hidden border border-slate-200 group">
                                             <img src={mainImage} alt="Preview" className="w-full h-40 object-cover" />
                                             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-                                                <Button size="sm" variant="secondary" onClick={() => fileInputRef.current?.click()}>Changer</Button>
+                                                <Button size="sm" variant="secondary" onClick={() => cameraInputRef.current?.click()}><Camera className="w-4 h-4 mr-1"/>Caméra</Button>
+                                                <Button size="sm" variant="secondary" onClick={() => galleryInputRef.current?.click()}><ImageIcon className="w-4 h-4 mr-1"/>Galerie</Button>
                                                 <Button size="sm" variant="destructive" onClick={() => setMainImage("")}><X className="w-4 h-4" /></Button>
                                             </div>
                                         </div>
@@ -737,18 +757,29 @@ export default function NewArticlePage() {
                                                     </button>
                                                 </div>
                                             ) : (
-                                                <label className="w-full aspect-square flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all">
-                                                    <div className="bg-blue-50 text-blue-500 p-2 rounded-full mb-1">
-                                                        {isUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <UploadCloud className="w-4 h-4" />}
-                                                    </div>
-                                                    <span className="text-[10px] text-slate-500 text-center leading-tight px-1">Ajouter<br />Image</span>
-                                                    <input
-                                                        type="file"
-                                                        className="hidden"
-                                                        accept="image/*"
-                                                        onChange={(e) => handleSectionImageUpload(e, index)}
-                                                    />
-                                                </label>
+                                                <div className="flex flex-col gap-2 w-full justify-center">
+                                                    <label className="w-full py-3 flex items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all text-xs text-slate-600">
+                                                        {isUploading ? <Loader2 className="w-4 h-4 animate-spin text-blue-500" /> : <Camera className="w-4 h-4 text-blue-500" />}
+                                                        Photo
+                                                        <input
+                                                            type="file"
+                                                            className="hidden"
+                                                            accept="image/*"
+                                                            capture="environment"
+                                                            onChange={(e) => handleSectionImageUpload(e, index)}
+                                                        />
+                                                    </label>
+                                                    <label className="w-full py-3 flex items-center justify-center gap-2 border-2 border-dashed border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all text-xs text-slate-600">
+                                                        {isUploading ? <Loader2 className="w-4 h-4 animate-spin text-blue-500" /> : <ImageIcon className="w-4 h-4 text-blue-500" />}
+                                                        Galerie
+                                                        <input
+                                                            type="file"
+                                                            className="hidden"
+                                                            accept="image/*"
+                                                            onChange={(e) => handleSectionImageUpload(e, index)}
+                                                        />
+                                                    </label>
+                                                </div>
                                             )}
                                         </div>
 

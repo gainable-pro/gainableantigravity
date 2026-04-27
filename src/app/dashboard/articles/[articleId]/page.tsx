@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
     AlertCircle, ChevronLeft, Loader2, Save, Image as ImageIcon, X, UploadCloud, Plus,
-    Trash2, HelpCircle, Copy, AlignLeft, Heading, Video, MoveUp, MoveDown, Type
+    Trash2, HelpCircle, Copy, AlignLeft, Heading, Video, MoveUp, MoveDown, Type, Camera
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -37,7 +37,8 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
     const [isSaving, setIsSaving] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const fileInputRef = useRef<HTMLInputElement>(null);
+    const galleryInputRef = useRef<HTMLInputElement>(null);
+    const cameraInputRef = useRef<HTMLInputElement>(null);
 
     // --- STATE ---
     const [title, setTitle] = useState("");
@@ -396,16 +397,27 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label>Image de couverture</Label>
-                                    <input type="file" ref={fileInputRef} onChange={handleMainImageChange} className="hidden" accept="image/*" />
+                                    <input type="file" ref={galleryInputRef} onChange={handleMainImageChange} className="hidden" accept="image/*" />
+                                    <input type="file" ref={cameraInputRef} onChange={handleMainImageChange} className="hidden" accept="image/*" capture="environment" />
                                     {!mainImage ? (
-                                        <div onClick={() => fileInputRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center cursor-pointer hover:bg-slate-50">
-                                            <UploadCloud className="w-8 h-8 mx-auto text-slate-400" />
-                                            <span className="text-xs text-slate-500 mt-2 block">Importer image</span>
+                                        <div className="flex gap-3">
+                                            <div onClick={() => cameraInputRef.current?.click()} className="flex-1 border-2 border-dashed border-slate-200 rounded-xl p-4 text-center cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all group">
+                                                <Camera className="w-7 h-7 mx-auto text-slate-400 group-hover:text-blue-500 transition-colors mb-1" />
+                                                <span className="text-xs font-medium text-slate-600">Photo</span>
+                                            </div>
+                                            <div onClick={() => galleryInputRef.current?.click()} className="flex-1 border-2 border-dashed border-slate-200 rounded-xl p-4 text-center cursor-pointer hover:bg-slate-50 hover:border-blue-300 transition-all group">
+                                                <ImageIcon className="w-7 h-7 mx-auto text-slate-400 group-hover:text-blue-500 transition-colors mb-1" />
+                                                <span className="text-xs font-medium text-slate-600">Galerie</span>
+                                            </div>
                                         </div>
                                     ) : (
-                                        <div className="relative rounded-xl overflow-hidden border border-slate-200">
+                                        <div className="relative rounded-xl overflow-hidden border border-slate-200 group">
                                             <img src={mainImage} alt="Preview" className="w-full h-32 object-cover" />
-                                            <button onClick={() => setMainImage("")} className="absolute top-2 right-2 bg-white p-1 rounded-full text-red-500 shadow-sm"><X className="w-4 h-4" /></button>
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                                                <Button size="sm" variant="secondary" onClick={() => cameraInputRef.current?.click()}><Camera className="w-4 h-4 mr-1"/>Cam</Button>
+                                                <Button size="sm" variant="secondary" onClick={() => galleryInputRef.current?.click()}><ImageIcon className="w-4 h-4 mr-1"/>Galerie</Button>
+                                                <Button size="sm" variant="destructive" onClick={() => setMainImage("")}><X className="w-4 h-4" /></Button>
+                                            </div>
                                         </div>
                                     )}
                                 </div>
@@ -452,8 +464,15 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
                                             {/* Simplified Image/Video inputs for brevity in this replace call, similar logic to new page */}
                                             {(block.type === 'image' || block.type === 'video') && (
                                                 <div className="flex gap-2">
-                                                    <Input value={block.value} onChange={(e) => updateBlock(index, 'value', e.target.value)} placeholder="URL..." />
-                                                    <Input type="file" className="w-20" accept="image/*" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
+                                                    <Input value={block.value} onChange={(e) => updateBlock(index, 'value', e.target.value)} placeholder="URL..." className="flex-1" />
+                                                    <label className="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-600 rounded px-3 cursor-pointer border border-slate-200 transition-colors" title="Prendre photo">
+                                                        <Camera className="w-4 h-4" />
+                                                        <input type="file" className="hidden" accept="image/*" capture="environment" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
+                                                    </label>
+                                                    <label className="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-600 rounded px-3 cursor-pointer border border-slate-200 transition-colors" title="Galerie">
+                                                        <ImageIcon className="w-4 h-4" />
+                                                        <input type="file" className="hidden" accept="image/*" onChange={(e) => handleBlockUpload(index, e, block.type === 'video')} />
+                                                    </label>
                                                 </div>
                                             )}
                                         </CardContent>
