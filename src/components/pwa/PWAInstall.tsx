@@ -72,8 +72,8 @@ export function PWAInstall() {
     <div className="fixed bottom-20 left-4 right-4 z-50 animate-in slide-in-from-bottom-10 duration-700">
       <div className="bg-white border-2 border-[#D59B2B] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] p-4 md:max-w-md md:mx-auto relative overflow-hidden">
         {/* Gainable "G" Background Decoration */}
-        <div className="absolute -right-4 -bottom-4 opacity-5 rotate-12">
-            <img src="/logo.png" alt="" className="w-32 h-32 object-contain" />
+        <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12">
+            <img src="/favicon.jpg" alt="" className="w-24 h-24 object-contain grayscale" />
         </div>
 
         <button 
@@ -84,8 +84,8 @@ export function PWAInstall() {
         </button>
 
         <div className="flex items-center gap-4 relative z-10">
-          <div className="bg-slate-50 border border-slate-100 p-2 rounded-xl shrink-0 shadow-sm">
-            <img src="/logo.png" alt="Gainable" className="w-10 h-10 object-contain" />
+          <div className="bg-white border border-slate-100 p-1.5 rounded-xl shrink-0 shadow-sm">
+            <img src="/favicon.jpg" alt="Gainable" className="w-10 h-10 object-contain rounded-lg" />
           </div>
           <div className="flex-1 pr-4">
             <h3 className="font-bold text-slate-900 text-base leading-tight">Installer l'App Gainable</h3>
