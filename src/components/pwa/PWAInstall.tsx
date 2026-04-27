@@ -12,34 +12,40 @@ export function PWAInstall() {
 
   useEffect(() => {
     // Check if already installed
-    if (window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone) {
+    const isStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone;
+    if (isStandaloneMode) {
       setIsStandalone(true);
       return;
     }
 
-    // Register Service Worker if not already
+    // Register Service Worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed:', err));
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('SW registered'))
+        .catch(err => console.log('SW registration failed:', err));
     }
 
+    // Detect iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+    
     // Handle Android/Chrome install prompt
     const handleBeforeInstallPrompt = (e: any) => {
-      console.log('beforeinstallprompt fired');
+      console.log('beforeinstallprompt event fired');
       e.preventDefault();
       setDeferredPrompt(e);
-      setIsVisible(true); // Show only when ready to install
+      setIsVisible(true);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
-    // Detect iOS
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
-    if (isIOS && !(window.navigator as any).standalone) {
+    if (isIOS) {
+      console.log('iOS detected');
       setShowIOSPrompt(true);
-      // On iOS, we show it after a small delay to not annoy the user immediately
-      const timer = setTimeout(() => setIsVisible(true), 3000);
-      return () => clearTimeout(timer);
+      setIsVisible(true); // Show immediately for iOS
     }
+
+    // For testing/fallback: if not standalone and not iOS, show after 5s anyway?
+    // No, better not to annoy Android users if browser thinks it's not installable.
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
