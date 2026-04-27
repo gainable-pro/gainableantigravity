@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Gainable Pro",
+    title: "Gainable.fr",
   },
   metadataBase: new URL('https://www.gainable.fr'),
   title: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.jpg',
     shortcut: '/favicon.jpg',
-    apple: '/favicon.jpg', // Apple touch icon usually needs png, but jpg might work or fallback
+    apple: '/icon-512.png',
   },
   verification: {
     google: "7CpozW1B0HyKKwPSynXwVeV6-y7CK65t7Lb6MpMINgE",

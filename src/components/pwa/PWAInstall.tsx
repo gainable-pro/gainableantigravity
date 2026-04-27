@@ -73,7 +73,7 @@ export function PWAInstall() {
       <div className="bg-white border-2 border-[#D59B2B] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] p-4 md:max-w-md md:mx-auto relative overflow-hidden">
         {/* Gainable "G" Background Decoration */}
         <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12">
-            <img src="/favicon.jpg" alt="" className="w-24 h-24 object-contain grayscale" />
+            <img src="/icon-192.png" alt="" className="w-24 h-24 object-contain grayscale" />
         </div>
 
         <button 
@@ -85,7 +85,7 @@ export function PWAInstall() {
 
         <div className="flex items-center gap-4 relative z-10">
           <div className="bg-white border border-slate-100 p-1.5 rounded-xl shrink-0 shadow-sm">
-            <img src="/favicon.jpg" alt="Gainable" className="w-10 h-10 object-contain rounded-lg" />
+            <img src="/icon-192.png" alt="Gainable" className="w-10 h-10 object-contain rounded-lg" />
           </div>
           <div className="flex-1 pr-4">
             <h3 className="font-bold text-slate-900 text-base leading-tight">Installer l'App Gainable</h3>
@@ -104,14 +104,16 @@ export function PWAInstall() {
             </Button>
           ) : showIOSPrompt ? (
             <div className="bg-slate-50 rounded-xl p-3 text-xs text-slate-700 flex flex-col gap-2 border border-slate-200">
+              <p className="text-[10px] text-slate-400 uppercase font-bold mb-1">Instructions iPhone :</p>
               <div className="flex items-center gap-3">
                 <div className="bg-[#D59B2B] text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0">1</div>
-                <span>Appuyez sur l'icône <Share className="w-4 h-4 inline text-blue-600" /> (Partager)</span>
+                <span>Appuyez sur l'icône <Share className="w-4 h-4 inline text-blue-600" /> <strong>Partager</strong> en bas de votre écran</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="bg-[#D59B2B] text-white w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] shrink-0">2</div>
-                <span>Sélectionnez <PlusSquare className="w-4 h-4 inline text-blue-600" /> <strong>"Sur l'écran d'accueil"</strong></span>
+                <span>Faites défiler et sélectionnez <PlusSquare className="w-4 h-4 inline text-blue-600" /> <strong>"Sur l'écran d'accueil"</strong></span>
               </div>
+              <p className="text-[10px] text-center text-blue-600 font-medium mt-1">L'application s'installera sur votre téléphone.</p>
             </div>
           ) : null}
         </div>

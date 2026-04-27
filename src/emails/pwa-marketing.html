@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Révolution Gainable est en marche</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fa;
+            font-family: 'Montserrat', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .header {
+            background-color: #1F2D3D;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .logo {
+            max-height: 50px;
+            margin-bottom: 20px;
+        }
+        .title {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+        .content {
+            padding: 40px 35px;
+            color: #334155;
+            line-height: 1.7;
+        }
+        .greeting {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        .highlight-box {
+            background-color: #FFFBEB;
+            border-left: 5px solid #D59B2B;
+            padding: 25px;
+            margin: 35px 0;
+            border-radius: 4px 16px 16px 4px;
+        }
+        .highlight-title {
+            margin: 0;
+            font-weight: 900;
+            color: #92400E;
+            font-size: 20px;
+            display: block;
+        }
+        .highlight-text {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            color: #B45309;
+        }
+        .pwa-section {
+            margin-top: 45px;
+            padding: 30px;
+            background-color: #f8fafc;
+            border-radius: 20px;
+            border: 1px solid #f1f5f9;
+        }
+        .pwa-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .pwa-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            margin-right: 12px;
+        }
+        .pwa-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1F2D3D;
+            margin: 0;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 45px 0;
+        }
+        .btn {
+            background-color: #D59B2B;
+            color: #1F2D3D !important;
+            padding: 20px 40px;
+            text-decoration: none;
+            border-radius: 14px;
+            font-weight: 900;
+            display: inline-block;
+            font-size: 16px;
+            box-shadow: 0 10px 20px rgba(213, 155, 43, 0.25);
+            transition: transform 0.2s;
+        }
+        .instruction-box {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+        .instruction-title {
+            margin-top: 0;
+            font-weight: 800;
+            color: #1F2D3D;
+            font-size: 15px;
+        }
+        .footer {
+            background-color: #F8FAFC;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #E2E8F0;
+        }
+        .footer-text {
+            font-size: 15px;
+            color: #64748B;
+            margin-bottom: 20px;
+        }
+        .footer-link {
+            color: #D59B2B;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 14px;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        .stat-card {
+            flex: 1;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+        .stat-number {
+            display: block;
+            font-size: 24px;
+            font-weight: 900;
+            color: #D59B2B;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://gainable.fr/logo.png" alt="Gainable.fr" class="logo">
+            <h1 class="title">La Révolution Gainable est en marche</h1>
+        </div>
+        
+        <div class="content">
+            <p class="greeting">Bonjour {{name}},</p>
+            
+            <p>Le réseau <strong>Gainable.fr</strong> franchit une nouvelle étape majeure ! Grâce à notre stratégie SEO offensive, votre visibilité explose littéralement.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">7 500+</span>
+                    <span class="stat-label">Pages Indexées</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">23 000+</span>
+                    <span class="stat-label">En cours</span>
+                </div>
+            </div>
+            
+            <p>Cette croissance exponentielle signifie une visibilité sans précédent pour vos services. <strong>Surfez sur la vague !</strong></p>
+            
+            <div class="highlight-box">
+                <span class="highlight-title">Devenez le leader local 🌊</span>
+                <p class="highlight-text">Publiez régulièrement vos articles et photos de chantiers pour dominer les résultats de recherche dans votre ville.</p>
+            </div>
+
+            <div class="pwa-section">
+                <div class="pwa-header">
+                    <img src="https://gainable.fr/favicon.jpg" alt="PWA Icon" class="pwa-icon">
+                    <h2 class="pwa-title">Votre nouvelle Application Pro</h2>
+                </div>
+                <p>Installez Gainable.fr directement sur votre smartphone pour gérer vos articles et vos leads en un clin d'œil. Plus besoin de passer par votre navigateur !</p>
+                
+                <div class="cta-container">
+                    <a href="https://gainable.fr/dashboard" class="btn">INSTALLER L'APPLICATION</a>
+                </div>
+
+                <div class="instruction-box">
+                    <p class="instruction-title">Installation en 2 secondes :</p>
+                    <p style="font-size: 14px; margin: 0; color: #475569;">Une fois sur votre tableau de bord, une <strong>bannière intelligente</strong> apparaîtra en bas de votre écran pour vous guider (iPhone & Android).</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 13px; color: #94A3B8; text-align: center; margin-top: 40px; font-style: italic;">
+                L'application est 100% compatible avec tous les smartphones.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p class="footer-text">
+                À très vite sur votre espace expert,<br>
+                <strong>L'équipe Gainable.fr</strong>
+            </p>
+            <div>
+                <a href="https://gainable.fr" class="footer-link">www.gainable.fr</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
