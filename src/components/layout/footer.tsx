@@ -40,6 +40,9 @@ export function Footer() {
                     <Link href="/plan-du-site" className="hover:text-amber-500 transition-colors">
                         Plan du site (Zones d'intervention)
                     </Link>
+                    <Link href="/commercial/login" className="hover:text-amber-500 transition-colors opacity-70">
+                        Accès Commercial
+                    </Link>
                 </div>
 
                 <p className="text-xs text-slate-600">

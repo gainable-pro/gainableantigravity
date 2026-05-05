@@ -13,7 +13,7 @@ model User {
   id            String   @id @default(uuid())
   email         String   @unique
   password_hash String
-  role          String   @default("expert") // "expert"
+  role          String   @default("expert") // "expert", "commercial", "admin"
   created_at    DateTime @default(now())
 
   expert        Expert?
@@ -21,6 +21,11 @@ model User {
   // Password Reset
   resetToken          String?  @unique
   resetTokenExpires   DateTime?
+
+  // Commercial Relations
+  commercialProfile   CommercialProfile?
+  commercialProspects CommercialProspect[]
+  commercialSales     CommercialSale[]
 }
 
 // 2.2 Table experts (profil public + SEO)
@@ -268,4 +273,59 @@ model ExpertCertification {
   expert_id String
   expert    Expert   @relation(fields: [expert_id], references: [id], onDelete: Cascade)
   value     String   // rge_qualipac, fluide_frigo, etc.
+}
+
+// 5.0 CRM / Commercial
+model CommercialProspect {
+  id              String   @id @default(cuid())
+  commercialId    String
+  commercial      User     @relation(fields: [commercialId], references: [id], onDelete: Cascade)
+  
+  nomEntreprise   String
+  nomContact      String
+  prenomContact   String?
+  email           String?
+  telephone       String?
+  siret           String?
+  adresse         String?
+  siteWeb         String?
+  
+  status          String   @default("NON_CONTACTE") // NON_CONTACTE, CONTACTE, INTERESSE, REFUSE, VENTE_EFFECTUEE, NE_PLUS_DEMARCHER
+  commentaire     String?  @db.Text
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  sales           CommercialSale[]
+}
+
+model CommercialSale {
+  id              String   @id @default(cuid())
+  commercialId    String
+  commercial      User     @relation(fields: [commercialId], references: [id], onDelete: Cascade)
+  
+  prospectId      String
+  prospect        CommercialProspect @relation(fields: [prospectId], references: [id], onDelete: Cascade)
+  
+  paiementType    String   // COMPTANT, MENSUALISE
+  dateVente       DateTime
+  montant         Float
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model CommercialProfile {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nom          String?
+  prenom       String?
+  siren        String?
+  statutLegal  String?  // ex: "Micro-entreprise", "SASU", etc.
+  telephone    String?
+  adresse      String?
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
