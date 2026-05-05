@@ -2,13 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyCommercial, unauthorizedCommercial } from "@/lib/commercial-auth";
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const user = await verifyCommercial();
     if (!user) return unauthorizedCommercial();
 
     try {
+        const { id } = await params;
         const prospect = await prisma.commercialProspect.findUnique({
-            where: { id: params.id },
+            where: { id },
             include: { sales: true }
         });
 
@@ -26,13 +27,14 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
     }
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const user = await verifyCommercial();
     if (!user) return unauthorizedCommercial();
 
     try {
+        const { id } = await params;
         const prospect = await prisma.commercialProspect.findUnique({
-            where: { id: params.id }
+            where: { id }
         });
 
         if (!prospect) {
@@ -46,7 +48,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
         const body = await req.json();
 
         const updatedProspect = await prisma.commercialProspect.update({
-            where: { id: params.id },
+            where: { id },
             data: {
                 nomEntreprise: body.nomEntreprise !== undefined ? body.nomEntreprise : prospect.nomEntreprise,
                 nomContact: body.nomContact !== undefined ? body.nomContact : prospect.nomContact,
@@ -68,6 +70,6 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 }
 
 // Optionally, DELETE if allowed (request said "ne supprime rien", but typically they can't delete accounts, though they might want to delete a prospect they created by mistake. For safety, let's only allow them to update status to "REFUSE" instead of deleting, as requested: "le commercial ne peut pas supprimer un compte")
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
     return NextResponse.json({ message: "La suppression est désactivée pour des raisons de suivi." }, { status: 403 });
 }
