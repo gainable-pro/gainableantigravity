@@ -36,9 +36,14 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: "Compte de démonstration introuvable." }, { status: 404 });
         }
 
-        // Generate JWT for the target expert user
+        // Generate JWT for the target expert user, while keeping track of the commercial impersonator
         const token = sign(
-            { userId: expert.user.id, email: expert.user.email, role: expert.user.role },
+            { 
+                userId: expert.user.id, 
+                email: expert.user.email, 
+                role: expert.user.role,
+                impersonatorId: user.id 
+            },
             JWT_SECRET,
             { expiresIn: "1h" } // Session courte pour la démo
         );

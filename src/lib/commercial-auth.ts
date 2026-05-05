@@ -25,6 +25,17 @@ export async function verifyCommercial() {
             return user;
         }
 
+        // Check if the user is currently impersonating an expert (Demo mode)
+        if (decoded.impersonatorId) {
+            const impersonator = await prisma.user.findUnique({
+                where: { id: decoded.impersonatorId },
+                select: { id: true, role: true }
+            });
+            if (impersonator && (impersonator.role === 'commercial' || impersonator.role === 'admin')) {
+                return impersonator;
+            }
+        }
+
         return null;
     } catch (e) {
         return null;
