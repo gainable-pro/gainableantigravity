@@ -104,7 +104,8 @@ export default function CommercialResources() {
                             </h3>
                             <ul className="space-y-3 text-red-900 text-sm">
                                 <li><strong>Fin du démarchage téléphonique (B2C) :</strong> La prospection sauvage est très encadrée voire interdite (loi d'août sur le démarchage).</li>
-                                <li><strong>Les plateformes (Travaux.com, Batiweb, HelloArtisan, etc.) :</strong> Elles vendent juste des coordonnées (Leads). Le prospect est mis en concurrence avec 5 autres artisans, il faut payer chaque lead très cher (entre 40€ et 45€) sans aucune garantie de signature.</li>
+                                <li><strong>Le "Racket" des plateformes (Travaux.com, Batiweb, HelloArtisan, etc.) :</strong> Un lead est vendu entre 40€ et 45€, puis revendu à 5 ou 10 entreprises différentes ! Le prospect paye très cher pour une mise en concurrence brutale, sans garantie de signature.</li>
+                                <li><strong>Le mythe du label RGE :</strong> Les artisans payent ~450€ pour le RGE, mais 90% des clients RGE cherchent juste des aides d'État (dossiers administratifs lourds). Ce n'est pas un vrai gage de qualité (seulement 2 contrôles par an). <em>"Souhaitez-vous sortir du lot et vous référencer en plus du RGE pour booster votre conversion auprès d'une clientèle qui a du budget ?"</em></li>
                             </ul>
                         </div>
 
@@ -114,9 +115,10 @@ export default function CommercialResources() {
                                 La Solution Gainable.fr
                             </h3>
                             <ul className="space-y-3 text-emerald-900 text-sm">
-                                <li><strong>Nous ne vendons pas des contacts, nous vendons un OUTIL SEO.</strong></li>
-                                <li><strong>Visibilité Long Terme :</strong> Avec Gainable.fr, l'artisan crée son empreinte SEO locale. C'est le client qui vient à l'artisan grâce aux mots clés.</li>
-                                <li><strong>Exclusivité :</strong> Sur sa page profil, le client ne voit que LUI. Pas de mise en concurrence directe sur son profil expert.</li>
+                                <li><strong>Un outil SEO sans commission :</strong> Notre politique est de faire migrer les artisans experts vers un outil qualitatif et long terme à moindre coût, sans commission sur les chantiers.</li>
+                                <li><strong>Positionnement Premium (FR, CH, BE) :</strong> Nous ciblons une clientèle premium et fiable (bureaux d'études, projets DRV/VRV, constructions). Le client final n'est pas mis en concurrence sur le profil de l'expert.</li>
+                                <li><strong>Sélection rigoureuse :</strong> <em>"Si nous vous appelons, c'est que vous avez été présélectionné par notre modération."</em> Nous ne voulons que des artisans sérieux.</li>
+                                <li><strong>Prix garanti :</strong> C'est un tarif de lancement (-30%), qui peut potentiellement être reconduit l'année suivante au même prix pour nos premiers partenaires engagés.</li>
                             </ul>
                         </div>
 
