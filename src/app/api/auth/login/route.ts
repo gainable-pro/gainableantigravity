@@ -9,7 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only"
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { email, password } = body;
+        const { email, password, rememberMe } = body;
 
         if (!email || !password) {
             return NextResponse.json(
@@ -40,11 +40,14 @@ export async function POST(req: Request) {
         }
 
         // 3. Generate JWT
-        // In a real app, payload should be minimal
+        // If rememberMe is true, token lasts 30 days. Otherwise 24 hours.
+        const tokenDurationStr = rememberMe ? "30d" : "1d";
+        const tokenDurationSec = rememberMe ? 60 * 60 * 24 * 30 : 60 * 60 * 24;
+
         const token = sign(
             { userId: user.id, email: user.email, role: user.role },
             JWT_SECRET,
-            { expiresIn: "7d" } // 7 days session
+            { expiresIn: tokenDurationStr }
         );
 
         // 4. Set Cookie
@@ -52,7 +55,7 @@ export async function POST(req: Request) {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
             sameSite: "strict",
-            maxAge: 60 * 60 * 24 * 7, // 7 days
+            maxAge: tokenDurationSec,
             path: "/",
         });
 

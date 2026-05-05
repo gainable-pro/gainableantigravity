@@ -9,6 +9,7 @@ export default function CommercialLogin() {
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [rememberMe, setRememberMe] = useState(false);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
@@ -21,7 +22,7 @@ export default function CommercialLogin() {
             const res = await fetch("/api/auth/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ email, password, rememberMe }),
             });
 
             if (res.ok) {
@@ -87,6 +88,20 @@ export default function CommercialLogin() {
                                     placeholder="••••••••"
                                 />
                             </div>
+                        </div>
+
+                        <div className="flex items-center">
+                            <input
+                                id="remember-me"
+                                name="remember-me"
+                                type="checkbox"
+                                checked={rememberMe}
+                                onChange={(e) => setRememberMe(e.target.checked)}
+                                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-slate-300 rounded cursor-pointer"
+                            />
+                            <label htmlFor="remember-me" className="ml-2 block text-sm text-slate-700 cursor-pointer">
+                                Rester connecté
+                            </label>
                         </div>
 
                         <button
