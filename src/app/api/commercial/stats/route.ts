@@ -20,8 +20,17 @@ export async function GET(req: Request) {
         const targetCommercialId = user.role === 'admin' ? (url.searchParams.get("commercialId") || user.id) : user.id;
 
         const now = new Date();
+        const queryMonth = url.searchParams.get("month");
+        const queryYear = url.searchParams.get("year");
+
+        const targetMonth = queryMonth !== null ? parseInt(queryMonth, 10) : now.getMonth();
+        const targetYear = queryYear !== null ? parseInt(queryYear, 10) : now.getFullYear();
+
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        
+        const startOfTargetMonth = new Date(targetYear, targetMonth, 1);
+        const endOfTargetMonth = new Date(targetYear, targetMonth + 1, 0, 23, 59, 59, 999);
+
         const startOfYear = new Date(now.getFullYear(), 0, 1);
 
         // Fetch sales for today
@@ -32,11 +41,11 @@ export async function GET(req: Request) {
             }
         });
 
-        // Fetch sales for this month
+        // Fetch sales for the selected month
         const monthlySales = await prisma.commercialSale.findMany({
             where: {
                 commercialId: targetCommercialId,
-                dateVente: { gte: startOfMonth }
+                dateVente: { gte: startOfTargetMonth, lte: endOfTargetMonth }
             }
         });
 

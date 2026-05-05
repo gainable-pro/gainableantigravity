@@ -7,7 +7,9 @@ import {
     Calendar, 
     DollarSign,
     Target,
-    AlertCircle
+    AlertCircle,
+    ChevronLeft,
+    ChevronRight
 } from "lucide-react";
 
 interface DashboardStats {
@@ -33,11 +35,15 @@ interface DashboardStats {
 export default function CommercialDashboard() {
     const [stats, setStats] = useState<DashboardStats | null>(null);
     const [loading, setLoading] = useState(true);
+    const [selectedDate, setSelectedDate] = useState(new Date());
 
     useEffect(() => {
         const fetchStats = async () => {
+            setLoading(true);
             try {
-                const res = await fetch("/api/commercial/stats");
+                const month = selectedDate.getMonth();
+                const year = selectedDate.getFullYear();
+                const res = await fetch(`/api/commercial/stats?month=${month}&year=${year}`);
                 if (res.ok) {
                     const data = await res.json();
                     setStats(data);
@@ -50,7 +56,17 @@ export default function CommercialDashboard() {
         };
 
         fetchStats();
-    }, []);
+    }, [selectedDate]);
+
+    const handlePrevMonth = () => {
+        setSelectedDate(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1));
+    };
+
+    const handleNextMonth = () => {
+        setSelectedDate(prev => new Date(prev.getFullYear(), prev.getMonth() + 1, 1));
+    };
+
+    const isCurrentMonth = selectedDate.getMonth() === new Date().getMonth() && selectedDate.getFullYear() === new Date().getFullYear();
 
     if (loading) {
         return <div className="animate-pulse space-y-6">
@@ -148,9 +164,26 @@ export default function CommercialDashboard() {
 
             {/* Historique du mois (Agenda) */}
             <div className="mt-8 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
-                <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
-                    <h2 className="font-semibold text-slate-800">Agenda des ventes du mois</h2>
-                    <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded">Basé sur 650€ HT / vente</span>
+                <div className="p-4 border-b border-slate-200 bg-slate-50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <h2 className="font-semibold text-slate-800">Agenda des ventes</h2>
+                    <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-lg px-2 py-1 shadow-sm">
+                            <button onClick={handlePrevMonth} className="p-1 hover:bg-slate-100 rounded text-slate-500 transition-colors">
+                                <ChevronLeft className="h-4 w-4" />
+                            </button>
+                            <span className="text-sm font-medium w-32 text-center text-slate-700 capitalize">
+                                {selectedDate.toLocaleDateString("fr-FR", { month: "long", year: "numeric" })}
+                            </span>
+                            <button 
+                                onClick={handleNextMonth} 
+                                disabled={isCurrentMonth}
+                                className={`p-1 rounded transition-colors ${isCurrentMonth ? 'text-slate-300 cursor-not-allowed' : 'text-slate-500 hover:bg-slate-100'}`}
+                            >
+                                <ChevronRight className="h-4 w-4" />
+                            </button>
+                        </div>
+                        <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1.5 rounded hidden md:block">Basé sur 650€ HT / vente</span>
+                    </div>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left text-sm">
