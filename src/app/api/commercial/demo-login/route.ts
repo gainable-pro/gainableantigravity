@@ -14,13 +14,12 @@ export async function POST(req: Request) {
         const body = await req.json();
         const { targetCompanyName } = body;
 
-        if (targetCompanyName !== "Air G Énergie" && targetCompanyName !== "SMB13") {
+        if (targetCompanyName !== "Air G Énergie") {
             return NextResponse.json({ message: "Non autorisé à se connecter à ce compte pour la démonstration." }, { status: 403 });
         }
 
         let dbSearchName = targetCompanyName;
         if (targetCompanyName === "Air G Énergie") dbSearchName = "AIR G ENERGIE";
-        if (targetCompanyName === "SMB13") dbSearchName = "SMB 13";
 
         const expert = await prisma.expert.findFirst({
             where: {
