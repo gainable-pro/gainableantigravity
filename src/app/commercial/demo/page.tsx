@@ -78,8 +78,6 @@ export default function DemoAccess() {
                         Se connecter (Démo)
                     </button>
                 </div>
-
-                </div>
             </div>
         </div>
     );
