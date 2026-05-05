@@ -45,8 +45,17 @@ export async function POST(req: Request) {
         const body = await req.json();
         
         // Validation basique
-        if (!body.nomEntreprise || !body.nomContact) {
-            return NextResponse.json({ message: "Le nom de l'entreprise et le nom du contact sont requis." }, { status: 400 });
+        if (!body.nomEntreprise || !body.nomContact || !body.siret) {
+            return NextResponse.json({ message: "Le nom de l'entreprise, le contact et le SIRET sont requis." }, { status: 400 });
+        }
+
+        // Vérification Anti-Fraude : le SIRET ne doit pas déjà exister dans la base des experts clients
+        const existingExpert = await prisma.expert.findFirst({
+            where: { siret: body.siret }
+        });
+
+        if (existingExpert) {
+            return NextResponse.json({ message: "Ce SIRET est déjà inscrit sur notre plateforme en tant que client." }, { status: 403 });
         }
 
         const newProspect = await prisma.commercialProspect.create({

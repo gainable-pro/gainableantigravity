@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyCommercial, unauthorizedCommercial } from "@/lib/commercial-auth";
+import { sendEmail } from "@/lib/email";
 
 // GET: Liste des ventes
 export async function GET(req: Request) {
@@ -45,14 +46,15 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: "Prospect non trouvé ou non autorisé" }, { status: 403 });
         }
 
-        // Créer la vente
+        // Créer la vente en attente
         const sale = await prisma.commercialSale.create({
             data: {
                 commercialId: user.id,
                 prospectId: prospect.id,
                 paiementType: body.paiementType, // "COMPTANT" | "MENSUALISE"
                 dateVente: new Date(body.dateVente),
-                montant: parseFloat(body.montant)
+                montant: parseFloat(body.montant),
+                status: "EN_ATTENTE"
             }
         });
 
@@ -60,6 +62,26 @@ export async function POST(req: Request) {
         await prisma.commercialProspect.update({
             where: { id: prospect.id },
             data: { status: "VENTE_EFFECTUEE" }
+        });
+
+        // Envoyer une notification par email à l'admin
+        const emailHtml = `
+            <h2>Nouvelle vente déclarée !</h2>
+            <p>Une nouvelle vente a été déclarée et nécessite votre validation.</p>
+            <ul>
+                <li><strong>Commercial :</strong> ${user.email}</li>
+                <li><strong>Prospect :</strong> ${prospect.nomEntreprise} (${prospect.nomContact})</li>
+                <li><strong>SIRET du prospect :</strong> ${prospect.siret || 'Non renseigné'}</li>
+                <li><strong>Montant :</strong> ${body.montant} € HT</li>
+                <li><strong>Paiement :</strong> ${body.paiementType}</li>
+            </ul>
+            <p>Connectez-vous à votre espace administrateur pour valider ou refuser cette vente.</p>
+        `;
+        
+        await sendEmail({
+            to: "contact@gainable.fr",
+            subject: "Action requise : Nouvelle vente à valider",
+            html: emailHtml
         });
 
         return NextResponse.json({ sale }, { status: 201 });

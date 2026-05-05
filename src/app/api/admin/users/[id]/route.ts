@@ -26,10 +26,25 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
     // Update Expert Status
     if (body.action === 'validate_expert') {
         try {
-            await prisma.expert.update({
+            const expert = await prisma.expert.update({
                 where: { user_id: id },
                 data: { status: 'active' }
             });
+
+            // Validation automatique de la vente commerciale correspondante
+            if (expert.siret) {
+                const prospect = await prisma.commercialProspect.findFirst({
+                    where: { siret: expert.siret }
+                });
+                if (prospect) {
+                    await prisma.commercialSale.updateMany({
+                        where: { prospectId: prospect.id, status: 'EN_ATTENTE' },
+                        data: { status: 'VALIDEE' }
+                    });
+                    console.log(`Vente validée pour le prospect ${prospect.nomEntreprise}`);
+                }
+            }
+
             return NextResponse.json({ message: "Expert validated" });
         } catch (e) {
             return NextResponse.json({ message: "Error updating expert" }, { status: 500 });

@@ -22,6 +22,7 @@ interface DashboardStats {
     yearlyCount: number;
     yearlyCA: number;
     pendingProspects: number;
+    pendingSalesCount: number;
     history: {
         date: string;
         count: number;
@@ -139,7 +140,17 @@ export default function CommercialDashboard() {
                     </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 shadow-sm text-white flex items-center justify-between">
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex items-center justify-between">
+                    <div>
+                        <h3 className="text-sm font-medium text-slate-500">Ventes en attente de validation</h3>
+                        <p className="text-2xl font-bold text-orange-600 mt-2">{stats?.pendingSalesCount || 0}</p>
+                    </div>
+                    <div className="h-12 w-12 bg-orange-50 rounded-full flex items-center justify-center">
+                        <AlertCircle className="h-6 w-6 text-orange-600" />
+                    </div>
+                </div>
+
+                <div className="md:col-span-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-6 shadow-sm text-white flex items-center justify-between">
                     <div>
                         <h3 className="text-sm font-medium text-blue-100">Besoin d'aide pour closer ?</h3>
                         <p className="mt-1 text-sm text-blue-50">Consultez nos ressources et argumentaires de vente.</p>

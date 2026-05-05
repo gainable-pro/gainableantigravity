@@ -33,27 +33,38 @@ export async function GET(req: Request) {
 
         const startOfYear = new Date(now.getFullYear(), 0, 1);
 
-        // Fetch sales for today
+        // Fetch sales for today (VALIDATED ONLY)
         const dailySales = await prisma.commercialSale.findMany({
             where: {
                 commercialId: targetCommercialId,
+                status: "VALIDEE",
                 dateVente: { gte: startOfDay }
             }
         });
 
-        // Fetch sales for the selected month
+        // Fetch sales for the selected month (VALIDATED ONLY)
         const monthlySales = await prisma.commercialSale.findMany({
             where: {
                 commercialId: targetCommercialId,
+                status: "VALIDEE",
                 dateVente: { gte: startOfTargetMonth, lte: endOfTargetMonth }
             }
         });
 
-        // Fetch sales for this year
+        // Fetch sales for this year (VALIDATED ONLY)
         const yearlySales = await prisma.commercialSale.findMany({
             where: {
                 commercialId: targetCommercialId,
+                status: "VALIDEE",
                 dateVente: { gte: startOfYear }
+            }
+        });
+
+        // Fetch pending sales count (for UI notification)
+        const pendingSalesCount = await prisma.commercialSale.count({
+            where: {
+                commercialId: targetCommercialId,
+                status: "EN_ATTENTE"
             }
         });
 
@@ -110,6 +121,7 @@ export async function GET(req: Request) {
             yearlyCount: yearlySales.length,
             yearlyCA: yearlySales.length * BASE_AMOUNT,
             pendingProspects,
+            pendingSalesCount,
             history: historyDetails
         });
 

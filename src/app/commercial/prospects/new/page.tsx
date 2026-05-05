@@ -74,8 +74,8 @@ export default function NewProspect() {
                                 <input required type="text" value={formData.nomEntreprise} onChange={e => setFormData({...formData, nomEntreprise: e.target.value})} className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500" />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-1">SIRET</label>
-                                <input type="text" value={formData.siret} onChange={e => setFormData({...formData, siret: e.target.value})} className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500" />
+                                <label className="block text-sm font-medium text-slate-700 mb-1">SIRET *</label>
+                                <input required type="text" value={formData.siret} onChange={e => setFormData({...formData, siret: e.target.value})} className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500" placeholder="Numéro SIRET à 14 chiffres" />
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-1">Adresse</label>

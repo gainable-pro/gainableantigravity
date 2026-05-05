@@ -47,6 +47,16 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
         const body = await req.json();
 
+        // Vérification Anti-Fraude si le SIRET est modifié
+        if (body.siret && body.siret !== prospect.siret) {
+            const existingExpert = await prisma.expert.findFirst({
+                where: { siret: body.siret }
+            });
+            if (existingExpert) {
+                return NextResponse.json({ message: "Ce SIRET est déjà inscrit sur notre plateforme en tant que client." }, { status: 403 });
+            }
+        }
+
         const updatedProspect = await prisma.commercialProspect.update({
             where: { id },
             data: {

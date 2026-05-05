@@ -310,6 +310,7 @@ model CommercialSale {
   paiementType    String   // COMPTANT, MENSUALISE
   dateVente       DateTime
   montant         Float
+  status          String   @default("EN_ATTENTE") // EN_ATTENTE, VALIDEE, REFUSEE
   
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
