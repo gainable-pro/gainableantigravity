@@ -124,6 +124,34 @@ export default function CommercialResources() {
                 </div>
             </section>
 
+            {/* La Force du SEO Massif */}
+            <section className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="p-6 border-b border-slate-100 bg-slate-50">
+                    <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                        <Search className="h-5 w-5 text-amber-600" />
+                        L'Effet "Boule de Neige" du SEO Local
+                    </h2>
+                </div>
+                
+                <div className="p-6 space-y-6">
+                    <div className="space-y-4 text-slate-700">
+                        <p>
+                            <strong>Le problème d'un site web classique :</strong> Un site web normal est indexé de manière générale sur Google (en moyenne, une dizaine de pages maximum). Il stagne.
+                        </p>
+                        <p>
+                            <strong>La puissance de Gainable.fr :</strong> Notre force, c'est la <strong>nouveauté et le volume</strong>. En publiant régulièrement ses chantiers (ex: une installation à Marseille, une autre à Aix), l'artisan crée des articles de blog hyper-optimisés.
+                        </p>
+                        <div className="bg-amber-50 border border-amber-100 p-4 rounded-lg">
+                            <ul className="space-y-2 text-sm text-amber-900">
+                                <li>📈 <strong>Calcul simple :</strong> 5 articles par mois = 60 nouvelles pages indexées par Google sur l'année. En 2 ans, plus de 100 pages positionnées sur sa zone géographique !</li>
+                                <li>🔗 <strong>Boost du site principal :</strong> Chaque article redirige vers son site principal. Cela crée des "backlinks" de qualité qui améliorent le classement de son propre site web.</li>
+                                <li>🛡️ <strong>L'Omniprésence (Réassurance ultime) :</strong> Quand un client cherche le nom de l'entreprise avant de signer, il verra : Le site de l'artisan, Societe.com, Facebook, les Avis Google... <strong>ET Gainable.fr</strong>. Cette présence multi-canale rassure immédiatement le client sur le fait qu'il a affaire à une entreprise sérieuse, implantée et experte.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Traitement des Objections Courantes */}
             <section className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div className="p-6 border-b border-slate-100 bg-slate-50">
