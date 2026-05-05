@@ -21,9 +21,8 @@ export default function DemoAccess() {
             });
 
             if (res.ok) {
-                // Rediriger vers l'espace expert
-                router.push("/dashboard"); 
-                router.refresh();
+                // Ouvrir l'espace expert dans un nouvel onglet
+                window.open("/dashboard", "_blank");
             } else {
                 const data = await res.json();
                 setError(data.message || "Erreur d'accès");
