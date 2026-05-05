@@ -173,7 +173,7 @@ export default function EditProspect() {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Site Web</label>
-                                    <input type="url" value={formData.siteWeb} onChange={e => setFormData({...formData, siteWeb: e.target.value})} className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500" />
+                                    <input type="text" value={formData.siteWeb} onChange={e => setFormData({...formData, siteWeb: e.target.value})} className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500" placeholder="ex: www.gainable.fr" />
                                 </div>
                             </div>
 
