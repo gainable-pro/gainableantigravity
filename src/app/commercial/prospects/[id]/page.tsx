@@ -27,9 +27,7 @@ export default function EditProspect() {
     });
 
     const [saleData, setSaleData] = useState({
-        paiementType: "COMPTANT",
-        dateVente: new Date().toISOString().split("T")[0],
-        montant: ""
+        dateVente: new Date().toISOString().split("T")[0]
     });
 
     const [sales, setSales] = useState<any[]>([]);
@@ -107,9 +105,9 @@ export default function EditProspect() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     prospectId: params.id,
-                    paiementType: saleData.paiementType,
+                    paiementType: "EN_LIGNE",
                     dateVente: saleData.dateVente,
-                    montant: parseFloat(saleData.montant)
+                    montant: 650
                 })
             });
 
@@ -266,30 +264,15 @@ export default function EditProspect() {
                                     className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white" 
                                 />
                             </div>
-                            <div>
-                                <label className="block text-sm font-medium text-emerald-900 mb-1">Type de paiement</label>
-                                <select 
-                                    required
-                                    value={saleData.paiementType}
-                                    onChange={e => setSaleData({...saleData, paiementType: e.target.value})}
-                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white"
-                                >
-                                    <option value="COMPTANT">Comptant</option>
-                                    <option value="MENSUALISE">Mensualisé</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-emerald-900 mb-1">Montant total (HT) en €</label>
-                                <input 
-                                    type="number" 
-                                    required
-                                    min="0"
-                                    step="0.01"
-                                    placeholder="Ex: 650"
-                                    value={saleData.montant}
-                                    onChange={e => setSaleData({...saleData, montant: e.target.value})}
-                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white" 
-                                />
+                            <div className="bg-white/50 rounded p-3 text-sm text-emerald-900 border border-emerald-200/50">
+                                <div className="flex justify-between mb-1">
+                                    <span>Montant de l'abonnement :</span>
+                                    <span className="font-bold">650 € HT</span>
+                                </div>
+                                <div className="flex justify-between">
+                                    <span>Méthode de paiement :</span>
+                                    <span className="font-bold">Via le site internet</span>
+                                </div>
                             </div>
 
                             <button 
@@ -314,7 +297,7 @@ export default function EditProspect() {
                                             <span>{new Date(sale.dateVente).toLocaleDateString("fr-FR")}</span>
                                         </div>
                                         <div className="text-slate-500 mt-1">
-                                            Paiement {sale.paiementType.toLowerCase()}
+                                            Paiement en ligne via le site
                                         </div>
                                     </div>
                                 ))}
