@@ -22,7 +22,7 @@ export default function DemoAccess() {
 
             if (res.ok) {
                 // Rediriger vers l'espace expert
-                router.push("/expert/dashboard"); // Ou la route appropriée
+                router.push("/dashboard"); 
                 router.refresh();
             } else {
                 const data = await res.json();
