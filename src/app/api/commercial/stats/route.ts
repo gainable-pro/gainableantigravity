@@ -22,6 +22,7 @@ export async function GET(req: Request) {
         const now = new Date();
         const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+        const startOfYear = new Date(now.getFullYear(), 0, 1);
 
         // Fetch sales for today
         const dailySales = await prisma.commercialSale.findMany({
@@ -39,6 +40,14 @@ export async function GET(req: Request) {
             }
         });
 
+        // Fetch sales for this year
+        const yearlySales = await prisma.commercialSale.findMany({
+            where: {
+                commercialId: targetCommercialId,
+                dateVente: { gte: startOfYear }
+            }
+        });
+
         // Calculate commissions
         const BASE_AMOUNT = 650; // Base d'abonnement 650 € HT
 
@@ -50,10 +59,25 @@ export async function GET(req: Request) {
         }
 
         let totalMonthlyCommission = 0;
+        const historyDetails = [];
+
         for (const [day, count] of Object.entries(salesByDay)) {
             const rate = getCommissionRate(count);
-            totalMonthlyCommission += count * BASE_AMOUNT * rate;
+            const dailyComm = count * BASE_AMOUNT * rate;
+            totalMonthlyCommission += dailyComm;
+            
+            historyDetails.push({
+                date: day,
+                count: count,
+                level: count >= 5 ? 5 : count,
+                rate: rate * 100,
+                ca: count * BASE_AMOUNT,
+                commission: dailyComm
+            });
         }
+        
+        // Sort history by date descending
+        historyDetails.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
         const dailyCount = dailySales.length;
         const dailyRate = getCommissionRate(dailyCount);
@@ -74,7 +98,10 @@ export async function GET(req: Request) {
             monthlyCount: monthlySales.length,
             monthlyCA: monthlySales.length * BASE_AMOUNT,
             monthlyCommission: totalMonthlyCommission,
-            pendingProspects
+            yearlyCount: yearlySales.length,
+            yearlyCA: yearlySales.length * BASE_AMOUNT,
+            pendingProspects,
+            history: historyDetails
         });
 
     } catch (error) {

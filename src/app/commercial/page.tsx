@@ -17,7 +17,17 @@ interface DashboardStats {
     monthlyCount: number;
     monthlyCA: number;
     monthlyCommission: number;
+    yearlyCount: number;
+    yearlyCA: number;
     pendingProspects: number;
+    history: {
+        date: string;
+        count: number;
+        level: number;
+        rate: number;
+        ca: number;
+        commission: number;
+    }[];
 }
 
 export default function CommercialDashboard() {
@@ -69,12 +79,12 @@ export default function CommercialDashboard() {
                 />
                 <StatCard 
                     title="CA Généré (Jour)" 
-                    value={`${stats?.dailyCA || 0} €`} 
+                    value={`${stats?.dailyCA || 0} € HT`} 
                     icon={<TrendingUp className="h-6 w-6 text-emerald-500" />}
                 />
                 <StatCard 
                     title="Commission (Jour)" 
-                    value={`${stats?.dailyCommission || 0} €`} 
+                    value={`${stats?.dailyCommission || 0} € HT`} 
                     icon={<DollarSign className="h-6 w-6 text-amber-500" />}
                     highlight
                 />
@@ -90,12 +100,12 @@ export default function CommercialDashboard() {
                 />
                 <StatCard 
                     title="CA Généré (Mois)" 
-                    value={`${stats?.monthlyCA || 0} €`} 
+                    value={`${stats?.monthlyCA || 0} € HT`} 
                     icon={<TrendingUp className="h-6 w-6 text-teal-500" />}
                 />
                 <StatCard 
                     title="Commission Estimée (Mois)" 
-                    value={`${stats?.monthlyCommission || 0} €`} 
+                    value={`${stats?.monthlyCommission || 0} € HT`} 
                     icon={<DollarSign className="h-6 w-6 text-orange-500" />}
                     highlight
                 />
@@ -121,6 +131,68 @@ export default function CommercialDashboard() {
                     <a href="/commercial/resources" className="px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg text-sm font-medium transition-colors">
                         Voir les astuces
                     </a>
+                </div>
+            </div>
+
+            {/* Projection Annuelle */}
+            <div className="mt-8 bg-slate-900 rounded-xl p-6 shadow-sm text-white flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h3 className="text-lg font-bold">Projection & CA Annuel</h3>
+                    <p className="text-slate-400 text-sm mt-1">Total généré sur l'année en cours :</p>
+                </div>
+                <div className="mt-4 md:mt-0 text-right">
+                    <div className="text-3xl font-black text-emerald-400">{stats?.yearlyCA || 0} € HT</div>
+                    <div className="text-sm font-medium text-slate-300 mt-1">{stats?.yearlyCount || 0} ventes réalisées au total</div>
+                </div>
+            </div>
+
+            {/* Historique du mois (Agenda) */}
+            <div className="mt-8 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div className="p-4 border-b border-slate-200 bg-slate-50 flex justify-between items-center">
+                    <h2 className="font-semibold text-slate-800">Agenda des ventes du mois</h2>
+                    <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded">Basé sur 650€ HT / vente</span>
+                </div>
+                <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm">
+                        <thead className="bg-slate-50 border-b border-slate-200 text-slate-600">
+                            <tr>
+                                <th className="px-6 py-3 font-semibold">Date</th>
+                                <th className="px-6 py-3 font-semibold">Ventes jour</th>
+                                <th className="px-6 py-3 font-semibold">Palier atteint</th>
+                                <th className="px-6 py-3 font-semibold">CA Généré HT</th>
+                                <th className="px-6 py-3 font-semibold text-right text-orange-600">Commission gagnée HT</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                            {!stats?.history || stats.history.length === 0 ? (
+                                <tr>
+                                    <td colSpan={5} className="px-6 py-8 text-center text-slate-500">Aucune vente ce mois-ci.</td>
+                                </tr>
+                            ) : (
+                                stats.history.map((h, idx) => (
+                                    <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                                        <td className="px-6 py-4 font-medium text-slate-900">
+                                            {new Date(h.date).toLocaleDateString("fr-FR", { weekday: 'long', day: 'numeric', month: 'long' })}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            <span className="inline-flex items-center justify-center bg-blue-100 text-blue-700 h-6 w-6 rounded-full font-bold text-xs">
+                                                {h.count}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 text-slate-600">
+                                            Niveau {h.level} ({h.rate}%)
+                                        </td>
+                                        <td className="px-6 py-4 font-bold text-emerald-600">
+                                            {h.ca} €
+                                        </td>
+                                        <td className="px-6 py-4 text-right font-bold text-orange-600">
+                                            {h.commission} €
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
+                        </tbody>
+                    </table>
                 </div>
             </div>
             
