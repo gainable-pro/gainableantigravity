@@ -12,7 +12,8 @@ import {
   TrendingUp,
   BarChart3,
   ShieldCheck,
-  Star
+  Star,
+  DollarSign
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +21,33 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 export default function CareersPage() {
+  const positions = [
+    {
+      title: "Commercial Indépendant / Consultant",
+      location: "National (France)",
+      type: "Temps plein / Indépendant",
+      description: "Vous prospectez et accompagnez les professionnels de la climatisation (CVC) dans leur transformation digitale.",
+      icon: <Users className="w-6 h-6 text-blue-500" />,
+      perks: ["Commissions élevées", "Outils de CRM offerts", "Formation continue"]
+    },
+    {
+      title: "Expert SEO / Data Strategist",
+      location: "Remote / Lille",
+      type: "Temps plein",
+      description: "Vous pilotez la stratégie de visibilité de nos 800+ articles et assurez la croissance organique du groupe.",
+      icon: <Search className="w-6 h-6 text-emerald-500" />,
+      perks: ["Gros volume de données", "Outils IA avancés", "Flexibilité totale"]
+    },
+    {
+      title: "Web Designer UI/UX",
+      location: "Lille / Hybride",
+      type: "Temps plein",
+      description: "Vous concevez des interfaces épurées et sexy pour nos applications métiers et nos portails clients.",
+      icon: <Code className="w-6 h-6 text-purple-500" />,
+      perks: ["Projets variés", "Liberté créative", "Stack moderne"]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -41,10 +69,12 @@ export default function CareersPage() {
               Rejoignez une plateforme déjà structurée avec plus de 5000 pages indexées et un potentiel de 72 000 entreprises sur 3 pays.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button size="lg" className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-black py-8 px-10 rounded-2xl text-xl w-full sm:w-auto shadow-[0_20px_50px_rgba(213,155,43,0.3)] transition-all hover:scale-105 active:scale-95">
-                DEVENIR CONSULTANT
-              </Button>
-              <div className="flex flex-col items-start gap-1">
+              <Link href="/contact?subject=Candidature Consultant">
+                <Button size="lg" className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-black py-8 px-10 rounded-2xl text-xl w-full sm:w-auto shadow-[0_20px_50px_rgba(213,155,43,0.3)] transition-all hover:scale-105 active:scale-95">
+                  DEVENIR CONSULTANT
+                </Button>
+              </Link>
+              <div className="flex flex-col items-start gap-1 text-left">
                 <span className="text-white font-bold flex items-center gap-2">
                   <Star className="w-4 h-4 text-[#D59B2B] fill-[#D59B2B]" /> 1 an de phase de test réussie
                 </span>
@@ -180,53 +210,56 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Profil Recherché */}
+      {/* Positions Section */}
       <section className="py-32 max-w-7xl mx-auto px-4">
-        <div className="text-center mb-20">
-          <Badge className="bg-emerald-100 text-emerald-700 hover:bg-emerald-100 border-none px-4 py-1 mb-4">RECRUTEMENT ACTIF</Badge>
-          <h2 className="text-4xl font-black text-[#1F2D3D]">Profil Recherché : Consultant Indépendant</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Postes actuellement ouverts</h2>
+          <p className="text-slate-500 max-w-xl mx-auto">
+            Nous recherchons des talents passionnés pour nous aider à structurer le réseau national Gainable.fr.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="bg-slate-50 rounded-3xl p-10">
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-              <Zap className="text-[#D59B2B]" /> Vos Compétences
-            </h3>
-            <ul className="space-y-4">
-              {[
-                "Forte aisance commerciale (prise de contact, closing)",
-                "Capacité à prospecter de manière autonome (Phone, LinkedIn)",
-                "Bonne compréhension SEO & visibilité Google",
-                "Capacité à vulgariser une offre technique",
-                "Sens du résultat et culture de la performance"
-              ].map((item, i) => (
-                <li key={i} className="flex gap-3 text-slate-600 font-medium">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /> {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-[#1F2D3D] text-white rounded-3xl p-10">
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-[#D59B2B]">
-              <Rocket /> Profil Idéal
-            </h3>
-            <p className="text-slate-300 mb-8 leading-relaxed font-medium">
-              Nous cherchons des entrepreneurs dans l'âme qui souhaitent développer un revenu scalable sans contrainte hiérarchique.
-            </p>
-            <div className="space-y-6">
-              {[
-                "N'a pas besoin d'être encadré au quotidien",
-                "Sait organiser sa prospection seule",
-                "Comprend rapidement un produit digital",
-                "Est motivé par les résultats et le potentiel de gains"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-[#D59B2B] rounded-full" />
-                  <span className="font-bold">{item}</span>
+        <div className="grid gap-8">
+          {positions.map((pos, i) => (
+            <Card key={i} className="group hover:border-[#D59B2B] transition-all duration-300 border-slate-100 shadow-sm hover:shadow-xl rounded-3xl overflow-hidden">
+              <CardContent className="p-8">
+                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-2xl bg-slate-50 group-hover:bg-[#D59B2B]/10 transition-colors">
+                        {pos.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-slate-900">{pos.title}</h3>
+                        <div className="flex items-center gap-3 mt-1 text-sm text-slate-500">
+                          <span className="flex items-center gap-1"><MapPin className="w-3 h-3" /> {pos.location}</span>
+                          <span className="w-1 h-1 bg-slate-300 rounded-full" />
+                          <span className="flex items-center gap-1"><Zap className="w-3 h-3" /> {pos.type}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      {pos.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {pos.perks.map((perk, j) => (
+                        <Badge key={j} variant="secondary" className="bg-slate-50 text-slate-600 border-none font-medium">
+                          {perk}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="shrink-0">
+                    <Link href={`/contact?subject=Candidature ${pos.title}`}>
+                      <Button variant="outline" className="border-slate-200 hover:border-[#D59B2B] hover:bg-[#D59B2B] hover:text-white px-8 py-6 rounded-xl font-bold transition-all w-full lg:w-auto">
+                        Postuler à l'offre
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
@@ -259,12 +292,16 @@ export default function CareersPage() {
           Prêt à rejoindre le réseau national Gainable ?
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" className="bg-[#1F2D3D] hover:bg-slate-800 text-white font-black py-8 px-12 rounded-2xl text-xl shadow-2xl transition-all hover:scale-105">
-            POSTULER MAINTENANT
-          </Button>
-          <Button variant="outline" size="lg" className="border-2 border-slate-200 py-8 px-12 rounded-2xl text-xl font-bold hover:bg-slate-50">
-            DÉCOUVRIR LE CRM
-          </Button>
+          <Link href="/contact?subject=Candidature Spontanée">
+            <Button size="lg" className="bg-[#1F2D3D] hover:bg-slate-800 text-white font-black py-8 px-12 rounded-2xl text-xl shadow-2xl transition-all hover:scale-105">
+              POSTULER MAINTENANT
+            </Button>
+          </Link>
+          <Link href="/commercial/login">
+            <Button variant="outline" size="lg" className="border-2 border-slate-200 py-8 px-12 rounded-2xl text-xl font-bold hover:bg-slate-50">
+              ACCÈS COMMERCIAL
+            </Button>
+          </Link>
         </div>
         <p className="mt-10 text-slate-400 font-medium">Réponse garantie sous 48h par notre équipe recrutement.</p>
       </section>
