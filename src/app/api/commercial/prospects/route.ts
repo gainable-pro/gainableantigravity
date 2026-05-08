@@ -49,14 +49,9 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: "Le nom de l'entreprise, le contact et le SIRET sont requis." }, { status: 400 });
         }
 
-        // Vérification Anti-Fraude : le SIRET ne doit pas déjà exister dans la base des experts clients
-        const existingExpert = await prisma.expert.findFirst({
-            where: { siret: body.siret }
-        });
-
-        if (existingExpert) {
-            return NextResponse.json({ message: "Ce SIRET est déjà inscrit sur notre plateforme en tant que client." }, { status: 403 });
-        }
+        // Note : Nous permettons désormais au commercial d'ajouter un prospect même si le SIRET
+        // existe déjà dans la base Expert (car le client a pu s'inscrire avant que le commercial
+        // ne déclare le prospect). La vraie validation de la vente se fera côté Admin.
 
         const newProspect = await prisma.commercialProspect.create({
             data: {

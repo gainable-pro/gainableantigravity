@@ -74,6 +74,7 @@ export function SignUpForm() {
     const [isLoadingSiret, setIsLoadingSiret] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [showErrors, setShowErrors] = useState(false);
 
     // CONSTANTS Imported
     const TECH_LIST = EXPERT_TECHNOLOGIES.map(t => ({ id: t, label: t }));
@@ -145,6 +146,28 @@ export function SignUpForm() {
 
     const handleRegister = async () => {
         if (!selectedPlan) return;
+
+        // Validation required fields
+        if (
+            !formData.representativeName ||
+            !formData.email ||
+            !formData.telephone ||
+            !formData.password ||
+            !formData.confirmPassword ||
+            !formData.siret ||
+            !formData.description
+        ) {
+            setShowErrors(true);
+            alert("Veuillez remplir tous les champs obligatoires (*). N'oubliez pas de cliquer sur 'Vérifier' pour le SIRET.");
+            return;
+        }
+
+        if (formData.password !== formData.confirmPassword) {
+            alert("Les mots de passe ne correspondent pas.");
+            return;
+        }
+
+        setShowErrors(false);
 
         // Validation APE only for France
         let isApeValid = validateApe(formData.codeApe, selectedPlan);
@@ -493,23 +516,23 @@ export function SignUpForm() {
                                 <div className="grid gap-5">
                                     <div className="space-y-2">
                                         <Label>Nom et Prénom du représentant <span className="text-red-500">*</span></Label>
-                                        <Input name="representativeName" value={formData.representativeName} onChange={handleCommonChange} placeholder="Ex: Jean Dupont" />
+                                        <Input name="representativeName" value={formData.representativeName} onChange={handleCommonChange} placeholder="Ex: Jean Dupont" className={showErrors && !formData.representativeName ? "border-red-500" : ""} />
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <Label>Email professionnel <span className="text-red-500">*</span></Label>
-                                            <Input name="email" type="email" value={formData.email} onChange={handleCommonChange} placeholder="contact@entreprise.com" />
+                                            <Input name="email" type="email" value={formData.email} onChange={handleCommonChange} placeholder="contact@entreprise.com" className={showErrors && !formData.email ? "border-red-500" : ""} />
                                         </div>
                                         <div className="space-y-2">
                                             <Label>Téléphone <span className="text-red-500">*</span></Label>
-                                            <Input name="telephone" type="tel" value={formData.telephone} onChange={handleCommonChange} placeholder="06 12 34 56 78" />
+                                            <Input name="telephone" type="tel" value={formData.telephone} onChange={handleCommonChange} placeholder="06 12 34 56 78" className={showErrors && !formData.telephone ? "border-red-500" : ""} />
                                         </div>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <Label>Mot de passe <span className="text-red-500">*</span></Label>
                                             <div className="relative">
-                                                <Input name="password" type={formData.showPassword ? "text" : "password"} value={formData.password} onChange={handleCommonChange} />
+                                                <Input name="password" type={formData.showPassword ? "text" : "password"} value={formData.password} onChange={handleCommonChange} className={showErrors && !formData.password ? "border-red-500" : ""} />
                                                 <button type="button" onClick={() => setFormData(prev => ({ ...prev, showPassword: !prev.showPassword }))} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                                                     {formData.showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                                 </button>
@@ -517,7 +540,7 @@ export function SignUpForm() {
                                         </div>
                                         <div className="space-y-2">
                                             <Label>Confirmation <span className="text-red-500">*</span></Label>
-                                            <Input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleCommonChange} />
+                                            <Input name="confirmPassword" type="password" value={formData.confirmPassword} onChange={handleCommonChange} className={showErrors && !formData.confirmPassword ? "border-red-500" : ""} />
                                         </div>
                                     </div>
 
@@ -558,6 +581,7 @@ export function SignUpForm() {
                                                         setSiretInput(e.target.value);
                                                         if (formData.pays !== 'France') setFormData(prev => ({ ...prev, siret: e.target.value }));
                                                     }}
+                                                    className={showErrors && !formData.siret ? "border-red-500" : ""}
                                                 />
                                                 {formData.pays === 'France' && (
                                                     <Button type="button" variant="outline" onClick={checkSiret} disabled={isLoadingSiret}>
@@ -607,7 +631,7 @@ export function SignUpForm() {
 
                                     <div className="space-y-2">
                                         <Label>Description de l'activité <span className="text-red-500">*</span></Label>
-                                        <Textarea name="description" value={formData.description} onChange={handleCommonChange} placeholder="Présentez votre activité en quelques lignes..." className="h-24" />
+                                        <Textarea name="description" value={formData.description} onChange={handleCommonChange} placeholder="Présentez votre activité en quelques lignes..." className={`h-24 ${showErrors && !formData.description ? "border-red-500" : ""}`} />
                                     </div>
                                 </div>
                             </div>
@@ -738,7 +762,7 @@ export function SignUpForm() {
                                             <div className="pt-6">
                                                 <Button
                                                     onClick={handleRegister}
-                                                    disabled={isSubmitting || !formData.representativeName || !formData.email || !formData.telephone || !formData.password || !formData.siret}
+                                                    disabled={isSubmitting}
                                                     className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white py-6 text-lg font-bold rounded-xl shadow-lg transition-transform hover:scale-[1.02]"
                                                 >
                                                     {isSubmitting ? "Chargement..." : (
