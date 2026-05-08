@@ -240,32 +240,63 @@ export default function CommercialDashboard() {
                 </div>
             </div>
             
-            {/* Grille Rappel */}
-            <div className="mt-12 bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <h3 className="text-sm font-bold text-slate-700 mb-4 flex items-center gap-2">
-                    <AlertCircle className="h-4 w-4" /> Rappel de la grille de commissions journalière
-                </h3>
-                <div className="grid grid-cols-5 gap-4">
-                    <div className="text-center p-3 bg-white rounded shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500">1 Vente</div>
-                        <div className="font-bold text-blue-600">10%</div>
+            {/* Grille Rappel Premium */}
+            <div className="mt-12 bg-slate-900 rounded-3xl p-8 shadow-xl overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-32 -mt-32" />
+                
+                <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-8">
+                        <div className="p-2 bg-blue-600 rounded-lg">
+                            <TrendingUp className="h-5 w-5 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white">Objectifs & Grille de Commissions</h3>
                     </div>
-                    <div className="text-center p-3 bg-white rounded shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500">2 Ventes</div>
-                        <div className="font-bold text-blue-600">12%</div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
+                        {[
+                            { level: "Niveau 1", count: "1 vente/jour", rate: "10%", color: "bg-slate-800" },
+                            { level: "Niveau 2", count: "2 ventes/jour", rate: "12%", color: "bg-slate-800" },
+                            { level: "Niveau 3", count: "3 ventes/jour", rate: "13%", color: "bg-slate-800" },
+                            { level: "Niveau 4", count: "4 ventes/jour", rate: "15%", color: "bg-slate-800 border border-blue-500/30" },
+                            { level: "Niveau 5", count: "5+ ventes/jour", rate: "17%", color: "bg-blue-600", highlight: true },
+                        ].map((lvl, i) => (
+                            <div key={i} className={`${lvl.color} rounded-2xl p-4 text-center transition-transform hover:scale-105`}>
+                                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{lvl.level}</p>
+                                <p className="text-xl font-black text-white">{lvl.rate}</p>
+                                <p className="text-[9px] text-slate-500 font-medium mt-1">{lvl.count}</p>
+                            </div>
+                        ))}
                     </div>
-                    <div className="text-center p-3 bg-white rounded shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500">3 Ventes</div>
-                        <div className="font-bold text-blue-600">13%</div>
+
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+                        <table className="w-full text-left text-xs">
+                            <thead>
+                                <tr className="border-b border-white/10 text-slate-400">
+                                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Ventes / jour</th>
+                                    <th className="px-6 py-4 font-bold uppercase tracking-wider text-blue-400">Commission / jour</th>
+                                    <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (20j)</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-white divide-y divide-white/5">
+                                {[
+                                    { count: "1 vente", comm: "65 €", monthly: "1 300 €" },
+                                    { count: "2 ventes", comm: "156 €", monthly: "3 120 €" },
+                                    { count: "3 ventes", comm: "253,50 €", monthly: "5 070 €" },
+                                    { count: "4 ventes", comm: "390 €", monthly: "7 800 €" },
+                                    { count: "5 ventes", comm: "552,50 €", monthly: "11 050 €" },
+                                ].map((row, i) => (
+                                    <tr key={i} className="hover:bg-white/5 transition-colors">
+                                        <td className="px-6 py-4 font-black">{row.count}</td>
+                                        <td className="px-6 py-4 text-lg font-black text-blue-400">{row.comm}</td>
+                                        <td className="px-6 py-4 font-black text-emerald-400">{row.monthly}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
-                    <div className="text-center p-3 bg-white rounded shadow-sm border border-slate-100">
-                        <div className="text-xs text-slate-500">4 Ventes</div>
-                        <div className="font-bold text-blue-600">15%</div>
-                    </div>
-                    <div className="text-center p-3 bg-blue-50 rounded shadow-sm border border-blue-200">
-                        <div className="text-xs text-slate-500">5+ Ventes</div>
-                        <div className="font-bold text-blue-700">17%</div>
-                    </div>
+                    <p className="text-[10px] text-slate-500 mt-4 italic text-center">
+                        * Commissions calculées sur une base de 650€ HT / vente. Chaque journée est indépendante.
+                    </p>
                 </div>
             </div>
         </div>
