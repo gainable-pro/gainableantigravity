@@ -11,6 +11,11 @@ export function PWAInstall() {
   const [isVisible, setIsVisible] = useState(false); // Hide by default
 
   useEffect(() => {
+    // Check if dismissed previously
+    if (localStorage.getItem('pwa_prompt_dismissed') === 'true') {
+      return;
+    }
+
     // Check if already installed
     const isStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || (window.navigator as any).standalone;
     if (isStandaloneMode) {
@@ -77,8 +82,11 @@ export function PWAInstall() {
         </div>
 
         <button 
-          onClick={() => setIsVisible(false)}
-          className="absolute top-2 right-2 text-slate-400 hover:text-slate-600 transition-colors p-1"
+          onClick={() => {
+            setIsVisible(false);
+            localStorage.setItem('pwa_prompt_dismissed', 'true');
+          }}
+          className="absolute top-2 right-2 z-50 text-slate-400 hover:text-slate-600 transition-colors p-1"
         >
           <X className="w-5 h-5" />
         </button>
