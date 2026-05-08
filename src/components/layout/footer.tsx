@@ -43,6 +43,9 @@ export function Footer() {
                     <Link href="/commercial/login" className="hover:text-amber-500 transition-colors opacity-70">
                         Accès Commercial
                     </Link>
+                    <Link href="/carrieres" className="hover:text-amber-500 transition-colors text-white/90">
+                        Recrutement / Carrières
+                    </Link>
                 </div>
 
                 <p className="text-xs text-slate-600">
