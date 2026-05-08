@@ -80,8 +80,8 @@ export async function GET() {
             expertSlug: expert.slug,
             quota: {
                 used: publishedCount,
-                limit: expert.slug === 'gainable-fr' ? 999 : 3,
-                remaining: expert.slug === 'gainable-fr' ? 999 : Math.max(0, 3 - publishedCount)
+                limit: expert.slug === 'gainable-fr' ? 999 : 10,
+                remaining: expert.slug === 'gainable-fr' ? 999 : Math.max(0, 10 - publishedCount)
             }
         });
 
@@ -200,8 +200,8 @@ export async function POST(req: Request) {
                 }
             });
 
-            if (publishedCount >= 3 && expert.slug !== 'gainable-fr') {
-                return NextResponse.json({ error: `Limite atteinte : ${publishedCount}/3 articles publiés ce mois-ci.` }, { status: 403 });
+            if (publishedCount >= 10 && expert.slug !== 'gainable-fr') {
+                return NextResponse.json({ error: `Limite atteinte : ${publishedCount}/10 articles publiés ce mois-ci.` }, { status: 403 });
             }
         }
 
