@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import OpenAI from "openai";
 import themes from "@/lib/marketing-themes.json";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const API_KEY = process.env.MARKETING_API_KEY || "gainable_marketing_secret_2024";
 
@@ -82,6 +85,38 @@ export async function GET(req: Request) {
             imageUrl = imageResponse.data[0].url || "";
         } catch (imgError) {
             console.error("DALL-E Error:", imgError);
+        }
+
+        // 4. Envoi de l'aperçu par Email (Resend)
+        try {
+            await resend.emails.send({
+                from: "Gainable IA <onboarding@resend.dev>",
+                to: "contact@gainable.fr",
+                subject: `🚀 Aperçu Marketing IA : ${theme.theme}`,
+                html: `
+                    <div style="font-family: sans-serif; padding: 20px;">
+                        <h2>Votre contenu du jour est prêt !</h2>
+                        <p><strong>Thème :</strong> ${theme.theme}</p>
+                        
+                        <hr/>
+                        <h3>📝 LinkedIn (Cible Pros)</h3>
+                        <p style="white-space: pre-wrap; background: #f0f2f5; padding: 15px; border-radius: 8px;">${result.linkedin}</p>
+                        
+                        <h3>📝 Facebook (Cible Clients)</h3>
+                        <p style="white-space: pre-wrap; background: #f0f2f5; padding: 15px; border-radius: 8px;">${result.facebook}</p>
+                        
+                        <hr/>
+                        <h3>🖼️ Image générée (DALL-E 3)</h3>
+                        <img src="${imageUrl}" style="max-width: 100%; border-radius: 12px;" />
+                        
+                        <p style="margin-top: 20px;">
+                            🔗 <strong>Lien article :</strong> <a href="https://www.gainable.fr/espace-pro">Consulter l'Espace Pro</a>
+                        </p>
+                    </div>
+                `
+            });
+        } catch (emailError) {
+            console.error("Email Preview Error:", emailError);
         }
 
         return NextResponse.json({
