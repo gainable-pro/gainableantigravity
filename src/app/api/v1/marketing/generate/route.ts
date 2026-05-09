@@ -70,8 +70,23 @@ export async function GET(req: Request) {
 
         const result = JSON.parse(completion.choices[0].message.content || "{}");
 
+        // 3. Génération d'image avec DALL-E 3
+        let imageUrl = "";
+        try {
+            const imageResponse = await openai.images.generate({
+                model: "dall-e-3",
+                prompt: result.imagePrompt || "A professional HVAC installation in a modern luxury home, high quality, photorealistic",
+                n: 1,
+                size: "1024x1024",
+            });
+            imageUrl = imageResponse.data[0].url || "";
+        } catch (imgError) {
+            console.error("DALL-E Error:", imgError);
+        }
+
         return NextResponse.json({
             ...result,
+            imageUrl,
             articleUrl: "https://www.gainable.fr/espace-pro", // URL générique B2B
             theme: theme.theme
         });
