@@ -126,7 +126,10 @@ export async function GET(req: Request) {
         return NextResponse.json({
             ...result,
             imageUrl,
-            articleUrl: "https://www.gainable.fr/espace-pro", // URL générique B2B
+            facebookLink: "https://www.gainable.fr", // Pour les clients
+            linkedinLink: "https://www.gainable.fr/espace-pro", // Pour les artisans
+            instagramLink: "https://www.gainable.fr",
+            metaTitle: "Gainable.fr - La plateforme des Experts",
             theme: theme.theme
         });
 
