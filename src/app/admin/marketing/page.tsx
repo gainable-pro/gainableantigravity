@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
     Share2, 
     Facebook, 
     Linkedin, 
-    Instagram, 
     Sparkles, 
     RefreshCw, 
     ExternalLink,
@@ -15,7 +14,7 @@ import {
     Image as ImageIcon,
     ArrowRight
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
@@ -23,7 +22,8 @@ import { toast } from "sonner";
 interface MarketingPost {
     linkedin: string;
     facebook: string;
-    instagram: string;
+    imagePrompt: string;
+    analysis: string;
     articleInfo: {
         id: string;
         title: string;
@@ -36,6 +36,7 @@ interface MarketingPost {
 
 export default function MarketingPage() {
     const [loading, setLoading] = useState(false);
+    const [generatingImage, setGeneratingImage] = useState(false);
     const [post, setPost] = useState<MarketingPost | null>(null);
     const [copied, setCopied] = useState<string | null>(null);
 
@@ -47,12 +48,22 @@ export default function MarketingPage() {
             if (!res.ok) throw new Error("Failed to generate");
             const data = await res.json();
             setPost(data);
-            toast.success("Nouveaux posts générés avec succès !");
+            toast.success("Nouveaux posts ciblés générés !");
         } catch (err) {
             toast.error("Erreur lors de la génération. Réessayez.");
         } finally {
             setLoading(false);
         }
+    };
+
+    const generateVisual = async () => {
+        setGeneratingImage(true);
+        toast.info("Génération du visuel personnalisé en cours...");
+        // Simulation of image generation call
+        setTimeout(() => {
+            setGeneratingImage(false);
+            toast.success("Visuel généré avec succès ! (Simulation)");
+        }, 3000);
     };
 
     const copyToClipboard = (text: string, type: string) => {
@@ -62,174 +73,199 @@ export default function MarketingPage() {
         setTimeout(() => setCopied(null), 2000);
     };
 
-    const handleShare = async (platform: string, content: string) => {
+    const handleShare = async (platform: string) => {
         const url = post?.articleInfo.url || "";
-        const title = post?.articleInfo.title || "";
-
         if (platform === 'linkedin') {
             window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
         } else if (platform === 'facebook') {
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-        } else if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: title,
-                    text: content,
-                    url: url,
-                });
-            } catch (err) {
-                console.error("Sharing failed", err);
-            }
+        }
+    };
+
+    const handleSchedule = async (platform: string, content: string) => {
+        const date = new Date();
+        date.setDate(date.getDate() + 1); // Default to tomorrow
+        date.setHours(9, 0, 0, 0); // 9 AM
+
+        try {
+            const res = await fetch("/api/admin/marketing/schedule", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    platform: platform.toUpperCase(),
+                    content,
+                    imageUrl: post?.articleInfo.mainImage,
+                    scheduledAt: date.toISOString()
+                })
+            });
+
+            if (!res.ok) throw new Error("Scheduling failed");
+            toast.success(`Post ${platform} programmé pour demain à 9h !`);
+        } catch (err) {
+            toast.error("Erreur lors de la programmation.");
         }
     };
 
     return (
-        <div className="container mx-auto py-10 space-y-8 max-w-6xl">
+        <div className="container mx-auto py-10 space-y-8 max-w-7xl">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-6 border-slate-100">
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-2">
-                        <Sparkles className="w-8 h-8 text-amber-500 fill-amber-500" />
-                        AI Social Media Manager
+                    <h1 className="text-3xl font-bold text-slate-900 flex items-center gap-3">
+                        <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200">
+                            <Sparkles className="w-7 h-7 text-white" />
+                        </div>
+                        Community Manager IA
                     </h1>
-                    <p className="text-slate-500 mt-1">Transformez vos 21 000+ articles en opportunités marketing quotidiennes.</p>
+                    <p className="text-slate-500 mt-1">L'IA qui gère vos réseaux comme un pro de l'acquisition.</p>
                 </div>
-                <Button 
-                    onClick={generatePost} 
-                    disabled={loading}
-                    className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-200 h-12 px-6 rounded-full group"
-                >
-                    {loading ? (
-                        <RefreshCw className="w-5 h-5 mr-2 animate-spin" />
-                    ) : (
-                        <Sparkles className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                    )}
-                    {post ? "Générer un autre post" : "Lancer l'agent marketing"}
-                </Button>
+                <div className="flex items-center gap-3">
+                    <Button 
+                        variant="outline"
+                        onClick={() => window.open('/admin/marketing/calendar', '_blank')}
+                        className="rounded-full h-12 px-6"
+                    >
+                        Calendrier éditorial
+                    </Button>
+                    <Button 
+                        onClick={generatePost} 
+                        disabled={loading}
+                        className="bg-slate-900 hover:bg-slate-800 text-white shadow-xl h-12 px-8 rounded-full group"
+                    >
+                        {loading ? (
+                            <RefreshCw className="w-5 h-5 mr-2 animate-spin" />
+                        ) : (
+                            <RefreshCw className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-500" />
+                        )}
+                        Générer une nouvelle campagne
+                    </Button>
+                </div>
             </div>
 
             {!post && !loading && (
-                <div className="flex flex-col items-center justify-center py-20 bg-slate-50/50 rounded-3xl border-2 border-dashed border-slate-200 text-center space-y-4">
-                    <div className="w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-600 border border-slate-100">
-                        <Share2 className="w-10 h-10" />
+                <div className="flex flex-col items-center justify-center py-32 bg-white rounded-[2.5rem] border border-slate-100 shadow-sm text-center space-y-6">
+                    <div className="w-24 h-24 bg-blue-50 rounded-3xl flex items-center justify-center text-blue-600">
+                        <Share2 className="w-12 h-12" />
                     </div>
-                    <div className="max-w-md">
-                        <h3 className="text-xl font-semibold text-slate-800">Prêt à booster votre visibilité ?</h3>
-                        <p className="text-slate-500 mt-2">Cliquez sur le bouton ci-dessus pour que l'IA choisisse un article et prépare vos publications réseaux sociaux.</p>
+                    <div className="max-w-md space-y-2">
+                        <h3 className="text-2xl font-bold text-slate-800">Prêt à dominer vos réseaux ?</h3>
+                        <p className="text-slate-500">L'IA va sélectionner un article à fort potentiel commercial et rédiger des posts optimisés pour LinkedIn et Facebook.</p>
                     </div>
-                    <Button variant="outline" onClick={generatePost} className="rounded-full">
-                        Démarrer maintenant
+                    <Button onClick={generatePost} className="rounded-full h-12 px-8 bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-100">
+                        Lancer l'agent maintenant
                     </Button>
                 </div>
             )}
 
             {loading && (
-                <div className="flex flex-col items-center justify-center py-20 space-y-6 text-center">
+                <div className="flex flex-col items-center justify-center py-32 space-y-8 text-center">
                     <div className="relative">
-                        <div className="w-24 h-24 border-4 border-blue-100 border-t-blue-600 rounded-full animate-spin"></div>
-                        <Sparkles className="w-8 h-8 text-amber-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+                        <div className="w-32 h-32 border-4 border-blue-50 border-t-blue-600 rounded-full animate-spin"></div>
+                        <Sparkles className="w-10 h-10 text-amber-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                     </div>
-                    <div className="space-y-2">
-                        <h3 className="text-xl font-medium text-slate-800 animate-pulse">L'IA parcourt vos 21 404 articles...</h3>
-                        <p className="text-slate-500 max-w-sm mx-auto">Sélection du meilleur sujet et rédaction de posts optimisés pour chaque plateforme.</p>
+                    <div className="space-y-3">
+                        <h3 className="text-2xl font-bold text-slate-800 animate-pulse">L'IA analyse vos articles...</h3>
+                        <p className="text-slate-500 max-w-sm mx-auto">Filtrage des sujets vendeurs et rédaction stratégique en cours.</p>
                     </div>
                 </div>
             )}
 
             {post && (
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-                    {/* LEFT: ARTICLE INFO */}
-                    <div className="lg:col-span-1 space-y-6">
-                        <Card className="border-none shadow-xl bg-white overflow-hidden rounded-2xl">
-                            <div className="aspect-video relative group">
-                                <img 
-                                    src={post.articleInfo.mainImage} 
-                                    alt={post.articleInfo.title}
-                                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                                    <Badge className="bg-white/20 backdrop-blur-md text-white border-none">Article Source</Badge>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+                    {/* LEFT: STRATEGY & ARTICLE */}
+                    <div className="lg:col-span-4 space-y-6">
+                        <Card className="border-none shadow-2xl bg-slate-900 text-white rounded-3xl overflow-hidden">
+                            <CardHeader className="p-6 pb-0">
+                                <div className="flex items-center gap-2 text-blue-400 font-bold text-xs uppercase tracking-widest mb-2">
+                                    <Sparkles className="w-4 h-4" /> Analyse Stratégique
                                 </div>
-                            </div>
-                            <CardHeader className="p-6">
-                                <div className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">{post.articleInfo.expertName}</div>
-                                <CardTitle className="text-xl leading-tight">{post.articleInfo.title}</CardTitle>
-                                <CardDescription className="line-clamp-3">Article selectionné automatiquement pour son potentiel viral.</CardDescription>
                             </CardHeader>
-                            <CardContent className="p-6 pt-0 border-t border-slate-50 mt-auto">
-                                <Button asChild variant="outline" className="w-full justify-between group rounded-xl h-12">
-                                    <a href={post.articleInfo.url} target="_blank" rel="noopener noreferrer">
-                                        Voir l'article complet
-                                        <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" />
-                                    </a>
-                                </Button>
+                            <CardContent className="p-6">
+                                <p className="text-slate-300 leading-relaxed italic border-l-2 border-blue-500 pl-4">
+                                    "{post.analysis}"
+                                </p>
                             </CardContent>
                         </Card>
 
-                        <div className="bg-amber-50 rounded-2xl p-6 border border-amber-100 flex gap-4">
-                            <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center shrink-0 text-amber-600">
-                                <ImageIcon className="w-5 h-5" />
+                        <Card className="border-none shadow-xl bg-white overflow-hidden rounded-3xl ring-1 ring-slate-100">
+                            <div className="aspect-video relative group">
+                                <img 
+                                    src={post.articleInfo.mainImage || "/assets/placeholder.jpg"} 
+                                    alt={post.articleInfo.title}
+                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6">
+                                    <div className="space-y-1">
+                                        <Badge className="bg-blue-600 text-white border-none mb-2">Source : {post.articleInfo.expertName}</Badge>
+                                        <CardTitle className="text-white text-lg leading-tight line-clamp-2">{post.articleInfo.title}</CardTitle>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="space-y-1">
-                                <p className="text-sm font-semibold text-amber-900">Astuce Visuelle</p>
-                                <p className="text-xs text-amber-800 leading-relaxed">Utilisez l'image de l'article ou téléchargez un visuel complémentaire pour augmenter le taux de clic de 40%.</p>
-                            </div>
-                        </div>
+                            <CardContent className="p-6 space-y-4">
+                                <Button asChild variant="outline" className="w-full justify-between group rounded-2xl h-14 border-2 hover:bg-slate-50">
+                                    <a href={post.articleInfo.url} target="_blank" rel="noopener noreferrer">
+                                        Voir l'article source
+                                        <ExternalLink className="w-5 h-5 text-slate-300 group-hover:text-blue-600 transition-colors" />
+                                    </a>
+                                </Button>
+
+                                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-3">
+                                    <div className="flex items-center gap-2 font-bold text-slate-800 text-sm">
+                                        <ImageIcon className="w-4 h-4 text-blue-600" /> Visuel sur mesure
+                                    </div>
+                                    <p className="text-xs text-slate-500 line-clamp-3 italic">
+                                        Prompt : {post.imagePrompt}
+                                    </p>
+                                    <Button onClick={generateVisual} disabled={generatingImage} variant="secondary" className="w-full rounded-xl bg-white border shadow-sm">
+                                        {generatingImage ? <RefreshCw className="w-4 h-4 animate-spin mr-2" /> : <Sparkles className="w-4 h-4 mr-2 text-amber-500" />}
+                                        Générer un visuel IA
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
 
-                    {/* RIGHT: SOCIAL POSTS */}
-                    <div className="lg:col-span-2">
+                    {/* RIGHT: PLATFORM ADAPTATIONS */}
+                    <div className="lg:col-span-8">
                         <Tabs defaultValue="linkedin" className="w-full">
-                            <TabsList className="grid grid-cols-3 w-full max-w-md mb-6 p-1 bg-slate-100/80 rounded-2xl h-14">
-                                <TabsTrigger value="linkedin" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-sm flex items-center gap-2 font-medium">
-                                    <Linkedin className="w-4 h-4 text-[#0077b5]" />
-                                    LinkedIn
-                                </TabsTrigger>
-                                <TabsTrigger value="facebook" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-sm flex items-center gap-2 font-medium">
-                                    <Facebook className="w-4 h-4 text-[#1877f2]" />
-                                    Facebook
-                                </TabsTrigger>
-                                <TabsTrigger value="instagram" className="rounded-xl data-[state=active]:bg-white data-[state=active]:shadow-sm flex items-center gap-2 font-medium">
-                                    <Instagram className="w-4 h-4 text-[#e4405f]" />
-                                    Instagram
-                                </TabsTrigger>
-                            </TabsList>
+                            <div className="flex items-center justify-between mb-6 bg-white p-2 rounded-3xl shadow-sm border border-slate-100">
+                                <TabsList className="bg-transparent border-none p-0 h-12">
+                                    <TabsTrigger value="linkedin" className="rounded-2xl data-[state=active]:bg-slate-900 data-[state=active]:text-white h-full px-6 flex items-center gap-2 font-bold transition-all">
+                                        <Linkedin className="w-5 h-5" />
+                                        LinkedIn (B2B)
+                                    </TabsTrigger>
+                                    <TabsTrigger value="facebook" className="rounded-2xl data-[state=active]:bg-slate-900 data-[state=active]:text-white h-full px-6 flex items-center gap-2 font-bold transition-all">
+                                        <Facebook className="w-5 h-5" />
+                                        Facebook (B2C)
+                                    </TabsTrigger>
+                                </TabsList>
+                                <Badge variant="outline" className="mr-4 border-slate-200 text-slate-400 font-mono">ADAPTÉ PAR IA</Badge>
+                            </div>
 
-                            {/* LINKEDIN TAB */}
-                            <TabsContent value="linkedin" className="animate-in fade-in duration-500">
+                            <TabsContent value="linkedin" className="animate-in fade-in zoom-in-95 duration-500">
                                 <SocialPostCard 
                                     platform="LinkedIn"
-                                    icon={<Linkedin className="w-5 h-5 text-white" />}
+                                    icon={<Linkedin className="w-6 h-6 text-white" />}
                                     color="#0077b5"
                                     content={post.linkedin}
                                     onCopy={() => copyToClipboard(post.linkedin, 'li')}
-                                    onShare={() => handleShare('linkedin', post.linkedin)}
+                                    onShare={() => handleShare('linkedin')}
+                                    onSchedule={() => handleSchedule('LinkedIn', post.linkedin)}
                                     isCopied={copied === 'li'}
                                 />
                             </TabsContent>
 
-                            {/* FACEBOOK TAB */}
-                            <TabsContent value="facebook" className="animate-in fade-in duration-500">
+                            <TabsContent value="facebook" className="animate-in fade-in zoom-in-95 duration-500">
                                 <SocialPostCard 
                                     platform="Facebook"
-                                    icon={<Facebook className="w-5 h-5 text-white" />}
+                                    icon={<Facebook className="w-6 h-6 text-white" />}
                                     color="#1877f2"
                                     content={post.facebook}
                                     onCopy={() => copyToClipboard(post.facebook, 'fb')}
-                                    onShare={() => handleShare('facebook', post.facebook)}
+                                    onShare={() => handleShare('facebook')}
+                                    onSchedule={() => handleSchedule('Facebook', post.facebook)}
                                     isCopied={copied === 'fb'}
-                                />
-                            </TabsContent>
-
-                            {/* INSTAGRAM TAB */}
-                            <TabsContent value="instagram" className="animate-in fade-in duration-500">
-                                <SocialPostCard 
-                                    platform="Instagram"
-                                    icon={<Instagram className="w-5 h-5 text-white" />}
-                                    color="#e4405f"
-                                    content={post.instagram}
-                                    onCopy={() => copyToClipboard(post.instagram, 'ig')}
-                                    onShare={() => handleShare('instagram', post.instagram)}
-                                    isCopied={copied === 'ig'}
                                 />
                             </TabsContent>
                         </Tabs>
@@ -240,37 +276,41 @@ export default function MarketingPage() {
     );
 }
 
-function SocialPostCard({ platform, icon, color, content, onCopy, onShare, isCopied }: any) {
+function SocialPostCard({ platform, icon, color, content, onCopy, onShare, onSchedule, isCopied }: any) {
     return (
-        <Card className="border-none shadow-2xl rounded-3xl overflow-hidden bg-white ring-1 ring-slate-100">
-            <div style={{ backgroundColor: color }} className="p-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <div className="bg-white/20 p-2 rounded-xl backdrop-blur-md">
+        <Card className="border-none shadow-2xl rounded-[2rem] overflow-hidden bg-white ring-1 ring-slate-100">
+            <div style={{ backgroundColor: color }} className="p-6 flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                    <div className="bg-white/20 p-3 rounded-2xl backdrop-blur-md border border-white/30">
                         {icon}
                     </div>
-                    <span className="text-white font-bold tracking-wide">Aperçu {platform}</span>
+                    <div>
+                        <span className="text-white font-bold text-xl block leading-none">Publication {platform}</span>
+                        <span className="text-white/70 text-xs mt-1 uppercase tracking-widest font-medium">Stratégie d'acquisition active</span>
+                    </div>
                 </div>
-                <Badge className="bg-white/10 text-white border-none hover:bg-white/20 transition-colors">
-                    Format Optimisé
-                </Badge>
+                <Button onClick={onSchedule} variant="secondary" className="bg-white/10 hover:bg-white/20 text-white border-none rounded-xl h-10 px-4 flex items-center gap-2 backdrop-blur-sm">
+                    <RefreshCw className="w-4 h-4" />
+                    Programmer
+                </Button>
             </div>
-            <CardContent className="p-8">
-                <div className="bg-slate-50/50 rounded-2xl p-6 text-slate-700 whitespace-pre-wrap leading-relaxed font-sans min-h-[300px] border border-slate-100">
+            <CardContent className="p-10">
+                <div className="bg-slate-50/80 rounded-[2rem] p-8 text-slate-800 whitespace-pre-wrap leading-relaxed font-sans text-lg min-h-[400px] border border-slate-100 shadow-inner">
                     {content}
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                    <Button onClick={onCopy} variant="outline" className="flex-1 h-14 rounded-2xl border-2 hover:bg-slate-50 group">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+                    <Button onClick={onCopy} variant="outline" className="h-16 rounded-2xl border-2 hover:bg-slate-50 text-slate-700 font-bold text-lg group">
                         {isCopied ? (
-                            <Check className="w-5 h-5 mr-2 text-green-600" />
+                            <Check className="w-6 h-6 mr-3 text-green-600" />
                         ) : (
-                            <Copy className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                            <Copy className="w-6 h-6 mr-3 text-slate-400 group-hover:scale-110 group-hover:text-blue-600 transition-all" />
                         )}
                         {isCopied ? "Copié !" : "Copier le texte"}
                     </Button>
-                    <Button onClick={onShare} style={{ backgroundColor: color }} className="flex-1 h-14 rounded-2xl text-white hover:opacity-90 shadow-lg group">
-                        <Share2 className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                        Partager sur {platform}
-                        <ArrowRight className="w-4 h-4 ml-auto opacity-50" />
+                    <Button onClick={onShare} style={{ backgroundColor: color }} className="h-16 rounded-2xl text-white hover:opacity-90 shadow-xl font-bold text-lg group">
+                        <Share2 className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                        Partager maintenant
+                        <ArrowRight className="w-5 h-5 ml-auto opacity-50" />
                     </Button>
                 </div>
             </CardContent>

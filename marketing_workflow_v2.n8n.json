@@ -1,0 +1,134 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "interval": 1
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Every Day",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.gainable.fr/api/v1/marketing/generate",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "gainable_marketing_secret_2024"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "api-call",
+      "name": "Get AI Post & Strategy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "dall-e-3",
+        "prompt": "={{ $json.imagePrompt }}",
+        "size": "1024x1024"
+      },
+      "id": "dalle-node",
+      "name": "Generate Visual",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "shareOn": "linkedin",
+        "text": "={{ $node[\"Get AI Post & Strategy\"].json.linkedin }}\n\nExpertise : {{ $node[\"Get AI Post & Strategy\"].json.articleUrl }}",
+        "additionalFields": {
+          "image": "={{ $json.data }}"
+        }
+      },
+      "id": "linkedin-post",
+      "name": "Post to LinkedIn",
+      "type": "n8n-nodes-base.linkedin",
+      "typeVersion": 1,
+      "position": [
+        750,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "message": "={{ $node[\"Get AI Post & Strategy\"].json.facebook }}\n\nEn savoir plus : {{ $node[\"Get AI Post & Strategy\"].json.articleUrl }}",
+        "additionalFields": {
+          "picture": "={{ $json.data }}"
+        }
+      },
+      "id": "facebook-post",
+      "name": "Post to Facebook",
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        750,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Every Day": {
+      "main": [
+        [
+          {
+            "node": "Get AI Post & Strategy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get AI Post & Strategy": {
+      "main": [
+        [
+          {
+            "node": "dalle-node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "dalle-node": {
+      "main": [
+        [
+          {
+            "node": "linkedin-post",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "facebook-post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

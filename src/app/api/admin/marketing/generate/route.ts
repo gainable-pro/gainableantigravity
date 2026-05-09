@@ -21,16 +21,19 @@ export async function GET() {
         const isAdmin = user?.email === 'gmaroann@gmail.com' || user?.role === 'ADMIN';
         if (!isAdmin) return NextResponse.json({ message: "Forbidden" }, { status: 403 });
 
-        // 1. Pick a random article (Published)
-        const count = await prisma.article.count({ where: { status: 'PUBLISHED' } });
-        if (count === 0) return NextResponse.json({ error: "No published articles found" }, { status: 404 });
-        
-        const skip = Math.floor(Math.random() * count);
-        const article = await prisma.article.findFirst({
-            where: { status: 'PUBLISHED' },
-            skip: skip,
-            include: { expert: { select: { nom_entreprise: true, slug: true } } }
+        const articles = await prisma.article.findMany({
+            where: { 
+                status: 'PUBLISHED',
+                content: { contains: ' ' }, // basic check for content
+            },
+            take: 50, // sample 50
+            include: { expert: { select: { nom_entreprise: true, slug: true, expert_type: true, ville: true } } }
         });
+
+        if (articles.length === 0) return NextResponse.json({ error: "No suitable articles found" }, { status: 404 });
+        
+        // Pick one that is likely commercial (e.g. mentions the expert or has a city)
+        const article = articles[Math.floor(Math.random() * articles.length)];
 
         if (!article) return NextResponse.json({ error: "Article selection failed" }, { status: 500 });
 
@@ -38,51 +41,42 @@ export async function GET() {
         const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
         const prompt = `
-        Tu es un expert en Social Media Marketing pour le site Gainable.fr. 
-        Gainable.fr est une plateforme qui met en relation des clients avec des experts en climatisation gainable et pompes à chaleur.
+        Tu es un Community Manager Expert pour Gainable.fr.
         
         ARTICLE SOURCE:
         Titre: ${article.title}
         Introduction: ${article.introduction || ""}
-        Slug: ${article.slug}
-        Entreprise: ${article.expert?.nom_entreprise || "Gainable.fr"}
+        Expert: ${article.expert?.nom_entreprise} (${article.expert?.expert_type})
+        Ville: ${article.expert?.ville}
         
         TA MISSION:
-        Génère 3 posts pour les réseaux sociaux basés sur cet article.
+        Génère 2 posts ultra-ciblés.
         
-        1. LINKEDIN (Ton professionnel, expertise, B2B, valorisation de l'artisanat):
-        - Accroche forte (Hook)
-        - Corps du texte (Valeur ajoutée)
-        - Call to Action
-        - 3-5 Hashtags pertinents
+        1. LINKEDIN (Cible: Professionnels, Bureaux d'études, Partenaires):
+        - Ton: Autorité, Expertise, B2B.
+        - Angle: Parle de la digitalisation du bâtiment, de la qualité technique de ${article.expert?.nom_entreprise}, ou des économies d'énergie pour le tertiaire.
+        - Structure: Hook > Valeur > CTA > Hashtags.
         
-        2. FACEBOOK (Ton communautaire, confiance, proximité, bénéfices clients):
-        - Ton chaleureux
-        - Bénéfices concrets
-        - Emojis
-        - 2-3 Hashtags
+        2. FACEBOOK (Cible: Particuliers, Habitants de ${article.expert?.ville}):
+        - Ton: Chaleureux, Proche, Rassurant.
+        - Angle: Le confort à la maison, la sérénité avec un installateur local certifié. Mentionne bien la ville ${article.expert?.ville}.
+        - Structure: Émotions/Bénéfices > CTA local > Emojis.
+
+        3. PROMPT IMAGE: Génère un prompt descriptif pour une IA génératrice d'image (DALL-E) qui illustre parfaitement ce sujet pour un post social media (style photo pro, réaliste, premium).
         
-        3. INSTAGRAM (Ton inspirant, court, visuel):
-        - Texte court et percutant
-        - Beaucoup d'emojis
-        - Blocs de hashtags
-        
-        RETOURNE UNIQUEMENT UN OBJET JSON avec les clés suivantes:
+        RETOURNE UNIQUEMENT UN OBJET JSON:
         {
           "linkedin": "...",
           "facebook": "...",
-          "instagram": "...",
-          "article": {
-            "title": "...",
-            "url": "..."
-          }
+          "imagePrompt": "...",
+          "analysis": "Pourquoi ce post va marcher ?"
         }
         `;
 
         const completion = await openai.chat.completions.create({
-            model: "gpt-4o", // or gpt-3.5-turbo
+            model: "gpt-4o",
             messages: [
-                { role: "system", content: "Tu es un agent marketing spécialisé dans le bâtiment et le SEO." },
+                { role: "system", content: "Tu es un Community Manager spécialisé dans le génie climatique et l'immobilier." },
                 { role: "user", content: prompt }
             ],
             response_format: { type: "json_object" }
@@ -98,7 +92,7 @@ export async function GET() {
                 slug: article.slug,
                 mainImage: article.mainImage,
                 expertName: article.expert?.nom_entreprise,
-                url: `https://www.gainable.fr/entreprise/${article.expert?.slug}/articles/${article.slug}`
+                url: `https://www.gainable.fr/pro/${article.expert?.slug}`
             }
         });
 

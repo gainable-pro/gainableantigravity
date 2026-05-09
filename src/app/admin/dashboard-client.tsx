@@ -156,11 +156,11 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
                 <Card className="bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-100">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium text-blue-50">Marketing IA</CardTitle>
+                        <CardTitle className="text-sm font-medium text-blue-50">Community Manager IA</CardTitle>
                         <Sparkles className="h-4 w-4 text-amber-300 fill-amber-300" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-sm text-blue-100 mb-4">Automatiser les réseaux sociaux (FB, LI, IG)</div>
+                        <div className="text-sm text-blue-100 mb-4">Génération automatique de posts LinkedIn & Facebook</div>
                         <Button
                             variant="secondary"
                             className="w-full bg-white text-blue-600 hover:bg-blue-50 border-none shadow-sm font-bold"
