@@ -54,12 +54,13 @@ export async function GET(req: Request) {
         "${article.title}"
         
         MISSION :
-        Génère un post LinkedIn (B2B - Recrutement/Expertise) et un post Facebook (B2C - Confiance/Local).
+        Génère un post LinkedIn (B2B - Recrutement/Expertise), un post Facebook (B2C - Confiance/Local) et une légende Instagram (Visuel/Hashtags).
         
         Structure LinkedIn : Hook sur le problème des leads partagés/commissions > La vision Gainable > Appel à l'action pour les pros.
         Structure Facebook : Le problème des artisans qu'on ne trouve pas > Comment Gainable sélectionne les meilleurs pour vous > Appel à l'action pour un devis.
+        Structure Instagram : Phrase d'accroche courte > 3 points clés > Espace de hashtags pertinents.
 
-        RETOURNE DU JSON : { "linkedin": "...", "facebook": "...", "imagePrompt": "...", "analysis": "..." }
+        RETOURNE DU JSON : { "linkedin": "...", "facebook": "...", "instagram": "...", "imagePrompt": "...", "analysis": "..." }
         `;
 
         const completion = await openai.chat.completions.create({
@@ -105,6 +106,9 @@ export async function GET(req: Request) {
                         <h3>📝 Facebook (Cible Clients)</h3>
                         <p style="white-space: pre-wrap; background: #f0f2f5; padding: 15px; border-radius: 8px;">${result.facebook}</p>
                         
+                        <h3>📸 Instagram (Visuel)</h3>
+                        <p style="white-space: pre-wrap; background: #f0f2f5; padding: 15px; border-radius: 8px;">${result.instagram}</p>
+
                         <hr/>
                         <h3>🖼️ Image générée (DALL-E 3)</h3>
                         <img src="${imageUrl}" style="max-width: 100%; border-radius: 12px;" />
