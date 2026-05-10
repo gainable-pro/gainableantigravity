@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://www.gainable.fr',
     siteName: 'Gainable.fr',
-    images: [{ url: '/assets/logo-share.jpg', width: 1200, height: 630, alt: 'Gainable.fr' }],
+    images: [{ url: '/assets/logo-share.png', width: 1200, height: 630, alt: 'Gainable.fr' }],
   },
   icons: {
     icon: '/favicon.jpg',

@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     if (!token) return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 
     try {
-        const { targetCVC } = await req.json();
+        const { targetCVC, articleUrl } = await req.json();
 
         const { payload } = await jose.jwtVerify(
             token,
@@ -23,17 +23,32 @@ export async function POST(req: Request) {
         const isAdmin = user?.email === 'gmaroann@gmail.com' || user?.role === 'ADMIN' || user?.role === 'admin';
         if (!isAdmin) return NextResponse.json({ message: "Forbidden" }, { status: 403 });
 
-        const articles = await prisma.article.findMany({
-            where: { 
-                status: 'PUBLISHED',
-                content: { contains: ' ' }, 
-            },
-            take: 50,
-            include: { expert: { select: { nom_entreprise: true, slug: true, expert_type: true, ville: true } } }
-        });
+        let article;
+        if (articleUrl) {
+            // Extract slug from URL (ex: /articles/my-slug or https://.../articles/my-slug)
+            const slug = articleUrl.split('/').pop()?.split('?')[0];
+            if (slug) {
+                article = await prisma.article.findUnique({
+                    where: { slug },
+                    include: { expert: { select: { nom_entreprise: true, slug: true, expert_type: true, ville: true } } }
+                });
+            }
+        }
 
-        if (articles.length === 0) return NextResponse.json({ error: "No suitable articles found" }, { status: 404 });
-        const article = articles[Math.floor(Math.random() * articles.length)];
+        if (!article) {
+            const articles = await prisma.article.findMany({
+                where: { 
+                    status: 'PUBLISHED',
+                    content: { contains: ' ' }, 
+                },
+                take: 50,
+                include: { expert: { select: { nom_entreprise: true, slug: true, expert_type: true, ville: true } } }
+            });
+
+            if (articles.length === 0) return NextResponse.json({ error: "No suitable articles found" }, { status: 404 });
+            article = articles[Math.floor(Math.random() * articles.length)];
+        }
+
         if (!article) return NextResponse.json({ error: "Article selection failed" }, { status: 500 });
 
         const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });

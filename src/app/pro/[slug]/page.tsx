@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         openGraph: {
             title: expert.metaTitle || generateExpertMetaTitle(seoData),
             description: expert.metaDesc || generateExpertMetaDescription(seoData),
-            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.jpg'],
+            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.png'],
             type: 'profile',
         }
     };
@@ -124,7 +124,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         "@type": expert.expert_type === 'cvc_climatisation' ? "HVACBusiness" :
             expert.expert_type === 'bureau_detude' ? "ProfessionalService" : "LocalBusiness",
         "name": expert.nom_entreprise,
-        "image": expert.logo_url || "https://gainable.fr/assets/logo-share.jpg", // Fallback image
+        "image": expert.logo_url || "https://gainable.fr/assets/logo-share.png", // Fallback image
         "@id": `https://gainable.fr/pro/${expert.slug}`,
         "url": `https://gainable.fr/pro/${expert.slug}`,
         "telephone": expert.telephone,

@@ -13,7 +13,8 @@ import {
     Check,
     Image as ImageIcon,
     ArrowRight,
-    Shield
+    Shield,
+    Link as LinkIcon
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 interface MarketingPost {
     linkedin: string;
@@ -43,6 +45,7 @@ export default function MarketingPage() {
     const [post, setPost] = useState<MarketingPost | null>(null);
     const [copied, setCopied] = useState<string | null>(null);
     const [targetCVC, setTargetCVC] = useState(false);
+    const [articleUrl, setArticleUrl] = useState("");
 
     const generatePost = async () => {
         setLoading(true);
@@ -51,7 +54,7 @@ export default function MarketingPage() {
             const res = await fetch("/api/admin/marketing/generate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ targetCVC })
+                body: JSON.stringify({ targetCVC, articleUrl })
             });
             if (!res.ok) throw new Error("Failed to generate");
             const data = await res.json();
@@ -65,13 +68,32 @@ export default function MarketingPage() {
     };
 
     const generateVisual = async () => {
+        if (!post?.imagePrompt) return;
         setGeneratingImage(true);
-        toast.info("Génération du visuel personnalisé en cours...");
-        // Simulation of image generation call
-        setTimeout(() => {
+        toast.info("L'IA génère votre visuel sur mesure (DALL-E 3)...");
+        try {
+            const res = await fetch("/api/admin/marketing/visual", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt: post.imagePrompt })
+            });
+            if (!res.ok) throw new Error("Failed to generate image");
+            const data = await res.json();
+            
+            // Update the post with the new image
+            setPost({
+                ...post,
+                articleInfo: {
+                    ...post.articleInfo,
+                    mainImage: data.imageUrl
+                }
+            });
+            toast.success("Visuel IA généré avec succès !");
+        } catch (err) {
+            toast.error("Erreur lors de la génération du visuel.");
+        } finally {
             setGeneratingImage(false);
-            toast.success("Visuel généré avec succès ! (Simulation)");
-        }, 3000);
+        }
     };
 
     const copyToClipboard = (text: string, type: string) => {
@@ -171,6 +193,23 @@ export default function MarketingPage() {
                         Activer le discours Acquisition Pro
                     </Label>
                 </div>
+            </div>
+
+            {/* ARTICLE LINK OPTION */}
+            <div className="bg-slate-50 border border-slate-200 p-6 rounded-[2rem] space-y-4">
+                <div className="flex items-center gap-2 text-slate-800 font-bold">
+                    <LinkIcon className="w-5 h-5 text-blue-600" />
+                    Personnalisation de la source (Optionnel)
+                </div>
+                <div className="flex gap-4">
+                    <Input 
+                        placeholder="Coller le lien d'un article Gainable.fr (ex: /articles/votre-article)" 
+                        value={articleUrl}
+                        onChange={(e) => setArticleUrl(e.target.value)}
+                        className="flex-1 rounded-xl border-slate-200 h-12 bg-white"
+                    />
+                </div>
+                <p className="text-xs text-slate-500">Si vide, l'IA sélectionnera automatiquement un article performant.</p>
             </div>
 
             {!post && !loading && (
