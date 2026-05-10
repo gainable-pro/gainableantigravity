@@ -114,7 +114,7 @@ export async function POST(req: Request) {
                 slug: article.slug,
                 mainImage: article.mainImage,
                 expertName: article.expert?.nom_entreprise,
-                url: `https://www.gainable.fr/pro/${article.expert?.slug}`
+                url: `https://www.gainable.fr/entreprise/${article.expert?.slug}/articles/${article.slug}`
             }
         });
 

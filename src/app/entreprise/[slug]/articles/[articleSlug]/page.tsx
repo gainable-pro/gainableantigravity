@@ -67,7 +67,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         openGraph: {
             title: article.title,
             description: article.metaDesc || article.introduction?.slice(0, 160),
-            images: article.mainImage ? [{ url: article.mainImage, alt: article.altText || article.title }] : [],
+            images: article.mainImage 
+                ? [{ 
+                    url: article.mainImage.startsWith('http') 
+                        ? article.mainImage 
+                        : `https://www.gainable.fr${article.mainImage.startsWith('/') ? '' : '/'}${article.mainImage}`, 
+                    alt: article.altText || article.title 
+                  }] 
+                : [{ url: 'https://www.gainable.fr/assets/logo-share.png' }],
             type: 'article',
             authors: [expert.nom_entreprise],
             publishedTime: article.publishedAt?.toISOString(),

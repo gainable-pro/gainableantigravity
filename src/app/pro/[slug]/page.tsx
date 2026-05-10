@@ -80,7 +80,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         openGraph: {
             title: expert.metaTitle || generateExpertMetaTitle(seoData),
             description: expert.metaDesc || generateExpertMetaDescription(seoData),
-            images: expert.logo_url ? [expert.logo_url] : ['/assets/logo-share.png'],
+            images: [
+                expert.logo_url 
+                    ? (expert.logo_url.startsWith('http') ? expert.logo_url : `https://www.gainable.fr${expert.logo_url.startsWith('/') ? '' : '/'}${expert.logo_url}`)
+                    : 'https://www.gainable.fr/assets/logo-share.png'
+            ],
             type: 'profile',
         }
     };
