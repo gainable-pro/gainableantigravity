@@ -12,12 +12,15 @@ import {
     Copy,
     Check,
     Image as ImageIcon,
-    ArrowRight
+    ArrowRight,
+    Shield
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 interface MarketingPost {
     linkedin: string;
@@ -39,12 +42,17 @@ export default function MarketingPage() {
     const [generatingImage, setGeneratingImage] = useState(false);
     const [post, setPost] = useState<MarketingPost | null>(null);
     const [copied, setCopied] = useState<string | null>(null);
+    const [targetCVC, setTargetCVC] = useState(false);
 
     const generatePost = async () => {
         setLoading(true);
         setPost(null);
         try {
-            const res = await fetch("/api/admin/marketing/generate");
+            const res = await fetch("/api/admin/marketing/generate", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ targetCVC })
+            });
             if (!res.ok) throw new Error("Failed to generate");
             const data = await res.json();
             setPost(data);
@@ -140,6 +148,28 @@ export default function MarketingPage() {
                         )}
                         Générer une nouvelle campagne
                     </Button>
+                </div>
+            </div>
+
+            {/* TARGETING OPTION */}
+            <div className="bg-blue-50 border border-blue-100 p-6 rounded-[2rem] flex items-center justify-between">
+                <div className="space-y-1">
+                    <h3 className="font-bold text-blue-900 flex items-center gap-2">
+                        <Shield className="w-4 h-4" />
+                        Objectif : Acquisition Partenaires CVC
+                    </h3>
+                    <p className="text-sm text-blue-700">Orienter le contenu vers l'augmentation de CA et l'acquisition de chantiers pour les pros.</p>
+                </div>
+                <div className="flex items-center gap-3 bg-white p-3 px-5 rounded-2xl shadow-sm">
+                    <Checkbox 
+                        id="targetCVC" 
+                        checked={targetCVC} 
+                        onCheckedChange={(checked) => setTargetCVC(!!checked)}
+                        className="w-6 h-6 border-blue-200 data-[state=checked]:bg-blue-600"
+                    />
+                    <Label htmlFor="targetCVC" className="font-bold text-slate-700 cursor-pointer select-none">
+                        Activer le discours Acquisition Pro
+                    </Label>
                 </div>
             </div>
 
