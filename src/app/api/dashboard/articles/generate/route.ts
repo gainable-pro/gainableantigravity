@@ -108,71 +108,59 @@ export async function POST(req: Request) {
         const zone = `${ville} et sa région`;
 
         const systemPrompt = `
-        🧠 PROMPT SEO PREMIUM
+        🧠 PROMPT SEO PREMIUM & ANTI-DUPLICATA
+        
+        Tu es un rédacteur SEO senior spécialisé dans le génie climatique. 
+        Ta mission est de rédiger un article UNIQUE qui ne ressemble à aucun autre, même sur le même sujet.
 
-        Tu es un rédacteur SEO senior spécialisé dans le domaine du CVC (Chauffage, Ventilation, Climatisation) et le référencement local.
-        Tu dois rédiger un article unique, expert et localisé, destiné à être indexé par Google.
+        CONTEXTE EXPERT :
+        - Entreprise : ${expert.nom_entreprise}
+        - Siège social (BASE) : ${ville}
+        - Spécialité : ${specialite}
 
-        CONTEXTE
-        Entreprise : ${expert.nom_entreprise}
-        Ville de base de l'expert : ${ville}
-        Zone d’intervention habituelle : ${zone}
-        Spécialité : ${specialite}
-        Sujet de l'article : "${topic}"
+        DÉTERMINATION DE LA LOCALISATION (CRITIQUE) :
+        1. Analyse le sujet : "${topic}".
+        2. Si une ville ou une zone est mentionnée dans "${topic}", c'est la VILLE CIBLE UNIQUE.
+        3. Si la VILLE CIBLE est différente de la ville de BASE (${ville}), tu DOIS ignorer ${ville} et te concentrer EXCLUSIVEMENT sur la VILLE CIBLE pour tout l'article (climat local, références locales, interventions).
+        4. Ne mentionne jamais la ville de BASE si une VILLE CIBLE différente est identifiée.
 
-        CONSIGNES STRICTES
-        1. IDENTIFICATION DE LA VILLE : Analyse le sujet de l'article : "${topic}".
-           - Si une ville y est mentionnée (ex: "à Marseille", "sur Lyon"), c'est la VILLE CIBLÉE.
-           - Si aucune ville n'est mentionnée, la VILLE CIBLÉE par défaut est "${ville}".
-        2. Génère UN SEUL H1, optimisé SEO, intégrant naturellement la VILLE CIBLÉE et la thématique.
-        3. Génère 4 à 6 H2, avec un ordre variable.
-        4. Ne jamais utiliser systématiquement : Introduction → Avantages → Prix → FAQ.
-        5. Le contenu doit être réellement différencié d’un article similaire dans une autre ville.
-        6. Mentionne "${expert.nom_entreprise}" comme l'expert intervenant dans la VILLE CIBLÉE.
+        CONSIGNES D'UNICITÉ & ANTI-CLONAGE :
+        - Pour éviter le "Duplicate Content", choisis aléatoirement un angle d'attaque différent à chaque fois : (ex: technique, financier/économies, confort, environnemental, ou études de cas).
+        - Structure Variable : Ne commence pas toujours par une introduction classique. Varie l'ordre des sections.
+        - Style : Évite les structures de phrases répétitives ("Il est important de...", "De plus..."). Utilise un ton dynamique et expert.
+        - Personnalisation : Utilise les détails de "${expert.description?.slice(0, 150)}" pour insuffler l'ADN de l'entreprise dans le texte.
 
-        CONTENU À PRODUIRE
-        - Adapter le discours au contexte local de la VILLE CIBLÉE (climat, type d’habitat, usages courants).
-        - Mettre en avant la méthode de travail de l'entreprise : "${expert.description?.slice(0, 150) || 'Service de qualité, expert qualifié'}".
-        - Varier les angles possibles : confort thermique, contraintes techniques locales, rénovation vs neuf, choix des marques, attentes des clients.
+        STRUCTURE DE L'ARTICLE :
+        - H1 percutant incluant la VILLE CIBLE.
+        - 4 à 6 sections H2 riches (minimum 300 mots par section pour une profondeur sémantique réelle).
+        - Intégration naturelle de mots-clés LSI (sémantiquement proches).
+        - FAQ de 3 questions expertes et non génériques.
 
-        INTERDICTIONS
-        - Pas de phrases génériques type “dans un monde en constante évolution”.
-        - Pas de structure répétitive.
-        - Pas de paragraphes trop courts ou vides.
-
-        FORMAT DE RÉPONSE ATTENDU (JSON STRICT)
-        Tu dois ABSOLUMENT répondre avec ce format JSON :
-
+        RETOURNE UNIQUEMENT UN OBJET JSON :
         {
-            "title": "Titre H1 (Optimisé avec la Ville Ciblée)",
-            "slug": "slug-url-friendly",
-            "targetCity": "NOM_DE_LA_VILLE_CIBLEE_EXTRAITE",
-            "metaDesc": "Meta description unique (max 160 chars) inclitant au clic.",
-            "introduction": "Introduction engageante (pas de H2 ici)...",
+            "title": "Titre H1",
+            "slug": "slug-unique",
+            "targetCity": "VILLE_CIBLE_EXTRAITE",
+            "metaDesc": "Meta description (max 160 chars)",
+            "introduction": "Intro puissante",
             "sections": [
-                {
-                    "title": "Titre H2 (Variable)",
-                    "content": "Contenu riche et détaillé (300 mots min)..."
-                }
+                { "title": "H2 Unique", "content": "Corps de texte riche" }
             ],
             "faq": [
-                {
-                    "question": "Question pertinente ?",
-                    "response": "Réponse experte..."
-                }
+                { "question": "...", "response": "..." }
             ]
         }
         `;
 
         console.log("AI Generation: Sending request to OpenAI...");
         const completion = await openai.chat.completions.create({
-            model: "gpt-4o-mini",
+            model: "gpt-4o",
             messages: [
                 { role: "system", content: systemPrompt },
-                { role: "user", content: `Génère l'article pour : ${topic}` }
+                { role: "user", content: `Rédige un article expert et unique sur le sujet : "${topic}". Assure-toi que le contenu est parfaitement adapté à la ville cible mentionnée.` }
             ],
             response_format: { type: "json_object" },
-            temperature: 0.7,
+            temperature: 0.9,
         });
         console.log("AI Generation: OpenAI response received");
 
