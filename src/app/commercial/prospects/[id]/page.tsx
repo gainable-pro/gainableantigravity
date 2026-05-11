@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle } from "lucide-react";
+import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle, Trash2 } from "lucide-react";
 
 export default function EditProspect() {
     const router = useRouter();
@@ -114,11 +114,37 @@ export default function EditProspect() {
             if (res.ok) {
                 setSuccess("Vente enregistrée avec succès !");
                 setFormData(prev => ({ ...prev, status: "VENTE_EFFECTUEE" }));
-                const newSale = (await res.json()).sale;
-                setSales([...sales, newSale]);
+                const data = await res.json();
+                setSales([...sales, data.sale]);
             } else {
                 const data = await res.json();
                 setError(data.message || "Erreur lors de l'enregistrement de la vente");
+            }
+        } catch (err) {
+            setError("Erreur serveur");
+        } finally {
+            setSaving(false);
+        }
+    };
+
+    const handleDeleteSale = async (saleId: string) => {
+        if (!confirm("Voulez-vous vraiment supprimer cette vente ?")) return;
+
+        setSaving(true);
+        setError("");
+        setSuccess("");
+
+        try {
+            const res = await fetch(`/api/commercial/sales/${saleId}`, {
+                method: "DELETE"
+            });
+
+            if (res.ok) {
+                setSuccess("Vente supprimée avec succès.");
+                setSales(sales.filter(s => s.id !== saleId));
+            } else {
+                const data = await res.json();
+                setError(data.message || "Erreur lors de la suppression");
             }
         } catch (err) {
             setError("Erreur serveur");
@@ -277,11 +303,15 @@ export default function EditProspect() {
 
                             <button 
                                 type="submit" 
-                                disabled={saving}
-                                className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-lg hover:bg-emerald-700 transition-colors font-bold disabled:opacity-50 mt-2"
+                                disabled={saving || sales.length > 0}
+                                className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg transition-colors font-bold mt-2 ${
+                                    sales.length > 0 
+                                    ? "bg-slate-100 text-slate-400 cursor-not-allowed" 
+                                    : "bg-emerald-600 text-white hover:bg-emerald-700"
+                                }`}
                             >
                                 {saving ? <Loader2 className="h-5 w-5 animate-spin" /> : <CheckCircle className="h-5 w-5" />}
-                                Valider la vente
+                                {sales.length > 0 ? "Vente déjà enregistrée" : "Valider la vente"}
                             </button>
                         </form>
                     </div>
@@ -291,14 +321,21 @@ export default function EditProspect() {
                             <h3 className="font-bold text-slate-800 mb-4">Ventes réalisées ({sales.length})</h3>
                             <div className="space-y-3">
                                 {sales.map((sale: any, idx: number) => (
-                                    <div key={sale.id || idx} className="p-3 bg-slate-50 border border-slate-100 rounded-lg text-sm">
-                                        <div className="flex justify-between font-medium text-slate-900">
+                                    <div key={sale.id || idx} className="p-3 bg-slate-50 border border-slate-100 rounded-lg text-sm relative group">
+                                        <div className="flex justify-between font-medium text-slate-900 pr-10">
                                             <span>{sale.montant} € HT</span>
                                             <span>{new Date(sale.dateVente).toLocaleDateString("fr-FR")}</span>
                                         </div>
                                         <div className="text-slate-500 mt-1">
                                             Paiement en ligne via le site
                                         </div>
+                                        <button 
+                                            onClick={() => handleDeleteSale(sale.id)}
+                                            className="absolute top-1/2 -translate-y-1/2 right-2 p-2 text-red-500 hover:bg-red-50 rounded-lg transition-all"
+                                            title="Supprimer la vente"
+                                        >
+                                            <Trash2 className="h-5 w-5" />
+                                        </button>
                                     </div>
                                 ))}
                             </div>

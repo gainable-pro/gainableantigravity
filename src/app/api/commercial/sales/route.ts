@@ -46,7 +46,16 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: "Prospect non trouvé ou non autorisé" }, { status: 403 });
         }
 
-        // Créer la vente en attente
+        // Vérifier si une vente existe déjà pour ce prospect
+        const existingSale = await prisma.commercialSale.findFirst({
+            where: { prospectId: prospect.id }
+        });
+
+        if (existingSale) {
+            return NextResponse.json({ message: "Une vente a déjà été déclarée pour ce prospect." }, { status: 400 });
+        }
+
+        // Créer la vente (validée immédiatement selon la demande)
         const sale = await prisma.commercialSale.create({
             data: {
                 commercialId: user.id,
@@ -54,7 +63,7 @@ export async function POST(req: Request) {
                 paiementType: body.paiementType, // "COMPTANT" | "MENSUALISE"
                 dateVente: new Date(body.dateVente),
                 montant: parseFloat(body.montant),
-                status: "EN_ATTENTE"
+                status: "VALIDEE"
             }
         });
 
@@ -66,8 +75,8 @@ export async function POST(req: Request) {
 
         // Envoyer une notification par email à l'admin
         const emailHtml = `
-            <h2>Nouvelle vente déclarée !</h2>
-            <p>Une nouvelle vente a été déclarée et nécessite votre validation.</p>
+            <h2>Nouvelle vente déclarée (Validée)</h2>
+            <p>Une nouvelle vente a été déclarée par un commercial et a été validée automatiquement.</p>
             <ul>
                 <li><strong>Commercial :</strong> ${user.email}</li>
                 <li><strong>Prospect :</strong> ${prospect.nomEntreprise} (${prospect.nomContact})</li>
@@ -75,7 +84,7 @@ export async function POST(req: Request) {
                 <li><strong>Montant :</strong> ${body.montant} € HT</li>
                 <li><strong>Paiement :</strong> ${body.paiementType}</li>
             </ul>
-            <p>Connectez-vous à votre espace administrateur pour valider ou refuser cette vente.</p>
+            <p>Le CA et les commissions ont été mis à jour sur le tableau de bord du commercial.</p>
         `;
         
         await sendEmail({
