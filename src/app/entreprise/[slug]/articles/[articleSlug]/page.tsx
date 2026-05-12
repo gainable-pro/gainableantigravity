@@ -6,7 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { MapPin, ArrowRight, User } from "lucide-react";
+import { MapPin, ArrowRight, User, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 
@@ -225,12 +225,35 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
 
+    // FAQ Structured Data
+    const faqs = (article.faq as any[]) || [];
+    const faqJsonLd = faqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+            "@type": "Question",
+            "name": f.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.response
+            }
+        }))
+    } : null;
+
+
     return (
         <div className="bg-slate-50 min-h-screen pb-20">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            {faqJsonLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+                />
+            )}
+
 
             {/* Article Image - Exclu pour les articles B2B Gainable.fr (plus de sobriété) */}
             {article.mainImage && expert.slug !== 'gainable-fr' && (
@@ -383,8 +406,34 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         />
                     )}
 
+                    {/* FAQ SECTION */}
+                    {faqs.length > 0 && (
+                        <section className="mt-16 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                            <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                                <div className="bg-[#D59B2B]/10 p-2 rounded-lg">
+                                    <HelpCircle className="text-[#D59B2B] w-6 h-6" />
+                                </div>
+                                Questions Fréquentes
+                            </h2>
+                            <div className="space-y-8">
+                                {faqs.map((f, i) => (
+                                    <div key={i} className="border-b border-slate-50 pb-6 last:border-0 last:pb-0">
+                                        <h3 className="text-lg font-bold text-slate-800 mb-3 flex items-start gap-3">
+                                            <span className="text-[#D59B2B] shrink-0 mt-0.5">Q.</span>
+                                            {f.question}
+                                        </h3>
+                                        <div className="text-slate-600 pl-8 leading-relaxed whitespace-pre-line">
+                                            {f.response}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
                     {/* DYNAMIC LEAD FORM FOR CITY OR CATALOG ARTICLES */}
                     {(article.targetCity || expert.slug === 'bureau-etude-gainable') ? (
+
                         <div className="mt-16 w-full max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                             
