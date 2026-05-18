@@ -131,6 +131,7 @@ export function ProCard({
                     variant={showPhone ? "default" : "outline"}
                     className={`w-full transition-all ${showPhone ? 'bg-green-600 hover:bg-green-700 text-white border-transparent' : 'border-slate-300 text-slate-700 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200'}`}
                     onClick={handleContactClick}
+                    aria-label="Afficher le numéro de téléphone"
                 >
                     {showPhone ? (
                         <span className="flex items-center gap-2">

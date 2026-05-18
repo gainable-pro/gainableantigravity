@@ -180,9 +180,9 @@ export default async function CityPage({ params }: PageProps) {
                 "description": `Installation, entretien et dépannage de climatisation réversible gainable à ${city.name}.`,
                 "offers": {
                     "@type": "Offer",
-                    "priceCurrency": isMorocco ? "MAD" : "EUR",
+                    "priceCurrency": "EUR",
                     "price": priceMin.toString(),
-                    "priceValidUntil": "2025-12-31",
+                    "priceValidUntil": "2026-12-31",
                     "availability": "https://schema.org/InStock"
                 }
             },
@@ -191,18 +191,18 @@ export default async function CityPage({ params }: PageProps) {
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": `Quel est le prix d'une climatisation gainable à ${city.name} ?`,
+                        "name": `Quel budget prévoir pour une clim gainable à ${city.name} ?`,
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": `À ${city.name}, le prix moyen d'une installation complète varie généralement entre ${priceMinStr} ${currency} et ${priceMaxStr} ${currency}, selon la surface et la complexité du chantier.`
+                            "text": `Pour une installation complète à ${city.name}, comptez entre ${priceMin}€ et ${priceMax}€ pour 100m².`
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": `Trouve-t-on des installateurs qualifiés à ${city.name} ?`,
+                        "name": `Faut-il de l'entretien ?`,
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": `Oui, Gainable.fr référence des artisans vérifiés intervenant à ${city.name} et dans la région.`
+                            "text": `Absolument. Un filtre encrassé est la cause n°1 de perte de performance et d'allergies. Un nettoyage par un pro certifié à ${city.name} est indispensable annuellement.`
                         }
                     }
                 ]
