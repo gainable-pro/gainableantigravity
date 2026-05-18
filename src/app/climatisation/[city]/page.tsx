@@ -58,10 +58,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     // Optimized CTR Titles (Using brackets and strong action words)
     const titleChoices = [
-        `[Devez Gratuit] Climatisation Gainable à ${city.name} | Prix 2026`,
-        `Climatisation Réversible à ${city.name} : Artisans Locaux Certifiés`,
-        `Installation Climatisation Gainable à ${city.name} (${city.zip}) ⚡`,
-        `Pose & Dépannage Climatisation à ${city.name} | [Tarifs & Devis]`
+        `【Devis Gratuit】 Climatisation à ${city.name} | Prix & Artisans RGE`,
+        `Climatisation Réversible & Clim à ${city.name} (${city.zip}) ⚡`,
+        `Installation Climatisation Gainable à ${city.name} | [Tarifs 2026]`,
+        `Pose Pompe à Chaleur & Climatisation à ${city.name} | Devis`
     ];
 
     return {
@@ -126,10 +126,10 @@ export default async function CityPage({ params }: PageProps) {
 
     // ** SPINTAX ENGINE FOR UNIQUE TEXT **
     const heroH1 = pick(seed, [
-        `Climatisation Gainable \n<span class="text-[#D59B2B]">à ${city.name} (${city.zip})</span>`,
-        `Installation Climatisation \n<span class="text-[#D59B2B]">à ${city.name}</span>`,
-        `Trouvez un Installateur \n<span class="text-[#D59B2B]">Gainable à ${city.name}</span>`,
-        `Votre Pompe à Chaleur \n<span class="text-[#D59B2B]">Réversible à ${city.name}</span>`
+        `Climatisation & Clim Réversible \n<span class="text-[#D59B2B]">à ${city.name} (${city.zip})</span>`,
+        `Installation de Climatisation \n<span class="text-[#D59B2B]">à ${city.name}</span>`,
+        `Spécialistes Climatisation Gainable \n<span class="text-[#D59B2B]">à ${city.name}</span>`,
+        `Votre Pompe à Chaleur Réversible \n<span class="text-[#D59B2B]">à ${city.name}</span>`
     ], 1);
 
     const h2Expertise = pick(seed, [

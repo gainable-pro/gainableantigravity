@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CITIES_100 } from "@/data/cities-100";
 import { CITIES_EXTENDED } from "@/data/cities-extended";
+import { CITIES_MEDIUM } from "@/data/cities-medium";
 import { slugify } from "@/lib/utils";
 import { ArrowRight, MapPin } from "lucide-react";
 
-const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
+const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
 
 interface PageProps {
     params: Promise<{ regionSlug: string }>;
