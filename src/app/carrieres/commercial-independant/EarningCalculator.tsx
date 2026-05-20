@@ -7,7 +7,7 @@ import { Sparkles, TrendingUp, DollarSign, Target } from "lucide-react";
 
 export default function EarningCalculator() {
   const [salesPerDay, setSalesPerDay] = useState(2);
-  const [basketSize, setBasketSize] = useState(500);
+  const [basketSize, setBasketSize] = useState(650);
   const daysWorked = 20;
 
   // Determine commission rate based on daily sales
@@ -83,7 +83,7 @@ export default function EarningCalculator() {
             />
             <div className="flex justify-between text-[10px] text-slate-500 font-bold px-1">
               <span>300 €</span>
-              <span>500 € (Moyen)</span>
+              <span>650 € (Moyen)</span>
               <span>800 € (Premium)</span>
             </div>
           </div>

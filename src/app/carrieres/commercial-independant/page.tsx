@@ -78,7 +78,7 @@ export default function CommercialJobPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                 {[
                   { label: "Commission", value: "10% à 17%" },
-                  { label: "Panier Moyen", value: "~500€ HT" },
+                  { label: "Panier Moyen", value: "~650€ HT" },
                   { label: "Cycle de vente", value: "One Shot" },
                   { label: "Type d'emploi", value: "Freelance" }
                 ].map((stat, idx) => (
