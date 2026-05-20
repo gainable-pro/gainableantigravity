@@ -23,7 +23,7 @@ import Link from "next/link";
 export default function CareersPage() {
   const positions = [
     {
-      title: "Commercial Indépendant / Consultant",
+      title: "Business Developer B2B - Digital & SEO",
       location: "National (France)",
       type: "Temps plein / Indépendant",
       description: "Vous prospectez et accompagnez les professionnels de la climatisation (CVC) dans leur transformation digitale.",

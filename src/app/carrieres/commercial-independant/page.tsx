@@ -21,7 +21,7 @@ import Image from "next/image";
 import EarningCalculator from "./EarningCalculator";
 
 export const metadata = {
-  title: "Commercial Indépendant B2B (SEO & Leads) | Gainable.fr",
+  title: "Business Developer B2B - Digital & SEO | Gainable.fr",
   description: "Développez votre propre territoire commercial sur un secteur porteur (France, Suisse, Belgique). Rémunération attractive à la commission de 10% à 17%.",
 };
 
@@ -67,7 +67,7 @@ export default function CommercialJobPage() {
               </div>
 
               <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] text-white">
-                Devenez <span className="text-[#D59B2B]">Commercial B2B</span> Indépendant
+                Devenez <span className="text-[#D59B2B]">Business Developer B2B</span> - Digital & SEO
               </h1>
 
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
@@ -90,7 +90,7 @@ export default function CommercialJobPage() {
               </div>
 
               <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
-                <Link href="/contact?subject=Candidature Commercial Indépendant" className="w-full sm:w-auto">
+                <Link href="/contact?subject=Candidature Business Developer B2B" className="w-full sm:w-auto">
                   <Button className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-black py-7 px-8 rounded-2xl text-lg w-full shadow-[0_15px_30px_rgba(213,155,43,0.3)] hover:scale-105 active:scale-95 transition-all">
                     Postuler à cette offre <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
@@ -136,7 +136,7 @@ export default function CommercialJobPage() {
                 <Briefcase className="w-6 h-6 text-[#D59B2B]" /> Vos Responsabilités
               </h2>
               <p className="text-slate-600">
-                En tant que Commercial Indépendant, vous gérez votre zone commerciale comme un véritable entrepreneur :
+                En tant que Business Developer B2B indépendant, vous gérez votre zone commerciale comme un véritable entrepreneur :
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
@@ -213,22 +213,27 @@ export default function CommercialJobPage() {
                 
                 <div className="space-y-4 text-sm text-slate-700">
                   <div className="space-y-1">
-                    <p className="font-bold text-slate-900">Statut</p>
-                    <p className="text-slate-500 text-xs">Commercial indépendant, auto-entrepreneur ou freelance.</p>
+                    <p className="font-bold text-slate-900">Formation & Expérience</p>
+                    <p className="text-slate-500 text-xs">Formation supérieure en commerce (Bac+2 à Bac+5) ou expérience probante en vente B2B.</p>
                   </div>
                   
                   <div className="space-y-1">
-                    <p className="font-bold text-slate-900">Compétences clés</p>
-                    <p className="text-slate-500 text-xs">Aisance avec la prospection téléphonique directe, sens du closing rapide et autonomie.</p>
+                    <p className="font-bold text-slate-900">Tempérament & Compétences</p>
+                    <p className="text-slate-500 text-xs">Profil "chasseur" ambitieux, à l'aise avec la prospection directe (téléphone, LinkedIn) et le closing en cycle court.</p>
                   </div>
 
                   <div className="space-y-1">
-                    <p className="font-bold text-slate-900">État d'esprit</p>
-                    <p className="text-slate-500 text-xs">Mentalité d'entrepreneur, rigoureux dans l'organisation, motivé par la performance et le dépassement d'objectifs.</p>
+                    <p className="font-bold text-slate-900">Culture Web</p>
+                    <p className="text-slate-500 text-xs">Sensibilité forte pour le digital et le référencement naturel (SEO).</p>
                   </div>
 
-                  <Badge className="bg-slate-100 hover:bg-slate-100 text-slate-600 border-none font-semibold w-full justify-center py-2 text-xs">
-                    💼 Débutants acceptés si hyper-motivés
+                  <div className="space-y-1">
+                    <p className="font-bold text-slate-900">État d'esprit "Wow"</p>
+                    <p className="text-slate-500 text-xs">Véritable mentalité d'entrepreneur : autonome, extrêmement rigoureux et orienté résultats.</p>
+                  </div>
+
+                  <Badge className="bg-[#D59B2B]/10 hover:bg-[#D59B2B]/20 text-[#D59B2B] border-none font-bold w-full justify-center py-2 text-xs">
+                    🏆 Profils Top Performers Uniquement
                   </Badge>
                 </div>
               </CardContent>
@@ -301,9 +306,9 @@ export default function CommercialJobPage() {
             Les candidatures sont examinées sous 48h. Définissez votre plan de développement sur votre territoire et lancez votre business avec Gainable.fr.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contact?subject=Candidature Commercial Indépendant">
+            <Link href="/contact?subject=Candidature Business Developer B2B">
               <Button size="lg" className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-black py-8 px-12 rounded-2xl text-xl shadow-2xl transition-all hover:scale-105">
-                DEVENIR COMMERCIAL INDÉPENDANT
+                DEVENIR BUSINESS DEVELOPER B2B
               </Button>
             </Link>
           </div>
