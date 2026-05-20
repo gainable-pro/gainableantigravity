@@ -28,7 +28,8 @@ export default function CareersPage() {
       type: "Temps plein / Indépendant",
       description: "Vous prospectez et accompagnez les professionnels de la climatisation (CVC) dans leur transformation digitale.",
       icon: <Users className="w-6 h-6 text-blue-500" />,
-      perks: ["Commissions élevées", "Outils de CRM offerts", "Formation continue"]
+      perks: ["Commissions élevées", "Outils de CRM offerts", "Formation continue"],
+      detailsUrl: "/carrieres/commercial-independant"
     },
     {
       title: "Expert SEO / Data Strategist",
@@ -69,7 +70,7 @@ export default function CareersPage() {
               Rejoignez une plateforme déjà structurée avec plus de 5000 pages indexées et un potentiel de 72 000 entreprises sur 3 pays.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact?subject=Candidature Consultant">
+              <Link href="/carrieres/commercial-independant">
                 <Button size="lg" className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-black py-8 px-10 rounded-2xl text-xl w-full sm:w-auto shadow-[0_20px_50px_rgba(213,155,43,0.3)] transition-all hover:scale-105 active:scale-95">
                   DEVENIR CONSULTANT
                 </Button>
@@ -249,12 +250,27 @@ export default function CareersPage() {
                       ))}
                     </div>
                   </div>
-                  <div className="shrink-0">
-                    <Link href={`/contact?subject=Candidature ${pos.title}`}>
-                      <Button variant="outline" className="border-slate-200 hover:border-[#D59B2B] hover:bg-[#D59B2B] hover:text-white px-8 py-6 rounded-xl font-bold transition-all w-full lg:w-auto">
-                        Postuler à l'offre
-                      </Button>
-                    </Link>
+                  <div className="shrink-0 flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                    {pos.detailsUrl ? (
+                      <>
+                        <Link href={pos.detailsUrl} className="w-full sm:w-auto">
+                          <Button className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white px-8 py-6 rounded-xl font-bold transition-all w-full">
+                            Découvrir l'offre
+                          </Button>
+                        </Link>
+                        <Link href={`/contact?subject=Candidature ${pos.title}`} className="w-full sm:w-auto">
+                          <Button variant="outline" className="border-slate-200 hover:border-[#D59B2B] hover:bg-[#D59B2B]/10 hover:text-[#D59B2B] px-8 py-6 rounded-xl font-bold transition-all w-full">
+                            Postuler
+                          </Button>
+                        </Link>
+                      </>
+                    ) : (
+                      <Link href={`/contact?subject=Candidature ${pos.title}`} className="w-full sm:w-auto">
+                        <Button variant="outline" className="border-slate-200 hover:border-[#D59B2B] hover:bg-[#D59B2B] hover:text-white px-8 py-6 rounded-xl font-bold transition-all w-full">
+                          Postuler à l'offre
+                        </Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </CardContent>
