@@ -85,11 +85,6 @@ export default async function SearchPage({
 
     const activeCity = (resolvedParams.city as string)?.trim() || "";
 
-    // Override if we have IP / test coordinates (and no active city filter)
-    if (ipLat && ipLng && !activeCity) {
-        initialView = { center: [ipLat, ipLng], zoom: 9 };
-    }
-
     const filters = {
         q: (resolvedParams.q as string)?.trim() || "",
         city: activeCity,
