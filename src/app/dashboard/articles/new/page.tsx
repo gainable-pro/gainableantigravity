@@ -113,8 +113,8 @@ export default function NewArticlePage() {
             if (data.faq && Array.isArray(data.faq)) {
                 const newFaq = data.faq.map((f: any, idx: number) => ({
                     id: Date.now().toString() + idx,
-                    question: f.question || "",
-                    response: f.response || ""
+                    question: f.question || f.q || "",
+                    response: f.response || f.r || ""
                 }));
                 setFaq(newFaq);
             }

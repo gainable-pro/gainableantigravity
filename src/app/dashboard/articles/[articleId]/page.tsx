@@ -164,13 +164,21 @@ export default function EditArticlePage({ params }: { params: Promise<{ articleI
 
                 setBlocks(finalBlocks);
 
+                const normalizeFaq = (fList: any[]): FAQItem[] => {
+                    if (!Array.isArray(fList)) return [];
+                    return fList.map((f: any, idx: number) => ({
+                        id: f.id || String(idx + 1),
+                        question: f.question || f.q || "",
+                        response: f.response || f.r || ""
+                    }));
+                };
+
                 if (!finalFaq.length && !data.faq) {
                     setFaq([{ id: '1', question: '', response: '' }, { id: '2', question: '', response: '' }]);
                 } else if (data.faq && !finalFaq.length) {
-                    // If FAQ stored in column (unlikely given schema, likely jsonContent)
-                    setFaq(data.faq as any);
+                    setFaq(normalizeFaq(data.faq as any[]));
                 } else {
-                    setFaq(finalFaq);
+                    setFaq(normalizeFaq(finalFaq));
                 }
 
 

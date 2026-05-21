@@ -232,10 +232,10 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "@type": "FAQPage",
         "mainEntity": faqs.map(f => ({
             "@type": "Question",
-            "name": f.question,
+            "name": f.question || f.q,
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": f.response
+                "text": f.response || f.r
             }
         }))
     } : null;
@@ -420,10 +420,10 @@ export default async function PublicArticlePage({ params }: PageProps) {
                                     <div key={i} className="border-b border-slate-50 pb-6 last:border-0 last:pb-0">
                                         <h3 className="text-lg font-bold text-slate-800 mb-3 flex items-start gap-3">
                                             <span className="text-[#D59B2B] shrink-0 mt-0.5">Q.</span>
-                                            {f.question}
+                                            {f.question || f.q}
                                         </h3>
                                         <div className="text-slate-600 pl-8 leading-relaxed whitespace-pre-line">
-                                            {f.response}
+                                            {f.response || f.r}
                                         </div>
                                     </div>
                                 ))}
