@@ -125,6 +125,12 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
         try {
             const params = new URLSearchParams();
 
+            // Support test coordinates in query params for local testing
+            const testLat = searchParams?.get('testLat');
+            const testLng = searchParams?.get('testLng');
+            if (testLat) params.append('testLat', testLat);
+            if (testLng) params.append('testLng', testLng);
+
             // Map types
             if (expertFilters.societe) params.append('type', 'societe');
             if (expertFilters.bureau) params.append('type', 'bureau');

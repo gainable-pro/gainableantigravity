@@ -63,6 +63,15 @@ export default async function SearchPage({
     const headerList = await headers();
     const countryCode = headerList.get("x-vercel-ip-country") || "FR";
 
+    // Read IP latitude and longitude (or test query params)
+    const latStr = headerList.get("x-vercel-ip-latitude");
+    const lngStr = headerList.get("x-vercel-ip-longitude");
+    const testLat = resolvedParams.testLat ? parseFloat(resolvedParams.testLat as string) : undefined;
+    const testLng = resolvedParams.testLng ? parseFloat(resolvedParams.testLng as string) : undefined;
+
+    const ipLat = testLat || (latStr ? parseFloat(latStr) : undefined);
+    const ipLng = testLng || (lngStr ? parseFloat(lngStr) : undefined);
+
     // Default View: France (Global)
     let initialView = { center: [46.603354, 1.888334], zoom: 6 };
 
@@ -74,14 +83,23 @@ export default async function SearchPage({
         initialView = { center: [31.7917, -7.0926], zoom: 6 };
     }
 
+    const activeCity = (resolvedParams.city as string)?.trim() || "";
+
+    // Override if we have IP / test coordinates (and no active city filter)
+    if (ipLat && ipLng && !activeCity) {
+        initialView = { center: [ipLat, ipLng], zoom: 9 };
+    }
+
     const filters = {
         q: (resolvedParams.q as string)?.trim() || "",
-        city: (resolvedParams.city as string)?.trim() || "",
+        city: activeCity,
         country: (resolvedParams.country as string)?.trim() || "",
         types: Array.isArray(resolvedParams.type) ? resolvedParams.type : (resolvedParams.type ? [resolvedParams.type as string] : []),
         technologies: (resolvedParams.technologies as string)?.split(",") || [],
         batiments: (resolvedParams.batiments as string)?.split(",") || [],
         interventions: (resolvedParams.interventions as string)?.split(",") || [],
+        ipLat,
+        ipLng,
     };
 
     // Filter param shortcut override if coming from navigation links like ?filter=bureau_etude

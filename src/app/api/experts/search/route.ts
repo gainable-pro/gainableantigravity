@@ -6,6 +6,14 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
 
+    const latStr = request.headers.get("x-vercel-ip-latitude");
+    const lngStr = request.headers.get("x-vercel-ip-longitude");
+    const testLat = searchParams.get("testLat") ? parseFloat(searchParams.get("testLat")!) : undefined;
+    const testLng = searchParams.get("testLng") ? parseFloat(searchParams.get("testLng")!) : undefined;
+
+    const ipLat = testLat || (latStr ? parseFloat(latStr) : undefined);
+    const ipLng = testLng || (lngStr ? parseFloat(lngStr) : undefined);
+
     const filters = {
         q: searchParams.get("q")?.trim() || "",
         city: searchParams.get("city")?.trim() || "",
@@ -15,7 +23,9 @@ export async function GET(request: Request) {
         batiments: searchParams.get("batiments")?.split(",") || [],
         interventions: searchParams.get("interventions")?.split(",") || [],
         lat: searchParams.get("lat") ? parseFloat(searchParams.get("lat")!) : undefined,
-        lng: searchParams.get("lng") ? parseFloat(searchParams.get("lng")!) : undefined
+        lng: searchParams.get("lng") ? parseFloat(searchParams.get("lng")!) : undefined,
+        ipLat,
+        ipLng
     };
 
     try {

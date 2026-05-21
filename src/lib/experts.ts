@@ -13,6 +13,8 @@ export type ExpertFilters = {
     interventions?: string[];
     lat?: number;
     lng?: number;
+    ipLat?: number;
+    ipLng?: number;
 };
 
 // Haversine Distance Helper
@@ -125,30 +127,70 @@ export async function getExperts(filters: ExpertFilters) {
             }
         });
 
-        // 8. RADIAL SEARCH (In Memory)
-        if (filters.lat && filters.lng) {
-            const searchLat = filters.lat;
-            const searchLng = filters.lng;
+        // 8. RADIAL SEARCH & DISTANCE SORTING (In Memory)
+        const hasSearchCoords = filters.lat !== undefined && filters.lng !== undefined;
+        const hasIpCoords = filters.ipLat !== undefined && filters.ipLng !== undefined;
 
+        if (hasSearchCoords) {
+            const searchLat = filters.lat!;
+            const searchLng = filters.lng!;
+
+            // 8a. Filter by radial distance from search coordinates (if not national coverage)
             experts = experts.filter(expert => {
-                // If national coverage is enabled, bypass location distance check completely
                 if ((expert as any).national_coverage) return true;
 
-                // Determine expert location (Intervention Address vs Main Address)
                 let expLat = expert.lat || 0;
                 let expLng = expert.lng || 0;
 
-                // If using distinct intervention address, coordinates should have been updated in profile save.
-                // But just in case, we rely on what's in lat/lng columns.
-
-                if (expLat === 0 && expLng === 0) return false; // Skip if no location
+                if (expLat === 0 && expLng === 0) return false;
 
                 const distKm = getDistance(searchLat, searchLng, expLat, expLng);
                 const radius = expert.intervention_radius || 50;
 
-                // Return true if distance <= expert's radius
-                // AND allow a small margin? No, strict radius.
                 return distKm <= radius;
+            });
+
+            // 8b. Sort by distance from search coordinates
+            experts.sort((a, b) => {
+                const aLat = a.lat || 0;
+                const aLng = a.lng || 0;
+                const bLat = b.lat || 0;
+                const bLng = b.lng || 0;
+
+                const aHasCoords = aLat !== 0 && aLng !== 0;
+                const bHasCoords = bLat !== 0 && bLng !== 0;
+
+                if (!aHasCoords && !bHasCoords) return 0;
+                if (!aHasCoords) return 1; // Put a at the end
+                if (!bHasCoords) return -1; // Put b at the end
+
+                const distA = getDistance(searchLat, searchLng, aLat, aLng);
+                const distB = getDistance(searchLat, searchLng, bLat, bLng);
+
+                return distA - distB;
+            });
+        } else if (hasIpCoords) {
+            const ipLat = filters.ipLat!;
+            const ipLng = filters.ipLng!;
+
+            // 8c. Sort by distance from IP coordinates (without radial filtering)
+            experts.sort((a, b) => {
+                const aLat = a.lat || 0;
+                const aLng = a.lng || 0;
+                const bLat = b.lat || 0;
+                const bLng = b.lng || 0;
+
+                const aHasCoords = aLat !== 0 && aLng !== 0;
+                const bHasCoords = bLat !== 0 && bLng !== 0;
+
+                if (!aHasCoords && !bHasCoords) return 0;
+                if (!aHasCoords) return 1;
+                if (!bHasCoords) return -1;
+
+                const distA = getDistance(ipLat, ipLng, aLat, aLng);
+                const distB = getDistance(ipLat, ipLng, bLat, bLng);
+
+                return distA - distB;
             });
         }
 
