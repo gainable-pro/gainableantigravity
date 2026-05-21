@@ -27,7 +27,7 @@ export async function InternalLinking({ zipCode, city, currentExpertSlug, curren
                 slug: {
                     not: currentExpertSlug || undefined
                 },
-                is_active: true
+                status: "active"
             },
             take: 4,
             select: {

@@ -11,6 +11,7 @@ import { ContactWizard } from "@/components/features/contact/contact-wizard";
 import { ExpertArticles } from "@/components/features/expert/expert-articles";
 import { PhoneCallButton } from "@/components/features/expert/phone-call-button";
 import { BrandLogo } from "@/components/ui/brand-logo";
+import { InternalLinking } from "@/components/features/seo/internal-linking";
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -548,6 +549,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                         </div>
                     </div>
                 </div >
+                <InternalLinking
+                    zipCode={expert.code_postal}
+                    city={expert.ville}
+                    currentExpertSlug={expert.slug}
+                />
             </main >
         </div >
     );

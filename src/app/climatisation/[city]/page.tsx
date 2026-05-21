@@ -12,6 +12,7 @@ import { prisma } from "@/lib/prisma";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 import fs from 'fs';
 import path from 'path';
+import { InternalLinking } from "@/components/features/seo/internal-linking";
 
 // Force SSG for these pages
 export const dynamic = 'force-static';
@@ -478,6 +479,11 @@ export default async function CityPage({ params }: PageProps) {
                     </div>
                 </section>
             )}
+
+            <InternalLinking
+                zipCode={city.zip}
+                city={city.name}
+            />
 
             <section className="py-20 bg-[#D59B2B] relative overflow-hidden">
                 <div className="container mx-auto px-6 text-center relative z-10 text-white">
