@@ -1,0 +1,22 @@
+{
+  "name": "agent-vocal-ia-gainable-fr",
+  "version": "1.0.0",
+  "description": "Agent Vocal IA de prospection sortante temps reel pour Gainable.fr",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.43.4",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "openai": "^4.47.1",
+    "resend": "^3.2.0",
+    "twilio": "^5.1.1",
+    "ws": "^8.17.0",
+    "xlsx": "^0.18.5"
+  }
+}
