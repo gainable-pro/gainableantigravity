@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { verifyAdmin, unauthorized } from "@/lib/admin-auth";
 import { sign } from "jsonwebtoken";
-import { serialize } from "cookie";
+import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
@@ -28,8 +28,9 @@ export async function POST(req: Request) {
         { expiresIn: "1d" } // Short session for impersonation
     );
 
-    // Set cookie
-    const serialized = serialize("auth_token", token, {
+    // Set cookie using Next.js cookies API
+    const cookieStore = await cookies();
+    cookieStore.set("auth_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "strict",
@@ -39,9 +40,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(
         { message: "Impersonation successful" },
-        {
-            status: 200,
-            headers: { "Set-Cookie": serialized },
-        }
+        { status: 200 }
     );
 }

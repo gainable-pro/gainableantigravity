@@ -31,6 +31,8 @@ interface DashboardStats {
         ca: number;
         commission: number;
     }[];
+    isFixedRate?: boolean;
+    fixedRateValue?: number;
 }
 
 export default function CommercialDashboard() {
@@ -252,51 +254,63 @@ export default function CommercialDashboard() {
                         <h3 className="text-xl font-bold text-white">Objectifs & Grille de Commissions</h3>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
-                        {[
-                            { level: "Niveau 1", count: "1 vente/jour", rate: "10%", color: "bg-slate-800" },
-                            { level: "Niveau 2", count: "2 ventes/jour", rate: "12%", color: "bg-slate-800" },
-                            { level: "Niveau 3", count: "3 ventes/jour", rate: "13%", color: "bg-slate-800" },
-                            { level: "Niveau 4", count: "4 ventes/jour", rate: "15%", color: "bg-slate-800 border border-blue-500/30" },
-                            { level: "Niveau 5", count: "5+ ventes/jour", rate: "17%", color: "bg-blue-600", highlight: true },
-                        ].map((lvl, i) => (
-                            <div key={i} className={`${lvl.color} rounded-2xl p-4 text-center transition-transform hover:scale-105`}>
-                                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{lvl.level}</p>
-                                <p className="text-xl font-black text-white">{lvl.rate}</p>
-                                <p className="text-[9px] text-slate-500 font-medium mt-1">{lvl.count}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
-                        <table className="w-full text-left text-xs">
-                            <thead>
-                                <tr className="border-b border-white/10 text-slate-400">
-                                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Ventes / jour</th>
-                                    <th className="px-6 py-4 font-bold uppercase tracking-wider text-blue-400">Commission / jour</th>
-                                    <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (20j)</th>
-                                </tr>
-                            </thead>
-                            <tbody className="text-white divide-y divide-white/5">
+                    {stats?.isFixedRate ? (
+                        <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 mb-4 text-center">
+                            <p className="text-amber-400 font-bold uppercase tracking-widest text-xs mb-2">Mode de calcul personnalisé</p>
+                            <p className="text-3xl font-black text-white">Taux fixe à {stats.fixedRateValue}%</p>
+                            <p className="text-slate-300 text-sm mt-3 max-w-xl mx-auto">
+                                Votre compte bénéficie d'un taux de commission fixe personnalisé à {stats.fixedRateValue}% de la valeur de la vente (soit {650 * (stats.fixedRateValue || 17) / 100} € HT de commission par vente), indépendamment du nombre de ventes journalières.
+                            </p>
+                        </div>
+                    ) : (
+                        <>
+                            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10">
                                 {[
-                                    { count: "1 vente", comm: "65 €", monthly: "1 300 €" },
-                                    { count: "2 ventes", comm: "156 €", monthly: "3 120 €" },
-                                    { count: "3 ventes", comm: "253,50 €", monthly: "5 070 €" },
-                                    { count: "4 ventes", comm: "390 €", monthly: "7 800 €" },
-                                    { count: "5 ventes", comm: "552,50 €", monthly: "11 050 €" },
-                                ].map((row, i) => (
-                                    <tr key={i} className="hover:bg-white/5 transition-colors">
-                                        <td className="px-6 py-4 font-black">{row.count}</td>
-                                        <td className="px-6 py-4 text-lg font-black text-blue-400">{row.comm}</td>
-                                        <td className="px-6 py-4 font-black text-emerald-400">{row.monthly}</td>
-                                    </tr>
+                                    { level: "Niveau 1", count: "1 vente/jour", rate: "10%", color: "bg-slate-800" },
+                                    { level: "Niveau 2", count: "2 ventes/jour", rate: "12%", color: "bg-slate-800" },
+                                    { level: "Niveau 3", count: "3 ventes/jour", rate: "13%", color: "bg-slate-800" },
+                                    { level: "Niveau 4", count: "4 ventes/jour", rate: "15%", color: "bg-slate-800 border border-blue-500/30" },
+                                    { level: "Niveau 5", count: "5+ ventes/jour", rate: "17%", color: "bg-blue-600", highlight: true },
+                                ].map((lvl, i) => (
+                                    <div key={i} className={`${lvl.color} rounded-2xl p-4 text-center transition-transform hover:scale-105`}>
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{lvl.level}</p>
+                                        <p className="text-xl font-black text-white">{lvl.rate}</p>
+                                        <p className="text-[9px] text-slate-500 font-medium mt-1">{lvl.count}</p>
+                                    </div>
                                 ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    <p className="text-[10px] text-slate-500 mt-4 italic text-center">
-                        * Commissions calculées sur une base de 650€ HT / vente. Chaque journée est indépendante.
-                    </p>
+                            </div>
+
+                            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+                                <table className="w-full text-left text-xs">
+                                    <thead>
+                                        <tr className="border-b border-white/10 text-slate-400">
+                                            <th className="px-6 py-4 font-bold uppercase tracking-wider">Ventes / jour</th>
+                                            <th className="px-6 py-4 font-bold uppercase tracking-wider text-blue-400">Commission / jour</th>
+                                            <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (20j)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="text-white divide-y divide-white/5">
+                                        {[
+                                            { count: "1 vente", comm: "65 €", monthly: "1 300 €" },
+                                            { count: "2 ventes", comm: "156 €", monthly: "3 120 €" },
+                                            { count: "3 ventes", comm: "253,50 €", monthly: "5 070 €" },
+                                            { count: "4 ventes", comm: "390 €", monthly: "7 800 €" },
+                                            { count: "5 ventes", comm: "552,50 €", monthly: "11 050 €" },
+                                        ].map((row, i) => (
+                                            <tr key={i} className="hover:bg-white/5 transition-colors">
+                                                <td className="px-6 py-4 font-black">{row.count}</td>
+                                                <td className="px-6 py-4 text-lg font-black text-blue-400">{row.comm}</td>
+                                                <td className="px-6 py-4 font-black text-emerald-400">{row.monthly}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className="text-[10px] text-slate-500 mt-4 italic text-center">
+                                * Commissions calculées sur une base de 650€ HT / vente. Chaque journée est indépendante.
+                            </p>
+                        </>
+                    )}
                 </div>
             </div>
         </div>

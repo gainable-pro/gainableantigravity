@@ -19,6 +19,12 @@ export async function GET(req: Request) {
         const url = new URL(req.url);
         const targetCommercialId = user.role === 'admin' ? (url.searchParams.get("commercialId") || user.id) : user.id;
 
+        const targetCommercial = await prisma.user.findUnique({
+            where: { id: targetCommercialId },
+            select: { email: true }
+        });
+        const isCustom17 = targetCommercial?.email === "top.informatique13@gmail.com";
+
         const now = new Date();
         const queryMonth = url.searchParams.get("month");
         const queryYear = url.searchParams.get("year");
@@ -82,14 +88,14 @@ export async function GET(req: Request) {
         const historyDetails = [];
 
         for (const [day, count] of Object.entries(salesByDay)) {
-            const rate = getCommissionRate(count);
+            const rate = isCustom17 ? 0.17 : getCommissionRate(count);
             const dailyComm = count * BASE_AMOUNT * rate;
             totalMonthlyCommission += dailyComm;
             
             historyDetails.push({
                 date: day,
                 count: count,
-                level: count >= 5 ? 5 : count,
+                level: isCustom17 ? 5 : (count >= 5 ? 5 : count),
                 rate: rate * 100,
                 ca: count * BASE_AMOUNT,
                 commission: dailyComm
@@ -100,7 +106,7 @@ export async function GET(req: Request) {
         historyDetails.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
         const dailyCount = dailySales.length;
-        const dailyRate = getCommissionRate(dailyCount);
+        const dailyRate = isCustom17 ? 0.17 : getCommissionRate(dailyCount);
         const dailyCommission = dailyCount * BASE_AMOUNT * dailyRate;
 
         // Count pending prospects
@@ -122,7 +128,9 @@ export async function GET(req: Request) {
             yearlyCA: yearlySales.length * BASE_AMOUNT,
             pendingProspects,
             pendingSalesCount,
-            history: historyDetails
+            history: historyDetails,
+            isFixedRate: isCustom17,
+            fixedRateValue: 17
         });
 
     } catch (error) {

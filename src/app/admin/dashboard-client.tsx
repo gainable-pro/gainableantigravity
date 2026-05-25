@@ -46,6 +46,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
         try {
             const res = await fetch("/api/admin/impersonate", {
                 method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ userId }),
             });
             if (res.ok) {
