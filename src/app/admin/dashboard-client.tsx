@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Search, Building, Trash2, Mail, ExternalLink, Loader2, Pencil, Eye, FileText, Check, X, Shield, CheckCircle, XCircle, LogIn, LogOut, UserX, Sparkles } from "lucide-react";
+import { Search, Building, Trash2, Mail, ExternalLink, Loader2, Pencil, Eye, FileText, Check, X, Shield, CheckCircle, XCircle, LogIn, LogOut, UserX, Sparkles, Globe } from "lucide-react";
+import SeoDashboard from "./seo-dashboard";
 
 interface User {
     id: string;
@@ -33,6 +34,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
     const [users, setUsers] = useState<User[]>(initialUsers);
     const [loadingMap, setLoadingMap] = useState<Record<string, string | null>>({});
     const [filterType, setFilterType] = useState<string>("all");
+    const [activeTab, setActiveTab] = useState<"users" | "seo">("users");
     const router = useRouter();
 
     const filteredUsers = users.filter(user => {
@@ -122,235 +124,274 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
     return (
         <div className="space-y-6">
-            <div className="grid gap-4 md:grid-cols-3">
-                <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Total Utilisateurs</CardTitle>
-                        <Shield className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">{users.length}</div>
-                        <p className="text-xs text-muted-foreground mt-1">
-                            {users.filter(u => u.expert?.expert_type === 'cvc_climatisation').length} CVC •
-                            {users.filter(u => u.expert?.expert_type === 'diagnostics_dpe').length} Diag •
-                            {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude
-                        </p>
-                    </CardContent>
-                </Card>
-
-                <Card className="bg-slate-900 text-white border-slate-800">
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium text-slate-100">Espace Éditorial</CardTitle>
-                        <FileText className="h-4 w-4 text-amber-400" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-sm text-slate-400 mb-4">Gérer les articles officiels Gainable.fr</div>
-                        <Button
-                            variant="secondary"
-                            className="w-full bg-slate-800 hover:bg-slate-700 text-white border-none"
-                            onClick={() => window.open('/dashboard/articles', '_blank')}
-                        >
-                            Rédiger un article ➜
-                        </Button>
-                    </CardContent>
-                </Card>
-
-                <Card className="bg-blue-600 text-white border-blue-500 shadow-lg shadow-blue-100">
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium text-blue-50">Community Manager IA</CardTitle>
-                        <Sparkles className="h-4 w-4 text-amber-300 fill-amber-300" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-sm text-blue-100 mb-4">Génération automatique de posts LinkedIn & Facebook</div>
-                        <Button
-                            variant="secondary"
-                            className="w-full bg-white text-blue-600 hover:bg-blue-50 border-none shadow-sm font-bold"
-                            onClick={() => window.location.href = '/admin/marketing'}
-                        >
-                            Social Manager ➜
-                        </Button>
-                    </CardContent>
-                </Card>
+            {/* Tab navigation */}
+            <div className="flex border-b border-slate-200 mb-6 gap-6 select-none">
+                <button
+                    onClick={() => setActiveTab("users")}
+                    className={`pb-3 text-sm font-semibold transition-all relative ${activeTab === "users" ? "text-slate-900 border-b-2 border-slate-900 font-bold" : "text-slate-400 hover:text-slate-600"}`}
+                >
+                    Utilisateurs
+                </button>
+                <button
+                    onClick={() => setActiveTab("seo")}
+                    className={`pb-3 text-sm font-semibold transition-all relative ${activeTab === "seo" ? "text-slate-900 border-b-2 border-slate-900 font-bold" : "text-slate-400 hover:text-slate-600"}`}
+                >
+                    Visibilité SEO & GEO
+                </button>
             </div>
 
-            <Card>
-                <CardHeader className="flex flex-row items-center justify-between">
-                    <div>
-                        <CardTitle>Gestion des Utilisateurs</CardTitle>
-                        <div className="mt-2">
-                            <Select value={filterType} onValueChange={setFilterType}>
-                                <SelectTrigger className="w-[250px] bg-slate-50">
-                                    <SelectValue placeholder="Filtrer par métier..." />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="all">Tous les utilisateurs</SelectItem>
-                                    <SelectItem value="cvc_climatisation">Installateurs CVC</SelectItem>
-                                    <SelectItem value="diagnostics_dpe">Diagnostiqueurs</SelectItem>
-                                    <SelectItem value="bureau_detude">Bureaux d'Études</SelectItem>
-                                    <SelectItem value="no_expert">Comptes sans profil expert</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
+            {activeTab === "seo" ? (
+                <SeoDashboard />
+            ) : (
+                <>
+                    <div className="grid gap-4 md:grid-cols-4">
+                        <Card>
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                <CardTitle className="text-sm font-medium">Total Utilisateurs</CardTitle>
+                                <Shield className="h-4 w-4 text-muted-foreground" />
+                            </CardHeader>
+                            <CardContent>
+                                <div className="text-2xl font-bold">{users.length}</div>
+                                <p className="text-xs text-muted-foreground mt-1 font-light">
+                                    {users.filter(u => u.expert?.expert_type === 'cvc_climatisation').length} CVC •{" "}
+                                    {users.filter(u => u.expert?.expert_type === 'diagnostics_dpe').length} Diag •{" "}
+                                    {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-slate-900 text-white border-slate-800">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                <CardTitle className="text-sm font-medium text-slate-100">Espace Éditorial</CardTitle>
+                                <FileText className="h-4 w-4 text-amber-400" />
+                            </CardHeader>
+                            <CardContent>
+                                <div className="text-sm text-slate-400 mb-4 font-light">Gérer les articles officiels Gainable.fr</div>
+                                <Button
+                                    variant="secondary"
+                                    className="w-full bg-slate-800 hover:bg-slate-700 text-white border-none font-bold text-xs"
+                                    onClick={() => window.open('/dashboard/articles', '_blank')}
+                                >
+                                    Rédiger un article ➜
+                                </Button>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-blue-600 text-white border-blue-500 shadow-sm shadow-blue-100">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                <CardTitle className="text-sm font-medium text-blue-50">Community Manager IA</CardTitle>
+                                <Sparkles className="h-4 w-4 text-amber-300 fill-amber-300" />
+                            </CardHeader>
+                            <CardContent>
+                                <div className="text-sm text-blue-100 mb-4 font-light">Génération automatique de posts Facebook/LinkedIn</div>
+                                <Button
+                                    variant="secondary"
+                                    className="w-full bg-white text-blue-600 hover:bg-blue-50 border-none shadow-sm font-bold text-xs"
+                                    onClick={() => window.location.href = '/admin/marketing'}
+                                >
+                                    Social Manager ➜
+                                </Button>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-gradient-to-r from-amber-500 to-[#D59B2B] text-white border-none shadow-sm shadow-amber-100">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                <CardTitle className="text-sm font-medium text-amber-50">Dashboard SEO & GEO</CardTitle>
+                                <Globe className="h-4 w-4 text-white" />
+                            </CardHeader>
+                            <CardContent>
+                                <div className="text-sm text-amber-100 mb-4 font-light">Trafic Google, citations IA et rapports d'audits</div>
+                                <Button
+                                    variant="secondary"
+                                    className="w-full bg-white text-amber-800 hover:bg-amber-50 border-none shadow-sm font-bold text-xs"
+                                    onClick={() => setActiveTab("seo")}
+                                >
+                                    Consulter le SEO ➜
+                                </Button>
+                            </CardContent>
+                        </Card>
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                        {filteredUsers.length} affichés
-                    </div>
-                </CardHeader>
-                <CardContent>
-                    <div className="rounded-md border">
-                        <table className="w-full text-sm text-left">
-                            <thead className="bg-slate-50 border-b">
-                                <tr>
-                                    <th className="p-4 font-medium text-slate-500">Utilisateur</th>
-                                    <th className="p-4 font-medium text-slate-500">Entreprise</th>
-                                    <th className="p-4 font-medium text-slate-500">Métier</th>
-                                    <th className="p-4 font-medium text-slate-500">Téléphone</th>
-                                    <th className="p-4 font-medium text-slate-500 text-center">Label G</th>
-                                    <th className="p-4 font-medium text-slate-500">Statut</th>
-                                    <th className="p-4 font-medium text-slate-500 text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {filteredUsers.map((user) => (
-                                    <tr key={user.id} className="border-b last:border-0 hover:bg-slate-50/50">
-                                        <td className="p-4">
-                                            <div className="flex items-center gap-2">
-                                                <div className="font-medium">{user.email}</div>
-                                                <button
-                                                    onClick={() => handleEditEmail(user)}
-                                                    className="text-slate-400 hover:text-slate-600 p-1 rounded-sm hover:bg-slate-200"
-                                                    title="Modifier l'email"
-                                                >
-                                                    <Pencil className="w-3 h-3" />
-                                                </button>
-                                            </div>
-                                            <div className="text-xs text-slate-400">
-                                                Inscrit le {new Date(user.created_at).toLocaleDateString()}
-                                            </div>
-                                            {user.role === 'admin' && <Badge className="mt-1 bg-black">Admin</Badge>}
-                                        </td>
-                                        <td className="p-4">
-                                            {user.expert ? (
-                                                <div>
-                                                    <div className="font-semibold text-slate-700">{user.expert.nom_entreprise}</div>
-                                                    <div className="text-xs text-slate-500">{user.expert.ville}</div>
-                                                </div>
-                                            ) : (
-                                                <span className="text-slate-400 italic">Pas de profil expert</span>
-                                            )}
-                                        </td>
-                                        <td className="p-4">
-                                            {user.expert ? (
-                                                <div className="text-sm text-slate-700">
-                                                    {user.expert.expert_type === 'cvc_climatisation' && <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-700">Installateur</Badge>}
-                                                    {user.expert.expert_type === 'diagnostics_dpe' && <Badge variant="outline" className="border-purple-200 bg-purple-50 text-purple-700">Diagnostic</Badge>}
-                                                    {user.expert.expert_type === 'bureau_detude' && <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">Etude</Badge>}
-                                                </div>
-                                            ) : "-"}
-                                        </td>
-                                        <td className="p-4">
-                                            {user.expert ? (
-                                                <div className="text-sm text-slate-600 font-mono">
-                                                    {user.expert.telephone || "-"}
-                                                </div>
-                                            ) : "-"}
-                                        </td>
-                                        {/* LABEL COLUMN */}
-                                        <td className="p-4 text-center">
-                                            {user.expert ? (
-                                                <div className="flex items-center gap-2 justify-center">
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={!!user.expert.is_labeled}
-                                                        onChange={(e) => handleAction(user.id, 'toggle_label', e.target.checked)}
+
+                    <Card>
+                        <CardHeader className="flex flex-row items-center justify-between">
+                            <div>
+                                <CardTitle>Gestion des Utilisateurs</CardTitle>
+                                <div className="mt-2">
+                                    <Select value={filterType} onValueChange={setFilterType}>
+                                        <SelectTrigger className="w-[250px] bg-slate-50">
+                                            <SelectValue placeholder="Filtrer par métier..." />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="all">Tous les utilisateurs</SelectItem>
+                                            <SelectItem value="cvc_climatisation">Installateurs CVC</SelectItem>
+                                            <SelectItem value="diagnostics_dpe">Diagnostiqueurs</SelectItem>
+                                            <SelectItem value="bureau_detude">Bureaux d'Études</SelectItem>
+                                            <SelectItem value="no_expert">Comptes sans profil expert</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                                {filteredUsers.length} affichés
+                            </div>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="rounded-md border">
+                                <table className="w-full text-sm text-left">
+                                    <thead className="bg-slate-50 border-b">
+                                        <tr>
+                                            <th className="p-4 font-medium text-slate-500">Utilisateur</th>
+                                            <th className="p-4 font-medium text-slate-500">Entreprise</th>
+                                            <th className="p-4 font-medium text-slate-500">Métier</th>
+                                            <th className="p-4 font-medium text-slate-500">Téléphone</th>
+                                            <th className="p-4 font-medium text-slate-500 text-center">Label G</th>
+                                            <th className="p-4 font-medium text-slate-500">Statut</th>
+                                            <th className="p-4 font-medium text-slate-500 text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {filteredUsers.map((user) => (
+                                            <tr key={user.id} className="border-b last:border-0 hover:bg-slate-50/50">
+                                                <td className="p-4">
+                                                    <div className="flex items-center gap-2">
+                                                        <div className="font-medium">{user.email}</div>
+                                                        <button
+                                                            onClick={() => handleEditEmail(user)}
+                                                            className="text-slate-400 hover:text-slate-600 p-1 rounded-sm hover:bg-slate-200"
+                                                            title="Modifier l'email"
+                                                        >
+                                                            <Pencil className="w-3 h-3" />
+                                                        </button>
+                                                    </div>
+                                                    <div className="text-xs text-slate-400">
+                                                        Inscrit le {new Date(user.created_at).toLocaleDateString()}
+                                                    </div>
+                                                    {user.role === 'admin' && <Badge className="mt-1 bg-black">Admin</Badge>}
+                                                </td>
+                                                <td className="p-4">
+                                                    {user.expert ? (
+                                                        <div>
+                                                            <div className="font-semibold text-slate-700">{user.expert.nom_entreprise}</div>
+                                                            <div className="text-xs text-slate-500">{user.expert.ville}</div>
+                                                        </div>
+                                                    ) : (
+                                                        <span className="text-slate-400 italic">Pas de profil expert</span>
+                                                    )}
+                                                </td>
+                                                <td className="p-4">
+                                                    {user.expert ? (
+                                                        <div className="text-sm text-slate-700">
+                                                            {user.expert.expert_type === 'cvc_climatisation' && <Badge variant="outline" className="border-blue-200 bg-blue-50 text-blue-700">Installateur</Badge>}
+                                                            {user.expert.expert_type === 'diagnostics_dpe' && <Badge variant="outline" className="border-purple-200 bg-purple-50 text-purple-700">Diagnostic</Badge>}
+                                                            {user.expert.expert_type === 'bureau_detude' && <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">Etude</Badge>}
+                                                        </div>
+                                                    ) : "-"}
+                                                </td>
+                                                <td className="p-4">
+                                                    {user.expert ? (
+                                                        <div className="text-sm text-slate-600 font-mono">
+                                                            {user.expert.telephone || "-"}
+                                                        </div>
+                                                    ) : "-"}
+                                                </td>
+                                                {/* LABEL COLUMN */}
+                                                <td className="p-4 text-center">
+                                                    {user.expert ? (
+                                                        <div className="flex items-center gap-2 justify-center">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={!!user.expert.is_labeled}
+                                                                onChange={(e) => handleAction(user.id, 'toggle_label', e.target.checked)}
+                                                                disabled={!!loadingMap[user.id]}
+                                                                className="w-5 h-5 rounded border-slate-300 text-[#D59B2B] focus:ring-[#D59B2B] cursor-pointer"
+                                                            />
+                                                            <button
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    if (confirm(`Renvoyer l'email de label à ${user.expert?.nom_entreprise} ?`)) {
+                                                                        handleAction(user.id, 'send_label_email');
+                                                                    }
+                                                                }}
+                                                                disabled={!!loadingMap[user.id] || !user.expert.is_labeled}
+                                                                className="ml-2 p-1.5 rounded-full text-slate-400 hover:text-amber-600 hover:bg-amber-50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
+                                                                title="Envoyer l'email de label manuellement"
+                                                            >
+                                                                {loadingMap[user.id] === 'send_label_email' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
+                                                            </button>
+                                                        </div>
+                                                    ) : (
+                                                        "-"
+                                                    )}
+                                                </td>
+                                                <td className="p-4">
+                                                    {user.expert ? (
+                                                        <Badge variant={user.expert.status === 'active' ? 'default' : 'secondary'} className={user.expert.status === 'active' ? 'bg-green-600' : ''}>
+                                                            {user.expert.status}
+                                                        </Badge>
+                                                    ) : (
+                                                        "-"
+                                                    )}
+                                                </td>
+                                                <td className="p-4 text-right space-x-2">
+                                                    {/* VALIDATE */}
+                                                    {user.expert && user.expert.status !== 'active' && (
+                                                        <Button
+                                                            size="sm"
+                                                            variant="outline"
+                                                            className="border-green-200 hover:bg-green-50 text-green-700"
+                                                            onClick={() => handleAction(user.id, 'validate_expert')}
+                                                            disabled={!!loadingMap[user.id]}
+                                                            title="Valider / Activer"
+                                                        >
+                                                            {loadingMap[user.id] === 'validate_expert' ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
+                                                        </Button>
+                                                    )}
+
+                                                    {/* SUSPEND */}
+                                                    {user.expert && user.expert.status === 'active' && (
+                                                        <Button
+                                                            size="sm"
+                                                            variant="outline"
+                                                            className="border-amber-200 hover:bg-amber-50 text-amber-700"
+                                                            onClick={() => handleAction(user.id, 'suspend_expert' as any)}
+                                                            disabled={!!loadingMap[user.id]}
+                                                            title="Suspendre / Désactiver"
+                                                        >
+                                                            {loadingMap[user.id] === 'suspend_expert' ? <Loader2 className="w-4 h-4 animate-spin" /> : <div className="w-4 h-4 flex items-center justify-center font-bold">||</div>}
+                                                        </Button>
+                                                    )}
+
+                                                    {/* IMPERSONATE */}
+                                                    <Button
+                                                        size="sm"
+                                                        variant="secondary"
+                                                        onClick={() => handleImpersonate(user.id)}
                                                         disabled={!!loadingMap[user.id]}
-                                                        className="w-5 h-5 rounded border-slate-300 text-[#D59B2B] focus:ring-[#D59B2B] cursor-pointer"
-                                                    />
-                                                    <button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation();
-                                                            if (confirm(`Renvoyer l'email de label à ${user.expert?.nom_entreprise} ?`)) {
-                                                                handleAction(user.id, 'send_label_email');
-                                                            }
-                                                        }}
-                                                        disabled={!!loadingMap[user.id] || !user.expert.is_labeled}
-                                                        className="ml-2 p-1.5 rounded-full text-slate-400 hover:text-amber-600 hover:bg-amber-50 disabled:opacity-30 disabled:hover:bg-transparent transition-all"
-                                                        title="Envoyer l'email de label manuellement"
+                                                        title="Se connecter en tant que..."
                                                     >
-                                                        {loadingMap[user.id] === 'send_label_email' ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
-                                                    </button>
-                                                </div>
-                                            ) : (
-                                                "-"
-                                            )}
-                                        </td>
-                                        <td className="p-4">
-                                            {user.expert ? (
-                                                <Badge variant={user.expert.status === 'active' ? 'default' : 'secondary'} className={user.expert.status === 'active' ? 'bg-green-600' : ''}>
-                                                    {user.expert.status}
-                                                </Badge>
-                                            ) : (
-                                                "-"
-                                            )}
-                                        </td>
-                                        <td className="p-4 text-right space-x-2">
-                                            {/* VALIDATE */}
-                                            {user.expert && user.expert.status !== 'active' && (
-                                                <Button
-                                                    size="sm"
-                                                    variant="outline"
-                                                    className="border-green-200 hover:bg-green-50 text-green-700"
-                                                    onClick={() => handleAction(user.id, 'validate_expert')}
-                                                    disabled={!!loadingMap[user.id]}
-                                                    title="Valider / Activer"
-                                                >
-                                                    {loadingMap[user.id] === 'validate_expert' ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
-                                                </Button>
-                                            )}
+                                                        {loadingMap[user.id] === 'impersonate' ? <Loader2 className="w-4 h-4 animate-spin" /> : <LogIn className="w-4 h-4" />}
+                                                    </Button>
 
-                                            {/* SUSPEND */}
-                                            {user.expert && user.expert.status === 'active' && (
-                                                <Button
-                                                    size="sm"
-                                                    variant="outline"
-                                                    className="border-amber-200 hover:bg-amber-50 text-amber-700"
-                                                    onClick={() => handleAction(user.id, 'suspend_expert' as any)}
-                                                    disabled={!!loadingMap[user.id]}
-                                                    title="Suspendre / Désactiver"
-                                                >
-                                                    {loadingMap[user.id] === 'suspend_expert' ? <Loader2 className="w-4 h-4 animate-spin" /> : <div className="w-4 h-4 flex items-center justify-center font-bold">||</div>}
-                                                </Button>
-                                            )}
-
-                                            {/* IMPERSONATE */}
-                                            <Button
-                                                size="sm"
-                                                variant="secondary"
-                                                onClick={() => handleImpersonate(user.id)}
-                                                disabled={!!loadingMap[user.id]}
-                                                title="Se connecter en tant que..."
-                                            >
-                                                {loadingMap[user.id] === 'impersonate' ? <Loader2 className="w-4 h-4 animate-spin" /> : <LogIn className="w-4 h-4" />}
-                                            </Button>
-
-                                            {/* DELETE */}
-                                            <Button
-                                                size="sm"
-                                                variant="destructive"
-                                                onClick={() => handleAction(user.id, 'delete')}
-                                                disabled={!!loadingMap[user.id]}
-                                                title="Supprimer le compte"
-                                            >
-                                                {loadingMap[user.id] === 'delete' ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserX className="w-4 h-4" />}
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </CardContent>
-            </Card>
+                                                    {/* DELETE */}
+                                                    <Button
+                                                        size="sm"
+                                                        variant="destructive"
+                                                        onClick={() => handleAction(user.id, 'delete')}
+                                                        disabled={!!loadingMap[user.id]}
+                                                        title="Supprimer le compte"
+                                                    >
+                                                        {loadingMap[user.id] === 'delete' ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserX className="w-4 h-4" />}
+                                                    </Button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </>
+            )}
         </div>
     );
 }
