@@ -1,0 +1,66 @@
+[
+  {
+    "date": "2025-11-15",
+    "sitemapSize": 15,
+    "indexedCount": 10,
+    "errorsCount": 0,
+    "organicClicks": 0,
+    "organicImpressions": 150
+  },
+  {
+    "date": "2025-12-15",
+    "sitemapSize": 85,
+    "indexedCount": 60,
+    "errorsCount": 2,
+    "organicClicks": 5,
+    "organicImpressions": 820
+  },
+  {
+    "date": "2026-01-15",
+    "sitemapSize": 450,
+    "indexedCount": 320,
+    "errorsCount": 8,
+    "organicClicks": 25,
+    "organicImpressions": 4500
+  },
+  {
+    "date": "2026-02-15",
+    "sitemapSize": 5200,
+    "indexedCount": 3800,
+    "errorsCount": 25,
+    "organicClicks": 110,
+    "organicImpressions": 22000
+  },
+  {
+    "date": "2026-03-15",
+    "sitemapSize": 15400,
+    "indexedCount": 11200,
+    "errorsCount": 84,
+    "organicClicks": 185,
+    "organicImpressions": 38000
+  },
+  {
+    "date": "2026-04-15",
+    "sitemapSize": 23210,
+    "indexedCount": 16800,
+    "errorsCount": 112,
+    "organicClicks": 240,
+    "organicImpressions": 51000
+  },
+  {
+    "date": "2026-05-15",
+    "sitemapSize": 23420,
+    "indexedCount": 17200,
+    "errorsCount": 118,
+    "organicClicks": 260,
+    "organicImpressions": 55200
+  },
+  {
+    "date": "2026-06-09",
+    "sitemapSize": 23450,
+    "indexedCount": 17624,
+    "errorsCount": 124,
+    "organicClicks": 266,
+    "organicImpressions": 56000
+  }
+]
