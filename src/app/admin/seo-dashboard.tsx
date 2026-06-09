@@ -9,7 +9,7 @@ import {
   TrendingUp, TrendingDown, Search, Sparkles, Globe, 
   AlertCircle, CheckCircle2, PlayCircle, Loader2, ChevronRight, 
   Activity, FileText, Check, AlertTriangle, HelpCircle, 
-  ExternalLink, BarChart3, Info, RefreshCw
+  ExternalLink, BarChart3, Info, RefreshCw, Upload, FileSpreadsheet
 } from "lucide-react";
 
 interface Recommendation {
@@ -34,21 +34,67 @@ interface AuditData {
   logs: string[];
 }
 
-export default function SeoDashboard() {
+interface Expert {
+  id: string;
+  nom_entreprise: string;
+  ville: string;
+  slug: string;
+}
+
+export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [activeTab, setActiveTab] = useState<"overview" | "keywords" | "ai" | "pages" | "audit">("overview");
   const [selectedMetric, setSelectedMetric] = useState<"clicks" | "impressions" | "ctr" | "position">("clicks");
+  
+  // Search console state (Demo mode by default, real data upon CSV upload)
+  const [isRealData, setIsRealData] = useState(false);
+  const [kpiData, setKpiData] = useState({
+    clicks: { total: 266, trend: "+14.6%", isPositive: true, desc: "Total des clics depuis la recherche Google (3 mois)" },
+    impressions: { total: "56K", trend: "+8.2%", isPositive: true, desc: "Nombre de fois qu'une page a été vue dans les résultats" },
+    ctr: { total: "0.5%", trend: "-0.1%", isPositive: false, desc: "Taux de clics moyen par rapport aux impressions" },
+    position: { total: "22.6", trend: "Amélioration -1.2", isPositive: true, desc: "Position moyenne de vos pages sur les requêtes" }
+  });
+
+  const [keywordsList, setKeywordsList] = useState([
+    { text: "installateur gainable", clicks: 45, impressions: 8400, ctr: "0.53%", position: 12.4, trend: "up" },
+    { text: "climatisation gainable prix", clicks: 32, impressions: 6200, ctr: "0.51%", position: 18.2, trend: "up" },
+    { text: "gainable climatisation", clicks: 28, impressions: 5900, ctr: "0.47%", position: 15.6, trend: "stable" },
+    { text: "clim gainable daikin", clicks: 18, impressions: 3100, ctr: "0.58%", position: 24.1, trend: "down" },
+    { text: "bureau etude thermique", clicks: 12, impressions: 2500, ctr: "0.48%", position: 32.5, trend: "up" },
+    { text: "dpe climatisation", clicks: 8, impressions: 1800, ctr: "0.44%", position: 28.3, trend: "stable" },
+    { text: "installateur clim gainable toulouse", clicks: 6, impressions: 850, ctr: "0.70%", position: 8.4, trend: "up" },
+    { text: "expert clim gainable lyon", clicks: 5, impressions: 920, ctr: "0.54%", position: 9.1, trend: "stable" },
+    { text: "tarif gainable zone control", clicks: 4, impressions: 1100, ctr: "0.36%", position: 21.5, trend: "down" }
+  ]);
+
+  const [pagesList, setPagesList] = useState([
+    { url: "/", clicks: 124, impressions: 24000, ctr: "0.52%", position: 4.2, status: "Indexed" },
+    { url: "/la-solution-gainable", clicks: 58, impressions: 12000, ctr: "0.48%", position: 8.5, status: "Indexed" },
+    { url: "/trouver-installateur", clicks: 42, impressions: 9200, ctr: "0.45%", position: 11.2, status: "Indexed" },
+    { url: "/faq-visibilite-referencement", clicks: 24, impressions: 5400, ctr: "0.44%", position: 14.8, status: "Indexed" },
+    { url: "/pro", clicks: 12, impressions: 3200, ctr: "0.37%", position: 19.4, status: "Indexed" },
+    { url: "/mentions-legales", clicks: 0, impressions: 120, ctr: "0.00%", position: 88.0, status: "Noindex (robots)" },
+    { url: "/cgu", clicks: 0, impressions: 95, ctr: "0.00%", position: 94.2, status: "Noindex (robots)" }
+  ]);
+
   const [keywordFilter, setKeywordFilter] = useState("");
   const [pageFilter, setPageFilter] = useState("");
   const [isAuditing, setIsAuditing] = useState(false);
   const [auditLogs, setAuditLogs] = useState<string[]>([]);
   const [auditData, setAuditData] = useState<AuditData | null>(null);
 
+  // AI Article Generation states
+  const [genKeyword, setGenKeyword] = useState("");
+  const [genCity, setGenCity] = useState("");
+  const [genExpertId, setGenExpertId] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedResult, setGeneratedResult] = useState<any>(null);
+
   // Load existing cache on mount
   useEffect(() => {
     fetch("/api/admin/seo/audit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ getOnly: true }) // Doesn't rerun, just checks if endpoint supports getting cache
+      body: JSON.stringify({ getOnly: true })
     })
       .then(res => res.json())
       .then(data => {
@@ -59,24 +105,117 @@ export default function SeoDashboard() {
       .catch(err => console.error("Error reading cache:", err));
   }, []);
 
+  // CSV parsing function for Search Console Exports
+  const handleCsvUpload = (e: React.ChangeEvent<HTMLInputElement>, type: "queries" | "pages") => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target?.result as string;
+      if (!text) return;
+
+      const lines = text.split(/\r?\n/);
+      if (lines.length < 2) return;
+
+      // Safe CSV Line parser
+      const parseCSVLine = (line: string) => {
+        const result = [];
+        let current = "";
+        let inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            result.push(current.trim());
+            current = "";
+          } else {
+            current += char;
+          }
+        }
+        result.push(current.trim());
+        return result;
+      };
+
+      const parsedData = [];
+      let totalClicks = 0;
+      let totalImpressions = 0;
+      let totalPositionSum = 0;
+      let count = 0;
+
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i]) continue;
+        const row = parseCSVLine(lines[i]);
+        if (row.length < 2) continue;
+
+        const name = row[0].replace(/"/g, "");
+        const clicks = parseInt(row[1]) || 0;
+        const impressions = parseInt(row[2]) || 0;
+        const ctr = row[3] || "0%";
+        const position = parseFloat(row[4]) || 0;
+
+        totalClicks += clicks;
+        totalImpressions += impressions;
+        totalPositionSum += position;
+        count++;
+
+        parsedData.push({
+          text: name,
+          clicks,
+          impressions,
+          ctr,
+          position,
+          trend: clicks > 1 ? "up" : "stable"
+        });
+      }
+
+      if (type === "queries") {
+        setKeywordsList(parsedData);
+        const avgPosition = count > 0 ? (totalPositionSum / count).toFixed(1) : "22.6";
+        const avgCtr = totalImpressions > 0 ? ((totalClicks / totalImpressions) * 100).toFixed(1) + "%" : "0.5%";
+        
+        setKpiData({
+          clicks: { total: totalClicks, trend: "Réel", isPositive: true, desc: "Clics réels importés depuis Search Console" },
+          impressions: { total: totalImpressions > 1000 ? `${(totalImpressions / 1000).toFixed(1)}K` : totalImpressions.toString(), trend: "Réel", isPositive: true, desc: "Impressions réelles importées" },
+          ctr: { total: avgCtr, trend: "Réel", isPositive: true, desc: "CTR moyen calculé" },
+          position: { total: avgPosition, trend: "Réel", isPositive: true, desc: "Position moyenne réelle" }
+        });
+        setIsRealData(true);
+        alert(`Succès: ${count} requêtes réelles importées de Search Console !`);
+      } else {
+        const mappedPages = parsedData.map(p => ({
+          url: p.text,
+          clicks: p.clicks,
+          impressions: p.impressions,
+          ctr: p.ctr,
+          position: p.position,
+          status: p.text.includes("mentions") ? "Noindex (robots)" : "Indexed"
+        }));
+        setPagesList(mappedPages);
+        alert(`Succès: ${count} pages réelles importées de Search Console !`);
+      }
+    };
+    reader.readAsText(file);
+  };
+
   const triggerAudit = async () => {
     setIsAuditing(true);
     setAuditLogs([]);
     
-    // Simulate real-time progress steps for UI premium feedback
     const simulatedSteps = [
       "[1/5] Démarrage de l'audit SEO IA pour https://www.gainable.fr...",
       "[2/5] Interrogation du fichier robots.txt et détection de sitemap...",
-      "[robots.txt] OK - Analyse complétée.",
+      "[robots.txt] OK - Fichier récupéré avec succès.",
       "[3/5] Analyse des en-têtes de sécurité HTTP (HSTS, CSP, X-Frame)...",
-      "[Security] OK - Balayage des en-têtes terminé.",
+      "[Security] En-têtes analysés avec succès.",
       "[4/5] Évaluation de la visibilité des moteurs génératifs (GEO / AEO)...",
       "[GEO] Analyse sémantique de l'autorité thématique complétée.",
       "[5/5] Finalisation du rapport d'audit et écriture du plan d'action."
     ];
 
     for (let i = 0; i < simulatedSteps.length; i++) {
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 550));
       setAuditLogs(prev => [...prev, simulatedSteps[i]]);
     }
 
@@ -90,24 +229,54 @@ export default function SeoDashboard() {
         const data = await res.json();
         setAuditData(data.audit);
       } else {
-        alert("Erreur lors du traitement de l'audit.");
+        alert("Erreur lors de l'audit.");
       }
     } catch (e) {
-      alert("Erreur réseau ou script Python indisponible.");
+      alert("Erreur réseau.");
     } finally {
       setIsAuditing(false);
     }
   };
 
-  // Mock GSC Data matching screenshot
-  const kpiData = {
-    clicks: { total: 266, trend: "+14.6%", isPositive: true, desc: "Total des clics depuis la recherche Google (3 mois)" },
-    impressions: { total: "56K", trend: "+8.2%", isPositive: true, desc: "Nombre de fois qu'une page a été vue dans les résultats" },
-    ctr: { total: "0.5%", trend: "-0.1%", isPositive: false, desc: "Taux de clics moyen par rapport aux impressions" },
-    position: { total: "22.6", trend: "Amélioration -1.2", isPositive: true, desc: "Position moyenne de vos pages sur les requêtes" }
+  const handleGenerateArticle = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!genKeyword || !genCity || !genExpertId) {
+      alert("Veuillez remplir tous les champs du générateur d'articles.");
+      return;
+    }
+
+    setIsGenerating(true);
+    setGeneratedResult(null);
+
+    try {
+      const res = await fetch("/api/admin/seo/generate-article", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          keyword: genKeyword,
+          city: genCity,
+          expertId: genExpertId
+        })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        setGeneratedResult(data.article);
+        setGenKeyword("");
+        setGenCity("");
+        alert("Article SEO généré avec succès en mode brouillon !");
+      } else {
+        const err = await res.json();
+        alert(`Erreur: ${err.message || "Génération impossible"}`);
+      }
+    } catch (e) {
+      alert("Erreur technique de communication avec l'API OpenAI.");
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
-  // Chart data: coordinates mapping for visual line representation
+  // Chart data matching performance metric selected
   const chartPoints: Record<string, { x: number; y: number; label: string; val: number }[]> = {
     clicks: [
       { x: 50, y: 150, label: "08/03", val: 2 },
@@ -151,28 +320,6 @@ export default function SeoDashboard() {
     ]
   };
 
-  const keywordsList = [
-    { text: "installateur gainable", clicks: 45, impressions: 8400, ctr: "0.53%", position: 12.4, trend: "up" },
-    { text: "climatisation gainable prix", clicks: 32, impressions: 6200, ctr: "0.51%", position: 18.2, trend: "up" },
-    { text: "gainable climatisation", clicks: 28, impressions: 5900, ctr: "0.47%", position: 15.6, trend: "stable" },
-    { text: "clim gainable daikin", clicks: 18, impressions: 3100, ctr: "0.58%", position: 24.1, trend: "down" },
-    { text: "bureau etude thermique", clicks: 12, impressions: 2500, ctr: "0.48%", position: 32.5, trend: "up" },
-    { text: "dpe climatisation", clicks: 8, impressions: 1800, ctr: "0.44%", position: 28.3, trend: "stable" },
-    { text: "installateur clim gainable toulouse", clicks: 6, impressions: 850, ctr: "0.70%", position: 8.4, trend: "up" },
-    { text: "expert clim gainable lyon", clicks: 5, impressions: 920, ctr: "0.54%", position: 9.1, trend: "stable" },
-    { text: "tarif gainable zone control", clicks: 4, impressions: 1100, ctr: "0.36%", position: 21.5, trend: "down" }
-  ].filter(kw => kw.text.toLowerCase().includes(keywordFilter.toLowerCase()));
-
-  const pagesList = [
-    { url: "/", clicks: 124, impressions: 24000, ctr: "0.52%", position: 4.2, status: "Indexed" },
-    { url: "/la-solution-gainable", clicks: 58, impressions: 12000, ctr: "0.48%", position: 8.5, status: "Indexed" },
-    { url: "/trouver-installateur", clicks: 42, impressions: 9200, ctr: "0.45%", position: 11.2, status: "Indexed" },
-    { url: "/faq-visibilite-referencement", clicks: 24, impressions: 5400, ctr: "0.44%", position: 14.8, status: "Indexed" },
-    { url: "/pro", clicks: 12, impressions: 3200, ctr: "0.37%", position: 19.4, status: "Indexed" },
-    { url: "/mentions-legales", clicks: 0, impressions: 120, ctr: "0.00%", position: 88.0, status: "Noindex (robots)" },
-    { url: "/cgu", clicks: 0, impressions: 95, ctr: "0.00%", position: 94.2, status: "Noindex (robots)" }
-  ].filter(p => p.url.toLowerCase().includes(pageFilter.toLowerCase()));
-
   const geoAeoData = [
     { engine: "ChatGPT Search (GPT-4o)", visibility: "45%", trend: "up", quoteUrl: "/la-solution-gainable", status: "Cité comme leader B2B" },
     { engine: "Google AI Overviews", visibility: "38%", trend: "up", quoteUrl: "/trouver-installateur", status: "Inclus dans le widget experts" },
@@ -185,15 +332,44 @@ export default function SeoDashboard() {
       {/* Upper header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-5">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Visibilité SEO & GEO — Gainable.fr</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+            Visibilité SEO & GEO
+            {isRealData ? (
+              <Badge className="bg-emerald-500 text-white font-bold text-xs select-none">🟢 Connecté GSC</Badge>
+            ) : (
+              <Badge className="bg-amber-500 text-white font-bold text-xs select-none">⚠️ Mode Démo</Badge>
+            )}
+          </h2>
           <p className="text-sm text-slate-500">
             Suivi temps réel des clics Google Search Console, requêtes phares, indexation et présence sur les moteurs d'IA.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Badge variant="outline" className="bg-slate-50 text-slate-600 px-3 py-1 font-mono border-slate-200">
-            Indexé: ~18 000 pages
-          </Badge>
+        <div className="flex flex-wrap items-center gap-2">
+          {/* CSV File Uploaders */}
+          <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-md border text-xs">
+            <span className="font-semibold text-slate-500 px-1">Importer Search Console :</span>
+            <label className="flex items-center gap-1 bg-white hover:bg-slate-50 border px-2 py-1 rounded cursor-pointer transition-all">
+              <Upload className="w-3.5 h-3.5" />
+              Requêtes.csv
+              <input 
+                type="file" 
+                accept=".csv" 
+                onChange={(e) => handleCsvUpload(e, "queries")} 
+                className="hidden" 
+              />
+            </label>
+            <label className="flex items-center gap-1 bg-white hover:bg-slate-50 border px-2 py-1 rounded cursor-pointer transition-all">
+              <Upload className="w-3.5 h-3.5" />
+              Pages.csv
+              <input 
+                type="file" 
+                accept=".csv" 
+                onChange={(e) => handleCsvUpload(e, "pages")} 
+                className="hidden" 
+              />
+            </label>
+          </div>
+
           <Button 
             onClick={triggerAudit} 
             disabled={isAuditing} 
@@ -204,6 +380,18 @@ export default function SeoDashboard() {
           </Button>
         </div>
       </div>
+
+      {/* Demo alert warning (removable via CSV upload) */}
+      {!isRealData && (
+        <Card className="border-amber-200 bg-amber-50/30 text-amber-900">
+          <CardContent className="py-3.5 flex items-center gap-3 text-sm">
+            <Info className="w-5 h-5 text-amber-600 shrink-0" />
+            <div>
+              <span className="font-bold">Mode Démo :</span> Les métriques, mots-clés et graphiques ci-dessous sont des simulations. Pour charger vos statistiques réelles, téléchargez vos fichiers CSV depuis Google Search Console et importez-les avec les boutons ci-dessus.
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Audit Progress Logs (if active) */}
       {isAuditing && (
@@ -225,7 +413,7 @@ export default function SeoDashboard() {
       )}
 
       {/* Tabs list */}
-      <div className="flex border-b border-slate-200 gap-4 overflow-x-auto">
+      <div className="flex border-b border-slate-200 gap-4 overflow-x-auto select-none">
         <button
           onClick={() => setActiveTab("overview")}
           className={`pb-3 text-sm font-medium transition-all relative ${activeTab === "overview" ? "text-[#D59B2B] border-b-2 border-[#D59B2B]" : "text-slate-500 hover:text-slate-800"}`}
@@ -242,7 +430,7 @@ export default function SeoDashboard() {
           onClick={() => setActiveTab("ai")}
           className={`pb-3 text-sm font-medium transition-all relative ${activeTab === "ai" ? "text-[#D59B2B] border-b-2 border-[#D59B2B]" : "text-slate-500 hover:text-slate-800"}`}
         >
-          Visibilité IA (GEO/AEO)
+          Générateur d'Articles SEO IA
         </button>
         <button
           onClick={() => setActiveTab("pages")}
@@ -276,7 +464,11 @@ export default function SeoDashboard() {
                     <CardTitle className="text-xs font-semibold uppercase text-slate-500 tracking-wider">
                       {key === "clicks" ? "Clics Totaux" : key === "impressions" ? "Impressions" : key === "ctr" ? "CTR Moyen" : "Position Moyenne"}
                     </CardTitle>
-                    {current.isPositive ? (
+                    {current.trend === "Réel" ? (
+                      <Badge className="bg-emerald-500 text-white font-mono text-[10px]">
+                        Réel GSC
+                      </Badge>
+                    ) : current.isPositive ? (
                       <Badge className="bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-0.5">
                         <TrendingUp className="w-3 h-3" />
                         {current.trend}
@@ -297,7 +489,7 @@ export default function SeoDashboard() {
             })}
           </div>
 
-          {/* Interactive Custom SVG Chart */}
+          {/* Custom SVG Line Chart */}
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
@@ -320,21 +512,17 @@ export default function SeoDashboard() {
             </CardHeader>
             <CardContent>
               <div className="relative h-64 w-full bg-slate-50 border rounded-lg overflow-hidden flex flex-col justify-between p-4">
-                {/* SVG Graph rendering */}
                 <svg className="absolute inset-0 w-full h-full p-6">
-                  {/* Grid Lines */}
                   <line x1="5%" y1="20%" x2="95%" y2="20%" stroke="#E2E8F0" strokeDasharray="4" />
                   <line x1="5%" y1="50%" x2="95%" y2="50%" stroke="#E2E8F0" strokeDasharray="4" />
                   <line x1="5%" y1="80%" x2="95%" y2="80%" stroke="#E2E8F0" strokeDasharray="4" />
 
-                  {/* Shading area underneath line */}
                   <path
                     d={`M 50 200 L ${chartPoints[selectedMetric].map(p => `${p.x} ${p.y}`).join(" L ")} L 540 200 Z`}
                     fill="url(#chart-gradient)"
                     opacity="0.15"
                   />
 
-                  {/* Main Line path */}
                   <path
                     d={chartPoints[selectedMetric].reduce((acc, curr, idx) => {
                       return acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`);
@@ -346,7 +534,6 @@ export default function SeoDashboard() {
                     strokeLinejoin="round"
                   />
 
-                  {/* Hover dots & Values */}
                   {chartPoints[selectedMetric].map((pt, idx) => (
                     <g key={idx} className="group cursor-pointer">
                       <circle
@@ -365,14 +552,13 @@ export default function SeoDashboard() {
                         fontSize="10"
                         fontWeight="bold"
                         fill="#1E293B"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-white px-1 font-mono"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-white px-1 font-mono animate-fade-in"
                       >
                         {pt.val}{selectedMetric === "ctr" ? "%" : ""}
                       </text>
                     </g>
                   ))}
 
-                  {/* Define Gradients */}
                   <defs>
                     <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#D59B2B" />
@@ -381,10 +567,9 @@ export default function SeoDashboard() {
                   </defs>
                 </svg>
 
-                {/* X Axis labels */}
                 <div className="mt-auto w-full flex justify-between px-6 text-[10px] text-slate-400 font-mono select-none z-10">
                   {chartPoints[selectedMetric].map((p, idx) => (
-                    <span key={idx} style={{ left: `${(idx / (chartPoints[selectedMetric].length - 1)) * 90}%` }}>
+                    <span key={idx}>
                       {p.label}
                     </span>
                   ))}
@@ -401,7 +586,7 @@ export default function SeoDashboard() {
           <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <CardTitle className="text-base font-semibold">Analyse des Mots Clés & Requêtes de Recherche</CardTitle>
-              <CardDescription>Liste des 50 requêtes les plus génératrices de trafic organique.</CardDescription>
+              <CardDescription>Mots clés réels ou simulés de Search Console filtrables.</CardDescription>
             </div>
             <div className="relative w-full md:w-72">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
@@ -415,9 +600,9 @@ export default function SeoDashboard() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="rounded-md border">
+            <div className="rounded-md border max-h-[450px] overflow-y-auto">
               <Table>
-                <TableHeader className="bg-slate-50">
+                <TableHeader className="bg-slate-50 sticky top-0">
                   <TableRow>
                     <TableHead className="font-semibold text-slate-600">Requête de recherche</TableHead>
                     <TableHead className="font-semibold text-slate-600">Clics</TableHead>
@@ -431,10 +616,10 @@ export default function SeoDashboard() {
                   {keywordsList.map((kw, idx) => (
                     <TableRow key={idx} className="hover:bg-slate-50/50">
                       <TableCell className="font-medium text-slate-800 font-mono text-xs">{kw.text}</TableCell>
-                      <TableCell>{kw.clicks}</TableCell>
+                      <TableCell className="font-semibold">{kw.clicks}</TableCell>
                       <TableCell>{kw.impressions}</TableCell>
-                      <TableCell className="font-mono text-xs">{kw.ctr}</TableCell>
-                      <TableCell className="font-mono text-xs">{kw.position}</TableCell>
+                      <TableCell className="font-mono text-xs text-slate-500">{kw.ctr}</TableCell>
+                      <TableCell className="font-mono text-xs text-slate-500">{kw.position}</TableCell>
                       <TableCell className="text-right">
                         {kw.trend === "up" ? (
                           <span className="text-emerald-600 font-semibold text-xs flex items-center justify-end gap-1">
@@ -466,72 +651,133 @@ export default function SeoDashboard() {
         </Card>
       )}
 
-      {/* TAB: AI (GEO/AEO) */}
+      {/* TAB: AI ARTICLE GENERATOR & GEO */}
       {activeTab === "ai" && (
         <div className="space-y-6">
-          {/* AI Banner summary */}
-          <Card className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white border-none shadow-md">
-            <CardContent className="py-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-indigo-400">
-                  <Sparkles className="w-5 h-5 fill-indigo-400 animate-pulse" />
-                  <span className="text-xs font-bold uppercase tracking-wider font-mono">Generative Engine Optimization (GEO)</span>
-                </div>
-                <h3 className="text-xl font-bold">Votre visibilité dans les réponses de l'IA</h3>
-                <p className="text-sm text-slate-300 max-w-2xl font-light">
-                  Semblable au SEO, le GEO évalue votre capacité à apparaître comme source citée et recommandée par ChatGPT, Claude, Gemini et les résumés génératifs de Google.
-                </p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg text-center min-w-40 border border-white/10">
-                <div className="text-[10px] text-slate-300 font-mono font-bold uppercase">Index de Référence IA</div>
-                <div className="text-4xl font-extrabold text-[#D59B2B] mt-1">42%</div>
-                <div className="text-[10px] text-emerald-400 mt-1">Visibilité correcte</div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* AI Generator Panel */}
+            <Card className="md:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-base font-semibold flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-amber-500 fill-amber-500" />
+                  Générateur d'Articles SEO IA
+                </CardTitle>
+                <CardDescription>
+                  Générez un brouillon d'article de blog optimisé sémantiquement, puis associez-le au profil d'un installateur certifié (E-E-A-T).
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleGenerateArticle} className="space-y-4">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700">Mot-clé Principal (SEO)</label>
+                      <input
+                        type="text"
+                        placeholder="Ex: installation clim gainable"
+                        value={genKeyword}
+                        onChange={(e) => setGenKeyword(e.target.value)}
+                        className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-700">Ville Cible</label>
+                      <input
+                        type="text"
+                        placeholder="Ex: Marseille, Lyon, Toulouse"
+                        value={genCity}
+                        onChange={(e) => setGenCity(e.target.value)}
+                        className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+                        required
+                      />
+                    </div>
+                  </div>
 
-          {/* AI Engines matrix */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base font-semibold">Taux de présence et Citations par Moteur d'IA</CardTitle>
-              <CardDescription>Analyses croisées des invites test et détection de citations.</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="rounded-md border">
-                <Table>
-                  <TableHeader className="bg-slate-50">
-                    <TableRow>
-                      <TableHead className="font-semibold text-slate-600">Moteur IA / LLM</TableHead>
-                      <TableHead className="font-semibold text-slate-600">Taux de citation</TableHead>
-                      <TableHead className="font-semibold text-slate-600">Page la plus citée</TableHead>
-                      <TableHead className="font-semibold text-slate-600">Statut de la marque</TableHead>
-                      <TableHead className="font-semibold text-slate-600 text-right">Tendance</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {geoAeoData.map((data, idx) => (
-                      <TableRow key={idx} className="hover:bg-slate-50/50">
-                        <TableCell className="font-semibold text-slate-800">{data.engine}</TableCell>
-                        <TableCell className="font-bold text-indigo-600 font-mono text-xs">{data.visibility}</TableCell>
-                        <TableCell>
-                          <a href={data.quoteUrl} target="_blank" className="text-slate-600 hover:text-[#D59B2B] font-mono text-xs flex items-center gap-1">
-                            {data.quoteUrl}
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        </TableCell>
-                        <TableCell className="text-xs font-mono text-slate-500">{data.status}</TableCell>
-                        <TableCell className="text-right">
-                          <Badge className="bg-indigo-50 text-indigo-700 border border-indigo-200">
-                            {data.trend === "up" ? "▲ Hausse" : "◀ Stable"}
-                          </Badge>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            </CardContent>
-          </Card>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700">Associer au Profil de l'Expert (Auteur & Ancre E-E-A-T)</label>
+                    <select
+                      value={genExpertId}
+                      onChange={(e) => setGenExpertId(e.target.value)}
+                      className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+                      required
+                    >
+                      <option value="">-- Sélectionner un artisan --</option>
+                      {experts.map((exp) => (
+                        <option key={exp.id} value={exp.id}>
+                          {exp.nom_entreprise} ({exp.ville})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    disabled={isGenerating} 
+                    className="w-full bg-[#D59B2B] hover:bg-[#B58221] text-white flex items-center justify-center gap-2 font-bold py-2.5 rounded transition-all shadow-sm"
+                  >
+                    {isGenerating ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Génération IA en cours (OpenAI GPT-4o)...
+                      </>
+                    ) : (
+                      <>
+                        <PlayCircle className="w-4 h-4" />
+                        Générer le Brouillon d'Article
+                      </>
+                    )}
+                  </Button>
+                </form>
+
+                {/* Article generation success feedback */}
+                {generatedResult && (
+                  <div className="mt-6 p-4 border border-emerald-200 bg-emerald-50/50 rounded-lg space-y-3 animate-fade-in">
+                    <div className="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                      Article généré en mode Brouillon !
+                    </div>
+                    <div className="text-xs space-y-1.5 text-slate-700">
+                      <div><span className="font-bold">Titre :</span> {generatedResult.title}</div>
+                      <div><span className="font-bold">Slug URL :</span> <code className="bg-white border px-1.5 py-0.5 rounded text-indigo-700 font-mono">/entreprise/{generatedResult.slug}</code></div>
+                      <div><span className="font-bold">Auteur :</span> {generatedResult.expertName}</div>
+                      <div><span className="font-bold">Statut :</span> <Badge className="bg-amber-500 text-white text-[10px] ml-1">{generatedResult.status}</Badge></div>
+                    </div>
+                    <Button 
+                      variant="outline"
+                      className="text-slate-700 hover:bg-white border-slate-200 text-xs flex items-center gap-1 font-semibold"
+                      onClick={() => window.open(`/dashboard/articles`, '_blank')}
+                    >
+                      Voir dans mon Espace Éditorial
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* GEO Engines tracker side card */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base font-semibold">Moteurs de recherche IA</CardTitle>
+                <CardDescription>Suivi GEO & featured citations.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center justify-between border-b pb-2">
+                  <span className="text-xs font-bold text-slate-500 uppercase">Engine</span>
+                  <span className="text-xs font-bold text-slate-500 uppercase">Index Visibilité</span>
+                </div>
+                {geoAeoData.map((data, idx) => (
+                  <div key={idx} className="flex flex-col gap-1 text-sm border-b last:border-b-0 pb-3 last:pb-0">
+                    <div className="flex items-center justify-between font-semibold text-slate-800">
+                      <span>{data.engine}</span>
+                      <span className="text-indigo-600 font-mono text-xs">{data.visibility}</span>
+                    </div>
+                    <div className="text-xs text-slate-400 font-light font-mono leading-relaxed">{data.status}</div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       )}
 
@@ -555,9 +801,9 @@ export default function SeoDashboard() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="rounded-md border">
+            <div className="rounded-md border max-h-[450px] overflow-y-auto">
               <Table>
-                <TableHeader className="bg-slate-50">
+                <TableHeader className="bg-slate-50 sticky top-0">
                   <TableRow>
                     <TableHead className="font-semibold text-slate-600">Chemin de l'URL</TableHead>
                     <TableHead className="font-semibold text-slate-600">Statut d'Indexation</TableHead>
@@ -579,10 +825,10 @@ export default function SeoDashboard() {
                           {p.status}
                         </Badge>
                       </TableCell>
-                      <TableCell>{p.clicks}</TableCell>
+                      <TableCell className="font-semibold">{p.clicks}</TableCell>
                       <TableCell>{p.impressions}</TableCell>
-                      <TableCell className="font-mono text-xs">{p.ctr}</TableCell>
-                      <TableCell className="font-mono text-xs">{p.position}</TableCell>
+                      <TableCell className="font-mono text-xs text-slate-500">{p.ctr}</TableCell>
+                      <TableCell className="font-mono text-xs text-slate-500">{p.position}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -597,9 +843,8 @@ export default function SeoDashboard() {
         <div className="space-y-6">
           {auditData ? (
             <div className="space-y-6">
-              {/* Score header */}
               <div className="grid gap-4 md:grid-cols-3">
-                <Card className="bg-[#D59B2B] text-white">
+                <Card className="bg-[#D59B2B] text-white border-none shadow-sm">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-semibold uppercase text-amber-50 tracking-wider">Score SEO Technique</CardTitle>
                   </CardHeader>
@@ -609,7 +854,7 @@ export default function SeoDashboard() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-slate-900 text-white">
+                <Card className="bg-slate-900 text-white border-slate-800 shadow-sm">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-semibold uppercase text-slate-400 tracking-wider">Core Web Vitals</CardTitle>
                   </CardHeader>
@@ -620,7 +865,7 @@ export default function SeoDashboard() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-slate-900 text-white">
+                <Card className="bg-slate-900 text-white border-slate-800 shadow-sm">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm font-semibold uppercase text-slate-400 tracking-wider">Matière éditoriale</CardTitle>
                   </CardHeader>
@@ -632,8 +877,7 @@ export default function SeoDashboard() {
                 </Card>
               </div>
 
-              {/* Recommendations list */}
-              <div className="space-y-4">
+              <div className="space-y-4 animate-fade-in">
                 <h3 className="text-lg font-bold text-slate-900">Plan d'action prioritaire</h3>
                 
                 {auditData.recommendations.map((rec) => (

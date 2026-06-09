@@ -141,7 +141,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
             </div>
 
             {activeTab === "seo" ? (
-                <SeoDashboard />
+                <SeoDashboard experts={users.filter(u => u.expert).map(u => u.expert!)} />
             ) : (
                 <>
                     <div className="grid gap-4 md:grid-cols-4">
