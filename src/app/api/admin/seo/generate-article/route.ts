@@ -19,10 +19,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Paramètres manquants (keyword, city, expertId)" }, { status: 400 });
     }
 
-    // Fetch the expert to link the article and get company name
-    const expert = await prisma.expert.findUnique({
-      where: { id: expertId },
+    // Fetch the platform expert to link the article (always publish under gainable-fr)
+    let expert = await prisma.expert.findFirst({
+      where: { slug: "gainable-fr" }
     });
+
+    if (!expert) {
+      // Fallback to other platform profiles or explicitly passed expertId
+      expert = await prisma.expert.findFirst({
+        where: { slug: { in: ["gainable-redaction", "redaction-gainable"] } }
+      }) || await prisma.expert.findUnique({
+        where: { id: expertId },
+      }) || await prisma.expert.findFirst();
+    }
 
     if (!expert) {
       return NextResponse.json({ message: "Expert introuvable" }, { status: 404 });
@@ -106,7 +115,8 @@ export async function POST(req: Request) {
         slug: article.slug,
         status: article.status,
         targetCity: article.targetCity,
-        expertName: expert.nom_entreprise
+        expertName: expert.nom_entreprise,
+        expertSlug: expert.slug
       }
     });
   } catch (error: any) {

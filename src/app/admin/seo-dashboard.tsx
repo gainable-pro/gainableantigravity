@@ -277,6 +277,17 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
       .catch(err => console.error("Error reading competitors:", err));
   }, []);
 
+  useEffect(() => {
+    if (experts && experts.length > 0) {
+      const gainableFr = experts.find(e => e.slug === "gainable-fr" || e.slug === "gainable-redaction" || e.slug === "redaction-gainable" || e.slug.includes("gainable"));
+      if (gainableFr) {
+        setGenExpertId(gainableFr.id);
+      } else if (experts.length > 0) {
+        setGenExpertId(experts[0].id);
+      }
+    }
+  }, [experts]);
+
   const triggerCrawl = async () => {
     setIsCrawling(true);
     setCrawlLogs([]);
@@ -859,19 +870,25 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700">Associer au Profil de l'Expert (Auteur & Ancre E-E-A-T)</label>
+                    <label className="text-xs font-bold text-slate-700">Auteur de l'Article (E-E-A-T)</label>
                     <select
                       value={genExpertId}
                       onChange={(e) => setGenExpertId(e.target.value)}
                       className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
                       required
                     >
-                      <option value="">-- Sélectionner un artisan --</option>
-                      {experts.map((exp) => (
+                      {experts.filter(e => e.slug === "gainable-fr" || e.slug === "gainable-redaction" || e.slug === "redaction-gainable" || e.slug.includes("gainable")).map((exp) => (
                         <option key={exp.id} value={exp.id}>
-                          {exp.nom_entreprise} ({exp.ville})
+                          {exp.nom_entreprise} (Plateforme)
                         </option>
                       ))}
+                      {experts.filter(e => e.slug === "gainable-fr" || e.slug === "gainable-redaction" || e.slug === "redaction-gainable" || e.slug.includes("gainable")).length === 0 && (
+                        experts.map((exp) => (
+                          <option key={exp.id} value={exp.id}>
+                            {exp.nom_entreprise} ({exp.ville})
+                          </option>
+                        ))
+                      )}
                     </select>
                   </div>
 
@@ -903,7 +920,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                     </div>
                     <div className="text-xs space-y-1.5 text-slate-700">
                       <div><span className="font-bold">Titre :</span> {generatedResult.title}</div>
-                      <div><span className="font-bold">Slug URL :</span> <code className="bg-white border px-1.5 py-0.5 rounded text-indigo-700 font-mono">/entreprise/{generatedResult.slug}</code></div>
+                      <div><span className="font-bold">Slug URL :</span> <code className="bg-white border px-1.5 py-0.5 rounded text-indigo-700 font-mono">/entreprise/{generatedResult.expertSlug || 'gainable-fr'}/articles/{generatedResult.slug}</code></div>
                       <div><span className="font-bold">Auteur :</span> {generatedResult.expertName}</div>
                       <div><span className="font-bold">Statut :</span> <Badge className="bg-amber-500 text-white text-[10px] ml-1">{generatedResult.status}</Badge></div>
                     </div>

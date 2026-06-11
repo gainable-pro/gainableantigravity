@@ -91,7 +91,7 @@ export async function GET(req: Request) {
         // 4. Envoi de l'aperçu par Email (Resend)
         try {
             await resend.emails.send({
-                from: "Gainable IA <onboarding@resend.dev>",
+                from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
                 to: "contact@gainable.fr",
                 subject: `🚀 Aperçu Marketing IA : ${theme.theme}`,
                 html: `
