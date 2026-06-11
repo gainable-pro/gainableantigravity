@@ -33,6 +33,10 @@ export default function ArtisanSeoPage() {
   // Selected competitor to compare on chart
   const [comparedCompetitor, setComparedCompetitor] = useState("maclem.fr");
 
+  // Real slug of the expert profile on Gainable.fr
+  const [expertSlug, setExpertSlug] = useState("climatisation-pompe-a-chaleur-paris-top-climatisation-9972");
+  const [publishedArticlesCount, setPublishedArticlesCount] = useState(0);
+
   // Hover tracking for chart
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [mouseCoords, setMouseCoords] = useState<{ x: number; y: number } | null>(null);
@@ -57,9 +61,25 @@ export default function ArtisanSeoPage() {
         if (data.ville) {
           setTargetCity(data.ville);
         }
+        if (data.slug) {
+          setExpertSlug(data.slug);
+        }
         const initialUrl = data.site_web || "mon-site-artisan.fr";
         triggerInitialAudit(initialUrl, data.ville || "Paris");
         setProfileLoaded(true);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
+  // Fetch actual published articles count for live sitemap page count
+  useEffect(() => {
+    fetch("/api/dashboard/articles")
+      .then(res => res.json())
+      .then(data => {
+        if (data.articles) {
+          const published = data.articles.filter((a: any) => a.status === "PUBLISHED").length;
+          setPublishedArticlesCount(published);
+        }
       })
       .catch(err => console.error(err));
   }, []);
@@ -480,11 +500,11 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {/* Logged in artisan's site */}
+                    {/* Logged in artisan's personal site */}
                     <TableRow className="bg-emerald-50/50 font-bold border-b border-emerald-100">
                       <TableCell className="font-mono text-xs text-emerald-800">
-                        {siteWeb || "Mon Site"} 
-                        <Badge className="ml-1.5 bg-emerald-600 text-white text-[9px] px-1 py-0 select-none">Moi</Badge>
+                        {siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "mon-site-perso.fr"} 
+                        <Badge className="ml-1.5 bg-emerald-600 text-white text-[9px] px-1 py-0 select-none">Moi (Site Perso)</Badge>
                       </TableCell>
                       <TableCell className="font-mono text-xs">~ 180 p.</TableCell>
                       <TableCell>
@@ -494,6 +514,20 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                       </TableCell>
                       <TableCell className="text-amber-500 font-mono text-xs">★ 4.8</TableCell>
                       <TableCell className="font-mono text-xs text-indigo-600">12%</TableCell>
+                    </TableRow>
+
+                    {/* Artisan's profile page on Gainable.fr */}
+                    <TableRow className="bg-[#D59B2B]/10 font-bold border-b border-[#D59B2B]/20 animate-fade-in">
+                      <TableCell className="font-mono text-xs text-[#D59B2B]">
+                        gainable.fr/pro/{expertSlug}
+                        <Badge className="ml-1.5 bg-[#D59B2B] text-white text-[9px] px-1 py-0 select-none">Ma Page Gainable</Badge>
+                      </TableCell>
+                      <TableCell className="font-mono text-xs">~ {2 + publishedArticlesCount} p.</TableCell>
+                      <TableCell className="text-emerald-600 font-bold">
+                        {Math.min(88 + publishedArticlesCount * 2, 98)}%
+                      </TableCell>
+                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.8</TableCell>
+                      <TableCell className="font-mono text-xs text-indigo-600">{Math.min(15 + publishedArticlesCount * 3, 60)}%</TableCell>
                     </TableRow>
                     
                     {/* Platform */}
@@ -529,19 +563,19 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
           {/* Audit Score Card */}
           <Card className="bg-slate-900 text-white border-none shadow-sm flex flex-col justify-between p-6">
             <div>
-              <div className="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Mon Score SEO Technique</div>
+              <div className="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2">Diagnostic de Mon Site Personnel</div>
               <div className="text-5xl font-extrabold text-[#D59B2B]">{auditData.score}/100</div>
               <p className="text-xs text-slate-400 mt-3 leading-relaxed">
-                Votre score dépend de l'optimisation des balises méta, de la présence d'en-têtes de sécurité (HSTS/CSP) et de l'intégration d'un chatbot de capture de prospects.
+                Ce score évalue la performance et la sécurité de votre site internet personnel. L'optimisation technique d'un site propre étant complexe, vous pouvez propulser immédiatement votre visibilité locale en publiant des articles de blog sur votre page Gainable.fr.
               </p>
             </div>
 
             {auditData.score < 100 && (
-              <div className="mt-4">
-                <Button asChild className="w-full bg-[#D59B2B] hover:bg-[#B58221] text-slate-950 font-bold text-xs py-2 px-3 rounded flex items-center justify-center gap-1.5 shadow-md transition-all">
+              <div className="mt-4 p-0.5 rounded-lg border border-emerald-500 bg-emerald-950/20 shadow-[0_0_15px_rgba(16,185,129,0.35)] animate-pulse">
+                <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-3 rounded flex items-center justify-center gap-1.5 transition-all">
                   <Link href="/dashboard/articles">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    Augmenter ma visibilité en déposant des articles optimisés SEO
+                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                    Propulser ma visibilité locale (Publier des articles SEO)
                   </Link>
                 </Button>
               </div>
