@@ -258,7 +258,7 @@ export async function GET(req: Request) {
     console.log("[Cron Generate Articles] Generating B2B Pro/Artisan Article...");
 
     // Resolve the platform expert (gainable-fr)
-    let b2bExpert = await prisma.expert.findUnique({
+    let b2bExpert = await prisma.expert.findFirst({
       where: { slug: "gainable-fr" }
     });
     if (!b2bExpert) {
