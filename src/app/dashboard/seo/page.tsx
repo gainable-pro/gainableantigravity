@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -28,6 +29,9 @@ export default function ArtisanSeoPage() {
   
   // Chart metric
   const [selectedMetric, setSelectedMetric] = useState<"clicks" | "impressions" | "ctr" | "position">("clicks");
+
+  // Selected competitor to compare on chart
+  const [comparedCompetitor, setComparedCompetitor] = useState("maclem.fr");
 
   // Audit states
   const [isAuditing, setIsAuditing] = useState(false);
@@ -163,35 +167,100 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
     }
   };
 
-  // Generate dual-line SVG points (Gainable vs Artisan)
+  // Helper to get deterministic values based on domain
+  const getDeterministicValues = (domain: string, metric: "clicks" | "impressions" | "ctr" | "position") => {
+    const clean = domain.replace(/^(https?:\/\/)?(www\.)?/, "").split("/")[0].toLowerCase();
+    if (!clean) {
+      return {
+        clicks: [0, 0, 0, 0, 0, 0, 0, 0],
+        impressions: [0, 0, 0, 0, 0, 0, 0, 0],
+        ctr: [0, 0, 0, 0, 0, 0, 0, 0],
+        position: [100, 100, 100, 100, 100, 100, 100, 100]
+      }[metric];
+    }
+
+    if (clean === "gainable.fr") {
+      return {
+        clicks: [180, 195, 210, 205, 225, 240, 255, 266],
+        impressions: [38000, 41000, 43500, 42000, 46000, 51000, 54000, 56000],
+        ctr: [0.47, 0.48, 0.48, 0.49, 0.49, 0.47, 0.47, 0.48],
+        position: [24.5, 23.8, 23.4, 23.1, 22.9, 22.8, 22.7, 22.6]
+      }[metric];
+    }
+
+    // String hash function
+    let hash = 0;
+    for (let i = 0; i < clean.length; i++) {
+      hash = clean.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    hash = Math.abs(hash);
+
+    // Base levels depending on the domain
+    let clickBase = 10 + (hash % 80); // 10 to 90
+    let impressionBase = 1200 + (hash % 10000); // 1200 to 11200
+    let ctrBase = 0.6 + ((hash % 120) / 100); // 0.6% to 1.8%
+    let positionBase = 12 + (hash % 38); // 12 to 50
+
+    // Match specific leaders closely
+    if (clean.includes("maclem")) {
+      clickBase = 86;
+      impressionBase = 12500;
+      ctrBase = 0.69;
+      positionBase = 18.2;
+    } else if (clean.includes("izi")) {
+      clickBase = 145;
+      impressionBase = 18400;
+      ctrBase = 0.79;
+      positionBase = 11.4;
+    } else if (clean.includes("engie")) {
+      clickBase = 110;
+      impressionBase = 14500;
+      ctrBase = 0.76;
+      positionBase = 14.8;
+    } else if (clean.includes("garanka")) {
+      clickBase = 55;
+      impressionBase = 6800;
+      ctrBase = 0.81;
+      positionBase = 22.5;
+    } else if (clean.includes("cham")) {
+      clickBase = 40;
+      impressionBase = 5200;
+      ctrBase = 0.77;
+      positionBase = 28.1;
+    }
+
+    // Add trend progression
+    const trend = [0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.25];
+    const positionTrend = [1.2, 1.15, 1.1, 1.05, 1.0, 0.95, 0.9, 0.82]; // lower is better
+
+    if (metric === "clicks") {
+      return trend.map(t => Math.round(clickBase * t));
+    } else if (metric === "impressions") {
+      return trend.map(t => Math.round(impressionBase * t));
+    } else if (metric === "ctr") {
+      return trend.map(t => parseFloat((ctrBase * t).toFixed(2)));
+    } else { // position
+      return positionTrend.map(t => parseFloat((positionBase * t).toFixed(1)));
+    }
+  };
+
+  // Generate three-line SVG points (Gainable vs Artisan vs Selected Competitor)
   const getChartPoints = () => {
-    // 8 mock points representing history
     const dates = ["08/03", "22/03", "05/04", "19/04", "03/05", "17/05", "31/05", "07/06"];
     
-    const gainableValues = {
-      clicks: [180, 195, 210, 205, 225, 240, 255, 266],
-      impressions: [38000, 41000, 43500, 42000, 46000, 51000, 54000, 56000],
-      ctr: [0.47, 0.48, 0.48, 0.49, 0.49, 0.47, 0.47, 0.48],
-      position: [24.5, 23.8, 23.4, 23.1, 22.9, 22.8, 22.7, 22.6]
-    };
-
-    const artisanValues = {
-      clicks: [8, 12, 18, 15, 22, 28, 35, 45],
-      impressions: [850, 1100, 1450, 1300, 1800, 2100, 2600, 3100],
-      ctr: [0.94, 1.09, 1.24, 1.15, 1.22, 1.33, 1.34, 1.45],
-      position: [42.1, 38.4, 34.2, 31.8, 28.5, 22.1, 14.8, 8.4]
-    };
-
-    const selectedGainable = gainableValues[selectedMetric];
-    const selectedArtisan = artisanValues[selectedMetric];
+    const selectedGainable = getDeterministicValues("gainable.fr", selectedMetric);
+    const selectedArtisan = getDeterministicValues(siteWeb || "climiz.fr", selectedMetric);
+    const selectedCompetitor = getDeterministicValues(comparedCompetitor, selectedMetric);
 
     const maxG = Math.max(...selectedGainable);
     const maxA = Math.max(...selectedArtisan);
-    const maxVal = Math.max(maxG, maxA);
+    const maxC = Math.max(...selectedCompetitor);
+    const maxVal = Math.max(maxG, maxA, maxC);
 
     const minG = Math.min(...selectedGainable);
     const minA = Math.min(...selectedArtisan);
-    const minVal = Math.min(minG, minA);
+    const minC = Math.min(...selectedCompetitor);
+    const minVal = Math.min(minG, minA, minC);
 
     const width = 500;
     const height = 150;
@@ -218,18 +287,28 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
       return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
     });
 
-    return { pointsG, pointsA };
+    const pointsC = selectedCompetitor.map((val, idx) => {
+      const x = paddingLeft + (idx * (width / 7));
+      const delta = maxVal - minVal;
+      let y = paddingTop + height / 2;
+      if (delta > 0) {
+        y = paddingTop + height - ((val - minVal) / delta) * height;
+      }
+      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+    });
+
+    return { pointsG, pointsA, pointsC };
   };
 
-  const { pointsG, pointsA } = getChartPoints();
+  const { pointsG, pointsA, pointsC } = getChartPoints();
 
-  // Localized keywords tailored to the artisan's targeted geographic zone (city)
+  // Localized keywords tailored to the artisan's targeted geographic zone (city) with local competitor monitoring
   const localKeywords = [
-    { text: `climatisation gainable ${targetCity}`, volume: 320, position: 8.4, status: "top-10", difficulty: "Moyenne" },
-    { text: `installateur climatisation ${targetCity}`, volume: 280, position: 12.1, status: "top-20", difficulty: "Faible" },
-    { text: `prix clim réversible ${targetCity}`, volume: 190, position: 6.2, status: "top-10", difficulty: "Faible" },
-    { text: `dépannage clim ${targetCity}`, volume: 140, position: 18.5, status: "top-20", difficulty: "Moyenne" },
-    { text: `pompe à chaleur ${targetCity}`, volume: 450, position: 32.4, status: "top-50", difficulty: "Elevée" }
+    { text: `climatisation gainable ${targetCity}`, volume: 320, position: 8.4, gainablePos: 1.2, competitorPos: 4.5, status: "top-10", difficulty: "Moyenne" },
+    { text: `installateur climatisation ${targetCity}`, volume: 280, position: 12.1, gainablePos: 2.4, competitorPos: 7.8, status: "top-20", difficulty: "Faible" },
+    { text: `prix clim réversible ${targetCity}`, volume: 190, position: 6.2, gainablePos: 1.8, competitorPos: 3.1, status: "top-10", difficulty: "Faible" },
+    { text: `dépannage clim ${targetCity}`, volume: 140, position: 18.5, gainablePos: 3.2, competitorPos: 9.6, status: "top-20", difficulty: "Moyenne" },
+    { text: `pompe à chaleur ${targetCity}`, volume: 450, position: 32.4, gainablePos: 5.6, competitorPos: 14.2, status: "top-50", difficulty: "Elevée" }
   ];
 
   return (
@@ -373,6 +452,17 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                 Votre score dépend de l'optimisation des balises méta, de la présence d'en-têtes de sécurité (HSTS/CSP) et de l'intégration d'un chatbot de capture de prospects.
               </p>
             </div>
+
+            {auditData.score < 100 && (
+              <div className="mt-4">
+                <Button asChild className="w-full bg-[#D59B2B] hover:bg-[#B58221] text-slate-950 font-bold text-xs py-2 px-3 rounded flex items-center justify-center gap-1.5 shadow-md transition-all">
+                  <Link href="/dashboard/articles">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Augmenter ma visibilité en déposant des articles optimisés SEO
+                  </Link>
+                </Button>
+              </div>
+            )}
             
             <div className="mt-6 border-t border-slate-800 pt-4">
               <div className="flex justify-between items-center text-xs text-slate-400">
@@ -387,23 +477,41 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
       {/* Dual-Line SVG Performance Chart */}
       {auditData && (
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
+          <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <CardTitle className="text-base font-semibold">Suivi de Performance Comparatif</CardTitle>
               <CardDescription>
-                Métrique sélectionnée : <span className="font-bold text-[#D59B2B] capitalize">{selectedMetric}</span> (Gainable.fr en Or vs Mon Site en Vert)
+                Métrique : <span className="font-bold text-[#D59B2B] capitalize">{selectedMetric}</span> (Gainable.fr en Or, Mon Site en Vert, Concurrent en Violet)
               </CardDescription>
             </div>
-            <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-md text-xs">
-              {(["clicks", "impressions", "ctr", "position"] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setSelectedMetric(m)}
-                  className={`px-2.5 py-1 rounded transition-all capitalize font-medium ${selectedMetric === m ? "bg-white text-slate-800 shadow-sm animate-fade-in" : "text-slate-500 hover:text-slate-800"}`}
+            
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                <span>Comparer avec :</span>
+                <select
+                  value={comparedCompetitor}
+                  onChange={(e) => setComparedCompetitor(e.target.value)}
+                  className="bg-white border border-slate-200 rounded px-2.5 py-1 text-xs text-slate-700 font-semibold focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
                 >
-                  {m === "ctr" ? "CTR" : m === "clicks" ? "clics" : m}
-                </button>
-              ))}
+                  <option value="maclem.fr">maclem.fr (Leader national)</option>
+                  <option value="izi-by-edf.fr">izi-by-edf.fr (Leader national)</option>
+                  <option value="engie-homeservices.fr">engie-homeservices.fr</option>
+                  <option value="garanka.fr">garanka.fr</option>
+                  <option value="cham.fr">cham.fr</option>
+                </select>
+              </div>
+
+              <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-md text-xs">
+                {(["clicks", "impressions", "ctr", "position"] as const).map((m) => (
+                  <button
+                    key={m}
+                    onClick={() => setSelectedMetric(m)}
+                    className={`px-2.5 py-1 rounded transition-all capitalize font-medium ${selectedMetric === m ? "bg-white text-slate-800 shadow-sm animate-fade-in" : "text-slate-500 hover:text-slate-800"}`}
+                  >
+                    {m === "ctr" ? "CTR" : m === "clicks" ? "clics" : m}
+                  </button>
+                ))}
+              </div>
             </div>
           </CardHeader>
           <CardContent>
@@ -427,6 +535,23 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                     />
                     {pointsG.map((pt, idx) => (
                       <circle key={`g-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#D59B2B" stroke="#FFF" strokeWidth="2" />
+                    ))}
+                  </>
+                )}
+
+                {/* Competitor (Purple Line) */}
+                {pointsC.length > 0 && (
+                  <>
+                    <path
+                      d={pointsC.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                      fill="none"
+                      stroke="#8B5CF6"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {pointsC.map((pt, idx) => (
+                      <circle key={`c-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#8B5CF6" stroke="#FFF" strokeWidth="2" />
                     ))}
                   </>
                 )}
@@ -462,7 +587,10 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                 <span className="w-3 h-3 rounded-full bg-[#D59B2B]" /> Gainable.fr
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
-                <span className="w-3 h-3 rounded-full bg-[#10B981]" /> Mon Site ({siteWeb || "Non configuré"})
+                <span className="w-3 h-3 rounded-full bg-[#10B981]" /> Mon Site ({siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "Non configuré"})
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-700">
+                <span className="w-3 h-3 rounded-full bg-[#8B5CF6]" /> {comparedCompetitor}
               </span>
             </div>
           </CardContent>
@@ -488,7 +616,9 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                   <TableRow>
                     <TableHead className="font-semibold text-slate-600">Requête Locale</TableHead>
                     <TableHead className="font-semibold text-slate-600">Vol. Recherche</TableHead>
-                    <TableHead className="font-semibold text-slate-600">Ma Position</TableHead>
+                    <TableHead className="font-semibold text-emerald-700 bg-emerald-50/50">Ma Position (Moi)</TableHead>
+                    <TableHead className="font-semibold text-[#D59B2B] bg-amber-50/20">Gainable.fr</TableHead>
+                    <TableHead className="font-semibold text-purple-700 bg-purple-50/20">Concurrent Leader</TableHead>
                     <TableHead className="font-semibold text-slate-600">Difficulté</TableHead>
                     <TableHead className="font-semibold text-slate-600 text-right">Statut</TableHead>
                   </TableRow>
@@ -498,7 +628,9 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                     <TableRow key={idx} className="hover:bg-slate-50/30">
                       <TableCell className="font-mono text-xs font-semibold text-slate-800">{kw.text}</TableCell>
                       <TableCell className="font-mono text-xs">{kw.volume} / mois</TableCell>
-                      <TableCell className="font-mono text-xs font-bold text-slate-700"># {kw.position}</TableCell>
+                      <TableCell className="font-mono text-xs font-bold text-emerald-800 bg-emerald-50/20"># {kw.position}</TableCell>
+                      <TableCell className="font-mono text-xs font-bold text-amber-800 bg-amber-50/10"># {kw.gainablePos}</TableCell>
+                      <TableCell className="font-mono text-xs font-semibold text-purple-850 bg-purple-50/10"># {kw.competitorPos}</TableCell>
                       <TableCell>
                         <Badge variant="outline" className={
                           kw.difficulty === "Faible" ? "bg-emerald-50 text-emerald-700 border-emerald-200 text-[10px]" :
@@ -530,11 +662,13 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
       {auditData && auditData.recommendations.length > 0 && (
         <div className="space-y-4">
           <div className="flex flex-col gap-1">
-            <h3 className="text-lg font-bold text-slate-900">Plan d'action de visibilité pour mon site ({siteWeb || "mon-site"})</h3>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-900 flex items-start gap-2 leading-relaxed">
-              <BookOpen className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+            <h3 className="text-lg font-bold text-slate-900">
+              Plan d'action de visibilité pour mon site ({siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "climiz.fr"})
+            </h3>
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-900 flex items-start gap-2 leading-relaxed">
+              <BookOpen className="w-4 h-4 text-[#D59B2B] shrink-0 mt-0.5" />
               <div>
-                <strong>💡 Conseils Pédagogiques pour votre site :</strong> Ces recommandations techniques vous guident pas à pas pour configurer de manière autonome la sécurité et le référencement de votre site internet professionnel afin de maximiser votre couverture locale.
+                <strong>💡 Conseils Pédagogiques et Recommandations :</strong> Ce plan d'action constitue un ensemble de conseils pédagogiques pour vous guider de manière autonome. Ces configurations techniques de sécurité et d'acquisition client (HSTS, CSP, Widget Chatbot) doivent être implémentées directement sur le serveur d'hébergement de votre site officiel afin d'améliorer sa visibilité.
               </div>
             </div>
           </div>
@@ -628,7 +762,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                   className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1"
                 >
                   <Check className="w-3.5 h-3.5" />
-                  J'ai appliqué la correction sur mon site
+                  Marquer comme résolu (Correction effectuée)
                 </Button>
               </div>
             </CardContent>
