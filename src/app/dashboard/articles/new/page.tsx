@@ -89,10 +89,12 @@ export default function NewArticlePage() {
             // Populate form
             setTitle(data.title || "");
             setSlug(data.slug || slugify(data.title || ""));
-            setSlug(data.slug || slugify(data.title || ""));
             setTargetCity(data.targetCity || "");
             setMetaDesc(data.metaDesc || "");
             setIntroduction(data.introduction || "");
+            if (data.imageUrl) {
+                setMainImage(data.imageUrl);
+            }
 
             // Map sections
             if (data.sections && Array.isArray(data.sections)) {

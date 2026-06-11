@@ -150,36 +150,32 @@ export async function GET(req: Request) {
           const b2cResult = JSON.parse(b2cCompletion.choices[0].message.content || "{}");
 
           if (b2cResult.title && b2cResult.content) {
-            // Generate B2C Image via DALL-E 3
+            // Generate B2C Image via GPT-Image-2
             let b2cImageUrl = null;
             try {
               const b2cImageResponse = await openai.images.generate({
-                model: "dall-e-3",
+                model: "gpt-image-2",
                 prompt: b2cResult.imagePrompt || `A premium photograph of a modern, luxury home interior in ${b2cCity.name}, showing a ducted air conditioning (climatisation gainable) ceiling vent, 1024x1024.`,
-                size: "1024x1024",
-                quality: "standard"
+                size: "1024x1024"
               });
-              const dallEUrl = b2cImageResponse.data?.[0]?.url;
-              if (dallEUrl) {
-                const imageRes = await fetch(dallEUrl);
-                if (imageRes.ok) {
-                  const imageBuffer = Buffer.from(await imageRes.arrayBuffer());
-                  const cleanCityName = slugify(b2cCity.name, { lower: true, strict: true });
-                  const filePath = `articles/b2c_${cleanCityName}_${Date.now()}.png`;
+              const b64Data = b2cImageResponse.data?.[0]?.b64_json;
+              if (b64Data) {
+                const imageBuffer = Buffer.from(b64Data, 'base64');
+                const cleanCityName = slugify(b2cCity.name, { lower: true, strict: true });
+                const filePath = `articles/b2c_${cleanCityName}_${Date.now()}.png`;
 
-                  const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
-                    contentType: 'image/png',
-                    upsert: false
-                  });
+                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                  contentType: 'image/png',
+                  upsert: false
+                });
 
-                  if (!uploadError) {
-                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
-                    b2cImageUrl = publicUrlData.publicUrl;
-                  }
+                if (!uploadError) {
+                  const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                  b2cImageUrl = publicUrlData.publicUrl;
                 }
               }
             } catch (imgErr) {
-              console.error("[Cron B2C Image] DALL-E failed:", imgErr);
+              console.error("[Cron B2C Image] Generation failed:", imgErr);
             }
 
             // Slugify & Unique verify
@@ -328,36 +324,32 @@ export async function GET(req: Request) {
         const b2bResult = JSON.parse(b2bCompletion.choices[0].message.content || "{}");
 
         if (b2bResult.title && b2bResult.content) {
-          // Generate B2B Image via DALL-E 3
+          // Generate B2B Image via GPT-Image-2
           let b2bImageUrl = null;
           try {
             const b2bImageResponse = await openai.images.generate({
-              model: "dall-e-3",
+              model: "gpt-image-2",
               prompt: b2bResult.imagePrompt || `A professional heating engineer working inside a modern commercial office building, tech HVAC style, 1024x1024.`,
-              size: "1024x1024",
-              quality: "standard"
+              size: "1024x1024"
             });
-            const dallEUrl = b2bImageResponse.data?.[0]?.url;
-            if (dallEUrl) {
-              const imageRes = await fetch(dallEUrl);
-              if (imageRes.ok) {
-                const imageBuffer = Buffer.from(await imageRes.arrayBuffer());
-                const cleanKeyword = slugify(b2bKeyword, { lower: true, strict: true }).slice(0, 30);
-                const filePath = `articles/b2b_${cleanKeyword}_${Date.now()}.png`;
+            const b64Data = b2bImageResponse.data?.[0]?.b64_json;
+            if (b64Data) {
+              const imageBuffer = Buffer.from(b64Data, 'base64');
+              const cleanKeyword = slugify(b2bKeyword, { lower: true, strict: true }).slice(0, 30);
+              const filePath = `articles/b2b_${cleanKeyword}_${Date.now()}.png`;
 
-                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
-                  contentType: 'image/png',
-                  upsert: false
-                });
+              const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                contentType: 'image/png',
+                upsert: false
+              });
 
-                if (!uploadError) {
-                  const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
-                  b2bImageUrl = publicUrlData.publicUrl;
-                }
+              if (!uploadError) {
+                const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                b2bImageUrl = publicUrlData.publicUrl;
               }
             }
           } catch (imgErr) {
-            console.error("[Cron B2B Image] DALL-E failed:", imgErr);
+            console.error("[Cron B2B Image] Generation failed:", imgErr);
           }
 
           // Slugify & Unique verify

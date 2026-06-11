@@ -3,6 +3,8 @@ import OpenAI from 'openai';
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { prisma } from "@/lib/prisma";
+import { supabase } from "@/lib/supabase";
+import slugify from "slugify";
 
 
 
@@ -135,6 +137,7 @@ export async function POST(req: Request) {
         - 4 à 6 sections H2 riches (minimum 300 mots par section pour une profondeur sémantique réelle).
         - Intégration naturelle de mots-clés LSI (sémantiquement proches).
         - FAQ de 3 questions expertes et non génériques.
+        - Un prompt pour générer une image réaliste illustrant le contenu.
 
         RETOURNE UNIQUEMENT UN OBJET JSON :
         {
@@ -143,6 +146,7 @@ export async function POST(req: Request) {
             "targetCity": "VILLE_CIBLE_EXTRAITE",
             "metaDesc": "Meta description (max 160 chars)",
             "introduction": "Intro puissante",
+            "imagePrompt": "Un prompt de photo détaillé et réaliste pour GPT-Image-2 (ex: A clean photograph of a modern air conditioning installation...)",
             "sections": [
                 { "title": "H2 Unique", "content": "Corps de texte riche" }
             ],
@@ -173,6 +177,43 @@ export async function POST(req: Request) {
 
         const parsedContent = JSON.parse(content);
         console.log("AI Generation: Content parsed successfully");
+
+        // Generate custom image via GPT-Image-2
+        let imageUrl = "";
+        try {
+            console.log("AI Generation: Starting image generation...");
+            const imagePrompt = parsedContent.imagePrompt || `A professional, clean photograph of a modern HVAC or air conditioning installation in ${parsedContent.targetCity || expert.ville || "France"}, high quality.`;
+            const imageResponse = await openai.images.generate({
+                model: "gpt-image-2",
+                prompt: imagePrompt,
+                size: "1024x1024"
+            });
+            const b64Data = imageResponse.data?.[0]?.b64_json;
+            
+            if (b64Data) {
+                const imageBuffer = Buffer.from(b64Data, 'base64');
+                const cleanCityName = slugify(parsedContent.targetCity || expert.ville || "france", { lower: true, strict: true });
+                const filePath = `articles/dashboard_${cleanCityName}_${Date.now()}.png`;
+
+                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                    contentType: 'image/png',
+                    upsert: false
+                });
+
+                if (!uploadError) {
+                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                    imageUrl = publicUrlData.publicUrl;
+                    console.log("AI Generation: Image uploaded successfully:", imageUrl);
+                } else {
+                    console.error("AI Generation: Supabase upload error:", uploadError);
+                }
+            }
+        } catch (imgErr) {
+            console.error("AI Generation: Image generation failed:", imgErr);
+        }
+
+        // Add imageUrl to the returned payload
+        parsedContent.imageUrl = imageUrl;
 
         return NextResponse.json(parsedContent);
 

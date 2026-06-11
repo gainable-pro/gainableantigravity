@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { cookies } from "next/headers";
 import * as jose from 'jose';
 import OpenAI from "openai";
+import { supabase } from "@/lib/supabase";
 
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
@@ -27,14 +28,32 @@ export async function POST(req: Request) {
         const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
         const response = await openai.images.generate({
-            model: "dall-e-3",
+            model: "gpt-image-2",
             prompt: prompt,
             n: 1,
             size: "1024x1024",
-            quality: "standard",
         });
 
-        const imageUrl = response.data[0].url;
+        const b64Data = response.data?.[0]?.b64_json;
+        if (!b64Data) {
+            return NextResponse.json({ error: "Failed to generate image" }, { status: 500 });
+        }
+
+        const imageBuffer = Buffer.from(b64Data, 'base64');
+        const filePath = `marketing/visual_${Date.now()}.png`;
+
+        const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+            contentType: 'image/png',
+            upsert: false
+        });
+
+        if (uploadError) {
+            console.error("Supabase upload error:", uploadError);
+            return NextResponse.json({ error: "Failed to upload image" }, { status: 500 });
+        }
+
+        const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+        const imageUrl = publicUrlData.publicUrl;
 
         return NextResponse.json({ imageUrl });
 

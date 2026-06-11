@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import OpenAI from "openai";
 import themes from "@/lib/marketing-themes.json";
 import { Resend } from "resend";
+import { supabase } from "@/lib/supabase";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -74,18 +75,34 @@ export async function GET(req: Request) {
 
         const result = JSON.parse(completion.choices[0].message.content || "{}");
 
-        // 3. Génération d'image avec DALL-E 3
+        // 3. Génération d'image avec GPT-Image-2
         let imageUrl = "";
         try {
             const imageResponse = await openai.images.generate({
-                model: "dall-e-3",
+                model: "gpt-image-2",
                 prompt: result.imagePrompt || "A professional HVAC installation in a modern luxury home, high quality, photorealistic",
                 n: 1,
                 size: "1024x1024",
             });
-            imageUrl = imageResponse.data[0].url || "";
+            const b64Data = imageResponse.data?.[0]?.b64_json;
+            if (b64Data) {
+                const imageBuffer = Buffer.from(b64Data, 'base64');
+                const filePath = `marketing/visual_${Date.now()}.png`;
+
+                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                    contentType: 'image/png',
+                    upsert: false
+                });
+
+                if (!uploadError) {
+                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                    imageUrl = publicUrlData.publicUrl;
+                } else {
+                    console.error("Supabase upload error:", uploadError);
+                }
+            }
         } catch (imgError) {
-            console.error("DALL-E Error:", imgError);
+            console.error("GPT-Image-2 Error:", imgError);
         }
 
         // 4. Envoi de l'aperçu par Email (Resend)

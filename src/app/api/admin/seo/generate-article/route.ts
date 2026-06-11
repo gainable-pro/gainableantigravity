@@ -86,36 +86,32 @@ export async function POST(req: Request) {
 
     const result = JSON.parse(completion.choices[0].message.content || "{}");
 
-    // Generate Image via DALL-E 3
+    // Generate Image via GPT-Image-2
     let imageUrl = null;
     try {
       const imageResponse = await openai.images.generate({
-        model: "dall-e-3",
+        model: "gpt-image-2",
         prompt: result.imagePrompt || `A highly detailed, professional photorealistic photograph of a modern ducted air conditioning (climatisation gainable) installation in a luxury house in ${city}, ceiling diffusion vents, 1024x1024.`,
-        size: "1024x1024",
-        quality: "standard"
+        size: "1024x1024"
       });
-      const dallEUrl = imageResponse.data?.[0]?.url;
-      if (dallEUrl) {
-        const imageRes = await fetch(dallEUrl);
-        if (imageRes.ok) {
-          const imageBuffer = Buffer.from(await imageRes.arrayBuffer());
-          const cleanCityName = slugify(city, { lower: true, strict: true });
-          const filePath = `articles/manual_${cleanCityName}_${Date.now()}.png`;
+      const b64Data = imageResponse.data?.[0]?.b64_json;
+      if (b64Data) {
+        const imageBuffer = Buffer.from(b64Data, 'base64');
+        const cleanCityName = slugify(city, { lower: true, strict: true });
+        const filePath = `articles/manual_${cleanCityName}_${Date.now()}.png`;
 
-          const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
-            contentType: 'image/png',
-            upsert: false
-          });
+        const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+          contentType: 'image/png',
+          upsert: false
+        });
 
-          if (!uploadError) {
-            const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
-            imageUrl = publicUrlData.publicUrl;
-          }
+        if (!uploadError) {
+          const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+          imageUrl = publicUrlData.publicUrl;
         }
       }
     } catch (imgErr) {
-      console.error("[Manual Image] DALL-E failed:", imgErr);
+      console.error("[Manual Image] Generation failed:", imgErr);
     }
 
     // Generate a unique slug
