@@ -33,6 +33,10 @@ export default function ArtisanSeoPage() {
   // Selected competitor to compare on chart
   const [comparedCompetitor, setComparedCompetitor] = useState("maclem.fr");
 
+  // Hover tracking for chart
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [mouseCoords, setMouseCoords] = useState<{ x: number; y: number } | null>(null);
+
   // Audit states
   const [isAuditing, setIsAuditing] = useState(false);
   const [auditLogs, setAuditLogs] = useState<string[]>([]);
@@ -167,90 +171,152 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
     }
   };
 
-  // Helper to get deterministic values based on domain
-  const getDeterministicValues = (domain: string, metric: "clicks" | "impressions" | "ctr" | "position") => {
+  // Seedable pseudo-random generator
+  const getNoise = (seed: number) => {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  };
+
+  const generate90DaysData = (domain: string) => {
     const clean = domain.replace(/^(https?:\/\/)?(www\.)?/, "").split("/")[0].toLowerCase();
-    if (!clean) {
-      return {
-        clicks: [0, 0, 0, 0, 0, 0, 0, 0],
-        impressions: [0, 0, 0, 0, 0, 0, 0, 0],
-        ctr: [0, 0, 0, 0, 0, 0, 0, 0],
-        position: [100, 100, 100, 100, 100, 100, 100, 100]
-      }[metric];
-    }
-
-    if (clean === "gainable.fr") {
-      return {
-        clicks: [180, 195, 210, 205, 225, 240, 255, 266],
-        impressions: [38000, 41000, 43500, 42000, 46000, 51000, 54000, 56000],
-        ctr: [0.47, 0.48, 0.48, 0.49, 0.49, 0.47, 0.47, 0.48],
-        position: [24.5, 23.8, 23.4, 23.1, 22.9, 22.8, 22.7, 22.6]
-      }[metric];
-    }
-
-    // String hash function
+    
+    // Hash function to seed the noise
     let hash = 0;
     for (let i = 0; i < clean.length; i++) {
       hash = clean.charCodeAt(i) + ((hash << 5) - hash);
     }
     hash = Math.abs(hash);
 
-    // Base levels depending on the domain
-    let clickBase = 10 + (hash % 80); // 10 to 90
-    let impressionBase = 1200 + (hash % 10000); // 1200 to 11200
-    let ctrBase = 0.6 + ((hash % 120) / 100); // 0.6% to 1.8%
-    let positionBase = 12 + (hash % 38); // 12 to 50
+    // Baseline metrics
+    let clicksBase = 3.0;
+    let impressionsBase = 500;
+    let ctrBase = 0.5;
+    let positionBase = 22.0;
 
-    // Match specific leaders closely
-    if (clean.includes("maclem")) {
-      clickBase = 86;
-      impressionBase = 12500;
+    if (clean === "gainable.fr") {
+      clicksBase = 3.0; // averages around 268 total
+      impressionsBase = 620; // averages around 56k total
+      ctrBase = 0.48;
+      positionBase = 22.6;
+    } else if (clean.includes("maclem")) {
+      clicksBase = 0.95; // ~86 clicks
+      impressionsBase = 140; // ~12k impressions
       ctrBase = 0.69;
       positionBase = 18.2;
     } else if (clean.includes("izi")) {
-      clickBase = 145;
-      impressionBase = 18400;
+      clicksBase = 1.6; // ~145 clicks
+      impressionsBase = 205; // ~18.4k impressions
       ctrBase = 0.79;
       positionBase = 11.4;
     } else if (clean.includes("engie")) {
-      clickBase = 110;
-      impressionBase = 14500;
+      clicksBase = 1.2;
+      impressionsBase = 160;
       ctrBase = 0.76;
       positionBase = 14.8;
     } else if (clean.includes("garanka")) {
-      clickBase = 55;
-      impressionBase = 6800;
+      clicksBase = 0.6;
+      impressionsBase = 75;
       ctrBase = 0.81;
       positionBase = 22.5;
     } else if (clean.includes("cham")) {
-      clickBase = 40;
-      impressionBase = 5200;
+      clicksBase = 0.45;
+      impressionsBase = 58;
       ctrBase = 0.77;
       positionBase = 28.1;
+    } else if (clean.includes("proxiserve")) {
+      clicksBase = 0.8;
+      impressionsBase = 110;
+      ctrBase = 0.72;
+      positionBase = 19.5;
+    } else if (clean.includes("cedeo")) {
+      clicksBase = 0.5;
+      impressionsBase = 65;
+      ctrBase = 0.76;
+      positionBase = 25.4;
+    } else if (clean.includes("clim-assistance")) {
+      clicksBase = 0.7;
+      impressionsBase = 90;
+      ctrBase = 0.78;
+      positionBase = 21.2;
+    } else if (clean.includes("climeden")) {
+      clicksBase = 0.4;
+      impressionsBase = 50;
+      ctrBase = 0.8;
+      positionBase = 31.5;
+    } else if (clean.includes("clim-up")) {
+      clicksBase = 0.35;
+      impressionsBase = 45;
+      ctrBase = 0.78;
+      positionBase = 33.4;
+    } else if (clean.includes("clim-reversible")) {
+      clicksBase = 0.65;
+      impressionsBase = 85;
+      ctrBase = 0.76;
+      positionBase = 23.8;
+    } else if (clean.includes("sorank")) {
+      clicksBase = 1.1;
+      impressionsBase = 135;
+      ctrBase = 0.81;
+      positionBase = 15.6;
+    } else {
+      // General artisan site
+      clicksBase = 0.2 + (hash % 8) / 10; // 0.2 to 0.9 clicks/day
+      impressionsBase = 15 + (hash % 60); // 15 to 75 impressions/day
+      ctrBase = 0.8 + (hash % 80) / 100; // 0.8% to 1.6%
+      positionBase = 18 + (hash % 40); // 18 to 58 position
     }
 
-    // Add trend progression
-    const trend = [0.85, 0.9, 0.95, 1.0, 1.05, 1.1, 1.15, 1.25];
-    const positionTrend = [1.2, 1.15, 1.1, 1.05, 1.0, 0.95, 0.9, 0.82]; // lower is better
+    const points = [];
+    const startDate = new Date(2026, 2, 10); // March 10, 2026
 
-    if (metric === "clicks") {
-      return trend.map(t => Math.round(clickBase * t));
-    } else if (metric === "impressions") {
-      return trend.map(t => Math.round(impressionBase * t));
-    } else if (metric === "ctr") {
-      return trend.map(t => parseFloat((ctrBase * t).toFixed(2)));
-    } else { // position
-      return positionTrend.map(t => parseFloat((positionBase * t).toFixed(1)));
+    // Generate 90 daily points
+    for (let i = 0; i < 90; i++) {
+      const currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + i);
+
+      // Noise factor
+      const noise = getNoise(hash + i); // 0 to 1
+      const noiseFactor = 0.7 + noise * 0.6; // 0.7 to 1.3
+      
+      // Growth trend factor over 90 days
+      const growthTrend = 0.85 + (i / 89) * 0.4; // 0.85 to 1.25
+      const positionTrend = 1.15 - (i / 89) * 0.3; // improving position = values shrink
+
+      let clicks = Math.round(clicksBase * growthTrend * noiseFactor);
+      if (clicks < 0) clicks = 0;
+
+      let impressions = Math.round(impressionsBase * growthTrend * noiseFactor);
+      if (impressions < 0) impressions = 0;
+
+      let ctr = parseFloat((ctrBase * growthTrend * noiseFactor).toFixed(2));
+      if (ctr < 0) ctr = 0.05;
+
+      let position = parseFloat((positionBase * positionTrend * noiseFactor).toFixed(1));
+      if (position < 1.0) position = 1.0;
+
+      points.push({
+        date: currentDate,
+        dateLabel: currentDate.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" }),
+        shortDateLabel: currentDate.toLocaleDateString("fr-FR", { day: "numeric", month: "numeric" }),
+        clicks,
+        impressions,
+        ctr,
+        position
+      });
     }
+
+    return points;
   };
 
   // Generate three-line SVG points (Gainable vs Artisan vs Selected Competitor)
   const getChartPoints = () => {
-    const dates = ["08/03", "22/03", "05/04", "19/04", "03/05", "17/05", "31/05", "07/06"];
-    
-    const selectedGainable = getDeterministicValues("gainable.fr", selectedMetric);
-    const selectedArtisan = getDeterministicValues(siteWeb || "climiz.fr", selectedMetric);
-    const selectedCompetitor = getDeterministicValues(comparedCompetitor, selectedMetric);
+    const gainableDailyData = generate90DaysData("gainable.fr");
+    const artisanDailyData = generate90DaysData(siteWeb || "climiz.fr");
+    const competitorDailyData = generate90DaysData(comparedCompetitor);
+
+    const selectedGainable = gainableDailyData.map(pt => pt[selectedMetric]);
+    const selectedArtisan = artisanDailyData.map(pt => pt[selectedMetric]);
+    const selectedCompetitor = competitorDailyData.map(pt => pt[selectedMetric]);
 
     const maxG = Math.max(...selectedGainable);
     const maxA = Math.max(...selectedArtisan);
@@ -262,45 +328,62 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
     const minC = Math.min(...selectedCompetitor);
     const minVal = Math.min(minG, minA, minC);
 
+    const delta = maxVal - minVal || 1;
+
     const width = 500;
     const height = 150;
     const paddingLeft = 50;
     const paddingTop = 40;
 
+    const isPosition = selectedMetric === "position";
+
     const pointsG = selectedGainable.map((val, idx) => {
-      const x = paddingLeft + (idx * (width / 7));
-      const delta = maxVal - minVal;
-      let y = paddingTop + height / 2;
-      if (delta > 0) {
+      const x = paddingLeft + (idx * (width / 89));
+      let y;
+      if (isPosition) {
+        y = paddingTop + ((val - minVal) / delta) * height;
+      } else {
         y = paddingTop + height - ((val - minVal) / delta) * height;
       }
-      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+      return { x: Math.round(x), y: Math.round(y), label: gainableDailyData[idx].shortDateLabel, dateLabel: gainableDailyData[idx].dateLabel, val };
     });
 
     const pointsA = selectedArtisan.map((val, idx) => {
-      const x = paddingLeft + (idx * (width / 7));
-      const delta = maxVal - minVal;
-      let y = paddingTop + height / 2;
-      if (delta > 0) {
+      const x = paddingLeft + (idx * (width / 89));
+      let y;
+      if (isPosition) {
+        y = paddingTop + ((val - minVal) / delta) * height;
+      } else {
         y = paddingTop + height - ((val - minVal) / delta) * height;
       }
-      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+      return { x: Math.round(x), y: Math.round(y), label: artisanDailyData[idx].shortDateLabel, dateLabel: artisanDailyData[idx].dateLabel, val };
     });
 
     const pointsC = selectedCompetitor.map((val, idx) => {
-      const x = paddingLeft + (idx * (width / 7));
-      const delta = maxVal - minVal;
-      let y = paddingTop + height / 2;
-      if (delta > 0) {
+      const x = paddingLeft + (idx * (width / 89));
+      let y;
+      if (isPosition) {
+        y = paddingTop + ((val - minVal) / delta) * height;
+      } else {
         y = paddingTop + height - ((val - minVal) / delta) * height;
       }
-      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+      return { x: Math.round(x), y: Math.round(y), label: competitorDailyData[idx].shortDateLabel, dateLabel: competitorDailyData[idx].dateLabel, val };
     });
 
-    return { pointsG, pointsA, pointsC };
+    // Totals for cards
+    const totalClicks = artisanDailyData.reduce((acc, curr) => acc + curr.clicks, 0);
+    const totalImpressions = artisanDailyData.reduce((acc, curr) => acc + curr.impressions, 0);
+    const avgCtr = totalImpressions > 0 ? parseFloat(((totalClicks / totalImpressions) * 100).toFixed(2)) : 1.45;
+    const avgPosition = parseFloat((artisanDailyData.reduce((acc, curr) => acc + curr.position, 0) / 90).toFixed(1));
+
+    return { pointsG, pointsA, pointsC, totalClicks, totalImpressions, avgCtr, avgPosition, gainableDailyData, artisanDailyData, competitorDailyData };
   };
 
-  const { pointsG, pointsA, pointsC } = getChartPoints();
+  const {
+    pointsG, pointsA, pointsC,
+    totalClicks, totalImpressions, avgCtr, avgPosition,
+    gainableDailyData, artisanDailyData, competitorDailyData
+  } = getChartPoints();
 
   // Localized keywords tailored to the artisan's targeted geographic zone (city) with local competitor monitoring
   const localKeywords = [
@@ -474,123 +557,326 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
         </div>
       )}
 
-      {/* Dual-Line SVG Performance Chart */}
+      {/* Google Search Console style Performance Chart */}
       {auditData && (
-        <Card>
-          <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <Card className="border border-slate-200 shadow-sm overflow-hidden bg-white">
+          <CardHeader className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-100 bg-slate-50/50">
             <div>
-              <CardTitle className="text-base font-semibold">Suivi de Performance Comparatif</CardTitle>
-              <CardDescription>
-                Métrique : <span className="font-bold text-[#D59B2B] capitalize">{selectedMetric}</span> (Gainable.fr en Or, Mon Site en Vert, Concurrent en Violet)
+              <CardTitle className="text-base font-semibold text-slate-800">Suivi de Performance Comparatif (Google Search Console)</CardTitle>
+              <CardDescription className="text-slate-500 text-xs">
+                Métrique active : <span className="font-bold text-slate-700 capitalize">{selectedMetric === "clicks" ? "Clics" : selectedMetric === "ctr" ? "CTR" : selectedMetric}</span>
               </CardDescription>
             </div>
             
-            <div className="flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
-                <span>Comparer avec :</span>
-                <select
-                  value={comparedCompetitor}
-                  onChange={(e) => setComparedCompetitor(e.target.value)}
-                  className="bg-white border border-slate-200 rounded px-2.5 py-1 text-xs text-slate-700 font-semibold focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
-                >
-                  <option value="maclem.fr">maclem.fr (Leader national)</option>
-                  <option value="izi-by-edf.fr">izi-by-edf.fr (Leader national)</option>
-                  <option value="engie-homeservices.fr">engie-homeservices.fr</option>
-                  <option value="garanka.fr">garanka.fr</option>
-                  <option value="cham.fr">cham.fr</option>
-                </select>
-              </div>
-
-              <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-md text-xs">
-                {(["clicks", "impressions", "ctr", "position"] as const).map((m) => (
-                  <button
-                    key={m}
-                    onClick={() => setSelectedMetric(m)}
-                    className={`px-2.5 py-1 rounded transition-all capitalize font-medium ${selectedMetric === m ? "bg-white text-slate-800 shadow-sm animate-fade-in" : "text-slate-500 hover:text-slate-800"}`}
-                  >
-                    {m === "ctr" ? "CTR" : m === "clicks" ? "clics" : m}
-                  </button>
-                ))}
-              </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-semibold text-slate-500">Comparer avec :</span>
+              <select
+                value={comparedCompetitor}
+                onChange={(e) => setComparedCompetitor(e.target.value)}
+                className="bg-white border border-slate-200 rounded px-2.5 py-1 text-xs text-slate-700 font-bold focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+              >
+                <option value="maclem.fr">maclem.fr (Leader national)</option>
+                <option value="izi-by-edf.fr">izi-by-edf.fr (Leader national)</option>
+                <option value="engie-homeservices.fr">engie-homeservices.fr</option>
+                <option value="garanka.fr">garanka.fr</option>
+                <option value="cham.fr">cham.fr</option>
+                <option value="proxiserve.fr">proxiserve.fr</option>
+                <option value="cedeo.fr">cedeo.fr</option>
+                <option value="clim-assistance.fr">clim-assistance.fr</option>
+                <option value="climeden.com">climeden.com</option>
+                <option value="clim-up.fr">clim-up.fr</option>
+                <option value="clim-reversible.fr">clim-reversible.fr</option>
+                <option value="sorank.com">sorank.com (SoRank)</option>
+              </select>
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="relative h-64 w-full bg-slate-50 border rounded-lg overflow-hidden flex flex-col justify-between p-4">
-              <svg className="absolute inset-0 w-full h-full p-6">
-                {/* Grid Lines */}
-                <line x1="5%" y1="20%" x2="95%" y2="20%" stroke="#E2E8F0" strokeDasharray="4" />
-                <line x1="5%" y1="50%" x2="95%" y2="50%" stroke="#E2E8F0" strokeDasharray="4" />
-                <line x1="5%" y1="80%" x2="95%" y2="80%" stroke="#E2E8F0" strokeDasharray="4" />
+
+          <CardContent className="p-4 md:p-6 space-y-4">
+            {/* GSC Clickable Metric Tabs */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 select-none">
+              {/* Clics Card */}
+              <div
+                onClick={() => setSelectedMetric("clicks")}
+                className={`cursor-pointer p-3.5 rounded-lg border-t-4 transition-all flex flex-col justify-between ${
+                  selectedMetric === "clicks"
+                    ? "bg-[#E8F0FE] border-[#1A73E8] shadow-sm"
+                    : "bg-white border-slate-200 border-t-slate-300 hover:bg-slate-50/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="checkbox"
+                    checked={selectedMetric === "clicks"}
+                    readOnly
+                    className="w-3.5 h-3.5 rounded text-[#1A73E8] focus:ring-0 pointer-events-none accent-[#1A73E8]"
+                  />
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Clics totaux</span>
+                </div>
+                <div className={`text-2xl font-extrabold tracking-tight mt-1.5 ${selectedMetric === "clicks" ? "text-[#1A73E8]" : "text-slate-800"}`}>
+                  {totalClicks}
+                </div>
+              </div>
+
+              {/* Impressions Card */}
+              <div
+                onClick={() => setSelectedMetric("impressions")}
+                className={`cursor-pointer p-3.5 rounded-lg border-t-4 transition-all flex flex-col justify-between ${
+                  selectedMetric === "impressions"
+                    ? "bg-[#F3E5F5] border-[#7B1FA2] shadow-sm"
+                    : "bg-white border-slate-200 border-t-slate-300 hover:bg-slate-50/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="checkbox"
+                    checked={selectedMetric === "impressions"}
+                    readOnly
+                    className="w-3.5 h-3.5 rounded text-[#7B1FA2] focus:ring-0 pointer-events-none accent-[#7B1FA2]"
+                  />
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Impressions</span>
+                </div>
+                <div className={`text-2xl font-extrabold tracking-tight mt-1.5 ${selectedMetric === "impressions" ? "text-[#7B1FA2]" : "text-slate-800"}`}>
+                  {totalImpressions >= 1000 ? `${(totalImpressions / 1000).toFixed(1)} k` : totalImpressions}
+                </div>
+              </div>
+
+              {/* CTR Card */}
+              <div
+                onClick={() => setSelectedMetric("ctr")}
+                className={`cursor-pointer p-3.5 rounded-lg border-t-4 transition-all flex flex-col justify-between ${
+                  selectedMetric === "ctr"
+                    ? "bg-[#E8F5E9] border-[#0D652D] shadow-sm"
+                    : "bg-white border-slate-200 border-t-slate-300 hover:bg-slate-50/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="checkbox"
+                    checked={selectedMetric === "ctr"}
+                    readOnly
+                    className="w-3.5 h-3.5 rounded text-[#0D652D] focus:ring-0 pointer-events-none accent-[#0D652D]"
+                  />
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">CTR moyen</span>
+                </div>
+                <div className={`text-2xl font-extrabold tracking-tight mt-1.5 ${selectedMetric === "ctr" ? "text-[#0D652D]" : "text-slate-800"}`}>
+                  {avgCtr} %
+                </div>
+              </div>
+
+              {/* Position Card */}
+              <div
+                onClick={() => setSelectedMetric("position")}
+                className={`cursor-pointer p-3.5 rounded-lg border-t-4 transition-all flex flex-col justify-between ${
+                  selectedMetric === "position"
+                    ? "bg-[#FFF3E0] border-[#E65100] shadow-sm"
+                    : "bg-white border-slate-200 border-t-slate-300 hover:bg-slate-50/50"
+                }`}
+              >
+                <div className="flex items-center gap-1.5">
+                  <input
+                    type="checkbox"
+                    checked={selectedMetric === "position"}
+                    readOnly
+                    className="w-3.5 h-3.5 rounded text-[#E65100] focus:ring-0 pointer-events-none accent-[#E65100]"
+                  />
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Position moyenne</span>
+                </div>
+                <div className={`text-2xl font-extrabold tracking-tight mt-1.5 ${selectedMetric === "position" ? "text-[#E65100]" : "text-slate-800"}`}>
+                  {avgPosition}
+                </div>
+              </div>
+            </div>
+
+            {/* High-Resolution SVG Chart */}
+            <div className="relative h-72 w-full bg-slate-50 border rounded-lg p-2 md:p-4 shadow-inner">
+              <svg
+                viewBox="0 0 600 220"
+                className="w-full h-full cursor-crosshair overflow-visible select-none"
+                onMouseMove={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const mouseX = e.clientX - rect.left;
+                  const mouseY = e.clientY - rect.top;
+                  
+                  const svgX = (mouseX / rect.width) * 600;
+                  const svgY = (mouseY / rect.height) * 220;
+
+                  const index = Math.round((svgX - 50) / (500 / 89));
+                  if (index >= 0 && index < 90) {
+                    setHoveredIndex(index);
+                    setMouseCoords({ x: svgX, y: svgY });
+                  } else {
+                    setHoveredIndex(null);
+                    setMouseCoords(null);
+                  }
+                }}
+                onMouseLeave={() => {
+                  setHoveredIndex(null);
+                  setMouseCoords(null);
+                }}
+              >
+                {/* Horizontal Grid lines */}
+                <line x1="50" y1="40" x2="550" y2="40" stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3" />
+                <line x1="50" y1="115" x2="550" y2="115" stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3" />
+                <line x1="50" y1="190" x2="550" y2="190" stroke="#CBD5E1" strokeWidth="1.5" />
 
                 {/* Gainable.fr (Gold Line) */}
                 {pointsG.length > 0 && (
-                  <>
-                    <path
-                      d={pointsG.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
-                      fill="none"
-                      stroke="#D59B2B"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    {pointsG.map((pt, idx) => (
-                      <circle key={`g-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#D59B2B" stroke="#FFF" strokeWidth="2" />
-                    ))}
-                  </>
+                  <path
+                    d={pointsG.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                    fill="none"
+                    stroke="#D59B2B"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 )}
 
                 {/* Competitor (Purple Line) */}
                 {pointsC.length > 0 && (
-                  <>
-                    <path
-                      d={pointsC.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
-                      fill="none"
-                      stroke="#8B5CF6"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    {pointsC.map((pt, idx) => (
-                      <circle key={`c-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#8B5CF6" stroke="#FFF" strokeWidth="2" />
-                    ))}
-                  </>
+                  <path
+                    d={pointsC.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                    fill="none"
+                    stroke="#8B5CF6"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 )}
 
                 {/* Artisan Site (Green Line) */}
                 {pointsA.length > 0 && (
+                  <path
+                    d={pointsA.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                    fill="none"
+                    stroke="#10B981"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                )}
+
+                {/* Vertical Hover Guidelines */}
+                {hoveredIndex !== null && (
                   <>
-                    <path
-                      d={pointsA.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
-                      fill="none"
-                      stroke="#10B981"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <line
+                      x1={50 + hoveredIndex * (500 / 89)}
+                      y1="40"
+                      x2={50 + hoveredIndex * (500 / 89)}
+                      y2="190"
+                      stroke="#94A3B8"
+                      strokeWidth="1.2"
+                      strokeDasharray="4"
                     />
-                    {pointsA.map((pt, idx) => (
-                      <circle key={`a-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#10B981" stroke="#FFF" strokeWidth="2" />
-                    ))}
+                    
+                    {/* Highlighted dots for hover */}
+                    <circle cx={pointsG[hoveredIndex].x} cy={pointsG[hoveredIndex].y} r="4.5" fill="#D59B2B" stroke="#FFF" strokeWidth="1.5" />
+                    <circle cx={pointsC[hoveredIndex].x} cy={pointsC[hoveredIndex].y} r="4.5" fill="#8B5CF6" stroke="#FFF" strokeWidth="1.5" />
+                    <circle cx={pointsA[hoveredIndex].x} cy={pointsA[hoveredIndex].y} r="4.5" fill="#10B981" stroke="#FFF" strokeWidth="1.5" />
                   </>
                 )}
+
+                {/* X Axis Date labels (Every 15 days) */}
+                {[0, 15, 30, 45, 60, 75, 89].map((idx) => {
+                  const pt = pointsG[idx];
+                  if (!pt) return null;
+                  return (
+                    <text
+                      key={idx}
+                      x={pt.x}
+                      y="208"
+                      textAnchor="middle"
+                      fontSize="9"
+                      fontWeight="bold"
+                      fill="#94A3B8"
+                      className="font-mono select-none"
+                    >
+                      {pt.label}
+                    </text>
+                  );
+                })}
               </svg>
 
-              <div className="mt-auto w-full flex justify-between px-6 text-[10px] text-slate-400 font-mono select-none z-10">
-                {pointsG.map((p, idx) => (
-                  <span key={idx}>{p.label}</span>
-                ))}
-              </div>
+              {/* GSC Interactive Tooltip Card Overlay */}
+              {hoveredIndex !== null && mouseCoords !== null && (
+                <div
+                  className="absolute z-30 bg-white border border-slate-200 rounded-lg p-3 shadow-xl text-xs space-y-1.5 pointer-events-none select-none font-sans min-w-[170px]"
+                  style={{
+                    left: hoveredIndex > 45 ? `${(mouseCoords.x / 600) * 100 - 32}%` : `${(mouseCoords.x / 600) * 100 + 3}%`,
+                    top: `${(mouseCoords.y / 220) * 100 - 10}%`,
+                    transform: "translateY(-50%)"
+                  }}
+                >
+                  <div className="font-bold text-slate-700 border-b pb-1 text-[10px] uppercase tracking-wide">
+                    {gainableDailyData[hoveredIndex].dateLabel}
+                  </div>
+                  
+                  {/* Gainable details */}
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-1.5 font-medium text-slate-500">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#D59B2B]" />
+                      Gainable.fr
+                    </span>
+                    <span className="font-mono font-bold text-slate-800">
+                      {selectedMetric === "clicks"
+                        ? `${gainableDailyData[hoveredIndex].clicks} clic${gainableDailyData[hoveredIndex].clicks > 1 ? "s" : ""}`
+                        : selectedMetric === "impressions"
+                        ? `${gainableDailyData[hoveredIndex].impressions} imp.`
+                        : selectedMetric === "ctr"
+                        ? `${gainableDailyData[hoveredIndex].ctr} %`
+                        : `# ${gainableDailyData[hoveredIndex].position}`}
+                    </span>
+                  </div>
+
+                  {/* Competitor details */}
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-1.5 font-medium text-slate-500">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#8B5CF6]" />
+                      {comparedCompetitor}
+                    </span>
+                    <span className="font-mono font-bold text-slate-850">
+                      {selectedMetric === "clicks"
+                        ? `${competitorDailyData[hoveredIndex].clicks} clic${competitorDailyData[hoveredIndex].clicks > 1 ? "s" : ""}`
+                        : selectedMetric === "impressions"
+                        ? `${competitorDailyData[hoveredIndex].impressions} imp.`
+                        : selectedMetric === "ctr"
+                        ? `${competitorDailyData[hoveredIndex].ctr} %`
+                        : `# ${competitorDailyData[hoveredIndex].position}`}
+                    </span>
+                  </div>
+
+                  {/* Mon Site details */}
+                  <div className="flex items-center justify-between gap-4 border-t pt-1 mt-1">
+                    <span className="flex items-center gap-1.5 font-bold text-emerald-600">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                      Mon Site
+                    </span>
+                    <span className="font-mono font-extrabold text-emerald-800">
+                      {selectedMetric === "clicks"
+                        ? `${artisanDailyData[hoveredIndex].clicks} clic${artisanDailyData[hoveredIndex].clicks > 1 ? "s" : ""}`
+                        : selectedMetric === "impressions"
+                        ? `${artisanDailyData[hoveredIndex].impressions} imp.`
+                        : selectedMetric === "ctr"
+                        ? `${artisanDailyData[hoveredIndex].ctr} %`
+                        : `# ${artisanDailyData[hoveredIndex].position}`}
+                    </span>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Legend */}
-            <div className="flex gap-4 mt-3 text-xs justify-center font-semibold">
+            {/* Legend info */}
+            <div className="flex flex-wrap gap-4 mt-2 justify-center text-xs font-semibold select-none border-t border-slate-100 pt-3">
               <span className="flex items-center gap-1.5 text-slate-700">
-                <span className="w-3 h-3 rounded-full bg-[#D59B2B]" /> Gainable.fr
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D59B2B]" />
+                Gainable.fr (Or)
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
-                <span className="w-3 h-3 rounded-full bg-[#10B981]" /> Mon Site ({siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "Non configuré"})
+                <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                Mon Site ({siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "Non configuré"}) (Vert)
               </span>
               <span className="flex items-center gap-1.5 text-slate-700">
-                <span className="w-3 h-3 rounded-full bg-[#8B5CF6]" /> {comparedCompetitor}
+                <span className="w-2.5 h-2.5 rounded-full bg-[#8B5CF6]" />
+                {comparedCompetitor} (Violet)
               </span>
             </div>
           </CardContent>
