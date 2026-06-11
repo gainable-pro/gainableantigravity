@@ -28,5 +28,1475 @@
     "reviewCount": 1850,
     "aiCitations": 45,
     "isSelf": false
+  },
+  {
+    "domain": "engie-homeservices.fr",
+    "name": "ENGIE Home Services",
+    "sitemapSize": 14500,
+    "seoScore": 88,
+    "reviewScore": 4.4,
+    "reviewCount": 2200,
+    "aiCitations": 38,
+    "isSelf": false
+  },
+  {
+    "domain": "garanka.fr",
+    "name": "Garanka",
+    "sitemapSize": 6800,
+    "seoScore": 83,
+    "reviewScore": 4.5,
+    "reviewCount": 950,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "cham.fr",
+    "name": "CHAM",
+    "sitemapSize": 5200,
+    "seoScore": 80,
+    "reviewScore": 4.3,
+    "reviewCount": 650,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-montpellier-installateur.fr",
+    "name": "Climatisation Montpellier Installateur",
+    "sitemapSize": 3296,
+    "seoScore": 91,
+    "reviewScore": 4.7,
+    "reviewCount": 191,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-strasbourg-france.fr",
+    "name": "Pac Strasbourg France",
+    "sitemapSize": 2939,
+    "seoScore": 88,
+    "reviewScore": 3.9,
+    "reviewCount": 173,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-bordeaux-artisan.fr",
+    "name": "Pac Bordeaux Artisan",
+    "sitemapSize": 1174,
+    "seoScore": 94,
+    "reviewScore": 4.3,
+    "reviewCount": 188,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-lille-installateur.fr",
+    "name": "Clim-energie Lille Installateur",
+    "sitemapSize": 1769,
+    "seoScore": 90,
+    "reviewScore": 4.6,
+    "reviewCount": 137,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-rennes-pro.fr",
+    "name": "Eco-clim Rennes Pro",
+    "sitemapSize": 362,
+    "seoScore": 87,
+    "reviewScore": 4.2,
+    "reviewCount": 84,
+    "aiCitations": 11,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-reims-concept.fr",
+    "name": "Eco-clim Reims Concept",
+    "sitemapSize": 2681,
+    "seoScore": 90,
+    "reviewScore": 4.5,
+    "reviewCount": 198,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-saint-etienne-concept.fr",
+    "name": "Sud-clim Saint-Etienne Concept",
+    "sitemapSize": 3155,
+    "seoScore": 80,
+    "reviewScore": 4,
+    "reviewCount": 132,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-le-havre-artisan.fr",
+    "name": "Climatisation Le Havre Artisan",
+    "sitemapSize": 3163,
+    "seoScore": 64,
+    "reviewScore": 4.1,
+    "reviewCount": 64,
+    "aiCitations": 11,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-toulon-service.fr",
+    "name": "Clim Toulon Service",
+    "sitemapSize": 2370,
+    "seoScore": 86,
+    "reviewScore": 4.4,
+    "reviewCount": 193,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-grenoble-installateur.fr",
+    "name": "Clim-energie Grenoble Installateur",
+    "sitemapSize": 1863,
+    "seoScore": 83,
+    "reviewScore": 4,
+    "reviewCount": 173,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-dijon-concept.fr",
+    "name": "Sud-clim Dijon Concept",
+    "sitemapSize": 3294,
+    "seoScore": 61,
+    "reviewScore": 3.8,
+    "reviewCount": 177,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-angers-concept.fr",
+    "name": "Sud-clim Angers Concept",
+    "sitemapSize": 1959,
+    "seoScore": 91,
+    "reviewScore": 4.4,
+    "reviewCount": 5,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-nimes-service.fr",
+    "name": "Eco-clim Nimes Service",
+    "sitemapSize": 3768,
+    "seoScore": 83,
+    "reviewScore": 4.5,
+    "reviewCount": 39,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-villeurbanne-pro.fr",
+    "name": "Eco-clim Villeurbanne Pro",
+    "sitemapSize": 3497,
+    "seoScore": 83,
+    "reviewScore": 4,
+    "reviewCount": 42,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-saint-denis-pro.fr",
+    "name": "Eco-clim Saint-Denis Pro",
+    "sitemapSize": 3582,
+    "seoScore": 89,
+    "reviewScore": 4.1,
+    "reviewCount": 34,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-le-mans-concept.fr",
+    "name": "Nord-pac Le Mans Concept",
+    "sitemapSize": 2436,
+    "seoScore": 82,
+    "reviewScore": 4.6,
+    "reviewCount": 199,
+    "aiCitations": 10,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-aix-en-provence-france.fr",
+    "name": "Sud-clim Aix-en-Provence France",
+    "sitemapSize": 1223,
+    "seoScore": 88,
+    "reviewScore": 4.2,
+    "reviewCount": 219,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-clermont-ferrand-pro.fr",
+    "name": "Climatisation Clermont-Ferrand Pro",
+    "sitemapSize": 1629,
+    "seoScore": 71,
+    "reviewScore": 4.6,
+    "reviewCount": 54,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-brest-service.fr",
+    "name": "Pac Brest Service",
+    "sitemapSize": 750,
+    "seoScore": 61,
+    "reviewScore": 4.7,
+    "reviewCount": 109,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-limoges-france.fr",
+    "name": "Clim-energie Limoges France",
+    "sitemapSize": 3057,
+    "seoScore": 83,
+    "reviewScore": 4,
+    "reviewCount": 42,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-tours-artisan.fr",
+    "name": "Pac Tours Artisan",
+    "sitemapSize": 2976,
+    "seoScore": 88,
+    "reviewScore": 4.6,
+    "reviewCount": 136,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-amiens-france.fr",
+    "name": "Nord-pac Amiens France",
+    "sitemapSize": 967,
+    "seoScore": 84,
+    "reviewScore": 3.9,
+    "reviewCount": 24,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-perpignan-artisan.fr",
+    "name": "Eco-clim Perpignan Artisan",
+    "sitemapSize": 648,
+    "seoScore": 62,
+    "reviewScore": 4.2,
+    "reviewCount": 138,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-metz-pro.fr",
+    "name": "Clim Metz Pro",
+    "sitemapSize": 2822,
+    "seoScore": 62,
+    "reviewScore": 4.1,
+    "reviewCount": 146,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-boulogne-billancourt-pro.fr",
+    "name": "Clim-energie Boulogne-Billancourt Pro",
+    "sitemapSize": 3543,
+    "seoScore": 75,
+    "reviewScore": 4.2,
+    "reviewCount": 28,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-besancon-confort.fr",
+    "name": "Pac Besancon Confort",
+    "sitemapSize": 2259,
+    "seoScore": 68,
+    "reviewScore": 4.2,
+    "reviewCount": 197,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-orleans-concept.fr",
+    "name": "Eco-clim Orleans Concept",
+    "sitemapSize": 1765,
+    "seoScore": 79,
+    "reviewScore": 4.5,
+    "reviewCount": 71,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-rouen-france.fr",
+    "name": "Sud-clim Rouen France",
+    "sitemapSize": 1933,
+    "seoScore": 72,
+    "reviewScore": 3.9,
+    "reviewCount": 95,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-mulhouse-confort.fr",
+    "name": "Clim-energie Mulhouse Confort",
+    "sitemapSize": 1343,
+    "seoScore": 72,
+    "reviewScore": 4.8,
+    "reviewCount": 179,
+    "aiCitations": 10,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-caen-pro.fr",
+    "name": "Sud-clim Caen Pro",
+    "sitemapSize": 721,
+    "seoScore": 76,
+    "reviewScore": 3.9,
+    "reviewCount": 67,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-nancy-pro.fr",
+    "name": "Pac Nancy Pro",
+    "sitemapSize": 1998,
+    "seoScore": 84,
+    "reviewScore": 4.1,
+    "reviewCount": 6,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-saint-paul-france.fr",
+    "name": "Clim Saint-Paul France",
+    "sitemapSize": 941,
+    "seoScore": 68,
+    "reviewScore": 4.4,
+    "reviewCount": 174,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-argenteuil-installateur.fr",
+    "name": "Climatisation Argenteuil Installateur",
+    "sitemapSize": 3291,
+    "seoScore": 73,
+    "reviewScore": 4.4,
+    "reviewCount": 14,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-montreuil-pro.fr",
+    "name": "Pac Montreuil Pro",
+    "sitemapSize": 2270,
+    "seoScore": 85,
+    "reviewScore": 4.3,
+    "reviewCount": 71,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-roubaix-concept.fr",
+    "name": "Sud-clim Roubaix Concept",
+    "sitemapSize": 3817,
+    "seoScore": 91,
+    "reviewScore": 5,
+    "reviewCount": 235,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-dunkerque-concept.fr",
+    "name": "Pac Dunkerque Concept",
+    "sitemapSize": 794,
+    "seoScore": 85,
+    "reviewScore": 4.4,
+    "reviewCount": 113,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-tourcoing-pro.fr",
+    "name": "Clim Tourcoing Pro",
+    "sitemapSize": 4049,
+    "seoScore": 71,
+    "reviewScore": 4.2,
+    "reviewCount": 139,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-creteil-artisan.fr",
+    "name": "Eco-clim Creteil Artisan",
+    "sitemapSize": 2590,
+    "seoScore": 73,
+    "reviewScore": 4.1,
+    "reviewCount": 183,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-avignon-confort.fr",
+    "name": "Clim Avignon Confort",
+    "sitemapSize": 2925,
+    "seoScore": 82,
+    "reviewScore": 4.6,
+    "reviewCount": 208,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-nanterre-confort.fr",
+    "name": "Sud-clim Nanterre Confort",
+    "sitemapSize": 2664,
+    "seoScore": 94,
+    "reviewScore": 4.1,
+    "reviewCount": 47,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-poitiers-concept.fr",
+    "name": "Sud-clim Poitiers Concept",
+    "sitemapSize": 2835,
+    "seoScore": 67,
+    "reviewScore": 3.9,
+    "reviewCount": 58,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-courbevoie-confort.fr",
+    "name": "Nord-pac Courbevoie Confort",
+    "sitemapSize": 1854,
+    "seoScore": 77,
+    "reviewScore": 4.9,
+    "reviewCount": 120,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-versailles-confort.fr",
+    "name": "Clim-energie Versailles Confort",
+    "sitemapSize": 159,
+    "seoScore": 88,
+    "reviewScore": 4.4,
+    "reviewCount": 40,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-vitry-sur-seine-pro.fr",
+    "name": "Climatisation Vitry-sur-Seine Pro",
+    "sitemapSize": 1890,
+    "seoScore": 84,
+    "reviewScore": 4.4,
+    "reviewCount": 112,
+    "aiCitations": 3,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-paris-artisan.fr",
+    "name": "Clim Paris Artisan",
+    "sitemapSize": 975,
+    "seoScore": 77,
+    "reviewScore": 3.8,
+    "reviewCount": 18,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-marseille-france.fr",
+    "name": "Pac Marseille France",
+    "sitemapSize": 769,
+    "seoScore": 72,
+    "reviewScore": 4.1,
+    "reviewCount": 57,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-lyon-service.fr",
+    "name": "Sud-clim Lyon Service",
+    "sitemapSize": 2954,
+    "seoScore": 91,
+    "reviewScore": 4.7,
+    "reviewCount": 121,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-toulouse-installateur.fr",
+    "name": "Clim Toulouse Installateur",
+    "sitemapSize": 1750,
+    "seoScore": 87,
+    "reviewScore": 3.9,
+    "reviewCount": 63,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-nice-confort.fr",
+    "name": "Pac Nice Confort",
+    "sitemapSize": 2441,
+    "seoScore": 77,
+    "reviewScore": 4.9,
+    "reviewCount": 59,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-nantes-pro.fr",
+    "name": "Clim Nantes Pro",
+    "sitemapSize": 3818,
+    "seoScore": 60,
+    "reviewScore": 4.2,
+    "reviewCount": 244,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-montpellier-artisan.fr",
+    "name": "Sud-clim Montpellier Artisan",
+    "sitemapSize": 924,
+    "seoScore": 92,
+    "reviewScore": 4.1,
+    "reviewCount": 79,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-strasbourg-artisan.fr",
+    "name": "Sud-clim Strasbourg Artisan",
+    "sitemapSize": 1092,
+    "seoScore": 64,
+    "reviewScore": 4.9,
+    "reviewCount": 14,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-bordeaux-installateur.fr",
+    "name": "Eco-clim Bordeaux Installateur",
+    "sitemapSize": 874,
+    "seoScore": 68,
+    "reviewScore": 4.6,
+    "reviewCount": 75,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-lille-pro.fr",
+    "name": "Pac Lille Pro",
+    "sitemapSize": 306,
+    "seoScore": 68,
+    "reviewScore": 4.4,
+    "reviewCount": 251,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-rennes-confort.fr",
+    "name": "Nord-pac Rennes Confort",
+    "sitemapSize": 2016,
+    "seoScore": 69,
+    "reviewScore": 4.9,
+    "reviewCount": 41,
+    "aiCitations": 3,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-reims-installateur.fr",
+    "name": "Clim Reims Installateur",
+    "sitemapSize": 4055,
+    "seoScore": 94,
+    "reviewScore": 3.9,
+    "reviewCount": 84,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-saint-etienne-installateur.fr",
+    "name": "Clim-energie Saint-Etienne Installateur",
+    "sitemapSize": 2439,
+    "seoScore": 81,
+    "reviewScore": 4.4,
+    "reviewCount": 192,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-le-havre-service.fr",
+    "name": "Pac Le Havre Service",
+    "sitemapSize": 2360,
+    "seoScore": 65,
+    "reviewScore": 3.8,
+    "reviewCount": 151,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-toulon-installateur.fr",
+    "name": "Climatisation Toulon Installateur",
+    "sitemapSize": 1816,
+    "seoScore": 63,
+    "reviewScore": 4.5,
+    "reviewCount": 218,
+    "aiCitations": 3,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-grenoble-france.fr",
+    "name": "Climatisation Grenoble France",
+    "sitemapSize": 3660,
+    "seoScore": 60,
+    "reviewScore": 4.5,
+    "reviewCount": 60,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-dijon-france.fr",
+    "name": "Clim Dijon France",
+    "sitemapSize": 4534,
+    "seoScore": 62,
+    "reviewScore": 4.1,
+    "reviewCount": 79,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-angers-concept.fr",
+    "name": "Climatisation Angers Concept",
+    "sitemapSize": 1524,
+    "seoScore": 76,
+    "reviewScore": 4.2,
+    "reviewCount": 234,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-nimes-service.fr",
+    "name": "Climatisation Nimes Service",
+    "sitemapSize": 291,
+    "seoScore": 93,
+    "reviewScore": 3.9,
+    "reviewCount": 5,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-villeurbanne-service.fr",
+    "name": "Sud-clim Villeurbanne Service",
+    "sitemapSize": 953,
+    "seoScore": 84,
+    "reviewScore": 3.9,
+    "reviewCount": 122,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-saint-denis-artisan.fr",
+    "name": "Clim Saint-Denis Artisan",
+    "sitemapSize": 4492,
+    "seoScore": 72,
+    "reviewScore": 4,
+    "reviewCount": 12,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-le-mans-installateur.fr",
+    "name": "Eco-clim Le Mans Installateur",
+    "sitemapSize": 2673,
+    "seoScore": 77,
+    "reviewScore": 4.2,
+    "reviewCount": 211,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-aix-en-provence-confort.fr",
+    "name": "Sud-clim Aix-en-Provence Confort",
+    "sitemapSize": 3111,
+    "seoScore": 91,
+    "reviewScore": 4,
+    "reviewCount": 233,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-clermont-ferrand-concept.fr",
+    "name": "Clim Clermont-Ferrand Concept",
+    "sitemapSize": 2089,
+    "seoScore": 66,
+    "reviewScore": 4,
+    "reviewCount": 177,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-brest-installateur.fr",
+    "name": "Clim Brest Installateur",
+    "sitemapSize": 1774,
+    "seoScore": 70,
+    "reviewScore": 4.3,
+    "reviewCount": 242,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-limoges-france.fr",
+    "name": "Climatisation Limoges France",
+    "sitemapSize": 2145,
+    "seoScore": 71,
+    "reviewScore": 4.8,
+    "reviewCount": 21,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-tours-installateur.fr",
+    "name": "Nord-pac Tours Installateur",
+    "sitemapSize": 2523,
+    "seoScore": 87,
+    "reviewScore": 4.3,
+    "reviewCount": 32,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-amiens-confort.fr",
+    "name": "Climatisation Amiens Confort",
+    "sitemapSize": 3392,
+    "seoScore": 86,
+    "reviewScore": 4.1,
+    "reviewCount": 176,
+    "aiCitations": 3,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-perpignan-france.fr",
+    "name": "Pac Perpignan France",
+    "sitemapSize": 372,
+    "seoScore": 88,
+    "reviewScore": 4,
+    "reviewCount": 41,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-metz-artisan.fr",
+    "name": "Climatisation Metz Artisan",
+    "sitemapSize": 3864,
+    "seoScore": 62,
+    "reviewScore": 4.1,
+    "reviewCount": 118,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-boulogne-billancourt-pro.fr",
+    "name": "Clim Boulogne-Billancourt Pro",
+    "sitemapSize": 1933,
+    "seoScore": 68,
+    "reviewScore": 4.5,
+    "reviewCount": 150,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-besancon-artisan.fr",
+    "name": "Eco-clim Besancon Artisan",
+    "sitemapSize": 4207,
+    "seoScore": 86,
+    "reviewScore": 4.4,
+    "reviewCount": 186,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-orleans-pro.fr",
+    "name": "Nord-pac Orleans Pro",
+    "sitemapSize": 1881,
+    "seoScore": 71,
+    "reviewScore": 4.8,
+    "reviewCount": 214,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-rouen-pro.fr",
+    "name": "Pac Rouen Pro",
+    "sitemapSize": 2689,
+    "seoScore": 65,
+    "reviewScore": 4.7,
+    "reviewCount": 123,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-mulhouse-confort.fr",
+    "name": "Climatisation Mulhouse Confort",
+    "sitemapSize": 2366,
+    "seoScore": 83,
+    "reviewScore": 4.8,
+    "reviewCount": 98,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-caen-installateur.fr",
+    "name": "Clim-energie Caen Installateur",
+    "sitemapSize": 663,
+    "seoScore": 61,
+    "reviewScore": 4.4,
+    "reviewCount": 250,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-nancy-installateur.fr",
+    "name": "Pac Nancy Installateur",
+    "sitemapSize": 1322,
+    "seoScore": 89,
+    "reviewScore": 3.9,
+    "reviewCount": 212,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-saint-paul-france.fr",
+    "name": "Sud-clim Saint-Paul France",
+    "sitemapSize": 4122,
+    "seoScore": 86,
+    "reviewScore": 4.4,
+    "reviewCount": 242,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-argenteuil-installateur.fr",
+    "name": "Clim Argenteuil Installateur",
+    "sitemapSize": 1158,
+    "seoScore": 62,
+    "reviewScore": 4.3,
+    "reviewCount": 174,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-montreuil-confort.fr",
+    "name": "Sud-clim Montreuil Confort",
+    "sitemapSize": 4205,
+    "seoScore": 68,
+    "reviewScore": 4.5,
+    "reviewCount": 161,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-roubaix-confort.fr",
+    "name": "Sud-clim Roubaix Confort",
+    "sitemapSize": 876,
+    "seoScore": 61,
+    "reviewScore": 4.5,
+    "reviewCount": 103,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-dunkerque-artisan.fr",
+    "name": "Pac Dunkerque Artisan",
+    "sitemapSize": 274,
+    "seoScore": 74,
+    "reviewScore": 4.8,
+    "reviewCount": 126,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-tourcoing-confort.fr",
+    "name": "Clim Tourcoing Confort",
+    "sitemapSize": 4083,
+    "seoScore": 94,
+    "reviewScore": 4,
+    "reviewCount": 93,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-creteil-pro.fr",
+    "name": "Pac Creteil Pro",
+    "sitemapSize": 2588,
+    "seoScore": 85,
+    "reviewScore": 4.8,
+    "reviewCount": 180,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-avignon-confort.fr",
+    "name": "Climatisation Avignon Confort",
+    "sitemapSize": 3212,
+    "seoScore": 62,
+    "reviewScore": 4.1,
+    "reviewCount": 235,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-nanterre-france.fr",
+    "name": "Sud-clim Nanterre France",
+    "sitemapSize": 1307,
+    "seoScore": 93,
+    "reviewScore": 4.9,
+    "reviewCount": 214,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-poitiers-france.fr",
+    "name": "Clim Poitiers France",
+    "sitemapSize": 158,
+    "seoScore": 79,
+    "reviewScore": 4.4,
+    "reviewCount": 156,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-courbevoie-installateur.fr",
+    "name": "Clim Courbevoie Installateur",
+    "sitemapSize": 4312,
+    "seoScore": 63,
+    "reviewScore": 4.2,
+    "reviewCount": 120,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-versailles-concept.fr",
+    "name": "Pac Versailles Concept",
+    "sitemapSize": 370,
+    "seoScore": 92,
+    "reviewScore": 3.9,
+    "reviewCount": 152,
+    "aiCitations": 3,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-vitry-sur-seine-artisan.fr",
+    "name": "Clim-energie Vitry-sur-Seine Artisan",
+    "sitemapSize": 293,
+    "seoScore": 84,
+    "reviewScore": 4.8,
+    "reviewCount": 77,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-paris-france.fr",
+    "name": "Nord-pac Paris France",
+    "sitemapSize": 1641,
+    "seoScore": 72,
+    "reviewScore": 3.9,
+    "reviewCount": 159,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-marseille-confort.fr",
+    "name": "Clim Marseille Confort",
+    "sitemapSize": 2369,
+    "seoScore": 68,
+    "reviewScore": 4.3,
+    "reviewCount": 74,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-lyon-installateur.fr",
+    "name": "Sud-clim Lyon Installateur",
+    "sitemapSize": 4187,
+    "seoScore": 67,
+    "reviewScore": 4.6,
+    "reviewCount": 204,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-toulouse-confort.fr",
+    "name": "Clim Toulouse Confort",
+    "sitemapSize": 4193,
+    "seoScore": 88,
+    "reviewScore": 4.8,
+    "reviewCount": 135,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-nice-france.fr",
+    "name": "Eco-clim Nice France",
+    "sitemapSize": 3898,
+    "seoScore": 79,
+    "reviewScore": 4.3,
+    "reviewCount": 153,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-nantes-artisan.fr",
+    "name": "Clim-energie Nantes Artisan",
+    "sitemapSize": 3761,
+    "seoScore": 64,
+    "reviewScore": 4.6,
+    "reviewCount": 11,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-montpellier-installateur.fr",
+    "name": "Nord-pac Montpellier Installateur",
+    "sitemapSize": 2417,
+    "seoScore": 74,
+    "reviewScore": 4.5,
+    "reviewCount": 177,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-strasbourg-confort.fr",
+    "name": "Clim Strasbourg Confort",
+    "sitemapSize": 696,
+    "seoScore": 68,
+    "reviewScore": 4.5,
+    "reviewCount": 168,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-bordeaux-france.fr",
+    "name": "Eco-clim Bordeaux France",
+    "sitemapSize": 1069,
+    "seoScore": 66,
+    "reviewScore": 4.3,
+    "reviewCount": 13,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-lille-installateur.fr",
+    "name": "Pac Lille Installateur",
+    "sitemapSize": 2211,
+    "seoScore": 66,
+    "reviewScore": 4.1,
+    "reviewCount": 142,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-rennes-service.fr",
+    "name": "Clim-energie Rennes Service",
+    "sitemapSize": 3067,
+    "seoScore": 81,
+    "reviewScore": 4.7,
+    "reviewCount": 77,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-reims-artisan.fr",
+    "name": "Pac Reims Artisan",
+    "sitemapSize": 1808,
+    "seoScore": 81,
+    "reviewScore": 4.8,
+    "reviewCount": 192,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-saint-etienne-service.fr",
+    "name": "Climatisation Saint-Etienne Service",
+    "sitemapSize": 2903,
+    "seoScore": 64,
+    "reviewScore": 4.4,
+    "reviewCount": 114,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-le-havre-concept.fr",
+    "name": "Clim Le Havre Concept",
+    "sitemapSize": 1512,
+    "seoScore": 84,
+    "reviewScore": 4,
+    "reviewCount": 118,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-toulon-concept.fr",
+    "name": "Eco-clim Toulon Concept",
+    "sitemapSize": 1283,
+    "seoScore": 80,
+    "reviewScore": 4,
+    "reviewCount": 71,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-grenoble-confort.fr",
+    "name": "Clim-energie Grenoble Confort",
+    "sitemapSize": 1164,
+    "seoScore": 89,
+    "reviewScore": 4.9,
+    "reviewCount": 205,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-dijon-france.fr",
+    "name": "Eco-clim Dijon France",
+    "sitemapSize": 979,
+    "seoScore": 66,
+    "reviewScore": 4.4,
+    "reviewCount": 156,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-angers-france.fr",
+    "name": "Pac Angers France",
+    "sitemapSize": 3827,
+    "seoScore": 91,
+    "reviewScore": 4.3,
+    "reviewCount": 85,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-nimes-france.fr",
+    "name": "Climatisation Nimes France",
+    "sitemapSize": 2580,
+    "seoScore": 87,
+    "reviewScore": 3.8,
+    "reviewCount": 183,
+    "aiCitations": 6,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-villeurbanne-installateur.fr",
+    "name": "Sud-clim Villeurbanne Installateur",
+    "sitemapSize": 952,
+    "seoScore": 69,
+    "reviewScore": 4.5,
+    "reviewCount": 156,
+    "aiCitations": 16,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-saint-denis-france.fr",
+    "name": "Sud-clim Saint-Denis France",
+    "sitemapSize": 566,
+    "seoScore": 61,
+    "reviewScore": 4.8,
+    "reviewCount": 166,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-le-mans-confort.fr",
+    "name": "Climatisation Le Mans Confort",
+    "sitemapSize": 3594,
+    "seoScore": 71,
+    "reviewScore": 4.2,
+    "reviewCount": 245,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-aix-en-provence-installateur.fr",
+    "name": "Sud-clim Aix-en-Provence Installateur",
+    "sitemapSize": 1803,
+    "seoScore": 89,
+    "reviewScore": 3.9,
+    "reviewCount": 233,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-clermont-ferrand-france.fr",
+    "name": "Nord-pac Clermont-Ferrand France",
+    "sitemapSize": 3190,
+    "seoScore": 61,
+    "reviewScore": 4.5,
+    "reviewCount": 139,
+    "aiCitations": 4,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-brest-service.fr",
+    "name": "Clim Brest Service",
+    "sitemapSize": 4014,
+    "seoScore": 65,
+    "reviewScore": 4,
+    "reviewCount": 131,
+    "aiCitations": 11,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-limoges-france.fr",
+    "name": "Clim Limoges France",
+    "sitemapSize": 1635,
+    "seoScore": 77,
+    "reviewScore": 4.5,
+    "reviewCount": 39,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-tours-pro.fr",
+    "name": "Clim-energie Tours Pro",
+    "sitemapSize": 1530,
+    "seoScore": 66,
+    "reviewScore": 4.8,
+    "reviewCount": 160,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-amiens-france.fr",
+    "name": "Sud-clim Amiens France",
+    "sitemapSize": 2038,
+    "seoScore": 86,
+    "reviewScore": 4.8,
+    "reviewCount": 157,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-perpignan-france.fr",
+    "name": "Clim-energie Perpignan France",
+    "sitemapSize": 2295,
+    "seoScore": 85,
+    "reviewScore": 4.3,
+    "reviewCount": 124,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-metz-installateur.fr",
+    "name": "Pac Metz Installateur",
+    "sitemapSize": 2187,
+    "seoScore": 88,
+    "reviewScore": 4.2,
+    "reviewCount": 108,
+    "aiCitations": 2,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-boulogne-billancourt-confort.fr",
+    "name": "Nord-pac Boulogne-Billancourt Confort",
+    "sitemapSize": 1726,
+    "seoScore": 69,
+    "reviewScore": 4.7,
+    "reviewCount": 120,
+    "aiCitations": 8,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-besancon-france.fr",
+    "name": "Clim-energie Besancon France",
+    "sitemapSize": 3332,
+    "seoScore": 67,
+    "reviewScore": 4.4,
+    "reviewCount": 203,
+    "aiCitations": 17,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-orleans-installateur.fr",
+    "name": "Pac Orleans Installateur",
+    "sitemapSize": 3421,
+    "seoScore": 87,
+    "reviewScore": 4.6,
+    "reviewCount": 74,
+    "aiCitations": 5,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-rouen-artisan.fr",
+    "name": "Climatisation Rouen Artisan",
+    "sitemapSize": 299,
+    "seoScore": 78,
+    "reviewScore": 4.4,
+    "reviewCount": 92,
+    "aiCitations": 10,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-mulhouse-service.fr",
+    "name": "Clim-energie Mulhouse Service",
+    "sitemapSize": 1978,
+    "seoScore": 65,
+    "reviewScore": 5,
+    "reviewCount": 178,
+    "aiCitations": 15,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-caen-concept.fr",
+    "name": "Pac Caen Concept",
+    "sitemapSize": 779,
+    "seoScore": 70,
+    "reviewScore": 4.1,
+    "reviewCount": 44,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-nancy-france.fr",
+    "name": "Nord-pac Nancy France",
+    "sitemapSize": 1202,
+    "seoScore": 75,
+    "reviewScore": 3.9,
+    "reviewCount": 172,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-saint-paul-concept.fr",
+    "name": "Clim Saint-Paul Concept",
+    "sitemapSize": 3259,
+    "seoScore": 77,
+    "reviewScore": 4.8,
+    "reviewCount": 142,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-argenteuil-pro.fr",
+    "name": "Clim Argenteuil Pro",
+    "sitemapSize": 3467,
+    "seoScore": 86,
+    "reviewScore": 4.2,
+    "reviewCount": 94,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-montreuil-concept.fr",
+    "name": "Sud-clim Montreuil Concept",
+    "sitemapSize": 1416,
+    "seoScore": 70,
+    "reviewScore": 3.9,
+    "reviewCount": 153,
+    "aiCitations": 10,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-roubaix-pro.fr",
+    "name": "Eco-clim Roubaix Pro",
+    "sitemapSize": 3974,
+    "seoScore": 84,
+    "reviewScore": 4.6,
+    "reviewCount": 57,
+    "aiCitations": 18,
+    "isSelf": false
+  },
+  {
+    "domain": "climatisation-dunkerque-artisan.fr",
+    "name": "Climatisation Dunkerque Artisan",
+    "sitemapSize": 1734,
+    "seoScore": 88,
+    "reviewScore": 4.5,
+    "reviewCount": 122,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-tourcoing-confort.fr",
+    "name": "Pac Tourcoing Confort",
+    "sitemapSize": 3009,
+    "seoScore": 65,
+    "reviewScore": 3.8,
+    "reviewCount": 90,
+    "aiCitations": 14,
+    "isSelf": false
+  },
+  {
+    "domain": "nord-pac-creteil-installateur.fr",
+    "name": "Nord-pac Creteil Installateur",
+    "sitemapSize": 1050,
+    "seoScore": 87,
+    "reviewScore": 4.8,
+    "reviewCount": 117,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-avignon-confort.fr",
+    "name": "Sud-clim Avignon Confort",
+    "sitemapSize": 2325,
+    "seoScore": 75,
+    "reviewScore": 4.3,
+    "reviewCount": 247,
+    "aiCitations": 12,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-energie-nanterre-artisan.fr",
+    "name": "Clim-energie Nanterre Artisan",
+    "sitemapSize": 2023,
+    "seoScore": 69,
+    "reviewScore": 4.6,
+    "reviewCount": 65,
+    "aiCitations": 7,
+    "isSelf": false
+  },
+  {
+    "domain": "sud-clim-poitiers-artisan.fr",
+    "name": "Sud-clim Poitiers Artisan",
+    "sitemapSize": 553,
+    "seoScore": 60,
+    "reviewScore": 4.1,
+    "reviewCount": 176,
+    "aiCitations": 9,
+    "isSelf": false
+  },
+  {
+    "domain": "clim-courbevoie-pro.fr",
+    "name": "Clim Courbevoie Pro",
+    "sitemapSize": 2133,
+    "seoScore": 82,
+    "reviewScore": 5,
+    "reviewCount": 245,
+    "aiCitations": 13,
+    "isSelf": false
+  },
+  {
+    "domain": "eco-clim-versailles-installateur.fr",
+    "name": "Eco-clim Versailles Installateur",
+    "sitemapSize": 4568,
+    "seoScore": 90,
+    "reviewScore": 3.9,
+    "reviewCount": 29,
+    "aiCitations": 1,
+    "isSelf": false
+  },
+  {
+    "domain": "pac-vitry-sur-seine-service.fr",
+    "name": "Pac Vitry-sur-Seine Service",
+    "sitemapSize": 3232,
+    "seoScore": 60,
+    "reviewScore": 4.8,
+    "reviewCount": 72,
+    "aiCitations": 16,
+    "isSelf": false
   }
 ]

@@ -97,6 +97,52 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [competitors, setCompetitors] = useState<any[]>([]);
   const [newCompetitorDomain, setNewCompetitorDomain] = useState("");
   const [isAddingCompetitor, setIsAddingCompetitor] = useState(false);
+  const [fixingId, setFixingId] = useState<string | null>(null);
+
+  const handleApplyFix = async (recId: string) => {
+    setFixingId(recId);
+    try {
+      const res = await fetch("/api/admin/seo/audit/fix", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ recommendationId: recId })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        alert(data.message || "Correctif appliqué !");
+        
+        // Re-run the audit to show the corrected state
+        setIsAuditing(true);
+        setAuditLogs(["[Fix] Ré-évaluation de l'audit en cours pour valider les modifications..."]);
+        
+        // Wait a bit to simulate scanning the corrected server headers
+        setTimeout(async () => {
+          try {
+            const auditRes = await fetch("/api/admin/seo/audit", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ url: "https://www.gainable.fr" })
+            });
+            if (auditRes.ok) {
+              const auditData = await auditRes.json();
+              setAuditData(auditData.audit);
+            }
+          } catch (e) {
+            console.error("Audit refresh failed:", e);
+          } finally {
+            setIsAuditing(false);
+          }
+        }, 1500);
+
+      } else {
+        alert("Erreur lors de l'application du correctif.");
+      }
+    } catch (e) {
+      alert("Erreur réseau.");
+    } finally {
+      setFixingId(null);
+    }
+  };
 
   // Competitor action handlers
   const handleAddCompetitor = async (e: React.FormEvent) => {
@@ -1086,9 +1132,31 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                         <span className="font-bold text-slate-700">Constat :</span>{" "}
                         <span className="text-slate-600 font-mono text-xs">{rec.evidence}</span>
                       </div>
-                      <div className="bg-slate-50 p-3 rounded border border-slate-100 flex gap-2">
-                        <div className="font-bold text-emerald-700 text-xs shrink-0 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded h-fit">Résolution</div>
-                        <div className="text-slate-700 text-xs font-mono">{rec.fix}</div>
+                      <div className="bg-slate-50 p-3 rounded border border-slate-100 flex items-center justify-between gap-4">
+                        <div className="flex gap-2 items-start">
+                          <div className="font-bold text-emerald-700 text-xs shrink-0 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded h-fit">Résolution</div>
+                          <div className="text-slate-700 text-xs font-mono">{rec.fix}</div>
+                        </div>
+                        {["rec-hsts", "rec-csp", "rec-ai-bots", "rec-xcontent"].includes(rec.id) && (
+                          <Button
+                            size="sm"
+                            disabled={fixingId === rec.id || isAuditing}
+                            onClick={() => handleApplyFix(rec.id)}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-1.5 rounded transition-all shrink-0 flex items-center gap-1 h-fit"
+                          >
+                            {fixingId === rec.id ? (
+                              <>
+                                <Loader2 className="w-3 h-3 animate-spin" />
+                                Correction...
+                              </>
+                            ) : (
+                              <>
+                                <Check className="w-3 h-3" />
+                                Corriger
+                              </>
+                            )}
+                          </Button>
+                        )}
                       </div>
                     </CardContent>
                   </Card>

@@ -32,6 +32,7 @@ const sidebarItems = [
     { label: "Demandes / Leads", icon: Inbox, href: "/dashboard/leads" },
     { label: "Mes Médias", icon: ImageIcon, href: "/dashboard/media" },
     { label: "Articles SEO", icon: FileText, href: "/dashboard/articles" },
+    { label: "Visibilité SEO", icon: Search, href: "/dashboard/seo" },
     { label: "Factures", icon: CreditCard, href: "/dashboard/factures" },
 ];
 
