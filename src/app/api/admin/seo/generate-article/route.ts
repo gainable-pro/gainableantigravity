@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { verifyAdmin } from "@/lib/admin-auth";
 import OpenAI from "openai";
 import slugify from "slugify";
+import { supabase } from "@/lib/supabase";
+import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
@@ -38,6 +40,7 @@ export async function POST(req: Request) {
     }
 
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const prompt = `
     Tu es un rédacteur SEO expert en génie climatique pour Gainable.fr.
@@ -58,6 +61,7 @@ export async function POST(req: Request) {
       "introduction": "Une introduction engageante de 2-3 phrases contenant le mot-clé principal.",
       "content": "Le corps de l'article complet en HTML (minimum 600 mots, structuré en sections <h2> et <h3>)",
       "metaDesc": "Une meta description optimisée SEO pour Google de moins de 155 caractères",
+      "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a premium ducted AC (climatisation gainable) installation in a luxury modern home, minimalist air diffusion grills on the ceiling, high-end architecture, warm natural light, commercial photography style, 1024x1024.",
       "faq": [
         {
           "question": "Question fréquente liée au mot-clé",
@@ -82,6 +86,38 @@ export async function POST(req: Request) {
 
     const result = JSON.parse(completion.choices[0].message.content || "{}");
 
+    // Generate Image via DALL-E 3
+    let imageUrl = null;
+    try {
+      const imageResponse = await openai.images.generate({
+        model: "dall-e-3",
+        prompt: result.imagePrompt || `A highly detailed, professional photorealistic photograph of a modern ducted air conditioning (climatisation gainable) installation in a luxury house in ${city}, ceiling diffusion vents, 1024x1024.`,
+        size: "1024x1024",
+        quality: "standard"
+      });
+      const dallEUrl = imageResponse.data?.[0]?.url;
+      if (dallEUrl) {
+        const imageRes = await fetch(dallEUrl);
+        if (imageRes.ok) {
+          const imageBuffer = Buffer.from(await imageRes.arrayBuffer());
+          const cleanCityName = slugify(city, { lower: true, strict: true });
+          const filePath = `articles/manual_${cleanCityName}_${Date.now()}.png`;
+
+          const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+            contentType: 'image/png',
+            upsert: false
+          });
+
+          if (!uploadError) {
+            const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+            imageUrl = publicUrlData.publicUrl;
+          }
+        }
+      }
+    } catch (imgErr) {
+      console.error("[Manual Image] DALL-E failed:", imgErr);
+    }
+
     // Generate a unique slug
     const baseSlug = slugify(`${result.title}-${city}`, { lower: true, strict: true });
     // Verify uniqueness
@@ -92,23 +128,57 @@ export async function POST(req: Request) {
       counter++;
     }
 
-    // Save article in database as DRAFT
+    // Save article in database as PUBLISHED
     const article = await prisma.article.create({
       data: {
         title: result.title,
         slug,
         introduction: result.introduction,
         content: result.content,
-        metaDesc: result.metaDesc,
-        status: "DRAFT",
+        mainImage: imageUrl,
+        altText: `Installation ${keyword}`,
         targetCity: city,
+        metaDesc: result.metaDesc,
+        status: "PUBLISHED",
         expertId: expert.id,
-        faq: result.faq
+        faq: result.faq,
+        publishedAt: new Date()
       }
     });
 
+    // Send Resend email notification
+    const articleLink = `https://www.gainable.fr/entreprise/${expert.slug}/articles/${slug}`;
+    try {
+      await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
+        to: "contact@gainable.fr",
+        subject: `✍️ [MANUEL] Nouvel Article SEO Publié : ${result.title} (${city})`,
+        html: `
+          <div style="font-family: sans-serif; padding: 20px; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px;">
+            <h2 style="color: #D59B2B; margin-top: 0;">✍️ Nouvel article SEO généré manuellement et publié !</h2>
+            <p><strong>Ville cible :</strong> ${city}</p>
+            <p><strong>Mot-clé ciblé :</strong> "${keyword}"</p>
+            <p><strong>Auteur / Expert associé :</strong> ${expert.nom_entreprise}</p>
+            <p><strong>URL de publication :</strong> <a href="${articleLink}" style="color: #D59B2B; font-weight: bold; text-decoration: none;">${articleLink}</a></p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;"/>
+            
+            <h3 style="font-size: 20px; margin-bottom: 10px; color: #1e293b;">${result.title}</h3>
+            <p style="font-style: italic; color: #475569; font-size: 16px; margin-bottom: 20px;">${result.introduction}</p>
+            
+            ${imageUrl ? `<div style="margin: 20px 0;"><img src="${imageUrl}" alt="Illustration" style="max-width: 100%; border-radius: 12px; height: auto;"/></div>` : ''}
+            
+            <div style="line-height: 1.6; color: #334155;">
+              ${result.content}
+            </div>
+          </div>
+        `
+      });
+    } catch (emailErr) {
+      console.error("[Manual Article Email] Failed:", emailErr);
+    }
+
     return NextResponse.json({
-      message: "Article généré avec succès en mode DRAFT",
+      message: "Article généré et publié avec succès !",
       article: {
         id: article.id,
         title: article.title,

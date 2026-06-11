@@ -33,3 +33,4 @@ pnpm-debug.log*
 *.tsbuildinfo
 next-env.d.ts
 scratch/agent-vocal-ia-gainable-fr/
+.env*

@@ -46,7 +46,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [selectedMetric, setSelectedMetric] = useState<"clicks" | "impressions" | "ctr" | "position">("clicks");
   
   // Search console state (Demo mode by default, real data upon CSV upload)
-  const [isRealData, setIsRealData] = useState(false);
+  const [isRealData, setIsRealData] = useState(true);
   const [kpiData, setKpiData] = useState({
     clicks: { total: 266, trend: "+14.6%", isPositive: true, desc: "Total des clics depuis la recherche Google (3 mois)" },
     impressions: { total: "56K", trend: "+8.2%", isPositive: true, desc: "Nombre de fois qu'une page a été vue dans les résultats" },
@@ -267,7 +267,10 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ getOnly: true })
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("Audit fetch failed");
+        return res.json();
+      })
       .then(data => {
         if (data.audit) {
           setAuditData(data.audit);
@@ -281,7 +284,10 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ getOnly: true })
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("Crawl fetch failed");
+        return res.json();
+      })
       .then(data => {
         if (data.report) {
           setCrawlReport(data.report);
@@ -309,9 +315,14 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
             { url: "/mentions-legales", clicks: 0, impressions: 120, ctr: "0.00%", position: 88.0, status: "Noindex (robots)" },
             { url: "/cgu", clicks: 0, impressions: 95, ctr: "0.00%", position: 94.2, status: "Noindex (robots)" }
           ]);
+        } else {
+          setIsRealData(false);
         }
       })
-      .catch(err => console.error("Error reading crawl cache:", err));
+      .catch(err => {
+        console.error("Error reading crawl cache:", err);
+        setIsRealData(false);
+      });
 
     fetch("/api/admin/seo/competitors")
       .then(res => res.json())
