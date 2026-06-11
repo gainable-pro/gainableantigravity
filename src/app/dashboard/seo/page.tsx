@@ -578,7 +578,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                     <span className="flex flex-col items-center leading-tight">
                       <span>Propulser ma visibilité locale</span>
                       <span className="text-[10px] sm:text-xs text-emerald-100 font-normal mt-1">
-                        (Publier des articles SEO)
+                        (Publier jusqu'à 10 articles SEO par mois)
                       </span>
                     </span>
                   </Link>
