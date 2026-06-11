@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { verifyAdmin } from "@/lib/admin-auth";
 import fs from "fs";
 import path from "path";
+import initialCompetitors from "@/data/seo-competitors.json";
 
 export const dynamic = "force-dynamic";
 
@@ -12,9 +13,13 @@ function getFilePath() {
 function readCompetitors() {
   const filePath = getFilePath();
   if (!fs.existsSync(filePath)) {
-    return [];
+    return initialCompetitors;
   }
-  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  } catch (e) {
+    return initialCompetitors;
+  }
 }
 
 function writeCompetitors(data: any[]) {

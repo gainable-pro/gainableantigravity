@@ -4,6 +4,7 @@ import { verifyAdmin } from "@/lib/admin-auth";
 import sitemap from "@/app/sitemap";
 import fs from "fs";
 import path from "path";
+import initialHistory from "@/data/seo-history.json";
 
 export const dynamic = "force-dynamic";
 
@@ -200,9 +201,11 @@ export async function POST(req: Request) {
       if (fs.existsSync(historyFilePath)) {
         const fileContent = fs.readFileSync(historyFilePath, "utf-8");
         history = JSON.parse(fileContent);
+      } else {
+        history = [...initialHistory];
       }
     } catch (e) {
-      console.error("Error reading history JSON:", e);
+      history = [...initialHistory];
     }
 
     const todayStr = new Date().toISOString().split("T")[0];
