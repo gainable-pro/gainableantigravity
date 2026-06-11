@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "interval": 1
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Every Day",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://www.gainable.fr/api/cron/generate-articles",
+        "sendQueryParameters": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "secret",
+              "value": "gainable_marketing_secret_2024"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "api-call",
+      "name": "Generate SEO Article",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        350,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Every Day": {
+      "main": [
+        [
+          {
+            "node": "Generate SEO Article",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

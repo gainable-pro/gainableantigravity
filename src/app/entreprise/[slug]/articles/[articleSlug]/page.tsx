@@ -452,7 +452,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                             </div>
                             
                             <div className="relative z-10">
-                                <InternationalLeadForm city={article.targetCity || undefined} />
+                                <InternationalLeadForm city={article.targetCity || ""} />
                             </div>
                         </div>
                     ) : null}
