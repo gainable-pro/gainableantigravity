@@ -72,6 +72,10 @@ export async function POST(req: Request) {
     // 3. Keyword density mapping
     // We analyze how target keywords are distributed in dynamic pages
     const keywordsToAnalyze = [
+      { text: "climatisation", intent: "Informatif", baseVolume: 74000 },
+      { text: "climatisation réversible", intent: "Commercial", baseVolume: 49000 },
+      { text: "climatisation gainable", intent: "Commercial", baseVolume: 33000 },
+      { text: "gainable", intent: "Informatif", baseVolume: 22000 },
       { text: "installateur gainable", intent: "Commercial", baseVolume: 8400 },
       { text: "climatisation gainable prix", intent: "Transactionnel", baseVolume: 6200 },
       { text: "gainable climatisation", intent: "Informatif", baseVolume: 5900 },
@@ -90,7 +94,14 @@ export async function POST(req: Request) {
       const samplePages: { url: string; title: string }[] = [];
 
       // If it's a generic city keyword or matches city landing pages
-      if (kw.text.includes("installateur gainable") || kw.text.includes("gainable climatisation") || kw.text.includes("climatisation gainable")) {
+      if (
+        kw.text.includes("installateur gainable") || 
+        kw.text.includes("gainable climatisation") || 
+        kw.text.includes("climatisation gainable") ||
+        kw.text === "climatisation" ||
+        kw.text === "climatisation réversible" ||
+        kw.text === "gainable"
+      ) {
         // City landing pages dynamically incorporate these keywords
         matchingPagesCount = cityCount + regionCount + staticCount;
         totalDensitySum = matchingPagesCount * 1.8; // Estimated keyword density of 1.8% in templates

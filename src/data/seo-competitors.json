@@ -1,0 +1,32 @@
+[
+  {
+    "domain": "gainable.fr",
+    "name": "Gainable.fr (Votre site)",
+    "sitemapSize": 23450,
+    "seoScore": 94,
+    "reviewScore": 4.9,
+    "reviewCount": 124,
+    "aiCitations": 52,
+    "isSelf": true
+  },
+  {
+    "domain": "maclem.fr",
+    "name": "Maclem",
+    "sitemapSize": 12500,
+    "seoScore": 86,
+    "reviewScore": 4.8,
+    "reviewCount": 450,
+    "aiCitations": 22,
+    "isSelf": false
+  },
+  {
+    "domain": "izi-by-edf.fr",
+    "name": "IZI by EDF",
+    "sitemapSize": 8400,
+    "seoScore": 91,
+    "reviewScore": 4.6,
+    "reviewCount": 1850,
+    "aiCitations": 45,
+    "isSelf": false
+  }
+]

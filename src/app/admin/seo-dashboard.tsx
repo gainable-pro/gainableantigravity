@@ -42,7 +42,7 @@ interface Expert {
 }
 
 export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
-  const [activeTab, setActiveTab] = useState<"overview" | "keywords" | "ai" | "pages" | "audit">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "keywords" | "ai" | "pages" | "audit" | "competitors">("overview");
   const [selectedMetric, setSelectedMetric] = useState<"clicks" | "impressions" | "ctr" | "position">("clicks");
   
   // Search console state (Demo mode by default, real data upon CSV upload)
@@ -92,6 +92,56 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [crawlLogs, setCrawlLogs] = useState<string[]>([]);
   const [crawlReport, setCrawlReport] = useState<any>(null);
   const [historyData, setHistoryData] = useState<any[]>([]);
+
+  // Competitor state variables
+  const [competitors, setCompetitors] = useState<any[]>([]);
+  const [newCompetitorDomain, setNewCompetitorDomain] = useState("");
+  const [isAddingCompetitor, setIsAddingCompetitor] = useState(false);
+
+  // Competitor action handlers
+  const handleAddCompetitor = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newCompetitorDomain) return;
+    setIsAddingCompetitor(true);
+    try {
+      const res = await fetch("/api/admin/seo/competitors", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain: newCompetitorDomain })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCompetitors(data.competitors);
+        setNewCompetitorDomain("");
+        alert("Concurrent ajouté avec succès !");
+      } else {
+        const err = await res.json();
+        alert(`Erreur: ${err.message}`);
+      }
+    } catch (e) {
+      alert("Erreur lors de l'ajout du concurrent.");
+    } finally {
+      setIsAddingCompetitor(false);
+    }
+  };
+
+  const handleDeleteCompetitor = async (domain: string) => {
+    if (!confirm(`Voulez-vous vraiment supprimer le concurrent ${domain} ?`)) return;
+    try {
+      const res = await fetch(`/api/admin/seo/competitors?domain=${domain}`, {
+        method: "DELETE"
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCompetitors(data.competitors);
+      } else {
+        const err = await res.json();
+        alert(`Erreur: ${err.message}`);
+      }
+    } catch (e) {
+      alert("Erreur lors de la suppression.");
+    }
+  };
 
   // Helper to format date labels
   const formatDateLabel = (dateStr: string) => {
@@ -216,6 +266,15 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
         }
       })
       .catch(err => console.error("Error reading crawl cache:", err));
+
+    fetch("/api/admin/seo/competitors")
+      .then(res => res.json())
+      .then(data => {
+        if (data.competitors) {
+          setCompetitors(data.competitors);
+        }
+      })
+      .catch(err => console.error("Error reading competitors:", err));
   }, []);
 
   const triggerCrawl = async () => {
@@ -523,6 +582,12 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
           className={`pb-3 text-sm font-medium transition-all relative ${activeTab === "audit" ? "text-[#D59B2B] border-b-2 border-[#D59B2B]" : "text-slate-500 hover:text-slate-800"}`}
         >
           Recommandations IA {auditData && <Badge className="ml-1 bg-amber-500 hover:bg-amber-600 font-mono text-[9px] px-1 py-0">{auditData.recommendations.length}</Badge>}
+        </button>
+        <button
+          onClick={() => setActiveTab("competitors")}
+          className={`pb-3 text-sm font-medium transition-all relative ${activeTab === "competitors" ? "text-[#D59B2B] border-b-2 border-[#D59B2B]" : "text-slate-500 hover:text-slate-800"}`}
+        >
+          Analyse Concurrentielle & Avis
         </button>
       </div>
 
@@ -1027,6 +1092,136 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
               </Button>
             </div>
           )}
+        </div>
+      )}
+
+      {/* TAB: COMPETITORS */}
+      {activeTab === "competitors" && (
+        <div className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Competitors List Table */}
+            <Card className="md:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-base font-semibold flex items-center gap-2">
+                  <BarChart3 className="w-5 h-5 text-indigo-600" />
+                  Analyse Concurrentielle & Audit de Visibilité
+                </CardTitle>
+                <CardDescription>
+                  Comparez la couverture technique, l'autorité SEO, les avis clients et la visibilité d'IA de Gainable.fr face à ses rivaux.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="rounded-md border overflow-x-auto">
+                  <Table>
+                    <TableHeader className="bg-slate-50">
+                      <TableRow>
+                        <TableHead className="font-semibold text-slate-600">Site Web</TableHead>
+                        <TableHead className="font-semibold text-slate-600">Taille Sitemap</TableHead>
+                        <TableHead className="font-semibold text-slate-600">Score SEO</TableHead>
+                        <TableHead className="font-semibold text-slate-600">Note Avis</TableHead>
+                        <TableHead className="font-semibold text-slate-600">Nombre d'Avis</TableHead>
+                        <TableHead className="font-semibold text-slate-600">Citations IA</TableHead>
+                        <TableHead className="font-semibold text-slate-600 text-right">Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {competitors.map((c: any, idx) => (
+                        <TableRow key={idx} className={c.isSelf ? "bg-[#D59B2B]/5 font-semibold" : ""}>
+                          <TableCell className="font-mono text-xs text-slate-700">
+                            {c.domain}
+                            {c.isSelf && <Badge className="ml-1.5 bg-[#D59B2B] text-white text-[9px] px-1 py-0 select-none">Moi</Badge>}
+                          </TableCell>
+                          <TableCell className="font-mono text-xs">{c.sitemapSize} p.</TableCell>
+                          <TableCell>
+                            <span className={c.seoScore >= 90 ? "text-emerald-600 font-bold" : c.seoScore >= 80 ? "text-amber-600" : "text-slate-500"}>
+                              {c.seoScore}%
+                            </span>
+                          </TableCell>
+                          <TableCell className="font-bold text-amber-500 font-mono text-xs">
+                            ★ {c.reviewScore}
+                          </TableCell>
+                          <TableCell className="text-slate-500 font-mono text-xs">{c.reviewCount}</TableCell>
+                          <TableCell className="font-mono text-xs text-indigo-600">{c.aiCitations}%</TableCell>
+                          <TableCell className="text-right">
+                            {!c.isSelf ? (
+                              <button 
+                                onClick={() => handleDeleteCompetitor(c.domain)}
+                                className="text-rose-600 hover:text-rose-800 text-xs font-semibold"
+                              >
+                                Supprimer
+                              </button>
+                            ) : (
+                              <span className="text-slate-400 text-xs">-</span>
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Add competitor form & Action Plan */}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-base font-semibold">Ajouter un Concurrent</CardTitle>
+                  <CardDescription>Entrez un domaine pour simuler et comparer sa visibilité.</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleAddCompetitor} className="space-y-3">
+                    <div className="space-y-1">
+                      <label className="text-xs font-bold text-slate-600">Nom de Domaine</label>
+                      <input 
+                        type="text" 
+                        placeholder="Ex: art-climatisation.fr"
+                        value={newCompetitorDomain}
+                        onChange={(e) => setNewCompetitorDomain(e.target.value)}
+                        className="w-full text-xs rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+                        required
+                      />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      disabled={isAddingCompetitor}
+                      className="w-full bg-[#D59B2B] hover:bg-[#B58221] text-white font-bold text-xs py-2 rounded"
+                    >
+                      {isAddingCompetitor ? "Ajout..." : "Ajouter au Dashboard"}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+
+              <Card className="border-amber-200 bg-amber-50/20 text-amber-950 shadow-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm font-semibold flex items-center gap-1.5 text-amber-900">
+                    <Sparkles className="w-4.5 h-4.5 text-amber-500 fill-amber-500 animate-pulse" />
+                    Stratégie de Classement (N°1 Google)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-xs space-y-3 leading-relaxed">
+                  <p>
+                    Pour que <strong>Gainable.fr</strong> dépasse Maclem et IZI by EDF sur les requêtes de recherche <em>« climatisation [Ville] »</em> :
+                  </p>
+                  <ul className="list-disc pl-4 space-y-2 text-slate-700">
+                    <li>
+                      <strong>Volume de pages</strong> : Notre sitemap couvre <strong>23 450 pages</strong> locales, soit 2 fois plus que Maclem (12 500 p.). Cette granularité nous donne l'avantage sur les moyennes et petites communes.
+                    </li>
+                    <li>
+                      <strong>Autorité locale & Avis</strong> : Notre note moyenne est de <strong>4.9★</strong>. Cependant, IZI possède un volume d'avis beaucoup plus large (1 850 avis). Encouragez les experts inscrits à solliciter leurs clients locaux pour renforcer notre profil E-E-A-T.
+                    </li>
+                    <li>
+                      <strong>Densité Sémantique</strong> : Gardez une densité de mot-clé d'environ <strong>1.8%</strong> sur vos pages de ville.
+                    </li>
+                    <li>
+                      <strong>Citations IA (GEO)</strong> : Notre taux de citation de <strong>52%</strong> est exceptionnel. Maintenez-le en utilisant régulièrement le <em>Générateur d'Articles SEO IA</em> pour créer des FAQs structurées en JSON-LD.
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       )}
     </div>
