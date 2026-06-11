@@ -185,7 +185,7 @@ export async function GET(req: Request) {
     `;
 
     await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
+      from: process.env.RESEND_FROM_EMAIL || "Gainable IA <noreply@gainable.ch>",
       to: "contact@gainable.fr",
       subject: `📊 Audit SEO Quotidien : Visibilité & Concurrence Gainable.fr`,
       html: emailHtml

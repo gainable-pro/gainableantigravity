@@ -212,7 +212,7 @@ export async function GET(req: Request) {
             const b2cLink = `https://www.gainable.fr/entreprise/${b2cExpert.slug}/articles/${finalB2CSlug}`;
             try {
               await resend.emails.send({
-                from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
+                from: process.env.RESEND_FROM_EMAIL || "Gainable IA <noreply@gainable.ch>",
                 to: "contact@gainable.fr",
                 subject: `✍️ [B2C CLIENT] Nouvel Article SEO Publié : ${b2cResult.title} (${b2cCity.name})`,
                 html: `
@@ -389,7 +389,7 @@ export async function GET(req: Request) {
           const b2bLink = `https://www.gainable.fr/entreprise/${b2bExpert.slug}/articles/${finalB2BSlug}`;
           try {
             await resend.emails.send({
-              from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
+              from: process.env.RESEND_FROM_EMAIL || "Gainable IA <noreply@gainable.ch>",
               to: "contact@gainable.fr",
               subject: `💼 [B2B ARTISAN] Nouvel Article SEO Publié : ${b2bResult.title}`,
               html: `

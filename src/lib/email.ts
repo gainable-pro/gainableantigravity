@@ -26,7 +26,7 @@ export async function sendEmail({
 
     try {
         const data = await resend.emails.send({
-            from: 'Gainable.fr <contact@gainable.fr>', // Use generic sender for testing
+            from: process.env.RESEND_FROM_EMAIL || 'Gainable.fr <noreply@gainable.ch>',
             to,
             subject,
             html,
@@ -234,7 +234,7 @@ L'équipe Gainable.fr`;
 
     try {
         const data = await resend.emails.send({
-            from: 'Gainable.fr <contact@gainable.fr>',
+            from: process.env.RESEND_FROM_EMAIL || 'Gainable.fr <noreply@gainable.ch>',
             to,
             subject: '🚀 Gainable.fr explose : Votre nouvelle application est disponible !',
             html: htmlContent,

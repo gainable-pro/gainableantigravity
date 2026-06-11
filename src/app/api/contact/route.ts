@@ -73,7 +73,7 @@ export async function POST(req: Request) {
         `;
 
         const { data, error } = await resend.emails.send({
-            from: 'Gainable Contact <contact@gainable.fr>', // Ensure domain is verified in Resend dashboard, otherwise use onboarding@resend.dev for testing if needed
+            from: process.env.RESEND_FROM_EMAIL || 'Gainable Contact <noreply@gainable.ch>',
             to: ['contact@gainable.fr'],
             replyTo: email, // Allow direct reply to user
             subject: subject,

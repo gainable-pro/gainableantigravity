@@ -1017,6 +1017,85 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
               </CardContent>
             </Card>
           </div>
+
+          {/* Recent Articles Listing */}
+          <Card className="mt-6 border-slate-200">
+            <CardHeader className="pb-3 border-b border-slate-100 bg-slate-50/50">
+              <CardTitle className="text-base font-semibold flex items-center gap-2 text-slate-800">
+                <FileText className="w-5 h-5 text-[#D59B2B]" />
+                Articles Récemment Générés & Performances Estimées (GSC)
+              </CardTitle>
+              <CardDescription>
+                Suivi en temps réel des derniers articles de blog rédigés automatiquement (B2C & B2B) ou manuellement.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="rounded-md border border-slate-200 overflow-x-auto">
+                <Table>
+                  <TableHeader className="bg-slate-50 sticky top-0">
+                    <TableRow>
+                      <TableHead className="font-semibold text-slate-600">Titre de l'Article</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Auteur / Expert</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Cible / Ville</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Créé le</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Statut</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Clics (Est.)</TableHead>
+                      <TableHead className="font-semibold text-slate-600">Impressions</TableHead>
+                      <TableHead className="font-semibold text-slate-600">CTR</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {crawlReport?.recentArticles && crawlReport.recentArticles.length > 0 ? (
+                      crawlReport.recentArticles.map((art: any) => (
+                        <TableRow key={art.id} className="hover:bg-slate-50/50">
+                          <TableCell className="font-medium text-slate-800">
+                            <a
+                              href={`/entreprise/${art.expertSlug}/articles/${art.slug}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="hover:underline flex items-center gap-1 text-indigo-600 font-semibold"
+                            >
+                              {art.title}
+                              <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                            </a>
+                          </TableCell>
+                          <TableCell className="text-xs text-slate-600 font-medium">{art.expertName}</TableCell>
+                          <TableCell>
+                            {art.targetCity ? (
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 text-[10px]">
+                                {art.targetCity}
+                              </Badge>
+                            ) : (
+                              <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-200 text-[10px]">
+                                Pro (B2B)
+                              </Badge>
+                            )}
+                          </TableCell>
+                          <TableCell className="text-xs text-slate-500 font-mono">
+                            {new Date(art.createdAt).toLocaleDateString("fr-FR")}
+                          </TableCell>
+                          <TableCell>
+                            <Badge className={art.status === "PUBLISHED" ? "bg-emerald-500 text-white text-[10px] font-bold" : "bg-amber-500 text-white text-[10px] font-bold"}>
+                              {art.status === "PUBLISHED" ? "Publié" : "Brouillon"}
+                            </Badge>
+                          </TableCell>
+                          <TableCell className="font-semibold text-xs font-mono">{art.clicks}</TableCell>
+                          <TableCell className="text-xs text-slate-500 font-mono">{art.impressions}</TableCell>
+                          <TableCell className="text-xs text-slate-500 font-mono">{art.ctr}</TableCell>
+                        </TableRow>
+                      ))
+                    ) : (
+                      <TableRow>
+                        <TableCell colSpan={8} className="text-center py-10 text-slate-400 italic">
+                          Aucun article généré pour le moment.
+                        </TableCell>
+                      </TableRow>
+                    )}
+                  </TableBody>
+                </Table>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       )}
 

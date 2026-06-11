@@ -150,7 +150,7 @@ export async function POST(req: Request) {
     const articleLink = `https://www.gainable.fr/entreprise/${expert.slug}/articles/${slug}`;
     try {
       await resend.emails.send({
-        from: process.env.RESEND_FROM_EMAIL || "Gainable IA <contact@gainable.fr>",
+        from: process.env.RESEND_FROM_EMAIL || "Gainable IA <noreply@gainable.ch>",
         to: "contact@gainable.fr",
         subject: `✍️ [MANUEL] Nouvel Article SEO Publié : ${result.title} (${city})`,
         html: `
