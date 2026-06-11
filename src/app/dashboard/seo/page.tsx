@@ -571,11 +571,16 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
             </div>
 
             {auditData.score < 100 && (
-              <div className="mt-4 p-0.5 rounded-lg border border-emerald-500 bg-emerald-950/20 shadow-[0_0_15px_rgba(16,185,129,0.35)] animate-pulse">
-                <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2.5 px-3 rounded flex items-center justify-center gap-1.5 transition-all">
+              <div className="mt-4 p-1 rounded-xl border-2 border-emerald-400 bg-emerald-950/40 shadow-[0_0_25px_rgba(16,185,129,0.7),_inset_0_0_12px_rgba(16,185,129,0.3)] animate-pulse">
+                <Button asChild className="w-full h-auto bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white font-extrabold text-xs sm:text-sm py-3.5 px-4 rounded-lg flex items-center justify-center gap-2.5 transition-all duration-200 whitespace-normal text-center shadow-lg active:scale-98">
                   <Link href="/dashboard/articles">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                    Propulser ma visibilité locale (Publier des articles SEO)
+                    <Sparkles className="w-4 h-4 text-amber-300 shrink-0" />
+                    <span className="flex flex-col items-center leading-tight">
+                      <span>Propulser ma visibilité locale</span>
+                      <span className="text-[10px] sm:text-xs text-emerald-100 font-normal mt-1">
+                        (Publier des articles SEO)
+                      </span>
+                    </span>
                   </Link>
                 </Button>
               </div>
