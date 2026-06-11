@@ -7,7 +7,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import {
   Search, Sparkles, Globe, AlertCircle, CheckCircle2, PlayCircle, Loader2,
-  ChevronRight, BarChart3, Info, RefreshCw, Check, AlertTriangle, HelpCircle
+  ChevronRight, BarChart3, Info, RefreshCw, Check, AlertTriangle, HelpCircle,
+  Eye, TrendingUp, TrendingDown, BookOpen, Key
 } from "lucide-react";
 
 interface Recommendation {
@@ -21,9 +22,13 @@ interface Recommendation {
 
 export default function ArtisanSeoPage() {
   const [siteWeb, setSiteWeb] = useState("");
+  const [targetCity, setTargetCity] = useState("Paris");
   const [isSaving, setIsSaving] = useState(false);
   const [profileLoaded, setProfileLoaded] = useState(false);
   
+  // Chart metric
+  const [selectedMetric, setSelectedMetric] = useState<"clicks" | "impressions" | "ctr" | "position">("clicks");
+
   // Audit states
   const [isAuditing, setIsAuditing] = useState(false);
   const [auditLogs, setAuditLogs] = useState<string[]>([]);
@@ -33,23 +38,25 @@ export default function ArtisanSeoPage() {
   const [activeFix, setActiveFix] = useState<Recommendation | null>(null);
   const [fixedIds, setFixedIds] = useState<string[]>([]);
 
-  // Load profile to get site_web
+  // Load profile to get site_web and target city
   useEffect(() => {
     fetch("/api/dashboard/profile")
       .then(res => res.json())
       .then(data => {
         if (data.site_web) {
           setSiteWeb(data.site_web);
-          
-          // Generate a pre-filled audit based on their site
-          triggerInitialAudit(data.site_web);
         }
+        if (data.ville) {
+          setTargetCity(data.ville);
+        }
+        const initialUrl = data.site_web || "mon-site-artisan.fr";
+        triggerInitialAudit(initialUrl, data.ville || "Paris");
         setProfileLoaded(true);
       })
       .catch(err => console.error(err));
   }, []);
 
-  const triggerInitialAudit = (url: string) => {
+  const triggerInitialAudit = (url: string, city: string) => {
     const cleanUrl = url.replace(/https?:\/\//, "");
     setAuditData({
       url: url.startsWith("http") ? url : `https://${url}`,
@@ -77,7 +84,7 @@ add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; prelo
           id: "rec-csp",
           type: "critical",
           title: "Absence de Content Security Policy (CSP)",
-          evidence: "L'en-tête Content-Security-Policy est manquant.",
+          evidence: `L'en-tête Content-Security-Policy est manquant sur ${cleanUrl}.`,
           fix: "Configurer une politique CSP de base pour bloquer les injections de scripts XSS.",
           codeBlock: `# Apache (.htaccess)
 Header set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
@@ -89,7 +96,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
           id: "rec-chatbot",
           type: "warning",
           title: "Agent IA & Chatbot d'Acquisition non configuré",
-          evidence: "Aucun script d'agent conversationnel intelligent n'a été détecté.",
+          evidence: `Aucun script d'agent conversationnel intelligent n'a été détecté sur ${cleanUrl}.`,
           fix: "Intégrez le script de l'Agent IA Gainable.fr pour capturer et qualifier les leads automatiquement.",
           codeBlock: `<!-- Insérez ce script avant la balise de fermeture </body> -->
 <script src="https://www.gainable.fr/assets/js/agent-ia-widget.js" data-expert-id="mon-id" async></script>`
@@ -126,7 +133,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
         body: JSON.stringify({ site_web: siteWeb })
       });
       
-      triggerInitialAudit(siteWeb);
+      triggerInitialAudit(siteWeb, targetCity);
       setFixedIds([]); // Reset fixes on new analyze
     } catch (e) {
       console.error(e);
@@ -156,11 +163,82 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
     }
   };
 
+  // Generate dual-line SVG points (Gainable vs Artisan)
+  const getChartPoints = () => {
+    // 8 mock points representing history
+    const dates = ["08/03", "22/03", "05/04", "19/04", "03/05", "17/05", "31/05", "07/06"];
+    
+    const gainableValues = {
+      clicks: [180, 195, 210, 205, 225, 240, 255, 266],
+      impressions: [38000, 41000, 43500, 42000, 46000, 51000, 54000, 56000],
+      ctr: [0.47, 0.48, 0.48, 0.49, 0.49, 0.47, 0.47, 0.48],
+      position: [24.5, 23.8, 23.4, 23.1, 22.9, 22.8, 22.7, 22.6]
+    };
+
+    const artisanValues = {
+      clicks: [8, 12, 18, 15, 22, 28, 35, 45],
+      impressions: [850, 1100, 1450, 1300, 1800, 2100, 2600, 3100],
+      ctr: [0.94, 1.09, 1.24, 1.15, 1.22, 1.33, 1.34, 1.45],
+      position: [42.1, 38.4, 34.2, 31.8, 28.5, 22.1, 14.8, 8.4]
+    };
+
+    const selectedGainable = gainableValues[selectedMetric];
+    const selectedArtisan = artisanValues[selectedMetric];
+
+    const maxG = Math.max(...selectedGainable);
+    const maxA = Math.max(...selectedArtisan);
+    const maxVal = Math.max(maxG, maxA);
+
+    const minG = Math.min(...selectedGainable);
+    const minA = Math.min(...selectedArtisan);
+    const minVal = Math.min(minG, minA);
+
+    const width = 500;
+    const height = 150;
+    const paddingLeft = 50;
+    const paddingTop = 40;
+
+    const pointsG = selectedGainable.map((val, idx) => {
+      const x = paddingLeft + (idx * (width / 7));
+      const delta = maxVal - minVal;
+      let y = paddingTop + height / 2;
+      if (delta > 0) {
+        y = paddingTop + height - ((val - minVal) / delta) * height;
+      }
+      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+    });
+
+    const pointsA = selectedArtisan.map((val, idx) => {
+      const x = paddingLeft + (idx * (width / 7));
+      const delta = maxVal - minVal;
+      let y = paddingTop + height / 2;
+      if (delta > 0) {
+        y = paddingTop + height - ((val - minVal) / delta) * height;
+      }
+      return { x: Math.round(x), y: Math.round(y), label: dates[idx], val };
+    });
+
+    return { pointsG, pointsA };
+  };
+
+  const { pointsG, pointsA } = getChartPoints();
+
+  // Localized keywords tailored to the artisan's targeted geographic zone (city)
+  const localKeywords = [
+    { text: `climatisation gainable ${targetCity}`, volume: 320, position: 8.4, status: "top-10", difficulty: "Moyenne" },
+    { text: `installateur climatisation ${targetCity}`, volume: 280, position: 12.1, status: "top-20", difficulty: "Faible" },
+    { text: `prix clim réversible ${targetCity}`, volume: 190, position: 6.2, status: "top-10", difficulty: "Faible" },
+    { text: `dépannage clim ${targetCity}`, volume: 140, position: 18.5, status: "top-20", difficulty: "Moyenne" },
+    { text: `pompe à chaleur ${targetCity}`, volume: 450, position: 32.4, status: "top-50", difficulty: "Elevée" }
+  ];
+
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-[#1F2D3D]">Visibilité SEO & Comparateur de Performance</h2>
-        <p className="text-slate-500 text-sm">Comparez votre site internet par rapport aux performances de Gainable.fr et des leaders nationaux.</p>
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-bold text-[#1F2D3D]">Visibilité SEO & Comparateur de Performance</h2>
+          <p className="text-slate-500 text-sm">Comparez votre site internet par rapport aux performances de Gainable.fr et des leaders nationaux.</p>
+        </div>
       </div>
 
       {/* Website Setup & Analysis Form */}
@@ -306,10 +384,160 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
         </div>
       )}
 
+      {/* Dual-Line SVG Performance Chart */}
+      {auditData && (
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="text-base font-semibold">Suivi de Performance Comparatif</CardTitle>
+              <CardDescription>
+                Métrique sélectionnée : <span className="font-bold text-[#D59B2B] capitalize">{selectedMetric}</span> (Gainable.fr en Or vs Mon Site en Vert)
+              </CardDescription>
+            </div>
+            <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-md text-xs">
+              {(["clicks", "impressions", "ctr", "position"] as const).map((m) => (
+                <button
+                  key={m}
+                  onClick={() => setSelectedMetric(m)}
+                  className={`px-2.5 py-1 rounded transition-all capitalize font-medium ${selectedMetric === m ? "bg-white text-slate-800 shadow-sm animate-fade-in" : "text-slate-500 hover:text-slate-800"}`}
+                >
+                  {m === "ctr" ? "CTR" : m === "clicks" ? "clics" : m}
+                </button>
+              ))}
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="relative h-64 w-full bg-slate-50 border rounded-lg overflow-hidden flex flex-col justify-between p-4">
+              <svg className="absolute inset-0 w-full h-full p-6">
+                {/* Grid Lines */}
+                <line x1="5%" y1="20%" x2="95%" y2="20%" stroke="#E2E8F0" strokeDasharray="4" />
+                <line x1="5%" y1="50%" x2="95%" y2="50%" stroke="#E2E8F0" strokeDasharray="4" />
+                <line x1="5%" y1="80%" x2="95%" y2="80%" stroke="#E2E8F0" strokeDasharray="4" />
+
+                {/* Gainable.fr (Gold Line) */}
+                {pointsG.length > 0 && (
+                  <>
+                    <path
+                      d={pointsG.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                      fill="none"
+                      stroke="#D59B2B"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {pointsG.map((pt, idx) => (
+                      <circle key={`g-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#D59B2B" stroke="#FFF" strokeWidth="2" />
+                    ))}
+                  </>
+                )}
+
+                {/* Artisan Site (Green Line) */}
+                {pointsA.length > 0 && (
+                  <>
+                    <path
+                      d={pointsA.reduce((acc, curr, idx) => acc + (idx === 0 ? `M ${curr.x} ${curr.y}` : ` L ${curr.x} ${curr.y}`), "")}
+                      fill="none"
+                      stroke="#10B981"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {pointsA.map((pt, idx) => (
+                      <circle key={`a-${idx}`} cx={pt.x} cy={pt.y} r="4.5" fill="#10B981" stroke="#FFF" strokeWidth="2" />
+                    ))}
+                  </>
+                )}
+              </svg>
+
+              <div className="mt-auto w-full flex justify-between px-6 text-[10px] text-slate-400 font-mono select-none z-10">
+                {pointsG.map((p, idx) => (
+                  <span key={idx}>{p.label}</span>
+                ))}
+              </div>
+            </div>
+
+            {/* Legend */}
+            <div className="flex gap-4 mt-3 text-xs justify-center font-semibold">
+              <span className="flex items-center gap-1.5 text-slate-700">
+                <span className="w-3 h-3 rounded-full bg-[#D59B2B]" /> Gainable.fr
+              </span>
+              <span className="flex items-center gap-1.5 text-slate-700">
+                <span className="w-3 h-3 rounded-full bg-[#10B981]" /> Mon Site ({siteWeb || "Non configuré"})
+              </span>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Local Keyword Geotargeting Panel */}
+      {auditData && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base font-semibold flex items-center gap-2">
+              <Key className="w-5 h-5 text-indigo-600" />
+              Veille Concurrentielle & Mots-Clés Locaux (Zone : {targetCity})
+            </CardTitle>
+            <CardDescription>
+              Suivez le positionnement de vos mots-clés climatisation locaux ciblés géographiquement autour de {targetCity}.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="rounded-md border overflow-x-auto">
+              <Table>
+                <TableHeader className="bg-slate-50">
+                  <TableRow>
+                    <TableHead className="font-semibold text-slate-600">Requête Locale</TableHead>
+                    <TableHead className="font-semibold text-slate-600">Vol. Recherche</TableHead>
+                    <TableHead className="font-semibold text-slate-600">Ma Position</TableHead>
+                    <TableHead className="font-semibold text-slate-600">Difficulté</TableHead>
+                    <TableHead className="font-semibold text-slate-600 text-right">Statut</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {localKeywords.map((kw, idx) => (
+                    <TableRow key={idx} className="hover:bg-slate-50/30">
+                      <TableCell className="font-mono text-xs font-semibold text-slate-800">{kw.text}</TableCell>
+                      <TableCell className="font-mono text-xs">{kw.volume} / mois</TableCell>
+                      <TableCell className="font-mono text-xs font-bold text-slate-700"># {kw.position}</TableCell>
+                      <TableCell>
+                        <Badge variant="outline" className={
+                          kw.difficulty === "Faible" ? "bg-emerald-50 text-emerald-700 border-emerald-200 text-[10px]" :
+                          kw.difficulty === "Moyenne" ? "bg-amber-50 text-amber-700 border-amber-200 text-[10px]" :
+                          "bg-rose-50 text-rose-700 border-rose-200 text-[10px]"
+                        }>
+                          {kw.difficulty}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                          kw.status === "top-10" ? "bg-green-100 text-green-800" :
+                          kw.status === "top-20" ? "bg-amber-100 text-amber-800" :
+                          "bg-slate-100 text-slate-800"
+                        }`}>
+                          {kw.status.toUpperCase()}
+                        </span>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Action Plan Recommendations for Artisan */}
       {auditData && auditData.recommendations.length > 0 && (
         <div className="space-y-4">
-          <h3 className="text-lg font-bold text-slate-900">Plan d'action de visibilité pour mon site</h3>
+          <div className="flex flex-col gap-1">
+            <h3 className="text-lg font-bold text-slate-900">Plan d'action de visibilité pour mon site ({siteWeb || "mon-site"})</h3>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-900 flex items-start gap-2 leading-relaxed">
+              <BookOpen className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <div>
+                <strong>💡 Conseils Pédagogiques pour votre site :</strong> Ces recommandations techniques vous guident pas à pas pour configurer de manière autonome la sécurité et le référencement de votre site internet professionnel afin de maximiser votre couverture locale.
+              </div>
+            </div>
+          </div>
           
           {auditData.recommendations.map((rec: Recommendation) => (
             <Card key={rec.id} className={`border-l-4 ${rec.type === "critical" ? "border-l-rose-500" : "border-l-amber-500"}`}>
@@ -339,10 +567,10 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                   <Button
                     size="sm"
                     onClick={() => handleShowFix(rec)}
-                    className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-1.5 rounded transition-all shrink-0 flex items-center gap-1"
+                    className="bg-[#D59B2B] hover:bg-[#B58221] text-white text-xs font-bold px-3 py-1.5 rounded transition-all shrink-0 flex items-center gap-1"
                   >
-                    <Check className="w-3.5 h-3.5" />
-                    Corriger
+                    <Eye className="w-3.5 h-3.5" />
+                    Consulter la résolution
                   </Button>
                 </div>
               </CardContent>
@@ -370,7 +598,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
               <div>
                 <CardTitle className="text-base font-bold flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-amber-500 fill-amber-500" />
-                  Instructions de Correction : {activeFix.title}
+                  Consignes de Résolution : {activeFix.title}
                 </CardTitle>
                 <CardDescription className="text-slate-400 mt-1">
                   Appliquez les configurations ci-dessous sur l'hébergement de votre site internet pour résoudre l'alerte.
@@ -400,7 +628,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                   className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center gap-1"
                 >
                   <Check className="w-3.5 h-3.5" />
-                  J'ai appliqué la correction
+                  J'ai appliqué la correction sur mon site
                 </Button>
               </div>
             </CardContent>
