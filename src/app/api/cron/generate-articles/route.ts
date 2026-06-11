@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import OpenAI from "openai";
 import slugify from "slugify";
 import { supabase } from "@/lib/supabase";
+import { Resend } from "resend";
 import { CITIES_100 } from "@/data/cities-100";
 import { CITIES_EXTENDED } from "@/data/cities-extended";
 import { CITIES_MEDIUM } from "@/data/cities-medium";
@@ -246,6 +247,45 @@ export async function GET(req: Request) {
     });
 
     console.log(`[Cron Generate Articles] Article successfully published! ID: ${newArticle.id}, Slug: ${newArticle.slug}`);
+
+    // 9. Send preview email via Resend
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const articleLink = `https://www.gainable.fr/entreprise/${expert.slug}/articles/${finalSlug}`;
+    
+    try {
+      await resend.emails.send({
+        from: "Gainable IA <onboarding@resend.dev>",
+        to: "contact@gainable.fr",
+        subject: `✍️ Nouvel Article SEO Publié : ${result.title} (${city.name})`,
+        html: `
+          <div style="font-family: sans-serif; padding: 20px; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px;">
+            <h2 style="color: #D59B2B; margin-top: 0;">✍️ Nouvel article SEO publié !</h2>
+            <p><strong>Ville ciblée :</strong> ${city.name} (${city.zip})</p>
+            <p><strong>Mot-clé ciblé :</strong> "${keyword}"</p>
+            <p><strong>Artisan associé :</strong> ${expert.nom_entreprise}</p>
+            <p><strong>URL de publication :</strong> <a href="${articleLink}" style="color: #D59B2B; font-weight: bold; text-decoration: none;">${articleLink}</a></p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;"/>
+            
+            <h3 style="font-size: 20px; margin-bottom: 10px; color: #1e293b;">${result.title}</h3>
+            <p style="font-style: italic; color: #475569; font-size: 16px; margin-bottom: 20px;">${result.introduction}</p>
+            
+            ${publicImageUrl ? `<div style="margin: 20px 0;"><img src="${publicImageUrl}" alt="Illustration article" style="max-width: 100%; border-radius: 12px; height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/></div>` : ''}
+            
+            <div style="line-height: 1.6; color: #334155;">
+              ${result.content}
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;"/>
+            <p style="font-size: 12px; color: #64748b; text-align: center; margin-bottom: 0;">
+              Cet e-mail a été généré automatiquement par l'agent SEO de Gainable.fr.
+            </p>
+          </div>
+        `
+      });
+      console.log(`[Cron Generate Articles] Confirmation email sent to contact@gainable.fr`);
+    } catch (emailError) {
+      console.error("[Cron Generate Articles] Failed to send email confirmation:", emailError);
+    }
 
     return NextResponse.json({
       success: true,
