@@ -145,7 +145,11 @@ export async function POST(req: Request) {
     }
 
     // 1. Run the dynamic sitemap generator to find all dynamic paths
-    const sitemapEntries = await sitemap();
+    const sitemapEntries = [
+      ...(await sitemap({ id: 0 })),
+      ...(await sitemap({ id: 1 })),
+      ...(await sitemap({ id: 2 }))
+    ];
     const totalPages = sitemapEntries.length;
 
     // Categorize sitemap URLs

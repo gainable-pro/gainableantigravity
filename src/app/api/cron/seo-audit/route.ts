@@ -29,7 +29,11 @@ export async function GET(req: Request) {
     console.log("[Cron SEO Audit] Running daily SEO audit crawl...");
 
     // 2. Generate current sitemap to evaluate dynamic counts
-    const sitemapEntries = await sitemap();
+    const sitemapEntries = [
+      ...(await sitemap({ id: 0 })),
+      ...(await sitemap({ id: 1 })),
+      ...(await sitemap({ id: 2 }))
+    ];
     const totalPages = sitemapEntries.length;
 
     let staticCount = 0;
