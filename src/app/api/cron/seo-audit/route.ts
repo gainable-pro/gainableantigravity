@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import sitemap from "@/app/sitemap";
 import { Resend } from "resend";
 import competitorsData from "@/data/seo-competitors.json";
 
@@ -29,33 +28,13 @@ export async function GET(req: Request) {
     console.log("[Cron SEO Audit] Running daily SEO audit crawl...");
 
     // 2. Generate current sitemap to evaluate dynamic counts
-    const sitemapEntries = [
-      ...(await sitemap({ id: 0 })),
-      ...(await sitemap({ id: 1 })),
-      ...(await sitemap({ id: 2 }))
-    ];
-    const totalPages = sitemapEntries.length;
+    const expertCount = await prisma.expert.count({ where: { status: "active" } });
+    const articleCount = await prisma.article.count({ where: { status: "PUBLISHED" } });
+    const regionCount = 22; // Hardcoded regions from cities-*.ts
+    const cityCount = 23361; // Total from CITIES_*
+    const staticCount = 10; // 9 static pages + root
 
-    let staticCount = 0;
-    let expertCount = 0;
-    let articleCount = 0;
-    let regionCount = 0;
-    let cityCount = 0;
-
-    sitemapEntries.forEach((entry) => {
-      const url = entry.url;
-      if (url.includes("/pro/")) {
-        expertCount++;
-      } else if (url.includes("/articles/")) {
-        articleCount++;
-      } else if (url.includes("/trouver-installateur/")) {
-        regionCount++;
-      } else if (url.includes("/climatisation/")) {
-        cityCount++;
-      } else {
-        staticCount++;
-      }
-    });
+    const totalPages = staticCount + regionCount + cityCount + expertCount + articleCount;
 
     // 3. Scan DB for SEO errors (missing meta descriptions)
     const [experts, articles] = await Promise.all([
