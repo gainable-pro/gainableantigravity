@@ -52,16 +52,21 @@ export async function GET(req: Request) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
+    const typeParam = searchParams.get("type"); // null, "b2c", or "b2b"
+    const shouldRunB2C = !typeParam || typeParam === "b2c";
+    const shouldRunB2B = !typeParam || typeParam === "b2b";
+
     console.log("[Cron Generate Articles] Starting daily B2C & B2B automated article pipeline...");
 
     const generatedArticles = [];
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // ==========================================
-    // PIPELINE 1 : ARTICLE B2C (Client Acquisition)
-    // ==========================================
-    console.log("[Cron Generate Articles] Generating B2C Client Article...");
+    if (shouldRunB2C) {
+      // ==========================================
+      // PIPELINE 1 : ARTICLE B2C (Client Acquisition)
+      // ==========================================
+      console.log("[Cron Generate Articles] Generating B2C Client Article...");
     
     // Find next untargeted city
     const existingB2CArticles = await prisma.article.findMany({
@@ -98,44 +103,55 @@ export async function GET(req: Request) {
 
       if (b2cExpert) {
         const b2cPrompt = `
-        Tu es un rédacteur SEO expert en génie climatique pour Gainable.fr.
-        Rédige un article de blog SEO B2C haut de gamme et complet ciblant les propriétaires de maisons.
+        Tu es un rédacteur et ingénieur thermicien senior rédigeant pour le portail Gainable.fr.
+        Rédige un article de blog SEO B2C de qualité éditoriale exceptionnelle, complet et haut de gamme, ciblant les propriétaires de maisons.
         Mot-clé principal : "${b2cKeyword}".
         
         L'expert associé à cet article est : "${b2cExpert.nom_entreprise}" situé à "${b2cExpert.ville}".
         Ville cible : "${b2cCity.name}" (Code postal: "${b2cCity.zip}", Département: "${b2cCity.department}", Région: "${b2cCity.region}").
         
-        Consignes de rédaction :
-        - Ton : Professionnel, rassurant et expert.
+        CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
+        - Ton : Professionnel, rassurant, hautement technique mais accessible, pédagogue et digne d'un expert du domaine.
         - Cible : Propriétaires immobiliers cherchant à installer ou remplacer un climatiseur.
-        - Structure l'article avec des balises HTML (<h2>, <h3>, <p>, <ul>, <li>, <strong>). Ne mets pas de balise <html> ou <body> ou de titre h1 dans le corps.
-        - Squelette de l'article :
-          - Une introduction accrocheuse (externe au content HTML).
-          - Une section H2 d'état des lieux ou présentation de la solution à ${b2cCity.name}.
-          - Une section H3 de détails techniques (SCOP, marques comme Daikin, Mitsubishi, gaines de soufflage, régulation par zone Airzone).
-          - Une section H2 des avantages locaux (aides RGE, confort d'été face aux vagues de chaleur à ${b2cCity.name}, silence).
-          - Une section H3 expliquant comment choisir l'installateur (qualifications RGE QualiPac, décennale).
-        - Fais un article complet de minimum 700 mots.
+        - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc. Entre directement dans le vif du sujet avec des phrases concrètes.
+        - Style d'écriture : Phrases de longueurs variées, vocabulaire riche et précis, structure fluide. Raconte une véritable histoire technique pour capter l'intérêt du lecteur.
+        - Contenu technique réel (E-E-A-T) :
+          - Explique des concepts thermiques clés : les coefficients de performance (SCOP et SEER) et leur impact concret sur la facture d'électricité.
+          - Mentionne des technologies spécifiques : la régulation par zone (comme le système Airzone avec registres motorisés et thermostats individuels), la discrétion sonore (niveaux de pression acoustique inférieurs à 20-22 dB(A) pour les unités intérieures), et l'intégration esthétique (plénums de soufflage, grilles de diffusion linéaires ou à double déflexion intégrées dans les faux-plafonds).
+          - Fais référence à des constructeurs reconnus (Daikin, Mitsubishi Electric, Toshiba) et à leurs gammes adaptées aux combles ou faux-plafonds.
+          - Mentionne les garanties indispensables : l'assurance décennale, la certification RGE QualiPAC, l'attestation de capacité de manipulation des fluides frigorigènes.
+          - CONVICTION TARIFATION RÉELLE (CRITIQUE) : Pour tout chiffrage ou mention de tarif d'une climatisation gainable (système réversible encastré), le coût d'une installation complète de qualité (matériel, gaines, plénums, grilles, régulation multizone type Airzone et main d'œuvre) se situe obligatoirement dans une fourchette de 10 000 € à 20 000 € minimum selon la puissance et le nombre de zones. Interdiction absolue de citer des prix bas erronés comme 3 000 €, 5 000 € ou 8 000 € pour du gainable complet (ces petits budgets correspondent à des mono-splits muraux simples). Rappelle que le gainable de qualité exige un budget de départ de 10 000 € minimum.
+        - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${b2cCity.name}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${b2cExpert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
+        - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
+        
+        Squelette de l'article :
+        - Une section H2 d'état des lieux ou présentation de la solution gainable à ${b2cCity.name}.
+        - Une section H3 de détails techniques (SCOP, SEER, intégration invisible, régulation pièce par pièce Airzone).
+        - Une section H2 des avantages locaux (aides de l'État RGE, confort d'été face aux vagues de chaleur à ${b2cCity.name}, silence acoustique de fonctionnement).
+        - Une section H3 expliquant comment choisir l'installateur local qualifié (qualifications RGE QualiPac, assurance décennale, réactivité).
         
         Format de retour obligatoire (JSON pur) :
         {
-          "title": "Titre optimisé de l'article B2C",
-          "introduction": "Introduction engageante de 2-3 phrases avec le mot-clé principal.",
-          "content": "Le corps de l'article au format HTML sans <h1>",
+          "title": "Titre optimisé et accrocheur de l'article B2C",
+          "introduction": "Introduction engageante de 3-4 phrases avec le mot-clé principal.",
+          "content": "Le corps de l'article au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>)",
           "metaDesc": "Meta description optimisée SEO (< 155 caractères)",
           "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a premium ducted AC (climatisation gainable) installation in a luxury modern home, minimalist air diffusion grills on the ceiling, high-end architecture, warm natural light, commercial photography style, 1024x1024.",
           "faq": [
             {
-              "question": "Question sur la clim à ${b2cCity.name} ?",
-              "response": "Réponse précise"
+              "question": "Quel est le coût d'une installation de climatisation gainable à ${b2cCity.name} ?",
+              "response": "Le coût d'une installation complète et performante de climatisation gainable oscille généralement entre 10 000 € et 20 000 € minimum selon la puissance nécessaire et le nombre de zones à équiper. Les tarifs de 3 000 € ou 5 000 € correspondent à des systèmes simples mono-splits et non à du gainable encastré multizone."
             },
             {
-              "question": "Pourquoi choisir un pro RGE à ${b2cCity.name} ?",
-              "response": "Réponse sur les aides et la sécurité"
+              "question": "Pourquoi choisir un professionnel RGE certifié à ${b2cCity.name} ?",
+              "response": "Réponse sur les aides de l'État (CEE, MaPrimeRénov'), la sécurité et la qualité de pose."
+            },
+            {
+              "question": "Quel entretien prévoir pour une climatisation gainable ?",
+              "response": "Explications sur le nettoyage des filtres et la maintenance périodique."
             }
           ]
-        }
-        `;
+        }`;
 
         try {
           const b2cCompletion = await openai.chat.completions.create({
@@ -151,7 +167,7 @@ export async function GET(req: Request) {
 
           if (b2cResult.title && b2cResult.content) {
             // Generate B2C Image via GPT-Image-2
-            let b2cImageUrl = null;
+            let b2cImageUrl = "/blog/gainable-salon.jpg"; // Default fallback
             try {
               const b2cImageResponse = await openai.images.generate({
                 model: "gpt-image-2",
@@ -247,11 +263,13 @@ export async function GET(req: Request) {
         }
       }
     }
+    }
 
-    // ==========================================
-    // PIPELINE 2 : ARTICLE B2B (Artisan Acquisition)
-    // ==========================================
-    console.log("[Cron Generate Articles] Generating B2B Pro/Artisan Article...");
+    if (shouldRunB2B) {
+      // ==========================================
+      // PIPELINE 2 : ARTICLE B2B (Artisan Acquisition)
+      // ==========================================
+      console.log("[Cron Generate Articles] Generating B2B Pro/Artisan Article...");
 
     // Resolve the platform expert (gainable-fr)
     let b2bExpert = await prisma.expert.findFirst({
@@ -274,38 +292,43 @@ export async function GET(req: Request) {
       const b2bKeyword = b2bTopic;
 
       const b2bPrompt = `
-      Tu es un conseiller en développement commercial expert du bâtiment pour Gainable.fr.
-      Rédige un article de blog SEO B2B haut de gamme, technique et ultra convaincant destiné aux artisans, chauffagistes et installateurs de climatisation.
+      Tu es un conseiller senior en développement commercial et expert de la transition énergétique pour Gainable.fr.
+      Rédige un article de blog SEO B2B haut de gamme, pragmatique, technique et ultra convaincant destiné aux artisans, chauffagistes, plombiers et installateurs de climatisation.
       Mot-clé principal : "${b2bKeyword}".
       
-      Consignes de rédaction :
-      - Ton : Professionnel, motivant, pragmatique (orienté business, chantiers, rentabilité).
-      - Cible : Installateurs CVC, plombiers RGE et frigoristes indépendants.
-      - Présente le modèle de Gainable.fr comme le meilleur partenaire d'acquisition (leads qualifiés, pas de commissions abusives, autonomie tarifaire).
-      - Structure l'article avec des balises HTML (<h2>, <h3>, <p>, <ul>, <li>, <strong>). Ne mets pas de balise <html> ou <body> ou de titre h1 dans le corps.
-      - Squelette de l'article :
-        - Une introduction accrocheuse (externe au content HTML).
-        - Une section H2 analysant le problème actuel des artisans (concurrence, prix des leads, marges serrées).
-        - Une section H3 de conseils opérationnels (optimisation des devis, réactivité, relances).
-        - Une section H2 présentant la solution Gainable.fr (abonnements fixes, chantiers ciblés géographiquement).
-        - Une section H3 expliquant comment rejoindre le réseau en quelques clics.
-      - Fais un article complet de minimum 700 mots.
+      CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
+      - Ton : Professionnel, dynamique, motivant, axé sur les résultats (business, rentabilité, conversion, croissance du chiffre d'affaires).
+      - Cible : Entreprises de génie climatique (CVC), installateurs de pompes à chaleur RGE et frigoristes indépendants.
+      - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc.
+      - Style d'écriture : Direct, axé sur le quotidien des chantiers et la réalité des artisans, vocabulaire métier précis (devis, taux de conversion, coût d'acquisition de leads, marge brute, etc.).
+      - Valeur ajoutée de Gainable.fr : Explique comment le modèle d'abonnement fixe sans commission de Gainable.fr s'oppose aux plateformes d'achat de leads traditionnelles et abusives. Souligne la qualité des contacts pré-qualifiés et la liberté tarifaire préservée pour l'artisan.
+      - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
+      
+      Squelette de l'article :
+      - Une section H2 analysant les défis du marché CVC actuel (concurrence féroce, coût d'acquisition en hausse, marges sous pression).
+      - Une section H3 de conseils opérationnels (structuration des offres commerciales, réactivité dans la prise de contact, relance méthodique des devis).
+      - Une section H2 présentant la solution Gainable.fr (abonnements fixes, fiches profils locales avec forte autorité SEO, mise en relation directe).
+      - Une section H3 expliquant comment rejoindre le réseau de manière fluide et activer son quota mensuel de leads.
       
       Format de retour obligatoire (JSON pur) :
       {
-        "title": "Titre optimisé de l'article B2B",
-        "introduction": "Introduction engageante de 2-3 phrases avec le mot-clé principal.",
-        "content": "Le corps de l'article au format HTML sans <h1>",
-        "metaDesc": "Meta description optimisée SEO pro (< 155 caractères)",
+        "title": "Titre optimisé, percutant et engageant pour les professionnels CVC",
+        "introduction": "Introduction de 3-4 phrases captant l'intérêt commercial et introduisant le mot-clé.",
+        "content": "Le corps de l'article complet au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>)",
+        "metaDesc": "Meta description optimisée pour cibler les professionnels CVC (< 155 caractères)",
         "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a professional heating and cooling engineer working with blueprints on a tablet inside a modern commercial building, business growth concept, high-end HVAC professional style, warm natural lighting, 1024x1024.",
         "faq": [
           {
-            "question": "Comment s'assurer de la qualité des chantiers de clim ?",
-            "response": "Réponse axée sur le ciblage géographique et la pré-qualification des clients."
+            "question": "Comment Gainable.fr pré-qualifie les demandes de chantiers ?",
+            "response": "Explication sur la vérification des besoins réels (maison individuelle, budget, type de projet gainable) avant mise en relation."
           },
           {
-            "question": "Quel budget investir pour obtenir des leads CVC ?",
-            "response": "Réponse comparant le coût d'acquisition classique avec l'abonnement Gainable.fr."
+            "question": "Quel est l'avantage du modèle d'abonnement fixe sans commission ?",
+            "response": "Explication sur la rentabilité accrue pour l'artisan, qui conserve 100% de sa marge commerciale sur les travaux."
+          },
+          {
+            "question": "Comment optimiser son profil expert sur Gainable.fr pour capter plus de leads ?",
+            "response": "Conseils pratiques sur la rédaction de la description, l'ajout de photos de chantiers et la mise en avant des qualifications RGE."
           }
         ]
       }
@@ -325,7 +348,7 @@ export async function GET(req: Request) {
 
         if (b2bResult.title && b2bResult.content) {
           // Generate B2B Image via GPT-Image-2
-          let b2bImageUrl = null;
+          let b2bImageUrl = "/blog/b2b-planning.png"; // Default fallback
           try {
             const b2bImageResponse = await openai.images.generate({
               model: "gpt-image-2",
@@ -418,6 +441,7 @@ export async function GET(req: Request) {
       } catch (gptErr) {
         console.error("[Cron B2B GPT] Generation failed:", gptErr);
       }
+    }
     }
 
     return NextResponse.json({

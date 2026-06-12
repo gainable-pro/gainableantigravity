@@ -86,9 +86,13 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [genKeyword, setGenKeyword] = useState("");
   const [genCity, setGenCity] = useState("");
   const [genExpertId, setGenExpertId] = useState("");
+  const [genOrientedAcquisition, setGenOrientedAcquisition] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedResult, setGeneratedResult] = useState<any>(null);
   const [isCrawling, setIsCrawling] = useState(false);
+  const [isB2cCronRunning, setIsB2cCronRunning] = useState(false);
+  const [isB2bCronRunning, setIsB2bCronRunning] = useState(false);
+  const [isPublishCronRunning, setIsPublishCronRunning] = useState(false);
   const [crawlLogs, setCrawlLogs] = useState<string[]>([]);
   const [crawlReport, setCrawlReport] = useState<any>(null);
   const [historyData, setHistoryData] = useState<any[]>([]);
@@ -445,6 +449,58 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
     }
   };
 
+  const triggerB2cCronPipeline = async () => {
+    setIsB2cCronRunning(true);
+    try {
+      const res = await fetch("/api/cron/generate-articles?secret=gainable_marketing_secret_2024&type=b2c");
+      if (res.ok) {
+        alert("Génération automatique B2C forcée avec succès !");
+        window.location.reload();
+      } else {
+        alert("Erreur lors du déclenchement de la génération B2C.");
+      }
+    } catch (e) {
+      alert("Erreur réseau lors du déclenchement du cron.");
+    } finally {
+      setIsB2cCronRunning(false);
+    }
+  };
+
+  const triggerB2bCronPipeline = async () => {
+    setIsB2bCronRunning(true);
+    try {
+      const res = await fetch("/api/cron/generate-articles?secret=gainable_marketing_secret_2024&type=b2b");
+      if (res.ok) {
+        alert("Génération automatique B2B forcée avec succès !");
+        window.location.reload();
+      } else {
+        alert("Erreur lors du déclenchement de la génération B2B.");
+      }
+    } catch (e) {
+      alert("Erreur réseau lors du déclenchement du cron.");
+    } finally {
+      setIsB2bCronRunning(false);
+    }
+  };
+
+  const triggerPublishCronPipeline = async () => {
+    setIsPublishCronRunning(true);
+    try {
+      const res = await fetch("/api/cron/publish-articles");
+      if (res.ok) {
+        const data = await res.json();
+        alert(`Vérification de publication forcée ! Articles publiés : ${data.publishedCount || 0}`);
+        window.location.reload();
+      } else {
+        alert("Erreur lors du déclenchement de la publication des articles.");
+      }
+    } catch (e) {
+      alert("Erreur réseau lors du déclenchement de la publication.");
+    } finally {
+      setIsPublishCronRunning(false);
+    }
+  };
+
   const handleGenerateArticle = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!genKeyword || !genCity || !genExpertId) {
@@ -462,7 +518,8 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
         body: JSON.stringify({
           keyword: genKeyword,
           city: genCity,
-          expertId: genExpertId
+          expertId: genExpertId,
+          orientedAcquisition: genOrientedAcquisition
         })
       });
 
@@ -568,6 +625,33 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
           >
             {isAuditing ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5 text-amber-400" />}
             Audit Technique IA
+          </Button>
+
+          <Button 
+            onClick={triggerB2cCronPipeline} 
+            disabled={isB2cCronRunning} 
+            className="bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-2 font-bold shadow-sm transition-all py-2 px-3.5 text-xs rounded"
+          >
+            {isB2cCronRunning ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5 text-amber-300" />}
+            {isB2cCronRunning ? "Génération..." : "Forcer Rédaction B2C (Clients)"}
+          </Button>
+
+          <Button 
+            onClick={triggerB2bCronPipeline} 
+            disabled={isB2bCronRunning} 
+            className="bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2 font-bold shadow-sm transition-all py-2 px-3.5 text-xs rounded"
+          >
+            {isB2bCronRunning ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Sparkles className="w-3.5 h-3.5 text-amber-300" />}
+            {isB2bCronRunning ? "Génération..." : "Forcer Rédaction B2B (Pros)"}
+          </Button>
+
+          <Button 
+            onClick={triggerPublishCronPipeline} 
+            disabled={isPublishCronRunning} 
+            className="bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-2 font-bold shadow-sm transition-all py-2 px-3.5 text-xs rounded"
+          >
+            {isPublishCronRunning ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <PlayCircle className="w-3.5 h-3.5 text-emerald-200" />}
+            {isPublishCronRunning ? "Publication..." : "Forcer Publication (6h)"}
           </Button>
         </div>
       </div>
@@ -947,6 +1031,19 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                         ))
                       )}
                     </select>
+                  </div>
+
+                  <div className="flex items-center gap-2 py-1 select-none">
+                    <input
+                      type="checkbox"
+                      id="genOrientedAcquisition"
+                      checked={genOrientedAcquisition}
+                      onChange={(e) => setGenOrientedAcquisition(e.target.checked)}
+                      className="rounded border-slate-200 text-[#D59B2B] focus:ring-[#D59B2B] focus:ring-offset-0 w-4 h-4 cursor-pointer"
+                    />
+                    <label htmlFor="genOrientedAcquisition" className="text-xs font-bold text-slate-700 cursor-pointer">
+                      Orienter l'article vers l'acquisition / conversion prospects
+                    </label>
                   </div>
 
                   <Button 

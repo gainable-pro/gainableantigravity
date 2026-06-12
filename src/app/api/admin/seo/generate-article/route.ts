@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Non autorisé" }, { status: 401 });
     }
 
-    const { keyword, city, expertId } = await req.json();
+    const { keyword, city, expertId, orientedAcquisition } = await req.json();
 
     if (!keyword || !city || !expertId) {
       return NextResponse.json({ message: "Paramètres manquants (keyword, city, expertId)" }, { status: 400 });
@@ -43,33 +43,47 @@ export async function POST(req: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const prompt = `
-    Tu es un rédacteur SEO expert en génie climatique pour Gainable.fr.
-    Rédige un article de blog SEO haut de gamme optimisé pour le mot-clé : "${keyword}" dans la ville de "${city}".
+    Tu es un rédacteur et ingénieur thermicien senior rédigeant pour le portail Gainable.fr.
+    Rédige un article de blog SEO de qualité éditoriale exceptionnelle, haut de gamme et extrêmement complet, optimisé pour le mot-clé : "${keyword}" dans la ville de "${city}".
     
     L'expert associé à cet article est : "${expert.nom_entreprise}" situé à "${expert.ville}".
     
-    Consignes de rédaction :
-    - Ton : Professionnel, instructif, rassurant et expert.
-    - Cible : Propriétaires de maisons individuelles ou de locaux tertiaires.
-    - Le contenu doit démontrer de l'expertise (E-E-A-T) sur la climatisation gainable (ex: confort acoustique, régulation par zone/Airzone, économies d'énergie, choix des marques comme Daikin ou Mitsubishi).
-    - Incorpore subtilement des mentions locales de la ville de "${city}" et présente "${expert.nom_entreprise}" comme l'installateur local recommandé par la plateforme.
-    - Structure l'article avec des balises HTML (<h2>, <h3>, <p>, <ul>, <li>, <strong>). Ne mets pas de balise <html> ou <body>.
+    CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
+    - Ton : Professionnel, pragmatique, hautement technique mais accessible, pédagogue et digne d'un expert du domaine.
+    - Cible : Propriétaires de maisons individuelles ou de locaux professionnels/tertiaires.
+    - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc. Entre directement dans le vif du sujet avec des phrases concrètes.
+    - Style d'écriture : Phrases de longueurs variées, vocabulaire riche et précis, structure fluide. Raconte une véritable histoire technique pour capter l'intérêt du lecteur.
+    - Contenu technique réel (E-E-A-T) :
+      - Explique des concepts thermiques clés : les coefficients de performance (SCOP et SEER) et leur impact concret sur la facture d'électricité.
+      - Mentionne des technologies spécifiques : la régulation par zone (comme le système Airzone avec registres motorisés et thermostats individuels), la discrétion sonore (niveaux de pression acoustique inférieurs à 20-22 dB(A) pour les unités intérieures), et l'intégration esthétique (plénums de soufflage, grilles de diffusion linéaires ou à double déflexion intégrées dans les faux-plafonds).
+      - Fais référence à des constructeurs reconnus (Daikin, Mitsubishi Electric, Toshiba) et à leurs gammes adaptées aux combles ou faux-plafonds.
+      - Mentionne les garanties indispensables : l'assurance décennale, la certification RGE QualiPAC, l'attestation de capacité de manipulation des fluides frigorigènes.
+      - CONVICTION TARIFATION RÉELLE (CRITIQUE) : Pour tout chiffrage ou mention de tarif d'une climatisation gainable (système réversible encastré), le coût d'une installation complète de qualité (matériel, gaines, plénums, grilles, régulation multizone type Airzone et main d'œuvre) se situe obligatoirement dans une fourchette de 10 000 € à 20 000 € minimum selon la puissance et le nombre de zones. Interdiction absolue de citer des prix bas erronés comme 3 000 €, 5 000 € ou 8 000 € pour du gainable complet (ces petits budgets correspondent à des mono-splits muraux simples). Rappelle que le gainable de qualité exige un budget de départ de 10 000 € minimum.
+    ${orientedAcquisition ? `
+    - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', ou solliciter un devis d'installation gratuit auprès de l'expert local). Insiste sur les bénéfices financiers (jusqu'à 70% d'économies d'énergie) et de confort pour inciter le lecteur à passer à l'action.
+    ` : ''}
+    - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${city}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${expert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
+    - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
     
     Format de l'objet JSON à retourner :
     {
-      "title": "Un titre accrocheur et optimisé SEO pour le mot-clé",
-      "introduction": "Une introduction engageante de 2-3 phrases contenant le mot-clé principal.",
-      "content": "Le corps de l'article complet en HTML (minimum 600 mots, structuré en sections <h2> et <h3>)",
-      "metaDesc": "Une meta description optimisée SEO pour Google de moins de 155 caractères",
+      "title": "Titre éditorial accrocheur, unique et optimisé SEO",
+      "introduction": "Une introduction percutante de 3-4 phrases posant la problématique et contenant le mot-clé.",
+      "content": "Le corps de l'article complet en HTML (minimum 850 mots, structuré avec plusieurs <h2> et des sous-parties <h3> détaillée. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle.)",
+      "metaDesc": "Une meta description optimisée SEO pour Google de moins de 155 caractères, incitative au clic.",
       "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a premium ducted AC (climatisation gainable) installation in a luxury modern home, minimalist air diffusion grills on the ceiling, high-end architecture, warm natural light, commercial photography style, 1024x1024.",
       "faq": [
         {
-          "question": "Question fréquente liée au mot-clé",
-          "response": "Réponse précise et utile"
+          "question": "Question technique ou pratique pertinente liée au sujet ou à la région de ${city}",
+          "response": "Réponse d'expert détaillée, chiffrée et précise (3-4 phrases)."
         },
         {
-          "question": "Autre question sur le prix ou l'installation à ${city}",
-          "response": "Réponse"
+          "question": "Question sur le coût, les aides de l'État (CEE, MaPrimeRénov') ou le choix de l'installateur RGE",
+          "response": "Réponse claire et rassurante, respectant strictement la fourchette de prix de 10 000 € à 20 000 € pour une installation gainable complète de qualité."
+        },
+        {
+          "question": "Question sur l'entretien ou le nettoyage des filtres du système gainable",
+          "response": "Conseils pratiques précis."
         }
       ]
     }
@@ -87,7 +101,7 @@ export async function POST(req: Request) {
     const result = JSON.parse(completion.choices[0].message.content || "{}");
 
     // Generate Image via GPT-Image-2
-    let imageUrl = null;
+    let imageUrl = "/blog/gainable-salon.jpg"; // Default fallback cover
     try {
       const imageResponse = await openai.images.generate({
         model: "gpt-image-2",

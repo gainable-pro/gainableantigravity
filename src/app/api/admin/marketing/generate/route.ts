@@ -28,7 +28,7 @@ export async function POST(req: Request) {
             // Extract slug from URL (ex: /articles/my-slug or https://.../articles/my-slug)
             const slug = articleUrl.split('/').pop()?.split('?')[0];
             if (slug) {
-                article = await prisma.article.findUnique({
+                article = await prisma.article.findFirst({
                     where: { slug },
                     include: { expert: { select: { nom_entreprise: true, slug: true, expert_type: true, ville: true } } }
                 });
