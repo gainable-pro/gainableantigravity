@@ -153,7 +153,7 @@ export async function POST(req: Request) {
         - 4 à 6 sections H2 riches (minimum 300 mots par section pour une profondeur sémantique réelle, structurées en paragraphes de 4-5 lignes d'analyse réelle).
         - Intégration naturelle de mots-clés LSI (sémantiquement proches).
         - FAQ de 3 questions expertes et non génériques (détails chiffrés respectant la fourchette de 10 000 € à 20 000 € pour le gainable complet, ou prix marché pour diagnostic/étude, entretien, aides).
-        - Un prompt pour générer une image réaliste illustrant le contenu.
+        - Un prompt pour générer une image réaliste illustrant le contenu (imagePrompt pour la couverture, secondaryImagePrompt pour l'image secondaire insérée au sein des sections).
 
         RETOURNE UNIQUEMENT UN OBJET JSON :
         {
@@ -163,6 +163,7 @@ export async function POST(req: Request) {
             "metaDesc": "Meta description (max 160 chars)",
             "introduction": "Intro puissante",
             "imagePrompt": "Un prompt de photo détaillé et réaliste pour GPT-Image-2 (ex: A clean photograph of a modern air conditioning installation...)",
+            "secondaryImagePrompt": "Un autre prompt de photo détaillé et réaliste pour GPT-Image-2 montrant des détails techniques ou outils en rapport avec la thématique (ex: thermostat, schéma thermique, diagnostiqueur au travail, etc.)",
             "sections": [
                 { "title": "H2 Unique", "content": "Corps de texte riche et structuré (avec des balises HTML <p>, <ul>, <li>, <strong> si nécessaire)" }
             ],
@@ -226,6 +227,47 @@ export async function POST(req: Request) {
             }
         } catch (imgErr) {
             console.error("AI Generation: Image generation failed:", imgErr);
+        }
+
+        // Generate secondary image via GPT-Image-2
+        let secondaryImageUrl = "";
+        try {
+            console.log("AI Generation: Starting secondary image generation...");
+            const secondaryImagePrompt = parsedContent.secondaryImagePrompt || `A detailed technical photograph showing details matching ${topic}, high quality.`;
+            const secondaryImageResponse = await openai.images.generate({
+                model: "gpt-image-2",
+                prompt: secondaryImagePrompt,
+                size: "1024x1024"
+            });
+            const b64DataSec = secondaryImageResponse.data?.[0]?.b64_json;
+            
+            if (b64DataSec) {
+                const imageBuffer = Buffer.from(b64DataSec, 'base64');
+                const cleanCityName = slugify(parsedContent.targetCity || expert.ville || "france", { lower: true, strict: true });
+                const filePath = `articles/dashboard_sec_${cleanCityName}_${Date.now()}.png`;
+
+                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                    contentType: 'image/png',
+                    upsert: false
+                });
+
+                if (!uploadError) {
+                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                    secondaryImageUrl = publicUrlData.publicUrl;
+                    console.log("AI Generation: Secondary Image uploaded successfully:", secondaryImageUrl);
+                } else {
+                    console.error("AI Generation: Supabase upload error for secondary image:", uploadError);
+                }
+            }
+        } catch (imgErr) {
+            console.error("AI Generation: Secondary image generation failed:", imgErr);
+        }
+
+        // If secondary image is successfully generated and sections exist, assign it to the second section (index 1) or first section (index 0)
+        if (secondaryImageUrl && parsedContent.sections && Array.isArray(parsedContent.sections) && parsedContent.sections.length > 0) {
+            const targetSectionIndex = parsedContent.sections.length > 1 ? 1 : 0;
+            parsedContent.sections[targetSectionIndex].imageUrl = secondaryImageUrl;
+            parsedContent.sections[targetSectionIndex].imageAlt = parsedContent.title || "Détails techniques de l'installation";
         }
 
         // Add imageUrl to the returned payload

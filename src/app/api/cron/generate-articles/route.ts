@@ -169,18 +169,17 @@ export async function GET(req: Request) {
         
         - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', faire estimer son DPE ou solliciter un diagnostic immobilier complet auprès des partenaires agréés de la plateforme). Insiste sur les bénéfices financiers et de confort pour inciter le lecteur à utiliser le service de mise en relation de Gainable.fr.
         - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${b2cCity.name}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${b2cExpert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
-        - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
-        
-        Format de retour obligatoire (JSON pur) :
+        - Formatage :        Format de retour obligatoire (JSON pur) :
         {
           "title": "Titre optimisé et accrocheur de l'article B2C",
           "introduction": "Introduction engageante de 3-4 phrases avec le mot-clé principal.",
-          "content": "Le corps de l'article au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>)",
+          "content": "Le corps de l'article au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle. Insère obligatoirement au milieu de l'article la balise d'image secondaire sous cette forme exacte : <img src=\"[SECONDARY_IMAGE_URL]\" alt=\"Description optimisée SEO\" class=\"my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover\" />)",
           "metaDesc": "Meta description optimisée SEO (< 155 caractères)",
           "imagePrompt": "A highly detailed, professional photorealistic prompt showing the corresponding thematic scene (ex: for DPE: a modern home blueprint or certified inspector, for bureau d'etude: thermal study office workspace with blueprints, for CVC: premium ceiling grills in a luxury home), commercial photography style, 1024x1024.",
+          "secondaryImagePrompt": "A highly detailed, professional photorealistic prompt for another different scene matching the article topic (ex: close-up of a thermostat, heat pump components, thermal calculation graphs, or technician using a digital level/tool) to be used as inline content image, commercial photography style, 1024x1024.",
           "faq": [
             {
-              "question": "Question technique ou pratique pertinente liée au sujet ou à la région de ${b2cCity.name}",
+              "question": "Question technique ou pratique pertinent liée au sujet ou à la région de ${b2cCity.name}",
               "response": "Réponse d'expert détaillée, chiffrée et précise (3-4 phrases)."
             },
             {
@@ -207,7 +206,7 @@ export async function GET(req: Request) {
           const b2cResult = JSON.parse(b2cCompletion.choices[0].message.content || "{}");
 
           if (b2cResult.title && b2cResult.content) {
-            // Generate B2C Image via GPT-Image-2
+            // Generate B2C Image 1 (Cover) via GPT-Image-2
             let b2cImageUrl = "/blog/gainable-salon.jpg"; // Default fallback
             try {
               const b2cImageResponse = await openai.images.generate({
@@ -232,7 +231,43 @@ export async function GET(req: Request) {
                 }
               }
             } catch (imgErr) {
-              console.error("[Cron B2C Image] Generation failed:", imgErr);
+              console.error("[Cron B2C Image] Cover generation failed:", imgErr);
+            }
+
+            // Generate B2C Image 2 (Secondary inline) via GPT-Image-2
+            let b2cSecondaryImageUrl = "/blog/gainable-installation-vent.jpg"; // Default fallback secondary
+            try {
+              const b2cSecondaryResponse = await openai.images.generate({
+                model: "gpt-image-2",
+                prompt: b2cResult.secondaryImagePrompt || `A highly detailed, professional photorealistic photograph of local architecture or technical renovation tools, 1024x1024.`,
+                size: "1024x1024"
+              });
+              const b64DataSec = b2cSecondaryResponse.data?.[0]?.b64_json;
+              if (b64DataSec) {
+                const imageBuffer = Buffer.from(b64DataSec, 'base64');
+                const cleanCityName = slugify(b2cCity.name, { lower: true, strict: true });
+                const filePath = `articles/b2c_sec_${cleanCityName}_${Date.now()}.png`;
+
+                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                  contentType: 'image/png',
+                  upsert: false
+                });
+
+                if (!uploadError) {
+                  const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                  b2cSecondaryImageUrl = publicUrlData.publicUrl;
+                }
+              }
+            } catch (imgErr) {
+              console.error("[Cron B2C Image] Secondary generation failed:", imgErr);
+            }
+
+            // Replace image placeholder in the HTML content
+            let finalB2CContent = b2cResult.content || "";
+            if (finalB2CContent.includes("[SECONDARY_IMAGE_URL]")) {
+              finalB2CContent = finalB2CContent.replace("[SECONDARY_IMAGE_URL]", b2cSecondaryImageUrl);
+            } else {
+              finalB2CContent += `<div style="margin: 20px 0;"><img src="${b2cSecondaryImageUrl}" alt="Détails techniques" class="my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover" /></div>`;
             }
 
             // Slugify & Unique verify
@@ -249,7 +284,7 @@ export async function GET(req: Request) {
                 title: b2cResult.title,
                 slug: finalB2CSlug,
                 introduction: b2cResult.introduction,
-                content: b2cResult.content,
+                content: finalB2CContent,
                 mainImage: b2cImageUrl,
                 altText: `Installation ${b2cKeyword}`,
                 targetCity: b2cCity.name,
@@ -355,9 +390,10 @@ export async function GET(req: Request) {
       {
         "title": "Titre optimisé, percutant et engageant pour les professionnels CVC",
         "introduction": "Introduction de 3-4 phrases captant l'intérêt commercial et introduisant le mot-clé.",
-        "content": "Le corps de l'article complet au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>)",
+        "content": "Le corps de l'article complet au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle. Insère obligatoirement au milieu de l'article la balise d'image secondaire sous cette forme exacte : <img src=\"[SECONDARY_IMAGE_URL]\" alt=\"Description optimisée SEO\" class=\"my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover\" />)",
         "metaDesc": "Meta description optimisée pour cibler les professionnels CVC (< 155 caractères)",
-        "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a professional heating and cooling engineer working with blueprints on a tablet inside a modern commercial building, business growth concept, high-end HVAC professional style, warm natural lighting, 1024x1024.",
+        "imagePrompt": "A highly detailed, professional photorealistic prompt showing a professional CVC expert on site or inside a commercial office building, business growth concept, 1024x1024.",
+        "secondaryImagePrompt": "A highly detailed, professional photorealistic prompt for a different professional scene matching the B2B HVAC or business topic (ex: digital dashboard showing sales graphs, close-up of CVC blueprints on a desk, or technicians planning a project) to be used as inline content image, commercial photography style, 1024x1024.",
         "faq": [
           {
             "question": "Comment Gainable.fr pré-qualifie les demandes de chantiers ?",
@@ -388,7 +424,7 @@ export async function GET(req: Request) {
         const b2bResult = JSON.parse(b2bCompletion.choices[0].message.content || "{}");
 
         if (b2bResult.title && b2bResult.content) {
-          // Generate B2B Image via GPT-Image-2
+          // Generate B2B Image 1 (Cover) via GPT-Image-2
           let b2bImageUrl = "/blog/b2b-planning.png"; // Default fallback
           try {
             const b2bImageResponse = await openai.images.generate({
@@ -413,7 +449,43 @@ export async function GET(req: Request) {
               }
             }
           } catch (imgErr) {
-            console.error("[Cron B2B Image] Generation failed:", imgErr);
+            console.error("[Cron B2B Image] Cover generation failed:", imgErr);
+          }
+
+          // Generate B2B Image 2 (Secondary inline) via GPT-Image-2
+          let b2bSecondaryImageUrl = "/blog/b2b-planning.png"; // Default fallback secondary
+          try {
+            const b2bSecondaryResponse = await openai.images.generate({
+              model: "gpt-image-2",
+              prompt: b2bResult.secondaryImagePrompt || `A professional heating engineer working with blueprints, business HVAC style, 1024x1024.`,
+              size: "1024x1024"
+            });
+            const b64DataSec = b2bSecondaryResponse.data?.[0]?.b64_json;
+            if (b64DataSec) {
+              const imageBuffer = Buffer.from(b64DataSec, 'base64');
+              const cleanKeyword = slugify(b2bKeyword, { lower: true, strict: true }).slice(0, 30);
+              const filePath = `articles/b2b_sec_${cleanKeyword}_${Date.now()}.png`;
+
+              const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+                contentType: 'image/png',
+                upsert: false
+              });
+
+              if (!uploadError) {
+                const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+                b2bSecondaryImageUrl = publicUrlData.publicUrl;
+              }
+            }
+          } catch (imgErr) {
+            console.error("[Cron B2B Image] Secondary generation failed:", imgErr);
+          }
+
+          // Replace image placeholder in the HTML content
+          let finalB2BContent = b2bResult.content || "";
+          if (finalB2BContent.includes("[SECONDARY_IMAGE_URL]")) {
+            finalB2BContent = finalB2BContent.replace("[SECONDARY_IMAGE_URL]", b2bSecondaryImageUrl);
+          } else {
+            finalB2BContent += `<div style="margin: 20px 0;"><img src="${b2bSecondaryImageUrl}" alt="Détails professionnels" class="my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover" /></div>`;
           }
 
           // Slugify & Unique verify
@@ -430,7 +502,7 @@ export async function GET(req: Request) {
               title: b2bResult.title,
               slug: finalB2BSlug,
               introduction: b2bResult.introduction,
-              content: b2bResult.content,
+              content: finalB2BContent,
               mainImage: b2bImageUrl,
               altText: b2bKeyword,
               metaDesc: b2bResult.metaDesc,
