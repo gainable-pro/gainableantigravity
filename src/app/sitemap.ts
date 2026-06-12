@@ -3,23 +3,24 @@ import { MetadataRoute } from 'next';
 
 export const dynamic = 'force-dynamic';
 
+// Article sitemaps: IDs 1–8, each covering 7,500 articles (total ~60k)
+// ID 0: Static pages, experts, regions, cities
+const ARTICLE_BATCH_SIZE = 7500;
+const ARTICLE_SITEMAP_COUNT = 8; // IDs 1 through 8
+
 export async function generateSitemaps() {
-    // Split into 3 sitemaps to stay under Google's 50,000 URLs limit:
-    // 0: Static pages, experts, regions, cities (~2.6k URLs)
-    // 1: Published articles batch 1 (up to 30,000)
-    // 2: Published articles batch 2 (remaining)
-    return [
-        { id: 0 },
-        { id: 1 },
-        { id: 2 }
-    ];
+    const ids = [{ id: 0 }];
+    for (let i = 1; i <= ARTICLE_SITEMAP_COUNT; i++) {
+        ids.push({ id: i });
+    }
+    return ids;
 }
 
 export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.gainable.fr';
 
+    // ── Sitemap 0: Static pages + experts + cities ──────────────────────────
     if (id === 0) {
-        // 1. Static Routes
         const routes = [
             '',
             '/trouver-installateur',
@@ -37,7 +38,6 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
             priority: route === '' ? 1 : 0.8,
         }));
 
-        // 2. Dynamic Experts
         const experts = await prisma.expert.findMany({
             where: { status: 'active' },
             select: { slug: true, created_at: true }
@@ -50,7 +50,6 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
             priority: 0.9,
         }));
 
-        // 3. City Landing Pages & Region Hub Pages
         const { CITIES_100 } = await import('@/data/cities-100');
         const { CITIES_EXTENDED } = await import('@/data/cities-extended');
         const { CITIES_MEDIUM } = await import('@/data/cities-medium');
@@ -76,39 +75,21 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
         return [...routes, ...expertRoutes, ...regionRoutes, ...cityRoutes];
     }
 
-    if (id === 1) {
-        // Pre-load all expert slugs into a Map (fast, small table)
-        const experts = await prisma.expert.findMany({ select: { id: true, slug: true } });
-        const expertMap = new Map(experts.map(e => [e.id, e.slug]));
+    // ── Sitemaps 1–8: Articles in batches of 7,500 ─────────────────────────
+    if (id >= 1 && id <= ARTICLE_SITEMAP_COUNT) {
+        const skip = (id - 1) * ARTICLE_BATCH_SIZE;
 
-        // First 30k published articles — no JOIN, use in-memory lookup
-        const articles = await prisma.article.findMany({
-            where: { status: 'PUBLISHED' },
-            take: 30000,
-            select: { slug: true, updatedAt: true, expertId: true },
-            orderBy: { createdAt: 'desc' }
+        // Pre-load all expert slugs into memory (tiny table, very fast)
+        const experts = await prisma.expert.findMany({
+            select: { id: true, slug: true }
         });
-
-        return articles
-            .filter(a => expertMap.has(a.expertId))
-            .map((article) => ({
-                url: `${baseUrl}/entreprise/${expertMap.get(article.expertId)}/articles/${article.slug}`,
-                lastModified: article.updatedAt,
-                changeFrequency: 'weekly' as const,
-                priority: 0.7,
-            }));
-    }
-
-    if (id === 2) {
-        // Pre-load all expert slugs into a Map (fast, small table)
-        const experts = await prisma.expert.findMany({ select: { id: true, slug: true } });
         const expertMap = new Map(experts.map(e => [e.id, e.slug]));
 
-        // Articles 30k–60k — no JOIN, use in-memory lookup
+        // Fetch only this batch — no SQL JOIN
         const articles = await prisma.article.findMany({
             where: { status: 'PUBLISHED' },
-            skip: 30000,
-            take: 30000,
+            skip,
+            take: ARTICLE_BATCH_SIZE,
             select: { slug: true, updatedAt: true, expertId: true },
             orderBy: { createdAt: 'desc' }
         });
