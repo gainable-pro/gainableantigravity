@@ -22,6 +22,26 @@ const B2C_TOPICS = [
   "installateur de climatisation"
 ];
 
+const DPE_B2C_TOPICS = [
+  "diagnostic DPE",
+  "diagnostic de performance énergétique",
+  "diagnostiqueur immobilier certifié",
+  "audit énergétique obligatoire",
+  "diagnostics immobiliers obligatoires",
+  "tarif diagnostic DPE",
+  "diagnostiqueur immobilier"
+];
+
+const BE_B2C_TOPICS = [
+  "bureau d'étude thermique",
+  "étude thermique RE2020",
+  "dimensionnement climatisation gainable",
+  "calcul de déperdition thermique",
+  "audit thermique pour commerce",
+  "étude thermique réglementaire",
+  "bureau d'études thermiques"
+];
+
 const B2B_TOPICS = [
   "comment trouver des chantiers de climatisation",
   "augmenter le chiffre d'affaires d'une entreprise CVC",
@@ -84,7 +104,17 @@ export async function GET(req: Request) {
 
     if (b2cCity) {
       const citySeed = b2cCity.name.length + b2cCity.slug.length;
-      const b2cTopic = B2C_TOPICS[citySeed % B2C_TOPICS.length];
+      const themeIndex = citySeed % 3; // 0 = CVC, 1 = DPE, 2 = Bureau d'étude
+      const theme = themeIndex === 1 ? "dpe" : themeIndex === 2 ? "bureau_etude" : "cvc";
+
+      let b2cTopic = "";
+      if (theme === "dpe") {
+        b2cTopic = DPE_B2C_TOPICS[citySeed % DPE_B2C_TOPICS.length];
+      } else if (theme === "bureau_etude") {
+        b2cTopic = BE_B2C_TOPICS[citySeed % BE_B2C_TOPICS.length];
+      } else {
+        b2cTopic = B2C_TOPICS[citySeed % B2C_TOPICS.length];
+      }
       const b2cKeyword = `${b2cTopic} à ${b2cCity.name}`;
 
       // Resolve local expert or fallback
@@ -112,23 +142,34 @@ export async function GET(req: Request) {
         
         CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
         - Ton : Professionnel, rassurant, hautement technique mais accessible, pédagogue et digne d'un expert du domaine.
-        - Cible : Propriétaires immobiliers cherchant à installer ou remplacer un climatiseur.
+        - Cible : Propriétaires immobiliers cherchant à optimiser le confort et la performance de leur logement.
         - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc. Entre directement dans le vif du sujet avec des phrases concrètes.
         - Style d'écriture : Phrases de longueurs variées, vocabulaire riche et précis, structure fluide. Raconte une véritable histoire technique pour capter l'intérêt du lecteur.
-        - Contenu technique réel (E-E-A-T) :
+        
+        ${theme === "dpe" ? `
+        - THÉMATIQUE DIAGNOSTICS IMMOBILIERS & DPE :
+          - Explique le rôle critique des diagnostics immobiliers réglementaires (DPE - Diagnostic de Performance Énergétique, amiante, électricité, gaz, plomb, etc.) et leurs durées de validité respectives.
+          - Mets en avant que la plateforme Gainable.fr référence des diagnostiqueurs certifiés, vérifiés et fiables, garantissant des examens sérieux et sans complaisance.
+          - Fais le lien direct entre les résultats du DPE (déperditions thermiques, ponts thermiques, isolation déficiente) et les calculs/études nécessaires pour dimensionner correctement une future climatisation réversible ou pompe à chaleur.
+          - Explique comment les rapports de diagnostic aident à prioriser les travaux d'efficacité énergétique globale.
+        ` : theme === "bureau_etude" ? `
+        - THÉMATIQUE BUREAU D'ÉTUDE THERMIQUE & DIMENSIONNEMENT :
+          - Explique l'importance absolue de passer par un bureau d'étude thermique indépendant pour faire réaliser des calculs précis de déperditions de chaleur et dimensionner idéalement les équipements CVC.
+          - Souligne le rôle indispensable des études thermiques pour les chantiers complexes et de grande envergure, comme les locaux commerciaux, magasins, bureaux, et centres commerciaux.
+          - Précise que les bureaux d'études thermiques jouent également un rôle de conseil neutre et peuvent pré-sélectionner les meilleurs artisans qualifiés RGE du réseau Gainable.fr pour proposer des solutions parfaitement exécutées sur ces chantiers tertiaires ou résidentiels complexes.
+          - Explique les normes thermiques actuelles (RE2020) et l'impact sur le dépôt des permis de construire.
+        ` : `
+        - THÉMATIQUE CLIMATISATION & GAINABLE (CVC) :
           - Explique des concepts thermiques clés : les coefficients de performance (SCOP et SEER) et leur impact concret sur la facture d'électricité.
           - Mentionne des technologies spécifiques : la régulation par zone (comme le système Airzone avec registres motorisés et thermostats individuels), la discrétion sonore (niveaux de pression acoustique inférieurs à 20-22 dB(A) pour les unités intérieures), et l'intégration esthétique (plénums de soufflage, grilles de diffusion linéaires ou à double déflexion intégrées dans les faux-plafonds).
           - Fais référence à des constructeurs reconnus (Daikin, Mitsubishi Electric, Toshiba) et à leurs gammes adaptées aux combles ou faux-plafonds.
           - Mentionne les garanties indispensables : l'assurance décennale, la certification RGE QualiPAC, l'attestation de capacité de manipulation des fluides frigorigènes.
           - CONVICTION TARIFATION RÉELLE (CRITIQUE) : Pour tout chiffrage ou mention de tarif d'une climatisation gainable (système réversible encastré), le coût d'une installation complète de qualité (matériel, gaines, plénums, grilles, régulation multizone type Airzone et main d'œuvre) se situe obligatoirement dans une fourchette de 10 000 € à 20 000 € minimum selon la puissance et le nombre de zones. Interdiction absolue de citer des prix bas erronés comme 3 000 €, 5 000 € ou 8 000 € pour du gainable complet (ces petits budgets correspondent à des mono-splits muraux simples). Rappelle que le gainable de qualité exige un budget de départ de 10 000 € minimum.
+        `}
+        
+        - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', faire estimer son DPE ou solliciter un diagnostic immobilier complet auprès des partenaires agréés de la plateforme). Insiste sur les bénéfices financiers et de confort pour inciter le lecteur à utiliser le service de mise en relation de Gainable.fr.
         - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${b2cCity.name}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${b2cExpert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
         - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
-        
-        Squelette de l'article :
-        - Une section H2 d'état des lieux ou présentation de la solution gainable à ${b2cCity.name}.
-        - Une section H3 de détails techniques (SCOP, SEER, intégration invisible, régulation pièce par pièce Airzone).
-        - Une section H2 des avantages locaux (aides de l'État RGE, confort d'été face aux vagues de chaleur à ${b2cCity.name}, silence acoustique de fonctionnement).
-        - Une section H3 expliquant comment choisir l'installateur local qualifié (qualifications RGE QualiPac, assurance décennale, réactivité).
         
         Format de retour obligatoire (JSON pur) :
         {
@@ -136,19 +177,19 @@ export async function GET(req: Request) {
           "introduction": "Introduction engageante de 3-4 phrases avec le mot-clé principal.",
           "content": "Le corps de l'article au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>)",
           "metaDesc": "Meta description optimisée SEO (< 155 caractères)",
-          "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a premium ducted AC (climatisation gainable) installation in a luxury modern home, minimalist air diffusion grills on the ceiling, high-end architecture, warm natural light, commercial photography style, 1024x1024.",
+          "imagePrompt": "A highly detailed, professional photorealistic prompt showing the corresponding thematic scene (ex: for DPE: a modern home blueprint or certified inspector, for bureau d'etude: thermal study office workspace with blueprints, for CVC: premium ceiling grills in a luxury home), commercial photography style, 1024x1024.",
           "faq": [
             {
-              "question": "Quel est le coût d'une installation de climatisation gainable à ${b2cCity.name} ?",
-              "response": "Le coût d'une installation complète et performante de climatisation gainable oscille généralement entre 10 000 € et 20 000 € minimum selon la puissance nécessaire et le nombre de zones à équiper. Les tarifs de 3 000 € ou 5 000 € correspondent à des systèmes simples mono-splits et non à du gainable encastré multizone."
+              "question": "Question technique ou pratique pertinente liée au sujet ou à la région de ${b2cCity.name}",
+              "response": "Réponse d'expert détaillée, chiffrée et précise (3-4 phrases)."
             },
             {
-              "question": "Pourquoi choisir un professionnel RGE certifié à ${b2cCity.name} ?",
-              "response": "Réponse sur les aides de l'État (CEE, MaPrimeRénov'), la sécurité et la qualité de pose."
+              "question": "Question sur le coût, les aides de l'État ou le choix du prestataire certifié à ${b2cCity.name}",
+              "response": "Réponse claire et rassurante, respectant strictement les tarifs de marché (si gainable complet: 10 000 € à 20 000 €, si diagnostic/étude thermique: tarifs réglementés ou habituels)."
             },
             {
-              "question": "Quel entretien prévoir pour une climatisation gainable ?",
-              "response": "Explications sur le nettoyage des filtres et la maintenance périodique."
+              "question": "Question sur l'entretien, l'accompagnement ou la durée de validité",
+              "response": "Explications claires."
             }
           ]
         }`;

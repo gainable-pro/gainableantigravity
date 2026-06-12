@@ -86,6 +86,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
   const [genKeyword, setGenKeyword] = useState("");
   const [genCity, setGenCity] = useState("");
   const [genExpertId, setGenExpertId] = useState("");
+  const [genTheme, setGenTheme] = useState("cvc");
   const [genOrientedAcquisition, setGenOrientedAcquisition] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedResult, setGeneratedResult] = useState<any>(null);
@@ -519,6 +520,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
           keyword: genKeyword,
           city: genCity,
           expertId: genExpertId,
+          theme: genTheme,
           orientedAcquisition: genOrientedAcquisition
         })
       });
@@ -1008,6 +1010,20 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                         required
                       />
                     </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700">Thématique de l'Article</label>
+                    <select
+                      value={genTheme}
+                      onChange={(e) => setGenTheme(e.target.value)}
+                      className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
+                      required
+                    >
+                      <option value="cvc">Climatisation Réversible & Gainable (CVC)</option>
+                      <option value="dpe">Diagnostics Immobiliers & DPE</option>
+                      <option value="bureau_etude">Bureau d'Étude Thermique & Dimensionnement</option>
+                    </select>
                   </div>
 
                   <div className="space-y-1.5">

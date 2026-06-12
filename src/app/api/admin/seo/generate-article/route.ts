@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Non autorisé" }, { status: 401 });
     }
 
-    const { keyword, city, expertId, orientedAcquisition } = await req.json();
+    const { keyword, city, expertId, theme = "cvc", orientedAcquisition } = await req.json();
 
     if (!keyword || !city || !expertId) {
       return NextResponse.json({ message: "Paramètres manquants (keyword, city, expertId)" }, { status: 400 });
@@ -53,14 +53,30 @@ export async function POST(req: Request) {
     - Cible : Propriétaires de maisons individuelles ou de locaux professionnels/tertiaires.
     - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc. Entre directement dans le vif du sujet avec des phrases concrètes.
     - Style d'écriture : Phrases de longueurs variées, vocabulaire riche et précis, structure fluide. Raconte une véritable histoire technique pour capter l'intérêt du lecteur.
-    - Contenu technique réel (E-E-A-T) :
+    
+    ${theme === "dpe" ? `
+    - THÉMATIQUE DIAGNOSTICS IMMOBILIERS & DPE :
+      - Explique le rôle critique des diagnostics immobiliers réglementaires (DPE - Diagnostic de Performance Énergétique, amiante, électricité, gaz, plomb, etc.) et leurs durées de validité respectives.
+      - Mets en avant que la plateforme Gainable.fr référence des diagnostiqueurs certifiés, vérifiés et fiables, garantissant des examens sérieux et sans complaisance.
+      - Fais le lien direct entre les résultats du DPE (déperditions thermiques, ponts thermiques, isolation déficiente) et les calculs/études nécessaires pour dimensionner correctement une future climatisation réversible ou pompe à chaleur.
+      - Explique comment les rapports de diagnostic aident à prioriser les travaux d'efficacité énergétique globale.
+    ` : theme === "bureau_etude" ? `
+    - THÉMATIQUE BUREAU D'ÉTUDE THERMIQUE & DIMENSIONNEMENT :
+      - Explique l'importance absolue de passer par un bureau d'étude thermique indépendant pour faire réaliser des calculs précis de déperditions de chaleur et dimensionner idéalement les équipements CVC.
+      - Souligne le rôle indispensable des études thermiques pour les chantiers complexes et de grande envergure, comme les locaux commerciaux, magasins, bureaux, et centres commerciaux.
+      - Précise que les bureaux d'études thermiques jouent également un rôle de conseil neutre et peuvent pré-sélectionner les meilleurs artisans qualifiés RGE du réseau Gainable.fr pour proposer des solutions parfaitement exécutées sur ces chantiers tertiaires ou résidentiels complexes.
+      - Explique les normes thermiques actuelles (RE2020) et l'impact sur le dépôt des permis de construire.
+    ` : `
+    - THÉMATIQUE CLIMATISATION & GAINABLE (CVC) :
       - Explique des concepts thermiques clés : les coefficients de performance (SCOP et SEER) et leur impact concret sur la facture d'électricité.
       - Mentionne des technologies spécifiques : la régulation par zone (comme le système Airzone avec registres motorisés et thermostats individuels), la discrétion sonore (niveaux de pression acoustique inférieurs à 20-22 dB(A) pour les unités intérieures), et l'intégration esthétique (plénums de soufflage, grilles de diffusion linéaires ou à double déflexion intégrées dans les faux-plafonds).
       - Fais référence à des constructeurs reconnus (Daikin, Mitsubishi Electric, Toshiba) et à leurs gammes adaptées aux combles ou faux-plafonds.
       - Mentionne les garanties indispensables : l'assurance décennale, la certification RGE QualiPAC, l'attestation de capacité de manipulation des fluides frigorigènes.
       - CONVICTION TARIFATION RÉELLE (CRITIQUE) : Pour tout chiffrage ou mention de tarif d'une climatisation gainable (système réversible encastré), le coût d'une installation complète de qualité (matériel, gaines, plénums, grilles, régulation multizone type Airzone et main d'œuvre) se situe obligatoirement dans une fourchette de 10 000 € à 20 000 € minimum selon la puissance et le nombre de zones. Interdiction absolue de citer des prix bas erronés comme 3 000 €, 5 000 € ou 8 000 € pour du gainable complet (ces petits budgets correspondent à des mono-splits muraux simples). Rappelle que le gainable de qualité exige un budget de départ de 10 000 € minimum.
+    `}
+    
     ${orientedAcquisition ? `
-    - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', ou solliciter un devis d'installation gratuit auprès de l'expert local). Insiste sur les bénéfices financiers (jusqu'à 70% d'économies d'énergie) et de confort pour inciter le lecteur à passer à l'action.
+    - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', faire estimer son DPE ou solliciter un diagnostic immobilier complet auprès des partenaires agréés de la plateforme). Insiste sur les bénéfices financiers (jusqu'à 70% d'économies d'énergie) et de confort pour inciter le lecteur à passer à l'action.
     ` : ''}
     - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${city}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${expert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
     - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
@@ -71,18 +87,18 @@ export async function POST(req: Request) {
       "introduction": "Une introduction percutante de 3-4 phrases posant la problématique et contenant le mot-clé.",
       "content": "Le corps de l'article complet en HTML (minimum 850 mots, structuré avec plusieurs <h2> et des sous-parties <h3> détaillée. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle.)",
       "metaDesc": "Une meta description optimisée SEO pour Google de moins de 155 caractères, incitative au clic.",
-      "imagePrompt": "A highly detailed, professional photorealistic prompt for DALL-E 3 showing a premium ducted AC (climatisation gainable) installation in a luxury modern home, minimalist air diffusion grills on the ceiling, high-end architecture, warm natural light, commercial photography style, 1024x1024.",
+      "imagePrompt": "A highly detailed, professional photorealistic prompt showing the corresponding thematic scene (ex: for DPE: a modern home blueprint or certified inspector, for bureau d'etude: thermal study office workspace with blueprints, for CVC: premium ceiling grills in a luxury home), commercial photography style, 1024x1024.",
       "faq": [
         {
           "question": "Question technique ou pratique pertinente liée au sujet ou à la région de ${city}",
           "response": "Réponse d'expert détaillée, chiffrée et précise (3-4 phrases)."
         },
         {
-          "question": "Question sur le coût, les aides de l'État (CEE, MaPrimeRénov') ou le choix de l'installateur RGE",
-          "response": "Réponse claire et rassurante, respectant strictement la fourchette de prix de 10 000 € à 20 000 € pour une installation gainable complète de qualité."
+          "question": "Question sur le coût, les aides de l'État (CEE, MaPrimeRénov') ou le choix de l'installateur RGE ou diagnostiqueur certifié",
+          "response": "Réponse claire et rassurante, respectant strictement les tarifs de marché (si gainable complet: 10 000 € à 20 000 €, si diagnostic/étude thermique: tarifs réglementés ou habituels de ces prestations)."
         },
         {
-          "question": "Question sur l'entretien ou le nettoyage des filtres du système gainable",
+          "question": "Question sur l'entretien, l'accompagnement ou la durée de validité",
           "response": "Conseils pratiques précis."
         }
       ]
