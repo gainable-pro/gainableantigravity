@@ -18,9 +18,11 @@ export async function generateSitemaps() {
 
 export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.gainable.fr';
+    // Cast to number — Next.js may pass id as string from the URL segment
+    const numId = Number(id);
 
     // ── Sitemap 0: Static pages + experts + cities ──────────────────────────
-    if (id === 0) {
+    if (numId === 0) {
         const routes = [
             '',
             '/trouver-installateur',
@@ -76,8 +78,8 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
     }
 
     // ── Sitemaps 1–8: Articles in batches of 7,500 ─────────────────────────
-    if (id >= 1 && id <= ARTICLE_SITEMAP_COUNT) {
-        const skip = (id - 1) * ARTICLE_BATCH_SIZE;
+    if (numId >= 1 && numId <= ARTICLE_SITEMAP_COUNT) {
+        const skip = (numId - 1) * ARTICLE_BATCH_SIZE;
 
         // Pre-load all expert slugs into memory (tiny table, very fast)
         const experts = await prisma.expert.findMany({
