@@ -32,6 +32,23 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  async rewrites() {
+    return [
+      {
+        source: '/trouver-installateur',
+        destination: '/',
+      },
+      {
+        source: '/trouver-diagnostiqueur',
+        destination: '/?filter=diagnostiqueur',
+      },
+      {
+        source: '/trouver-bureau-etude',
+        destination: '/?filter=bureau_etude',
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

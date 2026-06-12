@@ -172,7 +172,7 @@ async function main() {
                 <div class="bg-amber-50 p-6 rounded-xl my-8 border-l-4 border-amber-600">
                     <p class="font-bold text-amber-900 mb-2">Conseil de la plateforme</p>
                     <p class="text-amber-800">
-                        La réglementation exige des diagnostiqueurs certifiés et indépendants. Sur notre réseau, nous vous aidons à <a href="/trouver-installateur?filter=diagnostiqueur&city=${encodeURIComponent(city)}" class="underline font-semibold hover:text-amber-600">entrer en contact avec un diagnostiqueur immobilier certifié de votre région</a>.
+                        La réglementation exige des diagnostiqueurs certifiés et indépendants. Sur notre réseau, nous vous aidons à <a href="/trouver-diagnostiqueur?city=${encodeURIComponent(city)}" class="underline font-semibold hover:text-amber-600">entrer en contact avec un diagnostiqueur immobilier certifié de votre région</a>.
                     </p>
                 </div>
 
@@ -195,7 +195,7 @@ async function main() {
                 <div class="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
                     <h3 class="text-2xl font-bold mb-4">Besoin de Diagnostics Immobiliers à ${city} ?</h3>
                     <p class="mb-8 text-slate-300">Comparez rapidement les tarifs de diagnostiqueurs certifiés et de confiance intervenant dans votre secteur.</p>
-                    <a href="/trouver-installateur?filter=diagnostiqueur&city=${encodeURIComponent(city)}" class="inline-block bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-4 px-8 rounded-full transition-transform hover:scale-105">
+                    <a href="/trouver-diagnostiqueur?city=${encodeURIComponent(city)}" class="inline-block bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-4 px-8 rounded-full transition-transform hover:scale-105">
                         Demander mes Devis Diagnostics à ${city}
                     </a>
                 </div>
@@ -249,7 +249,7 @@ async function main() {
                 <div class="bg-blue-50 p-6 rounded-xl my-8 border-l-4 border-blue-600">
                     <p class="font-bold text-blue-900 mb-2">Le conseil de la rédaction</p>
                     <p class="text-blue-800">
-                        Pour tout projet complexe ou réglementaire RE2020, nous vous recommandons de <a href="/trouver-installateur?filter=bureau_etude&city=${encodeURIComponent(city)}" class="underline font-semibold hover:text-blue-600">faire réaliser une étude thermique neutre par un bureau d'étude qualifié</a> de notre réseau.
+                        Pour tout projet complexe ou réglementaire RE2020, nous vous recommandons de <a href="/trouver-bureau-etude?city=${encodeURIComponent(city)}" class="underline font-semibold hover:text-blue-600">faire réaliser une étude thermique neutre par un bureau d'étude qualifié</a> de notre réseau.
                     </p>
                 </div>
 
@@ -272,7 +272,7 @@ async function main() {
                 <div class="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
                     <h3 class="text-2xl font-bold mb-4">Un projet de construction ou de rénovation à ${city} ?</h3>
                     <p class="mb-8 text-slate-300">Optimisez vos coûts et garantissez le confort thermique de vos bâtiments avec une étude personnalisée.</p>
-                    <a href="/trouver-installateur?filter=bureau_etude&city=${encodeURIComponent(city)}" class="inline-block bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-4 px-8 rounded-full transition-transform hover:scale-105">
+                    <a href="/trouver-bureau-etude?city=${encodeURIComponent(city)}" class="inline-block bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-4 px-8 rounded-full transition-transform hover:scale-105">
                         Demander une Étude Thermique à ${city}
                     </a>
                 </div>
