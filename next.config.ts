@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     return [
+      // Sitemap index: /sitemap.xml → served by the sitemap-index API route
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap-index',
+      },
       {
         source: '/trouver-installateur',
         destination: '/',
