@@ -8,6 +8,7 @@ import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle, Trash2 } from "lucid
 export default function EditProspect() {
     const router = useRouter();
     const params = useParams();
+    const id = params?.id as string | undefined;
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState("");
@@ -35,7 +36,7 @@ export default function EditProspect() {
     useEffect(() => {
         const fetchProspect = async () => {
             try {
-                const res = await fetch(`/api/commercial/prospects/${params.id}`);
+                const res = await fetch(`/api/commercial/prospects/${id}`);
                 if (res.ok) {
                     const data = await res.json();
                     setFormData({
@@ -61,10 +62,10 @@ export default function EditProspect() {
             }
         };
 
-        if (params.id) {
+        if (id) {
             fetchProspect();
         }
-    }, [params.id]);
+    }, [id]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -73,7 +74,7 @@ export default function EditProspect() {
         setSuccess("");
 
         try {
-            const res = await fetch(`/api/commercial/prospects/${params.id}`, {
+            const res = await fetch(`/api/commercial/prospects/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData)
@@ -104,7 +105,7 @@ export default function EditProspect() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    prospectId: params.id,
+                    prospectId: id,
                     paiementType: "EN_LIGNE",
                     dateVente: saleData.dateVente,
                     montant: 650

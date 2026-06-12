@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export default function CommercialLayout({ children }: { children: React.ReactNode }) {
-    const pathname = usePathname();
+    const pathname = usePathname() || "";
     const router = useRouter();
 
     // Do not show sidebar on login page

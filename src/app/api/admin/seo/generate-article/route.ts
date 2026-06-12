@@ -79,15 +79,14 @@ export async function POST(req: Request) {
     - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', faire estimer son DPE ou solliciter un diagnostic immobilier complet auprès des partenaires agréés de la plateforme). Insiste sur les bénéfices financiers (jusqu'à 70% d'économies d'énergie) et de confort pour inciter le lecteur à passer à l'action.
     ` : ''}
     - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${city}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${expert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
-    - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
-    
-    Format de l'objet JSON à retourner :
+    - Formatage : Structure rich    Format de l'objet JSON à retourner :
     {
       "title": "Titre éditorial accrocheur, unique et optimisé SEO",
       "introduction": "Une introduction percutante de 3-4 phrases posant la problématique et contenant le mot-clé.",
-      "content": "Le corps de l'article complet en HTML (minimum 850 mots, structuré avec plusieurs <h2> et des sous-parties <h3> détaillée. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle.)",
+      "content": "Le corps de l'article complet en HTML (minimum 850 mots, structuré avec plusieurs <h2> et des sous-parties <h3> détaillée. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle. Insère obligatoirement au milieu de l'article la balise d'image secondaire sous cette forme exacte : <img src=\"[SECONDARY_IMAGE_URL]\" alt=\"Description optimisée SEO\" class=\"my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover\" />)",
       "metaDesc": "Une meta description optimisée SEO pour Google de moins de 155 caractères, incitative au clic.",
       "imagePrompt": "A highly detailed, professional photorealistic prompt showing the corresponding thematic scene (ex: for DPE: a modern home blueprint or certified inspector, for bureau d'etude: thermal study office workspace with blueprints, for CVC: premium ceiling grills in a luxury home), commercial photography style, 1024x1024.",
+      "secondaryImagePrompt": "A highly detailed, professional photorealistic prompt for another different scene matching the article topic (ex: close-up of a thermostat, heat pump components, thermal calculation graphs, or technician using a digital level/tool) to be used as inline content image, commercial photography style, 1024x1024.",
       "faq": [
         {
           "question": "Question technique ou pratique pertinente liée au sujet ou à la région de ${city}",
@@ -116,7 +115,7 @@ export async function POST(req: Request) {
 
     const result = JSON.parse(completion.choices[0].message.content || "{}");
 
-    // Generate Image via GPT-Image-2
+    // Generate Image 1 (Cover) via GPT-Image-2
     let imageUrl = "/blog/gainable-salon.jpg"; // Default fallback cover
     try {
       const imageResponse = await openai.images.generate({
@@ -141,7 +140,44 @@ export async function POST(req: Request) {
         }
       }
     } catch (imgErr) {
-      console.error("[Manual Image] Generation failed:", imgErr);
+      console.error("[Manual Image] Cover generation failed:", imgErr);
+    }
+
+    // Generate Image 2 (Secondary inline) via GPT-Image-2
+    let secondaryImageUrl = "/blog/gainable-installation-vent.jpg"; // Default fallback secondary
+    try {
+      const secondaryResponse = await openai.images.generate({
+        model: "gpt-image-2",
+        prompt: result.secondaryImagePrompt || `A highly detailed, professional photorealistic photograph of local architecture or technical renovation tools, 1024x1024.`,
+        size: "1024x1024"
+      });
+      const b64DataSec = secondaryResponse.data?.[0]?.b64_json;
+      if (b64DataSec) {
+        const imageBuffer = Buffer.from(b64DataSec, 'base64');
+        const cleanCityName = slugify(city, { lower: true, strict: true });
+        const filePath = `articles/manual_sec_${cleanCityName}_${Date.now()}.png`;
+
+        const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
+          contentType: 'image/png',
+          upsert: false
+        });
+
+        if (!uploadError) {
+          const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
+          secondaryImageUrl = publicUrlData.publicUrl;
+        }
+      }
+    } catch (imgErr) {
+      console.error("[Manual Image] Secondary generation failed:", imgErr);
+    }
+
+    // Replace image placeholder in the HTML content
+    let finalContent = result.content || "";
+    if (finalContent.includes("[SECONDARY_IMAGE_URL]")) {
+      finalContent = finalContent.replace("[SECONDARY_IMAGE_URL]", secondaryImageUrl);
+    } else {
+      // Append secondary image to the end of the text if it's not present
+      finalContent += `<div style="margin: 20px 0;"><img src="${secondaryImageUrl}" alt="Détails techniques" class="my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover" /></div>`;
     }
 
     // Generate a unique slug
@@ -160,7 +196,7 @@ export async function POST(req: Request) {
         title: result.title,
         slug,
         introduction: result.introduction,
-        content: result.content,
+        content: finalContent,
         mainImage: imageUrl,
         altText: `Installation ${keyword}`,
         targetCity: city,

@@ -17,7 +17,7 @@ export async function verifyCommercial() {
         // Verify in DB specifically for ROLE
         const user = await prisma.user.findUnique({
             where: { id: decoded.userId },
-            select: { id: true, role: true }
+            select: { id: true, role: true, email: true }
         });
 
         // Allow both commercial and admin to access commercial routes
@@ -29,7 +29,7 @@ export async function verifyCommercial() {
         if (decoded.impersonatorId) {
             const impersonator = await prisma.user.findUnique({
                 where: { id: decoded.impersonatorId },
-                select: { id: true, role: true }
+                select: { id: true, role: true, email: true }
             });
             if (impersonator && (impersonator.role === 'commercial' || impersonator.role === 'admin')) {
                 return impersonator;

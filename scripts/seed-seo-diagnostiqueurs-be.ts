@@ -139,8 +139,29 @@ async function main() {
 
     console.log(`Using expert: ${expert.nom_entreprise} (ID: ${expert.id}, Slug: ${expert.slug})`);
 
+    // Pre-fetch all existing slugs for this expert to avoid database round-trips
+    console.log("Fetching existing slugs from database...");
+    const existingArticles = await prisma.article.findMany({
+        where: { expertId: expert.id },
+        select: { slug: true }
+    });
+    const existingSlugs = new Set(existingArticles.map(a => a.slug));
+    console.log(`Found ${existingSlugs.size} existing articles for this expert.`);
+
     let dpeCount = 0;
     let beCount = 0;
+    const pendingInserts: any[] = [];
+    const BATCH_SIZE = 500;
+
+    const flushInserts = async () => {
+        if (pendingInserts.length > 0) {
+            await prisma.article.createMany({
+                data: pendingInserts,
+                skipDuplicates: true
+            });
+            pendingInserts.length = 0;
+        }
+    };
 
     const TARGET_CITIES = ALL_CITIES;
     console.log(`Processing ${TARGET_CITIES.length} cities...`);
@@ -201,27 +222,21 @@ async function main() {
                 </div>
             `;
 
-            // Unique verify
-            const exists = await prisma.article.findUnique({
-                where: { expertId_slug: { expertId: expert.id, slug } }
-            });
-
-            if (!exists) {
-                await prisma.article.create({
-                    data: {
-                        title,
-                        slug,
-                        introduction: intro,
-                        content,
-                        expertId: expert.id,
-                        targetCity: city,
-                        status: 'PUBLISHED',
-                        metaDesc: intro.substring(0, 150) + "...",
-                        mainImage: getDpeImage(tplIndex + k),
-                        altText: `${title} - Diagnostics Obligatoires`,
-                        faq: tpl.faq
-                    }
+            if (!existingSlugs.has(slug)) {
+                pendingInserts.push({
+                    title,
+                    slug,
+                    introduction: intro,
+                    content,
+                    expertId: expert.id,
+                    targetCity: city,
+                    status: 'PUBLISHED',
+                    metaDesc: intro.substring(0, 150) + "...",
+                    mainImage: getDpeImage(tplIndex + k),
+                    altText: `${title} - Diagnostics Obligatoires`,
+                    faq: tpl.faq
                 });
+                existingSlugs.add(slug);
                 dpeCount++;
             }
         }
@@ -278,35 +293,36 @@ async function main() {
                 </div>
             `;
 
-            // Unique verify
-            const exists = await prisma.article.findUnique({
-                where: { expertId_slug: { expertId: expert.id, slug } }
-            });
-
-            if (!exists) {
-                await prisma.article.create({
-                    data: {
-                        title,
-                        slug,
-                        introduction: intro,
-                        content,
-                        expertId: expert.id,
-                        targetCity: city,
-                        status: 'PUBLISHED',
-                        metaDesc: intro.substring(0, 150) + "...",
-                        mainImage: getBeImage(tplIndex + k),
-                        altText: `${title} - Étude Thermique`,
-                        faq: tpl.faq
-                    }
+            if (!existingSlugs.has(slug)) {
+                pendingInserts.push({
+                    title,
+                    slug,
+                    introduction: intro,
+                    content,
+                    expertId: expert.id,
+                    targetCity: city,
+                    status: 'PUBLISHED',
+                    metaDesc: intro.substring(0, 150) + "...",
+                    mainImage: getBeImage(tplIndex + k),
+                    altText: `${title} - Étude Thermique`,
+                    faq: tpl.faq
                 });
+                existingSlugs.add(slug);
                 beCount++;
             }
         }
 
+        if (pendingInserts.length >= BATCH_SIZE) {
+            await flushInserts();
+        }
+
         if (c % 100 === 0 && c > 0) {
-            console.log(`Processed ${c} cities... (Generated: ${dpeCount} DPE articles, ${beCount} BE articles)`);
+            console.log(`Processed ${c} cities... (Added to batch: ${dpeCount} DPE articles, ${beCount} BE articles)`);
         }
     }
+
+    // Flush any remaining inserts
+    await flushInserts();
 
     console.log(`\n==========================================`);
     console.log(`MASSIVE GENERATION COMPLETED SUCCESSFULLY`);
