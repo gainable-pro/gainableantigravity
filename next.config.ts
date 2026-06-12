@@ -39,6 +39,11 @@ const nextConfig: NextConfig = {
         source: '/sitemap.xml',
         destination: '/sitemap-index',
       },
+      // Sitemap parts: /sitemap/1.xml → served by the /sitemap/[id]/route.ts API route
+      {
+        source: '/sitemap/:id.xml',
+        destination: '/sitemap/:id',
+      },
       {
         source: '/trouver-installateur',
         destination: '/',
