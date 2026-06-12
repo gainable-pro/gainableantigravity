@@ -77,46 +77,50 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
     }
 
     if (id === 1) {
-        // First 30k published articles
+        // Pre-load all expert slugs into a Map (fast, small table)
+        const experts = await prisma.expert.findMany({ select: { id: true, slug: true } });
+        const expertMap = new Map(experts.map(e => [e.id, e.slug]));
+
+        // First 30k published articles — no JOIN, use in-memory lookup
         const articles = await prisma.article.findMany({
             where: { status: 'PUBLISHED' },
             take: 30000,
-            select: {
-                slug: true,
-                updatedAt: true,
-                expert: { select: { slug: true } }
-            },
+            select: { slug: true, updatedAt: true, expertId: true },
             orderBy: { createdAt: 'desc' }
         });
 
-        return articles.map((article) => ({
-            url: `${baseUrl}/entreprise/${article.expert.slug}/articles/${article.slug}`,
-            lastModified: article.updatedAt,
-            changeFrequency: 'weekly' as const,
-            priority: 0.7,
-        }));
+        return articles
+            .filter(a => expertMap.has(a.expertId))
+            .map((article) => ({
+                url: `${baseUrl}/entreprise/${expertMap.get(article.expertId)}/articles/${article.slug}`,
+                lastModified: article.updatedAt,
+                changeFrequency: 'weekly' as const,
+                priority: 0.7,
+            }));
     }
 
     if (id === 2) {
-        // Next 30k published articles (covers the remaining 26,266)
+        // Pre-load all expert slugs into a Map (fast, small table)
+        const experts = await prisma.expert.findMany({ select: { id: true, slug: true } });
+        const expertMap = new Map(experts.map(e => [e.id, e.slug]));
+
+        // Articles 30k–60k — no JOIN, use in-memory lookup
         const articles = await prisma.article.findMany({
             where: { status: 'PUBLISHED' },
             skip: 30000,
             take: 30000,
-            select: {
-                slug: true,
-                updatedAt: true,
-                expert: { select: { slug: true } }
-            },
+            select: { slug: true, updatedAt: true, expertId: true },
             orderBy: { createdAt: 'desc' }
         });
 
-        return articles.map((article) => ({
-            url: `${baseUrl}/entreprise/${article.expert.slug}/articles/${article.slug}`,
-            lastModified: article.updatedAt,
-            changeFrequency: 'weekly' as const,
-            priority: 0.7,
-        }));
+        return articles
+            .filter(a => expertMap.has(a.expertId))
+            .map((article) => ({
+                url: `${baseUrl}/entreprise/${expertMap.get(article.expertId)}/articles/${article.slug}`,
+                lastModified: article.updatedAt,
+                changeFrequency: 'weekly' as const,
+                priority: 0.7,
+            }));
     }
 
     return [];
