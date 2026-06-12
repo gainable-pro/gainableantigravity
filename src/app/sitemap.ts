@@ -10,6 +10,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const routes = [
         '',
         '/trouver-installateur',
+        '/trouver-diagnostiqueur',
+        '/trouver-bureau-etude',
         '/inscription',
         '/faq-visibilite-referencement',
         '/labels', // If exists
