@@ -502,57 +502,63 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                   <TableBody>
                     {/* Logged in artisan's personal site */}
                     <TableRow className="bg-emerald-50/50 font-bold border-b border-emerald-100">
-                      <TableCell className="font-mono text-xs text-emerald-800">
-                        {siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "mon-site-perso.fr"} 
-                        <Badge className="ml-1.5 bg-emerald-600 text-white text-[9px] px-1 py-0 select-none">Moi (Site Perso)</Badge>
+                      <TableCell className="text-sm font-semibold text-emerald-800">
+                        <div className="flex items-center flex-wrap gap-2">
+                          <span>{siteWeb ? siteWeb.replace(/https?:\/\//, "").replace(/\/$/, "") : "mon-site-perso.fr"}</span>
+                          <Badge className="bg-emerald-600 text-white text-[9px] px-1.5 py-0.5 select-none shrink-0 rounded-md">Moi (Site Perso)</Badge>
+                        </div>
                       </TableCell>
-                      <TableCell className="font-mono text-xs">~ 180 p.</TableCell>
-                      <TableCell>
+                      <TableCell className="text-sm text-slate-600">~ 180 pages</TableCell>
+                      <TableCell className="text-sm font-bold">
                         <span className={auditData.score >= 90 ? "text-emerald-600" : "text-amber-600"}>
                           {auditData.score}%
                         </span>
                       </TableCell>
-                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.8</TableCell>
-                      <TableCell className="font-mono text-xs text-indigo-600">12%</TableCell>
+                      <TableCell className="text-amber-500 text-sm font-medium">★ 4.8</TableCell>
+                      <TableCell className="text-sm text-indigo-600 font-semibold">12%</TableCell>
                     </TableRow>
 
                     {/* Artisan's profile page on Gainable.fr */}
                     <TableRow className="bg-[#D59B2B]/10 font-bold border-b border-[#D59B2B]/20 animate-fade-in">
-                      <TableCell className="font-mono text-xs text-[#D59B2B]">
-                        gainable.fr/pro/{expertSlug}
-                        <Badge className="ml-1.5 bg-[#D59B2B] text-white text-[9px] px-1 py-0 select-none">Ma Page Gainable</Badge>
+                      <TableCell className="text-sm font-semibold text-[#D59B2B]">
+                        <div className="flex items-center flex-wrap gap-2">
+                          <span className="truncate max-w-[240px]" title={`gainable.fr/pro/${expertSlug}`}>
+                            gainable.fr/pro/{expertSlug}
+                          </span>
+                          <Badge className="bg-[#D59B2B] text-white text-[9px] px-1.5 py-0.5 select-none shrink-0 rounded-md">Ma Page Gainable</Badge>
+                        </div>
                       </TableCell>
-                      <TableCell className="font-mono text-xs">~ {2 + publishedArticlesCount} p.</TableCell>
-                      <TableCell className="text-emerald-600 font-bold">
+                      <TableCell className="text-sm text-slate-600">~ {2 + publishedArticlesCount} pages</TableCell>
+                      <TableCell className="text-emerald-600 text-sm font-bold">
                         {Math.min(88 + publishedArticlesCount * 2, 98)}%
                       </TableCell>
-                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.8</TableCell>
-                      <TableCell className="font-mono text-xs text-indigo-600">{Math.min(15 + publishedArticlesCount * 3, 60)}%</TableCell>
+                      <TableCell className="text-amber-500 text-sm font-medium">★ 4.8</TableCell>
+                      <TableCell className="text-sm text-indigo-600 font-semibold">{Math.min(15 + publishedArticlesCount * 3, 60)}%</TableCell>
                     </TableRow>
                     
                     {/* Platform */}
                     <TableRow className="bg-[#D59B2B]/5 font-semibold">
-                      <TableCell className="font-mono text-xs text-slate-700">gainable.fr</TableCell>
-                      <TableCell className="font-mono text-xs">58 921 p.</TableCell>
-                      <TableCell className="text-emerald-600 font-bold">94%</TableCell>
-                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.9</TableCell>
-                      <TableCell className="font-mono text-xs text-indigo-600">52%</TableCell>
+                      <TableCell className="text-sm font-semibold text-slate-700">gainable.fr</TableCell>
+                      <TableCell className="text-sm text-slate-700 font-semibold">58 921 pages</TableCell>
+                      <TableCell className="text-emerald-600 text-sm font-bold">94%</TableCell>
+                      <TableCell className="text-amber-500 text-sm font-medium">★ 4.9</TableCell>
+                      <TableCell className="text-sm text-indigo-600 font-semibold">52%</TableCell>
                     </TableRow>
                     
                     {/* Competitors */}
                     <TableRow>
-                      <TableCell className="font-mono text-xs text-slate-600">maclem.fr</TableCell>
-                      <TableCell className="font-mono text-xs">12 500 p.</TableCell>
-                      <TableCell className="text-slate-600">86%</TableCell>
-                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.8</TableCell>
-                      <TableCell className="font-mono text-xs text-indigo-500">22%</TableCell>
+                      <TableCell className="text-sm font-medium text-slate-600">maclem.fr</TableCell>
+                      <TableCell className="text-sm text-slate-500">12 500 pages</TableCell>
+                      <TableCell className="text-slate-600 text-sm font-semibold">86%</TableCell>
+                      <TableCell className="text-amber-500 text-sm font-medium">★ 4.8</TableCell>
+                      <TableCell className="text-sm text-indigo-500 font-semibold">22%</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-mono text-xs text-slate-600">izi-by-edf.fr</TableCell>
-                      <TableCell className="font-mono text-xs">8 400 p.</TableCell>
-                      <TableCell className="text-slate-600">91%</TableCell>
-                      <TableCell className="text-amber-500 font-mono text-xs">★ 4.6</TableCell>
-                      <TableCell className="font-mono text-xs text-indigo-500">45%</TableCell>
+                      <TableCell className="text-sm font-medium text-slate-600">izi-by-edf.fr</TableCell>
+                      <TableCell className="text-sm text-slate-500">8 400 pages</TableCell>
+                      <TableCell className="text-slate-600 text-sm font-semibold">91%</TableCell>
+                      <TableCell className="text-amber-500 text-sm font-medium">★ 4.6</TableCell>
+                      <TableCell className="text-sm text-indigo-500 font-semibold">45%</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
