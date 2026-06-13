@@ -322,30 +322,45 @@ export function SignUpForm() {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full bg-gradient-to-b from-slate-50/50 via-white to-slate-50/35">
 
             {/* --- SECTION 1: CHOIX DE L'OFFRE (Grid 3 Cards) --- */}
-            <div className="max-w-7xl mx-auto px-4 py-8 mb-12">
-                <div className="text-center mb-10">
-                    <div className="mt-4 inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium border border-emerald-100">
-                        <CheckCircle2 className="w-4 h-4" /> Plateforme vérifiée et sécurisée
+            <div className="max-w-7xl mx-auto px-4 py-12 mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
+                        Choisissez l'offre qui <span className="bg-gradient-to-r from-[#D59B2B] to-[#b58221] bg-clip-text text-transparent">propulsera</span> votre activité
+                    </h2>
+                    <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
+                        Bénéficiez de la puissance de notre sitemap de 58 921 pages locales, de nos outils d'audit SEO avancés et de l'assistant IA de rédaction pour dominer votre secteur.
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-emerald-100/60 shadow-sm">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                        Plateforme vérifiée et sécurisée • 0% commission sur vos contacts
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 items-start">
+                <div className="grid md:grid-cols-3 gap-8 items-stretch pt-4">
                     {/* CARD 1: BUREAU D'ÉTUDE */}
                     <div
                         onClick={() => setSelectedPlan('bureau_etude')}
-                        className={`cursor-pointer rounded-2xl p-6 border transition-all relative flex flex-col h-full ${selectedPlan === 'bureau_etude' ? 'border-[#D59B2B] ring-2 ring-[#D59B2B] ring-opacity-50 bg-orange-50/10' : 'border-slate-200 hover:shadow-xl bg-white'}`}
+                        className={`cursor-pointer rounded-3xl p-8 border transition-all duration-300 relative flex flex-col h-full ${
+                            selectedPlan === 'bureau_etude'
+                                ? 'border-[#D59B2B] ring-4 ring-[#D59B2B]/20 bg-gradient-to-b from-amber-50/10 to-white shadow-xl hover:-translate-y-1'
+                                : 'border-slate-200/80 hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 bg-white'
+                        }`}
                     >
-                        <div className="mb-4">
-                            <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 mb-4">
-                                <Briefcase className="w-5 h-5" />
+                        <div className="mb-6">
+                            <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-emerald-600 mb-5 border border-emerald-100/40">
+                                <Briefcase className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-bold text-[#1F2D3D]">Bureau d'étude</h3>
-                            <div className="text-emerald-600 font-bold text-xl mt-1">Gratuit</div>
+                            <h3 className="text-xl font-bold text-slate-900">Bureau d'étude</h3>
+                            <p className="text-slate-400 text-xs mt-1">Pour les experts en thermique</p>
+                            <div className="text-emerald-600 font-extrabold text-3xl mt-4">Gratuit</div>
                         </div>
-                        <ul className="space-y-2 mb-6 flex-1">
+                        
+                        <div className="h-px bg-slate-100 w-full mb-6" />
+                        
+                        <ul className="space-y-3.5 mb-8 flex-1">
                             {[
                                 "0% commission sur contact",
                                 "0 vente de contact",
@@ -358,13 +373,18 @@ export function SignUpForm() {
                                 "Leads & contacts illimités",
                                 "Accès codes APE dédiés BE"
                             ].map((feat, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                                <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                                    <span>{feat}</span>
+                                    <span className="leading-snug">{feat}</span>
                                 </li>
                             ))}
                         </ul>
-                        <div className={`mt-auto w-full py-2 px-4 rounded-lg text-center font-bold text-sm border ${selectedPlan === 'bureau_etude' ? 'bg-[#D59B2B] text-white border-[#D59B2B]' : 'bg-slate-50 text-slate-600 border-slate-200'}`}>
+                        
+                        <div className={`mt-auto w-full py-3 px-4 rounded-xl text-center font-bold text-sm border transition-all ${
+                            selectedPlan === 'bureau_etude'
+                                ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg shadow-[#D59B2B]/20'
+                                : 'bg-slate-50 text-slate-600 border-slate-200/60 hover:bg-slate-100'
+                        }`}>
                             {selectedPlan === 'bureau_etude' ? 'Sélectionné' : 'Choisir cette offre'}
                         </div>
                     </div>
@@ -372,52 +392,59 @@ export function SignUpForm() {
                     {/* CARD 2: SOCIÉTÉ EXPERTE (Focus) */}
                     <div
                         onClick={() => setSelectedPlan('societe')}
-                        className={`cursor-pointer rounded-2xl p-6 border-2 shadow-lg transition-all relative flex flex-col h-full transform md:-translate-y-4 ${selectedPlan === 'societe' ? 'border-[#D59B2B] ring-4 ring-[#D59B2B] ring-opacity-20 bg-[#fff8ed]' : 'border-[#D59B2B] bg-white hover:shadow-2xl'}`}
+                        className={`cursor-pointer rounded-3xl p-8 border-2 transition-all duration-300 relative flex flex-col h-full transform md:-translate-y-4 shadow-xl ${
+                            selectedPlan === 'societe'
+                                ? 'border-[#D59B2B] ring-4 ring-[#D59B2B]/20 bg-gradient-to-b from-amber-50/30 via-white to-white hover:-translate-y-5'
+                                : 'border-[#D59B2B]/60 hover:shadow-2xl hover:border-[#D59B2B] hover:-translate-y-5 bg-white'
+                        }`}
                     >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#D59B2B] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md whitespace-nowrap">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#D59B2B] to-[#b58221] text-white px-4 py-1.5 rounded-full text-xs font-black tracking-wider uppercase shadow-md animate-pulse">
                             Recommandé
                         </div>
-                        <div className="mb-4 mt-2">
-                            <div className="w-10 h-10 rounded-full bg-[#D59B2B] flex items-center justify-center text-white mb-4">
-                                <Building2 className="w-5 h-5" />
+                        <div className="mb-6 mt-2">
+                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#D59B2B] to-[#b58221] flex items-center justify-center text-white mb-5 shadow-md shadow-[#D59B2B]/20">
+                                <Building2 className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-bold text-[#1F2D3D]">Société Expert CVC</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Société Expert CVC</h3>
+                            <p className="text-slate-400 text-xs mt-1">Pour les installateurs clim / PAC</p>
 
                             {/* Toggle Switch Enhanced */}
-                            <div className="flex items-center gap-1 mt-4 mb-3 bg-slate-100 p-1.5 rounded-lg w-full" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center gap-1 mt-5 mb-4 bg-slate-100 p-1 rounded-xl w-full border border-slate-200/40" onClick={(e) => e.stopPropagation()}>
                                 <button
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] ring-1 ring-slate-200' : 'text-slate-500 hover:text-slate-700'}`}
+                                    type="button"
+                                    className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] shadow-sm ring-1 ring-slate-200/30' : 'text-slate-500 hover:text-slate-800'}`}
                                     onClick={() => setBillingInterval('yearly')}
                                 >
                                     Annuel
                                 </button>
                                 <button
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white ring-1 ring-[#1F2D3D]' : 'text-slate-500 hover:text-slate-700'}`}
+                                    type="button"
+                                    className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
                                     onClick={() => setBillingInterval('monthly')}
                                 >
                                     Mensuel
                                 </button>
                             </div>
 
-                            <div className="mt-2">
+                            <div className="mt-4">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">
+                                    <span className="text-[#D59B2B] font-black text-4xl tracking-tight">
                                         {billingInterval === 'yearly' ? '850 €' : '90 €'}
                                     </span>
-                                    <span className="text-lg text-slate-400 line-through font-medium">
+                                    <span className="text-base text-slate-400 line-through font-medium">
                                         {billingInterval === 'yearly' ? '1 200 €' : '130 €'}
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
-                                    <span className="text-sm text-slate-500 font-medium">
+                                    <span className="text-xs text-slate-500 font-medium">
                                         {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
                                     </span>
-                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Tarif lancement</span>
+                                    <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider">Tarif lancement</span>
                                 </div>
                             </div>
 
                             {/* Commitment Note */}
-                            <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
+                            <div className="mt-4 text-[11px] leading-relaxed text-slate-500 bg-amber-50/10 p-3 rounded-xl border border-amber-200/20 text-left">
                                 <span className="text-[#D59B2B] font-bold">
                                     {billingInterval === 'monthly' ? 'Engagement 12 mois reconductible.' : 'Abonnement annuel reconductible.'}
                                 </span>
@@ -425,7 +452,10 @@ export function SignUpForm() {
                                 Résiliation possible 1 mois avant la {billingInterval === 'monthly' ? 'fin du contrat' : "date d'anniversaire"}.
                             </div>
                         </div>
-                        <ul className="space-y-2 mb-6 flex-1">
+
+                        <div className="h-px bg-slate-100 w-full mb-6" />
+
+                        <ul className="space-y-3.5 mb-8 flex-1">
                             {[
                                 "0% commission sur contact",
                                 "0 vente de contact",
@@ -439,13 +469,18 @@ export function SignUpForm() {
                                 "Le client choisit lui-même",
                                 "Toutes fonctionnalités incluses"
                             ].map((feat, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-slate-700 font-bold">
+                                <li key={i} className="flex items-start gap-2.5 text-sm text-slate-800 font-semibold">
                                     <Star className="w-4 h-4 text-[#D59B2B] shrink-0 mt-0.5 fill-[#D59B2B]" />
-                                    <span>{feat}</span>
+                                    <span className="leading-snug">{feat}</span>
                                 </li>
                             ))}
                         </ul>
-                        <div className={`mt-auto w-full py-3 px-4 rounded-lg text-center font-bold text-sm transition-colors ${selectedPlan === 'societe' ? 'bg-[#D59B2B] text-white' : 'bg-[#1F2D3D] text-white hover:bg-slate-800'}`}>
+
+                        <div className={`mt-auto w-full py-3.5 px-4 rounded-xl text-center font-bold text-sm transition-all duration-300 ${
+                            selectedPlan === 'societe'
+                                ? 'bg-gradient-to-r from-[#D59B2B] to-[#b58221] text-white shadow-lg shadow-[#D59B2B]/20'
+                                : 'bg-[#1F2D3D] text-white hover:bg-slate-800 hover:shadow-lg'
+                        }`}>
                             {selectedPlan === 'societe' ? 'Sélectionné' : 'Choisir l\'offre Expert'}
                         </div>
                     </div>
@@ -453,33 +488,40 @@ export function SignUpForm() {
                     {/* CARD 3: DIAGNOSTIQUEUR */}
                     <div
                         onClick={() => setSelectedPlan('diagnostiqueur')}
-                        className={`cursor-pointer rounded-2xl p-6 border transition-all relative flex flex-col h-full ${selectedPlan === 'diagnostiqueur' ? 'border-[#D59B2B] ring-2 ring-[#D59B2B] ring-opacity-50 bg-purple-50/20' : 'border-slate-200 hover:shadow-xl bg-white'}`}
+                        className={`cursor-pointer rounded-3xl p-8 border transition-all duration-300 relative flex flex-col h-full ${
+                            selectedPlan === 'diagnostiqueur'
+                                ? 'border-[#D59B2B] ring-4 ring-[#D59B2B]/20 bg-gradient-to-b from-purple-50/10 to-white shadow-xl hover:-translate-y-1'
+                                : 'border-slate-200/80 hover:shadow-xl hover:border-slate-300 hover:-translate-y-1 bg-white'
+                        }`}
                     >
-                        <div className="mb-4">
-                            <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 mb-4">
-                                <FileText className="w-5 h-5" />
+                        <div className="mb-6">
+                            <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 mb-5 border border-purple-100/40">
+                                <FileText className="w-6 h-6" />
                             </div>
-                            <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
+                            <h3 className="text-xl font-bold text-slate-900">Diagnostiqueur</h3>
+                            <p className="text-slate-400 text-xs mt-1">Pour les diagnostiqueurs immobiliers</p>
 
                             {/* Toggle Switch Enhanced */}
-                            <div className="flex items-center gap-1 mt-4 mb-3 bg-slate-100 p-1.5 rounded-lg w-full" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center gap-1 mt-5 mb-4 bg-slate-100 p-1 rounded-xl w-full border border-slate-200/40" onClick={(e) => e.stopPropagation()}>
                                 <button
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] ring-1 ring-slate-200' : 'text-slate-500 hover:text-slate-700'}`}
+                                    type="button"
+                                    className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] shadow-sm ring-1 ring-slate-200/30' : 'text-slate-500 hover:text-slate-800'}`}
                                     onClick={() => setBillingInterval('yearly')}
                                 >
                                     Annuel
                                 </button>
                                 <button
-                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white ring-1 ring-[#1F2D3D]' : 'text-slate-500 hover:text-slate-700'}`}
+                                    type="button"
+                                    className={`flex-1 py-2.5 text-xs font-bold rounded-lg transition-all ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
                                     onClick={() => setBillingInterval('monthly')}
                                 >
                                     Mensuel
                                 </button>
                             </div>
 
-                            <div className="mt-2">
+                            <div className="mt-4">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-purple-600 font-bold text-2xl">
+                                    <span className="text-purple-600 font-extrabold text-3xl tracking-tight">
                                         {billingInterval === 'yearly' ? '750 €' : '90 €'}
                                     </span>
                                     <span className="text-base text-slate-400 line-through font-medium">
@@ -487,15 +529,15 @@ export function SignUpForm() {
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
-                                    <span className="text-sm text-slate-500 font-medium">
+                                    <span className="text-xs text-slate-500 font-medium">
                                         {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
                                     </span>
-                                    <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Tarif lancement</span>
+                                    <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider">Tarif lancement</span>
                                 </div>
                             </div>
                             
                             {/* Commitment Note */}
-                            <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
+                            <div className="mt-4 text-[11px] leading-relaxed text-slate-500 bg-purple-50/5 p-3 rounded-xl border border-purple-200/10 text-left">
                                 <span className="text-[#D59B2B] font-bold">
                                     {billingInterval === 'monthly' ? 'Engagement 12 mois reconductible.' : 'Abonnement annuel reconductible.'}
                                 </span>
@@ -503,7 +545,10 @@ export function SignUpForm() {
                                 Résiliation possible 1 mois avant la {billingInterval === 'monthly' ? 'fin du contrat' : "date d'anniversaire"}.
                             </div>
                         </div>
-                        <ul className="space-y-2 mb-6 flex-1">
+
+                        <div className="h-px bg-slate-100 w-full mb-6" />
+
+                        <ul className="space-y-3.5 mb-8 flex-1">
                             {[
                                 "0% commission sur contact",
                                 "0 vente de contact",
@@ -517,13 +562,18 @@ export function SignUpForm() {
                                 "Missions de diagnostic",
                                 "Le client choisit lui-même"
                             ].map((feat, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
+                                <li key={i} className="flex items-start gap-2.5 text-sm text-slate-600">
                                     <CheckCircle2 className="w-4 h-4 text-purple-500 shrink-0 mt-0.5" />
-                                    <span>{feat}</span>
+                                    <span className="leading-snug">{feat}</span>
                                 </li>
                             ))}
                         </ul>
-                        <div className={`mt-auto w-full py-2 px-4 rounded-lg text-center font-bold text-sm border ${selectedPlan === 'diagnostiqueur' ? 'bg-[#D59B2B] text-white border-[#D59B2B]' : 'bg-slate-50 text-slate-600 border-slate-200'}`}>
+                        
+                        <div className={`mt-auto w-full py-3 px-4 rounded-xl text-center font-bold text-sm border transition-all ${
+                            selectedPlan === 'diagnostiqueur'
+                                ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg shadow-[#D59B2B]/20'
+                                : 'bg-slate-50 text-slate-600 border-slate-200/60 hover:bg-slate-100'
+                        }`}>
                             {selectedPlan === 'diagnostiqueur' ? 'Sélectionné' : 'Choisir cette offre'}
                         </div>
                     </div>
