@@ -155,10 +155,20 @@ export function SignUpForm() {
             !formData.password ||
             !formData.confirmPassword ||
             !formData.siret ||
-            !formData.description
+            !formData.description ||
+            (hasDifferentApe && (
+                !formData.nomEntreprise ||
+                !formData.codeApe ||
+                !formData.adresse ||
+                !formData.codePostal ||
+                !formData.ville
+            ))
         ) {
             setShowErrors(true);
-            alert("Veuillez remplir tous les champs obligatoires (*). N'oubliez pas de cliquer sur 'Vérifier' pour le SIRET.");
+            const alertMsg = hasDifferentApe
+                ? "Veuillez remplir tous les champs obligatoires (*), y compris les informations de votre entreprise."
+                : "Veuillez remplir tous les champs obligatoires (*). N'oubliez pas de cliquer sur 'Vérifier' pour le SIRET.";
+            alert(alertMsg);
             return;
         }
 
@@ -660,11 +670,13 @@ export function SignUpForm() {
                                                     value={siretInput}
                                                     onChange={(e) => {
                                                         setSiretInput(e.target.value);
-                                                        if (formData.pays !== 'France') setFormData(prev => ({ ...prev, siret: e.target.value }));
+                                                        if (formData.pays !== 'France' || hasDifferentApe) {
+                                                            setFormData(prev => ({ ...prev, siret: e.target.value }));
+                                                        }
                                                     }}
                                                     className={showErrors && !formData.siret ? "border-red-500" : ""}
                                                 />
-                                                {formData.pays === 'France' && (
+                                                {formData.pays === 'France' && !hasDifferentApe && (
                                                     <Button type="button" variant="outline" onClick={checkSiret} disabled={isLoadingSiret}>
                                                         {isLoadingSiret ? "..." : "Vérifier"}
                                                     </Button>
@@ -677,15 +689,39 @@ export function SignUpForm() {
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-2">
                                             <Label>Nom de l'entreprise</Label>
-                                            <Input name="nomEntreprise" value={formData.nomEntreprise} onChange={handleCommonChange} disabled={formData.pays === 'France'} className={formData.pays === 'France' ? 'bg-slate-50' : ''} />
+                                            <Input 
+                                                name="nomEntreprise" 
+                                                value={formData.nomEntreprise} 
+                                                onChange={handleCommonChange} 
+                                                disabled={formData.pays === 'France' && !hasDifferentApe} 
+                                                className={formData.pays === 'France' && !hasDifferentApe ? 'bg-slate-50' : ''} 
+                                            />
                                         </div>
                                         <div className="space-y-2">
                                             <Label>Code APE</Label>
-                                            <Input value={formData.codeApe} disabled className="bg-slate-50" placeholder="XXXXX" />
+                                            <Input 
+                                                name="codeApe" 
+                                                value={formData.codeApe} 
+                                                onChange={handleCommonChange} 
+                                                disabled={formData.pays === 'France' && !hasDifferentApe} 
+                                                className={formData.pays === 'France' && !hasDifferentApe ? 'bg-slate-50' : ''} 
+                                                placeholder="XXXXX" 
+                                            />
                                             {selectedPlan === 'societe' && formData.pays === 'France' && (
                                                 <div className="mt-3 space-y-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
                                                     <div className="flex items-start space-x-2">
-                                                        <Checkbox id="differentApe" checked={hasDifferentApe} onCheckedChange={(checked) => setHasDifferentApe(!!checked)} className="mt-1" />
+                                                        <Checkbox 
+                                                            id="differentApe" 
+                                                            checked={hasDifferentApe} 
+                                                            onCheckedChange={(checked) => {
+                                                                const isChecked = !!checked;
+                                                                setHasDifferentApe(isChecked);
+                                                                if (isChecked && siretInput) {
+                                                                    setFormData(prev => ({ ...prev, siret: siretInput }));
+                                                                }
+                                                            }} 
+                                                            className="mt-1" 
+                                                        />
                                                         <label htmlFor="differentApe" className="text-sm font-medium text-slate-700 leading-snug cursor-pointer">
                                                             Mon code APE n'est pas lié au CVC (ex: Électricien) mais je possède une attestation de capacité fluide frigorigène
                                                         </label>
@@ -703,11 +739,31 @@ export function SignUpForm() {
 
                                     <div className="space-y-2">
                                         <Label>Adresse</Label>
-                                        <Input name="adresse" value={formData.adresse} onChange={handleCommonChange} disabled={formData.pays === 'France'} className={formData.pays === 'France' ? 'bg-slate-50' : ''} />
+                                        <Input 
+                                            name="adresse" 
+                                            value={formData.adresse} 
+                                            onChange={handleCommonChange} 
+                                            disabled={formData.pays === 'France' && !hasDifferentApe} 
+                                            className={formData.pays === 'France' && !hasDifferentApe ? 'bg-slate-50' : ''} 
+                                        />
                                     </div>
                                     <div className="grid grid-cols-2 gap-4">
-                                        <Input name="codePostal" placeholder="Code Postal" value={formData.codePostal} onChange={handleCommonChange} disabled={formData.pays === 'France'} className={formData.pays === 'France' ? 'bg-slate-50' : ''} />
-                                        <Input name="ville" placeholder="Ville" value={formData.ville} onChange={handleCommonChange} disabled={formData.pays === 'France'} className={formData.pays === 'France' ? 'bg-slate-50' : ''} />
+                                        <Input 
+                                            name="codePostal" 
+                                            placeholder="Code Postal" 
+                                            value={formData.codePostal} 
+                                            onChange={handleCommonChange} 
+                                            disabled={formData.pays === 'France' && !hasDifferentApe} 
+                                            className={formData.pays === 'France' && !hasDifferentApe ? 'bg-slate-50' : ''} 
+                                        />
+                                        <Input 
+                                            name="ville" 
+                                            placeholder="Ville" 
+                                            value={formData.ville} 
+                                            onChange={handleCommonChange} 
+                                            disabled={formData.pays === 'France' && !hasDifferentApe} 
+                                            className={formData.pays === 'France' && !hasDifferentApe ? 'bg-slate-50' : ''} 
+                                        />
                                     </div>
 
                                     <div className="space-y-2">
