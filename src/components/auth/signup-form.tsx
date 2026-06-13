@@ -498,7 +498,7 @@ export function SignUpForm() {
                                 "Toutes fonctionnalités incluses"
                             ].map((feat, i) => (
                                 <li key={i} className="flex items-start gap-2.5 text-sm text-slate-800 font-semibold">
-                                    <Star className="w-4 h-4 text-[#D59B2B] shrink-0 mt-0.5 fill-[#D59B2B]" />
+                                    <CheckCircle2 className="w-4 h-4 text-[#D59B2B] shrink-0 mt-0.5" />
                                     <span className="leading-snug">{feat}</span>
                                 </li>
                             ))}
