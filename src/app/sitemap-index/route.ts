@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // Cache sitemap index for 24 hours
 
 /**
  * Sitemap Index - points to the 9 sub-sitemaps:

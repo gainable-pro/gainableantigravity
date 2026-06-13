@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // Cache sitemaps for 24 hours
+
+export async function generateStaticParams() {
+    return Array.from({ length: 9 }, (_, i) => ({ id: String(i) }));
+}
 
 const ARTICLE_BATCH_SIZE = 7500;
 const BASE_URL = 'https://www.gainable.fr';

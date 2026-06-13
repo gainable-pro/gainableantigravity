@@ -533,7 +533,7 @@ add_header Content-Security-Policy "default-src 'self' https: data: 'unsafe-inli
                     {/* Platform */}
                     <TableRow className="bg-[#D59B2B]/5 font-semibold">
                       <TableCell className="font-mono text-xs text-slate-700">gainable.fr</TableCell>
-                      <TableCell className="font-mono text-xs">23 450 p.</TableCell>
+                      <TableCell className="font-mono text-xs">58 600 p.</TableCell>
                       <TableCell className="text-emerald-600 font-bold">94%</TableCell>
                       <TableCell className="text-amber-500 font-mono text-xs">★ 4.9</TableCell>
                       <TableCell className="font-mono text-xs text-indigo-600">52%</TableCell>

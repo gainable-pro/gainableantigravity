@@ -1494,7 +1494,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                   </p>
                   <ul className="list-disc pl-4 space-y-2 text-slate-700">
                     <li>
-                      <strong>Volume de pages</strong> : Notre sitemap couvre <strong>23 450 pages</strong> locales, soit 2 fois plus que Maclem (12 500 p.). Cette granularité nous donne l'avantage sur les moyennes et petites communes.
+                      <strong>Volume de pages</strong> : Notre sitemap couvre <strong>58 600 pages</strong> locales, soit 4 fois plus que Maclem (12 500 p.). Cette granularité nous donne un avantage décisif sur les moyennes et petites communes.
                     </li>
                     <li>
                       <strong>Autorité locale & Avis</strong> : Notre note moyenne est de <strong>4.9★</strong>. Cependant, IZI possède un volume d'avis beaucoup plus large (1 850 avis). Encouragez les experts inscrits à solliciter leurs clients locaux pour renforcer notre profil E-E-A-T.
