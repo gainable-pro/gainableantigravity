@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Eye, EyeOff, Building2, Briefcase, FileText, CheckCircle2, Lock, ArrowRight, Star } from "lucide-react";
+import { Eye, EyeOff, Building2, Briefcase, FileText, CheckCircle2, Lock, ArrowRight, Star, TrendingUp } from "lucide-react";
 import {
     EXPERT_TECHNOLOGIES,
     EXPERT_INTERVENTIONS_CLIM,
@@ -345,17 +345,17 @@ export function SignUpForm() {
                     </p>
 
                     {/* Visual Highlight Feature Card */}
-                    <div className="mb-8 inline-flex items-center justify-center p-0.5 rounded-2xl bg-gradient-to-r from-amber-500 via-[#D59B2B] to-yellow-500 shadow-lg shadow-[#D59B2B]/10 hover:shadow-[#D59B2B]/20 transition-all duration-300 hover:scale-[1.02] cursor-default">
-                        <div className="bg-slate-900 text-white rounded-[14px] px-6 py-4 flex flex-col md:flex-row items-center gap-4 max-w-2xl text-left">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-[#D59B2B] text-slate-950 font-black text-lg shadow-inner shrink-0 animate-bounce">
-                                🚀
+                    <div className="mb-8 inline-flex items-center justify-center w-full max-w-2xl mx-auto p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm text-left">
+                        <div className="flex items-start gap-4">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#1F2D3D] text-white shrink-0 mt-0.5 shadow-sm">
+                                <TrendingUp className="w-5 h-5" />
                             </div>
                             <div>
-                                <h4 className="text-sm md:text-base font-extrabold text-white">
-                                    Une visibilité Google instantanée
+                                <h4 className="text-sm md:text-base font-bold text-slate-900">
+                                    Accélération du référencement local
                                 </h4>
-                                <p className="text-xs md:text-sm text-slate-300 font-light mt-0.5 leading-relaxed">
-                                    Bénéficiez immédiatement de la puissance de notre réseau de <span className="text-amber-400 font-black underline decoration-amber-400/40 decoration-2 underline-offset-4">58 921 pages locales indexées</span> pour propulser votre référencement.
+                                <p className="text-xs md:text-sm text-slate-600 font-normal mt-1 leading-relaxed">
+                                    Profitez d'une structure de <span className="text-[#D59B2B] font-bold">58 921 pages locales (dont plus de 18 000 sont déjà indexées par Google)</span> pour héberger votre fiche professionnelle et vos articles de blog afin de développer votre présence locale de manière pérenne et conforme aux règles de référencement.
                                 </p>
                             </div>
                         </div>
