@@ -7,7 +7,7 @@ async function main() {
       payment_method_types: ['card'],
       line_items: [
         {
-          price: process.env.STRIPE_PRICE_CVC || 'price_1T8hJqGfw444kXxvrjmaGSFL',
+          price: process.env.STRIPE_PRICE_CVC || 'price_1ThviWGfw444kXxvdJrfcGwj',
           quantity: 1,
         },
       ],

@@ -26,15 +26,15 @@ export async function POST(req: NextRequest) {
 
         if (planId === 'cvc') {
             if (interval === 'monthly') {
-                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || 'price_1T8hJqGfw444kXxv99Kosa0S';
+                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || 'price_1ThvjKGfw444kXxvQ8ypVgxa';
             } else {
-                priceId = process.env.STRIPE_PRICE_CVC || 'price_1T8hJqGfw444kXxvrjmaGSFL';
+                priceId = process.env.STRIPE_PRICE_CVC || 'price_1ThviWGfw444kXxvdJrfcGwj';
             }
         } else if (planId === 'diag') {
             if (interval === 'monthly') {
-                priceId = process.env.STRIPE_PRICE_DIAG_MONTHLY || 'price_1T8hJmGfw444kXxvsMWeMh7d_monthly';
+                priceId = process.env.STRIPE_PRICE_DIAG_MONTHLY || 'price_1ThvmEGfw444kXxvPDCsSip1';
             } else {
-                priceId = process.env.STRIPE_PRICE_DIAG || 'price_1T8hJmGfw444kXxvsMWeMh7d';
+                priceId = process.env.STRIPE_PRICE_DIAG || 'price_1ThvldGfw444kXxv8MArvpef';
             }
         } else {
             return NextResponse.json({ error: "Invalid plan ID configuration" }, { status: 400 });

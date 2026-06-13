@@ -1,9 +1,23 @@
 const fs = require('fs');
 const stripeLib = require('stripe');
 
-const envContent = fs.readFileSync('.env', 'utf16le');
-const stripeKeyMatch = envContent.match(/STRIPE_SECRET_KEY=(sk_test_[a-zA-Z0-9]+)/);
+let envContent = '';
+let key = '';
+try {
+  envContent = fs.readFileSync('.env.local', 'utf8');
+} catch (e) {
+  try {
+    envContent = fs.readFileSync('.env.local', 'utf16le');
+  } catch (e) {
+    try {
+      envContent = fs.readFileSync('.env', 'utf16le');
+    } catch (e) {
+      envContent = fs.readFileSync('.env', 'utf8');
+    }
+  }
+}
 
+const stripeKeyMatch = envContent.match(/STRIPE_SECRET_KEY=["']?(sk_[a-zA-Z0-9_]+)["']?/);
 if (!stripeKeyMatch) {
   console.log('No STRIPE_SECRET_KEY found');
   process.exit(1);
@@ -18,7 +32,7 @@ async function test() {
       payment_method_types: ['card'],
       line_items: [
         {
-          price: 'price_1T8hJqGfw444kXxvrjmaGSFL', // fallback code value
+          price: 'price_1ThviWGfw444kXxvdJrfcGwj', // fallback code value
           quantity: 1,
         },
       ],
