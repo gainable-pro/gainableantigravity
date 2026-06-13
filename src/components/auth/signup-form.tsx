@@ -340,10 +340,28 @@ export function SignUpForm() {
                     <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
                         Choisissez l'offre qui <span className="bg-gradient-to-r from-[#D59B2B] to-[#b58221] bg-clip-text text-transparent">propulsera</span> votre activité
                     </h1>
-                    <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
-                        Bénéficiez de la puissance de notre sitemap de 58 921 pages locales, de nos outils d'audit SEO avancés et de l'assistant IA de rédaction pour dominer votre secteur.
+                    <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                        Dominez votre secteur grâce à nos outils d'audit SEO avancés et à l'assistant IA de rédaction intégrés.
                     </p>
-                    <div className="mt-6 inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-emerald-100/60 shadow-sm">
+
+                    {/* Visual Highlight Feature Card */}
+                    <div className="mb-8 inline-flex items-center justify-center p-0.5 rounded-2xl bg-gradient-to-r from-amber-500 via-[#D59B2B] to-yellow-500 shadow-lg shadow-[#D59B2B]/10 hover:shadow-[#D59B2B]/20 transition-all duration-300 hover:scale-[1.02] cursor-default">
+                        <div className="bg-slate-900 text-white rounded-[14px] px-6 py-4 flex flex-col md:flex-row items-center gap-4 max-w-2xl text-left">
+                            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-[#D59B2B] text-slate-950 font-black text-lg shadow-inner shrink-0 animate-bounce">
+                                🚀
+                            </div>
+                            <div>
+                                <h4 className="text-sm md:text-base font-extrabold text-white">
+                                    Une visibilité Google instantanée
+                                </h4>
+                                <p className="text-xs md:text-sm text-slate-300 font-light mt-0.5 leading-relaxed">
+                                    Bénéficiez immédiatement de la puissance de notre réseau de <span className="text-amber-400 font-black underline decoration-amber-400/40 decoration-2 underline-offset-4">58 921 pages locales indexées</span> pour propulser votre référencement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-2 inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-xs md:text-sm font-semibold border border-emerald-100/60 shadow-sm">
                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                         Plateforme vérifiée et sécurisée • 0% commission sur vos contacts
                     </div>
