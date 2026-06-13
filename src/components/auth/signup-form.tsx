@@ -327,9 +327,9 @@ export function SignUpForm() {
             {/* --- SECTION 1: CHOIX DE L'OFFRE (Grid 3 Cards) --- */}
             <div className="max-w-7xl mx-auto px-4 py-12 mb-16">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
                         Choisissez l'offre qui <span className="bg-gradient-to-r from-[#D59B2B] to-[#b58221] bg-clip-text text-transparent">propulsera</span> votre activité
-                    </h2>
+                    </h1>
                     <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
                         Bénéficiez de la puissance de notre sitemap de 58 921 pages locales, de nos outils d'audit SEO avancés et de l'assistant IA de rédaction pour dominer votre secteur.
                     </p>
