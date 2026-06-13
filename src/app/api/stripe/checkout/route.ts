@@ -31,7 +31,11 @@ export async function POST(req: NextRequest) {
                 priceId = process.env.STRIPE_PRICE_CVC || 'price_1T8hJqGfw444kXxvrjmaGSFL';
             }
         } else if (planId === 'diag') {
-            priceId = process.env.STRIPE_PRICE_DIAG || 'price_1T8hJmGfw444kXxvsMWeMh7d';
+            if (interval === 'monthly') {
+                priceId = process.env.STRIPE_PRICE_DIAG_MONTHLY || 'price_1T8hJmGfw444kXxvsMWeMh7d_monthly';
+            } else {
+                priceId = process.env.STRIPE_PRICE_DIAG || 'price_1T8hJmGfw444kXxvsMWeMh7d';
+            }
         } else {
             return NextResponse.json({ error: "Invalid plan ID configuration" }, { status: 400 });
         }

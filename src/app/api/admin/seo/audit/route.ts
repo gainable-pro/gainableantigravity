@@ -41,7 +41,7 @@ export async function POST(req: Request) {
         timestamp: new Date().toISOString(),
         score: 85,
         metrics: {
-          robots: "robots.txt récupéré avec succès. Sitemap: Trouvé (58 600 pages)",
+          robots: "robots.txt récupéré avec succès. Sitemap: Trouvé (58 921 pages)",
           security: "En-têtes détectés: HSTS: Non | CSP: Non | nosniff: Oui",
           performance: "Score mobile estimé: 76/100 | INP: 120ms (Bon) | LCP: 2.8s (Moyen)",
           readability: "Lisibilité moyenne: 62.4 (Flesch-Kincaid) - Niveau d'études recommandé: Lycée/Collège"

@@ -298,21 +298,25 @@ export function SignUpForm() {
 
     const getPlanPrice = (p: string) => {
         if (p === 'societe') {
-            return billingInterval === 'yearly' ? "650 € HT / an" : "50 € HT / mois";
+            return billingInterval === 'yearly' ? "850 € HT / an" : "90 € HT / mois";
         }
         if (p === 'bureau_etude') return "Gratuit";
-        if (p === 'diagnostiqueur') return "380 € HT / an";
+        if (p === 'diagnostiqueur') {
+            return billingInterval === 'yearly' ? "750 € HT / an" : "90 € HT / mois";
+        }
         return "";
     };
 
     const getTTCPrice = (p: string) => {
         if (p === 'societe') {
             return billingInterval === 'yearly'
-                ? { ht: "650 €", tva: "130 €", ttc: "780 €", period: "/an" }
-                : { ht: "50 €", tva: "10 €", ttc: "60 €", period: "/mois" };
+                ? { ht: "850 €", tva: "170 €", ttc: "1 020 €", period: "/an" }
+                : { ht: "90 €", tva: "18 €", ttc: "108 €", period: "/mois" };
         }
         if (p === 'diagnostiqueur') {
-            return { ht: "380 €", tva: "76 €", ttc: "456 €", period: "/an" };
+            return billingInterval === 'yearly'
+                ? { ht: "750 €", tva: "150 €", ttc: "900 €", period: "/an" }
+                : { ht: "90 €", tva: "18 €", ttc: "108 €", period: "/mois" };
         }
         return null;
     };
@@ -398,10 +402,10 @@ export function SignUpForm() {
                             <div className="mt-2">
                                 <div className="flex items-baseline gap-2">
                                     <span className="text-[#D59B2B] font-bold text-3xl">
-                                        {billingInterval === 'yearly' ? '650 €' : '50 €'}
+                                        {billingInterval === 'yearly' ? '850 €' : '90 €'}
                                     </span>
                                     <span className="text-lg text-slate-400 line-through font-medium">
-                                        {billingInterval === 'yearly' ? '850 €' : '75 €'}
+                                        {billingInterval === 'yearly' ? '1 200 €' : '130 €'}
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
@@ -425,6 +429,7 @@ export function SignUpForm() {
                             {[
                                 "0% commission sur contact",
                                 "0 vente de contact",
+                                "Outil d'Audit SEO & Analyse Concurrentielle en direct",
                                 "Priorité SEO réelle et mesurable",
                                 "Mise en avant Premium (Site + Carte)",
                                 "Badge Expert visible (Confiance)",
@@ -455,28 +460,54 @@ export function SignUpForm() {
                                 <FileText className="w-5 h-5" />
                             </div>
                             <h3 className="text-lg font-bold text-[#1F2D3D]">Diagnostiqueur</h3>
+
+                            {/* Toggle Switch Enhanced */}
+                            <div className="flex items-center gap-1 mt-4 mb-3 bg-slate-100 p-1.5 rounded-lg w-full" onClick={(e) => e.stopPropagation()}>
+                                <button
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'yearly' ? 'bg-white text-[#1F2D3D] ring-1 ring-slate-200' : 'text-slate-500 hover:text-slate-700'}`}
+                                    onClick={() => setBillingInterval('yearly')}
+                                >
+                                    Annuel
+                                </button>
+                                <button
+                                    className={`flex-1 py-2 text-sm font-bold rounded-md transition-all shadow-sm ${billingInterval === 'monthly' ? 'bg-[#1F2D3D] text-white ring-1 ring-[#1F2D3D]' : 'text-slate-500 hover:text-slate-700'}`}
+                                    onClick={() => setBillingInterval('monthly')}
+                                >
+                                    Mensuel
+                                </button>
+                            </div>
+
                             <div className="mt-2">
                                 <div className="flex items-baseline gap-2">
-                                    <span className="text-purple-600 font-bold text-2xl">380 €</span>
-                                    <span className="text-base text-slate-400 line-through font-medium">680 €</span>
+                                    <span className="text-purple-600 font-bold text-2xl">
+                                        {billingInterval === 'yearly' ? '750 €' : '90 €'}
+                                    </span>
+                                    <span className="text-base text-slate-400 line-through font-medium">
+                                        {billingInterval === 'yearly' ? '1 100 €' : '130 €'}
+                                    </span>
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
-                                    <span className="text-sm text-slate-500 font-medium">/ an HT</span>
+                                    <span className="text-sm text-slate-500 font-medium">
+                                        {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
+                                    </span>
                                     <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wider">Tarif lancement</span>
                                 </div>
                             </div>
                             
                             {/* Commitment Note */}
                             <div className="mt-3 text-[11px] leading-tight font-medium text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 text-left">
-                                <span className="text-[#D59B2B] font-bold">Abonnement annuel reconductible.</span>
+                                <span className="text-[#D59B2B] font-bold">
+                                    {billingInterval === 'monthly' ? 'Engagement 12 mois reconductible.' : 'Abonnement annuel reconductible.'}
+                                </span>
                                 <br />
-                                Résiliation possible 1 mois avant la date d'anniversaire.
+                                Résiliation possible 1 mois avant la {billingInterval === 'monthly' ? 'fin du contrat' : "date d'anniversaire"}.
                             </div>
                         </div>
                         <ul className="space-y-2 mb-6 flex-1">
                             {[
                                 "0% commission sur contact",
                                 "0 vente de contact",
+                                "Outil d'Audit SEO & Analyse Concurrentielle en direct",
                                 "Visibilité locale sur Gainable.fr",
                                 "Page PRO dédiée",
                                 "Création 10 articles / mois (Optimisé SEO)",

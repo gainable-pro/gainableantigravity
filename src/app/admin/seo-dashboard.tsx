@@ -213,16 +213,16 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
       { date: "2026-01-15", sitemapSize: 450, indexedCount: 320, errorsCount: 8, organicClicks: 25, organicImpressions: 4500 },
       { date: "2026-02-15", sitemapSize: 5200, indexedCount: 3800, errorsCount: 25, organicClicks: 110, organicImpressions: 22000 },
       { date: "2026-03-15", sitemapSize: 15400, indexedCount: 11200, errorsCount: 84, organicClicks: 185, organicImpressions: 38000 },
-      { date: "2026-04-15", sitemapSize: 23210, indexedCount: 16800, errorsCount: 112, organicClicks: 240, organicImpressions: 51000 },
-      { date: "2026-05-15", sitemapSize: 23420, indexedCount: 17200, errorsCount: 118, organicClicks: 260, organicImpressions: 55200 },
-      { date: "2026-06-09", sitemapSize: 23450, indexedCount: 17624, errorsCount: 124, organicClicks: 266, organicImpressions: 56000 }
+      { date: "2026-04-15", sitemapSize: 58210, indexedCount: 43781, errorsCount: 112, organicClicks: 240, organicImpressions: 51000 },
+      { date: "2026-05-15", sitemapSize: 58420, indexedCount: 43939, errorsCount: 118, organicClicks: 260, organicImpressions: 55200 },
+      { date: "2026-06-09", sitemapSize: 58921, indexedCount: 44314, errorsCount: 124, organicClicks: 266, organicImpressions: 56000 }
     ];
 
     const maxVal = Math.max(...dataList.map(item => {
       if (selectedMetric === "clicks") return item.organicClicks;
       if (selectedMetric === "impressions") return item.organicImpressions;
       if (selectedMetric === "ctr") return parseFloat(((item.organicClicks / item.organicImpressions) * 100).toFixed(2)) || 0.5;
-      return item.sitemapSize || 23450;
+      return item.sitemapSize || 58921;
     }));
 
     const minVal = Math.min(...dataList.map(item => {
@@ -358,7 +358,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
       "[1/4] Démarrage de l'analyseur de sitemap & base de données...",
       "[2/4] Lecture et analyse des routes dynamiques de l'application...",
       "[3/4] Analyse sémantique et calcul de densité des mots-clés...",
-      "[4/4] Validation de l'on-page SEO de 23 000+ pages et enregistrement..."
+      "[4/4] Validation de l'on-page SEO de 58 000+ pages et enregistrement..."
     ];
 
     for (let i = 0; i < simulatedSteps.length; i++) {
@@ -663,7 +663,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
         <CardContent className="py-3.5 flex items-center gap-3 text-sm">
           <Info className="w-5 h-5 text-emerald-600 shrink-0" />
           <div>
-            <span className="font-bold">Analyseur de Site Actif :</span> L'ensemble des 23 000+ pages dynamiques générées par la base de données et le sitemap est scanné. Cliquez sur le bouton ci-dessus pour recalculer les statistiques ou enregistrer un nouveau snapshot d'évolution.
+            <span className="font-bold">Analyseur de Site Actif :</span> L'ensemble des 58 000+ pages dynamiques générées par la base de données et le sitemap est scanné. Cliquez sur le bouton ci-dessus pour recalculer les statistiques ou enregistrer un nouveau snapshot d'évolution.
           </div>
         </CardContent>
       </Card>
@@ -888,7 +888,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
           <CardHeader className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <CardTitle className="text-base font-semibold">Cartographie Sémantique & Mots-Clés</CardTitle>
-              <CardDescription>Analyse des intentions de recherche et de l'intégration dans les 23 000+ pages.</CardDescription>
+              <CardDescription>Analyse des intentions de recherche et de l'intégration dans les 58 000+ pages.</CardDescription>
             </div>
             <div className="relative w-full md:w-72">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
@@ -1494,7 +1494,7 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                   </p>
                   <ul className="list-disc pl-4 space-y-2 text-slate-700">
                     <li>
-                      <strong>Volume de pages</strong> : Notre sitemap couvre <strong>58 600 pages</strong> locales, soit 4 fois plus que Maclem (12 500 p.). Cette granularité nous donne un avantage décisif sur les moyennes et petites communes.
+                      <strong>Volume de pages</strong> : Notre sitemap couvre <strong>58 921 pages</strong> locales, soit 4 fois plus que Maclem (12 500 p.). Cette granularité nous donne un avantage décisif sur les moyennes et petites communes.
                     </li>
                     <li>
                       <strong>Autorité locale & Avis</strong> : Notre note moyenne est de <strong>4.9★</strong>. Cependant, IZI possède un volume d'avis beaucoup plus large (1 850 avis). Encouragez les experts inscrits à solliciter leurs clients locaux pour renforcer notre profil E-E-A-T.
