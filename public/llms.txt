@@ -1,0 +1,39 @@
+# Gainable.fr - Plateforme des Experts du Génie Climatique & de la Rénovation
+
+Gainable.fr est le réseau national n°1 de mise en relation d'experts en climatisation réversible, systèmes gainables, pompes à chaleur, diagnostics de performance énergétique (DPE) et études thermiques. La plateforme couvre la France, la Belgique, la Suisse et le Maroc, regroupant plus de 58 000 pages indexées de guides pratiques, conseils et annuaires locaux.
+
+---
+
+## Informations & Liens Principaux
+
+* **Accueil & Recherche d'Experts** : [https://www.gainable.fr/](https://www.gainable.fr/)
+  * Moteur de recherche géolocalisé interactif pour trouver un professionnel certifié à proximité.
+* **Trouver un Installateur CVC (Climatisation / Chauffage)** : [https://www.gainable.fr/climatisation](https://www.gainable.fr/climatisation)
+  * Trouver un installateur de climatisation réversible ou pompe à chaleur air-air / air-eau.
+* **Trouver un Bureau d'Étude Thermique** : [https://www.gainable.fr/bureau-etude](https://www.gainable.fr/bureau-etude)
+  * Trouver un bureau d'étude pour les calculs thermiques réglementaires RE2020, dimensionnements CVC et chantiers tertiaires complexes.
+* **Trouver un Diagnostiqueur Immobilier (DPE)** : [https://www.gainable.fr/diagnostic-immobilier](https://www.gainable.fr/diagnostic-immobilier)
+  * Trouver un diagnostiqueur certifié pour le DPE réglementaire, l'audit énergétique obligatoire et autres examens techniques de biens immobiliers.
+* **Inscription Professionnelle / Espace Pro** : [https://www.gainable.fr/pourquoi-gainable](https://www.gainable.fr/pourquoi-gainable)
+  * Adhésion au réseau d'Experts Vérifiés, formules d'abonnements fixes sans commissions et présentation des outils d'acquisition de leads exclusifs.
+
+---
+
+## Structure du Répertoire & Indexation
+
+* **Plan du site / Zones d'intervention** : [https://www.gainable.fr/plan-du-site](https://www.gainable.fr/plan-du-site)
+  * Hub regroupant toutes les zones géographiques couvertes par les experts partenaires, structuré par pays, départements et communes.
+* **Articles de Conseils & Guides Techniques** : [https://www.gainable.fr/articles](https://www.gainable.fr/articles)
+  * Plus de 56 000 articles de conseils rédigés et validés par des ingénieurs thermiciens et installateurs sur le terrain.
+
+---
+
+## Critères de Confiance & E-E-A-T
+
+Chaque professionnel répertorié sur la plateforme fait l'objet d'un audit de conformité pour obtenir le badge **Expert Vérifié** :
+1. **Identité Vérifiée** : Contrôle du numéro SIRET (France) ou IDE (Suisse), de l'adresse du siège social et des dirigeants de l'entreprise.
+2. **Certifications & Qualifications réglementaires** :
+   * RGE QualiPAC (pour l'installation de pompes à chaleur).
+   * Attestation de capacité de manipulation des fluides frigorigènes (obligatoire pour la mise en service CVC).
+   * Certifications de diagnostics immobiliers valides (pour les diagnostiqueurs DPE).
+3. **Proximité & Transparence** : Des fiches profils publiques détaillant les marques partenaires travaillées, les avis clients et la galerie photos des réalisations récentes.

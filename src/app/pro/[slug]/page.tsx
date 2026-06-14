@@ -122,9 +122,26 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     };
     const youtubeId = getYoutubeId(expert.video_url);
 
+    // Extract certifications and marques lists for E-E-A-T
+    const certificationsList = expert.certifications?.map(c => c.value) || [];
+    const marquesList = expert.marques?.map(m => m.value) || [];
+    const knowsAboutList = [
+        ...certificationsList,
+        ...marquesList,
+        ...expert.technologies?.map(t => t.value) || []
+    ];
+
+    // Gather social links for sameAs
+    const sameAs = [
+        expert.site_web,
+        expert.linkedin,
+        expert.facebook,
+        expert.youtube
+    ].filter(Boolean).map(url => url!.startsWith('http') ? url! : `https://${url!}`);
+
     // --- SEO: STRUCTURED DATA (JSON-LD) ---
     // Helps AI & Google understand this is a Local Business
-    const jsonLd = {
+    const jsonLd: any = {
         "@context": "https://schema.org",
         "@type": expert.expert_type === 'cvc_climatisation' ? "HVACBusiness" :
             expert.expert_type === 'bureau_detude' ? "ProfessionalService" : "LocalBusiness",
@@ -140,7 +157,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             "postalCode": expert.code_postal,
             "addressCountry": expert.pays || "FR"
         },
-        description: expert.metaDesc || generateExpertMetaDescription({
+        "description": expert.metaDesc || generateExpertMetaDescription({
             nomEntreprise: expert.nom_entreprise,
             ville: expert.ville,
             codePostal: expert.code_postal,
@@ -156,6 +173,30 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             "geoRadius": expert.intervention_radius ? `${expert.intervention_radius * 1000}` : "50000"
         }
     };
+
+    if (expert.siret) {
+        jsonLd.taxID = expert.siret;
+    }
+
+    if (expert.representant_nom || expert.representant_prenom) {
+        jsonLd.founder = {
+            "@type": "Person",
+            "familyName": expert.representant_nom,
+            "givenName": expert.representant_prenom
+        };
+    }
+
+    if (sameAs.length > 0) {
+        jsonLd.sameAs = sameAs;
+    }
+
+    if (certificationsList.length > 0) {
+        jsonLd.award = certificationsList;
+    }
+
+    if (knowsAboutList.length > 0) {
+        jsonLd.knowsAbout = knowsAboutList;
+    }
 
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
