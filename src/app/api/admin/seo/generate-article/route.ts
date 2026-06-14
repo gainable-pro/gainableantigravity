@@ -21,17 +21,17 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: "Paramètres manquants (keyword, city, expertId)" }, { status: 400 });
     }
 
-    // Fetch the platform expert to link the article (always publish under gainable-fr)
-    let expert = await prisma.expert.findFirst({
-      where: { slug: "gainable-fr" }
+    // Fetch the expert specified by expertId
+    let expert = await prisma.expert.findUnique({
+      where: { id: expertId }
     });
 
     if (!expert) {
-      // Fallback to other platform profiles or explicitly passed expertId
+      // Fallback to platform expert
       expert = await prisma.expert.findFirst({
+        where: { slug: "gainable-fr" }
+      }) || await prisma.expert.findFirst({
         where: { slug: { in: ["gainable-redaction", "redaction-gainable"] } }
-      }) || await prisma.expert.findUnique({
-        where: { id: expertId },
       }) || await prisma.expert.findFirst();
     }
 
@@ -42,7 +42,51 @@ export async function POST(req: Request) {
     const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const prompt = `
+    const isB2B = theme === "b2b";
+
+    const prompt = isB2B ? `
+    Tu es un conseiller senior en développement commercial et expert de la transition énergétique pour Gainable.fr.
+    Rédige un article de blog SEO B2B de qualité éditoriale exceptionnelle, complet, haut de gamme et extrêmement convaincant, destiné aux professionnels (artisans, installateurs CVC, chauffagistes, plombiers).
+    Mot-clé principal : "${keyword}" dans la ville de "${city}".
+    
+    CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
+    - Ton : Professionnel, dynamique, motivant, axé sur les résultats (business, rentabilité, conversion, croissance du chiffre d'affaires).
+    - Cible : Entreprises de génie climatique (CVC), installateurs de pompes à chaleur RGE et frigoristes indépendants.
+    - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc. Entre directement dans le vif du sujet.
+    - Style d'écriture : Direct, axé sur le quotidien des chantiers et la réalité des artisans, vocabulaire métier précis (devis, taux de conversion, coût d'acquisition de leads, marge brute, etc.).
+    - Valeur ajoutée de Gainable.fr : Explique comment le modèle d'abonnement fixe sans commission de Gainable.fr s'oppose aux plateformes d'achat de leads traditionnelles et abusives. Souligne la qualité des contacts pré-qualifiés et la liberté tarifaire préservée pour l'artisan à "${city}".
+    - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
+    
+    Squelette de l'article :
+    - Une section H2 analysant les défis du marché CVC actuel (concurrence féroce, coût d'acquisition en hausse, marges sous pression) à "${city}".
+    - Une section H3 de conseils opérationnels (structuration des offres commerciales, réactivité dans la prise de contact, relance méthodique des devis).
+    - Une section H2 présentant la solution Gainable.fr (abonnements fixes, fiches profils locales avec forte autorité SEO, mise en relation directe).
+    - Une section H3 expliquant comment rejoindre le réseau de manière fluide et activer son quota mensuel de leads.
+    
+    Format de l'objet JSON à retourner :
+    {
+      "title": "Titre optimisé, percutant et engageant pour les professionnels CVC",
+      "introduction": "Introduction de 3-4 phrases captant l'intérêt commercial et introduisant le mot-clé.",
+      "content": "Le corps de l'article complet au format HTML sans <h1> (minimum 850 mots, structuré en sections <h2> et <h3>. Chaque paragraphe doit faire au moins 4-5 lignes d'analyse réelle. Insère obligatoirement au milieu de l'article la balise d'image secondaire sous cette forme exacte : <img src=\"[SECONDARY_IMAGE_URL]\" alt=\"Description optimisée SEO\" class=\"my-6 w-full rounded-xl border border-slate-200 shadow-sm max-h-[400px] object-cover\" />)",
+      "metaDesc": "Meta description optimisée pour cibler les professionnels CVC (< 155 caractères)",
+      "imagePrompt": "A highly detailed, professional photorealistic prompt showing a professional CVC expert on site or inside a commercial office building, business growth concept, 1024x1024.",
+      "secondaryImagePrompt": "A highly detailed, professional photorealistic prompt for a different professional scene matching the B2B HVAC or business topic (ex: CVC blueprints on a desk or digital dashboard showing sales graphs) to be used as inline content image, commercial photography style, 1024x1024.",
+      "faq": [
+        {
+          "question": "Comment Gainable.fr pré-qualifie les demandes de chantiers à ${city} ?",
+          "response": "Explication sur la vérification des besoins réels (maison individuelle, budget, type de projet gainable) avant mise en relation."
+        },
+        {
+          "question": "Quel est l'avantage du modèle d'abonnement fixe sans commission ?",
+          "response": "Explication sur la rentabilité accrue pour l'artisan, qui conserve 100% de sa marge commerciale sur les travaux."
+        },
+        {
+          "question": "Comment optimiser son profil expert sur Gainable.fr pour capter plus de leads à ${city} ?",
+          "response": "Conseils pratiques sur la rédaction de la description, l'ajout de photos de chantiers et la mise en avant des qualifications RGE."
+        }
+      ]
+    }
+    ` : `
     Tu es un rédacteur et ingénieur thermicien senior rédigeant pour le portail Gainable.fr.
     Rédige un article de blog SEO de qualité éditoriale exceptionnelle, haut de gamme et extrêmement complet, optimisé pour le mot-clé : "${keyword}" dans la ville de "${city}".
     
@@ -79,7 +123,7 @@ export async function POST(req: Request) {
     - ORIENTATION ACQUISITION & CONVERSION (CRITIQUE) : Cet article doit être fortement orienté vers la conversion et l'acquisition de prospects qualifiés. Intègre de manière naturelle et convaincante dans le texte des appels à l'action (CTA) clairs (par exemple : demander une étude thermique gratuite, faire une simulation d'aides CEE/MaPrimeRénov', faire estimer son DPE ou solliciter un diagnostic immobilier complet auprès des partenaires agréés de la plateforme). Insiste sur les bénéfices financiers (jusqu'à 70% d'économies d'énergie) et de confort pour inciter le lecteur à passer à l'action.
     ` : ''}
     - Contexte local : Adapte les arguments aux particularités climatiques de la région de "${city}" (ex: canicules estivales, hivers rigoureux, spécificités du bâti local). Présente "${expert.nom_entreprise}" comme le professionnel local de référence, sans paraître agressif sur le plan commercial.
-    - Formatage : Structure rich    Format de l'objet JSON à retourner :
+    - Formatage : Format de l'objet JSON à retourner :
     {
       "title": "Titre éditorial accrocheur, unique et optimisé SEO",
       "introduction": "Une introduction percutante de 3-4 phrases posant la problématique et contenant le mot-clé.",
@@ -107,7 +151,7 @@ export async function POST(req: Request) {
     const completion = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
-        { role: "system", content: "Tu es un rédacteur SEO expert spécialisé dans le B2C/B2B de la climatisation réversible et du gainable." },
+        { role: "system", content: isB2B ? "Tu es un rédacteur SEO B2B spécialisé dans l'acquisition d'artisans du bâtiment." : "Tu es un rédacteur SEO expert spécialisé dans le B2C/B2B de la climatisation réversible et du gainable." },
         { role: "user", content: prompt }
       ],
       response_format: { type: "json_object" }
@@ -218,11 +262,13 @@ export async function POST(req: Request) {
       await resend.emails.send({
         from: process.env.RESEND_FROM_EMAIL || "Gainable IA <noreply@gainable.ch>",
         to: "contact@gainable.fr",
-        subject: `✍️ [MANUEL] Nouvel Article SEO Publié : ${result.title} (${city})`,
+        subject: isB2B 
+          ? `💼 [MANUEL B2B] Nouvel Article SEO Publié : ${result.title}`
+          : `✍️ [MANUEL B2C] Nouvel Article SEO Publié : ${result.title} (${city})`,
         html: `
           <div style="font-family: sans-serif; padding: 20px; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px;">
-            <h2 style="color: #D59B2B; margin-top: 0;">✍️ Nouvel article SEO généré manuellement et publié !</h2>
-            <p><strong>Ville cible :</strong> ${city}</p>
+            <h2 style="color: #D59B2B; margin-top: 0;">${isB2B ? "💼 Nouvel article SEO B2B pro/artisan généré manuellement !" : "✍️ Nouvel article SEO B2C client généré manuellement !"}</h2>
+            <p><strong>Cible :</strong> ${isB2B ? "Artisans CVC / Installateurs RGE" : `Particuliers / Clients à ${city}`}</p>
             <p><strong>Mot-clé ciblé :</strong> "${keyword}"</p>
             <p><strong>Auteur / Expert associé :</strong> ${expert.nom_entreprise}</p>
             <p><strong>URL de publication :</strong> <a href="${articleLink}" style="color: #D59B2B; font-weight: bold; text-decoration: none;">${articleLink}</a></p>

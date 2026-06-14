@@ -1020,9 +1020,10 @@ export default function SeoDashboard({ experts = [] }: { experts?: Expert[] }) {
                       className="w-full text-sm rounded border border-slate-200 bg-slate-50 p-2 focus:ring-1 focus:ring-[#D59B2B] focus:outline-none"
                       required
                     >
-                      <option value="cvc">Climatisation Réversible & Gainable (CVC)</option>
-                      <option value="dpe">Diagnostics Immobiliers & DPE</option>
-                      <option value="bureau_etude">Bureau d'Étude Thermique & Dimensionnement</option>
+                      <option value="cvc">Climatisation Réversible & Gainable (CVC) - B2C</option>
+                      <option value="dpe">Diagnostics Immobiliers & DPE - B2C</option>
+                      <option value="bureau_etude">Bureau d'Étude Thermique & Dimensionnement - B2C</option>
+                      <option value="b2b">Professionnels & Acquisition d'Artisans (B2B)</option>
                     </select>
                   </div>
 
