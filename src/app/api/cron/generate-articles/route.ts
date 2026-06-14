@@ -372,17 +372,18 @@ export async function GET(req: Request) {
       const b2bKeyword = b2bTopic;
 
       const b2bPrompt = `
-      Tu es un conseiller senior en développement commercial et expert de la transition énergétique pour Gainable.fr.
-      Rédige un article de blog SEO B2B haut de gamme, pragmatique, technique et ultra convaincant destiné aux artisans, chauffagistes, plombiers et installateurs de climatisation.
-      Mot-clé principal : "${b2bKeyword}".
-      
-      CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
-      - Ton : Professionnel, dynamique, motivant, axé sur les résultats (business, rentabilité, conversion, croissance du chiffre d'affaires).
-      - Cible : Entreprises de génie climatique (CVC), installateurs de pompes à chaleur RGE et frigoristes indépendants.
-      - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc.
-      - Style d'écriture : Direct, axé sur le quotidien des chantiers et la réalité des artisans, vocabulaire métier précis (devis, taux de conversion, coût d'acquisition de leads, marge brute, etc.).
-      - Valeur ajoutée de Gainable.fr : Explique comment le modèle d'abonnement fixe sans commission de Gainable.fr s'oppose aux plateformes d'achat de leads traditionnelles et abusives. Souligne la qualité des contacts pré-qualifiés et la liberté tarifaire préservée pour l'artisan.
-      - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
+       Tu es un conseiller senior en développement commercial et expert de la transition énergétique pour Gainable.fr.
+       Rédige un article de blog SEO B2B haut de gamme, pragmatique, technique et ultra convaincant destiné aux artisans, chauffagistes, plombiers et installateurs de climatisation.
+       Mot-clé principal : "${b2bKeyword}".
+       
+       CONSIGNES ÉDITORIALES DE HAUTE QUALITÉ :
+       - Ton : Professionnel, dynamique, motivant, axé sur les résultats (business, rentabilité, conversion, croissance du chiffre d'affaires).
+       - Cible : Entreprises de génie climatique (CVC), installateurs de pompes à chaleur RGE et frigoristes indépendants de toute la France.
+       - Orientation nationale : L'article doit être orienté pour l'ensemble du territoire français (toute la France).
+       - Évite les clichés IA et tics de langage : Interdiction stricte d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc.
+       - Style d'écriture : Direct, axé sur le quotidien des chantiers et la réalité des artisans, vocabulaire métier précis (devis, taux de conversion, coût d'acquisition de leads, marge brute, etc.).
+       - Valeur ajoutée de Gainable.fr : Explique comment le modèle d'abonnement fixe sans commission de Gainable.fr s'oppose aux plateformes d'achat de leads traditionnelles. Souligne la qualité des contacts pré-qualifiés, la liberté tarifaire de l'artisan, et mets particulièrement en valeur l'outil IA et l'agent de rédaction IA intégré à la plateforme, qui génère automatiquement et sans effort des articles SEO locaux premium pour propulser leur visibilité sur Google dans leurs villes cibles.
+       - Formatage : Structure riche en paragraphes clairs, listes à puces (<ul>, <li>) pour aérer la lecture, et mise en gras des termes importants (<strong>). Pas de titre H1 dans le corps.
       
       Squelette de l'article :
       - Une section H2 analysant les défis du marché CVC actuel (concurrence féroce, coût d'acquisition en hausse, marges sous pression).
