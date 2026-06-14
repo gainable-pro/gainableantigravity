@@ -271,7 +271,11 @@ export async function GET(req: Request) {
             }
 
             // Slugify & Unique verify
-            const baseB2CSlug = slugify(`${b2cResult.title}-${b2cCity.name}`, { lower: true, strict: true });
+            const titleSlugified = slugify(b2cResult.title, { lower: true, strict: true });
+            const citySlugified = slugify(b2cCity.name, { lower: true, strict: true });
+            const baseB2CSlug = titleSlugified.includes(citySlugified)
+              ? titleSlugified
+              : `${titleSlugified}-${citySlugified}`;
             let finalB2CSlug = baseB2CSlug;
             let counter = 1;
             while (await prisma.article.findFirst({ where: { expertId: b2cExpert.id, slug: finalB2CSlug } })) {

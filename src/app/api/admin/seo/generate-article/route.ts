@@ -181,7 +181,11 @@ export async function POST(req: Request) {
     }
 
     // Generate a unique slug
-    const baseSlug = slugify(`${result.title}-${city}`, { lower: true, strict: true });
+    const titleSlugified = slugify(result.title, { lower: true, strict: true });
+    const citySlugified = slugify(city, { lower: true, strict: true });
+    const baseSlug = titleSlugified.includes(citySlugified)
+      ? titleSlugified
+      : `${titleSlugified}-${citySlugified}`;
     // Verify uniqueness
     let slug = baseSlug;
     let counter = 1;
