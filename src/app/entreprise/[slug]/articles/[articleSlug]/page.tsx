@@ -225,20 +225,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
 
-    // FAQ Structured Data
     const faqs = (article.faq as any[]) || [];
-    const faqJsonLd = faqs.length > 0 ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(f => ({
-            "@type": "Question",
-            "name": f.question || f.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.response || f.r
-            }
-        }))
-    } : null;
 
 
     return (
@@ -247,12 +234,6 @@ export default async function PublicArticlePage({ params }: PageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            {faqJsonLd && (
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-                />
-            )}
 
 
             {/* Article Image - Exclu pour les articles B2B Gainable.fr (plus de sobriété) */}

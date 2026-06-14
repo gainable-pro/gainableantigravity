@@ -186,27 +186,6 @@ export default async function CityPage({ params }: PageProps) {
                     "priceValidUntil": "2026-12-31",
                     "availability": "https://schema.org/InStock"
                 }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": `Quel budget prévoir pour une clim gainable à ${city.name} ?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Pour une installation complète à ${city.name}, comptez entre ${priceMin}€ et ${priceMax}€ pour 100m².`
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": `Faut-il de l'entretien ?`,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": `Absolument. Un filtre encrassé est la cause n°1 de perte de performance et d'allergies. Un nettoyage par un pro certifié à ${city.name} est indispensable annuellement.`
-                        }
-                    }
-                ]
             }
         ]
     };
