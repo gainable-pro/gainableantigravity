@@ -29,6 +29,16 @@ const nextConfig: NextConfig = {
         destination: '/auth/reset-password',
         permanent: true,
       },
+      {
+        source: '/entreprise/climatisation-pompe-a-chaleur-oison-plomberie-services-91-2366/articles/comprendre-le-prix-de-la-climatisation-gainable-a-la-ferte-saint-aubin-la-ferte-saint-aubin',
+        destination: '/entreprise/climatisation-pompe-a-chaleur-oison-plomberie-services-91-2366/articles/comprendre-le-prix-de-la-climatisation-gainable-a-la-ferte-saint-aubin',
+        permanent: true,
+      },
+      {
+        source: '/entreprise/gainable-fr/articles/boostez-votre-chiffre-daffaires-avec-la-climatisation-gainable-a-lyon-lyon',
+        destination: '/entreprise/gainable-fr/articles/boostez-votre-chiffre-daffaires-avec-la-climatisation-gainable-a-lyon',
+        permanent: true,
+      },
     ];
   },
 
