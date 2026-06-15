@@ -37,6 +37,14 @@ interface Product {
   url: string;
 }
 
+// Génère un slug SEO à partir de la référence fabricant
+function toSlug(sku: string): string {
+  return sku
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 // Catégorisation dynamique par rapport au titre
 function getProductType(title: string): string {
   const t = title.toLowerCase();
@@ -227,7 +235,7 @@ export default function MaterielPage() {
                     L'achat clé en main via nos experts
                   </h4>
                   <p>
-                    Nos installateurs partenaires se fournissent en direct chez des distributeurs officiels français (CD Sud / Sonepar). Ils vous proposent des packs matériel + pose avec garantie décennale complète.
+                    Nos installateurs partenaires se fournissent en direct chez des distributeurs officiels français (CD Sud / Sonepar / Clim+ / Andrety / Cédéo). Ils vous proposent des packs matériel + pose avec garantie décennale complète.
                   </p>
                 </div>
               </div>
@@ -403,9 +411,10 @@ export default function MaterielPage() {
                     const isPremium = product.brand.toUpperCase() === "DAIKIN" || product.brand.toUpperCase() === "MITSUBISHI ELECTRIC";
                     
                     return (
-                      <div 
+                      <Link
                         key={`${product.soneparSku}-${idx}`}
-                        className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
+                        href={`/materiel/${toSlug(product.manufacturerSku)}`}
+                        className="bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md hover:border-[#D59B2B] transition-all flex flex-col justify-between overflow-hidden group cursor-pointer"
                       >
                         {/* Image produit */}
                         <div className="relative aspect-video bg-slate-50 flex items-center justify-center overflow-hidden border-b border-slate-100 p-4">
@@ -498,7 +507,7 @@ export default function MaterielPage() {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     );
                   })}
                 </div>
@@ -521,6 +530,161 @@ export default function MaterielPage() {
           </main>
 
         </div>
+
+        {/* Section Fournisseurs Partenaires */}
+        <section className="mt-16 mb-8">
+          <div className="text-center mb-10">
+            <span className="inline-block px-3 py-1 bg-[#D59B2B]/10 text-[#D59B2B] text-xs font-semibold uppercase tracking-wider rounded-full mb-3">
+              Réseau d&apos;approvisionnement
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 font-outfit mb-3">
+              Nos Fournisseurs Officiels Partenaires
+            </h2>
+            <p className="text-slate-500 text-sm max-w-2xl mx-auto">
+              Nos experts s&apos;approvisionnent exclusivement chez des distributeurs professionnels français agréés, garants de l&apos;authenticité des produits et de la validité des garanties constructeurs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Sonepar / CD Sud */}
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-blue-600 to-blue-400" />
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 font-black text-lg font-outfit">
+                    S
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                    Principal
+                  </span>
+                </div>
+                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Sonepar / CD Sud</h3>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Distributeur n°1 mondial de matériel électrique et climatisation. Plateforme e-commerce pro avec catalogue de +340 références Daikin, Mitsubishi, Heiwa.
+                </p>
+                <div className="flex flex-col gap-1.5 text-[11px] text-slate-400 mb-5">
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>Réseau national, livraison agence</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>Tarifs professionnels négociés</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>SAV France garanti</span>
+                </div>
+                <a
+                  href="https://climate.sonepar.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-blue-200 text-blue-700 hover:bg-blue-600 hover:text-white rounded-lg text-xs font-semibold transition-all"
+                >
+                  climate.sonepar.fr
+                </a>
+              </div>
+            </div>
+
+            {/* Andrety */}
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-orange-500 to-amber-400" />
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 font-black text-lg font-outfit">
+                    A
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
+                    PACA
+                  </span>
+                </div>
+                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Andrety</h3>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Grossiste régional spécialisé en Provence-Alpes-Côte d&apos;Azur. Réseau de 10 agences de Gap à Marseille. E-commerce pro via la plateforme MyBleuRouge.
+                </p>
+                <div className="flex flex-col gap-1.5 text-[11px] text-slate-400 mb-5">
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>10 agences en région PACA</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>Catalogue 20 000+ références</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>Conseil technique en agence</span>
+                </div>
+                <a
+                  href="https://www.andrety.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-orange-200 text-orange-700 hover:bg-orange-500 hover:text-white rounded-lg text-xs font-semibold transition-all"
+                >
+                  andrety.fr
+                </a>
+              </div>
+            </div>
+
+            {/* Clim+ */}
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-emerald-500 to-teal-400" />
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 font-black text-lg font-outfit">
+                    C+
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
+                    National
+                  </span>
+                </div>
+                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Clim+</h3>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Réseau national de distribution spécialisé dans le génie climatique (climatisation, ventilation, chauffage). Application mobile dédiée aux professionnels.
+                </p>
+                <div className="flex flex-col gap-1.5 text-[11px] text-slate-400 mb-5">
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>Réseau national multi-agences</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>App mobile Clim+ pro</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>Pièces détachées (Easy SAV)</span>
+                </div>
+                <a
+                  href="https://www.climplus.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-emerald-200 text-emerald-700 hover:bg-emerald-500 hover:text-white rounded-lg text-xs font-semibold transition-all"
+                >
+                  climplus.com
+                </a>
+              </div>
+            </div>
+
+            {/* Cédéo */}
+            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
+              <div className="h-2 bg-gradient-to-r from-purple-600 to-violet-400" />
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 font-black text-lg font-outfit">
+                    Cd
+                  </div>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-1 rounded-full">
+                    PAC & Clim
+                  </span>
+                </div>
+                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Cédéo</h3>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Distributeur spécialisé en sanitaire, chauffage et climatisation. Fort réseau d&apos;agences avec outil de chiffrage SOLU+ pour les professionnels (Daikin, Atlantic, Panasonic...).
+                </p>
+                <div className="flex flex-col gap-1.5 text-[11px] text-slate-400 mb-5">
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>Outil chiffrage SOLU+</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>Accompagnement QualiPAC RGE</span>
+                  <span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>Opérations pro régulières</span>
+                </div>
+                <a
+                  href="https://www.cedeo.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 border border-purple-200 text-purple-700 hover:bg-purple-600 hover:text-white rounded-lg text-xs font-semibold transition-all"
+                >
+                  cedeo.fr
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Note de bas de page */}
+          <div className="mt-8 p-4 bg-slate-50 border border-slate-200 rounded-xl text-center">
+            <p className="text-xs text-slate-500">
+              <strong className="text-slate-700">🔒 Approvisionnement sécurisé :</strong> Nos experts achètent uniquement chez ces distributeurs officiels agréés. 
+              Les prix indiqués dans notre catalogue sont des estimations publiques — les pros bénéficient de tarifs négociés non communiqués.
+            </p>
+          </div>
+        </section>
 
       </div>
     </div>
