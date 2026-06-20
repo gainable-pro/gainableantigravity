@@ -48,7 +48,10 @@ function toSlug(sku: string): string {
 // Catégorisation dynamique par rapport au titre
 function getProductType(title: string): string {
   const t = title.toLowerCase();
-  if (t.includes("gainable") || t.includes("plénum")) return "Gainable";
+  if (t.includes("pack") && (t.includes("plenum") || t.includes("plénum") || t.includes("zoning") || t.includes("webserver"))) return "Pack Plénum Zoning";
+  if (t.includes("gainable") || (t.includes("plénum") && !t.includes("pack"))) return "Gainable";
+  if (t.includes("plafonnier") || t.includes("plafonni")) return "Plafonnier";
+  if (t.includes("cassette")) return "Cassette";
   if (t.includes("mural") || t.includes("murale")) return "Mural";
   if (t.includes("console")) return "Console";
   if (t.includes("groupe extérieur") || t.includes("unité extérieure") || t.includes("groupe ext") || t.includes("ue ")) return "Groupe Extérieur";
@@ -99,8 +102,8 @@ export default function MaterielPage() {
   const [visibleCount, setVisibleCount] = useState(12);
 
   // Listes d'options de filtres uniques
-  const brands = useMemo(() => ["DAIKIN", "MITSUBISHI ELECTRIC", "HEIWA"], []);
-  const types = useMemo(() => ["Gainable", "Mural", "Console", "Groupe Extérieur", "Accessoires / Autre"], []);
+  const brands = useMemo(() => ["DAIKIN", "MITSUBISHI ELECTRIC", "HEIWA", "AIRZONE"], []);
+  const types = useMemo(() => ["Pack Plénum Zoning", "Gainable", "Plafonnier", "Cassette", "Mural", "Console", "Groupe Extérieur", "Accessoires / Autre"], []);
   const fluids = useMemo(() => {
     const set = new Set<string>();
     products.forEach(p => {
@@ -189,10 +192,10 @@ export default function MaterielPage() {
               Catalogue Matériel
             </span>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-outfit !text-white">
-              Tarifs et Fiches Techniques Climatisation
+              Tarifs et Fiches Techniques CVC
             </h1>
             <p className="text-lg text-slate-300 mb-0 leading-relaxed">
-              Consultez les spécifications techniques (SEER, SCOP, Fluides) et les estimations de tarifs publics des matériels Daikin, Mitsubishi Electric et Heiwa.
+              385 références : fiches techniques (SEER, SCOP, fluides), tarifs publics estimés et documentation PDF — Daikin, Mitsubishi Electric, Heiwa et packs Airzone.
             </p>
           </div>
         </div>
@@ -429,7 +432,8 @@ export default function MaterielPage() {
                           <div className="absolute top-3 left-3 flex flex-wrap gap-1">
                             <span className={`px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase text-white ${
                               product.brand.toUpperCase() === "DAIKIN" ? "bg-blue-600" :
-                              product.brand.toUpperCase() === "MITSUBISHI ELECTRIC" ? "bg-red-600" : "bg-emerald-600"
+                              product.brand.toUpperCase() === "MITSUBISHI ELECTRIC" ? "bg-red-600" :
+                              product.brand.toUpperCase() === "AIRZONE" ? "bg-purple-600" : "bg-emerald-600"
                             }`}>
                               {product.brand === "MITSUBISHI ELECTRIC" ? "Mitsubishi" : product.brand}
                             </span>

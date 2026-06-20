@@ -59,7 +59,10 @@ function getProductBySlug(slug: string): Product | undefined {
 
 function getProductType(title: string): string {
   const t = title.toLowerCase();
-  if (t.includes("gainable") || t.includes("plénum")) return "Gainable";
+  if (t.includes("pack") && (t.includes("plenum") || t.includes("plénum") || t.includes("zoning") || t.includes("webserver"))) return "Pack Plénum Zoning";
+  if (t.includes("gainable") || (t.includes("plénum") && !t.includes("pack"))) return "Gainable";
+  if (t.includes("plafonnier") || t.includes("plafonni")) return "Plafonnier";
+  if (t.includes("cassette")) return "Cassette";
   if (t.includes("mural") || t.includes("murale")) return "Mural";
   if (t.includes("console")) return "Console";
   if (
@@ -124,6 +127,14 @@ function getBrandColor(brand: string) {
       border: "border-red-200",
       gradient: "from-red-600 to-red-400",
     };
+  if (b === "AIRZONE")
+    return {
+      bg: "bg-purple-600",
+      light: "bg-purple-50",
+      text: "text-purple-700",
+      border: "border-purple-200",
+      gradient: "from-purple-600 to-purple-400",
+    };
   return {
     bg: "bg-emerald-600",
     light: "bg-emerald-50",
@@ -161,15 +172,26 @@ export async function generateMetadata({
       ? "Mitsubishi Electric"
       : product.brand.charAt(0) + product.brand.slice(1).toLowerCase();
 
-  const description = [
-    `Achat & Installation climatisation ${product.title} (Réf. ${product.manufacturerSku}).`,
-    `${type} ${brandLabel} disponible au meilleur prix de vente.`,
-    product.fluid ? `Fluide ${product.fluid}` : "",
-    `Profitez d'un tarif préférentiel matériel + pose par un installateur certifié RGE.`,
-    `Garantie constructeur officielle préservée. Obtenez votre devis d'installation gratuit en ligne.`,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const isAirzone = product.brand.toUpperCase() === "AIRZONE";
+  const description = isAirzone
+    ? [
+        `Pack plénum zoning Airzone ${product.manufacturerSku} — ${product.title}.`,
+        `Solution de régulation thermique intelligente par zones pour gainable ${brandLabel}.`,
+        `Webserver, sondes de présence et gestion multi-zones inclus.`,
+        `Tarif public estimé : ${priceRange.rawMin > 0 ? priceRange.display : "sur devis"}.`,
+        `Installation par un expert CVC certifié RGE. Devis gratuit en ligne.`,
+      ]
+        .filter(Boolean)
+        .join(" ")
+    : [
+        `Achat & Installation climatisation ${product.title} (Réf. ${product.manufacturerSku}).`,
+        `${type} ${brandLabel} disponible au meilleur prix de vente.`,
+        product.fluid ? `Fluide ${product.fluid}` : "",
+        `Profitez d'un tarif préférentiel matériel + pose par un installateur certifié RGE.`,
+        `Garantie constructeur officielle préservée. Obtenez votre devis d'installation gratuit en ligne.`,
+      ]
+        .filter(Boolean)
+        .join(" ");
 
   const keywords = [
     product.manufacturerSku,
@@ -181,17 +203,31 @@ export async function generateMetadata({
     `installation ${type.toLowerCase()} ${brandLabel}`,
     `prix ${product.manufacturerSku}`,
     `tarif ${brandLabel} ${type.toLowerCase()}`,
-    "climatisation",
-    "pompe à chaleur",
-    "CVC",
-    "génie climatique",
-    "installation climatisation",
-    "artisan RGE",
-    "installateur certifié",
-    "grossiste CVC France",
-    "tarif préférentiel climatisation",
-    product.fluid || "",
-    product.fluid ? `climatisation ${product.fluid}` : "",
+    ...(isAirzone
+      ? [
+          "pack plénum zoning",
+          "régulation multi-zones gainable",
+          "Airzone webserver",
+          "Airzone Blueface",
+          "Airzone Think",
+          "zoning climatisation gainable",
+          "contrôle température zone",
+          "régulation CVC intelligente",
+          "Airzone Sonepar",
+        ]
+      : [
+          "climatisation",
+          "pompe à chaleur",
+          "CVC",
+          "génie climatique",
+          "installation climatisation",
+          "artisan RGE",
+          "installateur certifié",
+          "grossiste CVC France",
+          "tarif préférentiel climatisation",
+          product.fluid || "",
+          product.fluid ? `climatisation ${product.fluid}` : "",
+        ]),
     "Sonepar",
     "Andrety",
     "Clim+",
@@ -202,7 +238,9 @@ export async function generateMetadata({
     .join(", ");
 
   return {
-    title: `Achat & Pose Climatisation ${product.title} | Devis & Tarif | Gainable`,
+    title: isAirzone
+      ? `Pack Plénum Zoning ${product.manufacturerSku} Airzone | Fiche Technique & Prix | Gainable`
+      : `Achat & Pose Climatisation ${product.title} | Devis & Tarif | Gainable`,
     description,
     keywords,
     openGraph: {
@@ -254,6 +292,7 @@ function ProductJsonLd({
       ? "Mitsubishi Electric"
       : product.brand.charAt(0) + product.brand.slice(1).toLowerCase();
 
+  const isAirzone = product.brand.toUpperCase() === "AIRZONE";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -264,7 +303,9 @@ function ProductJsonLd({
     image: product.localImage
       ? `https://www.gainable.fr/${product.localImage}`
       : (product.imageUrl || undefined),
-    description: `Achat, tarif de pose et installation de la climatisation ${product.title} (${brandLabel}). Obtenez un devis matériel + pose par un installateur certifié RGE.`,
+    description: isAirzone
+      ? `Pack plénum zoning Airzone ${product.manufacturerSku} — solution de régulation multi-zones pour climatisation gainable. Webserver, thermostats et sondes inclus. Installation par un expert CVC certifié RGE.`
+      : `Achat, tarif de pose et installation de la climatisation ${product.title} (${brandLabel}). Obtenez un devis matériel + pose par un installateur certifié RGE.`,
     url: `https://www.gainable.fr/materiel/${slug}`,
     aggregateRating: {
       "@type": "AggregateRating",
