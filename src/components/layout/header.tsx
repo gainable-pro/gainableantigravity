@@ -34,7 +34,7 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                 <nav className="hidden md:flex items-center gap-6 text-base font-medium text-slate-700">
 
                     <Link href="/climatisation" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Les Experts de la Climatisation</Link>
-                    <Link href="/materiel" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Matériel</Link>
+                    {/* <Link href="/materiel" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Matériel</Link> */}
                     <Link href="/bureau-etude" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">
                         Bureau d'étude
                     </Link>
@@ -83,7 +83,7 @@ function MobileMenu() {
                     <hr className="border-slate-100" />
 
                     <Link href="/climatisation" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Les Experts de la Climatisation</Link>
-                    <Link href="/materiel" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Matériel</Link>
+                    {/* <Link href="/materiel" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Matériel</Link> */}
                     <Link href="/bureau-etude" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">
                         Bureau d'étude
                     </Link>

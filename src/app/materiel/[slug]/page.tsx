@@ -148,9 +148,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const product = getProductBySlug(params.slug);
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) return { title: "Produit introuvable | Gainable" };
 
   const priceRange = getPriceRange(product.price);
@@ -310,8 +311,9 @@ function ProductJsonLd({
 // ─────────────────────────────────────────────────────────────
 // Page Component
 // ─────────────────────────────────────────────────────────────
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) notFound();
 
   const priceRange = getPriceRange(product.price);
@@ -339,7 +341,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <ProductJsonLd product={product} priceRange={priceRange} slug={params.slug} />
+      <ProductJsonLd product={product} priceRange={priceRange} slug={slug} />
 
       <div className="min-h-screen bg-slate-50">
         {/* Breadcrumb */}
@@ -506,7 +508,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
-                    href={`/contact?ref=${encodeURIComponent(product.manufacturerSku)}&title=${encodeURIComponent(product.title)}`}
+                    href={`/recherche`}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#D59B2B] hover:bg-amber-400 text-white font-bold rounded-xl text-sm transition-all shadow-lg"
                   >
                     <Phone className="h-4 w-4" />
@@ -559,7 +561,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
                       </div>
                     </div>
                     <Link
-                      href={`/contact?ref=${encodeURIComponent(product.manufacturerSku)}&title=${encodeURIComponent(product.title)}&source=tarif-pref`}
+                      href={`/recherche`}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-bold rounded-lg transition-all"
                     >
                       <Star className="h-3 w-3" />
@@ -583,6 +585,54 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
+
+          {/* ═══ SECTION SEO: INSTALLATION CLIMATISATION & PRIX D'INSTALLATION ═══ */}
+          <section className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 md:p-8 mb-10">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 font-outfit mb-4">
+              Installation climatisation {brandLabel} {product.manufacturerSku} : Tarif et Pose
+            </h2>
+            <div className="prose prose-slate max-w-none text-sm text-slate-600 space-y-4">
+              <p>
+                Vous envisagez l'<strong>installation de la climatisation {brandLabel}</strong> modèle <strong>{product.title}</strong> (référence <strong>{product.manufacturerSku}</strong>) chez vous ?
+                Pour garantir le bon fonctionnement, la validité des garanties constructeurs et la conformité avec la réglementation sur les fluides frigorigènes, la pose de cette {type.toLowerCase()} doit être confiée à un <strong>installateur climatisation agréé CVC</strong>.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <div className="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                  <h3 className="font-bold text-slate-800 text-sm mb-3">Estimation du prix d'installation</h3>
+                  <p className="text-xs text-slate-500 mb-4">
+                    Le coût moyen de la pose varie selon la complexité du chantier et le type de matériel :
+                  </p>
+                  <ul className="space-y-2 text-xs">
+                    <li className="flex justify-between border-b border-slate-200 pb-1">
+                      <span>Pose unité {type.toLowerCase()} standard</span>
+                      <strong className="text-slate-800">{type === "Gainable" ? "2 500 € – 4 500 € HT" : "800 € – 1 500 € HT"}</strong>
+                    </li>
+                    <li className="flex justify-between border-b border-slate-200 pb-1">
+                      <span>Mise en service seule (fluide R32)</span>
+                      <strong className="text-slate-800">250 € – 450 € HT</strong>
+                    </li>
+                    <li className="flex justify-between pb-1">
+                      <span>Contrat d'entretien annuel</span>
+                      <strong className="text-slate-800">150 € – 250 € HT / an</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-[#D59B2B]/5 rounded-xl p-5 border border-[#D59B2B]/20">
+                  <h3 className="font-bold text-slate-900 text-sm mb-2">Pourquoi comparer les tarifs de pose ?</h3>
+                  <p className="text-xs text-slate-700 leading-relaxed mb-4">
+                    En passant par nos experts de la climatisation, vous bénéficiez de prix préférentiels négociés directement auprès des plus grands distributeurs professionnels de matériel CVC. 
+                    Un devis tout-en-un (matériel + pose) vous permet de réduire le coût global de votre projet de climatisation.
+                  </p>
+                  <Link href="/recherche" className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-bold rounded-lg transition-all shadow-sm">
+                    Trouver un installateur certifié
+                  </Link>
+                </div>
+              </div>
+              <p className="text-xs text-slate-400 italic">
+                * Note : Ces tarifs d'installation sont donnés à titre indicatif et peuvent varier selon la configuration de votre habitation (accès, longueur des liaisons frigorifiques, etc.). Demandez un devis précis via notre moteur de recherche pour obtenir une offre personnalisée.
+              </p>
+            </div>
+          </section>
 
           {/* Documents techniques */}
           {allPdfs.length > 0 && (
