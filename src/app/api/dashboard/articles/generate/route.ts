@@ -195,83 +195,8 @@ export async function POST(req: Request) {
         const parsedContent = JSON.parse(content);
         console.log("AI Generation: Content parsed successfully");
 
-        // Generate custom image via GPT-Image-2
-        let imageUrl = "";
-        try {
-            console.log("AI Generation: Starting image generation...");
-            const imagePrompt = parsedContent.imagePrompt || `A professional, clean photograph of a modern HVAC or air conditioning installation in ${parsedContent.targetCity || expert.ville || "France"}, high quality.`;
-            const imageResponse = await openai.images.generate({
-                model: "gpt-image-2",
-                prompt: imagePrompt,
-                size: "1024x1024"
-            });
-            const b64Data = imageResponse.data?.[0]?.b64_json;
-            
-            if (b64Data) {
-                const imageBuffer = Buffer.from(b64Data, 'base64');
-                const cleanCityName = slugify(parsedContent.targetCity || expert.ville || "france", { lower: true, strict: true });
-                const filePath = `articles/dashboard_${cleanCityName}_${Date.now()}.png`;
-
-                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
-                    contentType: 'image/png',
-                    upsert: false
-                });
-
-                if (!uploadError) {
-                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
-                    imageUrl = publicUrlData.publicUrl;
-                    console.log("AI Generation: Image uploaded successfully:", imageUrl);
-                } else {
-                    console.error("AI Generation: Supabase upload error:", uploadError);
-                }
-            }
-        } catch (imgErr) {
-            console.error("AI Generation: Image generation failed:", imgErr);
-        }
-
-        // Generate secondary image via GPT-Image-2
-        let secondaryImageUrl = "";
-        try {
-            console.log("AI Generation: Starting secondary image generation...");
-            const secondaryImagePrompt = parsedContent.secondaryImagePrompt || `A detailed technical photograph showing details matching ${topic}, high quality.`;
-            const secondaryImageResponse = await openai.images.generate({
-                model: "gpt-image-2",
-                prompt: secondaryImagePrompt,
-                size: "1024x1024"
-            });
-            const b64DataSec = secondaryImageResponse.data?.[0]?.b64_json;
-            
-            if (b64DataSec) {
-                const imageBuffer = Buffer.from(b64DataSec, 'base64');
-                const cleanCityName = slugify(parsedContent.targetCity || expert.ville || "france", { lower: true, strict: true });
-                const filePath = `articles/dashboard_sec_${cleanCityName}_${Date.now()}.png`;
-
-                const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
-                    contentType: 'image/png',
-                    upsert: false
-                });
-
-                if (!uploadError) {
-                    const { data: publicUrlData } = supabase.storage.from('gainable-assets').getPublicUrl(filePath);
-                    secondaryImageUrl = publicUrlData.publicUrl;
-                    console.log("AI Generation: Secondary Image uploaded successfully:", secondaryImageUrl);
-                } else {
-                    console.error("AI Generation: Supabase upload error for secondary image:", uploadError);
-                }
-            }
-        } catch (imgErr) {
-            console.error("AI Generation: Secondary image generation failed:", imgErr);
-        }
-
-        // If secondary image is successfully generated and sections exist, assign it to the second section (index 1) or first section (index 0)
-        if (secondaryImageUrl && parsedContent.sections && Array.isArray(parsedContent.sections) && parsedContent.sections.length > 0) {
-            const targetSectionIndex = parsedContent.sections.length > 1 ? 1 : 0;
-            parsedContent.sections[targetSectionIndex].imageUrl = secondaryImageUrl;
-            parsedContent.sections[targetSectionIndex].imageAlt = parsedContent.title || "Détails techniques de l'installation";
-        }
-
-        // Add imageUrl to the returned payload
-        parsedContent.imageUrl = imageUrl;
+        // No image generation for client dashboard articles as per user instructions
+        parsedContent.imageUrl = "";
 
         return NextResponse.json(parsedContent);
 
