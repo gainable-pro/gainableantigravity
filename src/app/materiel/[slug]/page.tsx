@@ -211,7 +211,7 @@ export async function generateMetadata({
       title: `${product.title} – ${brandLabel} | Gainable`,
       description,
       type: "website",
-      url: `https://www.gainable.fr/materiel/${params.slug}`,
+      url: `https://www.gainable.fr/materiel/${slug}`,
       images: product.imageUrl
         ? [{ url: product.imageUrl, alt: product.title, width: 800, height: 600 }]
         : [],
@@ -224,7 +224,7 @@ export async function generateMetadata({
       images: product.imageUrl ? [product.imageUrl] : [],
     },
     alternates: {
-      canonical: `https://www.gainable.fr/materiel/${params.slug}`,
+      canonical: `https://www.gainable.fr/materiel/${slug}`,
     },
     robots: {
       index: true,
@@ -388,12 +388,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <div className={`h-1.5 bg-gradient-to-r ${color.gradient}`} />
                 <div className="p-8 flex items-center justify-center min-h-[300px] bg-gradient-to-br from-white to-slate-50">
                   <img
-                    src={localImg}
+                    src={localImg || "/assets/placeholder-ac.png"}
                     alt={`${product.title} – ${brandLabel} ${type} – Gainable`}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        "/assets/placeholder-ac.png";
-                    }}
                     className="max-h-72 max-w-full object-contain drop-shadow-md"
                   />
                 </div>
@@ -508,7 +504,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
-                    href={`/recherche`}
+                    href={`/`}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#D59B2B] hover:bg-amber-400 text-white font-bold rounded-xl text-sm transition-all shadow-lg"
                   >
                     <Phone className="h-4 w-4" />
@@ -561,7 +557,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       </div>
                     </div>
                     <Link
-                      href={`/recherche`}
+                      href={`/`}
                       className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-bold rounded-lg transition-all"
                     >
                       <Star className="h-3 w-3" />
@@ -623,7 +619,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     En passant par nos experts de la climatisation, vous bénéficiez de prix préférentiels négociés directement auprès des plus grands distributeurs professionnels de matériel CVC. 
                     Un devis tout-en-un (matériel + pose) vous permet de réduire le coût global de votre projet de climatisation.
                   </p>
-                  <Link href="/recherche" className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-bold rounded-lg transition-all shadow-sm">
+                  <Link href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-bold rounded-lg transition-all shadow-sm">
                     Trouver un installateur certifié
                   </Link>
                 </div>
@@ -692,12 +688,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       <div className="p-4 flex flex-col items-center text-center gap-3">
                         <div className="bg-slate-50 rounded-lg p-3 w-full flex items-center justify-center h-24">
                           <img
-                            src={img}
+                            src={img || "/assets/placeholder-ac.png"}
                             alt={p.title}
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).src =
-                                "/assets/placeholder-ac.png";
-                            }}
                             className="max-h-20 object-contain group-hover:scale-105 transition-transform"
                           />
                         </div>
