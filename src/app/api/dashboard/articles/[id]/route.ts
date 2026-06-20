@@ -239,7 +239,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 altText: body.altText,
                 videoUrl: body.videoUrl,
                 targetCity: body.targetCity,
-                metaDesc: body.introduction ? body.introduction.slice(0, 160) : "",
+                metaDesc: body.metaDesc || (body.introduction ? body.introduction.slice(0, 160) : ""),
                 status: status as any,
                 publishedAt: (article.status !== 'PUBLISHED' && status === 'PUBLISHED') ? new Date() : article.publishedAt,
                 faq: faqs

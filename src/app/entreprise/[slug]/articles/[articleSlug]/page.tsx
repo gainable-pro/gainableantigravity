@@ -29,6 +29,10 @@ async function getArticleData(slug: string, articleSlug: string) {
             nom_entreprise: true,
             slug: true,
             ville: true,
+            pays: true,
+            code_postal: true,
+            lat: true,
+            lng: true,
             logo_url: true,
             user: { select: { email: true } },
             expert_type: true
@@ -57,16 +61,48 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!data) return {};
 
     const { article, expert } = data;
+    const city = article.targetCity || expert.ville || "";
+
+    // Generate Dynamic and GEO-optimized Meta Title & Description
+    let metaTitle = article.title;
+    
+    // Normalize to check if title already has the keyword "climatisation" (or "clim") and the target city
+    const hasClim = /climatisation|clim/i.test(metaTitle);
+    const hasCity = city ? new RegExp(city, 'i').test(metaTitle) : true;
+    
+    if (city && (!hasClim || !hasCity)) {
+        if (!hasClim && !hasCity) {
+            metaTitle = `Climatisation à ${city} : ${article.title}`;
+        } else if (!hasClim) {
+            metaTitle = `Climatisation - ${article.title}`;
+        } else if (!hasCity) {
+            metaTitle = `${article.title} (${city})`;
+        }
+    }
+    
+    // Add company name suffix
+    metaTitle = `${metaTitle} - ${expert.nom_entreprise}`;
+
+    let metaDesc = article.metaDesc || article.introduction?.slice(0, 160) || "Article conseil de votre installateur de climatisation.";
+    
+    // Enhance description for Local SEO
+    if (city) {
+        const hasClimDesc = /climatisation|clim/i.test(metaDesc);
+        const hasCityDesc = new RegExp(city, 'i').test(metaDesc);
+        if (!hasClimDesc || !hasCityDesc) {
+            metaDesc = `Installation de climatisation à ${city}. ${metaDesc}`.slice(0, 160);
+        }
+    }
 
     return {
-        title: `${article.title} - ${expert.nom_entreprise}`,
-        description: article.metaDesc || article.introduction?.slice(0, 160) || "Article sur la climatisation gainable.",
+        title: metaTitle,
+        description: metaDesc,
         alternates: {
             canonical: `https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}`,
         },
         openGraph: {
-            title: article.title,
-            description: article.metaDesc || article.introduction?.slice(0, 160),
+            title: metaTitle,
+            description: metaDesc,
             images: article.mainImage 
                 ? [{ 
                     url: article.mainImage.startsWith('http') 
@@ -78,6 +114,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             type: 'article',
             authors: [expert.nom_entreprise],
             publishedTime: article.publishedAt?.toISOString(),
+        },
+        other: {
+            ...(expert.lat && expert.lng ? {
+                "geo.position": `${expert.lat};${expert.lng}`,
+                "ICBM": `${expert.lat}, ${expert.lng}`
+            } : {}),
+            "geo.placename": city,
+            "geo.region": expert.pays ? `${expert.pays}` : "FR",
         }
     };
 }
@@ -201,7 +245,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
     console.log("----------------------------");
 
     // Structured Data (Schema.org)
-    const jsonLd = {
+    const jsonLd: any = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": article.title,
@@ -224,6 +268,19 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "description": article.metaDesc || article.introduction,
         "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
+
+    const targetCity = article.targetCity || expert.ville;
+    if (targetCity) {
+        jsonLd.contentLocation = {
+            "@type": "Place",
+            "name": targetCity,
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": targetCity,
+                "addressCountry": expert.pays || "FR"
+            }
+        };
+    }
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",
