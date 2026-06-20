@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Catalogue Climatisation & Pompes à Chaleur | Daikin, Mitsubishi, Heiwa | Gainable",
+  title: "Achat & Pose Climatisation : Tarifs Matériel + Installation | Gainable",
   description:
-    "Consultez les fiches techniques et tarifs publics estimés de 340 climatiseurs et pompes à chaleur (Daikin, Mitsubishi Electric, Heiwa). Gainable : votre référence CVC en France.",
+    "Découvrez les tarifs d'achat et d'installation pour plus de 340 modèles de climatiseurs et PAC (Daikin, Mitsubishi Electric, Heiwa). Obtenez un devis matériel + pose gratuit.",
   keywords: [
     "climatisation",
     "pompe à chaleur",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "Cédéo",
   ].join(", "),
   openGraph: {
-    title: "Catalogue Matériel Climatisation CVC | Gainable",
+    title: "Achat & Pose Climatisation : Tarifs Matériel + Installation | Gainable",
     description:
-      "340 références Daikin, Mitsubishi Electric et Heiwa. Fiches techniques, SEER, SCOP, fluides réfrigérants. Installation par des experts certifiés RGE.",
+      "Découvrez les tarifs d'achat et d'installation pour plus de 340 modèles de climatiseurs et PAC (Daikin, Mitsubishi Electric, Heiwa). Obtenez un devis matériel + pose gratuit.",
     type: "website",
     url: "https://www.gainable.fr/materiel",
   },
