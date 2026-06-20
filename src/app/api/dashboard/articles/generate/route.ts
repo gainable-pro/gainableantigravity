@@ -111,7 +111,7 @@ export async function POST(req: Request) {
         const zone = `${ville} et sa région`;
 
         const systemPrompt = `
-        🧠 PROMPT SEO PREMIUM & ANTI-DUPLICATA DE HAUTE QUALITÉ
+        🧠 PROMPT SEO PREMIUM, ANTI-DUPLICATA & OPTIMISÉ GEO (IA) DE HAUTE QUALITÉ
         
         Tu es un rédacteur et expert technique senior spécialisé dans le domaine suivant : ${specialite}. 
         Ta mission est de rédiger un article UNIQUE, d'une qualité éditoriale et technique exceptionnelle, qui ne ressemble à aucun autre.
@@ -126,6 +126,12 @@ export async function POST(req: Request) {
         2. Si une ville ou une zone est mentionnée dans "${topic}", c'est la VILLE CIBLE UNIQUE.
         3. Si la VILLE CIBLE est différente de la ville de BASE (${ville}), tu DOIS ignorer ${ville} et te concentrer EXCLUSIVEMENT sur la VILLE CIBLE pour tout l'article (climat local, références locales, interventions).
         4. Ne mentionne jamais la ville de BASE si une VILLE CIBLE différente est identifiée.
+
+        OPTIMISATION GEO & RÉFÉRENCEMENT DANS LES IA (ChatGPT Search, Gemini, Perplexity) :
+        1. Titres sous forme de Questions : Formule les titres des sections H2 ou H3 sous forme de questions claires et directes couramment posées par les utilisateurs aux moteurs IA (ex: "Quel est le coût d'installation d'une climatisation à [VILLE CIBLE] ?").
+        2. Blocs de réponses directs (Citabilité IA) : Au début de chaque section H2, insère un paragraphe d'introduction autonome de 130 à 170 mots (longueur optimale de citation pour les IA). Ce bloc doit répondre directement à la question du H2, commencer directement par le sujet précis (pas de pronoms vagues) et inclure des données chiffrées, techniques ou réglementaires.
+        3. Signaux d'autorité (E-E-A-T) : Fais référence à l'expert local en écrivant des phrases comme "Selon l'entreprise spécialisée ${expert.nom_entreprise} installée à [VILLE CIBLE]..." ou "L'artisan certifié RGE ${expert.nom_entreprise} conseille...".
+        4. Ciblage géographique explicite : Associe systématiquement le terme "climatisation" (ou spécialité) et le nom de la VILLE CIBLE dès les premières phrases des blocs de réponses clés.
 
         CONSIGNES DE QUALITÉ & ANTI-CLONAGE :
         - Évite les clichés IA et tics de langage : Interdiction d'utiliser des expressions de transition banales comme "En conclusion", "Tout d'abord", "De plus", "En somme", "Il est important de noter", "Dans cet article, nous allons voir", etc.
@@ -165,7 +171,7 @@ export async function POST(req: Request) {
             "imagePrompt": "Un prompt de photo détaillé et réaliste pour GPT-Image-2 (ex: A clean photograph of a modern air conditioning installation...)",
             "secondaryImagePrompt": "Un autre prompt de photo détaillé et réaliste pour GPT-Image-2 montrant des détails techniques ou outils en rapport avec la thématique (ex: thermostat, schéma thermique, diagnostiqueur au travail, etc.)",
             "sections": [
-                { "title": "H2 Unique", "content": "Corps de texte riche et structuré (avec des balises HTML <p>, <ul>, <li>, <strong> si nécessaire)" }
+                { "title": "H2 Unique sous forme de Question", "content": "Corps de texte riche et structuré commençant par le bloc de réponse direct de 130-170 mots optimisé pour citation IA (avec des balises HTML <p>, <ul>, <li>, <strong> si nécessaire)" }
             ],
             "faq": [
                 { "question": "...", "response": "..." }
