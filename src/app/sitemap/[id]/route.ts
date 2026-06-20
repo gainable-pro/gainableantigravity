@@ -4,7 +4,18 @@ import { prisma } from '@/lib/prisma';
 export const revalidate = 86400; // Cache sitemaps for 24 hours
 
 export async function generateStaticParams() {
-    return Array.from({ length: 9 }, (_, i) => ({ id: String(i) }));
+    const ARTICLE_BATCH_SIZE = 7500;
+    try {
+        const articleCount = await prisma.article.count({
+            where: { status: 'PUBLISHED' }
+        });
+        const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
+        const totalSitemaps = 1 + articleSitemapsCount;
+        return Array.from({ length: totalSitemaps }, (_, i) => ({ id: String(i) }));
+    } catch (e) {
+        console.error("Error in generateStaticParams for sitemap:", e);
+        return Array.from({ length: 9 }, (_, i) => ({ id: String(i) }));
+    }
 }
 
 const ARTICLE_BATCH_SIZE = 7500;
@@ -19,6 +30,11 @@ export async function GET(
 
     try {
         let xml = '';
+
+        const articleCount = await prisma.article.count({
+            where: { status: 'PUBLISHED' }
+        });
+        const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
 
         if (id === 0) {
             // Static pages
@@ -64,7 +80,7 @@ export async function GET(
             const all = [...staticUrls, ...expertUrls, ...productUrls, ...regionUrls, ...cityUrls];
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.join('\n')}\n</urlset>`;
 
-        } else if (id >= 1 && id <= 8) {
+        } else if (id >= 1 && id <= articleSitemapsCount) {
             const skip = (id - 1) * ARTICLE_BATCH_SIZE;
 
             const expertsData = await prisma.expert.findMany({ select: { id: true, slug: true } });
