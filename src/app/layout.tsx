@@ -32,6 +32,12 @@ export const metadata: Metadata = {
   description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV. Trouvez un installateur, un bureau d'étude ou un diagnostiqueur certifié.",
   alternates: {
     canonical: './',
+    languages: {
+      'fr-FR': 'https://www.gainable.fr',
+      'fr-CH': 'https://www.gainable.ch',
+      'fr-BE': 'https://www.gainable.be',
+      'fr-MA': 'https://www.gainable.ma',
+    },
   },
   openGraph: {
     type: 'website',

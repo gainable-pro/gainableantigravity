@@ -225,6 +225,17 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
 
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.gainable.fr" },
+            { "@type": "ListItem", "position": 2, "name": expert.nom_entreprise, "item": `https://www.gainable.fr/pro/${expert.slug}` },
+            { "@type": "ListItem", "position": 3, "name": "Articles", "item": `https://www.gainable.fr/pro/${expert.slug}#articles` },
+            { "@type": "ListItem", "position": 4, "name": article.title, "item": `https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}` }
+        ]
+    };
+
     const faqs = (article.faq as any[]) || [];
 
 
@@ -232,7 +243,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
         <div className="bg-slate-50 min-h-screen pb-20">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbJsonLd]) }}
             />
 
 

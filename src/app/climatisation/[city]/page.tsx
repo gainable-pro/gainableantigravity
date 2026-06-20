@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Star, Wrench, HelpCircle, Info, Timer, Euro } from "lucide-react";
 import { ContactWizard } from "@/components/features/contact/contact-wizard";
 import { prisma } from "@/lib/prisma";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
@@ -65,9 +65,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         `Pose Pompe à Chaleur & Climatisation à ${city.name} | Devis`
     ];
 
+    const descChoices = [
+        `▶ Besoin d'une climatisation à ${city.name} (${city.zip}) ? Gainable.fr est le réseau n°1. Contactez un installateur expert RGE local et obtenez un devis gratuit !`,
+        `▶ Installation de climatisation à ${city.name} (${city.zip}) : Devis gratuit en 48h. Comparez les tarifs de nos installateurs et frigoristes certifiés RGE.`,
+        `▶ Trouvez le meilleur installateur de climatisation à ${city.name} (${city.zip}). Comparez les prix de pose pour climatiseur gainable et pompe à chaleur réversible.`
+    ];
+
     return {
         title: pick(seed, titleChoices, 0),
-        description: `▶ Besoin d'une clim à ${city.name} (${city.zip}) ? Gainable.fr est le réseau n°1. Contactez un artisan expert, obtenez un devis local gratuit et comparez les prix !`,
+        description: pick(seed, descChoices, 0),
         alternates: {
             canonical: `https://www.gainable.fr/climatisation/${city.slug}`,
         },
@@ -125,6 +131,16 @@ export default async function CityPage({ params }: PageProps) {
     const priceMinStr = priceMin.toLocaleString('fr-FR');
     const priceMaxStr = priceMax.toLocaleString('fr-FR');
 
+    // Pricing table estimates based on local price index
+    const priceMonoMin = Math.round((1500 * city.priceIndex * priceMultiplier) / 100) * 100;
+    const priceMonoMax = Math.round((3000 * city.priceIndex * priceMultiplier) / 100) * 100;
+    const priceMultiMin = Math.round((3500 * city.priceIndex * priceMultiplier) / 100) * 100;
+    const priceMultiMax = Math.round((6500 * city.priceIndex * priceMultiplier) / 100) * 100;
+    const priceGainableMin = priceMin;
+    const priceGainableMax = priceMax;
+    const priceAirzoneMin = Math.round((priceMin * 1.25) / 100) * 100;
+    const priceAirzoneMax = Math.round((priceMax * 1.25) / 100) * 100;
+
     // ** SPINTAX ENGINE FOR UNIQUE TEXT **
     const heroH1 = pick(seed, [
         `Climatisation & Clim Réversible \n<span class="text-[#D59B2B]">à ${city.name} (${city.zip})</span>`,
@@ -133,34 +149,38 @@ export default async function CityPage({ params }: PageProps) {
         `Votre Pompe à Chaleur Réversible \n<span class="text-[#D59B2B]">à ${city.name}</span>`
     ], 1);
 
-    const h2Expertise = pick(seed, [
-        `Expertise Climatisation à ${city.name}`,
-        `Le marché de la pompe à chaleur à ${city.name}`,
-        `Pourquoi isoler et climatiser à ${city.name} ?`,
-        `Les avantages du Gainable à ${city.name}`
-    ], 2);
-
-    const p1Choices = [
-        `Adapter son logement aux variations thermiques est devenu primordial à ${city.name}. L'adoption d'un système gainable s'impose comme la solution la plus esthétique et efficace. En encastrant tout le réseau dans vos faux-plafonds, vous libérez l'espace de vos pièces à vivre tout en profitant d'un flux d'air parfaitement maîtrisé.`,
-        `À ${city.name}, de nombreux propriétaires décident dorénavant de supprimer leurs vieux radiateurs électriques au profit de la pompe à chaleur gainable. Ce dispositif thermodynamique réversible offre la capacité de chauffer l'hiver avec un rendement record (SCOP > 4) et de rafraîchir l'été de manière totalement silencieuse.`,
-        `Si vous vivez à ${city.name}, opter pour cette technologie c'est faire le choix du confort ultime. Terminés les splits blancs disgracieux accrochés aux murs : l'air circule via des canalisations dissimulées sous toiture et ne laisse apparaître que de fines réglettes design. Un avantage majeur pour la valorisation immobilière de votre bien.`
+    // Block 1: Installateur de climatisation Choices
+    const installerChoices = [
+        `Trouver le bon <strong>installateur de climatisation à ${city.name}</strong> est essentiel pour garantir la durabilité de votre équipement. Notre réseau d'artisans locaux certifiés RGE QualiPAC ou qualifiés CVC à ${city.name} assure une étude de dimensionnement thermique rigoureuse avant toute pose. Que vous soyez dans le centre historique ou dans les secteurs résidentiels, faire appel à un <strong>technicien frigoriste qualifié à ${city.name}</strong> vous garantit une installation conforme aux normes environnementales et éligible aux aides de l'État.`,
+        `La pose d'une <strong>climatisation à ${city.name}</strong> nécessite une habilitation à la manipulation des fluides frigorigènes. C'est pourquoi nous sélectionnons uniquement des entreprises locales disposant d'assurances décennales solides et de certifications officielles. Un <strong>installateur qualifié à ${city.name}</strong> saura évaluer l'isolation de votre maison ou appartement afin de vous proposer l'équipement idéal sans surdimensionnement inutile.`,
+        `Faire appel à un <strong>professionnel RGE à ${city.name}</strong> pour vos travaux de génie climatique est le gage d'un travail soigné. De l'emplacement de l'unité extérieure pour limiter les nuisances sonores jusqu'à la mise en service réglementaire, nos partenaires locaux spécialisés en <strong>climatisation réversible à ${city.name}</strong> gèrent l'intégralité du chantier de manière sereine et transparente.`
     ];
 
-    const p2Choices = [
-        `Côté santé, contrairement aux idées reçues, ce type d'équipement purifie l'air intérieur. L'encrassement des filtres est la seule cause d'inconfort. Toutefois, avec un entretien régulier exigé par la loi, vous respirez à ${city.name} un air assaini, dépourvu d'allergènes ou de bactéries.`,
-        `Les systèmes premium que nos artisans installent à ${city.name} intègrent d'ailleurs des filtres nouvelle génération. Certains utilisent la technologie d'ionisation plasma capturant littéralement les particules fines, moisissures et pollens pour un environnement aseptisé, idéal pour les personnes fragiles ou asthmatiques.`,
-        `Et avec les hivers rigoureux que l'on peut connaître, n'ayez crainte : les groupes extérieurs certifiés "Grand Froid" ou Hyper Heating garantissent un maintien de la pleine puissance de chauffage jusqu'à -15°C ou même -25°C. Un atout absolu pour votre sérénité hivernale.`
+    // Block 2: Prix / Budget Choices
+    const pricingChoices = [
+        `Le <strong>prix d'une climatisation à ${city.name}</strong> dépend principalement de la puissance nécessaire (exprimée en BTU ou kW) et du type de diffuseurs. Pour une pièce unique (mono-split), comptez généralement entre 1 500 € et 3 000 € matériel et pose inclus. Pour équiper une maison complète à ${city.name}, les tarifs varient selon le nombre de pièces (multi-split ou gainable centralisé). Le coût de la main d'œuvre locale fluctue en fonction de la complexité du réseau électrique et du passage des liaisons frigorifiques.`,
+        `Budgétiser son projet de confort thermique à ${city.name} passe par une comparaison objective des tarifs. Un <strong>système gainable réversible à ${city.name}</strong> représente un investissement initial plus important qu'un split mural classique, mais valorise fortement votre patrimoine immobilier. L'indice de prix local et le coût moyen des fournitures influencent le montant final de votre <strong>devis climatisation à ${city.name}</strong>, qu'il s'agisse de rénovation ou de neuf.`,
+        `Quel budget prévoir pour climatiser ou chauffer son logement à ${city.name} ? Outre le matériel, les coûts d'installation par un professionnel habilité intègrent l'équilibrage des réseaux de ventilation et la pose des supports antivibratiles. Obtenir un <strong>devis gratuit à ${city.name}</strong> permet de comparer sereinement les prix des marques leaders comme Daikin, Mitsubishi Electric et Heiwa.`
     ];
 
-    const p3Choices = [
-        `Mais l'essentiel pour un projet réussi à ${city.name} reste la qualité de la pose. Une étude de dimensionnement stricte (incluant déperditions et isolation) doit être menée par un professionnel RGE, afin d'assurer l'équilibrage des débits sur chaque bouche soufflante.`,
-        `Ne laissez rien au hasard : confier votre installation à ${city.name} à un frigoriste vérifié garantit non seulement l'accès aux aides financières gouvernementales, mais vous assure surtout de ne pas subir de surconsommation involontaire liée à un réseau mal conçu.`,
-        `Vous pouvez d'ores et déjà prévoir le couplage avec un système intelligent (type Airzone) pour pouvoir piloter la température de chaque chambre de votre habitation à ${city.name} indépendamment depuis votre smartphone, stoppant ainsi tout gaspillage.`
+    // Block 3: PAC Choices
+    const pacChoices = [
+        `Une <strong>pompe à chaleur réversible à ${city.name}</strong> (PAC air-air ou air-eau) est la solution thermodynamique par excellence pour faire des économies d'énergie. En captant les calories gratuites de l'air extérieur, elle restitue jusqu'à 4 fois plus d'énergie qu'elle n'en consomme (rendement SCOP > 4). C'est un excellent moyen de remplacer vos anciens radiateurs énergivores à ${city.name} tout en profitant d'un confort optimal en été comme en hiver.`,
+        `À ${city.name}, la transition vers des systèmes de chauffage plus durables est encouragée. La <strong>pompe à chaleur réversible à ${city.name}</strong> s'adapte parfaitement aux variations climatiques de la région de ${city.region}. En mode chauffage, elle garantit un apport thermique régulier même par grand froid, tandis que son mode climatisation rafraîchit agréablement votre intérieur pendant les fortes chaleurs estivales à ${city.name}.`,
+        `Investir dans une <strong>PAC réversible à ${city.name}</strong> permet de diviser ses factures de chauffage par trois. Ce système écologique réduit considérablement l'empreinte carbone de votre habitation. Nos installateurs certifiés à ${city.name} vous accompagnent dans le choix de la technologie (inverter, bi-bloc) et l'optimisation des réglages pour un confort constant.`
     ];
 
-    const contentP1 = pick(seed, p1Choices, 3);
-    const contentP2 = pick(seed, p2Choices, 4);
-    const contentP3 = pick(seed, p3Choices, 5);
+    // Block 4: Gainable Choices
+    const gainableChoices = [
+        `La <strong>climatisation gainable à ${city.name}</strong> est le choix premium pour les villas et appartements recherchant un confort invisible. Intégrée dans les combles ou les faux-plafonds, elle diffuse l'air par de fines grilles linéaires ultra-discrètes. Couplée à un <strong>système intelligent (type Airzone) à ${city.name}</strong>, elle permet de piloter la température de chaque pièce de votre logement de manière indépendante, maximisant ainsi le confort et les économies.`,
+        `Vous souhaitez éviter les unités intérieures disgracieuses sur vos murs à {city.name} ? Le <strong>gainable réversible à ${city.name}</strong> est la réponse idéale. Son fonctionnement est d'un silence absolu puisque l'unité intérieure principale est déportée dans des espaces non habités. Nos frigoristes certifiés à ${city.name} réalisent le réseau de gaines isolées sur-mesure pour un débit d'air doux et sans aucun courant d'air direct.`,
+        `Le <strong>gainable à ${city.name}</strong> s'impose dans les projets de construction et de rénovation haut de gamme. Sa conception technique requiert un véritable savoir-faire pour équilibrer les débits d'air soufflé et repris. Confier son projet de climatisation invisible à un expert qualifié à ${city.name} garantit un système silencieux, performant et parfaitement intégré.`
+    ];
+
+    const contentInstaller = pick(seed, installerChoices, 3);
+    const contentPricing = pick(seed, pricingChoices, 4);
+    const contentPac = pick(seed, pacChoices, 5);
+    const contentGainable = pick(seed, gainableChoices, 6);
 
     // Schema.org
     const jsonLd = {
@@ -362,20 +382,87 @@ export default async function CityPage({ params }: PageProps) {
                 </div>
             </section>
 
-            {/* UNIQUE SEO CONTENU SPINTAXÉ */}
+            {/* UNIQUE SEO CONTENU SPINTAXÉ ET ENRICHI */}
             <section className="py-16">
                 <div className="container mx-auto px-6 max-w-5xl">
-                    <div className="grid md:grid-cols-2 gap-12 items-start">
-                        <div className="space-y-6">
-                            <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4">{h2Expertise}</h2>
-                            <p className="text-slate-600 leading-relaxed text-lg">{contentP1}</p>
-                            <p className="text-slate-600 leading-relaxed text-lg">{contentP2}</p>
-                            <p className="text-slate-600 leading-relaxed mt-4 text-lg">{contentP3}</p>
+                    <div className="grid md:grid-cols-3 gap-12 items-start">
+                        <div className="md:col-span-2 space-y-12">
+                            {/* SECTION 1: INSTALLATEUR */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4 flex items-center gap-2 font-montserrat">
+                                    <Wrench className="w-8 h-8 text-[#D59B2B]" />
+                                    Installateur de climatisation à {city.name} : Trouver un pro qualifié
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: contentInstaller }} />
+                            </div>
+
+                            {/* SECTION 2: PRIX COMPARATIF */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4 flex items-center gap-2 font-montserrat">
+                                    <Euro className="w-8 h-8 text-[#D59B2B]" />
+                                    Tarif & Prix climatisation à {city.name} : Grille comparative
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: contentPricing }} />
+                                
+                                {/* HTML Pricing Table */}
+                                <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white mt-6">
+                                    <table className="w-full text-left border-collapse">
+                                        <thead>
+                                            <tr className="bg-slate-50 text-slate-700 uppercase text-xs font-bold border-b border-slate-200">
+                                                <th className="p-4">Type de climatiseur</th>
+                                                <th className="p-4">Surface conseillée</th>
+                                                <th className="p-4 text-right">Budget estimé (Pose incluse)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100 text-slate-600 text-sm">
+                                            <tr>
+                                                <td className="p-4 font-bold text-slate-800">Climatiseur Mono-split</td>
+                                                <td className="p-4">20m² - 50m² (chambre, salon)</td>
+                                                <td className="p-4 text-right font-semibold text-[#D59B2B]">{priceMonoMin.toLocaleString('fr-FR')} {currency} - {priceMonoMax.toLocaleString('fr-FR')} {currency}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="p-4 font-bold text-slate-800">Climatiseur Multi-split</td>
+                                                <td className="p-4">60m² - 90m² (2 à 4 pièces)</td>
+                                                <td className="p-4 text-right font-semibold text-[#D59B2B]">{priceMultiMin.toLocaleString('fr-FR')} {currency} - {priceMultiMax.toLocaleString('fr-FR')} {currency}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="p-4 font-bold text-slate-800">Clim Gainable Standard</td>
+                                                <td className="p-4">80m² - 120m² (invisible)</td>
+                                                <td className="p-4 text-right font-semibold text-[#D59B2B]">{priceGainableMin.toLocaleString('fr-FR')} {currency} - {priceGainableMax.toLocaleString('fr-FR')} {currency}</td>
+                                            </tr>
+                                            <tr>
+                                                <td className="p-4 font-bold text-slate-800">Clim Gainable Premium (Régulation Airzone)</td>
+                                                <td className="p-4">100m² - 150m² (pièce par pièce)</td>
+                                                <td className="p-4 text-right font-semibold text-[#D59B2B]">{priceAirzoneMin.toLocaleString('fr-FR')} {currency} - {priceAirzoneMax.toLocaleString('fr-FR')} {currency}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            {/* SECTION 3: POMPE A CHALEUR */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4 flex items-center gap-2 font-montserrat">
+                                    <Timer className="w-8 h-8 text-[#D59B2B]" />
+                                    Pompe à chaleur réversible à {city.name} : Confort & Économies d'énergie
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: contentPac }} />
+                            </div>
+
+                            {/* SECTION 4: GAINABLE */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-bold text-[#1F2D3D] mb-4 flex items-center gap-2 font-montserrat">
+                                    <ShieldCheck className="w-8 h-8 text-[#D59B2B]" />
+                                    Climatisation gainable à {city.name} : La solution intégrée invisible
+                                </h2>
+                                <p className="text-slate-600 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: contentGainable }} />
+                            </div>
                         </div>
 
-                        <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+                        {/* SIDEBAR */}
+                        <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden sticky top-24">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[#D59B2B]/5 rounded-bl-full"></div>
-                            <h3 className="text-2xl font-bold text-[#1F2D3D] mb-8">Comment trouver le bon installateur à {city.name} ?</h3>
+                            <h3 className="text-2xl font-bold text-[#1F2D3D] mb-8 font-montserrat">Comment trouver le bon installateur à {city.name} ?</h3>
                             <ul className="space-y-6">
                                 <li className="flex gap-4">
                                     <div className="w-8 h-8 rounded-full bg-[#1F2D3D] text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
@@ -434,10 +521,24 @@ export default async function CityPage({ params }: PageProps) {
 
             <section className="py-16 bg-white border-t border-slate-100">
                 <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="text-3xl font-bold text-[#1F2D3D] mb-10 text-center">Questions fréquentes à {city.name}</h2>
+                    <h2 className="text-3xl font-bold text-[#1F2D3D] mb-10 text-center font-montserrat">Questions fréquentes à {city.name}</h2>
                     <div className="grid gap-6">
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100"><h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Quel budget prévoir pour une clim gainable à {city.name} ?</h3><p className="text-slate-600">Pour une installation complète à {city.name}, comptez entre {priceMin}€ et {priceMax}€ pour 100m².</p></div>
-                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100"><h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Faut-il de l'entretien ?</h3><p className="text-slate-600">Absolument. Un filtre encrassé est la cause n°1 de perte de performance et d'allergies. Un nettoyage par un pro certifié à {city.name} est indispensable annuellement.</p></div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Quel budget prévoir pour une clim gainable à {city.name} ?</h3>
+                            <p className="text-slate-600">Pour une installation complète à {city.name}, comptez entre {priceMin.toLocaleString('fr-FR')}€ et {priceMax.toLocaleString('fr-FR')}€ pour 100m², selon la complexité et les technologies de régulation thermique.</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Faut-il de l'entretien ?</h3>
+                            <p className="text-slate-600">Absolument. Un filtre encrassé est la cause n°1 de perte de performance et d'allergies. Un entretien périodique par un technicien agréé à {city.name} est indispensable pour préserver la garantie décennale.</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Quelle est la durée des travaux d'installation à {city.name} ?</h3>
+                            <p className="text-slate-600">En moyenne, comptez 1 à 2 jours de travaux pour un split mural classique, et 3 à 5 jours pour un système gainable complet avec passage dans les faux-plafonds dans votre logement à {city.name}.</p>
+                        </div>
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                            <h3 className="font-bold text-[#1F2D3D] text-lg mb-2">Quelles aides financières sont disponibles pour installer une PAC à {city.name} ?</h3>
+                            <p className="text-slate-600">Selon vos ressources, vous pouvez prétendre à MaPrimeRénov', aux Certificats d'Économie d'Énergie (CEE), à la TVA réduite et à l'éco-PTZ à {city.name}, à condition que la pose soit effectuée par un installateur certifié RGE.</p>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -10,6 +10,10 @@ export const metadata: Metadata = {
         description: "Rejoignez le premier réseau dédié à la climatisation gainable. Pas de commissions, juste des clients qualifiés.",
         type: 'website',
     },
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function InscriptionPage() {

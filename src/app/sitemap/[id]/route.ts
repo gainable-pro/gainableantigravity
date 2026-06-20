@@ -27,6 +27,7 @@ export async function GET(
                 '/trouver-bureau-etude', '/inscription',
                 '/faq-visibilite-referencement', '/labels',
                 '/bureau-etude', '/diagnostic-immobilier',
+                '/materiel',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
             // Experts
@@ -36,6 +37,13 @@ export async function GET(
             });
             const expertUrls = experts.map(e =>
                 `  <url><loc>${BASE_URL}/pro/${e.slug}</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`
+            );
+
+            // Catalogue Products
+            const rawCatalog = await import('@/data/sonepar_catalog.json').then(m => m.default || m);
+            const toSlug = (sku: string) => sku.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+            const productUrls = (rawCatalog as any[]).map(p =>
+                `  <url><loc>${BASE_URL}/materiel/${toSlug(p.manufacturerSku)}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
             );
 
             // Cities
@@ -53,7 +61,7 @@ export async function GET(
                 `  <url><loc>${BASE_URL}/climatisation/${c.slug}</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`
             );
 
-            const all = [...staticUrls, ...expertUrls, ...regionUrls, ...cityUrls];
+            const all = [...staticUrls, ...expertUrls, ...productUrls, ...regionUrls, ...cityUrls];
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.join('\n')}\n</urlset>`;
 
         } else if (id >= 1 && id <= 8) {

@@ -1,3 +1,13 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Mentions Légales - Gainable.fr",
+    robots: {
+        index: false,
+        follow: true,
+    },
+};
+
 export default function MentionsLegales() {
     return (
         <div className="container mx-auto px-4 py-16 max-w-4xl">

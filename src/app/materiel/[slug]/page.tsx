@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import rawCatalog from "@/data/sonepar_catalog.json";
 import LeadFormCVC from "@/components/materiel/LeadFormCVC";
+import ProductDetails from "@/components/materiel/ProductDetails";
 
 // ─────────────────────────────────────────────────────────────
 // Types
