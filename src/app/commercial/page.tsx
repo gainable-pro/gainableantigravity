@@ -39,6 +39,7 @@ export default function CommercialDashboard() {
     const [stats, setStats] = useState<DashboardStats | null>(null);
     const [loading, setLoading] = useState(true);
     const [selectedDate, setSelectedDate] = useState(new Date());
+    const [selectedPrice, setSelectedPrice] = useState(850);
 
     useEffect(() => {
         const fetchStats = async () => {
@@ -195,7 +196,7 @@ export default function CommercialDashboard() {
                                 <ChevronRight className="h-4 w-4" />
                             </button>
                         </div>
-                        <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1.5 rounded hidden md:block">Basé sur 650€ HT / vente</span>
+                        <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1.5 rounded hidden md:block">Tarifs : CVC 850€ HT, Diag 750€ HT</span>
                     </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -255,12 +256,59 @@ export default function CommercialDashboard() {
                     </div>
 
                     {stats?.isFixedRate ? (
-                        <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 mb-4 text-center">
-                            <p className="text-amber-400 font-bold uppercase tracking-widest text-xs mb-2">Mode de calcul personnalisé</p>
-                            <p className="text-3xl font-black text-white">Taux fixe à {stats.fixedRateValue}%</p>
-                            <p className="text-slate-300 text-sm mt-3 max-w-xl mx-auto">
-                                Votre compte bénéficie d'un taux de commission fixe personnalisé à {stats.fixedRateValue}% de la valeur de la vente (soit {650 * (stats.fixedRateValue || 17) / 100} € HT de commission par vente), indépendamment du nombre de ventes journalières.
-                            </p>
+                        <div className="space-y-6">
+                            <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-6 text-center">
+                                <p className="text-amber-400 font-bold uppercase tracking-widest text-xs mb-2">Mode de calcul personnalisé</p>
+                                <p className="text-3xl font-black text-white">Taux fixe à {stats.fixedRateValue}%</p>
+                                <p className="text-slate-300 text-sm mt-3 max-w-xl mx-auto">
+                                    Votre compte bénéficie d'un taux de commission fixe personnalisé à {stats.fixedRateValue}% sur le montant HT de chaque vente (ex : {850 * (stats.fixedRateValue || 17) / 100} € HT pour un Expert CVC et {750 * (stats.fixedRateValue || 17) / 100} € HT pour un Diag Immo), indépendamment du nombre de ventes journalières.
+                                </p>
+                            </div>
+
+                            {/* Simulator for Fixed Rate projection */}
+                            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                                    <h4 className="text-base font-bold text-white">Simulateur de Gains (Taux Fixe {stats.fixedRateValue}%)</h4>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs text-slate-400">Offre / Prix :</span>
+                                        <select 
+                                            value={selectedPrice} 
+                                            onChange={(e) => setSelectedPrice(Number(e.target.value))}
+                                            className="bg-slate-800 text-white text-xs border border-white/20 rounded px-2.5 py-1 outline-none font-bold"
+                                        >
+                                            <option value={850}>850 € HT (Expert CVC)</option>
+                                            <option value={750}>750 € HT (Diag Immo)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-left text-xs">
+                                        <thead>
+                                            <tr className="border-b border-white/10 text-slate-400">
+                                                <th className="px-6 py-4 font-bold uppercase tracking-wider">Ventes / jour</th>
+                                                <th className="px-6 py-4 font-bold uppercase tracking-wider text-blue-400">Commission / jour</th>
+                                                <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (estimé 20j d'activité)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="text-white divide-y divide-white/5">
+                                            {[1, 2, 3, 4, 5].map((v) => {
+                                                const daily = v * selectedPrice * (stats.fixedRateValue || 17) / 100;
+                                                const monthly = daily * 20;
+                                                return (
+                                                    <tr key={v} className="hover:bg-white/5 transition-colors">
+                                                        <td className="px-6 py-4 font-black">{v} {v > 1 ? 'ventes' : 'vente'} / jour</td>
+                                                        <td className="px-6 py-4 text-base font-black text-blue-400">{daily.toFixed(2)} € HT</td>
+                                                        <td className="px-6 py-4 text-base font-black text-emerald-400">{monthly.toFixed(2)} € HT</td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p className="text-[10px] text-slate-500 mt-4 italic text-center">
+                                    * Simulations basées sur le tarif sélectionné de {selectedPrice} € HT.
+                                </p>
+                            </div>
                         </div>
                     ) : (
                         <>
@@ -281,33 +329,52 @@ export default function CommercialDashboard() {
                             </div>
 
                             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden">
+                                <div className="p-4 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                    <h4 className="text-sm font-bold text-white uppercase tracking-wider">Simulateur de Gains</h4>
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs text-slate-400">Offre / Prix :</span>
+                                        <select 
+                                            value={selectedPrice} 
+                                            onChange={(e) => setSelectedPrice(Number(e.target.value))}
+                                            className="bg-slate-800 text-white text-xs border border-white/20 rounded px-2.5 py-1 outline-none font-bold"
+                                        >
+                                            <option value={850}>850 € HT (Expert CVC)</option>
+                                            <option value={750}>750 € HT (Diag Immo)</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <table className="w-full text-left text-xs">
                                     <thead>
                                         <tr className="border-b border-white/10 text-slate-400">
                                             <th className="px-6 py-4 font-bold uppercase tracking-wider">Ventes / jour</th>
                                             <th className="px-6 py-4 font-bold uppercase tracking-wider text-blue-400">Commission / jour</th>
-                                            <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (20j)</th>
+                                            <th className="px-6 py-4 font-bold uppercase tracking-wider text-emerald-400">Mensuel (20j d'activité)</th>
                                         </tr>
                                     </thead>
                                     <tbody className="text-white divide-y divide-white/5">
                                         {[
-                                            { count: "1 vente", comm: "65 €", monthly: "1 300 €" },
-                                            { count: "2 ventes", comm: "156 €", monthly: "3 120 €" },
-                                            { count: "3 ventes", comm: "253,50 €", monthly: "5 070 €" },
-                                            { count: "4 ventes", comm: "390 €", monthly: "7 800 €" },
-                                            { count: "5 ventes", comm: "552,50 €", monthly: "11 050 €" },
-                                        ].map((row, i) => (
-                                            <tr key={i} className="hover:bg-white/5 transition-colors">
-                                                <td className="px-6 py-4 font-black">{row.count}</td>
-                                                <td className="px-6 py-4 text-lg font-black text-blue-400">{row.comm}</td>
-                                                <td className="px-6 py-4 font-black text-emerald-400">{row.monthly}</td>
-                                            </tr>
-                                        ))}
+                                            { count: "1 vente", rate: 0.10 },
+                                            { count: "2 ventes", rate: 0.12 },
+                                            { count: "3 ventes", rate: 0.13 },
+                                            { count: "4 ventes", rate: 0.15 },
+                                            { count: "5 ventes", rate: 0.17 },
+                                        ].map((row, i) => {
+                                            const countNum = i + 1;
+                                            const daily = countNum * selectedPrice * row.rate;
+                                            const monthly = daily * 20;
+                                            return (
+                                                <tr key={i} className="hover:bg-white/5 transition-colors">
+                                                    <td className="px-6 py-4 font-black">{row.count} / jour</td>
+                                                    <td className="px-6 py-4 text-base font-black text-blue-400">{daily.toFixed(2)} € HT</td>
+                                                    <td className="px-6 py-4 font-black text-emerald-400">{monthly.toFixed(2)} € HT</td>
+                                                </tr>
+                                            );
+                                        })}
                                     </tbody>
                                 </table>
                             </div>
                             <p className="text-[10px] text-slate-500 mt-4 italic text-center">
-                                * Commissions calculées sur une base de 650€ HT / vente. Chaque journée est indépendante.
+                                * Simulations basées sur le tarif sélectionné de {selectedPrice} € HT. Chaque journée est indépendante.
                             </p>
                         </>
                     )}

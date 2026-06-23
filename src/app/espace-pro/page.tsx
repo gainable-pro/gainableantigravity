@@ -123,7 +123,7 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">650 €</span> <span className="text-sm text-slate-500 font-normal">/ an HT</span>
+                                    <span className="text-[#D59B2B] font-bold text-3xl">850 €</span> <span className="text-sm text-slate-500 font-normal">/ an HT</span>
                                     <div className="text-xs text-slate-500 mt-2 font-medium">
                                         Abonnement annuel reconductible.<br/>
                                         Résiliation 1 mois avant la date d'anniversaire.
@@ -171,7 +171,7 @@ export default function EspaceProPage() {
                                     <FileText className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Diagnostiqueur</h3>
-                                <div className="text-4xl font-bold text-gray-900 mb-2">380 € <span className="text-lg font-normal text-gray-500">/ an HT</span></div>
+                                <div className="text-4xl font-bold text-gray-900 mb-2">750 € <span className="text-lg font-normal text-gray-500">/ an HT</span></div>
                                 <div className="text-xs text-slate-500 mt-2 font-medium mb-4">
                                     Abonnement annuel reconductible.<br/>
                                     Résiliation 1 mois avant la date d'anniversaire.

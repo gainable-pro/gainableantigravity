@@ -23,7 +23,7 @@ export async function GET(req: Request) {
             where: { id: targetCommercialId },
             select: { email: true }
         });
-        const isCustom17 = targetCommercial?.email === "top.informatique13@gmail.com";
+        const isCustom17 = targetCommercial?.email === "top.informatique13@gmail.com" || targetCommercial?.email === "emymarty.pro@gmail.com";
 
         const now = new Date();
         const queryMonth = url.searchParams.get("month");
@@ -74,22 +74,31 @@ export async function GET(req: Request) {
             }
         });
 
-        // Calculate commissions
-        const BASE_AMOUNT = 650; // Base d'abonnement 650 € HT
-
         // Group monthly sales by day to calculate commission properly
-        const salesByDay: Record<string, number> = {};
+        const salesByDay: Record<string, { count: number; totalAmount: number; sales: typeof monthlySales }> = {};
         for (const sale of monthlySales) {
             const dayKey = sale.dateVente.toISOString().split('T')[0];
-            salesByDay[dayKey] = (salesByDay[dayKey] || 0) + 1;
+            if (!salesByDay[dayKey]) {
+                salesByDay[dayKey] = { count: 0, totalAmount: 0, sales: [] };
+            }
+            salesByDay[dayKey].count += 1;
+            salesByDay[dayKey].totalAmount += sale.montant;
+            salesByDay[dayKey].sales.push(sale);
         }
 
         let totalMonthlyCommission = 0;
         const historyDetails = [];
 
-        for (const [day, count] of Object.entries(salesByDay)) {
+        for (const [day, dayData] of Object.entries(salesByDay)) {
+            const count = dayData.count;
             const rate = isCustom17 ? 0.17 : getCommissionRate(count);
-            const dailyComm = count * BASE_AMOUNT * rate;
+            
+            // Calculate commission dynamically based on the actual price (montant) of each sale
+            let dailyComm = 0;
+            for (const s of dayData.sales) {
+                dailyComm += s.montant * rate;
+            }
+            
             totalMonthlyCommission += dailyComm;
             
             historyDetails.push({
@@ -97,8 +106,8 @@ export async function GET(req: Request) {
                 count: count,
                 level: isCustom17 ? 5 : (count >= 5 ? 5 : count),
                 rate: rate * 100,
-                ca: count * BASE_AMOUNT,
-                commission: dailyComm
+                ca: dayData.totalAmount,
+                commission: parseFloat(dailyComm.toFixed(2))
             });
         }
         
@@ -107,7 +116,11 @@ export async function GET(req: Request) {
 
         const dailyCount = dailySales.length;
         const dailyRate = isCustom17 ? 0.17 : getCommissionRate(dailyCount);
-        const dailyCommission = dailyCount * BASE_AMOUNT * dailyRate;
+        const dailyCA = dailySales.reduce((sum, s) => sum + s.montant, 0);
+        const dailyCommission = dailySales.reduce((sum, s) => sum + s.montant * dailyRate, 0);
+
+        const monthlyCA = monthlySales.reduce((sum, s) => sum + s.montant, 0);
+        const yearlyCA = yearlySales.reduce((sum, s) => sum + s.montant, 0);
 
         // Count pending prospects
         const pendingProspects = await prisma.commercialProspect.count({
@@ -119,13 +132,13 @@ export async function GET(req: Request) {
 
         return NextResponse.json({
             dailyCount,
-            dailyCA: dailyCount * BASE_AMOUNT,
-            dailyCommission,
+            dailyCA,
+            dailyCommission: parseFloat(dailyCommission.toFixed(2)),
             monthlyCount: monthlySales.length,
-            monthlyCA: monthlySales.length * BASE_AMOUNT,
-            monthlyCommission: totalMonthlyCommission,
+            monthlyCA,
+            monthlyCommission: parseFloat(totalMonthlyCommission.toFixed(2)),
             yearlyCount: yearlySales.length,
-            yearlyCA: yearlySales.length * BASE_AMOUNT,
+            yearlyCA,
             pendingProspects,
             pendingSalesCount,
             history: historyDetails,

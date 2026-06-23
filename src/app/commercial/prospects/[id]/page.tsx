@@ -31,6 +31,9 @@ export default function EditProspect() {
         dateVente: new Date().toISOString().split("T")[0]
     });
 
+    const [basePrice, setBasePrice] = useState<850 | 750>(850);
+    const [discount, setDiscount] = useState<0 | 0.05 | 0.10>(0);
+
     const [sales, setSales] = useState<any[]>([]);
 
     useEffect(() => {
@@ -100,6 +103,8 @@ export default function EditProspect() {
         setError("");
         setSuccess("");
 
+        const finalMontant = basePrice * (1 - discount);
+
         try {
             const res = await fetch(`/api/commercial/sales`, {
                 method: "POST",
@@ -108,7 +113,7 @@ export default function EditProspect() {
                     prospectId: id,
                     paiementType: "EN_LIGNE",
                     dateVente: saleData.dateVente,
-                    montant: 650
+                    montant: finalMontant
                 })
             });
 
@@ -288,17 +293,53 @@ export default function EditProspect() {
                                     required
                                     value={saleData.dateVente}
                                     onChange={e => setSaleData({...saleData, dateVente: e.target.value})}
-                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white" 
+                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white text-slate-800" 
                                 />
                             </div>
-                            <div className="bg-white/50 rounded p-3 text-sm text-emerald-900 border border-emerald-200/50">
-                                <div className="flex justify-between mb-1">
-                                    <span>Montant de l'abonnement :</span>
-                                    <span className="font-bold">650 € HT</span>
-                                </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-emerald-900 mb-1">Type d'abonnement / Offre</label>
+                                <select 
+                                    value={basePrice} 
+                                    onChange={e => setBasePrice(Number(e.target.value) as any)}
+                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white text-slate-800 font-medium"
+                                >
+                                    <option value={850}>Expert CVC (850 € HT)</option>
+                                    <option value={750}>Diag Immo (750 € HT)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-emerald-900 mb-1">Code Promo / Remise</label>
+                                <select 
+                                    value={discount} 
+                                    onChange={e => setDiscount(Number(e.target.value) as any)}
+                                    className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white text-slate-800 font-medium"
+                                >
+                                    <option value={0}>Aucun code promo (Tarif plein)</option>
+                                    <option value={0.05}>Code Promo -5% de remise</option>
+                                    <option value={0.10}>Code Promo -10% de remise</option>
+                                </select>
+                            </div>
+
+                            <div className="bg-white/50 rounded p-3 text-sm text-emerald-900 border border-emerald-200/50 space-y-1.5">
                                 <div className="flex justify-between">
+                                    <span>Montant de base :</span>
+                                    <span className="font-semibold">{basePrice} € HT</span>
+                                </div>
+                                {discount > 0 && (
+                                    <div className="flex justify-between text-red-600 font-medium">
+                                        <span>Remise ({discount * 100}%) :</span>
+                                        <span>- {(basePrice * discount).toFixed(2)} € HT</span>
+                                    </div>
+                                )}
+                                <div className="flex justify-between pt-1.5 border-t border-emerald-200/50 font-bold text-emerald-950">
+                                    <span>Montant final à facturer :</span>
+                                    <span>{(basePrice * (1 - discount)).toFixed(2)} € HT</span>
+                                </div>
+                                <div className="flex justify-between text-xs text-emerald-700/80 pt-1">
                                     <span>Méthode de paiement :</span>
-                                    <span className="font-bold">Via le site internet</span>
+                                    <span>Via le site internet</span>
                                 </div>
                             </div>
 
