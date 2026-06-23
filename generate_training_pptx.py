@@ -22,6 +22,8 @@ COLOR_EMERALD = RGBColor(16, 185, 129)  # #10B981
 
 project_root = r"C:\Users\gmaro\.gemini\antigravity-ide\scratch\gainable-fr"
 path_logo = os.path.join(project_root, "public", "logo.png")
+path_photo_meeting = os.path.join(project_root, "public", "sales_meeting.png")
+path_photo_handshake = os.path.join(project_root, "public", "sales_handshake.png")
 
 def apply_background(slide, color):
     """Fills the slide background with a solid color."""
@@ -84,13 +86,17 @@ slide1 = prs.slides.add_slide(slide_layout)
 apply_background(slide1, COLOR_DARK)
 
 # Main Title Panel
-tx_title = slide1.shapes.add_textbox(Inches(0.8), Inches(2.2), Inches(11.7), Inches(4.5))
+tx_title = slide1.shapes.add_textbox(Inches(0.8), Inches(2.2), Inches(6.5), Inches(4.5))
 tf_title = tx_title.text_frame
 tf_title.word_wrap = True
 
 # Logo in Title Panel
 if os.path.exists(path_logo):
     slide1.shapes.add_picture(path_logo, Inches(0.8), Inches(1.0), width=Inches(2.6), height=Inches(0.78))
+
+# Right Side: Sales Meeting Photo
+if os.path.exists(path_photo_meeting):
+    slide1.shapes.add_picture(path_photo_meeting, Inches(7.333), Inches(0), width=Inches(6.0), height=Inches(7.5))
 
 p_t = tf_title.paragraphs[0]
 p_t.text = "GUIDE COMMERCIAL & DE VENTE"
@@ -303,29 +309,33 @@ format_bold_lead(ps7_b3, "• Campagnes Publicitaires Meta (Facebook / Instagram
 slide8 = prs.slides.add_slide(slide_layout)
 apply_background(slide8, COLOR_DARK)
 
-tx_s8 = slide8.shapes.add_textbox(Inches(0.8), Inches(1.8), Inches(11.7), Inches(5.0))
+tx_s8 = slide8.shapes.add_textbox(Inches(0.8), Inches(1.8), Inches(6.5), Inches(5.0))
 tf_s8 = tx_s8.text_frame
 tf_s8.word_wrap = True
 
 ps8_title = tf_s8.paragraphs[0]
-ps8_title.text = "Votre mission : Devenir le partenaire croissance des artisans"
+ps8_title.text = "Votre mission : Devenir le partenaire croissance"
 ps8_title.font.name = "Arial"
-ps8_title.font.size = Pt(28)
+ps8_title.font.size = Pt(24)
 ps8_title.font.bold = True
 ps8_title.font.color.rgb = COLOR_WHITE
 ps8_title.space_after = Pt(15)
 
 ps8_b1 = tf_s8.add_paragraph()
-format_bold_lead(ps8_b1, "✔ Une solution saine : ", "Vous ne proposez pas de la dépense publicitaire volatile, mais un investissement de visibilité locale durable et éthique sans commission.", size=Pt(14), font_color=COLOR_WHITE)
+format_bold_lead(ps8_b1, "✔ Une solution saine : ", "Investissement de visibilité locale durable et éthique.", size=Pt(12.5), font_color=COLOR_WHITE)
 
 ps8_b2 = tf_s8.add_paragraph()
-format_bold_lead(ps8_b2, "✔ Une adhésion simple à rentabiliser : ", "Pour vos prospects, une seule vente générée par Gainable.fr couvre largement le coût de l'abonnement annuel.", size=Pt(14), font_color=COLOR_WHITE)
+format_bold_lead(ps8_b2, "✔ ROI immédiat : ", "Une adhésion rentabilisée dès le premier chantier signé.", size=Pt(12.5), font_color=COLOR_WHITE)
 
 ps8_b3 = tf_s8.add_paragraph()
-format_bold_lead(ps8_b3, "✔ Des outils de prospection libres : ", "Utilisez LinkedIn, l'emailing ciblé ou le phoning. Coordonnez vos publicités Meta avec Exceeddigital pour démultiplier vos résultats.", size=Pt(14), font_color=COLOR_WHITE)
+format_bold_lead(ps8_b3, "✔ Leviers de prospection libres : ", "Utilisez LinkedIn, phoning, et campagnes Meta coordonnées avec Exceeddigital.", size=Pt(12.5), font_color=COLOR_WHITE)
 
 ps8_b4 = tf_s8.add_paragraph()
-format_bold_lead(ps8_b4, "✔ Commissions motivantes : ", "En tant que consultant, vous bénéficiez d'une commission attractive calculée en temps réel sur la valeur finale de chaque abonnement vendu.", size=Pt(14), font_color=COLOR_WHITE)
+format_bold_lead(ps8_b4, "✔ Commissions attractives : ", "Rémunération calculée en temps réel à 17% pour Emy Marty.", size=Pt(12.5), font_color=COLOR_WHITE)
+
+# Right Side: Sales Handshake Photo
+if os.path.exists(path_photo_handshake):
+    slide8.shapes.add_picture(path_photo_handshake, Inches(7.333), Inches(0), width=Inches(6.0), height=Inches(7.5))
 
 # Save the presentation
 output_pptx = os.path.join(project_root, "guide_commercial_gainable.pptx")
