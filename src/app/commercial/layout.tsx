@@ -8,7 +8,8 @@ import {
     BookOpen, 
     LogOut,
     PlayCircle,
-    User
+    User,
+    BookMarked
 } from "lucide-react";
 
 export default function CommercialLayout({ children }: { children: React.ReactNode }) {
@@ -23,6 +24,7 @@ export default function CommercialLayout({ children }: { children: React.ReactNo
     const navItems = [
         { name: "Dashboard", href: "/commercial", icon: LayoutDashboard },
         { name: "Prospects", href: "/commercial/prospects", icon: Users },
+        { name: "Playbook", href: "/commercial/playbook", icon: BookMarked },
         { name: "Démonstration", href: "/commercial/demo", icon: PlayCircle },
         { name: "Mon Profil", href: "/commercial/profile", icon: User },
         { name: "Ressources", href: "/commercial/resources", icon: BookOpen },
