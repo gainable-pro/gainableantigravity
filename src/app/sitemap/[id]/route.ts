@@ -37,6 +37,8 @@ export async function GET(
         const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
 
         if (id === 0) {
+            const nowStr = new Date().toISOString();
+
             // Static pages
             const staticUrls = [
                 '', '/trouver-installateur', '/trouver-diagnostiqueur',
@@ -44,7 +46,7 @@ export async function GET(
                 '/faq-visibilite-referencement', '/labels',
                 '/bureau-etude', '/diagnostic-immobilier',
                 '/materiel',
-            ].map(r => `  <url><loc>${BASE_URL}${r}</loc><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
+            ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
             // Experts
             const experts = await prisma.expert.findMany({
@@ -52,14 +54,14 @@ export async function GET(
                 select: { slug: true }
             });
             const expertUrls = experts.map(e =>
-                `  <url><loc>${BASE_URL}/pro/${e.slug}</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`
+                `  <url><loc>${BASE_URL}/pro/${e.slug}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`
             );
 
             // Catalogue Products
             const rawCatalog = await import('@/data/sonepar_catalog.json').then(m => m.default || m);
             const toSlug = (sku: string) => sku.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
             const productUrls = (rawCatalog as any[]).map(p =>
-                `  <url><loc>${BASE_URL}/materiel/${toSlug(p.manufacturerSku)}</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>`
+                `  <url><loc>${BASE_URL}/materiel/${toSlug(p.manufacturerSku)}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`
             );
 
             // Cities
@@ -71,10 +73,10 @@ export async function GET(
 
             const regionSet = new Set(ALL_CITIES.map(c => c.region));
             const regionUrls = [...regionSet].map(r =>
-                `  <url><loc>${BASE_URL}/trouver-installateur/${slugify(r)}</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>`
+                `  <url><loc>${BASE_URL}/trouver-installateur/${slugify(r)}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>`
             );
             const cityUrls = ALL_CITIES.map(c =>
-                `  <url><loc>${BASE_URL}/climatisation/${c.slug}</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`
+                `  <url><loc>${BASE_URL}/climatisation/${c.slug}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`
             );
 
             const all = [...staticUrls, ...expertUrls, ...productUrls, ...regionUrls, ...cityUrls];

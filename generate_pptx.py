@@ -4,6 +4,8 @@ from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.enum.shapes import MSO_SHAPE
+from pptx.oxml.ns import qn
+from lxml import etree
 
 # Initialize Presentation with 16:9 aspect ratio
 prs = Presentation()
@@ -422,7 +424,228 @@ if os.path.exists(path_scr_pricing):
     slide8.shapes.add_picture(path_scr_pricing, Inches(7.0), Inches(1.8), width=Inches(5.5), height=Inches(4.8))
 
 # ==========================================
-# SLIDE 9: Conclusion & Call to Action (Dark Theme + Photo Artisan - User Slide 9)
+# SLIDE 9 (NEW): Tableau Comparatif Plateformes Concurrentes
+# ==========================================
+slide_comp = prs.slides.add_slide(slide_layout)
+apply_background(slide_comp, COLOR_LIGHT)
+add_header(slide_comp, "Comparatif des Plateformes Concurrentes", "POSITIONNEMENT CONCURRENTIEL")
+
+# Sous-titre
+tx_sub = slide_comp.shapes.add_textbox(Inches(0.35), Inches(1.52), Inches(12.6), Inches(0.32))
+tf_sub = tx_sub.text_frame
+p_sub = tf_sub.paragraphs[0]
+p_sub.text = "Gainable.fr face aux principales plateformes du march\u00e9 CVC, Diagnostics & B\u00e2timent"
+p_sub.font.name = "Arial"
+p_sub.font.size = Pt(11.5)
+p_sub.font.italic = True
+p_sub.font.color.rgb = COLOR_TEXT_SECONDARY
+
+# ---- Couleurs d\u00e9di\u00e9es au tableau ----
+COLOR_HDR_BG   = RGBColor(31, 45, 61)        # Navy header
+COLOR_GAIN_BG  = RGBColor(236, 253, 245)      # Vert tr\u00e8s clair (Gainable)
+COLOR_GAIN_TXT = RGBColor(6, 95, 70)          # Vert fonc\u00e9
+COLOR_ROW_A    = RGBColor(248, 250, 252)      # Gris clair pair
+COLOR_ROW_B    = RGBColor(255, 255, 255)      # Blanc impair
+COLOR_POS      = RGBColor(16, 185, 129)       # Emerald \u2714
+COLOR_NEG      = RGBColor(220, 38, 38)        # Rouge \u2718
+COLOR_WARN     = RGBColor(202, 138, 4)        # Ambre partiel
+
+def set_cell_bg(cell, rgb):
+    tc = cell._tc
+    tcPr = tc.get_or_add_tcPr()
+    # Supprimer tout fond existant
+    for sf in tcPr.findall(qn('a:solidFill')):
+        tcPr.remove(sf)
+    sf = etree.SubElement(tcPr, qn('a:solidFill'))
+    clr = etree.SubElement(sf, qn('a:srgbClr'))
+    clr.set('val', f'{rgb[0]:02X}{rgb[1]:02X}{rgb[2]:02X}')
+
+def fill_cell(cell, lines, size=Pt(9.5), bold=False,
+              align=PP_ALIGN.CENTER, color=None, bg=None, line2_color=None):
+    """Remplit une cellule avec une ou deux lignes de texte."""
+    if bg:
+        set_cell_bg(cell, bg)
+    tf = cell.text_frame
+    tf.word_wrap = True
+    # Supprimer les paragraphes vides existants
+    for i, line in enumerate(lines):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        p.text = line
+        p.alignment = align
+        p.font.name = "Arial"
+        p.font.size = size if i == 0 else Pt(float(size.pt) - 0.5)
+        p.font.bold = bold
+        c = color if (i == 0 or line2_color is None) else line2_color
+        if c:
+            p.font.color.rgb = c
+
+# ---- D\u00e9finition du tableau ----
+NROWS, NCOLS = 8, 7
+tbl = slide_comp.shapes.add_table(
+    NROWS, NCOLS,
+    Inches(0.22), Inches(1.88),
+    Inches(12.89), Inches(5.4)
+).table
+
+# Largeurs colonnes
+col_w = [Inches(2.45), Inches(2.95), Inches(1.75), Inches(1.45), Inches(1.45), Inches(1.45), Inches(1.38)]
+for i, w in enumerate(col_w):
+    tbl.columns[i].width = w
+
+# Hauteurs lignes
+row_h = [Inches(0.52)] + [Inches(0.70)] * 7
+for i, h in enumerate(row_h):
+    tbl.rows[i].height = h
+
+# ---- En-t\u00eate ----
+headers = [
+    "Plateforme",
+    "Mod\u00e8le \u00e9conomique",
+    "Co\u00fbt estimatif",
+    "Leads\nexclusifs",
+    "Commission\nchantier",
+    "SEO\nint\u00e9gr\u00e9",
+    "IA\nincluse",
+]
+for ci, h in enumerate(headers):
+    fill_cell(tbl.cell(0, ci), [h],
+              size=Pt(10), bold=True,
+              align=PP_ALIGN.CENTER,
+              color=COLOR_WHITE, bg=COLOR_HDR_BG)
+
+# ---- Donn\u00e9es ----
+# Format: (plateforme, modele, cout, leads_exclu, commission, seo, ia, is_gainable)
+rows_data = [
+    {
+        "name"   : ["\u2b50 Gainable.fr", "gainable.fr | .be | .ch"],
+        "model"  : ["Annuaire sp\u00e9cialis\u00e9 CVC & Diag", "+ Articles SEO + Assistant IA"],
+        "cost"   : ["850 \u20ac HT/an (CVC)", "750 \u20ac HT/an (Diag) \u00b7 0\u20ac BE"],
+        "leads"  : ["\u2714 OUI", "Contact direct"],
+        "comm"   : ["0 %", "Aucune commission"],
+        "seo"    : ["\u2714 OUI", "Articles + IA + Rich Snippets"],
+        "ia"     : ["\u2714 OUI", "Assistant r\u00e9dacteur int\u00e9gr\u00e9"],
+        "gainable": True,
+    },
+    {
+        "name"   : ["Habitapresto", "Travaux.com"],
+        "model"  : ["Marketplace de leads", "Revendu \u00d73 \u00e0 5 concurrents"],
+        "cost"   : ["20\u201380 \u20ac HT / lead", "Facturation par contact"],
+        "leads"  : ["\u2718 NON", "Partag\u00e9s (multi-pros)"],
+        "comm"   : ["0 %", "(achat au lead)"],
+        "seo"    : ["\u2718 NON", "Pas d'outillage SEO"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+    {
+        "name"   : ["Maclem", "Plateforme CVC"],
+        "model"  : ["Comparateur & annuaire CVC", "G\u00e9n\u00e9ration de leads partagés"],
+        "cost"   : ["Abonnement", "+ commission chantier"],
+        "leads"  : ["\u2718 NON", "Multi-pros"],
+        "comm"   : ["5\u201310 %", "du montant chantier"],
+        "seo"    : ["Partiel", "Peu de contenu local"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+    {
+        "name"   : ["IZI by EDF", "Engie Home Services"],
+        "model"  : ["Plateforme \u00e9nergie nationale", "Subventions + installation"],
+        "cost"   : ["Commission chantier", "Impos\u00e9e par le groupe"],
+        "leads"  : ["\u2718 NON", "Groupe impos\u00e9"],
+        "comm"   : ["10\u201315 %", "du montant chantier"],
+        "seo"    : ["\u2718 NON", "Marque nationale seule"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+    {
+        "name"   : ["Houzz Pro", "Plateforme internationale"],
+        "model"  : ["D\u00e9co & r\u00e9novation", "Pas sp\u00e9cialis\u00e9 CVC France"],
+        "cost"   : ["250\u2013600 \u20ac HT / mois", "Sans garantie de leads"],
+        "leads"  : ["Partiel", "Non qualifi\u00e9 CVC"],
+        "comm"   : ["0 %", ""],
+        "seo"    : ["Partiel", "G\u00e9n\u00e9raliste"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+    {
+        "name"   : ["PagesJaunes / Yelp", "Annuaires g\u00e9n\u00e9ralistes"],
+        "model"  : ["Annuaire classique", "Pas de sp\u00e9cialisation CVC"],
+        "cost"   : ["0 \u00e0 150 \u20ac HT / mois", "Option payante limit\u00e9e"],
+        "leads"  : ["\u2718 NON", "Peu qualifi\u00e9"],
+        "comm"   : ["0 %", ""],
+        "seo"    : ["\u2718 NON", "Pas d'articles, pas d'IA"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+    {
+        "name"   : ["Google Ads / Meta Ads", "Publicit\u00e9 payante"],
+        "model"  : ["R\u00e9f\u00e9rencement pay\u00e9 (SEM)", "Arr\u00eate si budget coup\u00e9"],
+        "cost"   : ["300\u20131 500 \u20ac HT / mois", "Variable selon conc."],
+        "leads"  : ["Partiel", "Non filtr\u00e9 CVC"],
+        "comm"   : ["0 %", "(co\u00fbt au clic)"],
+        "seo"    : ["\u2718 NON", "Aucun SEO organique"],
+        "ia"     : ["\u2718 NON", ""],
+        "gainable": False,
+    },
+]
+
+for ri, rd in enumerate(rows_data):
+    row_idx = ri + 1
+    g = rd["gainable"]
+    bg = COLOR_GAIN_BG if g else (COLOR_ROW_A if ri % 2 == 0 else COLOR_ROW_B)
+    sz_main = Pt(10) if g else Pt(9)
+    sz_sub  = Pt(8.5)
+
+    def _col_color(val_list, is_gainable):
+        joined = " ".join(val_list)
+        if "\u2714" in joined or "OUI" in joined:
+            return COLOR_POS
+        if "\u2718" in joined or "NON" in joined:
+            return COLOR_NEG
+        if "Partiel" in joined:
+            return COLOR_WARN
+        return COLOR_GAIN_TXT if is_gainable else COLOR_TEXT_PRIMARY
+
+    # Colonne 0 : Nom de la plateforme
+    fill_cell(tbl.cell(row_idx, 0), rd["name"],
+              size=sz_main, bold=True,
+              align=PP_ALIGN.LEFT,
+              color=COLOR_GAIN_TXT if g else COLOR_TEXT_PRIMARY,
+              line2_color=COLOR_TEXT_SECONDARY, bg=bg)
+
+    # Colonne 1 : Mod\u00e8le
+    fill_cell(tbl.cell(row_idx, 1), rd["model"],
+              size=sz_main if g else Pt(9),
+              align=PP_ALIGN.LEFT,
+              color=COLOR_GAIN_TXT if g else COLOR_TEXT_PRIMARY,
+              line2_color=COLOR_TEXT_SECONDARY, bg=bg)
+
+    # Colonne 2 : Co\u00fbt
+    fill_cell(tbl.cell(row_idx, 2), rd["cost"],
+              size=sz_main if g else Pt(9), bold=g,
+              color=COLOR_GAIN_TXT if g else COLOR_TEXT_PRIMARY,
+              line2_color=COLOR_TEXT_SECONDARY, bg=bg)
+
+    # Colonnes 3-6 : indicateurs
+    for ci, key in enumerate(["leads", "comm", "seo", "ia"], start=3):
+        vals = rd[key]
+        col_c = _col_color(vals, g)
+        fill_cell(tbl.cell(row_idx, ci), [v for v in vals if v],
+                  size=sz_main if g else Pt(9), bold=g,
+                  color=col_c,
+                  line2_color=COLOR_TEXT_SECONDARY, bg=bg)
+
+# Note de bas de tableau
+tx_note = slide_comp.shapes.add_textbox(Inches(0.3), Inches(7.25), Inches(12.7), Inches(0.22))
+tf_note = tx_note.text_frame
+p_note = tf_note.paragraphs[0]
+p_note.text = "* Estimations indicatives bas\u00e9es sur les grilles tarifaires publiques 2025\u20132026. Commission = pr\u00e9l\u00e8vement sur le chiffre d'affaires chantier sign\u00e9."
+p_note.font.name = "Arial"
+p_note.font.size = Pt(8)
+p_note.font.italic = True
+p_note.font.color.rgb = COLOR_TEXT_SECONDARY
+
+# ==========================================
+# SLIDE 10 (ex-9): Conclusion & Call to Action (Dark Theme + Photo Artisan - User Slide 9)
 # ==========================================
 slide9 = prs.slides.add_slide(slide_layout)
 apply_background(slide9, COLOR_DARK)

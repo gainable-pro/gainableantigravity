@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     }
 };
 
+import { DemoModal } from "@/components/features/demo/DemoModal";
+
 export default function PourquoiGainablePage() {
     // JSON-LD for SEO
     const jsonLd = {
@@ -62,10 +64,14 @@ export default function PourquoiGainablePage() {
                         Nous avons créé Gainable.fr pour reconnecter la confiance entre les particuliers exigeants
                         et les véritables experts de la climatisation, sans intermédiaires cachés.
                     </p>
-                    <div className="flex justify-center">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Button asChild className="bg-[#D59B2B] hover:bg-[#b88622] text-white text-lg px-8 py-6 rounded-xl font-bold shadow-lg transition-transform hover:scale-105">
                             <Link href="/inscription">Rejoindre le réseau Gainable.fr</Link>
                         </Button>
+                        <DemoModal
+                            buttonText="Demander une démo"
+                            buttonClassName="bg-[#1F2D3D] hover:bg-slate-800 text-white text-lg px-8 py-6 rounded-xl font-bold shadow-lg transition-transform hover:scale-105 border-none"
+                        />
                     </div>
                 </div>
             </section>
@@ -435,9 +441,15 @@ export default function PourquoiGainablePage() {
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">
                         Rejoignez le mouvement
                     </h2>
-                    <Button asChild className="bg-white text-[#D59B2B] hover:bg-slate-100 text-xl px-10 py-8 rounded-full font-bold shadow-xl">
-                        <Link href="/inscription">Inscrire mon entreprise</Link>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Button asChild className="bg-white text-[#D59B2B] hover:bg-slate-100 text-xl px-10 py-8 rounded-full font-bold shadow-xl">
+                            <Link href="/inscription">Inscrire mon entreprise</Link>
+                        </Button>
+                        <DemoModal
+                            buttonText="Demander une démo"
+                            buttonClassName="bg-[#1F2D3D] text-white hover:bg-slate-800 text-xl px-10 py-8 rounded-full font-bold shadow-xl border-2 border-white/20"
+                        />
+                    </div>
                 </div>
             </section>
         </div>

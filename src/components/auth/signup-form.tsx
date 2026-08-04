@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { DemoModal } from "@/components/features/demo/DemoModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -605,6 +606,20 @@ export function SignUpForm() {
                             {selectedPlan === 'diagnostiqueur' ? 'Sélectionné' : 'Choisir cette offre'}
                         </div>
                     </div>
+                </div>
+
+                {/* CENTERED DEMO BUTTON BELOW PRICING CARDS */}
+                <div className="mt-12 text-center flex flex-col items-center justify-center p-8 bg-slate-50 rounded-3xl border border-slate-200/60 shadow-sm max-w-3xl mx-auto">
+                    <h4 className="text-lg font-bold text-[#1F2D3D] mb-1">
+                        Vous souhaitez d'abord découvrir la plateforme et échanger avec un conseiller ?
+                    </h4>
+                    <p className="text-slate-500 text-sm mb-6 max-w-xl">
+                        Un expert Gainable.fr effectue une démonstration gratuite et personnalisée sans engagement.
+                    </p>
+                    <DemoModal
+                        buttonText="Demander une démo gratuite"
+                        buttonClassName="bg-[#1F2D3D] hover:bg-slate-800 text-white text-base px-8 py-6 rounded-2xl font-bold shadow-xl border-2 border-[#D59B2B]/40 hover:scale-105 transition-all"
+                    />
                 </div>
             </div>
 

@@ -69,6 +69,7 @@ export const metadata: Metadata = {
 
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PWAInstall } from "@/components/pwa/PWAInstall";
+import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { headers } from "next/headers";
 
 export default async function RootLayout({
@@ -82,6 +83,9 @@ export default async function RootLayout({
 
   return (
     <html lang="fr">
+      <head>
+        <OrganizationJsonLd />
+      </head>
       <body className={`${montserrat.variable} font-sans`}>
         <Header countryCode={country} />
         <main className="min-h-screen">

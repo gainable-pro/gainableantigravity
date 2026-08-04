@@ -8,6 +8,7 @@ import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import { MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED];
 
@@ -28,12 +29,13 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     // If explicit country param exists, use it. Otherwise use IP country.
     const urlCountry = (await searchParams).country as string;
     const targetCountryCode = urlCountry ? (Object.keys(countryMap).find(k => countryMap[k] === urlCountry) || countryCode) : countryCode;
-    const targetCountryName = countryMap[targetCountryCode] || "France, Suisse, Belgique, Maroc";
+    const targetCountryName = countryMap[targetCountryCode] || "France";
 
-    // Dynamic Title
-    const title = `Gainable : Climatisation Gainable & Réversible – ${targetCountryName} | Gainable.fr`;
+    // Dynamic Title optimized for CTR (<60 chars) - Large public (Split/PAC) + Spécialité (Gainable)
+    const title = `Gainable.fr : Climatisation Réversible, Split & Gainable (${targetCountryName})`;
 
-    const description = `Besoin d'une climatisation gainable ou réversible ? Trouvez un installateur expert à ${targetCountryName}. Devis gratuit, pompes à chaleur, CVC et diagnostics techniques.`;
+    // Meta Description optimized for CTR (150-160 chars)
+    const description = `Trouvez un installateur certifié en climatisation réversible, monosplit, multisplit, PAC & gainable invisible à ${targetCountryName}. Devis gratuit & pro CVC.`;
 
     const canonicalUrl = (await searchParams).city
         ? `/trouver-installateur?city=${encodeURIComponent((await searchParams).city as string)}`
@@ -109,8 +111,41 @@ export default async function SearchPage({
 
     const initialExperts = await getExperts(filters);
 
+    const faqItems = [
+        {
+            question: "Qu'est-ce qu'une climatisation gainable et quels sont ses avantages ?",
+            answer: "Une climatisation gainable est un système invisible réversible. L'unité intérieure est dissimulée dans les faux-plafonds ou combles et distribue l'air chaud ou frais via des grilles discrètes, garantissant un confort acoustique et un design épuré."
+        },
+        {
+            question: "Comment trouver un installateur ou bureau d'étude certifié sur Gainable.fr ?",
+            answer: "Utilisez notre carte et moteur de recherche pour filtrer les installateurs certifiés, bureaux d'études CVC et diagnostiqueurs en France, Suisse, Belgique et Maroc."
+        },
+        {
+            question: "Quel est le tarif moyen d'une installation gainable ?",
+            answer: "Le tarif varie généralement de 80 € à 150 € par m² selon la technologie (VRV, multizone, pompe à chaleur air-air) et les marques (Daikin, Mitsubishi, Toshiba, Panasonic)."
+        },
+        {
+            question: "Quelles sont les zones d'intervention couvertes ?",
+            answer: "Nous couvrons plus de 550 villes en France, en Suisse, en Belgique et au Maroc avec un réseau d'artisans et experts du génie climatique vérifiés."
+        }
+    ];
+
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(item => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.answer
+            }
+        }))
+    };
+
     return (
         <div className="flex flex-col min-h-screen">
+            <JsonLd data={faqSchema} />
             <SearchPageClient initialExperts={initialExperts} initialView={initialView} />
 
             {/* SEO Content Section */}
@@ -148,6 +183,27 @@ export default async function SearchPage({
                     <p className="text-sm text-slate-500 italic">
                         Gainable.fr : La référence des experts vérifiés du génie climatique.
                     </p>
+                </div>
+            </section>
+
+            {/* BLOC: FAQ STRUCTURÉE (SEO & GEO) */}
+            <section className="py-16 bg-white border-t border-slate-100">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#1F2D3D] text-center mb-10">
+                        Foire Aux Questions : Climatisation Gainable & Pompes à Chaleur
+                    </h2>
+                    <div className="space-y-6">
+                        {faqItems.map((item, idx) => (
+                            <div key={idx} className="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm">
+                                <h3 className="text-lg font-semibold text-[#1F2D3D] mb-2 flex items-center gap-2">
+                                    <span className="text-[#D59B2B] font-bold">Q.</span> {item.question}
+                                </h3>
+                                <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                                    {item.answer}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 

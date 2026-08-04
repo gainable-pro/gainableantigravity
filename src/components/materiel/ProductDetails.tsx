@@ -1,5 +1,10 @@
-import { Zap, Wind, Thermometer, FileText, Download } from "lucide-react";
-import { getPdfLabel } from "@/utils/pdfUtils"; // assume helper exists
+import { Zap, Wind, Thermometer, FileText, Download, CheckCircle, Phone } from "lucide-react";
+
+function getPdfLabel(pdfPath: string): string {
+  if (!pdfPath) return "Document PDF";
+  const name = pdfPath.split('/').pop() || "Document PDF";
+  return name.replace(/[-_]/g, ' ').replace('.pdf', '');
+}
 
 interface ProductDetailsProps {
   product: any; // type can be refined later

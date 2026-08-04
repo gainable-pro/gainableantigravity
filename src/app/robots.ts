@@ -23,23 +23,23 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
             {
+                userAgent: 'PerplexityBot',
+                allow: '/',
+            },
+            {
+                userAgent: 'Google-Extended',
+                allow: '/',
+            },
+            {
+                userAgent: 'Applebot-Extended',
+                allow: '/',
+            },
+            {
                 userAgent: 'Bytespider',
                 disallow: '/',
             },
             {
                 userAgent: 'CCBot',
-                disallow: '/',
-            },
-            {
-                userAgent: 'PerplexityBot',
-                disallow: '/',
-            },
-            {
-                userAgent: 'Google-Extended',
-                disallow: '/',
-            },
-            {
-                userAgent: 'Applebot-Extended',
                 disallow: '/',
             }
         ],
