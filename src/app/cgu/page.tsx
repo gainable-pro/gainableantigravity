@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Conditions Générales d'Utilisation - Gainable.fr",
+    alternates: {
+        canonical: "https://www.gainable.fr/cgu",
+    },
     robots: {
         index: false,
         follow: true,

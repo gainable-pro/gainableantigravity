@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         title: expert.metaTitle || generateExpertMetaTitle(seoData),
         description: expert.metaDesc || generateExpertMetaDescription(seoData),
         alternates: {
-            canonical: `/pro/${expert.slug}`,
+            canonical: `https://www.gainable.fr/pro/${expert.slug}`,
         },
         openGraph: {
             title: expert.metaTitle || generateExpertMetaTitle(seoData),

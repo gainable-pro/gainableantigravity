@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Diagnostiqueur immobilier DPE & audit énergétique | Gainable.fr",
         description: "Trouvez un diagnostiqueur immobilier pour votre DPE, audit énergétique ou diagnostic vente/location. Experts vérifiés disponibles sur Gainable.fr.",
+    },
+    alternates: {
+        canonical: "https://www.gainable.fr/diagnostic-immobilier",
     }
 };
 

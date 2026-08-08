@@ -1,5 +1,14 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, XCircle, AlertTriangle, HelpCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "FAQ Visibilité & Référencement | Gainable.fr",
+    description: "Tout comprendre sur le fonctionnement de la visibilité et du référencement des professionnels sur Gainable.fr.",
+    alternates: {
+        canonical: "https://www.gainable.fr/faq-visibilite-referencement",
+    },
+};
 
 export default function FAQVisibilityPage() {
     return (

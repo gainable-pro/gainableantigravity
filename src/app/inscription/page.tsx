@@ -14,6 +14,9 @@ export const metadata: Metadata = {
         index: false,
         follow: true,
     },
+    alternates: {
+        canonical: "https://www.gainable.fr/inscription",
+    },
 };
 
 export default function InscriptionPage() {

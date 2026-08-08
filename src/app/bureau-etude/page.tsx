@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Bureau d’étude CVC & thermique : climatisation gainable | Gainable.fr",
         description: "Trouvez un bureau d’étude CVC et thermique pour vos projets de climatisation gainable, tertiaire ou résidentiel (RE2020, rénovation) avec Gainable.fr.",
+    },
+    alternates: {
+        canonical: "https://www.gainable.fr/bureau-etude",
     }
 };
 

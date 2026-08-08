@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Mentions Légales - Gainable.fr",
+    alternates: {
+        canonical: "https://www.gainable.fr/mentions-legales",
+    },
     robots: {
         index: false,
         follow: true,

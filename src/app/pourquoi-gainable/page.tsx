@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Pourquoi rejoindre Gainable.fr | Visibilité & chantiers pour experts CVC",
         description: "Gainable.fr est un réseau d’experts vérifiés en climatisation, CVC et génie climatique. Augmentez votre visibilité, obtenez des contacts qualifiés et valorisez votre savoir-faire.",
+    },
+    alternates: {
+        canonical: "https://www.gainable.fr/pourquoi-gainable",
     }
 };
 

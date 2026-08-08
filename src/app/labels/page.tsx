@@ -18,6 +18,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Expert Vérifié : la référence qualité en climatisation | Gainable.fr",
         description: "Découvrez le label Expert Vérifié Gainable.fr : des installateurs contrôlés pour la qualité, le sérieux et l’expertise en climatisation gainable.",
+    },
+    alternates: {
+        canonical: "https://www.gainable.fr/labels",
     }
 };
 

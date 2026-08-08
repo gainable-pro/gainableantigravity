@@ -37,9 +37,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     // Meta Description optimized for CTR (150-160 chars)
     const description = `Trouvez un installateur certifié en climatisation réversible, monosplit, multisplit, PAC & gainable invisible à ${targetCountryName}. Devis gratuit & pro CVC.`;
 
-    const canonicalUrl = (await searchParams).city
-        ? `/trouver-installateur?city=${encodeURIComponent((await searchParams).city as string)}`
-        : '/';
+    const canonicalUrl = 'https://www.gainable.fr/';
 
     return {
         title,

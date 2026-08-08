@@ -19,6 +19,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Carrières & Recrutement | Gainable.fr",
+    description: "Rejoignez l'équipe Gainable.fr. Découvrez nos opportunités de carrière et participez au futur de la climatisation gainable.",
+    alternates: {
+        canonical: "https://www.gainable.fr/carrieres",
+    },
+};
 
 export default function CareersPage() {
   const positions = [

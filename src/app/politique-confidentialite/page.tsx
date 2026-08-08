@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Politique de Confidentialité - Gainable.fr",
+    alternates: {
+        canonical: "https://www.gainable.fr/politique-confidentialite",
+    },
     robots: {
         index: false,
         follow: true,

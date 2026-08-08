@@ -22,43 +22,54 @@ interface PageProps {
 async function getArticleData(slug: string, articleSlug: string) {
     if (!slug || !articleSlug) return null;
 
-    const expert = await prisma.expert.findUnique({
-        where: { slug },
-        select: {
-            id: true,
-            nom_entreprise: true,
-            slug: true,
-            ville: true,
-            pays: true,
-            code_postal: true,
-            lat: true,
-            lng: true,
-            logo_url: true,
-            user: { select: { email: true } },
-            expert_type: true
-        }
-    });
-
-    if (!expert) return null;
-
-    const article = await prisma.article.findUnique({
-        where: {
-            expertId_slug: {
-                expertId: expert.id,
-                slug: articleSlug
+    try {
+        const expert = await prisma.expert.findUnique({
+            where: { slug },
+            select: {
+                id: true,
+                nom_entreprise: true,
+                slug: true,
+                ville: true,
+                pays: true,
+                code_postal: true,
+                lat: true,
+                lng: true,
+                logo_url: true,
+                user: { select: { email: true } },
+                expert_type: true
             }
-        },
-    });
+        });
 
-    if (!article || article.status !== 'PUBLISHED') return null;
+        if (!expert) return null;
 
-    return { expert, article };
+        const article = await prisma.article.findUnique({
+            where: {
+                expertId_slug: {
+                    expertId: expert.id,
+                    slug: articleSlug
+                }
+            },
+        });
+
+        if (!article || article.status !== 'PUBLISHED') return null;
+
+        return { expert, article };
+    } catch (e) {
+        console.error("Error in getArticleData:", e);
+        return null;
+    }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug, articleSlug } = await params;
+    const canonical = `https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}`;
     const data = await getArticleData(slug, articleSlug);
-    if (!data) return {};
+    if (!data) {
+        return {
+            title: "Article introuvable | Gainable.fr",
+            alternates: { canonical }
+        };
+    }
 
     const { article, expert } = data;
     const city = article.targetCity || expert.ville || "";
