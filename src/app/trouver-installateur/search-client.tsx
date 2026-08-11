@@ -295,8 +295,8 @@ function SearchPageContent({ initialExperts, initialView }: { initialExperts: an
                                 </FilterDropdown>
                             )}
 
-                            {/* Filter 3b: Diagnostics (Only for Diagnostiqueurs) */}
-                            {expertFilters.diag && (
+                            {/* Filter 3b: Diagnostics */}
+                            {(expertFilters.diag || expertFilters.bureau) && (
                                 <FilterDropdown label="Types de diagnostic" active={selectedDiags.length > 0}>
                                     <div className="space-y-2">
                                         {EXPERT_INTERVENTIONS_DIAG.map((item) => (

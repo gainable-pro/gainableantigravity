@@ -19,6 +19,7 @@ export const EXPERT_INTERVENTIONS_CLIM = [
     "Dépannage",
     "Nettoyage & Entretien",
     "Étude de faisabilité",
+    "Audit Énergétique",
     "Autre"
 ];
 
@@ -29,11 +30,13 @@ export const EXPERT_INTERVENTIONS_ETUDE = [
     "Calculs & Plans",
     "Simulations Techniques",
     "Maîtrise d'Œuvre (MOE)",
+    "Audit Énergétique",
     "Audits Énergétiques"
 ];
 
 export const EXPERT_INTERVENTIONS_DIAG = [
     "DPE",
+    "Audit Énergétique",
     "Amiante",
     "Plomb",
     "Gaz",

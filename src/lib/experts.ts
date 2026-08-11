@@ -103,11 +103,17 @@ export async function getExperts(filters: ExpertFilters) {
 
         // 7. Interventions Filter (Relation)
         if (filters.interventions && filters.interventions.length > 0) {
+            const expandedInterventions = Array.from(new Set([
+                ...filters.interventions,
+                ...(filters.interventions.some(i => i.toLowerCase().includes("audit"))
+                    ? ["Audit Énergétique", "Audit Energétique", "Audits Énergétiques"]
+                    : [])
+            ]));
             where.OR = [
                 ...(where.OR ? (Array.isArray(where.OR) ? where.OR : [where.OR]) : []),
-                { interventions_clim: { some: { value: { in: filters.interventions } } } },
-                { interventions_etude: { some: { value: { in: filters.interventions } } } },
-                { interventions_diag: { some: { value: { in: filters.interventions } } } }
+                { interventions_clim: { some: { value: { in: expandedInterventions } } } },
+                { interventions_etude: { some: { value: { in: expandedInterventions } } } },
+                { interventions_diag: { some: { value: { in: expandedInterventions } } } }
             ];
         }
 
