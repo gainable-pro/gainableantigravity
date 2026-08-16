@@ -9,6 +9,8 @@ import { fr } from "date-fns/locale";
 import { MapPin, ArrowRight, User, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
+import { getLocalSEOContext } from "@/lib/local-seo-engine";
+import { ThermalCalculator } from "@/components/features/articles/thermal-calculator";
 
 export const revalidate = 3600; // Cache la page pendant 1 heure (ISR) pour soulager la base de données face à Googlebot
 
@@ -256,6 +258,40 @@ export default async function PublicArticlePage({ params }: PageProps) {
     console.log("----------------------------");
 
     // Structured Data (Schema.org)
+    const targetCity = article.targetCity || expert.ville;
+    
+    // Dynamic FAQs for GEO / AI Overview
+    const rawFaqs = (article.faq as any[]) || [];
+    const defaultFaqs = targetCity ? [
+        {
+            question: `Quelles sont les normes RE2020 pour l'installation de climatisation à ${targetCity} ?`,
+            response: `À ${targetCity}, l'installation d'une climatisation réversible ou d'un système gainable doit respecter l'indice de confort d'été (DH) et privilégier les équipements à haute efficacité énergétique décarbonée conformément à la réglementation thermique RE2020.`
+        },
+        {
+            question: `Quelles sont les aides financières disponibles à ${targetCity} pour la pompe à chaleur gainable ?`,
+            response: `Les résidents de ${targetCity} peuvent bénéficier de MaPrimeRénov', de la prime CEE (Certificats d'Économies d'Énergie) ainsi que du prêt à taux zéro pour le remplacement d'un ancien chauffage par un système réversible performant.`
+        },
+        {
+            question: `Comment dimensionner une climatisation gainable à ${targetCity} ?`,
+            response: `Le dimensionnement nécessite une étude thermique préalable prenant en compte l'altitude, l'orientation du logement et l'isolation spécifique aux normes thermiques en vigueur à ${targetCity}.`
+        }
+    ] : [];
+
+    const effectiveFaqs = rawFaqs.length > 0 ? rawFaqs : defaultFaqs;
+
+    const faqSchema = effectiveFaqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": effectiveFaqs.map(f => ({
+            "@type": "Question",
+            "name": f.question || f.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.response || f.r
+            }
+        }))
+    } : null;
+
     const jsonLd: any = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -280,7 +316,6 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "articleBody": hasBlocks ? blocks.map(b => b.value).join(' ') : articleContent
     };
 
-    const targetCity = article.targetCity || expert.ville;
     if (targetCity) {
         jsonLd.contentLocation = {
             "@type": "Place",
@@ -304,32 +339,34 @@ export default async function PublicArticlePage({ params }: PageProps) {
         ]
     };
 
-    const faqs = (article.faq as any[]) || [];
-
+    const schemaList = [jsonLd, breadcrumbJsonLd];
+    if (faqSchema) schemaList.push(faqSchema);
 
     return (
         <div className="bg-slate-50 min-h-screen pb-20">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbJsonLd]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaList) }}
             />
 
 
-            {/* Article Image - Exclu pour les articles B2B Gainable.fr (plus de sobriété) */}
-            {article.mainImage && expert.slug !== 'gainable-fr' && (
-                <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden mb-12 shadow-xl">
-                    <Image
-                        src={article.mainImage.startsWith('http') || article.mainImage.startsWith('/') ? article.mainImage : `/${article.mainImage}`}
-                        alt={article.altText || article.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
+            {/* Article Image */}
+            {article.mainImage && (
+                <div className="max-w-4xl mx-auto w-full px-6 mt-8">
+                    <div className="relative w-full h-[350px] md:h-[480px] rounded-3xl overflow-hidden shadow-xl border border-slate-200/80">
+                        <Image
+                            src={article.mainImage.startsWith('http') || article.mainImage.startsWith('/') ? article.mainImage : `/${article.mainImage}`}
+                            alt={article.altText || article.title}
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
                 </div>
             )}
 
-            {/* HEADER CONTENT (Below Image) */}
-            <div className={`max-w-4xl mx-auto w-full px-6 relative z-10 ${expert.slug !== 'gainable-fr' && article.mainImage ? '-mt-12' : 'mt-8'}`}>
+            {/* HEADER CONTENT */}
+            <div className={`max-w-4xl mx-auto w-full px-6 relative z-10 ${article.mainImage ? 'mt-8' : 'mt-8'}`}>
                 <div className="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 space-y-6">
                     <div className="flex items-center justify-between flex-wrap gap-4">
                         <div className="flex flex-wrap items-center gap-4 text-sm md:text-base">
@@ -466,8 +503,81 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         />
                     )}
 
+                    {/* DYNAMIC LOCAL CLIMATE & RE2020 BLOCK (For Unique GEO Value) */}
+                    {targetCity && (() => {
+                        const localSEO = getLocalSEOContext(targetCity);
+                        if (!localSEO) return null;
+                        return (
+                            <>
+                                <section className="mt-16 bg-gradient-to-br from-slate-900 via-slate-800 to-[#1F2D3D] text-white p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-slate-700/60">
+                                    <div className="absolute top-0 right-0 w-80 h-80 bg-[#D59B2B]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                                    
+                                    <div className="relative z-10 space-y-6">
+                                        <div className="flex flex-wrap items-center justify-between gap-3">
+                                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D59B2B]/20 border border-[#D59B2B]/30 rounded-full text-[#D59B2B] text-xs font-bold uppercase tracking-wider">
+                                                <MapPin className="w-3.5 h-3.5" /> Fiche Climat & Normes • {localSEO.cityName} ({localSEO.department})
+                                            </div>
+                                            <span className="text-xs text-slate-400 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                                                Zone RE2020 : <strong className="text-white">{localSEO.re2020Zone}</strong>
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-2xl md:text-3xl font-bold leading-snug text-white">
+                                            Spécificités thermiques et opportunités à <span className="text-[#D59B2B]">{localSEO.cityName}</span>
+                                        </h3>
+
+                                        <p className="text-slate-300 text-sm leading-relaxed border-l-2 border-[#D59B2B] pl-4 italic">
+                                            "{localSEO.catchphrase}" — {localSEO.housingTip}
+                                        </p>
+
+                                        <div className="grid md:grid-cols-3 gap-6 pt-4 border-t border-slate-700/60">
+                                            <div className="bg-white/5 backdrop-blur p-5 rounded-2xl border border-white/10 space-y-2">
+                                                <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Zone & Climat</div>
+                                                <div className="text-lg font-bold text-white">{localSEO.climateZone}</div>
+                                                <p className="text-xs text-slate-300 leading-relaxed">
+                                                    Pics estivaux jusqu'à {localSEO.summerPeakTemp} et min hivernales à {localSEO.winterMinTemp}.
+                                                </p>
+                                            </div>
+
+                                            <div className="bg-white/5 backdrop-blur p-5 rounded-2xl border border-white/10 space-y-2">
+                                                <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Rendement Inverter</div>
+                                                <div className="text-lg font-bold text-[#D59B2B]">SCOP {localSEO.copEst} • SEER {localSEO.seerEst}</div>
+                                                <p className="text-xs text-slate-300 leading-relaxed">
+                                                    Économies estimées jusqu'à {localSEO.estimatedSavingsPct} sur la facture de chauffage à {localSEO.cityName}.
+                                                </p>
+                                            </div>
+
+                                            <div className="bg-white/5 backdrop-blur p-5 rounded-2xl border border-white/10 space-y-2">
+                                                <div className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Aides Financières</div>
+                                                <div className="text-lg font-bold text-emerald-400">MaPrimeRénov' & CEE</div>
+                                                <p className="text-xs text-slate-300 leading-relaxed">
+                                                    Cumul possible avec l'Éco-PTZ pour les rénovations certifiées RGE à {localSEO.cityName}.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        {/* Key Points */}
+                                        <div className="pt-4 border-t border-slate-700/60">
+                                            <div className="text-xs font-bold text-[#D59B2B] uppercase tracking-wider mb-3">Recommandations clés pour {localSEO.cityName} :</div>
+                                            <ul className="grid sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                                                {localSEO.keyPoints.map((pt, idx) => (
+                                                    <li key={idx} className="flex items-start gap-2 bg-white/5 p-2.5 rounded-xl border border-white/5">
+                                                        <span className="text-[#D59B2B] font-bold">✓</span> {pt}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                {/* INTERACTIVE SIMULATION WIDGET */}
+                                <ThermalCalculator cityName={localSEO.cityName} climateZone={localSEO.climateZone} />
+                            </>
+                        );
+                    })()}
+
                     {/* FAQ SECTION */}
-                    {faqs.length > 0 && (
+                    {effectiveFaqs.length > 0 && (
                         <section className="mt-16 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                             <h2 className="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
                                 <div className="bg-[#D59B2B]/10 p-2 rounded-lg">
@@ -476,7 +586,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
                                 Questions Fréquentes
                             </h2>
                             <div className="space-y-8">
-                                {faqs.map((f, i) => (
+                                {effectiveFaqs.map((f: any, i: number) => (
                                     <div key={i} className="border-b border-slate-50 pb-6 last:border-0 last:pb-0">
                                         <h3 className="text-lg font-bold text-slate-800 mb-3 flex items-start gap-3">
                                             <span className="text-[#D59B2B] shrink-0 mt-0.5">Q.</span>
