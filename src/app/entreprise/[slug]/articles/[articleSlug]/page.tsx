@@ -76,34 +76,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const { article, expert } = data;
     const city = article.targetCity || expert.ville || "";
 
-    // Generate Dynamic and GEO-optimized Meta Title & Description
+    // Generate Dynamic and GEO-optimized Meta Title & Description with strong Acquisition intent
     let metaTitle = article.title;
     
-    // Normalize to check if title already has the keyword "climatisation" (or "clim") and the target city
-    const hasClim = /climatisation|clim/i.test(metaTitle);
+    // Ensure acquisition & local artisan keywords are present in Meta Title
+    const hasAcquisition = /installateur|artisan|devis|entreprise|société/i.test(metaTitle);
     const hasCity = city ? new RegExp(city, 'i').test(metaTitle) : true;
-    
-    if (city && (!hasClim || !hasCity)) {
-        if (!hasClim && !hasCity) {
-            metaTitle = `Climatisation à ${city} : ${article.title}`;
-        } else if (!hasClim) {
-            metaTitle = `Climatisation - ${article.title}`;
+
+    if (city && (!hasAcquisition || !hasCity)) {
+        if (!hasAcquisition && !hasCity) {
+            metaTitle = `Trouver un Installateur de Climatisation à ${city} : Devis & ${article.title}`;
+        } else if (!hasAcquisition) {
+            metaTitle = `Installateur Climatisation - ${article.title}`;
         } else if (!hasCity) {
-            metaTitle = `${article.title} (${city})`;
+            metaTitle = `${article.title} à ${city}`;
         }
     }
     
     // Add company name suffix
     metaTitle = `${metaTitle} - ${expert.nom_entreprise}`;
 
-    let metaDesc = article.metaDesc || article.introduction?.slice(0, 160) || "Article conseil de votre installateur de climatisation.";
+    let metaDesc = article.metaDesc || article.introduction?.slice(0, 160) || "Trouvez un installateur certifié RGE de climatisation gainable et pompe à chaleur au meilleur tarif.";
     
-    // Enhance description for Local SEO
+    // Enhance description for Local SEO & Artisan Acquisition
     if (city) {
-        const hasClimDesc = /climatisation|clim/i.test(metaDesc);
-        const hasCityDesc = new RegExp(city, 'i').test(metaDesc);
-        if (!hasClimDesc || !hasCityDesc) {
-            metaDesc = `Installation de climatisation à ${city}. ${metaDesc}`.slice(0, 160);
+        const hasAcquisitionDesc = /installateur|artisan|devis|rge|expert/i.test(metaDesc);
+        if (!hasAcquisitionDesc) {
+            metaDesc = `Trouvez un installateur certifié RGE à ${city}. Devis gratuit & étude thermique sur-mesure. ${metaDesc}`.slice(0, 160);
         }
     }
 
@@ -302,14 +301,14 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "author": [{
             "@type": "Organization",
             "name": expert.nom_entreprise,
-            "url": `https://gainable.fr/pro/${expert.slug}`
+            "url": `https://www.gainable.fr/pro/${expert.slug}`
         }],
         "publisher": {
             "@type": "Organization",
             "name": "Gainable.fr",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://gainable.fr/logo.png"
+                "url": "https://www.gainable.fr/logo.png"
             }
         },
         "description": article.metaDesc || article.introduction,
@@ -382,7 +381,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
 
                         {/* Social Share Buttons */}
                         <ShareButtons
-                            url={`https://gainable.fr/entreprise/${slug}/articles/${articleSlug}`}
+                            url={`https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}`}
                             title={article.title}
                         />
                     </div>

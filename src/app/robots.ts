@@ -12,6 +12,9 @@ export default function robots(): MetadataRoute.Robots {
                     '/dashboard',
                     '/api',
                     '/admin',
+                    '/_next/',
+                    '/*?dpl=*',
+                    '/*?*',
                 ],
             },
             {

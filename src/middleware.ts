@@ -40,13 +40,19 @@ export function middleware(request: NextRequest) {
         return new NextResponse(null, { status: 410, statusText: 'Gone' });
     }
 
-    // Handle root-level legacy city slugs as 410
+    // Handle root-level legacy city slugs with 301 redirect to new hub /climatisation/[city]
     const pathParts = pathname.split('/').filter(Boolean);
     if (pathParts.length === 1) {
         const slug = pathParts[0].toLowerCase();
         if (LEGACY_CITY_ROOTS.has(slug)) {
-            return new NextResponse(null, { status: 410, statusText: 'Gone' });
+            return NextResponse.redirect(new URL(`/climatisation/${slug}`, request.url), 301);
         }
+    }
+
+    // Redirect 301 trailing slashes to clean canonical non-trailing slash URL
+    if (pathname.length > 1 && pathname.endsWith('/')) {
+        const cleanPath = pathname.slice(0, -1);
+        return NextResponse.redirect(new URL(cleanPath + request.nextUrl.search, request.url), 301);
     }
 
     return NextResponse.next();
