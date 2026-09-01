@@ -493,7 +493,7 @@ export default function ProspecterCvcPage() {
                                     </div>
                                     <div className="flex-1 w-full relative bg-white">
                                         <iframe
-                                            src={`https://www.google.com/search?igu=1&q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}`}
+                                            src={`https://www.google.com/search?igu=1&gbv=1&hl=fr&gl=fr&q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}`}
                                             className="w-full h-full border-0"
                                             title={`Google Search - ${googleSearchCompany.nomEntreprise}`}
                                         />
@@ -585,7 +585,10 @@ export default function ProspecterCvcPage() {
                                                 <div className="grid grid-cols-2 gap-1.5">
                                                     <button
                                                         type="button"
-                                                        onClick={() => setCallOutcome(callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL")}
+                                                        onClick={() => {
+                                                            const newOutcome = callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL";
+                                                            setCallOutcome(newOutcome);
+                                                        }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                                         }`}
@@ -594,7 +597,10 @@ export default function ProspecterCvcPage() {
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
+                                                        onClick={() => {
+                                                            const newOutcome = callOutcome === "ABSENT" ? "" : "ABSENT";
+                                                            setCallOutcome(newOutcome);
+                                                        }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                                         }`}
@@ -603,7 +609,15 @@ export default function ProspecterCvcPage() {
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        onClick={() => setCallOutcome(callOutcome === "CALLBACK" ? "" : "CALLBACK")}
+                                                        onClick={() => {
+                                                            const newOutcome = callOutcome === "CALLBACK" ? "" : "CALLBACK";
+                                                            setCallOutcome(newOutcome);
+                                                            if (newOutcome && !dateRdv) {
+                                                                const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                                setDateRdv(tom.toISOString().split('T')[0]);
+                                                                if (!heureRdv) setHeureRdv("10:00");
+                                                            }
+                                                        }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                                         }`}
@@ -612,7 +626,15 @@ export default function ProspecterCvcPage() {
                                                     </button>
                                                     <button
                                                         type="button"
-                                                        onClick={() => setCallOutcome(callOutcome === "INTERESTED" ? "" : "INTERESTED")}
+                                                        onClick={() => {
+                                                            const newOutcome = callOutcome === "INTERESTED" ? "" : "INTERESTED";
+                                                            setCallOutcome(newOutcome);
+                                                            if (newOutcome && !dateRdv) {
+                                                                const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                                setDateRdv(tom.toISOString().split('T')[0]);
+                                                                if (!heureRdv) setHeureRdv("14:00");
+                                                            }
+                                                        }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                                         }`}
@@ -662,8 +684,8 @@ export default function ProspecterCvcPage() {
                                                 setSelectedCompany(googleSearchCompany);
                                                 handleConfirmAddProspect();
                                             }}
-                                            disabled={adding || !contactEmail}
-                                            className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs py-3.5 rounded-xl shadow-md transition-all"
+                                            disabled={adding}
+                                            className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
                                         >
                                             {adding ? <Loader2 className="h-4 w-4 animate-spin" /> : "⚡ Valider & Transférer au CRM Prospect"}
                                         </Button>
@@ -698,12 +720,11 @@ export default function ProspecterCvcPage() {
                             <div className="space-y-3">
                                 <div>
                                     <label className="text-xs font-bold uppercase text-slate-700 block mb-1">
-                                        Saisir l'e-mail qualifié du contact * :
+                                        E-mail du contact / Gérant (Optionnel) :
                                     </label>
                                     <input
                                         type="email"
-                                        required
-                                        placeholder="ex: contact@entreprise.fr"
+                                        placeholder="ex: contact@entreprise.fr (Optionnel)"
                                         value={contactEmail}
                                         onChange={(e) => setContactEmail(e.target.value)}
                                         className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
@@ -719,8 +740,69 @@ export default function ProspecterCvcPage() {
                                         placeholder="ex: 04 90..."
                                         value={editPhone}
                                         onChange={(e) => setEditPhone(e.target.value)}
-                                        className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                                     />
+                                </div>
+
+                                {/* Call Result Quick Selector */}
+                                <div className="space-y-1.5 pt-1 border-t border-slate-100">
+                                    <label className="text-[11px] font-extrabold text-slate-800 block">
+                                        Résultat de l'Appel Commercial (Cocher une option) :
+                                    </label>
+                                    <div className="grid grid-cols-2 gap-1.5">
+                                        <button
+                                            type="button"
+                                            onClick={() => setCallOutcome(callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL")}
+                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                            }`}
+                                        >
+                                            🎙️ Message vocal
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
+                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                            }`}
+                                        >
+                                            📵 Absent / Pas de rep.
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                const newOutcome = callOutcome === "CALLBACK" ? "" : "CALLBACK";
+                                                setCallOutcome(newOutcome);
+                                                if (newOutcome && !dateRdv) {
+                                                    const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                    setDateRdv(tom.toISOString().split('T')[0]);
+                                                    if (!heureRdv) setHeureRdv("10:00");
+                                                }
+                                            }}
+                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                            }`}
+                                        >
+                                            📞 Rappel tel.
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                const newOutcome = callOutcome === "INTERESTED" ? "" : "INTERESTED";
+                                                setCallOutcome(newOutcome);
+                                                if (newOutcome && !dateRdv) {
+                                                    const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                    setDateRdv(tom.toISOString().split('T')[0]);
+                                                    if (!heureRdv) setHeureRdv("14:00");
+                                                }
+                                            }}
+                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                            }`}
+                                        >
+                                            🤝 RDV / Intéressé
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 space-y-2">
@@ -761,8 +843,8 @@ export default function ProspecterCvcPage() {
                                 <Button
                                     type="button"
                                     onClick={handleConfirmAddProspect}
-                                    disabled={adding || !contactEmail}
-                                    className="w-1/2 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold"
+                                    disabled={adding}
+                                    className="w-1/2 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold cursor-pointer"
                                 >
                                     {adding ? <Loader2 className="h-4 w-4 animate-spin" /> : "Valider & Enregistrer"}
                                 </Button>
