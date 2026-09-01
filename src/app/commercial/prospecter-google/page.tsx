@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { 
     Search, MapPin, Building2, User, Phone, Globe, Star, 
@@ -11,6 +12,18 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const CityInteractiveMap = dynamic(
+    () => import("@/components/CityInteractiveMap"),
+    { 
+        ssr: false, 
+        loading: () => (
+            <div className="h-[450px] bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-500">
+                <Loader2 className="h-6 w-6 animate-spin text-blue-600 mr-2" /> Chargement de la carte interactive...
+            </div>
+        ) 
+    }
+);
+
 const POPULAR_CITIES = ["Lyon", "Marseille", "Miramas", "Nice", "Toulouse", "Bordeaux", "Paris", "Nantes", "Lille", "Strasbourg", "Montpellier"];
 
 export default function ProspecterGoogleLocalPage() {
@@ -20,6 +33,7 @@ export default function ProspecterGoogleLocalPage() {
     const [loadingCompanies, setLoadingCompanies] = useState(false);
     const [filterQuery, setFilterQuery] = useState("");
     const [sortBy, setSortBy] = useState<"RATING" | "REVIEWS" | "NAME">("RATING");
+    const [activeTab, setActiveTab] = useState<"MAP" | "GOOGLE">("MAP");
     
     // Express Form Fields
     const [companyName, setCompanyName] = useState("");
@@ -75,7 +89,7 @@ export default function ProspecterGoogleLocalPage() {
         setAddSuccess("");
         setAddError("");
 
-        // Scroll smoothly to form on mobile/desktop if needed
+        // Scroll smoothly to form
         const formElement = document.getElementById("express-crm-form");
         if (formElement) {
             formElement.scrollIntoView({ behavior: "smooth" });
@@ -191,7 +205,7 @@ export default function ProspecterGoogleLocalPage() {
                             📍 Prospection Google Local (Lieux) par Ville
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Sélectionnez n'importe quelle entreprise sur le plan ou dans la liste ci-dessous pour la pré-remplir et l'ajouter en 1 clic au CRM.
+                            Cliquez sur n'importe quel marqueur sur la carte ou dans la liste pour pré-remplir le formulaire et enregistrer en 1 clic.
                         </p>
                     </div>
 
@@ -260,44 +274,73 @@ export default function ProspecterGoogleLocalPage() {
                     </div>
                 </div>
 
-                {/* Split Screen Layout: Left = Google Maps + Listing with Ratings, Right = CRM Prospect Entry Form */}
+                {/* Split Screen Layout: Left = Interactive Map + Listing with Ratings, Right = CRM Prospect Entry Form */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    {/* LEFT SIDE: GOOGLE MAPS + REAL RATINGS COMPANY LISTING (7 cols) */}
+                    {/* LEFT SIDE: INTERACTIVE MAP & REAL RATINGS LISTING (7 cols) */}
                     <div className="lg:col-span-7 space-y-6">
                         
-                        {/* Google Maps Browser Frame */}
+                        {/* Map Container Header */}
                         <div className="bg-white border border-slate-300 rounded-2xl shadow-xl overflow-hidden flex flex-col space-y-0">
                             
-                            {/* Window Header */}
-                            <div className="bg-slate-200 border-b border-slate-300 p-3.5 flex items-center justify-between">
+                            {/* Window Header & Map Switcher */}
+                            <div className="bg-slate-200 border-b border-slate-300 p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                 <div className="flex items-center gap-2">
                                     <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Google Local Business Map ({city})</span>
+                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Carte Interactive CVC ({city})</span>
                                 </div>
 
-                                <a
-                                    href={googleLocalOfficialUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-sm"
-                                >
-                                    Ouvrir Google Local Lieux (Nouvel Onglet) <ExternalLink className="h-3.5 w-3.5" />
-                                </a>
+                                <div className="flex items-center gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTab("MAP")}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all border ${
+                                            activeTab === "MAP" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
+                                        }`}
+                                    >
+                                        📍 Carte Interactive Pins
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTab("GOOGLE")}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all border ${
+                                            activeTab === "GOOGLE" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
+                                        }`}
+                                    >
+                                        🌐 Vue Google Maps
+                                    </button>
+                                    <a
+                                        href={googleLocalOfficialUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-slate-800 hover:bg-slate-900 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-sm"
+                                    >
+                                        Google.com ➜
+                                    </a>
+                                </div>
                             </div>
 
-                            {/* Embedded Google Maps Embed (No Consent Block) */}
-                            <div className="w-full h-[450px] bg-slate-100 relative">
-                                <iframe
-                                    key={googleMapsEmbedUrl}
-                                    src={googleMapsEmbedUrl}
-                                    className="w-full h-full border-0"
-                                    title={`Google Maps Local - ${city}`}
-                                    loading="lazy"
+                            {/* Map View */}
+                            {activeTab === "MAP" ? (
+                                <CityInteractiveMap
+                                    cityName={city}
+                                    companies={displayedCompanies}
+                                    onSelectCompany={handleSelectCompanyToForm}
+                                    selectedCompanyId={selectedCompanyId}
                                 />
-                            </div>
+                            ) : (
+                                <div className="w-full h-[450px] bg-slate-100 relative">
+                                    <iframe
+                                        key={googleMapsEmbedUrl}
+                                        src={googleMapsEmbedUrl}
+                                        className="w-full h-full border-0"
+                                        title={`Google Maps Local - ${city}`}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            )}
                         </div>
 
                         {/* Local Companies Listing with Real Ratings & Review Count */}
@@ -462,7 +505,7 @@ export default function ProspecterGoogleLocalPage() {
                                 {companyName ? `Enregistrer "${companyName}"` : "Enregistrer l'entreprise au CRM"}
                             </h3>
                             <p className="text-xs text-slate-500 mt-1">
-                                Cliquez sur une entreprise dans la liste à gauche pour la pré-remplir automatiquement.
+                                Cliquez sur une entreprise sur la carte ou dans la liste pour pré-remplir automatiquement.
                             </p>
                         </div>
 
@@ -543,7 +586,7 @@ export default function ProspecterGoogleLocalPage() {
                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
                                     >
-                                        📵 Absent / Pas de rep.
+                                        断 Absent / Pas de rep.
                                     </button>
                                     <button
                                         type="button"
