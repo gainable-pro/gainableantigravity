@@ -69,7 +69,7 @@ export async function POST(req: Request) {
                 isCommercialLink: "true"
             },
             allow_promotion_codes: true,
-            success_url: `${baseUrl}/confirmation-devis?session_id={CHECKOUT_SESSION_ID}&prospect_id=${prospect.id}`,
+            success_url: `${baseUrl}/inscription/paiement/succes?session_id={CHECKOUT_SESSION_ID}&prospect_id=${prospect.id}`,
             cancel_url: `${baseUrl}/commercial/prospects/${prospect.id}?canceled=true`,
         });
 
