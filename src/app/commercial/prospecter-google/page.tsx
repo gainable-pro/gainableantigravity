@@ -29,6 +29,7 @@ export default function ProspecterGoogleLocalPage() {
     const [dateRdv, setDateRdv] = useState("");
     const [heureRdv, setHeureRdv] = useState("");
     const [noteRdv, setNoteRdv] = useState("");
+    const [callOutcome, setCallOutcome] = useState<"VOICEMAIL" | "ABSENT" | "CALLBACK" | "INTERESTED" | "REFUSED" | "">("");
     const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
     
     const [adding, setAdding] = useState(false);
@@ -92,6 +93,25 @@ export default function ProspecterGoogleLocalPage() {
         setAddError("");
         setAddSuccess("");
 
+        let computedStatus = "NON_CONTACTE";
+        let outcomeNote = "";
+        if (callOutcome === "VOICEMAIL") {
+            computedStatus = "CONTACTE";
+            outcomeNote = " [🎙️ Message vocal laissé]";
+        } else if (callOutcome === "ABSENT") {
+            computedStatus = "NON_CONTACTE";
+            outcomeNote = " [📵 Prospect absent / Pas de réponse]";
+        } else if (callOutcome === "CALLBACK") {
+            computedStatus = "INTERESSE";
+            outcomeNote = " [📞 Rappel téléphonique à prévoir]";
+        } else if (callOutcome === "INTERESTED") {
+            computedStatus = "INTERESSE";
+            outcomeNote = " [🤝 RDV fixé / Prospect très intéressé]";
+        } else if (callOutcome === "REFUSED") {
+            computedStatus = "REFUSE";
+            outcomeNote = " [❌ Non intéressé / Refus]";
+        }
+
         try {
             const res = await fetch("/api/commercial/prospects", {
                 method: "POST",
@@ -105,8 +125,8 @@ export default function ProspecterGoogleLocalPage() {
                     siret: "",
                     adresse: city,
                     siteWeb: website,
-                    status: "NON_CONTACTE",
-                    commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})`,
+                    status: computedStatus,
+                    commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})${outcomeNote}`,
                     dateRdv: dateRdv || null,
                     heureRdv: heureRdv || null,
                     noteRdv: noteRdv || null
@@ -122,6 +142,7 @@ export default function ProspecterGoogleLocalPage() {
                 setDateRdv("");
                 setHeureRdv("");
                 setNoteRdv("");
+                setCallOutcome("");
                 setSelectedCompanyId(null);
             } else {
                 const d = await res.json();
@@ -498,6 +519,51 @@ export default function ProspecterGoogleLocalPage() {
                                     onChange={(e) => setWebsite(e.target.value)}
                                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                                 />
+                            </div>
+
+                            {/* Call Result Quick Selector */}
+                            <div className="space-y-2 pt-1 border-t border-slate-100">
+                                <label className="text-xs font-extrabold text-slate-800 block">
+                                    Résultat de l'Appel Commercial (Cocher une option) :
+                                </label>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => setCallOutcome(callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL")}
+                                        className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
+                                            callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                        }`}
+                                    >
+                                        🎙️ Message vocal
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
+                                        className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
+                                            callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                        }`}
+                                    >
+                                        📵 Absent / Pas de rep.
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setCallOutcome(callOutcome === "CALLBACK" ? "" : "CALLBACK")}
+                                        className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
+                                            callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                        }`}
+                                    >
+                                        📞 Rappel tel.
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setCallOutcome(callOutcome === "INTERESTED" ? "" : "INTERESTED")}
+                                        className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
+                                            callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                        }`}
+                                    >
+                                        🤝 RDV / Intéressé
+                                    </button>
+                                </div>
                             </div>
 
                             {/* RDV & Reminder Fields */}

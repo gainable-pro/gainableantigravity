@@ -66,6 +66,7 @@ export default function ProspecterCvcPage() {
     const [dateRdv, setDateRdv] = useState("");
     const [heureRdv, setHeureRdv] = useState("");
     const [noteRdv, setNoteRdv] = useState("");
+    const [callOutcome, setCallOutcome] = useState<"VOICEMAIL" | "ABSENT" | "CALLBACK" | "INTERESTED" | "REFUSED" | "">("");
 
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
@@ -116,6 +117,25 @@ export default function ProspecterCvcPage() {
         setAddError("");
         setAddSuccess("");
 
+        let computedStatus = "NON_CONTACTE";
+        let outcomeNote = "";
+        if (callOutcome === "VOICEMAIL") {
+            computedStatus = "CONTACTE";
+            outcomeNote = " [🎙️ Message vocal laissé]";
+        } else if (callOutcome === "ABSENT") {
+            computedStatus = "NON_CONTACTE";
+            outcomeNote = " [📵 Prospect absent / Pas de réponse]";
+        } else if (callOutcome === "CALLBACK") {
+            computedStatus = "INTERESSE";
+            outcomeNote = " [📞 Rappel téléphonique à prévoir]";
+        } else if (callOutcome === "INTERESTED") {
+            computedStatus = "INTERESSE";
+            outcomeNote = " [🤝 RDV fixé / Prospect très intéressé]";
+        } else if (callOutcome === "REFUSED") {
+            computedStatus = "REFUSE";
+            outcomeNote = " [❌ Non intéressé / Refus]";
+        }
+
         try {
             const res = await fetch("/api/commercial/prospects", {
                 method: "POST",
@@ -129,8 +149,8 @@ export default function ProspecterCvcPage() {
                     siret: selectedCompany.siret || "",
                     adresse: `${selectedCompany.adresse || ''} ${selectedCompany.codePostal || ''} ${selectedCompany.ville || ''}`.trim(),
                     siteWeb: editWebsite || selectedCompany.siteWeb || "",
-                    status: "NON_CONTACTE",
-                    commentaire: `Prospect qualifié Moteur CVC Google Live - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}`,
+                    status: computedStatus,
+                    commentaire: `Prospect qualifié Moteur CVC Google Live - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}${outcomeNote}`,
                     dateRdv: dateRdv || null,
                     heureRdv: heureRdv || null,
                     noteRdv: noteRdv || null
@@ -146,6 +166,7 @@ export default function ProspecterCvcPage() {
                     setDateRdv("");
                     setHeureRdv("");
                     setNoteRdv("");
+                    setCallOutcome("");
                     setAddSuccess("");
                 }, 1800);
             } else {
@@ -554,6 +575,51 @@ export default function ProspecterCvcPage() {
                                                     onChange={(e) => setEditWebsite(e.target.value)}
                                                     className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
                                                 />
+                                            </div>
+
+                                            {/* Call Result Quick Selector */}
+                                            <div className="space-y-1.5 pt-1 border-t border-slate-100">
+                                                <label className="text-[11px] font-extrabold text-slate-800 block">
+                                                    Résultat de l'Appel Commercial (Cocher une option) :
+                                                </label>
+                                                <div className="grid grid-cols-2 gap-1.5">
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setCallOutcome(callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL")}
+                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                            callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                        }`}
+                                                    >
+                                                        🎙️ Message vocal
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
+                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                            callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                        }`}
+                                                    >
+                                                        📵 Absent / Pas de rep.
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setCallOutcome(callOutcome === "CALLBACK" ? "" : "CALLBACK")}
+                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                            callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                        }`}
+                                                    >
+                                                        📞 Rappel tel.
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => setCallOutcome(callOutcome === "INTERESTED" ? "" : "INTERESTED")}
+                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                            callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                        }`}
+                                                    >
+                                                        🤝 RDV / Intéressé
+                                                    </button>
+                                                </div>
                                             </div>
 
                                             {/* RDV & Reminder Fields */}
