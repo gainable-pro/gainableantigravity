@@ -573,7 +573,13 @@ export default function ProspecterGoogleLocalPage() {
                                 <div className="grid grid-cols-2 gap-2">
                                     <button
                                         type="button"
-                                        onClick={() => setCallOutcome(callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL")}
+                                        onClick={() => {
+                                            const newOutcome = callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL";
+                                            setCallOutcome(newOutcome);
+                                            setDateRdv("");
+                                            setHeureRdv("");
+                                            setNoteRdv("");
+                                        }}
                                         className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
                                             callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
@@ -582,7 +588,13 @@ export default function ProspecterGoogleLocalPage() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
+                                        onClick={() => {
+                                            const newOutcome = callOutcome === "ABSENT" ? "" : "ABSENT";
+                                            setCallOutcome(newOutcome);
+                                            setDateRdv("");
+                                            setHeureRdv("");
+                                            setNoteRdv("");
+                                        }}
                                         className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}

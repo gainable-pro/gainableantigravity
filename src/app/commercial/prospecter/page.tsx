@@ -488,14 +488,14 @@ export default function ProspecterCvcPage() {
                                     <div className="bg-slate-200 border-b border-slate-300 px-3 py-2 flex items-center justify-between text-xs font-mono text-slate-700 shrink-0">
                                         <div className="flex items-center gap-2 truncate">
                                             <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
-                                            <span className="truncate">https://www.google.com/search?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}</span>
+                                            <span className="truncate">https://maps.google.com/maps?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}</span>
                                         </div>
                                     </div>
                                     <div className="flex-1 w-full relative bg-white">
                                         <iframe
-                                            src={`https://www.google.com/search?igu=1&gbv=1&hl=fr&gl=fr&q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}`}
+                                            src={`https://maps.google.com/maps?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}&output=embed`}
                                             className="w-full h-full border-0"
-                                            title={`Google Search - ${googleSearchCompany.nomEntreprise}`}
+                                            title={`Google Maps Business Profile - ${googleSearchCompany.nomEntreprise}`}
                                         />
                                     </div>
                                 </div>
@@ -533,21 +533,16 @@ export default function ProspecterCvcPage() {
 
                                         {/* Real-Time Qualification Form */}
                                         <div className="space-y-3 pt-2">
-                                            <h4 className="font-extrabold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5 border-b pb-2">
-                                                <Edit3 className="h-4 w-4 text-[#D59B2B]" /> Compléter les Données & RDV
-                                            </h4>
-
                                             <div>
                                                 <label className="text-[11px] font-bold text-slate-700 block mb-1">
-                                                    E-mail du Contact / Gérant * :
+                                                    E-mail du Contact / Gérant (Optionnel) :
                                                 </label>
                                                 <input
                                                     type="email"
-                                                    required
-                                                    placeholder="contact@entreprise.fr"
+                                                    placeholder="ex: contact@entreprise.fr (Optionnel)"
                                                     value={contactEmail}
                                                     onChange={(e) => setContactEmail(e.target.value)}
-                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
                                                 />
                                             </div>
 
@@ -557,10 +552,10 @@ export default function ProspecterCvcPage() {
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    placeholder="ex: 04 90 58 00 00 ou 06..."
+                                                    placeholder="ex: 04 90... ou 06..."
                                                     value={editPhone}
                                                     onChange={(e) => setEditPhone(e.target.value)}
-                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                                                 />
                                             </div>
 
@@ -573,7 +568,7 @@ export default function ProspecterCvcPage() {
                                                     placeholder="ex: www.entreprise.fr"
                                                     value={editWebsite}
                                                     onChange={(e) => setEditWebsite(e.target.value)}
-                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
                                                 />
                                             </div>
 
@@ -588,6 +583,9 @@ export default function ProspecterCvcPage() {
                                                         onClick={() => {
                                                             const newOutcome = callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL";
                                                             setCallOutcome(newOutcome);
+                                                            setDateRdv("");
+                                                            setHeureRdv("");
+                                                            setNoteRdv("");
                                                         }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
@@ -600,6 +598,9 @@ export default function ProspecterCvcPage() {
                                                         onClick={() => {
                                                             const newOutcome = callOutcome === "ABSENT" ? "" : "ABSENT";
                                                             setCallOutcome(newOutcome);
+                                                            setDateRdv("");
+                                                            setHeureRdv("");
+                                                            setNoteRdv("");
                                                         }}
                                                         className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
                                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
