@@ -5,7 +5,6 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 // 2.1 Table users
@@ -340,4 +339,28 @@ model ScheduledPost {
   scheduledAt DateTime
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model CvcCompanyBase {
+  id            String   @id @default(cuid())
+  nomEntreprise String
+  nomGerant     String?
+  siret         String?
+  adresse       String?
+  codePostal    String?
+  ville         String?
+  departement   String?
+  region        String?
+  telephone     String?
+  siteWeb       String?
+  noteGoogle    Float?
+  nombreAvis    Int?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([region])
+  @@index([departement])
+  @@index([codePostal])
+  @@index([nomEntreprise])
 }

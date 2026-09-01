@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { 
     TrendingUp, 
     Users, 
@@ -83,9 +85,17 @@ export default function CommercialDashboard() {
 
     return (
         <div className="space-y-8">
-            <div>
-                <h1 className="text-2xl font-bold text-slate-900">Tableau de bord</h1>
-                <p className="text-slate-500 mt-1">Suivez vos performances et commissions en temps réel.</p>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h1 className="text-2xl font-bold text-slate-900">Tableau de bord</h1>
+                    <p className="text-slate-500 mt-1">Suivez vos performances et commissions en temps réel.</p>
+                </div>
+
+                <Link href="/commercial/prospecter">
+                    <Button className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold shadow-md gap-2">
+                        🗺️ Moteur de Prospection CVC
+                    </Button>
+                </Link>
             </div>
 
             {/* Daily Stats */}
