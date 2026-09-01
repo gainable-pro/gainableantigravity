@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
-import { prisma } from "@/lib/prisma"; // Shared instance
-// Remove local instantiation logic
+import { prisma } from "@/lib/prisma";
+import { findCommercialByCode } from "@/lib/commercial-codes";
 
 const CORS_HEADERS = {
     "Access-Control-Allow-Origin": "*",
@@ -16,10 +16,20 @@ export async function OPTIONS() {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { planId, expertId, email, interval } = body; // interval: 'yearly' | 'monthly'
+        const { planId, expertId, email, interval, promoCode, ref } = body; // interval: 'yearly' | 'monthly'
 
         // Basic validation
         if (!planId) return NextResponse.json({ error: "Missing planId" }, { status: 400 });
+
+        // Resolve commercial code if passed
+        const targetCode = promoCode || ref;
+        let commercialId: string | null = null;
+        if (targetCode) {
+            const commercial = await findCommercialByCode(targetCode);
+            if (commercial) {
+                commercialId = commercial.id;
+            }
+        }
 
         // Use Stripe catalog Price IDs (managed via Stripe Dashboard)
         let priceId = '';
@@ -55,8 +65,9 @@ export async function POST(req: NextRequest) {
             ],
             customer_email: email, // Pre-fill email if available
             metadata: {
-                expertId: expertId || "pending_creation", // If expert created before, pass ID. If not, handle differently.
-                // Based on user flow: Form -> DB (Pending) -> Payment. So expertId SHOULD be present.
+                expertId: expertId || "pending_creation",
+                commercialId: commercialId || "",
+                promoCode: targetCode || ""
             },
             allow_promotion_codes: true, // Enable promo codes
             automatic_tax: { enabled: true }, // Verify VAT/Tax location

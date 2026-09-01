@@ -56,7 +56,8 @@ export function SignUpForm() {
         codeApe: "",
         siret: "",
         tvaNumber: "",
-        pays: "France"
+        pays: "France",
+        promoCode: ""
     });
 
     // Multi-value States
@@ -86,10 +87,17 @@ export function SignUpForm() {
     const MARQUE_LIST = EXPERT_BRANDS.map(t => ({ id: t, label: t }));
     const CERT_LIST = EXPERT_CERTIFICATIONS.map(t => ({ id: t, label: t }));
 
-    // Scroll to form when plan selected
+    // Scroll to form when plan selected & check URL referral params
     useEffect(() => {
         if (selectedPlan && formRef.current) {
             formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (typeof window !== "undefined") {
+            const params = new URLSearchParams(window.location.search);
+            const refParam = params.get("ref") || params.get("promo");
+            if (refParam) {
+                setFormData(prev => ({ ...prev, promoCode: refParam.toUpperCase() }));
+            }
         }
     }, [selectedPlan]);
 
@@ -251,7 +259,8 @@ export function SignUpForm() {
                         planId: planMap,
                         interval: billingInterval, // New param
                         expertId: expertId,
-                        email: formData.email
+                        email: formData.email,
+                        promoCode: formData.promoCode
                     })
                 });
 
@@ -915,19 +924,38 @@ export function SignUpForm() {
                                             </div>
 
                                             <ul className="space-y-3">
-                                                <li className="flex gap-3 text-sm text-slate-300">
-                                                    <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
-                                                    <span>Pas de reconduction tacite masquée</span>
-                                                </li>
-                                                <li className="flex gap-3 text-sm text-slate-300">
-                                                    <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
-                                                    <span>Visibilité immédiate dès validation</span>
-                                                </li>
-                                                <li className="flex gap-3 text-sm text-slate-300">
-                                                    <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
-                                                    <span>Support technique inclus</span>
-                                                </li>
-                                            </ul>
+                                                 <li className="flex gap-3 text-sm text-slate-300">
+                                                     <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
+                                                     <span>Pas de reconduction tacite masquée</span>
+                                                 </li>
+                                                 <li className="flex gap-3 text-sm text-slate-300">
+                                                     <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
+                                                     <span>Visibilité immédiate dès validation</span>
+                                                 </li>
+                                                 <li className="flex gap-3 text-sm text-slate-300">
+                                                     <CheckCircle2 className="w-5 h-5 text-[#D59B2B] shrink-0" />
+                                                     <span>Support technique inclus</span>
+                                                 </li>
+                                             </ul>
+
+                                             {/* Code Partenaire Commercial */}
+                                             <div className="pt-4 border-t border-slate-700 space-y-2">
+                                                 <label className="text-xs text-slate-400 font-semibold block">Code Partenaire / Promo (Optionnel)</label>
+                                                 <div className="flex gap-2">
+                                                     <Input
+                                                         name="promoCode"
+                                                         placeholder="Ex: EVANS, EMY, JEAN..."
+                                                         value={formData.promoCode}
+                                                         onChange={(e) => setFormData(prev => ({ ...prev, promoCode: e.target.value.toUpperCase() }))}
+                                                         className="bg-slate-800 border-slate-600 text-white font-mono text-sm uppercase tracking-wider"
+                                                     />
+                                                 </div>
+                                                 {formData.promoCode && (
+                                                     <div className="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
+                                                         <CheckCircle2 className="w-3.5 h-3.5" /> Code partenaire appliqué ({formData.promoCode})
+                                                     </div>
+                                                 )}
+                                             </div>
 
                                             <div className="pt-6">
                                                 <Button
