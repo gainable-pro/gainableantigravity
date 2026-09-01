@@ -13,6 +13,7 @@ interface CvcCompany {
     id: string;
     nomEntreprise: string;
     nomGerant?: string;
+    siren?: string;
     siret?: string;
     adresse?: string;
     codePostal?: string;
@@ -20,26 +21,30 @@ interface CvcCompany {
     departement?: string;
     region?: string;
     telephone?: string;
+    email?: string;
     siteWeb?: string;
     noteGoogle?: number;
     nombreAvis?: number;
+    chiffreAffaires?: string;
+    accroche?: string;
 }
 
 const REGIONS_FRANCE = [
-    { code: "ALL", label: "Toutes les régions" },
-    { code: "Provence-Alpes-Côte d'Azur", label: "PACA (13, 06, 83, 84, 04, 05)" },
-    { code: "Auvergne-Rhône-Alpes", label: "Auvergne-Rhône-Alpes (69, 38, 74, 42, 63)" },
-    { code: "Île-de-France", label: "Île-de-France (75, 92, 93, 94, 77, 78)" },
-    { code: "Occitanie", label: "Occitanie (31, 34, 30, 66, 11)" },
-    { code: "Nouvelle-Aquitaine", label: "Nouvelle-Aquitaine (33, 64, 17, 86, 24)" },
-    { code: "Hauts-de-France", label: "Hauts-de-France (59, 62, 80, 60)" },
-    { code: "Grand Est", label: "Grand Est (67, 68, 54, 57, 51)" },
-    { code: "Bretagne", label: "Bretagne (35, 29, 56, 22)" },
-    { code: "Pays de la Loire", label: "Pays de la Loire (44, 49, 72, 85)" },
+    { code: "ALL", label: "Toutes les régions (13 843)" },
+    { code: "PROVENCE ALPES COTE D'AZUR", label: "PACA (13, 06, 83, 84, 04, 05)" },
+    { code: "AUVERGNE RHONE ALPES", label: "Auvergne-Rhône-Alpes (69, 38, 74, 42, 63)" },
+    { code: "ILE-DE-FRANCE", label: "Île-de-France (75, 92, 93, 94, 77, 78)" },
+    { code: "OCCITANIE", label: "Occitanie (31, 34, 30, 66, 11)" },
+    { code: "NOUVELLE AQUITAINE", label: "Nouvelle-Aquitaine (33, 64, 17, 86, 24)" },
+    { code: "HAUTS-DE-FRANCE", label: "Hauts-de-France (59, 62, 80, 60)" },
+    { code: "GRAND EST", label: "Grand Est (67, 68, 54, 57, 51)" },
+    { code: "BRETAGNE", label: "Bretagne (35, 29, 56, 22)" },
+    { code: "PAYS DE LA LOIRE", label: "Pays de la Loire (44, 49, 72, 85)" },
 ];
 
 export default function ProspecterCvcPage() {
     const [companies, setCompanies] = useState<CvcCompany[]>([]);
+    const [totalMatches, setTotalMatches] = useState(0);
     const [loading, setLoading] = useState(true);
     const [selectedRegion, setSelectedRegion] = useState("ALL");
     const [searchQuery, setSearchQuery] = useState("");
@@ -71,6 +76,7 @@ export default function ProspecterCvcPage() {
             const data = await res.json();
             if (res.ok) {
                 setCompanies(data.companies || []);
+                setTotalMatches(data.totalMatches || data.companies?.length || 0);
             }
         } catch (e) {
             console.error("Erreur lors de la récupération de la base CVC", e);
@@ -214,7 +220,7 @@ export default function ProspecterCvcPage() {
                 {/* Results Count Header */}
                 <div className="flex items-center justify-between text-xs text-slate-400 px-1">
                     <span>
-                        Résultats trouvés : <strong className="text-amber-400 font-mono text-sm">{companies.length}</strong> entreprise(s) CVC
+                        Résultats trouvés : <strong className="text-amber-400 font-mono text-sm">{totalMatches || companies.length}</strong> entreprise(s) CVC qualifiée(s) (Affichage des 100 meilleures)
                     </span>
                     <span className="flex items-center gap-1.5 text-slate-500">
                         <Layers className="h-3.5 w-3.5 text-blue-400" /> Données réenrichies : Societe.com & Google Business
@@ -300,7 +306,10 @@ export default function ProspecterCvcPage() {
                                     )}
 
                                     <button
-                                        onClick={() => setSelectedCompany(comp)}
+                                        onClick={() => {
+                                            setSelectedCompany(comp);
+                                            setContactEmail(comp.email || "");
+                                        }}
                                         className="w-full py-2.5 px-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-md shadow-amber-500/10"
                                     >
                                         <PlusCircle className="h-4 w-4" />
