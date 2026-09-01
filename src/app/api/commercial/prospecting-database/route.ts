@@ -59,6 +59,13 @@ export async function GET(req: Request) {
         );
     }
 
+    // Sort companies by Google ratings & review counts first so Google Local Companies match Map 100%!
+    filtered.sort((a, b) => {
+        const scoreA = (a.noteGoogle || 0) * 1000 + (a.nombreAvis || 0);
+        const scoreB = (b.noteGoogle || 0) * 1000 + (b.nombreAvis || 0);
+        return scoreB - scoreA;
+    });
+
     // Return top 100 matching results
     const results = filtered.slice(0, 100);
 

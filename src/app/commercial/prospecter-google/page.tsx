@@ -183,7 +183,9 @@ export default function ProspecterGoogleLocalPage() {
         })
         .sort((a: any, b: any) => {
             if (sortBy === "RATING") {
-                return (b.noteGoogle || 0) - (a.noteGoogle || 0);
+                const scoreA = (a.noteGoogle || 0) * 1000 + (a.nombreAvis || 0);
+                const scoreB = (b.noteGoogle || 0) * 1000 + (b.nombreAvis || 0);
+                return scoreB - scoreA;
             }
             if (sortBy === "REVIEWS") {
                 return (b.nombreAvis || 0) - (a.nombreAvis || 0);
@@ -526,12 +528,11 @@ export default function ProspecterGoogleLocalPage() {
 
                             <div>
                                 <label className="text-xs font-bold text-slate-700 block mb-1">
-                                    E-mail du Contact / Gérant * :
+                                    E-mail du Contact / Gérant (Optionnel) :
                                 </label>
                                 <input
                                     type="email"
-                                    required
-                                    placeholder="ex: contact@entreprise.fr"
+                                    placeholder="ex: contact@entreprise.fr (Optionnel)"
                                     value={contactEmail}
                                     onChange={(e) => setContactEmail(e.target.value)}
                                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
@@ -586,11 +587,19 @@ export default function ProspecterGoogleLocalPage() {
                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
                                     >
-                                        断 Absent / Pas de rep.
+                                        📵 Absent / Pas de rep.
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => setCallOutcome(callOutcome === "CALLBACK" ? "" : "CALLBACK")}
+                                        onClick={() => {
+                                            const newOutcome = callOutcome === "CALLBACK" ? "" : "CALLBACK";
+                                            setCallOutcome(newOutcome);
+                                            if (newOutcome && !dateRdv) {
+                                                const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                setDateRdv(tom.toISOString().split('T')[0]);
+                                                if (!heureRdv) setHeureRdv("10:00");
+                                            }
+                                        }}
                                         className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
                                             callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
@@ -599,7 +608,15 @@ export default function ProspecterGoogleLocalPage() {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => setCallOutcome(callOutcome === "INTERESTED" ? "" : "INTERESTED")}
+                                        onClick={() => {
+                                            const newOutcome = callOutcome === "INTERESTED" ? "" : "INTERESTED";
+                                            setCallOutcome(newOutcome);
+                                            if (newOutcome && !dateRdv) {
+                                                const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                setDateRdv(tom.toISOString().split('T')[0]);
+                                                if (!heureRdv) setHeureRdv("14:00");
+                                            }
+                                        }}
                                         className={`p-2.5 rounded-xl border text-xs font-bold flex items-center gap-1.5 transition-all ${
                                             callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
@@ -642,8 +659,8 @@ export default function ProspecterGoogleLocalPage() {
 
                             <Button
                                 type="submit"
-                                disabled={adding || !companyName || !contactEmail}
-                                className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-sm py-3.5 rounded-xl shadow-md transition-all"
+                                disabled={adding || !companyName}
+                                className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-sm py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
                             >
                                 {adding ? <Loader2 className="h-5 w-5 animate-spin" /> : "⚡ Enregistrer & Transférer au CRM Prospect"}
                             </Button>
