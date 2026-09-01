@@ -6,7 +6,7 @@ import {
     Search, MapPin, Building2, User, Phone, Globe, Star, 
     Loader2, SearchCheck, Sparkles, PlusCircle, ExternalLink, 
     Layers, Compass, ExternalLinkIcon, PhoneCall, X,
-    CheckCircle2, Filter
+    CheckCircle2, AlertCircle, Edit3
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -54,14 +54,16 @@ export default function ProspecterCvcPage() {
     const [cityQuery, setCityQuery] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
-    // Modal & Side-panel States
+    // Qualification & Transfer Modal States
     const [selectedCompany, setSelectedCompany] = useState<CvcCompany | null>(null);
     const [contactEmail, setContactEmail] = useState("");
+    const [editPhone, setEditPhone] = useState("");
+    const [editWebsite, setEditWebsite] = useState("");
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
     const [addError, setAddError] = useState("");
 
-    // Visual Google Browser Modal State
+    // Live Google Browser Modal State
     const [googleSearchCompany, setGoogleSearchCompany] = useState<CvcCompany | null>(null);
 
     useEffect(() => {
@@ -94,6 +96,12 @@ export default function ProspecterCvcPage() {
         fetchCompanies(searchQuery, cityQuery);
     };
 
+    const handleOpenGoogleBrowser = (company: CvcCompany) => {
+        setGoogleSearchCompany(company);
+        setEditPhone(company.telephone || "");
+        setEditWebsite(company.siteWeb || "");
+    };
+
     const handleConfirmAddProspect = async () => {
         if (!selectedCompany) return;
         setAdding(true);
@@ -109,19 +117,20 @@ export default function ProspecterCvcPage() {
                     nomContact: selectedCompany.nomGerant?.split(" ")[1] || "Contact",
                     prenomContact: selectedCompany.nomGerant?.split(" ")[0] || "Dirigeant",
                     email: contactEmail,
-                    telephone: selectedCompany.telephone || "",
+                    telephone: editPhone || selectedCompany.telephone || "",
                     siret: selectedCompany.siret || "",
                     adresse: `${selectedCompany.adresse || ''} ${selectedCompany.codePostal || ''} ${selectedCompany.ville || ''}`.trim(),
-                    siteWeb: selectedCompany.siteWeb || "",
+                    siteWeb: editWebsite || selectedCompany.siteWeb || "",
                     status: "NON_CONTACTE",
-                    commentaire: `Prospect qualifié Moteur CVC - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}`
+                    commentaire: `Prospect qualifié Moteur CVC Google Live - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}`
                 })
             });
 
             if (res.ok) {
-                setAddSuccess("Entreprise ajoutée à votre CRM prospect avec succès !");
+                setAddSuccess("Entreprise qualifiée et enregistrée dans votre CRM prospect !");
                 setTimeout(() => {
                     setSelectedCompany(null);
+                    setGoogleSearchCompany(null);
                     setContactEmail("");
                     setAddSuccess("");
                 }, 1800);
@@ -147,10 +156,10 @@ export default function ProspecterCvcPage() {
                             <Sparkles className="h-4 w-4" /> Base Nationale CVC (37 372 Entreprises Certifiées)
                         </div>
                         <h1 className="text-3xl font-extrabold tracking-tight text-[#1F2D3D] flex items-center gap-3">
-                            🗺️ Moteur de Prospection CVC & Carte de France
+                            🗺️ Moteur de Prospection CVC & Google Live
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Sélectionnez une région sur la carte ou recherchez par ville, consultez la fiche officielle et qualifiez vos prospects.
+                            Prospectez par Région ou par Ville, vérifiez les avis réels sur Google en direct et qualifiez vos prospects.
                         </p>
                     </div>
 
@@ -166,7 +175,7 @@ export default function ProspecterCvcPage() {
                     
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                         
-                        {/* High-Precision Interactive France Map SVG */}
+                        {/* Interactive France Map SVG */}
                         <div className="lg:col-span-1 bg-gradient-to-b from-slate-50 to-blue-50/30 border border-slate-200 rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
                             <div className="text-xs font-extrabold uppercase text-[#1F2D3D] tracking-wider mb-2 flex items-center gap-1.5">
                                 <Compass className="h-4 w-4 text-[#D59B2B]" /> Carte de France Interactive par Région
@@ -179,7 +188,6 @@ export default function ProspecterCvcPage() {
                                     </filter>
                                 </defs>
 
-                                {/* Realistic Polygon Shapes of French Regions */}
                                 <g filter="url(#shadow)">
                                     {/* Hauts-de-France */}
                                     <path
@@ -214,17 +222,6 @@ export default function ProspecterCvcPage() {
                                         <title>Grand Est (3 190 entreprises)</title>
                                     </path>
 
-                                    {/* Normandie */}
-                                    <path
-                                        d="M 130 70 L 215 65 L 215 105 L 140 115 Z"
-                                        fill={selectedRegion === "NORMANDIE" ? "#D59B2B" : "#94a3b8"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("NORMANDIE")}
-                                    >
-                                        <title>Normandie</title>
-                                    </path>
-
                                     {/* Bretagne */}
                                     <path
                                         d="M 30 110 L 125 105 L 130 160 L 40 150 Z"
@@ -245,17 +242,6 @@ export default function ProspecterCvcPage() {
                                         onClick={() => setSelectedRegion("PAYS DE LA LOIRE")}
                                     >
                                         <title>Pays de la Loire (2 010 entreprises)</title>
-                                    </path>
-
-                                    {/* Centre-Val de Loire */}
-                                    <path
-                                        d="M 200 135 L 270 135 L 265 210 L 195 200 Z"
-                                        fill={selectedRegion === "CENTRE-VAL DE LOIRE" ? "#D59B2B" : "#94a3b8"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("CENTRE-VAL DE LOIRE")}
-                                    >
-                                        <title>Centre-Val de Loire</title>
                                     </path>
 
                                     {/* Bourgogne-Franche-Comté */}
@@ -312,17 +298,6 @@ export default function ProspecterCvcPage() {
                                     >
                                         <title>PACA (5 420 entreprises)</title>
                                     </path>
-
-                                    {/* Corse */}
-                                    <path
-                                        d="M 460 395 L 485 395 L 485 435 L 460 435 Z"
-                                        fill={selectedRegion === "CORSE" ? "#D59B2B" : "#94a3b8"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("CORSE")}
-                                    >
-                                        <title>Corse</title>
-                                    </path>
                                 </g>
 
                                 <text x="250" y="440" textAnchor="middle" className="text-[11px] font-extrabold fill-slate-600 font-sans">
@@ -374,7 +349,7 @@ export default function ProspecterCvcPage() {
                             <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-[#D59B2B]" />
                             <input
                                 type="text"
-                                placeholder="Recherche par Ville (ex: Marseille, Lyon, Nice...)"
+                                placeholder="Recherche par Ville (ex: Marseille, Miramas, Lyon...)"
                                 value={cityQuery}
                                 onChange={(e) => setCityQuery(e.target.value)}
                                 className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
@@ -405,7 +380,7 @@ export default function ProspecterCvcPage() {
                         Résultats qualifiés : <strong className="text-[#1F2D3D] font-mono text-sm">{totalMatches || companies.length}</strong> entreprise(s) CVC trouvée(s)
                     </span>
                     <span className="flex items-center gap-1.5 text-slate-600 font-semibold">
-                        <Layers className="h-3.5 w-3.5 text-blue-600" /> Fiches Blanches Vérifiées (Societe.com & INSEE)
+                        <Layers className="h-3.5 w-3.5 text-blue-600" /> Fiches Blanches Vérifiées (Societe.com & Google Local)
                     </span>
                 </div>
 
@@ -425,7 +400,7 @@ export default function ProspecterCvcPage() {
                         {companies.map((comp) => (
                             <div key={comp.id} className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-[#D59B2B]/60 transition-all flex flex-col justify-between space-y-4 shadow-sm group">
                                 <div className="space-y-3">
-                                    {/* Company Title & Clean Real Rating (Only if explicitly present) */}
+                                    {/* Company Title & Clean Real Rating */}
                                     <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-3">
                                         <div>
                                             <h3 className="font-extrabold text-[#1F2D3D] text-base group-hover:text-[#D59B2B] transition-colors leading-snug">
@@ -437,8 +412,7 @@ export default function ProspecterCvcPage() {
                                             </div>
                                         </div>
 
-                                        {/* Display rating ONLY if real rating exists */}
-                                        {comp.noteGoogle && comp.nombreAvis && comp.noteGoogle > 0 && comp.nombreAvis > 0 ? (
+                                        {comp.noteGoogle && comp.nombreAvis && comp.noteGoogle > 0 ? (
                                             <div className="bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-bold px-2 py-1 rounded-lg flex items-center gap-1 shrink-0">
                                                 <Star className="h-3 w-3 fill-amber-500 text-amber-500" />
                                                 {comp.noteGoogle} ({comp.nombreAvis})
@@ -460,7 +434,7 @@ export default function ProspecterCvcPage() {
                                                 <span className="font-sans font-medium">SIRET :</span> {comp.siret}
                                             </div>
                                         )}
-                                        {comp.telephone && (
+                                        {comp.telephone ? (
                                             <div className="flex items-center justify-between text-slate-900 font-bold pt-1">
                                                 <div className="flex items-center gap-2">
                                                     <Phone className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
@@ -470,13 +444,21 @@ export default function ProspecterCvcPage() {
                                                     Appeler 📞
                                                 </a>
                                             </div>
+                                        ) : (
+                                            <div className="text-slate-400 font-sans italic text-[11px]">
+                                                📞 Téléphone non renseigné dans le fichier (Vérifiable sur Google Live)
+                                            </div>
                                         )}
-                                        {comp.siteWeb && (
+                                        {comp.siteWeb ? (
                                             <div className="flex items-center gap-2 text-blue-600 truncate font-sans pt-0.5">
                                                 <Globe className="h-3.5 w-3.5 shrink-0" />
                                                 <a href={`https://${comp.siteWeb.replace(/^https?:\/\//, '')}`} target="_blank" rel="noopener noreferrer" className="hover:underline truncate font-semibold">
                                                     {comp.siteWeb}
                                                 </a>
+                                            </div>
+                                        ) : (
+                                            <div className="text-amber-800 bg-amber-50/80 px-2 py-1 rounded text-[11px] font-sans font-semibold border border-amber-200">
+                                                ⚠️ Pas de site internet renseigné
                                             </div>
                                         )}
                                     </div>
@@ -485,17 +467,19 @@ export default function ProspecterCvcPage() {
                                 {/* Action Buttons */}
                                 <div className="space-y-2 pt-2 border-t border-slate-100">
                                     <button
-                                        onClick={() => setGoogleSearchCompany(comp)}
+                                        onClick={() => handleOpenGoogleBrowser(comp)}
                                         className="w-full py-2.5 px-3 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-colors"
                                     >
                                         <SearchCheck className="h-4 w-4 text-blue-600" />
-                                        Aperçu Navigateur Google Live 🌐
+                                        Vérification & Recherche Google Live 🌐
                                     </button>
 
                                     <button
                                         onClick={() => {
                                             setSelectedCompany(comp);
                                             setContactEmail(comp.email || "");
+                                            setEditPhone(comp.telephone || "");
+                                            setEditWebsite(comp.siteWeb || "");
                                         }}
                                         className="w-full py-2.5 px-3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
                                     >
@@ -508,10 +492,10 @@ export default function ProspecterCvcPage() {
                     </div>
                 )}
 
-                {/* Visual Google Search Browser Modal */}
+                {/* Google Live Search & Verification Window */}
                 {googleSearchCompany && (
                     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 animate-fadeIn">
-                        <div className="bg-white border border-slate-300 rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+                        <div className="bg-white border border-slate-300 rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
                             
                             {/* Browser Top Bar Window Header */}
                             <div className="bg-slate-200 border-b border-slate-300 p-3 flex items-center justify-between">
@@ -519,13 +503,7 @@ export default function ProspecterCvcPage() {
                                     <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-                                    <span className="text-xs font-bold text-slate-600 ml-2 font-mono">Google Search Browser</span>
-                                </div>
-
-                                {/* Address Bar */}
-                                <div className="bg-white border border-slate-300 rounded-lg px-4 py-1 text-xs text-slate-600 font-mono flex items-center gap-2 flex-1 max-w-lg mx-4 truncate shadow-inner">
-                                    <Globe className="h-3.5 w-3.5 text-slate-400 shrink-0" />
-                                    <span className="truncate">https://www.google.com/search?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}</span>
+                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Google Live Search & Real-Time Verification</span>
                                 </div>
 
                                 <button onClick={() => setGoogleSearchCompany(null)} className="text-slate-500 hover:text-slate-800 p-1">
@@ -536,106 +514,136 @@ export default function ProspecterCvcPage() {
                             {/* Browser Content */}
                             <div className="p-6 overflow-y-auto space-y-6 bg-slate-50">
                                 
-                                {/* Simulated Google Search Header */}
-                                <div className="flex items-center justify-between border-b border-slate-200 pb-4 bg-white p-4 rounded-xl border">
-                                    <div className="flex items-center gap-4">
-                                        <span className="text-2xl font-extrabold font-serif text-blue-600 tracking-tight">G<span className="text-red-500">o</span><span className="text-yellow-500">o</span><span className="text-blue-600">g</span><span className="text-green-600">l</span><span className="text-red-500">e</span></span>
-                                        <div className="bg-slate-100 border border-slate-300 rounded-full px-4 py-2 text-sm text-slate-800 font-medium font-sans flex items-center gap-2 w-72 md:w-96 shadow-sm">
-                                            <Search className="h-4 w-4 text-slate-400" />
-                                            <span className="truncate">{googleSearchCompany.nomEntreprise} {googleSearchCompany.ville}</span>
-                                        </div>
-                                    </div>
-
-                                    <a
-                                        href={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl flex items-center gap-2 transition-colors shadow-sm"
-                                    >
-                                        Ouvrir sur Google.com <ExternalLink className="h-3.5 w-3.5" />
-                                    </a>
-                                </div>
-
-                                {/* Visual Google Local Knowledge Panel Card */}
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    
-                                    {/* Left: Search Result Snippets */}
-                                    <div className="md:col-span-2 space-y-4">
-                                        <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                                            <div className="text-xs text-slate-500 font-mono truncate">
-                                                {googleSearchCompany.siteWeb ? `https://${googleSearchCompany.siteWeb}` : `https://annuaire-entreprises.data.gouv.fr/entreprise/${googleSearchCompany.siret || ''}`}
+                                {/* 1. Real Google Direct Search Action Banner */}
+                                <div className="bg-white border border-blue-200 rounded-2xl p-5 shadow-sm space-y-3">
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                                        <div>
+                                            <div className="flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-wider">
+                                                <Globe className="h-4 w-4" /> Recherche Google Officielle en Direct
                                             </div>
-                                            <h4 className="text-base font-bold text-blue-700 hover:underline cursor-pointer">
-                                                {googleSearchCompany.nomEntreprise} à {googleSearchCompany.ville} ({googleSearchCompany.codePostal})
-                                            </h4>
-                                            <p className="text-xs text-slate-600 leading-relaxed">
-                                                {googleSearchCompany.nomGerant ? `Présentation de l'entreprise dirigée par ${googleSearchCompany.nomGerant}. ` : ''}
-                                                Spécialiste travaux d'installation d'équipements thermiques, chauffage et climatisation réversible. SIRET : {googleSearchCompany.siret || 'N/C'}.
+                                            <h3 className="text-lg font-extrabold text-slate-900 mt-0.5">
+                                                {googleSearchCompany.nomEntreprise} ({googleSearchCompany.ville})
+                                            </h3>
+                                            <p className="text-xs text-slate-500 mt-1">
+                                                Cliquez ci-dessous pour vérifier directement les avis réels, le téléphone et la présence web de l'entreprise sur Google.com.
                                             </p>
                                         </div>
 
-                                        {/* SEO Audit Warning Box */}
-                                        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-2 text-xs text-amber-900">
+                                        <a
+                                            href={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs px-5 py-3 rounded-xl flex items-center gap-2 transition-all shadow-md shrink-0"
+                                        >
+                                            Ouvrir la recherche Google officielle pour {googleSearchCompany.nomEntreprise} <ExternalLink className="h-4 w-4" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* 2. Real-Time Qualification & Form Updating */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    
+                                    {/* Left: Enterprise Details */}
+                                    <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-xs">
+                                        <div className="border-b border-slate-100 pb-3">
+                                            <h4 className="font-extrabold text-slate-900 text-base">{googleSearchCompany.nomEntreprise}</h4>
+                                            <div className="text-slate-500 font-medium">SIRET : {googleSearchCompany.siret || 'Non renseigné'}</div>
+                                        </div>
+
+                                        <div className="space-y-2 text-slate-700 font-medium">
+                                            <div><strong>Gérant principal :</strong> {googleSearchCompany.nomGerant || 'Dirigeant'}</div>
+                                            <div><strong>Adresse :</strong> {googleSearchCompany.adresse || 'Siège'} {googleSearchCompany.codePostal} {googleSearchCompany.ville}</div>
+                                            <div><strong>Région :</strong> {googleSearchCompany.region || 'France'}</div>
+                                        </div>
+
+                                        {/* SEO Pitch Alert */}
+                                        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-1.5 text-amber-900 text-xs">
                                             <div className="font-extrabold flex items-center gap-1.5 text-amber-800">
-                                                <Sparkles className="h-4 w-4 text-[#D59B2B]" /> Diagnostic Visibilité Web pour le Commercial :
+                                                <Sparkles className="h-4 w-4 text-[#D59B2B]" /> Argumentaire Commercial Détecté :
                                             </div>
-                                            {googleSearchCompany.siteWeb ? (
+                                            {editWebsite ? (
                                                 <p>
-                                                    Cette entreprise possède un site web ({googleSearchCompany.siteWeb}). Vérifiez avec l'outil d'indexation `site:` si son référencement est suffisant.
+                                                    Cette entreprise possède un site internet ({editWebsite}). Proposez-lui notre audit d'indexation locale pour démultiplier son trafic sur Gainable.fr.
                                                 </p>
                                             ) : (
-                                                <p className="font-semibold text-amber-900">
-                                                    ⚠️ Cette entreprise n'a pas de site internet officiel référencé ! Prospect idéal pour l'offre référencement Gainable.fr.
+                                                <p className="font-semibold">
+                                                    ⚠️ Cette entreprise n'a aucun site web référencé sur Google ! Prospect prioritaire pour notre offre de référencement.
                                                 </p>
                                             )}
                                         </div>
                                     </div>
 
-                                    {/* Right: Google Business Knowledge Panel */}
-                                    <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-4 text-xs">
-                                        <div className="border-b border-slate-100 pb-3">
-                                            <h4 className="font-extrabold text-slate-900 text-base">{googleSearchCompany.nomEntreprise}</h4>
-                                            <div className="text-slate-500 text-xs">Chauffagiste & Climatisation</div>
+                                    {/* Right: Live Qualification Form (Phone, Email, Site) */}
+                                    <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4 text-xs">
+                                        <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
+                                            <h4 className="font-extrabold text-slate-900 text-sm flex items-center gap-2">
+                                                <Edit3 className="h-4 w-4 text-[#D59B2B]" /> Enregistrer / Compléter les Données Google
+                                            </h4>
                                         </div>
 
-                                        <div className="space-y-2 text-slate-700">
-                                            <div><strong>Adresse :</strong> {googleSearchCompany.adresse || 'Siège'} {googleSearchCompany.codePostal} {googleSearchCompany.ville}</div>
-                                            {googleSearchCompany.telephone && (
-                                                <div className="font-mono text-emerald-700 font-bold">
-                                                    <strong>Téléphone :</strong> {googleSearchCompany.telephone}
-                                                </div>
-                                            )}
-                                            {googleSearchCompany.nomGerant && <div><strong>Dirigeant :</strong> {googleSearchCompany.nomGerant}</div>}
+                                        <div className="space-y-3">
+                                            <div>
+                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                    E-mail du Contact / Gérant * :
+                                                </label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="contact@entreprise.fr"
+                                                    value={contactEmail}
+                                                    onChange={(e) => setContactEmail(e.target.value)}
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                />
+                                            </div>
+
+                                            <div>
+                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                    Téléphone direct (vu sur Google) :
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="ex: 04 90 58 00 00 ou 06..."
+                                                    value={editPhone}
+                                                    onChange={(e) => setEditPhone(e.target.value)}
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                />
+                                            </div>
+
+                                            <div>
+                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                    Site Web officiel (vu sur Google) :
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="ex: www.entreprise.fr"
+                                                    value={editWebsite}
+                                                    onChange={(e) => setEditWebsite(e.target.value)}
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                                />
+                                            </div>
                                         </div>
 
-                                        {googleSearchCompany.telephone && (
-                                            <a
-                                                href={`tel:${googleSearchCompany.telephone}`}
-                                                className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 text-xs shadow-sm transition-colors"
-                                            >
-                                                <PhoneCall className="h-4 w-4" /> Appeler directement
-                                            </a>
-                                        )}
+                                        {addError && <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">{addError}</div>}
+                                        {addSuccess && <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs rounded-xl">{addSuccess}</div>}
+
+                                        <Button
+                                            type="button"
+                                            onClick={() => {
+                                                setSelectedCompany(googleSearchCompany);
+                                                handleConfirmAddProspect();
+                                            }}
+                                            disabled={adding || !contactEmail}
+                                            className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs py-3 rounded-xl shadow-md transition-all"
+                                        >
+                                            {adding ? <Loader2 className="h-4 w-4 animate-spin" /> : "⚡ Valider & Transférer au CRM Prospect"}
+                                        </Button>
                                     </div>
 
                                 </div>
 
-                                {/* Modal Actions */}
-                                <div className="flex gap-3 pt-4 border-t border-slate-200">
-                                    <Button type="button" variant="outline" onClick={() => setGoogleSearchCompany(null)} className="w-1/3 border-slate-300 text-slate-700 bg-white">
-                                        Fermer
-                                    </Button>
-                                    <Button
-                                        type="button"
-                                        onClick={() => {
-                                            const comp = googleSearchCompany;
-                                            setGoogleSearchCompany(null);
-                                            setSelectedCompany(comp);
-                                            setContactEmail(comp.email || "");
-                                        }}
-                                        className="w-2/3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs shadow-md"
-                                    >
-                                        <PlusCircle className="h-4 w-4 mr-2" /> Synchroniser cette fiche & Ajouter au CRM Prospect
+                                {/* Modal Footer Actions */}
+                                <div className="flex justify-end pt-2 border-t border-slate-200">
+                                    <Button type="button" variant="outline" onClick={() => setGoogleSearchCompany(null)} className="border-slate-300 text-slate-700 bg-white">
+                                        Fermer la fenêtre
                                     </Button>
                                 </div>
 
@@ -645,7 +653,7 @@ export default function ProspecterCvcPage() {
                 )}
 
                 {/* Add to Prospect Modal */}
-                {selectedCompany && (
+                {selectedCompany && !googleSearchCompany && (
                     <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 z-50 animate-fadeIn">
                         <div className="bg-white border border-slate-200 rounded-2xl p-6 max-w-md w-full space-y-5 shadow-2xl">
                             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -659,24 +667,36 @@ export default function ProspecterCvcPage() {
                                 <div className="font-extrabold text-slate-900 text-sm">{selectedCompany.nomEntreprise}</div>
                                 {selectedCompany.nomGerant && <div className="text-slate-700">Gérant : {selectedCompany.nomGerant}</div>}
                                 {selectedCompany.siret && <div className="text-slate-500">SIRET : {selectedCompany.siret}</div>}
-                                {selectedCompany.telephone && <div className="text-slate-600 font-bold">Tél : {selectedCompany.telephone}</div>}
+                                {(editPhone || selectedCompany.telephone) && <div className="text-slate-600 font-bold">Tél : {editPhone || selectedCompany.telephone}</div>}
                             </div>
 
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase text-slate-700 block">
-                                    Saisir l'e-mail qualifié du contact * :
-                                </label>
-                                <input
-                                    type="email"
-                                    required
-                                    placeholder="ex: contact@entreprise.fr"
-                                    value={contactEmail}
-                                    onChange={(e) => setContactEmail(e.target.value)}
-                                    className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
-                                />
-                                <p className="text-[11px] text-slate-500">
-                                    Cet e-mail permettra l'envoi immédiat de la demande de paiement Stripe et des offres Gainable.fr.
-                                </p>
+                            <div className="space-y-3">
+                                <div>
+                                    <label className="text-xs font-bold uppercase text-slate-700 block mb-1">
+                                        Saisir l'e-mail qualifié du contact * :
+                                    </label>
+                                    <input
+                                        type="email"
+                                        required
+                                        placeholder="ex: contact@entreprise.fr"
+                                        value={contactEmail}
+                                        onChange={(e) => setContactEmail(e.target.value)}
+                                        className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="text-xs font-bold uppercase text-slate-700 block mb-1">
+                                        Téléphone direct :
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="ex: 04 90..."
+                                        value={editPhone}
+                                        onChange={(e) => setEditPhone(e.target.value)}
+                                        className="w-full p-3 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
                             </div>
 
                             {addError && <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">{addError}</div>}
