@@ -25,17 +25,36 @@ export async function sendEmail({
     const resend = new Resend(resendApiKey);
 
     try {
-        const data = await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL || 'Gainable.fr <noreply@gainable.ch>',
+        const primaryFrom = process.env.RESEND_FROM_EMAIL || 'Gainable.fr <contact@gainable.fr>';
+        const result = await resend.emails.send({
+            from: primaryFrom,
             to,
             subject,
             html,
             text
         });
-        return { success: true, data };
-    } catch (error) {
-        console.error("Resend Error:", error);
-        return { success: false, error };
+
+        if (result.error) {
+            console.error("Resend Primary Email Error:", result.error);
+            // Fallback attempt with noreply@gainable.fr
+            const fallbackResult = await resend.emails.send({
+                from: 'Gainable.fr <noreply@gainable.fr>',
+                to,
+                subject,
+                html,
+                text
+            });
+            if (fallbackResult.error) {
+                console.error("Resend Fallback Email Error:", fallbackResult.error);
+                return { success: false, error: result.error.message || JSON.stringify(result.error) };
+            }
+            return { success: true, data: fallbackResult.data };
+        }
+
+        return { success: true, data: result.data };
+    } catch (error: any) {
+        console.error("Resend Exception:", error);
+        return { success: false, error: error?.message || String(error) };
     }
 }
 

@@ -17,6 +17,7 @@ export default function EditProspect() {
     const [generatingLink, setGeneratingLink] = useState(false);
     const [paymentLink, setPaymentLink] = useState("");
     const [emailSentStatus, setEmailSentStatus] = useState<boolean | null>(null);
+    const [emailErrorDetails, setEmailErrorDetails] = useState("");
     const [copiedLink, setCopiedLink] = useState(false);
 
     const handleGeneratePaymentLink = async () => {
@@ -25,6 +26,7 @@ export default function EditProspect() {
         setSuccess("");
         setPaymentLink("");
         setEmailSentStatus(null);
+        setEmailErrorDetails("");
 
         try {
             const planId = basePrice === 850 ? "cvc" : "diag";
@@ -42,6 +44,9 @@ export default function EditProspect() {
             if (res.ok && data.url) {
                 setPaymentLink(data.url);
                 setEmailSentStatus(data.emailSent);
+                if (!data.emailSent && data.emailError) {
+                    setEmailErrorDetails(typeof data.emailError === "string" ? data.emailError : JSON.stringify(data.emailError));
+                }
                 setSuccess("Lien de paiement Stripe généré avec succès !");
             } else {
                 setError(data.message || "Erreur lors de la génération du lien Stripe");
@@ -387,7 +392,11 @@ export default function EditProspect() {
                                 <div className="bg-slate-950 border border-blue-500/50 rounded-xl p-3 space-y-2 mt-3 animate-fadeIn">
                                     <div className="flex items-center justify-between text-xs text-emerald-400 font-bold">
                                         <span>✓ Lien Stripe prêt !</span>
-                                        {emailSentStatus && <span className="text-[10px] bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700">E-mail envoyé ✉️</span>}
+                                        {emailSentStatus ? (
+                                            <span className="text-[10px] bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700">E-mail envoyé ✉️</span>
+                                        ) : emailErrorDetails ? (
+                                            <span className="text-[10px] bg-amber-950 text-amber-300 px-2 py-0.5 rounded border border-amber-800" title={emailErrorDetails}>E-mail non envoyé (Transmettre le lien ci-dessous)</span>
+                                        ) : null}
                                     </div>
                                     <input 
                                         type="text" 

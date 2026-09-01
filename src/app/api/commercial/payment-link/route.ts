@@ -66,6 +66,7 @@ export async function POST(req: Request) {
         });
 
         let emailSent = false;
+        let emailError: any = undefined;
         if (prospect.email) {
             const emailRes = await sendEmail({
                 to: prospect.email,
@@ -103,12 +104,16 @@ export async function POST(req: Request) {
                 `
             });
             emailSent = emailRes.success;
+            if (!emailRes.success) {
+                emailError = emailRes.error;
+            }
         }
 
         return NextResponse.json({
             success: true,
             url: session.url,
-            emailSent
+            emailSent,
+            emailError
         });
 
     } catch (error: any) {
