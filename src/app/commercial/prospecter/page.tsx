@@ -9,6 +9,7 @@ import {
     CheckCircle2, AlertCircle, Edit3
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import franceRegionsData from "@/data/france_svg_regions.json";
 
 interface CvcCompany {
     id: string;
@@ -53,6 +54,9 @@ export default function ProspecterCvcPage() {
     const [selectedRegion, setSelectedRegion] = useState("ALL");
     const [cityQuery, setCityQuery] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
+
+    // Hover state for interactive map tooltip
+    const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
 
     // Qualification & Transfer Modal States
     const [selectedCompany, setSelectedCompany] = useState<CvcCompany | null>(null);
@@ -156,10 +160,10 @@ export default function ProspecterCvcPage() {
                             <Sparkles className="h-4 w-4" /> Base Nationale CVC (37 372 Entreprises Certifiées)
                         </div>
                         <h1 className="text-3xl font-extrabold tracking-tight text-[#1F2D3D] flex items-center gap-3">
-                            🗺️ Moteur de Prospection CVC & Google Live
+                            🗺️ Moteur de Prospection CVC & Carte Officielle de France
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Prospectez par Région ou par Ville, vérifiez les avis réels sur Google en direct et qualifiez vos prospects.
+                            Cliquez sur n'importe quelle région de la véritable carte de France ci-dessous pour filtrer les 37 372 entreprises CVC.
                         </p>
                     </div>
 
@@ -170,143 +174,56 @@ export default function ProspecterCvcPage() {
                     </Link>
                 </div>
 
-                {/* Interactive Real France Map & Regional Selector Card */}
+                {/* OFFICIAL REAL GEOGRAPHICAL FRANCE MAP (IGN / DATAGOUV DATA) */}
                 <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
                     
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                         
-                        {/* Interactive France Map SVG */}
-                        <div className="lg:col-span-1 bg-gradient-to-b from-slate-50 to-blue-50/30 border border-slate-200 rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-inner">
-                            <div className="text-xs font-extrabold uppercase text-[#1F2D3D] tracking-wider mb-2 flex items-center gap-1.5">
-                                <Compass className="h-4 w-4 text-[#D59B2B]" /> Carte de France Interactive par Région
+                        {/* 100% REAL Vector France Map SVG */}
+                        <div className="lg:col-span-1 bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-inner min-h-[300px]">
+                            <div className="text-xs font-extrabold uppercase text-[#1F2D3D] tracking-wider mb-1 flex items-center gap-1.5">
+                                <Compass className="h-4 w-4 text-[#D59B2B]" /> Carte Géographique Officielle de France
+                            </div>
+                            <div className="text-[11px] text-slate-500 mb-2">
+                                Contour réel des 13 régions métropolitaines
                             </div>
                             
-                            <svg viewBox="0 0 500 450" className="w-full h-56 drop-shadow-md">
+                            <svg viewBox="0 0 500 480" className="w-full h-64 drop-shadow-md">
                                 <defs>
-                                    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
-                                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15"/>
+                                    <filter id="regionGlow" x="-10%" y="-10%" width="120%" height="120%">
+                                        <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.12"/>
                                     </filter>
                                 </defs>
 
-                                <g filter="url(#shadow)">
-                                    {/* Hauts-de-France */}
-                                    <path
-                                        d="M 230 40 L 290 30 L 295 85 L 260 100 L 220 90 Z"
-                                        fill={selectedRegion === "HAUTS-DE-FRANCE" ? "#D59B2B" : "#94a3b8"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("HAUTS-DE-FRANCE")}
-                                    >
-                                        <title>Hauts-de-France (3 250 entreprises)</title>
-                                    </path>
+                                <g filter="url(#regionGlow)">
+                                    {franceRegionsData.map((reg: any) => {
+                                        const isSelected = selectedRegion === reg.regionCode;
+                                        const isHovered = hoveredRegion === reg.regionCode;
 
-                                    {/* Île-de-France */}
-                                    <path
-                                        d="M 220 95 L 265 90 L 270 135 L 220 140 Z"
-                                        fill={selectedRegion === "ILE-DE-FRANCE" ? "#D59B2B" : "#2563eb"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("ILE-DE-FRANCE")}
-                                    >
-                                        <title>Île-de-France (6 850 entreprises)</title>
-                                    </path>
-
-                                    {/* Grand Est */}
-                                    <path
-                                        d="M 295 35 L 420 40 L 430 140 L 330 150 L 275 125 L 300 80 Z"
-                                        fill={selectedRegion === "GRAND EST" ? "#D59B2B" : "#cbd5e1"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("GRAND EST")}
-                                    >
-                                        <title>Grand Est (3 190 entreprises)</title>
-                                    </path>
-
-                                    {/* Bretagne */}
-                                    <path
-                                        d="M 30 110 L 125 105 L 130 160 L 40 150 Z"
-                                        fill={selectedRegion === "BRETAGNE" ? "#D59B2B" : "#64748b"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("BRETAGNE")}
-                                    >
-                                        <title>Bretagne (2 140 entreprises)</title>
-                                    </path>
-
-                                    {/* Pays de la Loire */}
-                                    <path
-                                        d="M 125 145 L 195 135 L 190 200 L 115 195 Z"
-                                        fill={selectedRegion === "PAYS DE LA LOIRE" ? "#D59B2B" : "#cbd5e1"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("PAYS DE LA LOIRE")}
-                                    >
-                                        <title>Pays de la Loire (2 010 entreprises)</title>
-                                    </path>
-
-                                    {/* Bourgogne-Franche-Comté */}
-                                    <path
-                                        d="M 275 145 L 380 145 L 390 220 L 285 220 Z"
-                                        fill={selectedRegion === "BOURGOGNE FRANCHE COMTE" ? "#D59B2B" : "#64748b"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("BOURGOGNE FRANCHE COMTE")}
-                                    >
-                                        <title>Bourgogne-Franche-Comté (890 entreprises)</title>
-                                    </path>
-
-                                    {/* Nouvelle-Aquitaine */}
-                                    <path
-                                        d="M 110 200 L 220 195 L 235 320 L 115 325 Z"
-                                        fill={selectedRegion === "NOUVELLE AQUITAINE" ? "#D59B2B" : "#cbd5e1"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("NOUVELLE AQUITAINE")}
-                                    >
-                                        <title>Nouvelle-Aquitaine (4 120 entreprises)</title>
-                                    </path>
-
-                                    {/* Auvergne-Rhône-Alpes */}
-                                    <path
-                                        d="M 275 215 L 395 210 L 410 320 L 285 320 Z"
-                                        fill={selectedRegion === "AUVERGNE RHONE ALPES" ? "#D59B2B" : "#94a3b8"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("AUVERGNE RHONE ALPES")}
-                                    >
-                                        <title>Auvergne-Rhône-Alpes (5 180 entreprises)</title>
-                                    </path>
-
-                                    {/* Occitanie */}
-                                    <path
-                                        d="M 225 315 L 340 310 L 350 405 L 210 400 Z"
-                                        fill={selectedRegion === "OCCITANIE" ? "#D59B2B" : "#64748b"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-400 transition-colors"
-                                        onClick={() => setSelectedRegion("OCCITANIE")}
-                                    >
-                                        <title>Occitanie (4 310 entreprises)</title>
-                                    </path>
-
-                                    {/* PACA (Provence-Alpes-Côte d'Azur) */}
-                                    <path
-                                        d="M 345 315 L 450 300 L 465 390 L 355 395 Z"
-                                        fill={selectedRegion === "PROVENCE ALPES COTE D'AZUR" ? "#D59B2B" : "#fbbf24"}
-                                        stroke="#ffffff" strokeWidth="2"
-                                        className="cursor-pointer hover:fill-amber-300 transition-colors"
-                                        onClick={() => setSelectedRegion("PROVENCE ALPES COTE D'AZUR")}
-                                    >
-                                        <title>PACA (5 420 entreprises)</title>
-                                    </path>
+                                        return (
+                                            <path
+                                                key={reg.code}
+                                                d={reg.path}
+                                                fill={isSelected ? "#D59B2B" : isHovered ? "#3b82f6" : "#cbd5e1"}
+                                                stroke="#ffffff"
+                                                strokeWidth="1.5"
+                                                strokeLinejoin="round"
+                                                className="cursor-pointer transition-all duration-200 hover:opacity-90"
+                                                onClick={() => setSelectedRegion(reg.regionCode)}
+                                                onMouseEnter={() => setHoveredRegion(reg.regionCode)}
+                                                onMouseLeave={() => setHoveredRegion(null)}
+                                            >
+                                                <title>{reg.nom}</title>
+                                            </path>
+                                        );
+                                    })}
                                 </g>
-
-                                <text x="250" y="440" textAnchor="middle" className="text-[11px] font-extrabold fill-slate-600 font-sans">
-                                    Cliquez sur une région pour filtrer les 37 372 entreprises
-                                </text>
                             </svg>
 
-                            <div className="text-xs font-bold text-slate-700 mt-2 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
-                                Zone active : <span className="text-[#2563EB] font-extrabold">{selectedRegion}</span>
+                            {/* Active Region Label Badge */}
+                            <div className="text-xs font-bold text-slate-700 mt-2 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm flex items-center gap-2">
+                                <span className="w-2.5 h-2.5 bg-[#D59B2B] rounded-full inline-block"></span>
+                                Région sélectionnée : <span className="text-[#2563EB] font-extrabold">{selectedRegion}</span>
                             </div>
                         </div>
 
@@ -380,7 +297,7 @@ export default function ProspecterCvcPage() {
                         Résultats qualifiés : <strong className="text-[#1F2D3D] font-mono text-sm">{totalMatches || companies.length}</strong> entreprise(s) CVC trouvée(s)
                     </span>
                     <span className="flex items-center gap-1.5 text-slate-600 font-semibold">
-                        <Layers className="h-3.5 w-3.5 text-blue-600" /> Fiches Blanches Vérifiées (Societe.com & Google Local)
+                        <Layers className="h-3.5 w-3.5 text-blue-600" /> Fiches Blanches Vérifiées (Societe.com & INSEE)
                     </span>
                 </div>
 
