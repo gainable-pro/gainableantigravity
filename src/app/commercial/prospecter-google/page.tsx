@@ -6,7 +6,8 @@ import {
     Search, MapPin, Building2, User, Phone, Globe, Star, 
     Loader2, SearchCheck, Sparkles, PlusCircle, ExternalLink, 
     Layers, Compass, ExternalLinkIcon, PhoneCall, X,
-    CheckCircle2, AlertCircle, Edit3, Monitor, Maximize2, Calendar
+    CheckCircle2, AlertCircle, Edit3, Monitor, Maximize2, Calendar,
+    ArrowUpRight, ArrowRight, Filter
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -17,6 +18,8 @@ export default function ProspecterGoogleLocalPage() {
     const [activity, setActivity] = useState("installation climatisation");
     const [cityCompanies, setCityCompanies] = useState<any[]>([]);
     const [loadingCompanies, setLoadingCompanies] = useState(false);
+    const [filterQuery, setFilterQuery] = useState("");
+    const [sortBy, setSortBy] = useState<"RATING" | "REVIEWS" | "NAME">("RATING");
     
     // Express Form Fields
     const [companyName, setCompanyName] = useState("");
@@ -26,6 +29,7 @@ export default function ProspecterGoogleLocalPage() {
     const [dateRdv, setDateRdv] = useState("");
     const [heureRdv, setHeureRdv] = useState("");
     const [noteRdv, setNoteRdv] = useState("");
+    const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
     
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
@@ -61,11 +65,20 @@ export default function ProspecterGoogleLocalPage() {
         fetchCityCompanies(city);
     };
 
-    const handleAutoFillFromCard = (comp: any) => {
+    const handleSelectCompanyToForm = (comp: any) => {
+        setSelectedCompanyId(comp.id);
         setCompanyName(comp.nomEntreprise);
         setPhone(comp.telephone || "");
         setWebsite(comp.siteWeb || "");
         setContactEmail(comp.email || "");
+        setAddSuccess("");
+        setAddError("");
+
+        // Scroll smoothly to form on mobile/desktop if needed
+        const formElement = document.getElementById("express-crm-form");
+        if (formElement) {
+            formElement.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     const handleConfirmAddProspect = async (e: React.FormEvent) => {
@@ -109,6 +122,7 @@ export default function ProspecterGoogleLocalPage() {
                 setDateRdv("");
                 setHeureRdv("");
                 setNoteRdv("");
+                setSelectedCompanyId(null);
             } else {
                 const d = await res.json();
                 setAddError(d.message || "Erreur lors de l'ajout du prospect");
@@ -119,6 +133,28 @@ export default function ProspecterGoogleLocalPage() {
             setAdding(false);
         }
     };
+
+    // Filter and Sort city companies
+    const displayedCompanies = cityCompanies
+        .filter((c: any) => {
+            if (!filterQuery) return true;
+            const q = filterQuery.toLowerCase();
+            return (
+                (c.nomEntreprise && c.nomEntreprise.toLowerCase().includes(q)) ||
+                (c.nomGerant && c.nomGerant.toLowerCase().includes(q)) ||
+                (c.telephone && c.telephone.includes(q)) ||
+                (c.adresse && c.adresse.toLowerCase().includes(q))
+            );
+        })
+        .sort((a: any, b: any) => {
+            if (sortBy === "RATING") {
+                return (b.noteGoogle || 0) - (a.noteGoogle || 0);
+            }
+            if (sortBy === "REVIEWS") {
+                return (b.nombreAvis || 0) - (a.nombreAvis || 0);
+            }
+            return (a.nomEntreprise || "").localeCompare(b.nomEntreprise || "");
+        });
 
     return (
         <div className="min-h-screen bg-slate-100 text-slate-900 p-4 md:p-8 font-sans">
@@ -134,7 +170,7 @@ export default function ProspecterGoogleLocalPage() {
                             📍 Prospection Google Local (Lieux) par Ville
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Consultez les entreprises CVC et le plan Google Local de votre ville, puis qualifiez-les en 1 clic dans votre CRM.
+                            Sélectionnez n'importe quelle entreprise sur le plan ou dans la liste ci-dessous pour la pré-remplir et l'ajouter en 1 clic au CRM.
                         </p>
                     </div>
 
@@ -203,10 +239,10 @@ export default function ProspecterGoogleLocalPage() {
                     </div>
                 </div>
 
-                {/* Split Screen Layout: Left = Google Maps Local Places Embed, Right = CRM Prospect Entry Form */}
+                {/* Split Screen Layout: Left = Google Maps + Listing with Ratings, Right = CRM Prospect Entry Form */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    {/* LEFT SIDE: GOOGLE MAPS LOCAL PLACES BROWSER (7 cols) */}
+                    {/* LEFT SIDE: GOOGLE MAPS + REAL RATINGS COMPANY LISTING (7 cols) */}
                     <div className="lg:col-span-7 space-y-6">
                         
                         {/* Google Maps Browser Frame */}
@@ -243,52 +279,152 @@ export default function ProspecterGoogleLocalPage() {
                             </div>
                         </div>
 
-                        {/* Local Companies List for City */}
-                        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
-                            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                                <h3 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
-                                    🏢 Entreprises CVC référencées sur {city} ({cityCompanies.length})
-                                </h3>
-                                <span className="text-xs text-slate-500">Cliquez pour pré-remplir la fiche</span>
+                        {/* Local Companies Listing with Real Ratings & Review Count */}
+                        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+                            
+                            {/* Header & Filter Controls */}
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                                <div>
+                                    <h3 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                                        🏢 Entreprises CVC de {city} avec Avis Réels ({displayedCompanies.length})
+                                    </h3>
+                                    <p className="text-xs text-slate-500 mt-0.5">
+                                        Cliquez sur une entreprise pour la reporter instantanément dans le formulaire à droite 👉
+                                    </p>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <select
+                                        value={sortBy}
+                                        onChange={(e) => setSortBy(e.target.value as any)}
+                                        className="text-xs font-bold bg-slate-50 border border-slate-300 rounded-lg p-2 text-slate-800"
+                                    >
+                                        <option value="RATING">⭐ Trier par Meilleurs Avis</option>
+                                        <option value="REVIEWS">💬 Trier par Nombre d'Avis</option>
+                                        <option value="NAME">🔤 Trier par Nom (A-Z)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* Filter Search Input inside Listing */}
+                            <div className="relative">
+                                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
+                                <input
+                                    type="text"
+                                    placeholder="Filtrer les entreprises par nom, téléphone, gérant..."
+                                    value={filterQuery}
+                                    onChange={(e) => setFilterQuery(e.target.value)}
+                                    className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
                             </div>
 
                             {loadingCompanies ? (
-                                <div className="py-8 text-center text-slate-400">
-                                    <Loader2 className="h-6 w-6 animate-spin mx-auto text-blue-600" />
+                                <div className="py-12 text-center text-slate-400">
+                                    <Loader2 className="h-7 w-7 animate-spin mx-auto text-blue-600 mb-2" />
+                                    <span className="text-xs font-bold">Chargement des fiches réelles...</span>
                                 </div>
-                            ) : cityCompanies.length === 0 ? (
-                                <div className="py-6 text-center text-slate-400 text-xs italic">
-                                    Aucune entreprise enregistrée dans la base locale pour {city}. Vous pouvez saisir n'importe quelle entreprise aperçue sur le plan Google ci-dessus !
+                            ) : displayedCompanies.length === 0 ? (
+                                <div className="py-8 text-center text-slate-400 text-xs italic bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                                    Aucune entreprise trouvée pour "{filterQuery || city}". Vous pouvez renseigner manuellement n'importe quelle entreprise aperçue sur la carte ci-dessus !
                                 </div>
                             ) : (
-                                <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
-                                    {cityCompanies.map((c: any) => (
-                                        <div
-                                            key={c.id}
-                                            className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-3 hover:border-blue-400 hover:bg-blue-50/50 transition-all"
-                                        >
-                                            <div>
-                                                <div className="font-extrabold text-slate-900 text-xs">{c.nomEntreprise}</div>
-                                                <div className="text-[11px] text-slate-500 mt-0.5">
-                                                    {c.nomGerant ? `Gérant : ${c.nomGerant} • ` : ''}Tél : {c.telephone || 'Non renseigné'}
+                                <div className="space-y-3 max-h-[480px] overflow-y-auto pr-1">
+                                    {displayedCompanies.map((c: any) => {
+                                        const isSelected = selectedCompanyId === c.id;
+
+                                        return (
+                                            <div
+                                                key={c.id}
+                                                onClick={() => !c.isLocked && handleSelectCompanyToForm(c)}
+                                                className={`p-4 rounded-xl border transition-all cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-3 ${
+                                                    isSelected
+                                                        ? "bg-blue-50/90 border-blue-500 ring-2 ring-blue-500/20 shadow-md"
+                                                        : c.isLocked
+                                                        ? "bg-slate-100 border-slate-200 opacity-60 cursor-not-allowed"
+                                                        : "bg-white border-slate-200 hover:border-blue-400 hover:shadow-md"
+                                                }`}
+                                            >
+                                                <div className="space-y-1.5 flex-1">
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        <h4 className="font-extrabold text-slate-900 text-sm">{c.nomEntreprise}</h4>
+                                                        
+                                                        {/* Real Rating & Review Count Badge */}
+                                                        {c.noteGoogle && c.noteGoogle > 0 ? (
+                                                            <span className="bg-amber-50 border border-amber-200 text-amber-900 text-[11px] font-extrabold px-2.5 py-0.5 rounded-md flex items-center gap-1">
+                                                                <Star className="h-3 w-3 fill-amber-500 text-amber-500" />
+                                                                {c.noteGoogle} ⭐ ({c.nombreAvis || 0} avis réels)
+                                                            </span>
+                                                        ) : (
+                                                            <span className="bg-slate-100 text-slate-600 text-[10px] px-2 py-0.5 rounded-md font-medium">
+                                                                Pas encore d'avis Google
+                                                            </span>
+                                                        )}
+                                                    </div>
+
+                                                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600 font-medium">
+                                                        {c.nomGerant && (
+                                                            <span className="flex items-center gap-1 text-slate-800">
+                                                                <User className="h-3 w-3 text-[#D59B2B]" /> {c.nomGerant}
+                                                            </span>
+                                                        )}
+                                                        {c.telephone && (
+                                                            <span className="flex items-center gap-1 font-mono font-bold text-slate-900">
+                                                                <Phone className="h-3 w-3 text-emerald-600" /> {c.telephone}
+                                                            </span>
+                                                        )}
+                                                        {c.adresse && (
+                                                            <span className="flex items-center gap-1 text-slate-500">
+                                                                <MapPin className="h-3 w-3 text-slate-400" /> {c.adresse}
+                                                            </span>
+                                                        )}
+                                                    </div>
+
+                                                    {c.siteWeb ? (
+                                                        <div className="text-[11px] text-blue-600 font-semibold truncate flex items-center gap-1">
+                                                            <Globe className="h-3 w-3 shrink-0" />
+                                                            <span>{c.siteWeb}</span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="text-[10px] text-amber-800 font-semibold">
+                                                            ⚠️ Pas de site internet référencé
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                {/* Action Button */}
+                                                <div className="shrink-0 flex items-center gap-2">
+                                                    {c.isLocked ? (
+                                                        <span className="text-xs bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg font-bold">
+                                                            🔒 Attribué à {c.assignedTo || 'autre commercial'}
+                                                        </span>
+                                                    ) : (
+                                                        <button
+                                                            type="button"
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                handleSelectCompanyToForm(c);
+                                                            }}
+                                                            className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-sm ${
+                                                                isSelected
+                                                                    ? "bg-blue-600 text-white shadow-md"
+                                                                    : "bg-[#D59B2B] hover:bg-[#b88622] text-white"
+                                                            }`}
+                                                        >
+                                                            {isSelected ? (
+                                                                <>
+                                                                    <CheckCircle2 className="h-4 w-4 text-white" /> Sélectionné
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    <PlusCircle className="h-4 w-4" /> Reporter sur le Formulaire 👉
+                                                                </>
+                                                            )}
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
-
-                                            {c.isLocked ? (
-                                                <span className="text-[11px] bg-slate-200 text-slate-600 px-2.5 py-1 rounded-md font-bold shrink-0">
-                                                    🔒 Attribué
-                                                </span>
-                                            ) : (
-                                                <button
-                                                    type="button"
-                                                    onClick={() => handleAutoFillFromCard(c)}
-                                                    className="bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs px-3 py-1.5 rounded-lg transition-all shrink-0 flex items-center gap-1 shadow-sm"
-                                                >
-                                                    <PlusCircle className="h-3.5 w-3.5" /> Pré-remplir
-                                                </button>
-                                            )}
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             )}
                         </div>
@@ -296,14 +432,17 @@ export default function ProspecterGoogleLocalPage() {
                     </div>
 
                     {/* RIGHT SIDE: EXPRESS CRM PROSPECT QUALIFIER FORM (5 cols) */}
-                    <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 shadow-xl space-y-5 sticky top-8">
+                    <div id="express-crm-form" className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 shadow-xl space-y-5 sticky top-8">
                         <div className="border-b border-slate-100 pb-3">
                             <div className="text-xs font-bold text-[#D59B2B] uppercase tracking-wider flex items-center gap-1.5">
-                                <PlusCircle className="h-4 w-4" /> Qualifier un Prospect Google Local
+                                <PlusCircle className="h-4 w-4" /> Formulaire de Qualification Express CRM
                             </div>
                             <h3 className="text-lg font-extrabold text-[#1F2D3D] mt-0.5">
-                                Enregistrer dans le CRM
+                                {companyName ? `Enregistrer "${companyName}"` : "Enregistrer l'entreprise au CRM"}
                             </h3>
+                            <p className="text-xs text-slate-500 mt-1">
+                                Cliquez sur une entreprise dans la liste à gauche pour la pré-remplir automatiquement.
+                            </p>
                         </div>
 
                         <form onSubmit={handleConfirmAddProspect} className="space-y-4">
