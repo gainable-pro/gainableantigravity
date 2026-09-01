@@ -52,16 +52,22 @@ export default function ProspectsList() {
                     <h1 className="text-2xl font-bold text-slate-900">Mes Prospects</h1>
                     <p className="text-slate-500">Gérez votre pipeline de prospection.</p>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
+                    <Link 
+                        href="/commercial/prospecter-google"
+                        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-extrabold hover:bg-blue-700 transition-colors shadow-sm text-sm"
+                    >
+                        📍 Moteur Google LOCAL (Par Ville)
+                    </Link>
                     <Link 
                         href="/commercial/prospecter"
                         className="flex items-center gap-2 bg-amber-500 text-slate-950 px-4 py-2 rounded-lg font-bold hover:bg-amber-600 transition-colors shadow-sm text-sm"
                     >
-                        🗺️ Moteur de Prospection CVC
+                        🗺️ Base Nationale CVC (37k)
                     </Link>
                     <Link 
                         href="/commercial/prospects/new"
-                        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                        className="flex items-center gap-2 bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-900 transition-colors font-medium text-sm"
                     >
                         <Plus className="h-4 w-4" />
                         Ajout Manuel
