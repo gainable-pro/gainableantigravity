@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
     Search, MapPin, Building2, User, Phone, Globe, Star, 
     Loader2, SearchCheck, Sparkles, PlusCircle, ExternalLink, 
     Layers, Compass, ExternalLinkIcon, PhoneCall, X,
-    CheckCircle2, AlertCircle, Edit3, Monitor, Maximize2
+    CheckCircle2, AlertCircle, Edit3, Monitor, Maximize2, Calendar
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -15,24 +15,57 @@ const POPULAR_CITIES = ["Lyon", "Marseille", "Miramas", "Nice", "Toulouse", "Bor
 export default function ProspecterGoogleLocalPage() {
     const [city, setCity] = useState("Lyon");
     const [activity, setActivity] = useState("installation climatisation");
+    const [cityCompanies, setCityCompanies] = useState<any[]>([]);
+    const [loadingCompanies, setLoadingCompanies] = useState(false);
     
     // Express Form Fields
     const [companyName, setCompanyName] = useState("");
     const [contactEmail, setContactEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [website, setWebsite] = useState("");
+    const [dateRdv, setDateRdv] = useState("");
+    const [heureRdv, setHeureRdv] = useState("");
+    const [noteRdv, setNoteRdv] = useState("");
     
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
     const [addError, setAddError] = useState("");
 
     const googleSearchQuery = `${activity} ${city}`.trim();
-    const googleLocalUrl = `https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(googleSearchQuery)}`;
+    const googleLocalOfficialUrl = `https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(googleSearchQuery)}`;
+    const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(googleSearchQuery)}&output=embed`;
+
+    useEffect(() => {
+        fetchCityCompanies(city);
+    }, [city]);
+
+    const fetchCityCompanies = async (cityName: string) => {
+        setLoadingCompanies(true);
+        try {
+            const res = await fetch(`/api/commercial/prospecting-database?ville=${encodeURIComponent(cityName)}`);
+            if (res.ok) {
+                const data = await res.json();
+                setCityCompanies(data.companies || []);
+            }
+        } catch (e) {
+            console.error(e);
+        } finally {
+            setLoadingCompanies(false);
+        }
+    };
 
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setAddSuccess("");
         setAddError("");
+        fetchCityCompanies(city);
+    };
+
+    const handleAutoFillFromCard = (comp: any) => {
+        setCompanyName(comp.nomEntreprise);
+        setPhone(comp.telephone || "");
+        setWebsite(comp.siteWeb || "");
+        setContactEmail(comp.email || "");
     };
 
     const handleConfirmAddProspect = async (e: React.FormEvent) => {
@@ -60,7 +93,10 @@ export default function ProspecterGoogleLocalPage() {
                     adresse: city,
                     siteWeb: website,
                     status: "NON_CONTACTE",
-                    commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})`
+                    commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})`,
+                    dateRdv: dateRdv || null,
+                    heureRdv: heureRdv || null,
+                    noteRdv: noteRdv || null
                 })
             });
 
@@ -70,6 +106,9 @@ export default function ProspecterGoogleLocalPage() {
                 setContactEmail("");
                 setPhone("");
                 setWebsite("");
+                setDateRdv("");
+                setHeureRdv("");
+                setNoteRdv("");
             } else {
                 const d = await res.json();
                 setAddError(d.message || "Erreur lors de l'ajout du prospect");
@@ -95,7 +134,7 @@ export default function ProspecterGoogleLocalPage() {
                             📍 Prospection Google Local (Lieux) par Ville
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Entrez une ville pour consulter en direct les installateurs CVC sur Google Local et ajoutez-les en 1 clic dans votre CRM.
+                            Consultez les entreprises CVC et le plan Google Local de votre ville, puis qualifiez-les en 1 clic dans votre CRM.
                         </p>
                     </div>
 
@@ -164,73 +203,108 @@ export default function ProspecterGoogleLocalPage() {
                     </div>
                 </div>
 
-                {/* Split Screen Layout: Left = Google Local Browser, Right = CRM Prospect Entry Form */}
+                {/* Split Screen Layout: Left = Google Maps Local Places Embed, Right = CRM Prospect Entry Form */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    {/* LEFT SIDE: GOOGLE LOCAL SEARCH BROWSER FRAME (8 cols) */}
-                    <div className="lg:col-span-7 bg-white border border-slate-300 rounded-2xl shadow-xl overflow-hidden flex flex-col space-y-0">
+                    {/* LEFT SIDE: GOOGLE MAPS LOCAL PLACES BROWSER (7 cols) */}
+                    <div className="lg:col-span-7 space-y-6">
                         
-                        {/* Chrome Window Header */}
-                        <div className="bg-slate-200 border-b border-slate-300 p-3.5 flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
-                                <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
-                                <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-                                <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Google Local Business Browser ({city})</span>
+                        {/* Google Maps Browser Frame */}
+                        <div className="bg-white border border-slate-300 rounded-2xl shadow-xl overflow-hidden flex flex-col space-y-0">
+                            
+                            {/* Window Header */}
+                            <div className="bg-slate-200 border-b border-slate-300 p-3.5 flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                                    <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                                    <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Google Local Business Map ({city})</span>
+                                </div>
+
+                                <a
+                                    href={googleLocalOfficialUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-sm"
+                                >
+                                    Ouvrir Google Local Lieux (Nouvel Onglet) <ExternalLink className="h-3.5 w-3.5" />
+                                </a>
                             </div>
 
-                            {/* Address Bar */}
-                            <div className="bg-white border border-slate-300 rounded-lg px-3 py-1 text-[11px] text-slate-600 font-mono flex items-center gap-2 max-w-xs truncate shadow-inner">
-                                <Globe className="h-3 w-3 text-slate-400 shrink-0" />
-                                <span className="truncate">{googleLocalUrl}</span>
+                            {/* Embedded Google Maps Embed (No Consent Block) */}
+                            <div className="w-full h-[450px] bg-slate-100 relative">
+                                <iframe
+                                    key={googleMapsEmbedUrl}
+                                    src={googleMapsEmbedUrl}
+                                    className="w-full h-full border-0"
+                                    title={`Google Maps Local - ${city}`}
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
 
-                        {/* Top Direct Link Banner */}
-                        <div className="bg-blue-50 border-b border-blue-200 p-4 flex items-center justify-between gap-3">
-                            <div className="text-xs text-blue-900 font-bold flex items-center gap-2">
-                                <Sparkles className="h-4 w-4 text-blue-600 shrink-0" />
-                                <span>Recherche Google Local Lieux pour <strong>{city}</strong></span>
+                        {/* Local Companies List for City */}
+                        <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                                <h3 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                                    🏢 Entreprises CVC référencées sur {city} ({cityCompanies.length})
+                                </h3>
+                                <span className="text-xs text-slate-500">Cliquez pour pré-remplir la fiche</span>
                             </div>
 
-                            <a
-                                href={googleLocalUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold px-4 py-2 rounded-xl flex items-center gap-2 transition-all shadow-sm shrink-0"
-                            >
-                                Ouvrir dans un nouvel onglet Google <ExternalLink className="h-3.5 w-3.5" />
-                            </a>
+                            {loadingCompanies ? (
+                                <div className="py-8 text-center text-slate-400">
+                                    <Loader2 className="h-6 w-6 animate-spin mx-auto text-blue-600" />
+                                </div>
+                            ) : cityCompanies.length === 0 ? (
+                                <div className="py-6 text-center text-slate-400 text-xs italic">
+                                    Aucune entreprise enregistrée dans la base locale pour {city}. Vous pouvez saisir n'importe quelle entreprise aperçue sur le plan Google ci-dessus !
+                                </div>
+                            ) : (
+                                <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
+                                    {cityCompanies.map((c: any) => (
+                                        <div
+                                            key={c.id}
+                                            className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-between gap-3 hover:border-blue-400 hover:bg-blue-50/50 transition-all"
+                                        >
+                                            <div>
+                                                <div className="font-extrabold text-slate-900 text-xs">{c.nomEntreprise}</div>
+                                                <div className="text-[11px] text-slate-500 mt-0.5">
+                                                    {c.nomGerant ? `Gérant : ${c.nomGerant} • ` : ''}Tél : {c.telephone || 'Non renseigné'}
+                                                </div>
+                                            </div>
+
+                                            {c.isLocked ? (
+                                                <span className="text-[11px] bg-slate-200 text-slate-600 px-2.5 py-1 rounded-md font-bold shrink-0">
+                                                    🔒 Attribué
+                                                </span>
+                                            ) : (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleAutoFillFromCard(c)}
+                                                    className="bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs px-3 py-1.5 rounded-lg transition-all shrink-0 flex items-center gap-1 shadow-sm"
+                                                >
+                                                    <PlusCircle className="h-3.5 w-3.5" /> Pré-remplir
+                                                </button>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
 
-                        {/* Embedded iFrame View of Google Local Lieux */}
-                        <div className="w-full h-[580px] bg-slate-100 relative">
-                            <iframe
-                                key={googleLocalUrl}
-                                src={`https://www.google.com/search?igu=1&tbm=lcl&q=${encodeURIComponent(googleSearchQuery)}`}
-                                className="w-full h-full border-0"
-                                title={`Google Local - ${city}`}
-                                loading="lazy"
-                            />
-                        </div>
                     </div>
 
                     {/* RIGHT SIDE: EXPRESS CRM PROSPECT QUALIFIER FORM (5 cols) */}
                     <div className="lg:col-span-5 bg-white border border-slate-200 rounded-2xl p-6 shadow-xl space-y-5 sticky top-8">
-                        <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
-                            <div>
-                                <div className="text-xs font-bold text-[#D59B2B] uppercase tracking-wider flex items-center gap-1.5">
-                                    <PlusCircle className="h-4 w-4" /> Qualifier un Prospect Google Local
-                                </div>
-                                <h3 className="text-lg font-extrabold text-[#1F2D3D] mt-0.5">
-                                    Ajouter l'entreprise vue sur Google
-                                </h3>
+                        <div className="border-b border-slate-100 pb-3">
+                            <div className="text-xs font-bold text-[#D59B2B] uppercase tracking-wider flex items-center gap-1.5">
+                                <PlusCircle className="h-4 w-4" /> Qualifier un Prospect Google Local
                             </div>
+                            <h3 className="text-lg font-extrabold text-[#1F2D3D] mt-0.5">
+                                Enregistrer dans le CRM
+                            </h3>
                         </div>
-
-                        <p className="text-xs text-slate-500 leading-relaxed">
-                            Repérez une entreprise sur le panneau Google Local à gauche, puis renseignez son nom et ses coordonnées ci-dessous pour l'ajouter immédiatement à vos prospects CRM.
-                        </p>
 
                         <form onSubmit={handleConfirmAddProspect} className="space-y-4">
                             <div>
@@ -259,9 +333,6 @@ export default function ProspecterGoogleLocalPage() {
                                     onChange={(e) => setContactEmail(e.target.value)}
                                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
                                 />
-                                <p className="text-[11px] text-slate-400 mt-1">
-                                    Permettra l'envoi direct de la demande de paiement Stripe et des devis.
-                                </p>
                             </div>
 
                             <div>
@@ -287,6 +358,34 @@ export default function ProspecterGoogleLocalPage() {
                                     value={website}
                                     onChange={(e) => setWebsite(e.target.value)}
                                     className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+                                />
+                            </div>
+
+                            {/* RDV & Reminder Fields */}
+                            <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
+                                <label className="text-xs font-extrabold text-slate-800 flex items-center gap-1.5">
+                                    <Calendar className="h-4 w-4 text-blue-600" /> Planifier un RDV / Relance (Optionnel)
+                                </label>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <input
+                                        type="date"
+                                        value={dateRdv}
+                                        onChange={(e) => setDateRdv(e.target.value)}
+                                        className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
+                                    />
+                                    <input
+                                        type="time"
+                                        value={heureRdv}
+                                        onChange={(e) => setHeureRdv(e.target.value)}
+                                        className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
+                                    />
+                                </div>
+                                <input
+                                    type="text"
+                                    placeholder="Objet / Note de relance..."
+                                    value={noteRdv}
+                                    onChange={(e) => setNoteRdv(e.target.value)}
+                                    className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
                                 />
                             </div>
 
