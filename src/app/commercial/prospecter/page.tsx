@@ -30,7 +30,7 @@ interface CvcCompany {
 }
 
 const REGIONS_FRANCE = [
-    { code: "ALL", label: "Toutes les régions (13 843)" },
+    { code: "ALL", label: "Toutes les régions (14 602)" },
     { code: "PROVENCE ALPES COTE D'AZUR", label: "PACA (13, 06, 83, 84, 04, 05)" },
     { code: "AUVERGNE RHONE ALPES", label: "Auvergne-Rhône-Alpes (69, 38, 74, 42, 63)" },
     { code: "ILE-DE-FRANCE", label: "Île-de-France (75, 92, 93, 94, 77, 78)" },
