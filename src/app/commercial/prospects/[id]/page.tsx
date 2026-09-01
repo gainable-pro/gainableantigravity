@@ -36,7 +36,8 @@ export default function EditProspect() {
                 body: JSON.stringify({
                     prospectId: id,
                     planId: planId,
-                    discountRate: discount
+                    discountRate: discount,
+                    email: formData.email
                 })
             });
 

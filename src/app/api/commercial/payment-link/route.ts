@@ -12,18 +12,26 @@ export async function POST(req: Request) {
 
     try {
         const body = await req.json();
-        const { prospectId, planId, discountRate } = body;
+        const { prospectId, planId, discountRate, email } = body;
 
         if (!prospectId) {
             return NextResponse.json({ message: "Prospect ID requis" }, { status: 400 });
         }
 
-        const prospect = await prisma.commercialProspect.findUnique({
+        let prospect = await prisma.commercialProspect.findUnique({
             where: { id: prospectId }
         });
 
         if (!prospect) {
             return NextResponse.json({ message: "Prospect introuvable" }, { status: 404 });
+        }
+
+        const targetEmail = (email || prospect.email || "").trim();
+        if (targetEmail && targetEmail !== prospect.email) {
+            prospect = await prisma.commercialProspect.update({
+                where: { id: prospectId },
+                data: { email: targetEmail }
+            });
         }
 
         const priceMap: Record<string, number> = { cvc: 850, diag: 750 };
@@ -53,7 +61,7 @@ export async function POST(req: Request) {
                     quantity: 1,
                 }
             ],
-            customer_email: prospect.email || undefined,
+            customer_email: targetEmail || undefined,
             metadata: {
                 prospectId: prospect.id,
                 commercialId: user.id,
@@ -67,9 +75,9 @@ export async function POST(req: Request) {
 
         let emailSent = false;
         let emailError: any = undefined;
-        if (prospect.email) {
+        if (targetEmail) {
             const emailRes = await sendEmail({
-                to: prospect.email,
+                to: targetEmail,
                 subject: `Gainable.fr - Lien de paiement & Validation pour ${prospect.nomEntreprise}`,
                 html: `
                 <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
