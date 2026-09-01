@@ -88,15 +88,15 @@ export async function GET(req: Request) {
 
         let totalMonthlyCommission = 0;
         const historyDetails = [];
+        const FIXED_RATE = 0.17; // Fixed 17% commission rate for all commercials
 
         for (const [day, dayData] of Object.entries(salesByDay)) {
             const count = dayData.count;
-            const rate = isCustom17 ? 0.17 : getCommissionRate(count);
             
-            // Calculate commission dynamically based on the actual price (montant) of each sale
+            // Calculate commission dynamically based on 17% rate
             let dailyComm = 0;
             for (const s of dayData.sales) {
-                dailyComm += s.montant * rate;
+                dailyComm += s.montant * FIXED_RATE;
             }
             
             totalMonthlyCommission += dailyComm;
@@ -104,8 +104,8 @@ export async function GET(req: Request) {
             historyDetails.push({
                 date: day,
                 count: count,
-                level: isCustom17 ? 5 : (count >= 5 ? 5 : count),
-                rate: rate * 100,
+                level: 5,
+                rate: 17,
                 ca: dayData.totalAmount,
                 commission: parseFloat(dailyComm.toFixed(2))
             });
@@ -115,9 +115,8 @@ export async function GET(req: Request) {
         historyDetails.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
         const dailyCount = dailySales.length;
-        const dailyRate = isCustom17 ? 0.17 : getCommissionRate(dailyCount);
         const dailyCA = dailySales.reduce((sum, s) => sum + s.montant, 0);
-        const dailyCommission = dailySales.reduce((sum, s) => sum + s.montant * dailyRate, 0);
+        const dailyCommission = dailySales.reduce((sum, s) => sum + s.montant * FIXED_RATE, 0);
 
         const monthlyCA = monthlySales.reduce((sum, s) => sum + s.montant, 0);
         const yearlyCA = yearlySales.reduce((sum, s) => sum + s.montant, 0);
@@ -142,7 +141,7 @@ export async function GET(req: Request) {
             pendingProspects,
             pendingSalesCount,
             history: historyDetails,
-            isFixedRate: isCustom17,
+            isFixedRate: true,
             fixedRateValue: 17
         });
 

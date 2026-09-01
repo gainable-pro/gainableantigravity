@@ -32,7 +32,34 @@ export async function POST(req: NextRequest) {
         // ----------------------------------------------------
         if (event.type === "checkout.session.completed") {
             const expertId = session.metadata?.expertId;
+            const prospectId = session.metadata?.prospectId;
+            const commercialId = session.metadata?.commercialId;
             const subscriptionId = session.subscription as string;
+
+            // Handle Commercial Prospect Sale
+            if (prospectId && commercialId) {
+                const amountPaid = session.amount_total ? session.amount_total / 100 : 850;
+                
+                try {
+                    await prisma.commercialProspect.update({
+                        where: { id: prospectId },
+                        data: { status: "VENTE_EFFECTUEE" }
+                    });
+
+                    await prisma.commercialSale.create({
+                        data: {
+                            commercialId: commercialId,
+                            prospectId: prospectId,
+                            paiementType: "STRIPE_ONLINE",
+                            dateVente: new Date(),
+                            montant: amountPaid,
+                            status: "VALIDEE"
+                        }
+                    });
+                } catch (err) {
+                    console.error("Error processing commercial prospect sale webhook:", err);
+                }
+            }
 
             if (expertId && expertId !== "pending_creation") {
                 // Link Stripe Customer ID to Expert

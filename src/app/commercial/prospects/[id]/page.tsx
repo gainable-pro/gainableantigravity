@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle, Trash2 } from "lucide-react";
+import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle, Trash2, Mail } from "lucide-react";
 
 export default function EditProspect() {
     const router = useRouter();
@@ -13,6 +13,53 @@ export default function EditProspect() {
     const [saving, setSaving] = useState(false);
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    
+    const [generatingLink, setGeneratingLink] = useState(false);
+    const [paymentLink, setPaymentLink] = useState("");
+    const [emailSentStatus, setEmailSentStatus] = useState<boolean | null>(null);
+    const [copiedLink, setCopiedLink] = useState(false);
+
+    const handleGeneratePaymentLink = async () => {
+        setGeneratingLink(true);
+        setError("");
+        setSuccess("");
+        setPaymentLink("");
+        setEmailSentStatus(null);
+
+        try {
+            const planId = basePrice === 850 ? "cvc" : "diag";
+            const res = await fetch("/api/commercial/payment-link", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    prospectId: id,
+                    planId: planId,
+                    discountRate: discount
+                })
+            });
+
+            const data = await res.json();
+            if (res.ok && data.url) {
+                setPaymentLink(data.url);
+                setEmailSentStatus(data.emailSent);
+                setSuccess("Lien de paiement Stripe généré avec succès !");
+            } else {
+                setError(data.message || "Erreur lors de la génération du lien Stripe");
+            }
+        } catch (err) {
+            setError("Erreur technique lors de la génération du lien");
+        } finally {
+            setGeneratingLink(false);
+        }
+    };
+
+    const handleCopyLink = () => {
+        if (paymentLink) {
+            navigator.clipboard.writeText(paymentLink);
+            setCopiedLink(true);
+            setTimeout(() => setCopiedLink(false), 2000);
+        }
+    };
     
     const [formData, setFormData] = useState({
         nomEntreprise: "",
@@ -275,14 +322,97 @@ export default function EditProspect() {
                     </form>
                 </div>
 
-                {/* Section Vente */}
+                {/* Section Vente & Paiement Stripe */}
                 <div className="space-y-6">
+                    {/* Demande de Paiement Stripe */}
+                    <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl shadow-lg border border-slate-700 p-6 space-y-4">
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                                💳
+                            </div>
+                            <div>
+                                <h2 className="text-lg font-bold text-white">Demande de Paiement Stripe</h2>
+                                <p className="text-xs text-slate-400">Générer un lien & envoyer par e-mail au client</p>
+                            </div>
+                        </div>
+
+                        <div className="space-y-3 pt-2">
+                            <div>
+                                <label className="block text-xs font-semibold text-slate-300 mb-1">Formule d'adhésion</label>
+                                <select 
+                                    value={basePrice} 
+                                    onChange={e => setBasePrice(Number(e.target.value) as any)}
+                                    className="w-full p-2 bg-slate-800 border border-slate-700 rounded text-sm text-white font-medium focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value={850}>Expert CVC (850 € HT)</option>
+                                    <option value={750}>Diag Immo (750 € HT)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label className="block text-xs font-semibold text-slate-300 mb-1">Code Promo / Remise</label>
+                                <select 
+                                    value={discount} 
+                                    onChange={e => setDiscount(Number(e.target.value) as any)}
+                                    className="w-full p-2 bg-slate-800 border border-slate-700 rounded text-sm text-white font-medium focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value={0}>Tarif plein (0% remise)</option>
+                                    <option value={0.05}>Code Promo -5% de remise</option>
+                                    <option value={0.10}>Code Promo -10% de remise</option>
+                                </select>
+                            </div>
+
+                            <div className="bg-slate-950/60 rounded-lg p-3 text-xs space-y-1.5 border border-slate-800">
+                                <div className="flex justify-between text-slate-300">
+                                    <span>Montant final à facturer :</span>
+                                    <span className="font-bold text-white text-sm">{(basePrice * (1 - discount)).toFixed(2)} € HT</span>
+                                </div>
+                                <div className="flex justify-between text-emerald-400 font-semibold pt-1 border-t border-slate-800">
+                                    <span>Votre commission fixe (17%) :</span>
+                                    <span>+ {(basePrice * (1 - discount) * 0.17).toFixed(2)} € HT</span>
+                                </div>
+                            </div>
+
+                            <button 
+                                type="button" 
+                                onClick={handleGeneratePaymentLink}
+                                disabled={generatingLink}
+                                className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md disabled:opacity-50 text-sm"
+                            >
+                                {generatingLink ? <Loader2 className="h-4 w-4 animate-spin" /> : <DollarSign className="h-4 w-4" />}
+                                Envoyer la demande de paiement Stripe
+                            </button>
+
+                            {paymentLink && (
+                                <div className="bg-slate-950 border border-blue-500/50 rounded-xl p-3 space-y-2 mt-3 animate-fadeIn">
+                                    <div className="flex items-center justify-between text-xs text-emerald-400 font-bold">
+                                        <span>✓ Lien Stripe prêt !</span>
+                                        {emailSentStatus && <span className="text-[10px] bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700">E-mail envoyé ✉️</span>}
+                                    </div>
+                                    <input 
+                                        type="text" 
+                                        readOnly 
+                                        value={paymentLink} 
+                                        className="w-full p-2 bg-slate-900 border border-slate-800 rounded text-xs text-slate-200 font-mono select-all" 
+                                    />
+                                    <button 
+                                        type="button" 
+                                        onClick={handleCopyLink}
+                                        className="w-full py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition-colors border border-slate-700"
+                                    >
+                                        {copiedLink ? "Lien copié dans le presse-papier ! ✓" : "Copier le lien de paiement"}
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
                     <div className="bg-emerald-50 rounded-xl shadow-sm border border-emerald-100 p-6">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-10 w-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
                                 <DollarSign className="h-6 w-6" />
                             </div>
-                            <h2 className="text-lg font-bold text-emerald-800">Déclarer une vente</h2>
+                            <h2 className="text-lg font-bold text-emerald-800">Déclarer une vente manuelle</h2>
                         </div>
                         
                         <form onSubmit={handleLogSale} className="space-y-4">
@@ -338,8 +468,8 @@ export default function EditProspect() {
                                     <span>{(basePrice * (1 - discount)).toFixed(2)} € HT</span>
                                 </div>
                                 <div className="flex justify-between text-xs text-emerald-700/80 pt-1">
-                                    <span>Méthode de paiement :</span>
-                                    <span>Via le site internet</span>
+                                    <span>Commission fixe (17%) :</span>
+                                    <span className="font-bold">+ {(basePrice * (1 - discount) * 0.17).toFixed(2)} € HT</span>
                                 </div>
                             </div>
 
@@ -353,7 +483,7 @@ export default function EditProspect() {
                                 }`}
                             >
                                 {saving ? <Loader2 className="h-5 w-5 animate-spin" /> : <CheckCircle className="h-5 w-5" />}
-                                {sales.length > 0 ? "Vente déjà enregistrée" : "Valider la vente"}
+                                {sales.length > 0 ? "Vente déjà enregistrée" : "Valider la vente manuelle"}
                             </button>
                         </form>
                     </div>
