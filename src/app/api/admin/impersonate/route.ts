@@ -16,9 +16,20 @@ export async function POST(req: Request) {
         return NextResponse.json({ message: "User ID required" }, { status: 400 });
     }
 
-    const user = await prisma.user.findUnique({ where: { id: userId } });
+    const user = await prisma.user.findUnique({
+        where: { id: userId },
+        include: { expert: true, commercialProfile: true }
+    });
     if (!user) {
         return NextResponse.json({ message: "User not found" }, { status: 404 });
+    }
+
+    // Determine target redirect URL based on role / profile
+    let redirectUrl = "/dashboard";
+    if (user.role === "commercial" || user.commercialProfile || (!user.expert && user.role !== "admin")) {
+        redirectUrl = "/commercial";
+    } else if (user.role === "admin") {
+        redirectUrl = "/admin";
     }
 
     // Generate token for the TARGET user
@@ -39,7 +50,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(
-        { message: "Impersonation successful" },
+        { message: "Impersonation successful", redirectUrl },
         { status: 200 }
     );
 }
+

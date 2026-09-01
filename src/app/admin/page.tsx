@@ -32,6 +32,16 @@ export default async function AdminPage() {
                         telephone: true,
                         expert_type: true
                     }
+                },
+                commercialProfile: {
+                    select: {
+                        id: true,
+                        nom: true,
+                        prenom: true,
+                        telephone: true,
+                        statutLegal: true,
+                        siren: true
+                    }
                 }
             },
             orderBy: { created_at: 'desc' }

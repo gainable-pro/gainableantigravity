@@ -28,6 +28,14 @@ interface User {
         telephone?: string;
         expert_type?: string; // New Field
     } | null;
+    commercialProfile?: {
+        id: string;
+        nom?: string;
+        prenom?: string;
+        telephone?: string;
+        statutLegal?: string;
+        siren?: string;
+    } | null;
 }
 
 export default function AdminDashboardClient({ initialUsers }: { initialUsers: User[] }) {
@@ -39,7 +47,8 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
     const filteredUsers = users.filter(user => {
         if (filterType === "all") return true;
-        if (filterType === "no_expert") return !user.expert;
+        if (filterType === "commercial") return user.role === "commercial" || !!user.commercialProfile;
+        if (filterType === "no_expert") return !user.expert && user.role !== "commercial" && !user.commercialProfile;
         return user.expert?.expert_type === filterType;
     });
 
@@ -51,10 +60,11 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ userId }),
             });
+            const data = await res.json();
             if (res.ok) {
-                window.location.href = "/dashboard";
+                window.location.href = data.redirectUrl || "/dashboard";
             } else {
-                alert("Erreur lors de la connexion");
+                alert("Erreur lors de la connexion : " + (data.message || "Erreur inconnue"));
             }
         } catch (e) {
             alert("Erreur technique");
@@ -155,7 +165,8 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                 <p className="text-xs text-muted-foreground mt-1 font-light">
                                     {users.filter(u => u.expert?.expert_type === 'cvc_climatisation').length} CVC •{" "}
                                     {users.filter(u => u.expert?.expert_type === 'diagnostics_dpe').length} Diag •{" "}
-                                    {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude
+                                    {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude •{" "}
+                                    {users.filter(u => u.role === 'commercial' || !!u.commercialProfile).length} Commercial
                                 </p>
                             </CardContent>
                         </Card>
@@ -226,7 +237,8 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                             <SelectItem value="cvc_climatisation">Installateurs CVC</SelectItem>
                                             <SelectItem value="diagnostics_dpe">Diagnostiqueurs</SelectItem>
                                             <SelectItem value="bureau_detude">Bureaux d'Études</SelectItem>
-                                            <SelectItem value="no_expert">Comptes sans profil expert</SelectItem>
+                                            <SelectItem value="commercial">Commerciaux</SelectItem>
+                                            <SelectItem value="no_expert">Autres sans profil expert</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
@@ -274,6 +286,17 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                                             <div className="font-semibold text-slate-700">{user.expert.nom_entreprise}</div>
                                                             <div className="text-xs text-slate-500">{user.expert.ville}</div>
                                                         </div>
+                                                    ) : (user.role === 'commercial' || user.commercialProfile) ? (
+                                                        <div>
+                                                            <div className="font-semibold text-slate-800">
+                                                                {user.commercialProfile?.prenom || user.commercialProfile?.nom
+                                                                    ? `${user.commercialProfile?.prenom || ''} ${user.commercialProfile?.nom || ''}`.trim()
+                                                                    : 'Compte Commercial'}
+                                                            </div>
+                                                            <div className="text-xs text-amber-700 font-medium">
+                                                                {user.commercialProfile?.statutLegal || 'Commercial Gainable'}
+                                                            </div>
+                                                        </div>
                                                     ) : (
                                                         <span className="text-slate-400 italic">Pas de profil expert</span>
                                                     )}
@@ -285,12 +308,18 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                                             {user.expert.expert_type === 'diagnostics_dpe' && <Badge variant="outline" className="border-purple-200 bg-purple-50 text-purple-700">Diagnostic</Badge>}
                                                             {user.expert.expert_type === 'bureau_detude' && <Badge variant="outline" className="border-emerald-200 bg-emerald-50 text-emerald-700">Etude</Badge>}
                                                         </div>
+                                                    ) : (user.role === 'commercial' || user.commercialProfile) ? (
+                                                        <Badge variant="outline" className="border-amber-300 bg-amber-50 text-amber-800 font-semibold">Commercial</Badge>
                                                     ) : "-"}
                                                 </td>
                                                 <td className="p-4">
-                                                    {user.expert ? (
+                                                    {user.expert?.telephone ? (
                                                         <div className="text-sm text-slate-600 font-mono">
-                                                            {user.expert.telephone || "-"}
+                                                            {user.expert.telephone}
+                                                        </div>
+                                                    ) : user.commercialProfile?.telephone ? (
+                                                        <div className="text-sm text-slate-600 font-mono">
+                                                            {user.commercialProfile.telephone}
                                                         </div>
                                                     ) : "-"}
                                                 </td>
@@ -328,6 +357,8 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                                         <Badge variant={user.expert.status === 'active' ? 'default' : 'secondary'} className={user.expert.status === 'active' ? 'bg-green-600' : ''}>
                                                             {user.expert.status}
                                                         </Badge>
+                                                    ) : (user.role === 'commercial' || user.commercialProfile) ? (
+                                                        <Badge variant="default" className="bg-emerald-600">Actif</Badge>
                                                     ) : (
                                                         "-"
                                                     )}
@@ -367,7 +398,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                                         variant="secondary"
                                                         onClick={() => handleImpersonate(user.id)}
                                                         disabled={!!loadingMap[user.id]}
-                                                        title="Se connecter en tant que..."
+                                                        title={user.role === 'commercial' || user.commercialProfile ? "Se connecter à l'espace commercial" : "Se connecter en tant que..."}
                                                     >
                                                         {loadingMap[user.id] === 'impersonate' ? <Loader2 className="w-4 h-4 animate-spin" /> : <LogIn className="w-4 h-4" />}
                                                     </Button>
