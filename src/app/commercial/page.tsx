@@ -166,6 +166,9 @@ export default function CommercialDashboard() {
                 </div>
             </div>
 
+            {/* Upcoming RDV & Reminders Widget */}
+            <DashboardRdvsWidget />
+
             {/* Projection Annuelle */}
             <div className="mt-8 bg-slate-900 rounded-xl p-6 shadow-sm text-white flex flex-col md:flex-row items-center justify-between">
                 <div>
@@ -401,6 +404,96 @@ function StatCard({ title, value, icon, trend, highlight }: any) {
             {trend && (
                 <div className="mt-4 text-sm font-medium text-slate-500">
                     {trend}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function DashboardRdvsWidget() {
+    const [rdvs, setRdvs] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchRdvs = async () => {
+            try {
+                const res = await fetch("/api/commercial/prospects");
+                if (res.ok) {
+                    const data = await res.json();
+                    const scheduled = (data.prospects || []).filter((p: any) => p.dateRdv);
+                    // Sort chronologically
+                    scheduled.sort((a: any, b: any) => new Date(a.dateRdv).getTime() - new Date(b.dateRdv).getTime());
+                    setRdvs(scheduled);
+                }
+            } catch (e) {
+                console.error(e);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchRdvs();
+    }, []);
+
+    if (loading) return null;
+
+    return (
+        <div className="mt-8 bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div className="flex items-center gap-2">
+                    <span className="text-xl">📅</span>
+                    <div>
+                        <h2 className="font-bold text-slate-900 text-lg">Mes Rappels & Rendez-vous à Venir</h2>
+                        <p className="text-xs text-slate-500">Planification des relances et rendez-vous téléphoniques</p>
+                    </div>
+                </div>
+                <span className="bg-blue-50 border border-blue-200 text-blue-700 font-extrabold text-xs px-3 py-1 rounded-full">
+                    {rdvs.length} RDV planifié(s)
+                </span>
+            </div>
+
+            {rdvs.length === 0 ? (
+                <div className="p-6 text-center text-slate-400 text-xs italic bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                    Aucun rendez-vous planifié pour le moment. Lors de vos appels, fixez des rappels pour les retrouver ici !
+                </div>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {rdvs.map((p: any) => {
+                        const dateObj = new Date(p.dateRdv);
+                        const dateStr = dateObj.toLocaleDateString("fr-FR", { day: "numeric", month: "short", year: "numeric" });
+                        
+                        return (
+                            <div key={p.id} className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-3 hover:border-blue-400 transition-all">
+                                <div className="flex items-center justify-between">
+                                    <span className="bg-amber-100 border border-amber-300 text-amber-900 font-extrabold text-[11px] px-2.5 py-1 rounded-md flex items-center gap-1">
+                                        ⏱️ {dateStr} {p.heureRdv ? `à ${p.heureRdv}` : ''}
+                                    </span>
+                                    <Link href={`/commercial/prospects/${p.id}`} className="text-xs text-blue-600 hover:underline font-bold">
+                                        Fiche ➔
+                                    </Link>
+                                </div>
+
+                                <div>
+                                    <h4 className="font-extrabold text-slate-900 text-sm truncate">{p.nomEntreprise}</h4>
+                                    <div className="text-xs text-slate-500 font-medium">{p.nomContact} {p.prenomContact || ''}</div>
+                                </div>
+
+                                {p.noteRdv && (
+                                    <div className="bg-white p-2 rounded-lg border border-slate-200 text-[11px] text-slate-600 italic">
+                                        "{p.noteRdv}"
+                                    </div>
+                                )}
+
+                                {p.telephone && (
+                                    <a
+                                        href={`tel:${p.telephone}`}
+                                        className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                                    >
+                                        📞 Appeler ({p.telephone})
+                                    </a>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
             )}
         </div>

@@ -274,7 +274,6 @@ model ExpertCertification {
   value     String   // rge_qualipac, fluide_frigo, etc.
 }
 
-// 5.0 CRM / Commercial
 model CommercialProspect {
   id              String   @id @default(cuid())
   commercialId    String
@@ -291,6 +290,11 @@ model CommercialProspect {
   
   status          String   @default("NON_CONTACTE") // NON_CONTACTE, CONTACTE, INTERESSE, REFUSE, VENTE_EFFECTUEE, NE_PLUS_DEMARCHER
   commentaire     String?  @db.Text
+
+  // RDV & Reminder Fields
+  dateRdv         DateTime?
+  heureRdv        String?
+  noteRdv         String?  @db.Text
   
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

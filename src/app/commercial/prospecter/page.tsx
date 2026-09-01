@@ -390,18 +390,24 @@ export default function ProspecterCvcPage() {
                                         Vérification & Aperçu Google Live 🌐
                                     </button>
 
-                                    <button
-                                        onClick={() => {
-                                            setSelectedCompany(comp);
-                                            setContactEmail(comp.email || "");
-                                            setEditPhone(comp.telephone || "");
-                                            setEditWebsite(comp.siteWeb || "");
-                                        }}
-                                        className="w-full py-2.5 px-3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
-                                    >
-                                        <PlusCircle className="h-4 w-4" />
-                                        Qualifier & Ajouter à mes prospects CRM
-                                    </button>
+                                    {(comp as any).isLocked ? (
+                                        <div className="w-full py-2.5 px-3 bg-slate-100 border border-slate-300 text-slate-500 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 cursor-not-allowed">
+                                            🔒 Attribué à {(comp as any).assignedTo || 'autre commercial'}
+                                        </div>
+                                    ) : (
+                                        <button
+                                            onClick={() => {
+                                                setSelectedCompany(comp);
+                                                setContactEmail(comp.email || "");
+                                                setEditPhone(comp.telephone || "");
+                                                setEditWebsite(comp.siteWeb || "");
+                                            }}
+                                            className="w-full py-2.5 px-3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
+                                        >
+                                            <PlusCircle className="h-4 w-4" />
+                                            Qualifier & Ajouter à mes prospects CRM
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}

@@ -69,7 +69,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 adresse: body.adresse !== undefined ? body.adresse : prospect.adresse,
                 siteWeb: body.siteWeb !== undefined ? body.siteWeb : prospect.siteWeb,
                 status: body.status !== undefined ? body.status : prospect.status,
-                commentaire: body.commentaire !== undefined ? body.commentaire : prospect.commentaire
+                commentaire: body.commentaire !== undefined ? body.commentaire : prospect.commentaire,
+                dateRdv: body.dateRdv !== undefined ? (body.dateRdv ? new Date(body.dateRdv) : null) : prospect.dateRdv,
+                heureRdv: body.heureRdv !== undefined ? body.heureRdv : prospect.heureRdv,
+                noteRdv: body.noteRdv !== undefined ? body.noteRdv : prospect.noteRdv
             }
         });
 

@@ -36,7 +36,7 @@ export async function GET(req: Request) {
     }
 }
 
-// POST: Ajouter un nouveau prospect
+// POST: Ajouter un nouveau prospect avec vérification d'exclusivité anti-doublon et RDV
 export async function POST(req: Request) {
     const user = await verifyCommercial();
     if (!user) return unauthorizedCommercial();
@@ -45,13 +45,26 @@ export async function POST(req: Request) {
         const body = await req.json();
         
         // Validation basique
-        if (!body.nomEntreprise || !body.nomContact || !body.siret) {
-            return NextResponse.json({ message: "Le nom de l'entreprise, le contact et le SIRET sont requis." }, { status: 400 });
+        if (!body.nomEntreprise || !body.nomContact) {
+            return NextResponse.json({ message: "Le nom de l'entreprise et le contact sont requis." }, { status: 400 });
         }
 
-        // Note : Nous permettons désormais au commercial d'ajouter un prospect même si le SIRET
-        // existe déjà dans la base Expert (car le client a pu s'inscrire avant que le commercial
-        // ne déclare le prospect). La vraie validation de la vente se fera côté Admin.
+        // 1. Anti-Duplicate Exclusivity Check (Vérification d'exclusivité par SIRET ou Nom + Adresse)
+        if (body.siret && body.siret.length >= 9) {
+            const existingProspect = await prisma.commercialProspect.findFirst({
+                where: { siret: body.siret },
+                include: { commercial: { include: { commercialProfile: true } } }
+            });
+
+            if (existingProspect && existingProspect.commercialId !== user.id) {
+                const ownerName = existingProspect.commercial.commercialProfile?.nom || existingProspect.commercial.email;
+                return NextResponse.json({ 
+                    message: `Exclusivité Commerciale : Cette entreprise (${body.nomEntreprise}) est déjà attribuée à ${ownerName}. Pour éviter tout doublon d'appel, vous ne pouvez pas la réattribuer.`,
+                    isLocked: true,
+                    assignedTo: ownerName
+                }, { status: 409 });
+            }
+        }
 
         const newProspect = await prisma.commercialProspect.create({
             data: {
@@ -65,7 +78,10 @@ export async function POST(req: Request) {
                 adresse: body.adresse || null,
                 siteWeb: body.siteWeb || null,
                 status: body.status || "NON_CONTACTE",
-                commentaire: body.commentaire || null
+                commentaire: body.commentaire || null,
+                dateRdv: body.dateRdv ? new Date(body.dateRdv) : null,
+                heureRdv: body.heureRdv || null,
+                noteRdv: body.noteRdv || null
             }
         });
 

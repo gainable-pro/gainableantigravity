@@ -62,9 +62,30 @@ export async function GET(req: Request) {
     // Return top 100 matching results
     const results = filtered.slice(0, 100);
 
+    // Fetch claimed prospects to enforce anti-duplicate exclusivity lock
+    const claimedProspects = await prisma.commercialProspect.findMany({
+        select: { siret: true, nomEntreprise: true, commercialId: true, commercial: { include: { commercialProfile: true } } }
+    });
+
+    const claimedSiretsMap = new Map<string, { commercialId: string; ownerName: string }>();
+    claimedProspects.forEach(p => {
+        const ownerName = p.commercial.commercialProfile?.nom || p.commercial.email;
+        if (p.siret) claimedSiretsMap.set(p.siret.trim(), { commercialId: p.commercialId, ownerName });
+    });
+
+    const enrichedResults = results.map(c => {
+        const lock = c.siret ? claimedSiretsMap.get(c.siret.trim()) : null;
+        const isLockedByOther = lock ? lock.commercialId !== user.id : false;
+        return {
+            ...c,
+            isLocked: isLockedByOther,
+            assignedTo: lock ? lock.ownerName : null
+        };
+    });
+
     return NextResponse.json({
         totalMatches: filtered.length,
-        count: results.length,
-        companies: results
+        count: enrichedResults.length,
+        companies: enrichedResults
     });
 }

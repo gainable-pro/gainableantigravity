@@ -77,7 +77,10 @@ export default function EditProspect() {
         adresse: "",
         siteWeb: "",
         status: "",
-        commentaire: ""
+        commentaire: "",
+        dateRdv: "",
+        heureRdv: "",
+        noteRdv: ""
     });
 
     const [saleData, setSaleData] = useState({
@@ -105,7 +108,10 @@ export default function EditProspect() {
                         adresse: data.prospect.adresse || "",
                         siteWeb: data.prospect.siteWeb || "",
                         status: data.prospect.status || "",
-                        commentaire: data.prospect.commentaire || ""
+                        commentaire: data.prospect.commentaire || "",
+                        dateRdv: data.prospect.dateRdv ? new Date(data.prospect.dateRdv).toISOString().split('T')[0] : "",
+                        heureRdv: data.prospect.heureRdv || "",
+                        noteRdv: data.prospect.noteRdv || ""
                     });
                     setSales(data.prospect.sales || []);
                 } else {
@@ -311,6 +317,51 @@ export default function EditProspect() {
                                         onChange={e => setFormData({...formData, commentaire: e.target.value})} 
                                         className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500"
                                     ></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Planificateur de RDV & Rappel */}
+                        <div className="border-t pt-6 space-y-4">
+                            <div className="flex items-center justify-between">
+                                <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
+                                    <span>📅</span> Planificateur de RDV & Relance Téléphonique
+                                </h2>
+                                {formData.dateRdv && (
+                                    <span className="bg-amber-100 border border-amber-300 text-amber-900 text-xs font-extrabold px-3 py-1 rounded-full">
+                                        ⏱️ RDV prévu le {new Date(formData.dateRdv).toLocaleDateString("fr-FR")} {formData.heureRdv ? `à ${formData.heureRdv}` : ''}
+                                    </span>
+                                )}
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <div>
+                                    <label className="block text-xs font-bold text-slate-700 mb-1">Date du RDV / Rappel</label>
+                                    <input 
+                                        type="date" 
+                                        value={formData.dateRdv} 
+                                        onChange={e => setFormData({...formData, dateRdv: e.target.value})} 
+                                        className="w-full p-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 font-medium"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-bold text-slate-700 mb-1">Heure du RDV</label>
+                                    <input 
+                                        type="time" 
+                                        value={formData.heureRdv} 
+                                        onChange={e => setFormData({...formData, heureRdv: e.target.value})} 
+                                        className="w-full p-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 font-medium"
+                                    />
+                                </div>
+                                <div className="md:col-span-2">
+                                    <label className="block text-xs font-bold text-slate-700 mb-1">Motif / Note du RDV</label>
+                                    <input 
+                                        type="text" 
+                                        placeholder="ex: Rappeler M. Martin pour valider l'adhésion CVC..."
+                                        value={formData.noteRdv} 
+                                        onChange={e => setFormData({...formData, noteRdv: e.target.value})} 
+                                        className="w-full p-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 font-medium"
+                                    />
                                 </div>
                             </div>
                         </div>

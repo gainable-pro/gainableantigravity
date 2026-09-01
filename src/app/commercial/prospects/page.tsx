@@ -100,7 +100,8 @@ export default function ProspectsList() {
                             <tr>
                                 <th className="px-6 py-3 font-semibold">Entreprise</th>
                                 <th className="px-6 py-3 font-semibold">Contact</th>
-                                <th className="px-6 py-3 font-semibold">Statut</th>
+                                <th className="px-6 py-3 font-semibold">Statut Prospection</th>
+                                <th className="px-6 py-3 font-semibold">Prochain RDV / Rappel</th>
                                 <th className="px-6 py-3 font-semibold">Date d'ajout</th>
                                 <th className="px-6 py-3 font-semibold text-right">Action</th>
                             </tr>
@@ -108,11 +109,11 @@ export default function ProspectsList() {
                         <tbody className="divide-y divide-slate-100">
                             {loading ? (
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-8 text-center text-slate-400">Chargement...</td>
+                                    <td colSpan={6} className="px-6 py-8 text-center text-slate-400">Chargement...</td>
                                 </tr>
                             ) : prospects.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5} className="px-6 py-8 text-center text-slate-500">
+                                    <td colSpan={6} className="px-6 py-8 text-center text-slate-500">
                                         Aucun prospect trouvé. <Link href="/commercial/prospects/new" className="text-blue-600 underline">Ajoutez-en un</Link>.
                                     </td>
                                 </tr>
@@ -133,6 +134,18 @@ export default function ProspectsList() {
                                     </td>
                                     <td className="px-6 py-4">
                                         {getStatusBadge(p.status)}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {p.dateRdv ? (
+                                            <div className="flex flex-col gap-1">
+                                                <span className="bg-amber-100 border border-amber-300 text-amber-900 text-xs font-extrabold px-2.5 py-1 rounded-md inline-flex items-center gap-1 w-fit">
+                                                    ⏱️ {new Date(p.dateRdv).toLocaleDateString("fr-FR", { day: "numeric", month: "short" })} {p.heureRdv ? `à ${p.heureRdv}` : ''}
+                                                </span>
+                                                {p.noteRdv && <span className="text-[11px] text-slate-500 italic max-w-xs truncate">{p.noteRdv}</span>}
+                                            </div>
+                                        ) : (
+                                            <span className="text-slate-400 text-xs italic">Aucun RDV</span>
+                                        )}
                                     </td>
                                     <td className="px-6 py-4 text-slate-500">
                                         {new Date(p.createdAt).toLocaleDateString("fr-FR")}
