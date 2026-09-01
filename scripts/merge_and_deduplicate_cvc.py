@@ -112,8 +112,8 @@ for i, row in enumerate(sheet.iter_rows(values_only=True)):
         "telephone": tel if tel != "None" else "",
         "email": email if email != "None" else "",
         "siteWeb": site if site != "None" else "",
-        "noteGoogle": note or 4.8,
-        "nombreAvis": avis or 28,
+        "noteGoogle": note,
+        "nombreAvis": avis,
         "chiffreAffaires": ca if ca != "None" else "",
         "accroche": accroche if accroche != "None" else ""
     }
@@ -158,6 +158,20 @@ with open(csv_file, "r", encoding="utf-8", errors="ignore") as f:
         site = str(c_map.get("Site internet") or "").strip()
         ca = str(c_map.get("Chiffre d'affaires") or "").strip()
 
+        note_csv = None
+        try:
+            if c_map.get("Note Google"):
+                note_csv = float(c_map.get("Note Google"))
+        except:
+            pass
+
+        avis_csv = None
+        try:
+            if c_map.get("Nombre d'avis"):
+                avis_csv = int(c_map.get("Nombre d'avis"))
+        except:
+            pass
+
         c_obj = {
             "id": f"cvc-{len(companies) + 1}",
             "nomEntreprise": str(nom_entreprise).strip(),
@@ -171,8 +185,8 @@ with open(csv_file, "r", encoding="utf-8", errors="ignore") as f:
             "telephone": tel if tel != "None" else "",
             "email": email if email != "None" else "",
             "siteWeb": site if site != "None" else "",
-            "noteGoogle": 4.8,
-            "nombreAvis": 25,
+            "noteGoogle": note_csv,
+            "nombreAvis": avis_csv,
             "chiffreAffaires": ca if ca != "None" else "",
             "accroche": ""
         }
