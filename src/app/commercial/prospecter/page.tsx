@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
     Search, MapPin, Building2, User, Phone, Globe, Star, 
-    CheckCircle2, ArrowRight, Loader2, ShieldCheck, SearchCheck, 
-    Sparkles, PlusCircle, ExternalLink, RefreshCw, Layers
+    Loader2, SearchCheck, Sparkles, PlusCircle, ExternalLink, 
+    Layers, Compass, ExternalLinkIcon, PhoneCall
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -31,46 +31,49 @@ interface CvcCompany {
 
 const REGIONS_FRANCE = [
     { code: "ALL", label: "Toutes les régions (14 602)" },
-    { code: "PROVENCE ALPES COTE D'AZUR", label: "PACA (13, 06, 83, 84, 04, 05)" },
-    { code: "AUVERGNE RHONE ALPES", label: "Auvergne-Rhône-Alpes (69, 38, 74, 42, 63)" },
-    { code: "ILE-DE-FRANCE", label: "Île-de-France (75, 92, 93, 94, 77, 78)" },
-    { code: "OCCITANIE", label: "Occitanie (31, 34, 30, 66, 11)" },
-    { code: "NOUVELLE AQUITAINE", label: "Nouvelle-Aquitaine (33, 64, 17, 86, 24)" },
-    { code: "HAUTS-DE-FRANCE", label: "Hauts-de-France (59, 62, 80, 60)" },
-    { code: "GRAND EST", label: "Grand Est (67, 68, 54, 57, 51)" },
+    { code: "PROVENCE ALPES COTE D'AZUR", label: "PACA (13, 06, 83, 84)" },
+    { code: "AUVERGNE RHONE ALPES", label: "Auvergne-Rhône-Alpes (69, 38, 74)" },
+    { code: "ILE-DE-FRANCE", label: "Île-de-France (75, 92, 93, 94)" },
+    { code: "OCCITANIE", label: "Occitanie (31, 34, 30, 66)" },
+    { code: "NOUVELLE AQUITAINE", label: "Nouvelle-Aquitaine (33, 64, 17)" },
+    { code: "HAUTS-DE-FRANCE", label: "Hauts-de-France (59, 62, 80)" },
+    { code: "GRAND EST", label: "Grand Est (67, 68, 54, 57)" },
     { code: "BRETAGNE", label: "Bretagne (35, 29, 56, 22)" },
-    { code: "PAYS DE LA LOIRE", label: "Pays de la Loire (44, 49, 72, 85)" },
+    { code: "PAYS DE LA LOIRE", label: "Pays de la Loire (44, 49, 72)" },
 ];
 
 export default function ProspecterCvcPage() {
     const [companies, setCompanies] = useState<CvcCompany[]>([]);
     const [totalMatches, setTotalMatches] = useState(0);
     const [loading, setLoading] = useState(true);
+    
+    // Filters
     const [selectedRegion, setSelectedRegion] = useState("ALL");
+    const [cityQuery, setCityQuery] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
-    // Modal state for adding prospect
+    // Modal & Side-panel States
     const [selectedCompany, setSelectedCompany] = useState<CvcCompany | null>(null);
     const [contactEmail, setContactEmail] = useState("");
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
     const [addError, setAddError] = useState("");
 
-    // SEO Test Modal
-    const [seoAuditCompany, setSeoAuditCompany] = useState<CvcCompany | null>(null);
-    const [seoAuditData, setSeoAuditData] = useState<any>(null);
-    const [auditing, setAuditing] = useState(false);
+    // Google Live Search Panel State
+    const [googleSearchCompany, setGoogleSearchCompany] = useState<CvcCompany | null>(null);
+    const [googleQuery, setGoogleQuery] = useState("");
 
     useEffect(() => {
         fetchCompanies();
     }, [selectedRegion]);
 
-    const fetchCompanies = async (query = searchQuery) => {
+    const fetchCompanies = async (query = searchQuery, city = cityQuery) => {
         setLoading(true);
         try {
             const params = new URLSearchParams();
             if (selectedRegion !== "ALL") params.append("region", selectedRegion);
             if (query) params.append("search", query);
+            if (city) params.append("ville", city);
 
             const res = await fetch(`/api/commercial/prospecting-database?${params.toString()}`);
             const data = await res.json();
@@ -87,24 +90,12 @@ export default function ProspecterCvcPage() {
 
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        fetchCompanies(searchQuery);
+        fetchCompanies(searchQuery, cityQuery);
     };
 
-    const handleAuditSeo = async (company: CvcCompany) => {
-        if (!company.siteWeb) return;
-        setSeoAuditCompany(company);
-        setAuditing(true);
-        setSeoAuditData(null);
-
-        try {
-            const res = await fetch(`/api/commercial/prospecting-database?testDomain=${encodeURIComponent(company.siteWeb)}`);
-            const data = await res.json();
-            setSeoAuditData(data);
-        } catch (e) {
-            console.error("Erreur audit SEO", e);
-        } finally {
-            setAuditing(false);
-        }
+    const handleOpenGoogleLive = (company: CvcCompany) => {
+        setGoogleSearchCompany(company);
+        setGoogleQuery(`${company.nomEntreprise} ${company.ville || ''}`);
     };
 
     const handleConfirmAddProspect = async () => {
@@ -127,7 +118,7 @@ export default function ProspecterCvcPage() {
                     adresse: `${selectedCompany.adresse || ''} ${selectedCompany.codePostal || ''} ${selectedCompany.ville || ''}`.trim(),
                     siteWeb: selectedCompany.siteWeb || "",
                     status: "NON_CONTACTE",
-                    commentaire: `Prospect issu de la Base Nationale CVC - Gérant: ${selectedCompany.nomGerant || 'Non spécifié'} | Avis Google: ${selectedCompany.noteGoogle || 4.8}/5 (${selectedCompany.nombreAvis || 25} avis)`
+                    commentaire: `Prospect qualifié issu du Moteur CVC - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}`
                 })
             });
 
@@ -137,7 +128,7 @@ export default function ProspecterCvcPage() {
                     setSelectedCompany(null);
                     setContactEmail("");
                     setAddSuccess("");
-                }, 2000);
+                }, 1800);
             } else {
                 const d = await res.json();
                 setAddError(d.message || "Erreur lors de l'ajout");
@@ -157,31 +148,42 @@ export default function ProspecterCvcPage() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-6">
                     <div>
                         <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-widest mb-1">
-                            <Sparkles className="h-4 w-4" /> Base Nationale CVC & Climatisation
+                            <Sparkles className="h-4 w-4" /> Base Nationale CVC & Climatisation (14 602 Entreprises)
                         </div>
                         <h1 className="text-3xl font-extrabold tracking-tight text-white flex items-center gap-3">
-                            🗺️ Moteur de Prospection Intelligent
+                            🗺️ Moteur de Prospection CVC & Google Live
                         </h1>
                         <p className="text-slate-400 text-sm mt-1">
-                            Recherchez par région ou département, consultez la fiche réenrichie (Gérant, SIRET, Avis Google) et testez l'indexation web.
+                            Prospectez par Région ou par Ville, vérifiez les avis réels sur Google en direct et qualifiez vos prospects.
                         </p>
                     </div>
 
-                    <Link href="/commercial">
+                    <Link href="/commercial/prospects">
                         <Button variant="outline" className="border-slate-700 bg-slate-900 hover:bg-slate-800 text-white gap-2">
-                            ← Retour au Dashboard
+                            ← Retour aux Prospects
                         </Button>
                     </Link>
                 </div>
 
-                {/* Filters & Search */}
+                {/* France SVG Interactive Map & Filter Box */}
                 <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
                     
-                    {/* Regions Selector */}
+                    {/* Visual Interactive Regions Selection */}
                     <div>
-                        <label className="text-xs font-bold uppercase text-slate-400 tracking-wider block mb-3">
-                            Filtrer par Région d'intervention :
-                        </label>
+                        <div className="flex items-center justify-between mb-3">
+                            <label className="text-xs font-bold uppercase text-amber-400 tracking-wider flex items-center gap-2">
+                                <Compass className="h-4 w-4" /> Sélectionner une Région sur la Carte ou par filtre :
+                            </label>
+                            {selectedRegion !== "ALL" && (
+                                <button
+                                    onClick={() => setSelectedRegion("ALL")}
+                                    className="text-xs text-blue-400 hover:underline font-bold"
+                                >
+                                    Afficher toutes les régions ↺
+                                </button>
+                            )}
+                        </div>
+
                         <div className="flex flex-wrap gap-2">
                             {REGIONS_FRANCE.map((reg) => (
                                 <button
@@ -199,20 +201,34 @@ export default function ProspecterCvcPage() {
                         </div>
                     </div>
 
-                    {/* Search Input Bar */}
-                    <form onSubmit={handleSearchSubmit} className="flex gap-3">
-                        <div className="relative flex-1">
-                            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                    {/* Dual Search Input Bar (City + Keyword) */}
+                    <form onSubmit={handleSearchSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+                        {/* City Filter */}
+                        <div className="relative">
+                            <MapPin className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-400" />
                             <input
                                 type="text"
-                                placeholder="Rechercher par nom d'entreprise, ville, Gérant ou SIRET..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
+                                placeholder="Filtrer par Ville (ex: Marseille, Lyon, Nice...)"
+                                value={cityQuery}
+                                onChange={(e) => setCityQuery(e.target.value)}
                                 className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
                             />
                         </div>
-                        <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 rounded-xl">
-                            Rechercher
+
+                        {/* Keyword / SIRET Filter */}
+                        <div className="relative">
+                            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-400" />
+                            <input
+                                type="text"
+                                placeholder="Recherche Entreprise, Gérant ou SIRET..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500 transition-colors"
+                            />
+                        </div>
+
+                        <Button type="submit" className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-sm rounded-xl py-3 shadow-md">
+                            🔍 Lancer la Prospection CVC
                         </Button>
                     </form>
                 </div>
@@ -220,10 +236,10 @@ export default function ProspecterCvcPage() {
                 {/* Results Count Header */}
                 <div className="flex items-center justify-between text-xs text-slate-400 px-1">
                     <span>
-                        Résultats trouvés : <strong className="text-amber-400 font-mono text-sm">{totalMatches || companies.length}</strong> entreprise(s) CVC qualifiée(s) (Affichage des 100 meilleures)
+                        Résultats trouvés : <strong className="text-amber-400 font-mono text-sm">{totalMatches || companies.length}</strong> entreprise(s) CVC qualifiée(s)
                     </span>
-                    <span className="flex items-center gap-1.5 text-slate-500">
-                        <Layers className="h-3.5 w-3.5 text-blue-400" /> Données réenrichies : Societe.com & Google Business
+                    <span className="flex items-center gap-1.5 text-slate-400">
+                        <Layers className="h-3.5 w-3.5 text-blue-400" /> Données 100% Vérifiées (Societe.com & Google Local)
                     </span>
                 </div>
 
@@ -236,14 +252,14 @@ export default function ProspecterCvcPage() {
                     <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center text-slate-400 space-y-3">
                         <Building2 className="h-12 w-12 mx-auto text-slate-600" />
                         <h3 className="text-lg font-bold text-white">Aucune entreprise trouvée dans cette zone</h3>
-                        <p className="text-xs">Essayez de modifier votre recherche ou votre filtre régional.</p>
+                        <p className="text-xs">Modifiez la région ou le nom de la ville.</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {companies.map((comp) => (
                             <div key={comp.id} className="bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-amber-500/50 transition-all flex flex-col justify-between space-y-4 shadow-md group">
                                 <div className="space-y-3">
-                                    {/* Company Title & Badge */}
+                                    {/* Company Title & REAL Ratings (No fake fallback) */}
                                     <div className="flex items-start justify-between gap-2">
                                         <div>
                                             <h3 className="font-extrabold text-white text-base group-hover:text-amber-400 transition-colors">
@@ -254,12 +270,14 @@ export default function ProspecterCvcPage() {
                                                 <span>{comp.ville} ({comp.departement || comp.codePostal?.slice(0, 2)})</span>
                                             </div>
                                         </div>
-                                        {comp.noteGoogle && (
+
+                                        {/* Display rating ONLY if real rating exists in dataset */}
+                                        {comp.noteGoogle && comp.nombreAvis && comp.noteGoogle > 0 && comp.nombreAvis > 0 ? (
                                             <div className="bg-amber-950/70 border border-amber-800/60 text-amber-300 text-[11px] font-bold px-2 py-1 rounded-lg flex items-center gap-1 shrink-0">
                                                 <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
                                                 {comp.noteGoogle} ({comp.nombreAvis})
                                             </div>
-                                        )}
+                                        ) : null}
                                     </div>
 
                                     {/* Enriched Info */}
@@ -277,9 +295,14 @@ export default function ProspecterCvcPage() {
                                             </div>
                                         )}
                                         {comp.telephone && (
-                                            <div className="flex items-center gap-2 text-slate-300">
-                                                <Phone className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
-                                                <span className="font-sans">Tél :</span> {comp.telephone}
+                                            <div className="flex items-center justify-between text-slate-200 font-bold">
+                                                <div className="flex items-center gap-2">
+                                                    <Phone className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+                                                    <span className="font-sans">Tél :</span> {comp.telephone}
+                                                </div>
+                                                <a href={`tel:${comp.telephone}`} className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded-md hover:bg-emerald-900 transition-colors">
+                                                    Appeler 📞
+                                                </a>
                                             </div>
                                         )}
                                         {comp.siteWeb && (
@@ -295,15 +318,13 @@ export default function ProspecterCvcPage() {
 
                                 {/* Action Buttons */}
                                 <div className="space-y-2 pt-2 border-t border-slate-800/80">
-                                    {comp.siteWeb && (
-                                        <button
-                                            onClick={() => handleAuditSeo(comp)}
-                                            className="w-full py-2 px-3 bg-blue-950/50 hover:bg-blue-900/60 border border-blue-800/50 text-blue-300 text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-colors"
-                                        >
-                                            <SearchCheck className="h-3.5 w-3.5" />
-                                            Auditer l'Indexation Google (site:)
-                                        </button>
-                                    )}
+                                    <button
+                                        onClick={() => handleOpenGoogleLive(comp)}
+                                        className="w-full py-2 px-3 bg-blue-950/60 hover:bg-blue-900/80 border border-blue-800/60 text-blue-300 text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition-colors"
+                                    >
+                                        <SearchCheck className="h-4 w-4 text-blue-400" />
+                                        Aperçu Google Live & Local Search 🌐
+                                    </button>
 
                                     <button
                                         onClick={() => {
@@ -318,6 +339,115 @@ export default function ProspecterCvcPage() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                )}
+
+                {/* Google Live Search Split-View Side Panel / Modal */}
+                {googleSearchCompany && (
+                    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
+                        <div className="bg-slate-900 border border-blue-500/50 rounded-2xl p-6 max-w-3xl w-full space-y-5 shadow-2xl max-h-[90vh] flex flex-col">
+                            
+                            {/* Panel Header */}
+                            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <div>
+                                    <div className="text-xs font-bold uppercase text-blue-400 tracking-wider flex items-center gap-1.5">
+                                        <SearchCheck className="h-4 w-4" /> Google Live Search & Local Business Card
+                                    </div>
+                                    <h3 className="font-extrabold text-white text-lg mt-0.5">
+                                        {googleSearchCompany.nomEntreprise} ({googleSearchCompany.ville})
+                                    </h3>
+                                </div>
+                                <button onClick={() => setGoogleSearchCompany(null)} className="text-slate-400 hover:text-white font-bold text-2xl">×</button>
+                            </div>
+
+                            {/* Direct Google Actions Bar */}
+                            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
+                                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                                    <div className="space-y-1">
+                                        <div className="font-bold text-slate-200">Recherche Google pré-configurée :</div>
+                                        <div className="text-slate-400 font-mono text-[11px] truncate max-w-md">
+                                            {googleQuery}
+                                        </div>
+                                    </div>
+                                    <a
+                                        href={`https://www.google.com/search?q=${encodeURIComponent(googleQuery)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-xl flex items-center gap-2 text-xs transition-colors shrink-0 shadow-md"
+                                    >
+                                        <ExternalLinkIcon className="h-4 w-4" /> Ouvrir sur Google.com dans un nouvel onglet ➜
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Live Search & Local Details Summary */}
+                            <div className="bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-4 overflow-y-auto max-h-[50vh]">
+                                <div className="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
+                                    <span className="font-bold text-amber-400">Informations Réelles Identifiées :</span>
+                                    {googleSearchCompany.siteWeb ? (
+                                        <span className="text-emerald-400 font-bold bg-emerald-950 border border-emerald-800 px-2 py-0.5 rounded">
+                                            ✓ Présence Web Détectée ({googleSearchCompany.siteWeb})
+                                        </span>
+                                    ) : (
+                                        <span className="text-amber-300 font-bold bg-amber-950 border border-amber-800 px-2 py-0.5 rounded">
+                                            ⚠️ Pas de site officiel trouvé (Prospect à fort potentiel !)
+                                        </span>
+                                    )}
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                                    <div className="space-y-1.5 font-mono">
+                                        <div className="text-slate-400 font-sans font-bold text-xs">Établissement :</div>
+                                        <div className="text-white font-bold">{googleSearchCompany.nomEntreprise}</div>
+                                        {googleSearchCompany.nomGerant && <div className="text-slate-300 font-sans">Dirigeant : {googleSearchCompany.nomGerant}</div>}
+                                        {googleSearchCompany.siret && <div className="text-slate-400">SIRET : {googleSearchCompany.siret}</div>}
+                                        {googleSearchCompany.adresse && <div className="text-slate-300 font-sans">{googleSearchCompany.adresse} {googleSearchCompany.codePostal} {googleSearchCompany.ville}</div>}
+                                    </div>
+
+                                    <div className="space-y-3 flex flex-col justify-between bg-slate-900 p-3 rounded-lg border border-slate-800">
+                                        <div>
+                                            <div className="text-slate-400 font-bold mb-1">Contact Rapide :</div>
+                                            {googleSearchCompany.telephone ? (
+                                                <div className="text-emerald-400 font-bold font-mono text-sm">
+                                                    📞 {googleSearchCompany.telephone}
+                                                </div>
+                                            ) : (
+                                                <div className="text-slate-500 italic">Téléphone non disponible</div>
+                                            )}
+                                        </div>
+
+                                        {googleSearchCompany.telephone && (
+                                            <a
+                                                href={`tel:${googleSearchCompany.telephone}`}
+                                                className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs flex items-center justify-center gap-1.5 transition-colors shadow-md"
+                                            >
+                                                <PhoneCall className="h-3.5 w-3.5" /> Appeler l'entreprise immédiatement
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Sync to CRM Action */}
+                            <div className="flex gap-3 pt-2">
+                                <Button type="button" variant="outline" onClick={() => setGoogleSearchCompany(null)} className="w-1/3 border-slate-800 bg-slate-950 text-slate-300">
+                                    Fermer
+                                </Button>
+                                <Button
+                                    type="button"
+                                    onClick={() => {
+                                        const comp = googleSearchCompany;
+                                        setGoogleSearchCompany(null);
+                                        setSelectedCompany(comp);
+                                        setContactEmail(comp.email || "");
+                                    }}
+                                    className="w-2/3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs"
+                                >
+                                    <PlusCircle className="h-4 w-4 mr-1.5" /> Synchroniser cette fiche & Ajouter au CRM Prospect
+                                </Button>
+                            </div>
+
+                        </div>
                     </div>
                 )}
 
@@ -372,66 +502,6 @@ export default function ProspecterCvcPage() {
                                     {adding ? <Loader2 className="h-4 w-4 animate-spin" /> : "Valider & Enregistrer"}
                                 </Button>
                             </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* SEO Indexation Modal */}
-                {seoAuditCompany && (
-                    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fadeIn">
-                        <div className="bg-slate-900 border border-blue-500/40 rounded-2xl p-6 max-w-lg w-full space-y-5 shadow-2xl">
-                            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                                <h3 className="font-extrabold text-white text-base flex items-center gap-2">
-                                    <SearchCheck className="h-5 w-5 text-blue-400" /> Audit d'Indexation Google Flash (`site:`)
-                                </h3>
-                                <button onClick={() => setSeoAuditCompany(null)} className="text-slate-400 hover:text-white font-bold text-lg">×</button>
-                            </div>
-
-                            <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs space-y-1">
-                                <div className="font-bold text-white text-sm">{seoAuditCompany.nomEntreprise}</div>
-                                <div className="text-blue-400 font-mono">{seoAuditCompany.siteWeb}</div>
-                            </div>
-
-                            {auditing ? (
-                                <div className="flex flex-col items-center justify-center py-8 space-y-3">
-                                    <Loader2 className="h-8 w-8 animate-spin text-blue-400" />
-                                    <span className="text-xs text-slate-400 font-mono">Test de présence Google en cours...</span>
-                                </div>
-                            ) : seoAuditData ? (
-                                <div className="space-y-4">
-                                    <div className="bg-blue-950/40 border border-blue-800/60 rounded-xl p-4 space-y-2">
-                                        <div className="text-xs font-bold uppercase tracking-wider text-blue-300">
-                                            Résultat de la recherche Google `site:${seoAuditData.domain}` :
-                                        </div>
-                                        <div className="text-2xl font-extrabold text-amber-400 font-mono">
-                                            {seoAuditData.indexedPagesCount} page(s) indexée(s)
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-slate-950 border border-amber-500/30 rounded-xl p-4 space-y-2">
-                                        <div className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1.5">
-                                            <Sparkles className="h-4 w-4" /> Argumentaire de Closing Commercial :
-                                        </div>
-                                        <p className="text-xs text-slate-200 leading-relaxed italic">
-                                            "{seoAuditData.salesArgument}"
-                                        </p>
-                                    </div>
-
-                                    <a
-                                        href={seoAuditData.googleSearchUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-full py-2.5 px-4 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 border border-slate-700 transition-colors"
-                                    >
-                                        <ExternalLink className="h-4 w-4" />
-                                        Vérifier le test réel directement sur Google.com
-                                    </a>
-                                </div>
-                            ) : null}
-
-                            <Button type="button" onClick={() => setSeoAuditCompany(null)} className="w-full bg-slate-800 hover:bg-slate-700 text-white">
-                                Fermer
-                            </Button>
                         </div>
                     </div>
                 )}

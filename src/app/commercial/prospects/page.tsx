@@ -47,18 +47,26 @@ export default function ProspectsList() {
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h1 className="text-2xl font-bold text-slate-900">Mes Prospects</h1>
                     <p className="text-slate-500">Gérez votre pipeline de prospection.</p>
                 </div>
-                <Link 
-                    href="/commercial/prospects/new"
-                    className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                    <Plus className="h-4 w-4" />
-                    Ajouter
-                </Link>
+                <div className="flex items-center gap-3">
+                    <Link 
+                        href="/commercial/prospecter"
+                        className="flex items-center gap-2 bg-amber-500 text-slate-950 px-4 py-2 rounded-lg font-bold hover:bg-amber-600 transition-colors shadow-sm text-sm"
+                    >
+                        🗺️ Moteur de Prospection CVC
+                    </Link>
+                    <Link 
+                        href="/commercial/prospects/new"
+                        className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                    >
+                        <Plus className="h-4 w-4" />
+                        Ajout Manuel
+                    </Link>
+                </div>
             </div>
 
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">

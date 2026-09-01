@@ -12,6 +12,7 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const region = searchParams.get("region");
     const departement = searchParams.get("departement");
+    const ville = searchParams.get("ville");
     const search = searchParams.get("search");
     const testDomain = searchParams.get("testDomain");
 
@@ -30,7 +31,7 @@ export async function GET(req: Request) {
         });
     }
 
-    // 2. Query Companies Dataset (13 843 entreprises CVC)
+    // 2. Query Companies Dataset (14 602 entreprises CVC)
     let filtered = cvcCompaniesData as any[];
 
     if (region && region !== "ALL") {
@@ -40,6 +41,11 @@ export async function GET(req: Request) {
 
     if (departement && departement !== "ALL") {
         filtered = filtered.filter(c => c.departement === departement || (c.codePostal && c.codePostal.startsWith(departement)));
+    }
+
+    if (ville) {
+        const vLower = ville.toLowerCase();
+        filtered = filtered.filter(c => c.ville && c.ville.toLowerCase().includes(vLower));
     }
 
     if (search) {
