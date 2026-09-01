@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { SignUpForm } from "@/components/auth/signup-form";
 import { Metadata } from 'next';
 import { VisionSection } from "@/components/features/inscription/vision-section";
@@ -27,7 +28,9 @@ export default function InscriptionPage() {
             <VisionSection />
 
             <main className="flex-1 container mx-auto px-4 py-8" id="offres">
-                <SignUpForm />
+                <Suspense fallback={<div className="p-8 text-center text-slate-500 font-medium">Chargement du formulaire d'inscription...</div>}>
+                    <SignUpForm />
+                </Suspense>
             </main>
         </div>
     );

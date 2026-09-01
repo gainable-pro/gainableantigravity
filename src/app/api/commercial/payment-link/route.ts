@@ -4,6 +4,8 @@ import { verifyCommercial, unauthorizedCommercial } from "@/lib/commercial-auth"
 import { stripe } from "@/lib/stripe";
 import { sendEmail } from "@/lib/email";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
     const user = await verifyCommercial();
     if (!user) return unauthorizedCommercial();
