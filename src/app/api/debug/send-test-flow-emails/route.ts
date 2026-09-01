@@ -5,13 +5,14 @@ export const dynamic = "force-dynamic";
 
 export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
-    const targetEmail = searchParams.get("email") || "airgenergie@gmail.com";
+    const paramEmail = searchParams.get("email") || "";
+    const targets = Array.from(new Set([paramEmail, "airgenergie@gmail.com", "contact@airgenergie.fr"].filter(Boolean)));
 
     const dummyLink = "https://checkout.stripe.com/c/pay/cs_test_demo_gainable";
 
     // 1. Email 1: Demande de Paiement Prospect
     const email1Res = await sendEmail({
-        to: targetEmail,
+        to: targets,
         subject: "Gainable.fr - Lien de paiement & Validation pour Exceed Digitabl",
         html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
@@ -48,7 +49,7 @@ export async function GET(req: Request) {
 
     // 2. Email 2: Confirmation Post-Paiement & Activation du Compte
     const email2Res = await sendEmail({
-        to: targetEmail,
+        to: targets,
         subject: "Bienvenue sur Gainable.fr – Activation de votre Espace Expert",
         html: `
         <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
@@ -89,7 +90,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json({
         success: true,
-        targetEmail,
+        targetsSent: targets,
         email1: email1Res,
         email2: email2Res
     });
