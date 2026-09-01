@@ -36,7 +36,7 @@ export async function sendEmail({
 
         if (result.error) {
             console.error("Resend Primary Email Error:", result.error);
-            // Fallback attempt with noreply@gainable.fr
+            // Fallback 1: noreply@gainable.fr
             const fallbackResult = await resend.emails.send({
                 from: 'Gainable.fr <noreply@gainable.fr>',
                 to,
@@ -45,8 +45,20 @@ export async function sendEmail({
                 text
             });
             if (fallbackResult.error) {
-                console.error("Resend Fallback Email Error:", fallbackResult.error);
-                return { success: false, error: result.error.message || JSON.stringify(result.error) };
+                console.error("Resend Fallback 1 Error:", fallbackResult.error);
+                // Fallback 2: onboarding@resend.dev (Resend Sandbox)
+                const sandboxResult = await resend.emails.send({
+                    from: 'Gainable.fr <onboarding@resend.dev>',
+                    to,
+                    subject,
+                    html,
+                    text
+                });
+                if (sandboxResult.error) {
+                    console.error("Resend Sandbox Error:", sandboxResult.error);
+                    return { success: false, error: result.error.message || JSON.stringify(result.error) };
+                }
+                return { success: true, data: sandboxResult.data };
             }
             return { success: true, data: fallbackResult.data };
         }
