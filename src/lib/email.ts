@@ -1,4 +1,4 @@
-
+// Resend email utility - Gainable.fr
 import { Resend } from 'resend';
 
 // Use env var or allowed test key if not set (for dev without env)
