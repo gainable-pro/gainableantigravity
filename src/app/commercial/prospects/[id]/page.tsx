@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Link from "next/link";
-import { Save, ArrowLeft, Loader2, DollarSign, CheckCircle, Trash2, Mail } from "lucide-react";
+import { Save, ArrowLeft, Loader2, Euro, CheckCircle, Trash2, Mail } from "lucide-react";
 
 export default function EditProspect() {
     const router = useRouter();
@@ -379,7 +379,7 @@ export default function EditProspect() {
                                 disabled={generatingLink}
                                 className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md disabled:opacity-50 text-sm"
                             >
-                                {generatingLink ? <Loader2 className="h-4 w-4 animate-spin" /> : <DollarSign className="h-4 w-4" />}
+                                {generatingLink ? <Loader2 className="h-4 w-4 animate-spin" /> : <Euro className="h-4 w-4" />}
                                 Envoyer la demande de paiement Stripe
                             </button>
 
@@ -410,7 +410,7 @@ export default function EditProspect() {
                     <div className="bg-emerald-50 rounded-xl shadow-sm border border-emerald-100 p-6">
                         <div className="flex items-center gap-3 mb-4">
                             <div className="h-10 w-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
-                                <DollarSign className="h-6 w-6" />
+                                <Euro className="h-6 w-6" />
                             </div>
                             <h2 className="text-lg font-bold text-emerald-800">Déclarer une vente manuelle</h2>
                         </div>

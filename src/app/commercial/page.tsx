@@ -5,7 +5,7 @@ import {
     TrendingUp, 
     Users, 
     Calendar, 
-    DollarSign,
+    Euro,
     Target,
     AlertCircle,
     ChevronLeft,
@@ -105,7 +105,7 @@ export default function CommercialDashboard() {
                 <StatCard 
                     title="Commission (Jour)" 
                     value={`${stats?.dailyCommission || 0} € HT`} 
-                    icon={<DollarSign className="h-6 w-6 text-amber-500" />}
+                    icon={<Euro className="h-6 w-6 text-amber-500" />}
                     highlight
                 />
             </div>
@@ -126,7 +126,7 @@ export default function CommercialDashboard() {
                 <StatCard 
                     title="Commission Estimée (Mois)" 
                     value={`${stats?.monthlyCommission || 0} € HT`} 
-                    icon={<DollarSign className="h-6 w-6 text-orange-500" />}
+                    icon={<Euro className="h-6 w-6 text-orange-500" />}
                     highlight
                 />
             </div>
