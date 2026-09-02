@@ -33,7 +33,8 @@ export default function ProspecterGoogleLocalPage() {
     const [loadingCompanies, setLoadingCompanies] = useState(false);
     const [filterQuery, setFilterQuery] = useState("");
     const [sortBy, setSortBy] = useState<"RATING" | "REVIEWS" | "NAME">("RATING");
-    const [activeTab, setActiveTab] = useState<"MAP" | "GOOGLE">("MAP");
+    // DEFAULT TO REAL GOOGLE BROWSER VIEW
+    const [activeTab, setActiveTab] = useState<"MAP" | "GOOGLE">("GOOGLE");
     
     // Express Form Fields
     const [companyName, setCompanyName] = useState("");
@@ -46,6 +47,9 @@ export default function ProspecterGoogleLocalPage() {
     const [callOutcome, setCallOutcome] = useState<"VOICEMAIL" | "ABSENT" | "CALLBACK" | "INTERESTED" | "REFUSED" | "">("");
     const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
     
+    // Live Google Browser Custom Search Query state
+    const [customGoogleQuery, setCustomGoogleQuery] = useState("");
+
     // Live Google Browser Modal State
     const [googleSearchCompany, setGoogleSearchCompany] = useState<any | null>(null);
 
@@ -53,12 +57,13 @@ export default function ProspecterGoogleLocalPage() {
     const [addSuccess, setAddSuccess] = useState("");
     const [addError, setAddError] = useState("");
 
-    const googleSearchQuery = `${activity} ${city}`.trim();
+    const googleSearchQuery = customGoogleQuery || (companyName ? `${companyName} ${city}` : `${activity} ${city}`).trim();
     const googleLocalOfficialUrl = `https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(googleSearchQuery)}`;
-    const googleMapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(googleSearchQuery)}&output=embed`;
+    const googleLocalEmbedUrl = `https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(googleSearchQuery)}&igu=1`;
 
     useEffect(() => {
         fetchCityCompanies(city);
+        setCustomGoogleQuery("");
     }, [city]);
 
     const fetchCityCompanies = async (cityName: string) => {
@@ -80,6 +85,7 @@ export default function ProspecterGoogleLocalPage() {
         e.preventDefault();
         setAddSuccess("");
         setAddError("");
+        setCustomGoogleQuery(`${activity} ${city}`);
         fetchCityCompanies(city);
     };
 
@@ -89,6 +95,7 @@ export default function ProspecterGoogleLocalPage() {
         setPhone(comp.telephone || "");
         setWebsite(comp.siteWeb || "");
         setContactEmail(comp.email || "");
+        setCustomGoogleQuery(`${comp.nomEntreprise} ${city}`);
         setAddSuccess("");
         setAddError("");
 
@@ -106,6 +113,7 @@ export default function ProspecterGoogleLocalPage() {
         setPhone(comp.telephone || "");
         setWebsite(comp.siteWeb || "");
         setContactEmail(comp.email || "");
+        setCustomGoogleQuery(`${comp.nomEntreprise} ${city}`);
         setAddSuccess("");
         setAddError("");
     };
@@ -226,7 +234,7 @@ export default function ProspecterGoogleLocalPage() {
                             📍 Prospection Google Local (Lieux) par Ville
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Cliquez sur "Vérification & Aperçu Google Live" pour ouvrir le navigateur de vérification direct en fonction du nom.
+                            Affiche les véritables résultats de recherche Google Local (Lieux & Fiches d'entreprises) en direct.
                         </p>
                     </div>
 
@@ -295,10 +303,10 @@ export default function ProspecterGoogleLocalPage() {
                     </div>
                 </div>
 
-                {/* Split Screen Layout: Left = Interactive Map + Listing with Ratings, Right = CRM Prospect Entry Form */}
+                {/* Split Screen Layout: Left = Live Embedded Google Local Browser + Real Ratings Listing, Right = CRM Prospect Form */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                     
-                    {/* LEFT SIDE: INTERACTIVE MAP & REAL RATINGS LISTING (7 cols) */}
+                    {/* LEFT SIDE: LIVE GOOGLE LOCAL SEARCH BROWSER & LISTING (7 cols) */}
                     <div className="lg:col-span-7 space-y-6">
                         
                         {/* Map Container Header */}
@@ -310,19 +318,10 @@ export default function ProspecterGoogleLocalPage() {
                                     <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Navigateur Live Google ({city})</span>
+                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Navigateur Live Google Local ({city})</span>
                                 </div>
 
                                 <div className="flex items-center gap-2">
-                                    <button
-                                        type="button"
-                                        onClick={() => setActiveTab("MAP")}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all border ${
-                                            activeTab === "MAP" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
-                                        }`}
-                                    >
-                                        📍 Carte Interactive Pins
-                                    </button>
                                     <button
                                         type="button"
                                         onClick={() => setActiveTab("GOOGLE")}
@@ -330,7 +329,16 @@ export default function ProspecterGoogleLocalPage() {
                                             activeTab === "GOOGLE" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
                                         }`}
                                     >
-                                        🌐 Vue Navigateur Google
+                                        🌐 Navigateur Google Local
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveTab("MAP")}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all border ${
+                                            activeTab === "MAP" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
+                                        }`}
+                                    >
+                                        📍 Vue Carte Pins
                                     </button>
                                     <a
                                         href={googleLocalOfficialUrl}
@@ -343,40 +351,50 @@ export default function ProspecterGoogleLocalPage() {
                                 </div>
                             </div>
 
-                            {/* Map View */}
-                            {activeTab === "MAP" ? (
+                            {/* View Content */}
+                            {activeTab === "GOOGLE" ? (
+                                <div className="w-full h-[520px] bg-slate-100 relative flex flex-col">
+                                    {/* Real Interactive Google Address Bar */}
+                                    <div className="bg-slate-200 border-b border-slate-300 px-3 py-2 flex items-center gap-2 shrink-0">
+                                        <Globe className="h-4 w-4 text-blue-600 shrink-0" />
+                                        <form 
+                                            onSubmit={(e) => {
+                                                e.preventDefault();
+                                            }}
+                                            className="flex-1 flex items-center gap-2"
+                                        >
+                                            <input
+                                                type="text"
+                                                value={customGoogleQuery || (companyName ? `${companyName} ${city}` : `${activity} ${city}`)}
+                                                onChange={(e) => setCustomGoogleQuery(e.target.value)}
+                                                placeholder="Rechercher sur Google Local..."
+                                                className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-mono text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+                                            />
+                                        </form>
+                                        <a
+                                            href={googleLocalOfficialUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[11px] bg-white border border-slate-300 text-blue-600 font-bold px-2.5 py-1 rounded-lg hover:bg-slate-50 shrink-0 flex items-center gap-1"
+                                        >
+                                            Ouvrir Google ↗
+                                        </a>
+                                    </div>
+                                    <iframe
+                                        key={googleSearchQuery}
+                                        src={googleLocalEmbedUrl}
+                                        className="w-full flex-1 border-0"
+                                        title={`Google Local Search Results - ${googleSearchQuery}`}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ) : (
                                 <CityInteractiveMap
                                     cityName={city}
                                     companies={displayedCompanies}
                                     onSelectCompany={handleOpenGoogleBrowser}
                                     selectedCompanyId={selectedCompanyId}
                                 />
-                            ) : (
-                                <div className="w-full h-[450px] bg-slate-100 relative flex flex-col">
-                                    <div className="bg-slate-200 border-b border-slate-300 px-3 py-1.5 flex items-center justify-between text-xs font-mono text-slate-700 shrink-0">
-                                        <div className="flex items-center gap-2 truncate">
-                                            <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
-                                            <span className="truncate">
-                                                https://www.google.com/search?q={encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}
-                                            </span>
-                                        </div>
-                                        <a
-                                            href={googleLocalOfficialUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-[11px] text-blue-600 font-bold hover:underline shrink-0 flex items-center gap-1"
-                                        >
-                                            Ouvrir Google ↗
-                                        </a>
-                                    </div>
-                                    <iframe
-                                        key={companyName || googleSearchQuery}
-                                        src={`https://www.google.com/search?q=${encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}&igu=1`}
-                                        className="w-full flex-1 border-0"
-                                        title={`Google Search Results - ${companyName || city}`}
-                                        loading="lazy"
-                                    />
-                                </div>
                             )}
                         </div>
 
@@ -390,7 +408,7 @@ export default function ProspecterGoogleLocalPage() {
                                         🏢 Entreprises CVC de {city} avec Avis Réels ({displayedCompanies.length})
                                     </h3>
                                     <p className="text-xs text-slate-500 mt-0.5">
-                                        Cliquez sur "Vérification & Aperçu Google Live" pour ouvrir le navigateur live par nom 👉
+                                        Cliquez sur n'importe quelle entreprise pour afficher sa fiche Google Local en direct ci-dessus 👆
                                     </p>
                                 </div>
 
@@ -426,7 +444,7 @@ export default function ProspecterGoogleLocalPage() {
                                 </div>
                             ) : displayedCompanies.length === 0 ? (
                                 <div className="py-8 text-center text-slate-400 text-xs italic bg-slate-50 rounded-xl border border-dashed border-slate-200">
-                                    Aucune entreprise trouvée pour "{filterQuery || city}". Vous pouvez renseigner manuellement n'importe quelle entreprise aperçue sur la carte ci-dessus !
+                                    Aucune entreprise trouvée pour "{filterQuery || city}". Vous pouvez renseigner n'importe quel nom dans le navigateur ci-dessus !
                                 </div>
                             ) : (
                                 <div className="space-y-3 max-h-[480px] overflow-y-auto pr-1">
@@ -436,7 +454,7 @@ export default function ProspecterGoogleLocalPage() {
                                         return (
                                             <div
                                                 key={c.id}
-                                                onClick={() => !c.isLocked && handleOpenGoogleBrowser(c)}
+                                                onClick={() => !c.isLocked && handleSelectCompanyToForm(c)}
                                                 className={`p-4 rounded-xl border transition-all cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-3 ${
                                                     isSelected
                                                         ? "bg-blue-50/90 border-blue-500 ring-2 ring-blue-500/20 shadow-md"
@@ -556,7 +574,7 @@ export default function ProspecterGoogleLocalPage() {
                                 {companyName ? `Enregistrer "${companyName}"` : "Enregistrer l'entreprise au CRM"}
                             </h3>
                             <p className="text-xs text-slate-500 mt-1">
-                                Cliquez sur "Vérification & Aperçu Google Live" pour vérifier sur Google.
+                                Cliquez sur une entreprise ci-contre pour charger la recherche Google Local en direct.
                             </p>
                         </div>
 
@@ -648,7 +666,7 @@ export default function ProspecterGoogleLocalPage() {
                                             callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                         }`}
                                     >
-                                        📵 Absent / Pas de rep.
+                                        断 Absent / Pas de rep.
                                     </button>
                                     <button
                                         type="button"
@@ -747,7 +765,7 @@ export default function ProspecterGoogleLocalPage() {
                             </div>
 
                             <a
-                                href={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}`}
+                                href={`https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold px-4 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-sm"
@@ -769,13 +787,13 @@ export default function ProspecterGoogleLocalPage() {
                                     <div className="flex items-center gap-2 truncate">
                                         <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                                         <span className="truncate">
-                                            https://www.google.com/search?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}
+                                            https://www.google.com/search?tbm=lcl&q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}
                                         </span>
                                     </div>
                                 </div>
                                 <div className="flex-1 w-full relative bg-white">
                                     <iframe
-                                        src={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}&igu=1`}
+                                        src={`https://www.google.com/search?tbm=lcl&q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}&igu=1`}
                                         className="w-full h-full border-0"
                                         title={`Google Search Results - ${googleSearchCompany.nomEntreprise}`}
                                     />
