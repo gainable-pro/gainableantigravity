@@ -3,23 +3,23 @@ import { prisma } from '@/lib/prisma';
 
 export const revalidate = 86400; // Cache sitemaps for 24 hours
 
+const MAX_SITEMAP_ARTICLES = 1500;
+const BASE_URL = 'https://www.gainable.fr';
+
 export async function generateStaticParams() {
-    const ARTICLE_BATCH_SIZE = 7500;
     try {
         const articleCount = await prisma.article.count({
             where: { status: 'PUBLISHED' }
         });
-        const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
+        const totalArticlesToInclude = Math.min(articleCount, MAX_SITEMAP_ARTICLES);
+        const articleSitemapsCount = totalArticlesToInclude > 0 ? 1 : 0;
         const totalSitemaps = 1 + articleSitemapsCount;
         return Array.from({ length: totalSitemaps }, (_, i) => ({ id: String(i) }));
     } catch (e) {
         console.error("Error in generateStaticParams for sitemap:", e);
-        return Array.from({ length: 9 }, (_, i) => ({ id: String(i) }));
+        return [{ id: '0' }, { id: '1' }];
     }
 }
-
-const ARTICLE_BATCH_SIZE = 7500;
-const BASE_URL = 'https://www.gainable.fr';
 
 export async function GET(
     request: Request,
@@ -31,11 +31,6 @@ export async function GET(
     try {
         let xml = '';
 
-        const articleCount = await prisma.article.count({
-            where: { status: 'PUBLISHED' }
-        });
-        const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
-
         if (id === 0) {
             const nowStr = new Date().toISOString();
 
@@ -45,7 +40,7 @@ export async function GET(
                 '/trouver-bureau-etude', '/inscription',
                 '/faq-visibilite-referencement', '/labels',
                 '/bureau-etude', '/diagnostic-immobilier',
-                '/materiel',
+                '/materiel', '/articles', '/plan-du-site',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
             // Experts
@@ -82,18 +77,16 @@ export async function GET(
             const all = [...staticUrls, ...expertUrls, ...productUrls, ...regionUrls, ...cityUrls];
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.join('\n')}\n</urlset>`;
 
-        } else if (id >= 1 && id <= articleSitemapsCount) {
-            const skip = (id - 1) * ARTICLE_BATCH_SIZE;
-
+        } else if (id === 1) {
+            // High-quality curated articles (Top 1,500 most relevant articles)
             const expertsData = await prisma.expert.findMany({ select: { id: true, slug: true } });
             const expertMap = new Map(expertsData.map(e => [e.id, e.slug]));
 
             const articles = await prisma.article.findMany({
                 where: { status: 'PUBLISHED' },
-                skip,
-                take: ARTICLE_BATCH_SIZE,
+                take: MAX_SITEMAP_ARTICLES,
                 select: { slug: true, updatedAt: true, expertId: true },
-                orderBy: { createdAt: 'desc' }
+                orderBy: { updatedAt: 'desc' }
             });
 
             const urls = articles
@@ -120,3 +113,4 @@ export async function GET(
         return new NextResponse(`Error: ${err.message}`, { status: 500 });
     }
 }
+

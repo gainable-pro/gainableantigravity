@@ -230,11 +230,28 @@ export default async function CityPage({ params }: PageProps) {
         })
     ]);
 
-    const relatedArticles = await prisma.article.findMany({
-        where: { status: 'PUBLISHED', title: { contains: city.name, mode: 'insensitive' } },
+    let relatedArticles = await prisma.article.findMany({
+        where: {
+            status: 'PUBLISHED',
+            OR: [
+                { targetCity: city.name },
+                { title: { contains: city.name, mode: 'insensitive' } }
+            ]
+        },
         take: 3,
         select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
     });
+
+    if (relatedArticles.length < 3) {
+        const fallback = await prisma.article.findMany({
+            where: { status: 'PUBLISHED' },
+            take: 3 - relatedArticles.length,
+            orderBy: { updatedAt: 'desc' },
+            select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
+        });
+        relatedArticles = [...relatedArticles, ...fallback];
+    }
+
 
     const breadcrumbJsonLd = {
         "@context": "https://schema.org",

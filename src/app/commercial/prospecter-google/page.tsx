@@ -357,7 +357,7 @@ export default function ProspecterGoogleLocalPage() {
                                         <div className="flex items-center gap-2 truncate">
                                             <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                                             <span className="truncate">
-                                                https://maps.google.com/maps?q={encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}
+                                                https://www.google.com/search?q={encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}
                                             </span>
                                         </div>
                                         <a
@@ -371,9 +371,9 @@ export default function ProspecterGoogleLocalPage() {
                                     </div>
                                     <iframe
                                         key={companyName || googleSearchQuery}
-                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}&output=embed`}
+                                        src={`https://www.google.com/search?q=${encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}&igu=1`}
                                         className="w-full flex-1 border-0"
-                                        title={`Google Maps Local - ${companyName || city}`}
+                                        title={`Google Search Results - ${companyName || city}`}
                                         loading="lazy"
                                     />
                                 </div>
@@ -769,15 +769,15 @@ export default function ProspecterGoogleLocalPage() {
                                     <div className="flex items-center gap-2 truncate">
                                         <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                                         <span className="truncate">
-                                            https://maps.google.com/maps?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}
+                                            https://www.google.com/search?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}
                                         </span>
                                     </div>
                                 </div>
                                 <div className="flex-1 w-full relative bg-white">
                                     <iframe
-                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}&output=embed`}
+                                        src={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}&igu=1`}
                                         className="w-full h-full border-0"
-                                        title={`Google Maps Business Profile - ${googleSearchCompany.nomEntreprise}`}
+                                        title={`Google Search Results - ${googleSearchCompany.nomEntreprise}`}
                                     />
                                 </div>
                             </div>

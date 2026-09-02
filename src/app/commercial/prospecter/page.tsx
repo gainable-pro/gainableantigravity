@@ -488,14 +488,14 @@ export default function ProspecterCvcPage() {
                                     <div className="bg-slate-200 border-b border-slate-300 px-3 py-2 flex items-center justify-between text-xs font-mono text-slate-700 shrink-0">
                                         <div className="flex items-center gap-2 truncate">
                                             <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
-                                            <span className="truncate">https://maps.google.com/maps?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}</span>
+                                            <span className="truncate">https://www.google.com/search?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}</span>
                                         </div>
                                     </div>
                                     <div className="flex-1 w-full relative bg-white">
                                         <iframe
-                                            src={`https://maps.google.com/maps?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}&output=embed`}
+                                            src={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || ''}`)}&igu=1`}
                                             className="w-full h-full border-0"
-                                            title={`Google Maps Business Profile - ${googleSearchCompany.nomEntreprise}`}
+                                            title={`Google Search Results - ${googleSearchCompany.nomEntreprise}`}
                                         />
                                     </div>
                                 </div>

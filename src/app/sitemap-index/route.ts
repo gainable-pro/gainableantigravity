@@ -7,13 +7,15 @@ export async function GET() {
     const baseUrl = 'https://www.gainable.fr';
     const now = new Date().toISOString();
 
-    const articleCount = await prisma.article.count({
-        where: { status: 'PUBLISHED' }
-    });
-    
-    const ARTICLE_BATCH_SIZE = 7500;
-    const articleSitemapsCount = Math.ceil(articleCount / ARTICLE_BATCH_SIZE);
-    const totalSitemapsCount = 1 + articleSitemapsCount;
+    let totalSitemapsCount = 2; // /sitemap/0.xml (Core + Cities) + /sitemap/1.xml (Curated Articles)
+    try {
+        const articleCount = await prisma.article.count({
+            where: { status: 'PUBLISHED' }
+        });
+        totalSitemapsCount = articleCount > 0 ? 2 : 1;
+    } catch (e) {
+        console.error("Error fetching article count for sitemap-index:", e);
+    }
 
     const sitemaps = Array.from({ length: totalSitemapsCount }, (_, i) =>
         `  <sitemap>\n    <loc>${baseUrl}/sitemap/${i}.xml</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`
@@ -29,3 +31,4 @@ export async function GET() {
         },
     });
 }
+

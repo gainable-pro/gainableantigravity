@@ -32,13 +32,11 @@ export default function CityInteractiveMap({
     selectedCompanyId
 }: CityInteractiveMapProps) {
     const mapRef = useRef<L.Map | null>(null);
-    const layerGroupRef = useRef<L.LayerGroup | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     const cityKey = cityName ? cityName.toLowerCase().trim() : "lyon";
     const centerCoords = CITY_COORDINATES[cityKey] || [46.603354, 1.888334]; // Default France center
 
-    // 1. Initialize Map Instance ONCE per city
     useEffect(() => {
         if (typeof window === "undefined" || !containerRef.current) return;
 
@@ -54,56 +52,28 @@ export default function CityInteractiveMap({
             console.error("Leaflet icon init error:", e);
         }
 
-        // Clean up previous map if exists
+        // Clean up previous map instance safely
         if (mapRef.current) {
             try {
                 mapRef.current.remove();
-            } catch (e) {}
+            } catch (e) {
+                console.error("Error removing map:", e);
+            }
             mapRef.current = null;
         }
 
-        // Clear container DOM node completely
-        if (containerRef.current) {
-            containerRef.current.innerHTML = "";
+        // Check container DOM node to prevent "Map container is already initialized"
+        if ((containerRef.current as any)._leaflet_id) {
             (containerRef.current as any)._leaflet_id = null;
         }
 
-        try {
-            const newMap = L.map(containerRef.current).setView(centerCoords, 12);
+        const newMap = L.map(containerRef.current).setView(centerCoords, 12);
 
-            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(newMap);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(newMap);
 
-            const newLayerGroup = L.layerGroup().addTo(newMap);
-            layerGroupRef.current = newLayerGroup;
-            mapRef.current = newMap;
-        } catch (err) {
-            console.error("Leaflet map init error:", err);
-        }
-
-        return () => {
-            if (mapRef.current) {
-                try {
-                    mapRef.current.remove();
-                } catch (e) {}
-                mapRef.current = null;
-                layerGroupRef.current = null;
-            }
-            if (containerRef.current) {
-                containerRef.current.innerHTML = "";
-                (containerRef.current as any)._leaflet_id = null;
-            }
-        };
-    }, [cityName]);
-
-    // 2. Update Markers on LayerGroup dynamically without re-creating the map
-    useEffect(() => {
-        if (!mapRef.current || !layerGroupRef.current) return;
-
-        const layerGroup = layerGroupRef.current;
-        layerGroup.clearLayers();
-
+        // Custom Gold Pin Icon
         const goldIcon = L.divIcon({
             className: "custom-div-icon",
             html: `<div style="background-color:#D59B2B;width:24px;height:24px;border-radius:50%;border:2px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:bold;">📍</div>`,
@@ -118,6 +88,7 @@ export default function CityInteractiveMap({
             iconAnchor: [15, 15]
         });
 
+        // Add markers for companies with slight offset grid around city center
         (companies || []).slice(0, 40).forEach((comp, index) => {
             if (!comp) return;
             const angle = index * 0.7;
@@ -126,7 +97,7 @@ export default function CityInteractiveMap({
             const lng = centerCoords[1] + (Math.cos(angle) * radius);
 
             const isSelected = selectedCompanyId === comp.id;
-            const marker = L.marker([lat, lng], { icon: isSelected ? activeGoldIcon : goldIcon }).addTo(layerGroup);
+            const marker = L.marker([lat, lng], { icon: isSelected ? activeGoldIcon : goldIcon }).addTo(newMap);
 
             const ratingHtml = comp.noteGoogle && comp.noteGoogle > 0 
                 ? `<div style="color:#b45309;font-weight:bold;font-size:11px;margin-top:2px;">⭐ ${comp.noteGoogle} (${comp.nombreAvis || 0} avis)</div>` 
@@ -159,7 +130,23 @@ export default function CityInteractiveMap({
                 }
             });
         });
-    }, [companies, selectedCompanyId]);
+
+        mapRef.current = newMap;
+
+        return () => {
+            if (mapRef.current) {
+                try {
+                    mapRef.current.remove();
+                } catch (e) {
+                    console.error("Error cleaning up map:", e);
+                }
+                mapRef.current = null;
+            }
+            if (containerRef.current && (containerRef.current as any)._leaflet_id) {
+                (containerRef.current as any)._leaflet_id = null;
+            }
+        };
+    }, [cityName, companies, selectedCompanyId]);
 
     return (
         <div className="w-full h-[450px] bg-slate-100 relative rounded-b-2xl overflow-hidden shadow-inner z-0">
@@ -167,3 +154,4 @@ export default function CityInteractiveMap({
         </div>
     );
 }
+
