@@ -62,6 +62,7 @@ export default function ProspecterCvcPage() {
     // Qualification & Transfer Modal States
     const [selectedCompany, setSelectedCompany] = useState<CvcCompany | null>(null);
     const [contactEmail, setContactEmail] = useState("");
+    const [secondaryEmail, setSecondaryEmail] = useState("");
     const [editPhone, setEditPhone] = useState("");
     const [editWebsite, setEditWebsite] = useState("");
     const [dateRdv, setDateRdv] = useState("");
@@ -86,17 +87,17 @@ export default function ProspecterCvcPage() {
         try {
             const params = new URLSearchParams();
             if (selectedRegion !== "ALL") params.append("region", selectedRegion);
-            if (query) params.append("search", query);
             if (city) params.append("ville", city);
+            if (query) params.append("q", query);
 
             const res = await fetch(`/api/commercial/prospecting-database?${params.toString()}`);
-            const data = await res.json();
             if (res.ok) {
+                const data = await res.json();
                 setCompanies(data.companies || []);
-                setTotalMatches(data.totalMatches || data.companies?.length || 0);
+                setTotalMatches(data.total || (data.companies ? data.companies.length : 0));
             }
         } catch (e) {
-            console.error("Erreur lors de la récupération de la base CVC", e);
+            console.error(e);
         } finally {
             setLoading(false);
         }
@@ -109,12 +110,16 @@ export default function ProspecterCvcPage() {
 
     const handleOpenGoogleBrowser = (company: CvcCompany) => {
         setGoogleSearchCompany(company);
+        setSelectedCompany(company);
+        setContactEmail(company.email || "");
+        setSecondaryEmail("");
         setEditPhone(company.telephone || "");
         setEditWebsite(company.siteWeb || "");
     };
 
     const handleConfirmAddProspect = async () => {
-        if (!selectedCompany) return;
+        const comp = googleSearchCompany || selectedCompany;
+        if (!comp) return;
         setAdding(true);
         setAddError("");
         setAddSuccess("");
@@ -138,21 +143,33 @@ export default function ProspecterCvcPage() {
             outcomeNote = " [❌ Non intéressé / Refus]";
         }
 
+        const notesParts = [
+            `Prospect qualifié Moteur CVC Google Live${outcomeNote}`,
+            contactEmail ? `Email principal: ${contactEmail}` : null,
+            secondaryEmail ? `Email secondaire / alternative: ${secondaryEmail}` : null,
+            comp.chiffreAffaires ? `CA: ${comp.chiffreAffaires}` : null,
+            comp.nomGerant ? `Gérant: ${comp.nomGerant}` : null,
+            comp.siret ? `SIRET: ${comp.siret}` : null,
+            comp.accroche ? `Effectif: ${comp.accroche}` : null
+        ].filter(Boolean).join(" | ");
+
+        const chosenEmail = contactEmail || secondaryEmail;
+
         try {
             const res = await fetch("/api/commercial/prospects", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    nomEntreprise: selectedCompany.nomEntreprise,
-                    nomContact: selectedCompany.nomGerant?.split(" ")[1] || "Contact",
-                    prenomContact: selectedCompany.nomGerant?.split(" ")[0] || "Dirigeant",
-                    email: contactEmail,
-                    telephone: editPhone || selectedCompany.telephone || "",
-                    siret: selectedCompany.siret || "",
-                    adresse: `${selectedCompany.adresse || ''} ${selectedCompany.codePostal || ''} ${selectedCompany.ville || ''}`.trim(),
-                    siteWeb: editWebsite || selectedCompany.siteWeb || "",
+                    nomEntreprise: comp.nomEntreprise,
+                    nomContact: comp.nomGerant?.split(" ")[1] || "Contact",
+                    prenomContact: comp.nomGerant?.split(" ")[0] || "Dirigeant",
+                    email: chosenEmail,
+                    telephone: editPhone || comp.telephone || "",
+                    siret: comp.siret || "",
+                    adresse: `${comp.adresse || ''} ${comp.codePostal || ''} ${comp.ville || ''}`.trim(),
+                    siteWeb: editWebsite || comp.siteWeb || "",
                     status: computedStatus,
-                    commentaire: `Prospect qualifié Moteur CVC Google Live - Gérant: ${selectedCompany.nomGerant || 'Dirigeant'}${outcomeNote}`,
+                    commentaire: notesParts,
                     dateRdv: dateRdv || null,
                     heureRdv: heureRdv || null,
                     noteRdv: noteRdv || null
@@ -525,19 +542,41 @@ export default function ProspecterCvcPage() {
                                     </div>
                                 </div>
 
-                                {/* RIGHT SIDE (5 COLS): BLOC 2 & BLOC 3 - DETAILS & QUALIFICATION FORM */}
+                                 {/* RIGHT SIDE (5 COLS): BLOC 2 & BLOC 3 - DETAILS & QUALIFICATION FORM */}
                                 <div className="lg:col-span-5 bg-white p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
                                     <div className="space-y-4">
-                                        <div className="border-b border-slate-100 pb-3">
-                                            <h3 className="text-lg font-extrabold text-slate-900">{googleSearchCompany.nomEntreprise}</h3>
-                                            <div className="text-xs text-slate-500 font-medium">
-                                                SIRET : {googleSearchCompany.siret || 'Non renseigné'} • {googleSearchCompany.ville} ({googleSearchCompany.region || 'France'})
-                                            </div>
-                                            {googleSearchCompany.nomGerant && (
-                                                <div className="text-xs text-slate-700 font-medium mt-1">
-                                                    Gérant : <strong>{googleSearchCompany.nomGerant}</strong>
+                                        {/* RICH DATABASE COMPANY CARD */}
+                                        <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 text-xs">
+                                            <div className="flex items-start justify-between">
+                                                <div>
+                                                    <h3 className="text-lg font-extrabold text-slate-900">{googleSearchCompany.nomEntreprise}</h3>
+                                                    {googleSearchCompany.nomGerant && (
+                                                        <div className="text-xs text-slate-700 font-semibold mt-0.5">
+                                                            👤 Gérant / Dirigeant : <span className="text-slate-900 font-bold">{googleSearchCompany.nomGerant}</span>
+                                                        </div>
+                                                    )}
                                                 </div>
-                                            )}
+                                                {googleSearchCompany.noteGoogle && (
+                                                    <div className="bg-amber-100 border border-amber-300 px-2 py-1 rounded-lg text-amber-900 text-xs font-bold flex items-center gap-1 shrink-0">
+                                                        ⭐ {googleSearchCompany.noteGoogle} ({googleSearchCompany.nombreAvis || 0} avis)
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-2 border-t border-slate-200">
+                                                <div>
+                                                    <span className="font-bold text-slate-800">SIRET / SIREN :</span> {googleSearchCompany.siret || googleSearchCompany.siren || 'Non renseigné'}
+                                                </div>
+                                                <div>
+                                                    <span className="font-bold text-slate-800">Chiffre d'Affaires (CA) :</span> {googleSearchCompany.chiffreAffaires || 'Non communiqué'}
+                                                </div>
+                                                <div>
+                                                    <span className="font-bold text-slate-800">Adresse :</span> {googleSearchCompany.adresse || ''} {googleSearchCompany.codePostal || ''} {googleSearchCompany.ville || ''} ({googleSearchCompany.region || 'France'})
+                                                </div>
+                                                <div>
+                                                    <span className="font-bold text-slate-800">Effectifs :</span> {googleSearchCompany.accroche || 'Professionnel CVC'}
+                                                </div>
+                                            </div>
                                         </div>
 
                                         {/* SEO Argument Alert */}
@@ -558,17 +597,33 @@ export default function ProspecterCvcPage() {
 
                                         {/* Real-Time Qualification Form */}
                                         <div className="space-y-3 pt-2">
-                                            <div>
-                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
-                                                    E-mail du Contact / Gérant (Optionnel) :
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    placeholder="ex: contact@entreprise.fr (Optionnel)"
-                                                    value={contactEmail}
-                                                    onChange={(e) => setContactEmail(e.target.value)}
-                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
-                                                />
+                                            {/* Dual Email Fields */}
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                <div>
+                                                    <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                        E-mail principal (Base BDD) :
+                                                    </label>
+                                                    <input
+                                                        type="email"
+                                                        placeholder="ex: contact@entreprise.fr"
+                                                        value={contactEmail}
+                                                        onChange={(e) => setContactEmail(e.target.value)}
+                                                        className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                    />
+                                                </div>
+
+                                                <div>
+                                                    <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                        E-mail sec. / Adresse à jour :
+                                                    </label>
+                                                    <input
+                                                        type="email"
+                                                        placeholder="ex: direction@entreprise.fr"
+                                                        value={secondaryEmail}
+                                                        onChange={(e) => setSecondaryEmail(e.target.value)}
+                                                        className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                    />
+                                                </div>
                                             </div>
 
                                             <div>

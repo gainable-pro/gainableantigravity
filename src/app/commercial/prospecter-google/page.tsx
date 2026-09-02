@@ -39,6 +39,7 @@ export default function ProspecterGoogleLocalPage() {
     // Express Form Fields
     const [companyName, setCompanyName] = useState("");
     const [contactEmail, setContactEmail] = useState("");
+    const [secondaryEmail, setSecondaryEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [website, setWebsite] = useState("");
     const [dateRdv, setDateRdv] = useState("");
@@ -46,6 +47,7 @@ export default function ProspecterGoogleLocalPage() {
     const [noteRdv, setNoteRdv] = useState("");
     const [callOutcome, setCallOutcome] = useState<"VOICEMAIL" | "ABSENT" | "CALLBACK" | "INTERESTED" | "REFUSED" | "">("");
     const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
+    const [selectedCompanyObj, setSelectedCompanyObj] = useState<any | null>(null);
     
     // Live Google Browser Custom Search Query & Navigation Reset Keys
     const [customGoogleQuery, setCustomGoogleQuery] = useState("");
@@ -93,10 +95,12 @@ export default function ProspecterGoogleLocalPage() {
 
     const handleSelectCompanyToForm = (comp: any) => {
         setSelectedCompanyId(comp.id);
+        setSelectedCompanyObj(comp);
         setCompanyName(comp.nomEntreprise);
         setPhone(comp.telephone || "");
         setWebsite(comp.siteWeb || "");
         setContactEmail(comp.email || "");
+        setSecondaryEmail("");
         setCustomGoogleQuery(`${comp.nomEntreprise} ${city}`);
         setAddSuccess("");
         setAddError("");
@@ -110,11 +114,13 @@ export default function ProspecterGoogleLocalPage() {
 
     const handleOpenGoogleBrowser = (comp: any) => {
         setSelectedCompanyId(comp.id);
+        setSelectedCompanyObj(comp);
         setGoogleSearchCompany(comp);
         setCompanyName(comp.nomEntreprise || "");
         setPhone(comp.telephone || "");
         setWebsite(comp.siteWeb || "");
         setContactEmail(comp.email || "");
+        setSecondaryEmail("");
         setCustomGoogleQuery(`${comp.nomEntreprise} ${city}`);
         setAddSuccess("");
         setAddError("");
@@ -123,7 +129,8 @@ export default function ProspecterGoogleLocalPage() {
     const handleConfirmAddProspect = async (e?: React.FormEvent) => {
         if (e) e.preventDefault();
         
-        const targetCompany = googleSearchCompany?.nomEntreprise || companyName;
+        const compObj = googleSearchCompany || selectedCompanyObj;
+        const targetCompany = compObj?.nomEntreprise || companyName;
         if (!targetCompany) {
             setAddError("Veuillez remplir au moins le nom de l'entreprise.");
             return;
@@ -152,21 +159,33 @@ export default function ProspecterGoogleLocalPage() {
             outcomeNote = " [❌ Non intéressé / Refus]";
         }
 
+        const notesParts = [
+            `Prospect qualifié issu du Moteur Google LOCAL (${city})${outcomeNote}`,
+            contactEmail ? `Email principal: ${contactEmail}` : null,
+            secondaryEmail ? `Email secondaire / alternative: ${secondaryEmail}` : null,
+            compObj?.chiffreAffaires ? `CA: ${compObj.chiffreAffaires}` : null,
+            compObj?.nomGerant ? `Gérant: ${compObj.nomGerant}` : null,
+            compObj?.siret ? `SIRET: ${compObj.siret}` : null,
+            compObj?.accroche ? `Effectif: ${compObj.accroche}` : null
+        ].filter(Boolean).join(" | ");
+
+        const chosenEmail = contactEmail || secondaryEmail;
+
         try {
             const res = await fetch("/api/commercial/prospects", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     nomEntreprise: targetCompany,
-                    nomContact: googleSearchCompany?.nomGerant?.split(" ")[1] || "Dirigeant",
-                    prenomContact: googleSearchCompany?.nomGerant?.split(" ")[0] || "Contact",
-                    email: contactEmail,
+                    nomContact: compObj?.nomGerant?.split(" ")[1] || "Dirigeant",
+                    prenomContact: compObj?.nomGerant?.split(" ")[0] || "Contact",
+                    email: chosenEmail,
                     telephone: phone,
-                    siret: googleSearchCompany?.siret || "",
-                    adresse: googleSearchCompany?.adresse || city,
+                    siret: compObj?.siret || "",
+                    adresse: compObj?.adresse ? `${compObj.adresse}, ${compObj.codePostal || ''} ${compObj.ville || city}` : city,
                     siteWeb: website,
                     status: computedStatus,
-                    commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})${outcomeNote}`,
+                    commentaire: notesParts,
                     dateRdv: dateRdv || null,
                     heureRdv: heureRdv || null,
                     noteRdv: noteRdv || null
@@ -586,9 +605,45 @@ export default function ProspecterGoogleLocalPage() {
                                 {companyName ? `Enregistrer "${companyName}"` : "Enregistrer l'entreprise au CRM"}
                             </h3>
                             <p className="text-xs text-slate-500 mt-1">
-                                Cliquez sur une entreprise ci-contre pour charger la recherche Google Local en direct.
+                                Cliquez sur une entreprise ci-contre pour pré-remplir les données de la base.
                             </p>
                         </div>
+
+                        {/* RICH DATABASE DETAILS CARD */}
+                        {selectedCompanyObj && (
+                            <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 text-xs">
+                                <div className="flex items-start justify-between">
+                                    <div>
+                                        <h4 className="font-extrabold text-slate-900 text-sm">{selectedCompanyObj.nomEntreprise}</h4>
+                                        {selectedCompanyObj.nomGerant && (
+                                            <div className="text-xs text-slate-700 font-semibold mt-0.5">
+                                                👤 Gérant / Dirigeant : <span className="text-slate-900 font-bold">{selectedCompanyObj.nomGerant}</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                    {selectedCompanyObj.noteGoogle && (
+                                        <div className="bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md text-amber-900 text-[11px] font-bold flex items-center gap-1 shrink-0">
+                                            ⭐ {selectedCompanyObj.noteGoogle} ({selectedCompanyObj.nombreAvis || 0} avis)
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-2 border-t border-slate-200">
+                                    <div>
+                                        <span className="font-bold text-slate-800">SIRET / SIREN :</span> {selectedCompanyObj.siret || selectedCompanyObj.siren || 'Non renseigné'}
+                                    </div>
+                                    <div>
+                                        <span className="font-bold text-slate-800">Chiffre d'Affaires :</span> {selectedCompanyObj.chiffreAffaires || 'Non communiqué'}
+                                    </div>
+                                    <div>
+                                        <span className="font-bold text-slate-800">Localisation :</span> {selectedCompanyObj.codePostal || ''} {selectedCompanyObj.ville || city}
+                                    </div>
+                                    <div>
+                                        <span className="font-bold text-slate-800">Effectifs :</span> {selectedCompanyObj.accroche || 'Spécialiste CVC'}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
 
                         <form onSubmit={handleConfirmAddProspect} className="space-y-4">
                             <div>
@@ -605,17 +660,33 @@ export default function ProspecterGoogleLocalPage() {
                                 />
                             </div>
 
-                            <div>
-                                <label className="text-xs font-bold text-slate-700 block mb-1">
-                                    E-mail du Contact / Gérant (Optionnel) :
-                                </label>
-                                <input
-                                    type="email"
-                                    placeholder="ex: contact@entreprise.fr (Optionnel)"
-                                    value={contactEmail}
-                                    onChange={(e) => setContactEmail(e.target.value)}
-                                    className="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
-                                />
+                            {/* Dual Email Fields: Principal (BDD) & Secondaire / Alternative */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label className="text-xs font-bold text-slate-700 block mb-1">
+                                        E-mail principal (Base BDD) :
+                                    </label>
+                                    <input
+                                        type="email"
+                                        placeholder="ex: contact@entreprise.fr"
+                                        value={contactEmail}
+                                        onChange={(e) => setContactEmail(e.target.value)}
+                                        className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="text-xs font-bold text-slate-700 block mb-1">
+                                        E-mail sec. / Adresse à jour :
+                                    </label>
+                                    <input
+                                        type="email"
+                                        placeholder="ex: direction@entreprise.fr"
+                                        value={secondaryEmail}
+                                        onChange={(e) => setSecondaryEmail(e.target.value)}
+                                        className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                    />
+                                </div>
                             </div>
 
                             <div>
@@ -838,16 +909,38 @@ export default function ProspecterGoogleLocalPage() {
                             {/* RIGHT SIDE (5 COLS): DETAILS & QUALIFICATION FORM */}
                             <div className="lg:col-span-5 bg-white p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
                                 <div className="space-y-4">
-                                    <div className="border-b border-slate-100 pb-3">
-                                        <h3 className="text-lg font-extrabold text-slate-900">{googleSearchCompany.nomEntreprise}</h3>
-                                        <div className="text-xs text-slate-500 font-medium">
-                                            SIRET : {googleSearchCompany.siret || 'Non renseigné'} • {googleSearchCompany.ville || city}
-                                        </div>
-                                        {googleSearchCompany.nomGerant && (
-                                            <div className="text-xs text-slate-700 font-medium mt-1">
-                                                Gérant : <strong>{googleSearchCompany.nomGerant}</strong>
+                                    {/* RICH DATABASE COMPANY CARD */}
+                                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2 text-xs">
+                                        <div className="flex items-start justify-between">
+                                            <div>
+                                                <h3 className="text-lg font-extrabold text-slate-900">{googleSearchCompany.nomEntreprise}</h3>
+                                                {googleSearchCompany.nomGerant && (
+                                                    <div className="text-xs text-slate-700 font-semibold mt-0.5">
+                                                        👤 Gérant / Dirigeant : <span className="text-slate-900 font-bold">{googleSearchCompany.nomGerant}</span>
+                                                    </div>
+                                                )}
                                             </div>
-                                        )}
+                                            {googleSearchCompany.noteGoogle && (
+                                                <div className="bg-amber-100 border border-amber-300 px-2 py-1 rounded-lg text-amber-900 text-xs font-bold flex items-center gap-1 shrink-0">
+                                                    ⭐ {googleSearchCompany.noteGoogle} ({googleSearchCompany.nombreAvis || 0} avis)
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-2 border-t border-slate-200">
+                                            <div>
+                                                <span className="font-bold text-slate-800">SIRET / SIREN :</span> {googleSearchCompany.siret || googleSearchCompany.siren || 'Non renseigné'}
+                                            </div>
+                                            <div>
+                                                <span className="font-bold text-slate-800">Chiffre d'Affaires (CA) :</span> {googleSearchCompany.chiffreAffaires || 'Non communiqué'}
+                                            </div>
+                                            <div>
+                                                <span className="font-bold text-slate-800">Adresse :</span> {googleSearchCompany.adresse || ''} {googleSearchCompany.codePostal || ''} {googleSearchCompany.ville || city} ({googleSearchCompany.region || 'France'})
+                                            </div>
+                                            <div>
+                                                <span className="font-bold text-slate-800">Effectifs :</span> {googleSearchCompany.accroche || 'Professionnel CVC'}
+                                            </div>
+                                        </div>
                                     </div>
 
                                     {/* SEO Argument Alert */}
@@ -868,17 +961,33 @@ export default function ProspecterGoogleLocalPage() {
 
                                     {/* Real-Time Qualification Form */}
                                     <div className="space-y-3 pt-2">
-                                        <div>
-                                            <label className="text-[11px] font-bold text-slate-700 block mb-1">
-                                                E-mail du Contact / Gérant (Optionnel) :
-                                            </label>
-                                            <input
-                                                type="email"
-                                                placeholder="ex: contact@entreprise.fr (Optionnel)"
-                                                value={contactEmail}
-                                                onChange={(e) => setContactEmail(e.target.value)}
-                                                className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
-                                            />
+                                        {/* Dual Email Fields: Principal (BDD) & Secondaire / Alternative */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            <div>
+                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                    E-mail principal (Base BDD) :
+                                                </label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="ex: contact@entreprise.fr"
+                                                    value={contactEmail}
+                                                    onChange={(e) => setContactEmail(e.target.value)}
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                />
+                                            </div>
+
+                                            <div>
+                                                <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                    E-mail sec. / Adresse à jour :
+                                                </label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="ex: direction@entreprise.fr"
+                                                    value={secondaryEmail}
+                                                    onChange={(e) => setSecondaryEmail(e.target.value)}
+                                                    className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                                />
+                                            </div>
                                         </div>
 
                                         <div>
