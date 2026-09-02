@@ -46,6 +46,9 @@ export default function ProspecterGoogleLocalPage() {
     const [callOutcome, setCallOutcome] = useState<"VOICEMAIL" | "ABSENT" | "CALLBACK" | "INTERESTED" | "REFUSED" | "">("");
     const [selectedCompanyId, setSelectedCompanyId] = useState<string | null>(null);
     
+    // Live Google Browser Modal State
+    const [googleSearchCompany, setGoogleSearchCompany] = useState<any | null>(null);
+
     const [adding, setAdding] = useState(false);
     const [addSuccess, setAddSuccess] = useState("");
     const [addError, setAddError] = useState("");
@@ -96,10 +99,23 @@ export default function ProspecterGoogleLocalPage() {
         }
     };
 
-    const handleConfirmAddProspect = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!companyName || !contactEmail) {
-            setAddError("Veuillez remplir au moins le nom de l'entreprise et l'e-mail du contact.");
+    const handleOpenGoogleBrowser = (comp: any) => {
+        setSelectedCompanyId(comp.id);
+        setGoogleSearchCompany(comp);
+        setCompanyName(comp.nomEntreprise || "");
+        setPhone(comp.telephone || "");
+        setWebsite(comp.siteWeb || "");
+        setContactEmail(comp.email || "");
+        setAddSuccess("");
+        setAddError("");
+    };
+
+    const handleConfirmAddProspect = async (e?: React.FormEvent) => {
+        if (e) e.preventDefault();
+        
+        const targetCompany = googleSearchCompany?.nomEntreprise || companyName;
+        if (!targetCompany) {
+            setAddError("Veuillez remplir au moins le nom de l'entreprise.");
             return;
         }
 
@@ -131,13 +147,13 @@ export default function ProspecterGoogleLocalPage() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    nomEntreprise: companyName,
-                    nomContact: "Dirigeant",
-                    prenomContact: "Contact",
+                    nomEntreprise: targetCompany,
+                    nomContact: googleSearchCompany?.nomGerant?.split(" ")[1] || "Dirigeant",
+                    prenomContact: googleSearchCompany?.nomGerant?.split(" ")[0] || "Contact",
                     email: contactEmail,
                     telephone: phone,
-                    siret: "",
-                    adresse: city,
+                    siret: googleSearchCompany?.siret || "",
+                    adresse: googleSearchCompany?.adresse || city,
                     siteWeb: website,
                     status: computedStatus,
                     commentaire: `Prospect qualifié issu du Moteur Google LOCAL (${city})${outcomeNote}`,
@@ -148,16 +164,19 @@ export default function ProspecterGoogleLocalPage() {
             });
 
             if (res.ok) {
-                setAddSuccess(`L'entreprise "${companyName}" a été ajoutée avec succès à vos prospects CRM !`);
-                setCompanyName("");
-                setContactEmail("");
-                setPhone("");
-                setWebsite("");
-                setDateRdv("");
-                setHeureRdv("");
-                setNoteRdv("");
-                setCallOutcome("");
-                setSelectedCompanyId(null);
+                setAddSuccess(`L'entreprise "${targetCompany}" a été ajoutée avec succès à vos prospects CRM !`);
+                setTimeout(() => {
+                    setCompanyName("");
+                    setContactEmail("");
+                    setPhone("");
+                    setWebsite("");
+                    setDateRdv("");
+                    setHeureRdv("");
+                    setNoteRdv("");
+                    setCallOutcome("");
+                    setSelectedCompanyId(null);
+                    setGoogleSearchCompany(null);
+                }, 1500);
             } else {
                 const d = await res.json();
                 setAddError(d.message || "Erreur lors de l'ajout du prospect");
@@ -207,7 +226,7 @@ export default function ProspecterGoogleLocalPage() {
                             📍 Prospection Google Local (Lieux) par Ville
                         </h1>
                         <p className="text-slate-500 text-sm mt-1">
-                            Cliquez sur n'importe quel marqueur sur la carte ou dans la liste pour pré-remplir le formulaire et enregistrer en 1 clic.
+                            Cliquez sur "Vérification & Aperçu Google Live" pour ouvrir le navigateur de vérification direct en fonction du nom.
                         </p>
                     </div>
 
@@ -286,12 +305,12 @@ export default function ProspecterGoogleLocalPage() {
                         <div className="bg-white border border-slate-300 rounded-2xl shadow-xl overflow-hidden flex flex-col space-y-0">
                             
                             {/* Window Header & Map Switcher */}
-                            <div className="bg-slate-200 border-b border-slate-300 p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div className="bg-slate-200 border-b border-slate-300 p-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                 <div className="flex items-center gap-2">
                                     <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
                                     <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
-                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Carte Interactive CVC ({city})</span>
+                                    <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Navigateur Live Google ({city})</span>
                                 </div>
 
                                 <div className="flex items-center gap-2">
@@ -311,7 +330,7 @@ export default function ProspecterGoogleLocalPage() {
                                             activeTab === "GOOGLE" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
                                         }`}
                                     >
-                                        🌐 Vue Google Maps
+                                        🌐 Vue Navigateur Google
                                     </button>
                                     <a
                                         href={googleLocalOfficialUrl}
@@ -329,16 +348,32 @@ export default function ProspecterGoogleLocalPage() {
                                 <CityInteractiveMap
                                     cityName={city}
                                     companies={displayedCompanies}
-                                    onSelectCompany={handleSelectCompanyToForm}
+                                    onSelectCompany={handleOpenGoogleBrowser}
                                     selectedCompanyId={selectedCompanyId}
                                 />
                             ) : (
-                                <div className="w-full h-[450px] bg-slate-100 relative">
+                                <div className="w-full h-[450px] bg-slate-100 relative flex flex-col">
+                                    <div className="bg-slate-200 border-b border-slate-300 px-3 py-1.5 flex items-center justify-between text-xs font-mono text-slate-700 shrink-0">
+                                        <div className="flex items-center gap-2 truncate">
+                                            <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                                            <span className="truncate">
+                                                https://maps.google.com/maps?q={encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}
+                                            </span>
+                                        </div>
+                                        <a
+                                            href={googleLocalOfficialUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[11px] text-blue-600 font-bold hover:underline shrink-0 flex items-center gap-1"
+                                        >
+                                            Ouvrir Google ↗
+                                        </a>
+                                    </div>
                                     <iframe
-                                        key={googleMapsEmbedUrl}
-                                        src={googleMapsEmbedUrl}
-                                        className="w-full h-full border-0"
-                                        title={`Google Maps Local - ${city}`}
+                                        key={companyName || googleSearchQuery}
+                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(companyName ? `${companyName} ${city}` : googleSearchQuery)}&output=embed`}
+                                        className="w-full flex-1 border-0"
+                                        title={`Google Maps Local - ${companyName || city}`}
                                         loading="lazy"
                                     />
                                 </div>
@@ -355,7 +390,7 @@ export default function ProspecterGoogleLocalPage() {
                                         🏢 Entreprises CVC de {city} avec Avis Réels ({displayedCompanies.length})
                                     </h3>
                                     <p className="text-xs text-slate-500 mt-0.5">
-                                        Cliquez sur une entreprise pour la reporter instantanément dans le formulaire à droite 👉
+                                        Cliquez sur "Vérification & Aperçu Google Live" pour ouvrir le navigateur live par nom 👉
                                     </p>
                                 </div>
 
@@ -401,7 +436,7 @@ export default function ProspecterGoogleLocalPage() {
                                         return (
                                             <div
                                                 key={c.id}
-                                                onClick={() => !c.isLocked && handleSelectCompanyToForm(c)}
+                                                onClick={() => !c.isLocked && handleOpenGoogleBrowser(c)}
                                                 className={`p-4 rounded-xl border transition-all cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-3 ${
                                                     isSelected
                                                         ? "bg-blue-50/90 border-blue-500 ring-2 ring-blue-500/20 shadow-md"
@@ -457,35 +492,49 @@ export default function ProspecterGoogleLocalPage() {
                                                     )}
                                                 </div>
 
-                                                {/* Action Button */}
-                                                <div className="shrink-0 flex items-center gap-2">
+                                                {/* Action Buttons */}
+                                                <div className="shrink-0 flex flex-wrap items-center gap-2">
                                                     {c.isLocked ? (
                                                         <span className="text-xs bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg font-bold">
                                                             🔒 Attribué à {c.assignedTo || 'autre commercial'}
                                                         </span>
                                                     ) : (
-                                                        <button
-                                                            type="button"
-                                                            onClick={(e) => {
-                                                                e.stopPropagation();
-                                                                handleSelectCompanyToForm(c);
-                                                            }}
-                                                            className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-sm ${
-                                                                isSelected
-                                                                    ? "bg-blue-600 text-white shadow-md"
-                                                                    : "bg-[#D59B2B] hover:bg-[#b88622] text-white"
-                                                            }`}
-                                                        >
-                                                            {isSelected ? (
-                                                                <>
-                                                                    <CheckCircle2 className="h-4 w-4 text-white" /> Sélectionné
-                                                                </>
-                                                            ) : (
-                                                                <>
-                                                                    <PlusCircle className="h-4 w-4" /> Reporter sur le Formulaire 👉
-                                                                </>
-                                                            )}
-                                                        </button>
+                                                        <>
+                                                            <button
+                                                                type="button"
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    handleOpenGoogleBrowser(c);
+                                                                }}
+                                                                className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
+                                                            >
+                                                                <Globe className="h-3.5 w-3.5 text-blue-600" />
+                                                                Vérification & Aperçu Google Live 🌐
+                                                            </button>
+
+                                                            <button
+                                                                type="button"
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation();
+                                                                    handleSelectCompanyToForm(c);
+                                                                }}
+                                                                className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-sm ${
+                                                                    isSelected
+                                                                        ? "bg-blue-600 text-white shadow-md"
+                                                                        : "bg-[#D59B2B] hover:bg-[#b88622] text-white"
+                                                                }`}
+                                                            >
+                                                                {isSelected ? (
+                                                                    <>
+                                                                        <CheckCircle2 className="h-4 w-4 text-white" /> Sélectionné
+                                                                    </>
+                                                                ) : (
+                                                                    <>
+                                                                        <PlusCircle className="h-4 w-4" /> Qualifier & Ajouter
+                                                                    </>
+                                                                )}
+                                                            </button>
+                                                        </>
                                                     )}
                                                 </div>
                                             </div>
@@ -507,7 +556,7 @@ export default function ProspecterGoogleLocalPage() {
                                 {companyName ? `Enregistrer "${companyName}"` : "Enregistrer l'entreprise au CRM"}
                             </h3>
                             <p className="text-xs text-slate-500 mt-1">
-                                Cliquez sur une entreprise sur la carte ou dans la liste pour pré-remplir automatiquement.
+                                Cliquez sur "Vérification & Aperçu Google Live" pour vérifier sur Google.
                             </p>
                         </div>
 
@@ -682,6 +731,256 @@ export default function ProspecterGoogleLocalPage() {
                 </div>
 
             </div>
+
+            {/* Google Live Search & Verification Window Modal (WINDOW MATCHING USER SCREENSHOT) */}
+            {googleSearchCompany && (
+                <div className="fixed inset-0 bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-4 z-50 animate-fadeIn">
+                    <div className="bg-white border border-slate-300 rounded-2xl max-w-6xl w-full shadow-2xl overflow-hidden flex flex-col h-[90vh]">
+                        
+                        {/* Browser Top Window Header */}
+                        <div className="bg-slate-200 border-b border-slate-300 p-3 flex items-center justify-between shrink-0">
+                            <div className="flex items-center gap-2">
+                                <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                                <span className="w-3 h-3 bg-yellow-500 rounded-full inline-block"></span>
+                                <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span>
+                                <span className="text-xs font-bold text-slate-700 ml-2 font-mono">Google Search Live Verification Window</span>
+                            </div>
+
+                            <a
+                                href={`https://www.google.com/search?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold px-4 py-1.5 rounded-lg flex items-center gap-1.5 transition-all shadow-sm"
+                            >
+                                Ouvrir sur Google.com (Nouvel Onglet) <ExternalLink className="h-3.5 w-3.5" />
+                            </a>
+
+                            <button onClick={() => setGoogleSearchCompany(null)} className="text-slate-500 hover:text-slate-800 p-1">
+                                <X className="h-5 w-5" />
+                            </button>
+                        </div>
+
+                        {/* 2-COLUMN SPLIT VIEW: LEFT = LIVE GOOGLE SEARCH SCREEN, RIGHT = DETAILS & FORM */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 flex-1 overflow-hidden">
+                            
+                            {/* LEFT SIDE (7 COLS): LIVE EMBEDDED GOOGLE SEARCH BROWSER SCREEN */}
+                            <div className="lg:col-span-7 bg-slate-100 border-r border-slate-200 flex flex-col h-full overflow-hidden">
+                                <div className="bg-slate-200 border-b border-slate-300 px-3 py-2 flex items-center justify-between text-xs font-mono text-slate-700 shrink-0">
+                                    <div className="flex items-center gap-2 truncate">
+                                        <Globe className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                                        <span className="truncate">
+                                            https://maps.google.com/maps?q={encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="flex-1 w-full relative bg-white">
+                                    <iframe
+                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(`${googleSearchCompany.nomEntreprise} ${googleSearchCompany.ville || city || ''}`)}&output=embed`}
+                                        className="w-full h-full border-0"
+                                        title={`Google Maps Business Profile - ${googleSearchCompany.nomEntreprise}`}
+                                    />
+                                </div>
+                            </div>
+
+                            {/* RIGHT SIDE (5 COLS): DETAILS & QUALIFICATION FORM */}
+                            <div className="lg:col-span-5 bg-white p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
+                                <div className="space-y-4">
+                                    <div className="border-b border-slate-100 pb-3">
+                                        <h3 className="text-lg font-extrabold text-slate-900">{googleSearchCompany.nomEntreprise}</h3>
+                                        <div className="text-xs text-slate-500 font-medium">
+                                            SIRET : {googleSearchCompany.siret || 'Non renseigné'} • {googleSearchCompany.ville || city}
+                                        </div>
+                                        {googleSearchCompany.nomGerant && (
+                                            <div className="text-xs text-slate-700 font-medium mt-1">
+                                                Gérant : <strong>{googleSearchCompany.nomGerant}</strong>
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    {/* SEO Argument Alert */}
+                                    <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 space-y-1 text-amber-900 text-xs">
+                                        <div className="font-extrabold flex items-center gap-1.5 text-amber-800">
+                                            <Sparkles className="h-4 w-4 text-[#D59B2B]" /> Diagnostic Visibilité Web :
+                                        </div>
+                                        {website ? (
+                                            <p>
+                                                Cette entreprise possède un site ({website}). Proposez notre audit d'indexation Gainable.fr.
+                                            </p>
+                                        ) : (
+                                            <p className="font-semibold">
+                                                ⚠️ Aucun site internet officiel trouvé sur Google ! Prospect prioritaire pour notre offre référencement.
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {/* Real-Time Qualification Form */}
+                                    <div className="space-y-3 pt-2">
+                                        <div>
+                                            <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                E-mail du Contact / Gérant (Optionnel) :
+                                            </label>
+                                            <input
+                                                type="email"
+                                                placeholder="ex: contact@entreprise.fr (Optionnel)"
+                                                value={contactEmail}
+                                                onChange={(e) => setContactEmail(e.target.value)}
+                                                className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#D59B2B]"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                Téléphone direct (vu sur Google) :
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="ex: 04 90... ou 06..."
+                                                value={phone}
+                                                onChange={(e) => setPhone(e.target.value)}
+                                                className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label className="text-[11px] font-bold text-slate-700 block mb-1">
+                                                Site Web officiel (vu sur Google) :
+                                            </label>
+                                            <input
+                                                type="text"
+                                                placeholder="ex: www.entreprise.fr"
+                                                value={website}
+                                                onChange={(e) => setWebsite(e.target.value)}
+                                                className="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+                                            />
+                                        </div>
+
+                                        {/* Call Result Quick Selector */}
+                                        <div className="space-y-1.5 pt-1 border-t border-slate-100">
+                                            <label className="text-[11px] font-extrabold text-slate-800 block">
+                                                Résultat de l'Appel Commercial (Cocher une option) :
+                                            </label>
+                                            <div className="grid grid-cols-2 gap-1.5">
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const newOutcome = callOutcome === "VOICEMAIL" ? "" : "VOICEMAIL";
+                                                        setCallOutcome(newOutcome);
+                                                        setDateRdv("");
+                                                        setHeureRdv("");
+                                                        setNoteRdv("");
+                                                    }}
+                                                    className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                        callOutcome === "VOICEMAIL" ? "bg-blue-600 text-white border-blue-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                    }`}
+                                                >
+                                                    🎙️ Message vocal
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const newOutcome = callOutcome === "ABSENT" ? "" : "ABSENT";
+                                                        setCallOutcome(newOutcome);
+                                                        setDateRdv("");
+                                                        setHeureRdv("");
+                                                        setNoteRdv("");
+                                                    }}
+                                                    className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                        callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                    }`}
+                                                >
+                                                    📵 Absent / Pas de rep.
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const newOutcome = callOutcome === "CALLBACK" ? "" : "CALLBACK";
+                                                        setCallOutcome(newOutcome);
+                                                        if (newOutcome && !dateRdv) {
+                                                            const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                            setDateRdv(tom.toISOString().split('T')[0]);
+                                                            if (!heureRdv) setHeureRdv("10:00");
+                                                        }
+                                                    }}
+                                                    className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                        callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                    }`}
+                                                >
+                                                    📞 Rappel tel.
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        const newOutcome = callOutcome === "INTERESTED" ? "" : "INTERESTED";
+                                                        setCallOutcome(newOutcome);
+                                                        if (newOutcome && !dateRdv) {
+                                                            const tom = new Date(); tom.setDate(tom.getDate() + 1);
+                                                            setDateRdv(tom.toISOString().split('T')[0]);
+                                                            if (!heureRdv) setHeureRdv("14:00");
+                                                        }
+                                                    }}
+                                                    className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                        callOutcome === "INTERESTED" ? "bg-emerald-600 text-white border-emerald-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                    }`}
+                                                >
+                                                    🤝 RDV / Intéressé
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        {/* RDV & Reminder Fields */}
+                                        <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 space-y-2">
+                                            <label className="text-[11px] font-extrabold text-slate-800 flex items-center gap-1.5">
+                                                <Calendar className="h-3.5 w-3.5 text-blue-600" /> Planifier un RDV / Rappel (Optionnel)
+                                            </label>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                <input
+                                                    type="date"
+                                                    value={dateRdv}
+                                                    onChange={(e) => setDateRdv(e.target.value)}
+                                                    className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
+                                                />
+                                                <input
+                                                    type="time"
+                                                    value={heureRdv}
+                                                    onChange={(e) => setHeureRdv(e.target.value)}
+                                                    className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
+                                                />
+                                            </div>
+                                            <input
+                                                type="text"
+                                                placeholder="Objet / Note du RDV..."
+                                                value={noteRdv}
+                                                onChange={(e) => setNoteRdv(e.target.value)}
+                                                className="w-full p-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 font-medium"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pt-4 border-t space-y-3">
+                                    {addError && <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl">{addError}</div>}
+                                    {addSuccess && <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs rounded-xl font-bold">{addSuccess}</div>}
+
+                                    <Button
+                                        type="button"
+                                        onClick={(e) => {
+                                            handleConfirmAddProspect(e);
+                                        }}
+                                        disabled={adding}
+                                        className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
+                                    >
+                                        {adding ? <Loader2 className="h-4 w-4 animate-spin" /> : "⚡ Valider & Transférer au CRM Prospect"}
+                                    </Button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 }
