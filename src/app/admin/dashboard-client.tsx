@@ -10,6 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Search, Building, Trash2, Mail, ExternalLink, Loader2, Pencil, Eye, FileText, Check, X, Shield, CheckCircle, XCircle, LogIn, LogOut, UserX, Sparkles, Globe } from "lucide-react";
 import SeoDashboard from "./seo-dashboard";
+import CommercialDashboard from "./commercial-dashboard";
+import { TrendingUp as TrendingUpIcon } from "lucide-react";
 
 interface User {
     id: string;
@@ -42,7 +44,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
     const [users, setUsers] = useState<User[]>(initialUsers);
     const [loadingMap, setLoadingMap] = useState<Record<string, string | null>>({});
     const [filterType, setFilterType] = useState<string>("all");
-    const [activeTab, setActiveTab] = useState<"users" | "seo">("users");
+    const [activeTab, setActiveTab] = useState<"users" | "commercials" | "seo">("users");
     const router = useRouter();
 
     const filteredUsers = users.filter(user => {
@@ -143,6 +145,15 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                     Utilisateurs
                 </button>
                 <button
+                    onClick={() => setActiveTab("commercials")}
+                    className={`pb-3 text-sm font-semibold transition-all relative flex items-center gap-2 ${activeTab === "commercials" ? "text-blue-600 border-b-2 border-blue-600 font-bold" : "text-slate-400 hover:text-slate-600"}`}
+                >
+                    Suivi Commerciaux & Activité
+                    <Badge className="bg-blue-600 text-white font-mono text-[10px] px-1.5 py-0">
+                        {users.filter(u => u.role === 'commercial' || !!u.commercialProfile).length}
+                    </Badge>
+                </button>
+                <button
                     onClick={() => setActiveTab("seo")}
                     className={`pb-3 text-sm font-semibold transition-all relative ${activeTab === "seo" ? "text-slate-900 border-b-2 border-slate-900 font-bold" : "text-slate-400 hover:text-slate-600"}`}
                 >
@@ -152,9 +163,11 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
             {activeTab === "seo" ? (
                 <SeoDashboard experts={users.filter(u => u.expert).map(u => u.expert!)} />
+            ) : activeTab === "commercials" ? (
+                <CommercialDashboard />
             ) : (
                 <>
-                    <div className="grid gap-4 md:grid-cols-4">
+                    <div className="grid gap-4 md:grid-cols-5">
                         <Card>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">Total Utilisateurs</CardTitle>
@@ -168,6 +181,23 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
                                     {users.filter(u => u.expert?.expert_type === 'bureau_detude').length} Étude •{" "}
                                     {users.filter(u => u.role === 'commercial' || !!u.commercialProfile).length} Commercial
                                 </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="bg-indigo-950 text-white border-indigo-900 shadow-sm shadow-indigo-100">
+                            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                <CardTitle className="text-sm font-medium text-indigo-100">Suivi Commerciaux</CardTitle>
+                                <TrendingUpIcon className="h-4 w-4 text-emerald-400" />
+                            </CardHeader>
+                            <CardContent>
+                                <div className="text-sm text-indigo-200 mb-4 font-light">Ventes, contacts et assiduité de présence</div>
+                                <Button
+                                    variant="secondary"
+                                    className="w-full bg-emerald-500 hover:bg-emerald-600 text-white border-none font-bold text-xs"
+                                    onClick={() => setActiveTab("commercials")}
+                                >
+                                    Suivi Activité ➜
+                                </Button>
                             </CardContent>
                         </Card>
 
@@ -190,7 +220,7 @@ export default function AdminDashboardClient({ initialUsers }: { initialUsers: U
 
                         <Card className="bg-blue-600 text-white border-blue-500 shadow-sm shadow-blue-100">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium text-blue-50">Community Manager IA</CardTitle>
+                                <CardTitle className="text-sm font-medium text-blue-50">Community Manager</CardTitle>
                                 <Sparkles className="h-4 w-4 text-amber-300 fill-amber-300" />
                             </CardHeader>
                             <CardContent>

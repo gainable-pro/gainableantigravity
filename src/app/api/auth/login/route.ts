@@ -39,6 +39,12 @@ export async function POST(req: Request) {
             );
         }
 
+        // Update last login and activity timestamp
+        await prisma.user.update({
+            where: { id: user.id },
+            data: { lastLoginAt: new Date(), lastActiveAt: new Date() }
+        }).catch(err => console.error("Error updating lastLoginAt:", err));
+
         // 3. Generate JWT
         // If rememberMe is true, token lasts 30 days. Otherwise 24 hours.
         const tokenDurationStr = rememberMe ? "30d" : "1d";

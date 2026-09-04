@@ -14,6 +14,8 @@ model User {
   password_hash String
   role          String   @default("expert") // "expert", "commercial", "admin"
   created_at    DateTime @default(now())
+  lastActiveAt  DateTime?
+  lastLoginAt   DateTime?
 
   expert        Expert?
 

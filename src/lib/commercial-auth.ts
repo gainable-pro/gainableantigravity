@@ -22,6 +22,12 @@ export async function verifyCommercial() {
 
         // Allow both commercial and admin to access commercial routes
         if (user && (user.role === 'commercial' || user.role === 'admin')) {
+            if (user.role === 'commercial') {
+                prisma.user.update({
+                    where: { id: user.id },
+                    data: { lastActiveAt: new Date() }
+                }).catch(() => {});
+            }
             return user;
         }
 
