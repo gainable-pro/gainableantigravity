@@ -11,8 +11,7 @@ export async function generateStaticParams() {
         const articleCount = await prisma.article.count({
             where: { status: 'PUBLISHED' }
         });
-        const totalArticlesToInclude = Math.min(articleCount, MAX_SITEMAP_ARTICLES);
-        const articleSitemapsCount = totalArticlesToInclude > 0 ? 1 : 0;
+        const articleSitemapsCount = Math.max(1, Math.ceil(articleCount / 5000));
         const totalSitemaps = 1 + articleSitemapsCount;
         return Array.from({ length: totalSitemaps }, (_, i) => ({ id: String(i) }));
     } catch (e) {
@@ -77,17 +76,25 @@ export async function GET(
             const all = [...staticUrls, ...expertUrls, ...productUrls, ...regionUrls, ...cityUrls];
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.join('\n')}\n</urlset>`;
 
-        } else if (id === 1) {
-            // High-quality curated articles (Top 1,500 most relevant articles)
+        } else if (id >= 1) {
+            // Paginated articles (5,000 articles per sitemap file)
+            const chunkSize = 5000;
+            const skip = (id - 1) * chunkSize;
+
             const expertsData = await prisma.expert.findMany({ select: { id: true, slug: true } });
             const expertMap = new Map(expertsData.map(e => [e.id, e.slug]));
 
             const articles = await prisma.article.findMany({
                 where: { status: 'PUBLISHED' },
-                take: MAX_SITEMAP_ARTICLES,
+                skip: skip,
+                take: chunkSize,
                 select: { slug: true, updatedAt: true, expertId: true },
                 orderBy: { updatedAt: 'desc' }
             });
+
+            if (articles.length === 0 && id > 1) {
+                return new NextResponse('Not found', { status: 404 });
+            }
 
             const urls = articles
                 .filter(a => expertMap.has(a.expertId))

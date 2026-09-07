@@ -7,12 +7,13 @@ export async function GET() {
     const baseUrl = 'https://www.gainable.fr';
     const now = new Date().toISOString();
 
-    let totalSitemapsCount = 2; // /sitemap/0.xml (Core + Cities) + /sitemap/1.xml (Curated Articles)
+    let totalSitemapsCount = 2;
     try {
         const articleCount = await prisma.article.count({
             where: { status: 'PUBLISHED' }
         });
-        totalSitemapsCount = articleCount > 0 ? 2 : 1;
+        const articleSitemaps = Math.max(1, Math.ceil(articleCount / 5000));
+        totalSitemapsCount = 1 + articleSitemaps;
     } catch (e) {
         console.error("Error fetching article count for sitemap-index:", e);
     }
