@@ -139,7 +139,7 @@ export async function POST(request: Request) {
         
         <!-- HEADER -->
         <div style="background-color:#ffffff; padding:20px; text-align:center; border-bottom:1px solid #E5E5E5;">
-            <img src="https://www.gainable.fr/logo.png" alt="Gainable" style="height:40px; border:0;">
+            <img src="https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable" style="height:40px; border:0;">
         </div>
 
         <!-- BANNER -->

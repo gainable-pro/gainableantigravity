@@ -118,7 +118,7 @@ contact@gainable.fr`;
     const htmlContent = `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://www.gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 50px;" />
+            <img src="https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" style="max-height: 50px;" />
         </div>
         <p>Bonjour,</p>
         <p>Nous vous remercions pour votre confiance et sommes ravis de vous accueillir parmi les professionnels référencés sur <strong>Gainable.fr</strong>.</p>
@@ -213,7 +213,7 @@ L'équipe Gainable.fr`;
     const htmlContent = `
     <div style="font-family: 'Montserrat', Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; shadow: 0 10px 25px rgba(0,0,0,0.1);">
         <div style="background-color: #1F2D3D; padding: 40px 20px; text-align: center;">
-            <img src="https://gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 50px; margin-bottom: 20px;" />
+            <img src="https://gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" style="max-height: 50px; margin-bottom: 20px;" />
             <h1 style="color: white; font-size: 24px; margin: 0; font-weight: 800; letter-spacing: -0.5px;">LA RÉVOLUTION GAINABLE EST EN MARCHE</h1>
         </div>
         

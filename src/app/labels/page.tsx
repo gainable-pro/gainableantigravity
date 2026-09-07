@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Expert Vérifié : la référence qualité en climatisation | Gainable.fr",
         description: "Découvrez le label Expert Vérifié Gainable.fr : des installateurs contrôlés pour la qualité, le sérieux et l’expertise en climatisation gainable.",
-        images: ['/label-quality-business-bg.png'],
+        images: ['/gainable-fr-label-qualite-climatisation-rge.png'],
         type: 'website',
     },
     twitter: {
@@ -34,7 +34,7 @@ export default function LabelsPage() {
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 z-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/label-quality-business-bg.png')" }}
+                    style={{ backgroundImage: "url('/gainable-fr-label-qualite-climatisation-rge.png')" }}
                 >
                     <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
                 </div>
@@ -95,7 +95,7 @@ export default function LabelsPage() {
                             {/* Illustration / Graphic for Trust */}
                             <div className="flex justify-center items-center">
                                 <img
-                                    src="/expert-verifie-logo-v3.jpg"
+                                    src="/gainable-fr-badge-expert-verifie-rge.jpg"
                                     alt="Logo Expert Vérifié Réseau Gainable.fr"
                                     className="w-full max-w-sm"
                                 />

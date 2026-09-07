@@ -171,8 +171,8 @@ export async function POST(req: Request) {
       const b64Data = imageResponse.data?.[0]?.b64_json;
       if (b64Data) {
         const imageBuffer = Buffer.from(b64Data, 'base64');
-        const cleanCityName = slugify(city, { lower: true, strict: true });
-        const filePath = `articles/manual_${cleanCityName}_${Date.now()}.png`;
+        const cleanCityName = slugify(city || "france", { lower: true, strict: true });
+        const filePath = `articles/installation-climatisation-gainable-rge-${cleanCityName}-${Date.now().toString().slice(-6)}.png`;
 
         const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
           contentType: 'image/png',
@@ -199,8 +199,8 @@ export async function POST(req: Request) {
       const b64DataSec = secondaryResponse.data?.[0]?.b64_json;
       if (b64DataSec) {
         const imageBuffer = Buffer.from(b64DataSec, 'base64');
-        const cleanCityName = slugify(city, { lower: true, strict: true });
-        const filePath = `articles/manual_sec_${cleanCityName}_${Date.now()}.png`;
+        const cleanCityName = slugify(city || "france", { lower: true, strict: true });
+        const filePath = `articles/pompe-a-chaleur-gainable-artisan-${cleanCityName}-${Date.now().toString().slice(-6)}.png`;
 
         const { error: uploadError } = await supabase.storage.from('gainable-assets').upload(filePath, imageBuffer, {
           contentType: 'image/png',

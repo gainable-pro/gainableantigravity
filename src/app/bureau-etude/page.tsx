@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Bureau d’étude CVC & thermique : climatisation gainable | Gainable.fr",
         description: "Trouvez un bureau d’étude CVC et thermique pour vos projets de climatisation gainable, tertiaire ou résidentiel (RE2020, rénovation) avec Gainable.fr.",
-        images: ['/bureau-etude-hero.png'],
+        images: ['/gainable-fr-bureau-etude-thermique-hero.png'],
         type: 'website',
     },
     twitter: {
@@ -32,7 +32,7 @@ export default function BureauEtudePage() {
         "name": "Bureau d'Étude Thermique Gainable.fr",
         "description": "Études thermiques RE2020, dimensionnement CVC et audit énergétique.",
         "url": "https://gainable.fr/bureau-etude",
-        "logo": "https://gainable.fr/logo.png",
+        "logo": "https://gainable.fr/gainable-fr-logo-officiel-climatisation.png",
         "areaServed": "FR",
         "knowsAbout": ["Climatisation", "Chauffage", "RE2020", "Audit Énergétique"]
     };
@@ -77,7 +77,7 @@ export default function BureauEtudePage() {
                     {/* Hero Image */}
                     <div className="relative">
                         <div className="absolute inset-0 bg-[#D59B2B]/20 blur-3xl rounded-full"></div>
-                        <img src="/bureau-etude-hero.png" alt="Ingénieur Bureau d'étude CVC au travail" className="relative z-10 w-full h-auto rounded-3xl shadow-2xl border-4 border-[#D59B2B]/20 object-cover" />
+                        <img src="/gainable-fr-bureau-etude-thermique-hero.png" alt="Ingénieur Bureau d'étude CVC au travail" className="relative z-10 w-full h-auto rounded-3xl shadow-2xl border-4 border-[#D59B2B]/20 object-cover" />
                     </div>
                 </div>
             </section>
@@ -88,7 +88,7 @@ export default function BureauEtudePage() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
-                            <img src="/bureau-etude-intro.png" alt="Modélisation 3D CVC sur écran" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-introduction.png" alt="Modélisation 3D CVC sur écran" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
 
                         {/* Text Right */}
@@ -141,7 +141,7 @@ export default function BureauEtudePage() {
 
                         {/* Image Right */}
                         <div className="relative">
-                            <img src="/bureau-etude-services.png" alt="Équipe ingénieurs CVC collaboration" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-services.png" alt="Équipe ingénieurs CVC collaboration" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ export default function BureauEtudePage() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
-                            <img src="/bureau-etude-audience.png" alt="Architecte et clients sur chantier" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-audience.png" alt="Architecte et clients sur chantier" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
 
                         {/* Text Right */}
@@ -220,7 +220,7 @@ export default function BureauEtudePage() {
 
                         {/* Image Right */}
                         <div className="relative">
-                            <img src="/bureau-etude-timeline.png" alt="Installation CVC technique chantier" className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-etapes.png" alt="Installation CVC technique chantier" className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 object-cover" />
                         </div>
 
                     </div>
@@ -233,7 +233,7 @@ export default function BureauEtudePage() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
-                            <img src="/bureau-etude-examples.png" alt="Villa moderne exemple projet" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-exemples.png" alt="Villa moderne exemple projet" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
 
                         {/* Text Right */}
@@ -289,7 +289,7 @@ export default function BureauEtudePage() {
 
                         {/* Image Right */}
                         <div className="relative">
-                            <img src="/bureau-etude-contact.png" alt="Ingénieur contact smartphone" className="w-full h-auto rounded-3xl shadow-2xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-devis.png" alt="Ingénieur contact smartphone" className="w-full h-auto rounded-3xl shadow-2xl object-cover" />
                         </div>
                     </div>
                 </div>

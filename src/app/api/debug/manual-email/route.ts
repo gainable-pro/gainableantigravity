@@ -36,7 +36,7 @@ export async function GET(req: Request) {
                 html: `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 20px;">
-             <img src="https://www.gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 50px;" />
+             <img src="https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" style="max-height: 50px;" />
         </div>
         
         <h2 style="color: #1F2D3D;">Bonjour,</h2>
@@ -102,7 +102,7 @@ export async function GET(req: Request) {
                 html: `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://www.gainable.fr/logo.png" alt="Gainable.fr" style="max-height: 50px;" />
+            <img src="https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" style="max-height: 50px;" />
         </div>
         <p>Bonjour,</p>
         <p>Nous vous remercions pour votre confiance et sommes ravis de vous accueillir parmi les professionnels référencés sur <strong>Gainable.fr</strong>.</p>

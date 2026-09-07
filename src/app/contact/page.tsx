@@ -63,7 +63,7 @@ export default function ContactPage() {
             <div className="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-[#1F2D3D] overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
-                    style={{ backgroundImage: `url('/contact-bg.png')` }} // Assuming image matches path
+                    style={{ backgroundImage: `url('/gainable-fr-climatisation-contact-fond.png')` }} // Assuming image matches path
                 ></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-[#1F2D3D]/80 to-[#1F2D3D]/95"></div>
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">

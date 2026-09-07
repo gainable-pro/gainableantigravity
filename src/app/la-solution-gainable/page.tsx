@@ -100,7 +100,7 @@ export default function SolutionGainablePage() {
                             </Button>
                         </div>
                         <div className="order-2 relative h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
-                            <Image src="/block-hvac-engineer-v2.png" alt="Ingénieur CVC réalisant une étude" fill className="object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                            <Image src="/gainable-fr-climatisation-ingenieur-cvc.png" alt="Ingénieur CVC réalisant une étude" fill className="object-cover transform group-hover:scale-105 transition-transform duration-700" />
                         </div>
                     </div>
                 </section>

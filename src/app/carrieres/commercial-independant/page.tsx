@@ -43,7 +43,7 @@ export default function CommercialJobPage() {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/commercial-hero.png" 
+            src="/gainable-fr-climatisation-espace-commercial-hero.png" 
             alt="Business Banner Background" 
             fill
             priority

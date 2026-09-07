@@ -295,7 +295,15 @@ export default async function PublicArticlePage({ params }: PageProps) {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": article.title,
-        "image": article.mainImage ? [article.mainImage] : [],
+        "image": article.mainImage ? {
+            "@type": "ImageObject",
+            "url": article.mainImage.startsWith('http') ? article.mainImage : `https://www.gainable.fr${article.mainImage.startsWith('/') ? '' : '/'}${article.mainImage}`,
+            "caption": article.altText || `${article.title} - Climatisation Gainable & RGE ${targetCity}`
+        } : {
+            "@type": "ImageObject",
+            "url": "https://www.gainable.fr/assets/logo-share.png",
+            "caption": "Gainable.fr - Réseau National Climatisation & Pompes à Chaleur"
+        },
         "datePublished": article.publishedAt?.toISOString(),
         "dateModified": article.updatedAt.toISOString(),
         "author": [{
@@ -308,7 +316,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
             "name": "Gainable.fr",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.gainable.fr/logo.png"
+                "url": "https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png"
             }
         },
         "description": article.metaDesc || article.introduction,

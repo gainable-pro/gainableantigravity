@@ -82,7 +82,7 @@ export async function POST(req: Request) {
                 html: `
                 <div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
                     <div style="background-color: #1F2D3D; padding: 30px; text-align: center; color: white;">
-                        <img src="https://www.gainable.fr/logo_white.png" alt="Gainable.fr" style="max-height: 55px; height: auto; width: auto; margin: 0 auto 10px auto; display: block;" />
+                        <img src="https://www.gainable.fr/gainable-fr-logo-blanc-officiel-climatisation.png" alt="Gainable.fr" style="max-height: 55px; height: auto; width: auto; margin: 0 auto 10px auto; display: block;" />
                         <p style="margin: 0; color: #D59B2B; font-size: 14px; font-weight: bold; tracking: 0.5px;">La plateforme des experts certifiés</p>
                     </div>
                     <div style="padding: 30px;">

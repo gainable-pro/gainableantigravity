@@ -18,7 +18,7 @@ export default function EspaceProPage() {
             <section className="relative py-20 bg-[#1F2D3D] text-white overflow-hidden">
                 <div className="absolute inset-0 z-0 opacity-20">
                     <Image
-                        src="/espace_pro_vision_1765140841780.png"
+                        src="/gainable-fr-espace-pro-vision-reseau.png"
                         alt="Artisan expert gainable"
                         fill
                         className="object-cover"
@@ -341,7 +341,7 @@ export default function EspaceProPage() {
                 <div className="container max-w-7xl mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="relative">
-                            <img src="/espace_pro_conclusion_1765140856043.png" alt="Rejoignez les experts gainable" className="w-full h-auto rounded-2xl shadow-xl" />
+                            <img src="/gainable-fr-espace-pro-conclusion-artisan.png" alt="Rejoignez les experts gainable" className="w-full h-auto rounded-2xl shadow-xl" />
                             {/* Decorative badge */}
                             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border border-slate-100 hidden md:block">
                                 <div className="flex items-center gap-4">

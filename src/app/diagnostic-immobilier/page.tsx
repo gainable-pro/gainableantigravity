@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Diagnostiqueur immobilier DPE & audit énergétique | Gainable.fr",
         description: "Trouvez un diagnostiqueur immobilier pour votre DPE, audit énergétique ou diagnostic vente/location. Experts vérifiés disponibles sur Gainable.fr.",
-        images: ['/diag-hero.png'],
+        images: ['/gainable-fr-diagnostic-immobilier-dpe-hero.png'],
         type: 'website',
     },
     twitter: {
@@ -32,7 +32,7 @@ export default function DiagnosticImmobilierPage() {
         "name": "Service de Diagnostic Immobilier Gainable.fr",
         "description": "Réseau de diagnostiqueurs immobiliers certifiés pour DPE, amiante, plomb et audit énergétique.",
         "url": "https://gainable.fr/diagnostic-immobilier",
-        "logo": "https://gainable.fr/logo.png",
+        "logo": "https://gainable.fr/gainable-fr-logo-officiel-climatisation.png",
         "areaServed": "FR",
         "knowsAbout": ["DPE", "Audit Énergétique", "Diagnostic Vente", "Diagnostic Location"]
     };
@@ -80,7 +80,7 @@ export default function DiagnosticImmobilierPage() {
                     {/* Hero Image */}
                     <div className="relative">
                         <div className="absolute inset-0 bg-[#D59B2B]/20 blur-3xl rounded-full"></div>
-                        <img src="/diag-hero.png" alt="Diagnostiqueur immobilier avec tablette" className="relative z-10 w-full h-auto rounded-3xl shadow-2xl border-4 border-[#D59B2B]/20 object-cover" />
+                        <img src="/gainable-fr-diagnostic-immobilier-dpe-hero.png" alt="Diagnostiqueur immobilier avec tablette" className="relative z-10 w-full h-auto rounded-3xl shadow-2xl border-4 border-[#D59B2B]/20 object-cover" />
                     </div>
                 </div>
             </section>
@@ -91,7 +91,7 @@ export default function DiagnosticImmobilierPage() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
-                            <img src="/diag-inspector.png" alt="Expertise technique diagnostic" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-diagnostic-immobilier-inspecteur.png" alt="Expertise technique diagnostic" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
 
                         {/* Text Right */}
@@ -146,7 +146,7 @@ export default function DiagnosticImmobilierPage() {
 
                         {/* Image Right */}
                         <div className="relative">
-                            <img src="/diag-thermal.png" alt="Expert thermique caméra infrarouge" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-diagnostic-thermique-dpe.png" alt="Expert thermique caméra infrarouge" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ export default function DiagnosticImmobilierPage() {
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
                             {/* Placeholder reused since generation failed */}
-                            <img src="/diag-inspector.png" alt="Passoires énergétiques DPE G" className="w-full h-auto rounded-2xl shadow-xl object-cover grayscale opacity-90" />
+                            <img src="/gainable-fr-diagnostic-immobilier-inspecteur.png" alt="Passoires énergétiques DPE G" className="w-full h-auto rounded-2xl shadow-xl object-cover grayscale opacity-90" />
                         </div>
 
                         {/* Text Right */}
@@ -232,7 +232,7 @@ export default function DiagnosticImmobilierPage() {
                         {/* Image Right */}
                         <div className="relative">
                             {/* Placeholder reused since generation failed */}
-                            <img src="/diag-hero.png" alt="Checklist diagnostics immobiliers" className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 object-cover opacity-80" />
+                            <img src="/gainable-fr-diagnostic-immobilier-dpe-hero.png" alt="Checklist diagnostics immobiliers" className="w-full h-auto rounded-2xl shadow-2xl border border-white/10 object-cover opacity-80" />
                         </div>
 
                     </div>
@@ -246,7 +246,7 @@ export default function DiagnosticImmobilierPage() {
                         {/* Image Left */}
                         <div className="order-2 md:order-1 relative">
                             {/* Placeholder reused since generation failed */}
-                            <img src="/bureau-etude-audience.png" alt="Poignée de main propriétaire diagnostiqueur" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
+                            <img src="/gainable-fr-bureau-etude-thermique-audience.png" alt="Poignée de main propriétaire diagnostiqueur" className="w-full h-auto rounded-2xl shadow-xl object-cover" />
                         </div>
 
                         {/* Text Right */}

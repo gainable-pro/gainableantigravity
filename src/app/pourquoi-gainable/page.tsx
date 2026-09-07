@@ -33,7 +33,7 @@ export default function PourquoiGainablePage() {
         "@type": "Organization",
         "name": "Gainable.fr",
         "url": "https://gainable.fr",
-        "logo": "https://gainable.fr/logo.png",
+        "logo": "https://gainable.fr/gainable-fr-logo-officiel-climatisation.png",
         "description": "La plateforme de confiance pour la climatisation gainable et le génie climatique.",
         "missionCoveragePrioritiesPolicy": "https://gainable.fr/pourquoi-gainable",
         "foundingDate": "2024",

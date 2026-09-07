@@ -102,7 +102,7 @@ export async function GET(req: Request) {
     const emailHtml = `
       <div style="font-family: sans-serif; max-width: 650px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 20px; padding: 30px; color: #333; background-color: #ffffff;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <img src="https://www.gainable.fr/logo.png" alt="Gainable.fr" style="height: 40px; margin-bottom: 15px;" onError="this.style.display='none';"/>
+          <img src="https://www.gainable.fr/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" style="height: 40px; margin-bottom: 15px;" onError="this.style.display='none';"/>
           <h2 style="color: #1F2D3D; margin: 0; font-size: 24px;">📊 Audit SEO Quotidien & Visibilité Locale</h2>
           <p style="color: #64748b; margin: 5px 0 0 0; font-size: 14px;">Rapport généré le ${new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
         </div>

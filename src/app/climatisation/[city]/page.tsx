@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             description: `Le réseau national des experts du froid. Trouvez les meilleurs artisans locaux à ${city.name}.`,
             url: `https://www.gainable.fr/climatisation/${city.slug}`,
             type: 'website',
-            images: ['/hero-villa.png'],
+            images: ['/gainable-fr-climatisation-villa-residentiel.png'],
         }
     };
 }
@@ -272,7 +272,7 @@ export default async function CityPage({ params }: PageProps) {
             city.climateZone === 'mediterranean' ? '/city-images/template-villa.jpg' :
                 city.housingType === 'historique' ? '/city-images/template-historic.jpg' :
                     city.climateZone === 'mountain' ? '/city-images/template-mountain.jpg' :
-                        '/hero-villa.png'
+                        '/gainable-fr-climatisation-villa-residentiel.png'
     );
 
     return (
@@ -339,7 +339,7 @@ export default async function CityPage({ params }: PageProps) {
                                     <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-[#D59B2B]/30 transition-all bg-white h-full flex flex-col items-center text-center group-hover:-translate-y-1">
                                         <div className="w-24 h-24 relative mb-6 p-2 border border-slate-100 rounded-full bg-slate-50">
                                             {expert.logo_url ? (
-                                                <img src={expert.logo_url} alt={expert.nom_entreprise} className="object-contain w-full h-full rounded-full" />
+                                                <img src={expert.logo_url} alt={`Logo ${expert.nom_entreprise} - Artisan Climatisation RGE ${city.name}`} className="object-contain w-full h-full rounded-full" />
                                             ) : (
                                                 <div className="w-full h-full bg-white rounded-full flex items-center justify-center"><ShieldCheck className="w-10 h-10 text-slate-300" /></div>
                                             )}

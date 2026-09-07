@@ -48,7 +48,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
         openGraph: {
             title,
             description,
-            images: ['/hero-hvac.png'],
+            images: ['/gainable-fr-climatisation-pompe-a-chaleur-hero.png'],
         }
     };
 }

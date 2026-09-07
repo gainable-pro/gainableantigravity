@@ -11,10 +11,10 @@ import * as React from "react";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
     // Dynamic Logo based on Country
-    let logoSrc = "/logo.png"; // Default (FR/Global)
-    if (countryCode === 'CH') logoSrc = "/logo-ch.png"; // Suisse
-    if (countryCode === 'MA') logoSrc = "/logo-ma.png"; // Maroc
-    if (countryCode === 'BE') logoSrc = "/logo-be.png"; // Belgique
+    let logoSrc = "/gainable-fr-logo-officiel-climatisation.png"; // Default (FR/Global)
+    if (countryCode === 'CH') logoSrc = "/gainable-ch-logo-climatisation-suisse.png"; // Suisse
+    if (countryCode === 'MA') logoSrc = "/gainable-ma-logo-climatisation-maroc.png"; // Maroc
+    if (countryCode === 'BE') logoSrc = "/gainable-fr-logo-bureau-etude-thermique.png"; // Belgique
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">

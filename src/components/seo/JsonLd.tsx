@@ -119,3 +119,60 @@ export function ItemListJsonLd({ name, description, items }: ItemListJsonLdProps
   return <JsonLd data={schema} />;
 }
 
+export interface ArticleJsonLdProps {
+  title: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorName: string;
+  imageUrl?: string;
+  city?: string;
+}
+
+export function ArticleJsonLd({ title, description, url, datePublished, dateModified, authorName, imageUrl, city }: ArticleJsonLdProps) {
+  const schema: Record<string, any> = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    },
+    headline: title,
+    description: description,
+    author: {
+      '@type': 'Organization',
+      name: authorName,
+      url: 'https://www.gainable.fr'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Gainable.fr',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.gainable.fr/assets/logo-share.png'
+      }
+    },
+    about: [
+      { '@type': 'Thing', name: 'Climatisation Gainable' },
+      { '@type': 'Thing', name: 'Pompe à Chaleur Réversible' },
+      { '@type': 'Thing', name: 'Artisan Certifié RGE QualiPAC' }
+    ]
+  };
+
+  if (datePublished) schema.datePublished = datePublished;
+  if (dateModified) schema.dateModified = dateModified;
+  if (city) schema.contentLocation = { '@type': 'Place', name: city };
+
+  if (imageUrl) {
+    schema.image = {
+      '@type': 'ImageObject',
+      url: imageUrl,
+      caption: `${title} - Installation climatisation gainable RGE${city ? ' à ' + city : ''}`
+    };
+  }
+
+  return <JsonLd data={schema} />;
+}
+
+

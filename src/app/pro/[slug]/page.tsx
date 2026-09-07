@@ -228,7 +228,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                             {/* LOGO */}
                             <div className="w-72 h-72 bg-white rounded-xl shadow-lg border-4 border-white overflow-hidden flex items-center justify-center">
                                 {expert.logo_url ? (
-                                    <img src={expert.logo_url} alt={expert.nom_entreprise} className="w-full h-full object-contain p-4" />
+                                    <img src={expert.logo_url} alt={`Logo ${expert.nom_entreprise} - Installateur Climatisation RGE à ${expert.ville}`} className="w-full h-full object-contain p-4" />
                                 ) : (
                                     <span className="text-6xl font-bold text-slate-300">{expert.nom_entreprise.charAt(0)}</span>
                                 )}
@@ -508,7 +508,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                             <div key={cert.id} className="flex flex-col items-center gap-2 group">
                                                 <div className="h-16 w-auto flex items-center justify-center p-2 bg-slate-50 rounded-lg border border-slate-100 group-hover:border-[#D59B2B]/30 transition-colors">
                                                     {cert.value === 'RGE QualiPAC' ? (
-                                                        <img src="/assets/images/rge-logo.png" alt="RGE QualiPAC" className="h-full w-auto object-contain" />
+                                                        <img src="/assets/images/rge-gainable-fr-logo-officiel-climatisation.png" alt={`Certification RGE QualiPAC Climatisation & PAC - ${expert.nom_entreprise} à ${expert.ville}`} className="h-full w-auto object-contain" />
                                                     ) : (
                                                         <div className="h-full flex items-center gap-2 px-3">
                                                             <CheckCircle className="w-6 h-6 text-[#D59B2B]" />
@@ -584,7 +584,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
                             <div className="flex justify-center mt-4">
                                 {expert.is_labeled && (
-                                    <img src="/expert-verifie-logo-v3.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
+                                    <img src="/gainable-fr-badge-expert-verifie-rge.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
                                 )}
                             </div>
                         </div>

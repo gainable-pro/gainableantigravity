@@ -209,7 +209,7 @@ export default function MediaPage() {
                         <div className="mt-6 pt-6 border-t border-slate-100">
                             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col md:flex-row items-center gap-4">
                                 <div className="bg-black p-2 rounded-lg flex-shrink-0">
-                                    <img src="/distia-logo.png" alt="DISTIA" className="w-16 h-auto" />
+                                    <img src="/gainable-fr-logo-partenaire-distia.png" alt="DISTIA" className="w-16 h-auto" />
                                 </div>
                                 <div className="flex-1 text-center md:text-left space-y-1">
                                     <h4 className="font-bold text-[#1F2D3D]">Besoin d'une vidéo professionnelle ?</h4>

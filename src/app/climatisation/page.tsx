@@ -9,13 +9,13 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const heroImages = [
-  "/hero-villa.png",
-  "/hero-office.png",
-  "/hero-office-people.png",
-  "/hero-mall.png",
-  "/hero-hotel.png",
-  "/hero-industry.png",
-  "/hero-hospital.png"
+  "/gainable-fr-climatisation-villa-residentiel.png",
+  "/gainable-fr-climatisation-locaux-professionnels.png",
+  "/gainable-fr-climatisation-bureau-tertiaire.png",
+  "/gainable-fr-climatisation-centre-commercial.png",
+  "/gainable-fr-climatisation-hotellerie-hero.png",
+  "/gainable-fr-climatisation-industrie-hero.png",
+  "/gainable-fr-climatisation-hopital-sante.png"
 ];
 
 export default function Home() {
@@ -99,42 +99,42 @@ export default function Home() {
             {/* VILLAS MAISONS */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-maison.png" alt="Maison" className="object-contain w-full h-full scale-[1.3]" />
+                <img src="/gainable-fr-climatisation-secteur-maison.png" alt="Maison" className="object-contain w-full h-full scale-[1.3]" />
               </div>
             </Link>
 
             {/* TERTIAIRE */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-tertiaire.jpg" alt="Tertiaire" className="object-contain w-full h-full" />
+                <img src="/gainable-fr-climatisation-secteur-tertiaire.jpg" alt="Tertiaire" className="object-contain w-full h-full" />
               </div>
             </Link>
 
             {/* COMMERCE */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-commerce.jpg" alt="Commerce" className="object-contain w-full h-full" />
+                <img src="/gainable-fr-climatisation-secteur-commerce.jpg" alt="Commerce" className="object-contain w-full h-full" />
               </div>
             </Link>
 
             {/* HÔTELLERIE */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-hotellerie.jpg" alt="Hôtellerie" className="object-contain w-full h-full" />
+                <img src="/gainable-fr-climatisation-secteur-hotellerie.jpg" alt="Hôtellerie" className="object-contain w-full h-full" />
               </div>
             </Link>
 
             {/* INDUSTRIE */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-industrie.png" alt="Industrie" className="object-contain w-full h-full" />
+                <img src="/gainable-fr-climatisation-secteur-industrie.png" alt="Industrie" className="object-contain w-full h-full" />
               </div>
             </Link>
 
             {/* SANTÉ */}
             <Link href="/trouver-installateur" className="flex flex-col items-center group cursor-pointer">
               <div className="w-24 h-24 mb-4 relative transition-transform transform group-hover:scale-110">
-                <img src="/icon-sante.jpg" alt="Santé" className="object-contain w-full h-full" />
+                <img src="/gainable-fr-climatisation-secteur-sante.jpg" alt="Santé" className="object-contain w-full h-full" />
               </div>
             </Link>
           </div>
@@ -174,7 +174,7 @@ export default function Home() {
             </div>
             <div className="order-2">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-                <img src="/block-villa-interior-v2.png" alt="Intérieur villa moderne climatisation" className="w-full h-full object-cover" />
+                <img src="/gainable-fr-climatisation-villa-interieur.png" alt="Intérieur villa moderne climatisation" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function Home() {
             {/* Image Column */}
             <div className="order-2">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-                <img src="/block-hotel-lobby-v2.png" alt="Hall d’hôtel moderne avec climatisation discrète" className="w-full h-full object-cover" />
+                <img src="/gainable-fr-climatisation-hotel-lobby.png" alt="Hall d’hôtel moderne avec climatisation discrète" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -245,7 +245,7 @@ export default function Home() {
             </div>
             <div className="order-2 md:order-1">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-                <img src="/block-hvac-engineer-v2.png" alt="Ingénieur CVC avec plans" className="w-full h-full object-cover" />
+                <img src="/gainable-fr-climatisation-ingenieur-cvc.png" alt="Ingénieur CVC avec plans" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -281,7 +281,7 @@ export default function Home() {
             </div>
             <div className="order-2">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-                <img src="/block-vrv-rooftop-v2.png" alt="Systèmes VRV sur toiture" className="w-full h-full object-cover" />
+                <img src="/gainable-fr-climatisation-vrv-toiture.png" alt="Systèmes VRV sur toiture" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -314,7 +314,7 @@ export default function Home() {
             </div>
             <div className="order-2 md:order-1">
               <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
-                <img src="/block-cta-tech-v2.png" alt="Local technique CTA" className="w-full h-full object-cover" />
+                <img src="/gainable-fr-climatisation-technologie-cta.png" alt="Local technique CTA" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -370,7 +370,7 @@ export default function Home() {
             <div className="lg:w-1/2 relative">
               <div className="absolute -inset-4 bg-[#D59B2B]/10 rounded-2xl transform rotate-2"></div>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src="/interior-ac.png" alt="Intérieur Gainable Invisible" className="w-full h-auto object-cover" />
+                <img src="/gainable-fr-climatisation-gainable-interieur-design.png" alt="Intérieur Gainable Invisible" className="w-full h-auto object-cover" />
               </div>
             </div>
           </div>

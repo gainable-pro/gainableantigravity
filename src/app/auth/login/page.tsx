@@ -53,7 +53,7 @@ export default function LoginPage() {
             <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                 <div className="text-center">
                     <Link href="/">
-                        <img src="/logo.png" alt="Gainable.fr" className="h-12 mx-auto mb-6 object-contain" />
+                        <img src="/gainable-fr-logo-officiel-climatisation.png" alt="Gainable.fr" className="h-12 mx-auto mb-6 object-contain" />
                     </Link>
                     <h2 className="text-3xl font-bold tracking-tight text-[#1F2D3D]">
                         Connexion Espace Pro

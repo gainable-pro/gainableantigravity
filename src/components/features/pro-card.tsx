@@ -154,7 +154,7 @@ export function ProCard({
                 {isLabeled && (
                     <div className="flex justify-center mt-3">
                         <Image
-                            src="/expert-verifie-logo-v3.jpg"
+                            src="/gainable-fr-badge-expert-verifie-rge.jpg"
                             alt="Expert Vérifié"
                             width={120}
                             height={80}
