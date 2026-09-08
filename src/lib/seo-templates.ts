@@ -9,28 +9,42 @@ interface ExpertSEOData {
 }
 
 export function generateExpertMetaTitle(data: ExpertSEOData): string {
-    const currentYear = new Date().getFullYear();
     const dept = getDepartmentFromZip(data.codePostal);
     const deptSuffix = dept ? ` (${dept})` : "";
+    const company = data.nomEntreprise.trim();
+    const city = data.ville.trim();
 
-    // Format: "[Nom Entreprise] - Installateur Climatisation Réversible & Gainable à [Ville] ([Département]) | Devis [Year]"
-    // Max 60 chars preference, but we prioritize strong CTR keywords.
+    // Priority 1: "[Nom] - Climatisation & Gainable à [Ville]"
+    let title = `${company} — Climatisation & Gainable à ${city}${deptSuffix}`;
 
-    const base = `${data.nomEntreprise} - Installateur Climatisation Réversible & Gainable à ${data.ville}${deptSuffix} | Devis ${currentYear}`;
+    // If title exceeds 60 chars, shorten subtitle
+    if (title.length > 60) {
+        title = `${company} — Climatisation à ${city}${deptSuffix}`;
+    }
 
-    return base;
+    // If still > 65 chars (e.g. very long company name), compact title
+    if (title.length > 65) {
+        title = `${company} — Installateur Climatisation ${city}`;
+    }
+
+    // Hard fallback cap at 65 chars
+    if (title.length > 65) {
+        title = title.substring(0, 62) + "...";
+    }
+
+    return title;
 }
 
 export function generateExpertMetaDescription(data: ExpertSEOData): string {
-    // Format: "Vous cherchez à installer une climatisation réversible ou gainable à [Ville] ? Découvrez [Nom], installateur de confiance. Demandez votre devis gratuit !"
-    // Max 160 chars.
+    const company = data.nomEntreprise.trim();
+    const city = data.ville.trim();
 
-    let desc = `Vous cherchez à installer une climatisation réversible ou gainable à ${data.ville} ? Découvrez ${data.nomEntreprise}, installateur de confiance. Demandez votre devis gratuit !`;
+    let desc = `Fiche officielle de ${company} à ${city}. Expert qualifié en installation et entretien de climatisation réversible et pompe à chaleur gainable. Devis gratuit.`;
 
     if (desc.length > 160) {
-        // Fallback to shorter version if company name is super long
-        desc = `Installation climatisation réversible & gainable à ${data.ville} par ${data.nomEntreprise}. Obtenez un devis gratuit et rapide.`;
+        desc = `${company} à ${city} : spécialiste climatisation réversible et gainable. Demandez votre devis gratuit en ligne.`;
     }
 
     return desc.substring(0, 160);
 }
+

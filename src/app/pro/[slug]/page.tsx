@@ -13,8 +13,20 @@ import { PhoneCallButton } from "@/components/features/expert/phone-call-button"
 import { BrandLogo } from "@/components/ui/brand-logo";
 import { InternalLinking } from "@/components/features/seo/internal-linking";
 
-// Force dynamic rendering
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Cache static pages for 1 hour, auto-revalidated
+
+export async function generateStaticParams() {
+    try {
+        const experts = await prisma.expert.findMany({
+            where: { status: 'active' },
+            select: { slug: true }
+        });
+        return experts.map((expert) => ({ slug: expert.slug }));
+    } catch {
+        return [];
+    }
+}
+
 
 async function getExpertBySlug(slug: string) {
     const expert = await prisma.expert.findUnique({

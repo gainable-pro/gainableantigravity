@@ -33,13 +33,24 @@ export async function GET(
         if (id === 0) {
             const nowStr = new Date().toISOString();
 
-            // Static pages
+            // Static pages (strictly existing 200 OK routes)
             const staticUrls = [
-                '', '/trouver-installateur', '/trouver-diagnostiqueur',
-                '/trouver-bureau-etude', '/inscription',
-                '/faq-visibilite-referencement', '/labels',
-                '/bureau-etude', '/diagnostic-immobilier',
-                '/materiel', '/articles', '/plan-du-site',
+                '',
+                '/trouver-installateur',
+                '/bureau-etude',
+                '/diagnostic-immobilier',
+                '/la-solution-gainable',
+                '/pourquoi-gainable',
+                '/inscription',
+                '/faq-visibilite-referencement',
+                '/labels',
+                '/materiel',
+                '/articles',
+                '/plan-du-site',
+                '/contact',
+                '/mentions-legales',
+                '/cgu',
+                '/politique-confidentialite',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
             // Experts
@@ -58,14 +69,21 @@ export async function GET(
                 `  <url><loc>${BASE_URL}/materiel/${toSlug(p.manufacturerSku)}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`
             );
 
-            // Cities
+            // Cities (Deduplicated)
             const { CITIES_100 } = await import('@/data/cities-100');
             const { CITIES_EXTENDED } = await import('@/data/cities-extended');
             const { CITIES_MEDIUM } = await import('@/data/cities-medium');
             const { slugify } = await import('@/lib/utils');
-            const ALL_CITIES = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
+            const rawCities = [...CITIES_100, ...CITIES_EXTENDED, ...CITIES_MEDIUM];
+            const uniqueCitiesMap = new Map();
+            rawCities.forEach(c => {
+                if (c && c.slug && !uniqueCitiesMap.has(c.slug)) {
+                    uniqueCitiesMap.set(c.slug, c);
+                }
+            });
+            const ALL_CITIES = Array.from(uniqueCitiesMap.values());
 
-            const regionSet = new Set(ALL_CITIES.map(c => c.region));
+            const regionSet = new Set(ALL_CITIES.map(c => c.region).filter(Boolean));
             const regionUrls = [...regionSet].map(r =>
                 `  <url><loc>${BASE_URL}/trouver-installateur/${slugify(r)}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>`
             );
