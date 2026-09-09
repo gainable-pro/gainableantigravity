@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
                     where: { id: expertId },
                     data: {
                         stripeCustomerId: ((session.customer as any) as string) || null,
-                        status: "pending_approval", // Manual verification required
+                        status: "active",
                     }
                 });
 
@@ -104,8 +104,14 @@ export async function POST(req: NextRequest) {
             });
 
             if (expert) {
-                await prisma.invoice.create({
-                    data: {
+                await prisma.invoice.upsert({
+                    where: { stripeId: invoice.id },
+                    update: {
+                        amount: invoice.total,
+                        status: "paid",
+                        pdfUrl: invoice.hosted_invoice_url || invoice.invoice_pdf,
+                    },
+                    create: {
                         expertId: expert.id,
                         stripeId: invoice.id,
                         amount: invoice.total,

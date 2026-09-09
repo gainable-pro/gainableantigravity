@@ -18,7 +18,7 @@ export async function OPTIONS() {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { planId, expertId, email, interval, promoCode, ref } = body; // interval: 'yearly' | 'monthly'
+        const { planId, expertId, email, interval, promoCode, ref, returnUrl, cancelUrl } = body; // interval: 'yearly' | 'monthly'
 
         // Basic validation
         if (!planId) return NextResponse.json({ error: "Missing planId" }, { status: 400 });
@@ -56,7 +56,25 @@ export async function POST(req: NextRequest) {
         const origin = req.headers.get('origin');
         const baseUrl = process.env.NEXT_PUBLIC_APP_URL || origin || "https://www.gainable.fr";
 
-        const session = await stripe.checkout.sessions.create({
+        // Check if existing customerId exists for expert
+        let stripeCustomerId: string | undefined = undefined;
+        if (expertId && expertId !== "pending_creation") {
+            const existingExpert = await prisma.expert.findUnique({
+                where: { id: expertId },
+                select: { stripeCustomerId: true }
+            });
+            if (existingExpert?.stripeCustomerId) {
+                stripeCustomerId = existingExpert.stripeCustomerId;
+            }
+        }
+
+        const successPath = returnUrl || "/inscription/paiement/succes";
+        const cancelPath = cancelUrl || "/inscription?canceled=true";
+
+        const successUrl = `${baseUrl}${successPath.startsWith('/') ? successPath : '/' + successPath}?success=true&session_id={CHECKOUT_SESSION_ID}`;
+        const cancelUrlFull = `${baseUrl}${cancelPath.startsWith('/') ? cancelPath : '/' + cancelPath}`;
+
+        const sessionParams: any = {
             mode: 'subscription',
             payment_method_types: ['card'],
             line_items: [
@@ -65,7 +83,6 @@ export async function POST(req: NextRequest) {
                     quantity: 1,
                 },
             ],
-            customer_email: email, // Pre-fill email if available
             metadata: {
                 expertId: expertId || "pending_creation",
                 commercialId: commercialId || "",
@@ -73,9 +90,17 @@ export async function POST(req: NextRequest) {
             },
             allow_promotion_codes: true, // Enable promo codes
             automatic_tax: { enabled: true }, // Verify VAT/Tax location
-            success_url: `${baseUrl}/inscription/paiement/succes?session_id={CHECKOUT_SESSION_ID}`,
-            cancel_url: `${baseUrl}/inscription?canceled=true`,
-        });
+            success_url: successUrl,
+            cancel_url: cancelUrlFull,
+        };
+
+        if (stripeCustomerId) {
+            sessionParams.customer = stripeCustomerId;
+        } else if (email) {
+            sessionParams.customer_email = email;
+        }
+
+        const session = await stripe.checkout.sessions.create(sessionParams);
 
         return NextResponse.json({ url: session.url }, { headers: CORS_HEADERS });
 
