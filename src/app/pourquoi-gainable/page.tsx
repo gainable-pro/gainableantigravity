@@ -67,9 +67,12 @@ export default function PourquoiGainablePage() {
                             <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-black aspect-video">
                                 <video
                                     src="/videos/gainable-lancement-motion.mp4"
+                                    autoPlay
+                                    muted
+                                    loop
                                     controls
                                     playsInline
-                                    preload="metadata"
+                                    preload="auto"
                                     className="w-full h-full object-cover"
                                 >
                                     Votre navigateur ne prend pas en charge la lecture de cette vidéo.
