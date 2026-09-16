@@ -51,22 +51,33 @@ export default function PourquoiGainablePage() {
             {/* Header is now in global layout */}
 
             {/* 1. HERO SECTION */}
-            <section className="relative pt-24 pb-20 px-6 overflow-hidden bg-slate-50">
+            <section className="relative pt-16 md:pt-20 pb-16 px-6 overflow-hidden bg-slate-50">
                 <div className="max-w-5xl mx-auto text-center relative z-10">
-                    <div className="inline-block mb-4 px-3 py-1 bg-[#D59B2B]/10 text-[#D59B2B] font-bold rounded-full text-sm">
-                        NOTRE VISION
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-[#1F2D3D] mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-[#1F2D3D] mb-4 leading-tight">
                         Pourquoi Gainable.fr existe
                     </h1>
-                    <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto font-medium">
+                    <p className="text-xl md:text-2xl text-slate-600 mb-6 max-w-3xl mx-auto font-medium">
                         Le problème n’est pas le manque de professionnels.<br />
                         Le problème, c’est le manque de clarté et de fiabilité.
                     </p>
-                    <p className="text-lg text-slate-500 mb-10 max-w-2xl mx-auto">
-                        Nous avons créé Gainable.fr pour reconnecter la confiance entre les particuliers exigeants
-                        et les véritables experts de la climatisation, sans intermédiaires cachés.
-                    </p>
+
+                    {/* VIDEO PRESENTATION */}
+                    <div className="my-10 max-w-4xl mx-auto">
+                        <div className="relative rounded-2xl md:rounded-3xl p-2 bg-gradient-to-b from-[#D59B2B]/30 via-slate-200/60 to-slate-200/30 shadow-2xl border border-slate-200/80">
+                            <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-black aspect-video">
+                                <video
+                                    src="/videos/gainable-lancement-motion.mp4"
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    className="w-full h-full object-cover"
+                                >
+                                    Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Button asChild className="bg-[#D59B2B] hover:bg-[#b88622] text-white text-lg px-8 py-6 rounded-xl font-bold shadow-lg transition-transform hover:scale-105">
                             <Link href="/inscription">Rejoindre le réseau Gainable.fr</Link>
