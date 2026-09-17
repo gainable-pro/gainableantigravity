@@ -32,12 +32,12 @@ export const metadata: Metadata = {
 export default function CareersPage() {
   const positions = [
     {
-      title: "Business Developer B2B - Digital & SEO",
-      location: "National (France)",
-      type: "Temps plein / Indépendant",
-      description: "Vous prospectez et accompagnez les professionnels de la climatisation (CVC) dans leur transformation digitale.",
-      icon: <Users className="w-6 h-6 text-blue-500" />,
-      perks: ["Commissions élevées", "Outils de CRM offerts", "Formation continue"],
+      title: "Consultant / Commercial B2B Indépendant — SaaS & Digital BTP (H/F)",
+      location: "Télétravail (France entière)",
+      type: "Indépendant / Freelance",
+      description: "Prospection ciblée (Cold Call) et démonstration de valeur auprès des gérants d'entreprises CVC, diagnostiqueurs et bureaux d'études.",
+      icon: <Users className="w-6 h-6 text-[#D59B2B]" />,
+      perks: ["17% HT commission directe", "12% récurrent annuel", "Outils & CRM fournis"],
       detailsUrl: "/carrieres/commercial-independant"
     },
     {
