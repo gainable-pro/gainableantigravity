@@ -1,47 +1,33 @@
 "use client";
 
-import { useEffect, useRef, useState, Suspense } from "react";
+import { useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Volume2, VolumeX } from "lucide-react";
 
 function VideoPlayerInner() {
     const searchParams = useSearchParams();
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [isMuted, setIsMuted] = useState(false);
 
     useEffect(() => {
         const video = videoRef.current;
         if (!video) return;
 
-        // Try playing with sound enabled (unmuted)
+        // Force sound ACTIVE (unmuted) at launch
         video.muted = false;
-        setIsMuted(false);
+        video.volume = 1.0;
 
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-            playPromise.catch((error) => {
-                // If browser policy blocks unmuted autoplay without click, fallback to muted + show unmute button
-                console.log("[VIDEO_PLAYER] Unmuted autoplay blocked by browser policy, falling back to muted:", error);
-                video.muted = true;
-                setIsMuted(true);
-                video.play().catch(() => {});
-            });
-        }
+        const startPlaybackWithSound = async () => {
+            try {
+                video.muted = false;
+                await video.play();
+            } catch (err) {
+                console.log("[VIDEO_PLAYER] Attempting unmuted play:", err);
+                video.muted = false;
+                await video.play().catch(() => {});
+            }
+        };
+
+        startPlaybackWithSound();
     }, [searchParams]);
-
-    const toggleMute = () => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        if (video.muted) {
-            video.muted = false;
-            setIsMuted(false);
-            video.play().catch(() => {});
-        } else {
-            video.muted = true;
-            setIsMuted(true);
-        }
-    };
 
     return (
         <div className="relative rounded-2xl md:rounded-3xl p-2 bg-gradient-to-b from-[#D59B2B]/30 via-slate-200/60 to-slate-200/30 shadow-2xl border border-slate-200/80">
@@ -56,18 +42,6 @@ function VideoPlayerInner() {
                     preload="auto"
                     className="w-full h-full object-cover"
                 />
-
-                {/* Floating Sound Button if Browser Muted the Audio */}
-                {isMuted && (
-                    <button
-                        type="button"
-                        onClick={toggleMute}
-                        className="absolute bottom-16 right-4 z-20 flex items-center gap-2 bg-[#D59B2B] hover:bg-[#b88622] text-white px-5 py-3 rounded-full font-bold text-sm shadow-2xl transition-all animate-pulse"
-                    >
-                        <VolumeX className="w-5 h-5" />
-                        <span>🔊 Activer le son (Audio)</span>
-                    </button>
-                )}
             </div>
         </div>
     );
