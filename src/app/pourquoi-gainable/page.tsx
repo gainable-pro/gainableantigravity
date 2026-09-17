@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 import { DemoModal } from "@/components/features/demo/DemoModal";
+import { PourquoiGainableVideoPlayer } from "@/components/features/video/PourquoiGainableVideoPlayer";
 
 export default function PourquoiGainablePage() {
     // JSON-LD for SEO
@@ -63,22 +64,7 @@ export default function PourquoiGainablePage() {
 
                     {/* VIDEO PRESENTATION */}
                     <div className="my-10 max-w-4xl mx-auto">
-                        <div className="relative rounded-2xl md:rounded-3xl p-2 bg-gradient-to-b from-[#D59B2B]/30 via-slate-200/60 to-slate-200/30 shadow-2xl border border-slate-200/80">
-                            <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-black aspect-video">
-                                <video
-                                    src="/videos/gainable-lancement-motion.mp4"
-                                    autoPlay
-                                    muted
-                                    loop
-                                    controls
-                                    playsInline
-                                    preload="auto"
-                                    className="w-full h-full object-cover"
-                                >
-                                    Votre navigateur ne prend pas en charge la lecture de cette vidéo.
-                                </video>
-                            </div>
-                        </div>
+                        <PourquoiGainableVideoPlayer />
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
