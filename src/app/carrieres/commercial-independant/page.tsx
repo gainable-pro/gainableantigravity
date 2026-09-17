@@ -165,7 +165,7 @@ export default function CommercialJobPage() {
                   <Play className="w-5 h-5 fill-current ml-0.5" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-black text-white">Vidéo de Présentation Gainable.fr (Motion)</h3>
+                  <h3 className="text-xl font-black text-white">Vidéo de Présentation Gainable.fr</h3>
                   <p className="text-xs text-slate-300">Découvrez en vidéo la proposition de valeur et le concept de la plateforme</p>
                 </div>
               </div>
