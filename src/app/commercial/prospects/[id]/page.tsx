@@ -20,6 +20,52 @@ export default function EditProspect() {
     const [emailErrorDetails, setEmailErrorDetails] = useState("");
     const [copiedLink, setCopiedLink] = useState(false);
 
+    const [sendingPresentation, setSendingPresentation] = useState(false);
+    const [presentationStatus, setPresentationStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+
+    const handleSendPresentationEmail = async () => {
+        if (!formData.email) {
+            setPresentationStatus({ type: 'error', message: 'Veuillez renseigner une adresse e-mail valide.' });
+            return;
+        }
+
+        setSendingPresentation(true);
+        setPresentationStatus(null);
+
+        try {
+            const res = await fetch('/api/commercial/prospects/send-presentation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prospectId: id,
+                    email: formData.email,
+                    nomEntreprise: formData.nomEntreprise
+                })
+            });
+
+            const data = await res.json();
+
+            if (res.ok && data.success) {
+                setPresentationStatus({
+                    type: 'success',
+                    message: `✓ E-mail de présentation envoyé avec succès à ${formData.email} !`
+                });
+            } else {
+                setPresentationStatus({
+                    type: 'error',
+                    message: data.error || "Erreur lors de l'envoi de la présentation."
+                });
+            }
+        } catch (err) {
+            setPresentationStatus({
+                type: 'error',
+                message: "Erreur technique lors de l'envoi."
+            });
+        } finally {
+            setSendingPresentation(false);
+        }
+    };
+
     const handleGeneratePaymentLink = async () => {
         setGeneratingLink(true);
         setError("");
@@ -381,6 +427,39 @@ export default function EditProspect() {
 
                 {/* Section Vente & Paiement Stripe */}
                 <div className="space-y-6">
+                    {/* Envoyer la présentation Gainable.fr (Bouton Orange) */}
+                    <div className="bg-gradient-to-br from-amber-950/40 via-slate-900 to-slate-900 text-white rounded-xl shadow-lg border border-amber-500/40 p-6 space-y-4">
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-10 bg-[#D59B2B] text-slate-950 rounded-full flex items-center justify-center font-bold text-xl shadow-md">
+                                ✉️
+                            </div>
+                            <div>
+                                <h2 className="text-base font-bold text-white">Présentation Gainable.fr</h2>
+                                <p className="text-xs text-slate-400">Envoyer l'email officiel de présentation au prospect</p>
+                            </div>
+                        </div>
+
+                        <button 
+                            type="button" 
+                            onClick={handleSendPresentationEmail}
+                            disabled={sendingPresentation}
+                            className="w-full flex items-center justify-center gap-2 bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-md hover:shadow-lg disabled:opacity-50 text-sm"
+                        >
+                            {sendingPresentation ? <Loader2 className="h-4 w-4 animate-spin" /> : <Mail className="h-4 w-4" />}
+                            Envoi de présentation mail
+                        </button>
+
+                        {presentationStatus && (
+                            <div className={`text-xs p-3 rounded-lg border font-medium ${
+                                presentationStatus.type === 'success' 
+                                    ? 'bg-emerald-950/80 border-emerald-600/50 text-emerald-300' 
+                                    : 'bg-rose-950/80 border-rose-600/50 text-rose-300'
+                            }`}>
+                                {presentationStatus.message}
+                            </div>
+                        )}
+                    </div>
+
                     {/* Demande de Paiement Stripe */}
                     <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl shadow-lg border border-slate-700 p-6 space-y-4">
                         <div className="flex items-center gap-3">
