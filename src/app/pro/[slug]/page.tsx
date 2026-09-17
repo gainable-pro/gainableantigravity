@@ -519,9 +519,9 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                                         {expert.certifications.map((cert) => (
                                             <div key={cert.id} className="flex flex-col items-center gap-2 group">
                                                 <div className="h-16 w-auto flex items-center justify-center p-2 bg-slate-50 rounded-lg border border-slate-100 group-hover:border-[#D59B2B]/30 transition-colors">
-                                                    {cert.value === 'RGE QualiPAC' ? (
-                                                        <img src="/assets/images/rge-gainable-fr-logo-officiel-climatisation.png" alt={`Certification RGE QualiPAC Climatisation & PAC - ${expert.nom_entreprise} à ${expert.ville}`} className="h-full w-auto object-contain" />
-                                                    ) : (
+                                                     {cert.value === 'RGE QualiPAC' || cert.value.includes('RGE') ? (
+                                                         <img src="/assets/images/rge-logo.png" alt={`Certification RGE QualiPAC Climatisation & PAC - ${expert.nom_entreprise} à ${expert.ville}`} className="h-full w-auto object-contain" />
+                                                     ) : (
                                                         <div className="h-full flex items-center gap-2 px-3">
                                                             <CheckCircle className="w-6 h-6 text-[#D59B2B]" />
                                                             <span className="font-semibold text-slate-700 text-sm max-w-[100px] text-center leading-tight">{cert.value}</span>
