@@ -16,7 +16,8 @@ import {
   Award,
   Sparkles,
   PhoneCall,
-  Clock
+  Clock,
+  Play
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -154,6 +155,31 @@ export default function CommercialJobPage() {
                 <p className="text-slate-600 font-medium">
                   Apporter la preuve irréfutable de visibilité sur Google aux professionnels du secteur et leur générer des opportunités d'affaires qualifiées sur leur zone d'intervention.
                 </p>
+              </div>
+            </div>
+
+            {/* Vidéo de Présentation Motion Gainable.fr */}
+            <div className="bg-[#1F2D3D] rounded-3xl p-6 md:p-8 border border-slate-700 shadow-xl space-y-4 text-white">
+              <div className="flex items-center gap-3 border-b border-slate-700 pb-4">
+                <div className="w-10 h-10 rounded-2xl bg-[#D59B2B] text-white flex items-center justify-center font-bold shadow-md">
+                  <Play className="w-5 h-5 fill-current ml-0.5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-black text-white">Vidéo de Présentation Gainable.fr (Motion)</h3>
+                  <p className="text-xs text-slate-300">Découvrez en vidéo la proposition de valeur et le concept de la plateforme</p>
+                </div>
+              </div>
+
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/gainable-lancement-motion.mp4" type="video/mp4" />
+                  Votre navigateur ne supporte pas la lecture de la vidéo.
+                </video>
               </div>
             </div>
 
@@ -325,6 +351,35 @@ export default function CommercialJobPage() {
               <p className="text-center text-slate-400 text-xs">
                 * Taux fixe de 17% HT calculé sur 20 jours de prospection par mois + 12% HT récurrent annuel lors du renouvellement des abonnements.
               </p>
+            </div>
+
+            {/* Vidéo Onboarding Commercial */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200/70 shadow-sm space-y-5">
+              <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div className="w-10 h-10 rounded-2xl bg-[#D59B2B]/15 text-[#D59B2B] flex items-center justify-center font-bold">
+                  <Play className="w-5 h-5 fill-current ml-0.5" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-black text-[#1F2D3D]">Vidéo Onboarding Commercial — Votre Outil de Travail</h3>
+                  <p className="text-xs text-slate-400 font-medium">Présentation complète de votre espace commercial et méthode de prospection</p>
+                </div>
+              </div>
+
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Visionnez la vidéo ci-dessous pour découvrir votre futur environnement de travail, la méthode de prospection B2B ainsi que la démonstration en direct de la plateforme Gainable.fr.
+              </p>
+
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-xl">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain"
+                >
+                  <source src="/videos/gainable-onboarding-commercial.mp4" type="video/mp4" />
+                  Votre navigateur ne supporte pas la lecture de la vidéo.
+                </video>
+              </div>
             </div>
 
           </div>
