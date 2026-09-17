@@ -37,7 +37,7 @@ export default function CareersPage() {
       type: "Indépendant / Freelance",
       description: "Prospection ciblée (Cold Call) et démonstration de valeur auprès des gérants d'entreprises CVC, diagnostiqueurs et bureaux d'études.",
       icon: <Users className="w-6 h-6 text-[#D59B2B]" />,
-      perks: ["17% HT commission directe", "12% récurrent annuel", "Outils & CRM fournis"],
+      perks: ["17% HT commission fixe", "Formules 750€ & 850€ HT", "12% récurrent annuel"],
       detailsUrl: "/carrieres/commercial-independant"
     },
     {
