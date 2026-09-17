@@ -77,6 +77,7 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PWAInstall } from "@/components/pwa/PWAInstall";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { headers } from "next/headers";
+import { Analytics } from "@vercel/analytics/react";
 
 export default async function RootLayout({
   children,
@@ -100,6 +101,7 @@ export default async function RootLayout({
         <Footer />
         <CookieBanner />
         <PWAInstall />
+        <Analytics />
       </body>
     </html>
   );
