@@ -1,37 +1,49 @@
 require('dotenv').config({ path: '.env.local' });
 require('dotenv').config({ path: '.env' });
 const { PrismaClient } = require('@prisma/client');
-const { createClient } = require('@supabase/supabase-js');
 
 const prisma = new PrismaClient();
-const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-
 const STORAGE_BASE_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/gainable-assets/uploads/`;
 
-// Mapping of Expert slug -> array of Supabase Storage filenames belonging strictly to this expert
+// Exhaustive, authentic mapping of Expert slug -> ALL Supabase Storage filenames for that exact company
 const AUTHENTIC_EXPERT_PHOTOS = {
-  // AIR G ENERGIE
+  // AIR G ENERGIE (9 photos)
   'climatisation-pompe-a-chaleur-miramas-air-g-energie-8907': [
     '1768123412109_vmpka1afn_2023-02-25__2_.webp',
     '1768123412109_xebtyjxok_unnamed__8_.webp',
     '1768123412109_0gtx702hd_2023-02-25__3_.webp',
-    '1768123412109_3vhlf3y5j_2023-11-15.webp'
+    '1768123412109_3vhlf3y5j_2023-11-15.webp',
+    '1767334505641_4fw25vgdf_277812624_1102277113965078_3916777041364443925_n-1920w.webp',
+    '1767334505641_a9h8kur17_278112491_1102276720631784_802668267582771295_n-1920w.webp',
+    '1767334505641_fashxaviv_271030067_1041017370091053_6150624507418108490_n-1920w.webp',
+    '1767334505641_ndg26ljil_20210721_145001-1920x2560-1920w.webp',
+    '1767334505641_v1zx9tdno_271012918_1041002490092541_722971706620939577_n-541b63c4-1920w.webp'
   ],
 
-  // A.C.E.S.
+  // A.C.E.S. (3 photos)
   'climatisation-pompe-a-chaleur-portet-sur-garonne-a-c-e-s-a-c-e-s-4609': [
     '1767424809101_frt3s4y4c_cropped-Hemodia-1_VRF_chantier_ACES.webp',
     '1767424812256_7vtu24cyr_Chantier-VRF-Hopital-Joseph-Ducuing-Toulouse_ACES-Climatisation.webp',
     '1767424819168_l2ilbgnsf_cropped-BTPMP-4_VRF_chantier_ACES.webp'
   ],
 
-  // SOLAIRE CLIM CHAUFFAGE (LOIRE CLIM CHAUFFAGE)
+  // SOLAIRE CLIM CHAUFFAGE (LOIRE CLIM CHAUFFAGE) (12 photos)
   'climatisation-pompe-a-chaleur-veauche-solaire-clim-chauffage-loire-clim-chauffage-3829': [
     '1767426314488_f4jcnzh4v_119046677_3166659576795175_1593957584366480080_n.webp',
-    '1767426318678_q043fmkd9_119033649_977863502734194_1866573199788957436_n.webp'
+    '1767426318678_q043fmkd9_119033649_977863502734194_1866573199788957436_n.webp',
+    '1768976467481_mnxbobjlv_IMG_4884.jpg',
+    '1768976467482_642b2nbde_Capture-de_cran-2021-11-09-a_-21.06.38.png',
+    '1768976467482_97sckwhwb_WhatsApp-Image-2023-03-22-at-14.04.14.jpeg',
+    '1768976467482_9bnw8yakt_WhatsApp-Image-2023-03-22-at-14.04.17.jpeg',
+    '1768976467482_l4syzc01s_WhatsApp-Image-2023-03-22-at-14.04.14-1.jpeg',
+    '1768976467482_uwcghi9kc_WhatsApp-Image-2023-04-27-a-16.30.51.jpg',
+    '1768976561895_97nanegup_unnamed__47_.webp',
+    '1768976561895_c7k9hgnu1_unnamed__46_.webp',
+    '1768976561895_ruilvnr2j_unnamed__48_.webp',
+    '1783107479569_plan_etage_clim.jpg'
   ],
 
-  // ENERGIES RENOUVELABLES BISONTINES (MACLEM)
+  // ENERGIES RENOUVELABLES BISONTINES (MACLEM) (13 photos)
   'climatisation-pompe-a-chaleur-avanne-aveney-energies-renouvelables-bisontines-maclem-8165': [
     '1767999320447_47675db87_1000037645.webp',
     '1767999320447_4facre1v9_1000037651.webp',
@@ -48,7 +60,7 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1767999320448_v7fy5v61w_1000037642.webp'
   ],
 
-  // PROFECLIM
+  // PROFECLIM (16 photos)
   'climatisation-pompe-a-chaleur-rouen-profeclim-7713': [
     '1768127414245_3ivz86n5e_IMG_20251224_112522.jpg',
     '1768127414245_4h0o6ea8y_IMG_20251224_121317.jpg',
@@ -68,13 +80,13 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768127414245_xknus4w7k_IMG_20240826_122321.jpg'
   ],
 
-  // PLOMBERIE SERVICES 91
+  // PLOMBERIE SERVICES 91 (2 photos)
   'climatisation-pompe-a-chaleur-oison-plomberie-services-91-8935': [
     '1768540615441_iikoz8nkt_20180314_122651__2_.webp',
     '1768540615441_mc2miahl8_IMG-20210401-162250_8166_xxl.webp'
   ],
 
-  // AERY (AERY)
+  // AERY (AERY) (29 photos)
   'climatisation-pompe-a-chaleur-sainte-luce-sur-loire-aery-aery-8246': [
     '1768811007371_mret95k5e_20230825_102503-768x1024.jpg',
     '1768811007372_3vz54fsic_2025-10-21.webp',
@@ -92,10 +104,23 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768811537025_q4448vek4_2024-01-31.webp',
     '1768811537025_rqd9ptepp_2024-08-15.webp',
     '1768811537025_syu6jf3s4_2025-02-12.webp',
-    '1768811537025_tzgsenv2p_2024-08-05.webp'
+    '1768811537025_tzgsenv2p_2024-08-05.webp',
+    '1768816694403_917jgtfco_2025-11-18__1_.webp',
+    '1768816694403_emouqfbpz_2025-11-18.webp',
+    '1768816694403_koci4vj95_2022-03-20__6_.webp',
+    '1768816694403_o7qp0xwh5_2025-03-04.webp',
+    '1768816694403_th8jizuew_2022-03-20__5_.webp',
+    '1768816694403_v4x0zcqnj_2026-01-06__1_.webp',
+    '1768816694403_ztuqfhwrl_unnamed__28_.webp',
+    '1768816694404_b4h8gbqh4_2022-03-20__2_.webp',
+    '1768816694404_fr8cc4o9y_2022-03-20__1_.webp',
+    '1768816694404_htuvksai2_2022-03-20__4_.webp',
+    '1768816694404_rdbk5v7vx_2026-01-06.webp',
+    '1768816694404_z15udieuj_2021-04-01.webp',
+    '1768816694404_z4j2zi7hu_2022-03-20__3_.webp'
   ],
 
-  // LORRAINE CHAUFFAGE
+  // LORRAINE CHAUFFAGE (6 photos)
   'climatisation-pompe-a-chaleur-vaux-lorraine-chauffage-6298': [
     '1768812595674_6lox8mdq7_2025-08-04.webp',
     '1768812595674_dufzt8egf_lorrraine-chauffage-installation-pompe-chaleur-mitsubishi.webp',
@@ -105,7 +130,7 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768812595674_zkvov58o3_lorraine_chauffage_climatisation2.webp'
   ],
 
-  // LRC CLIMATISATION
+  // LRC CLIMATISATION (14 photos)
   'climatisation-pompe-a-chaleur-rosieres-pres-troyes-lrc-climatisation-9781': [
     '1768813079862_c2gosrnxp_unnamed__22_.webp',
     '1768813079862_cgorenl3k_unnamed__21_.webp',
@@ -123,7 +148,7 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768813079863_i5afn5waj_3A6624DC-BC75-4E1F-8025-D314DE88109A.webp'
   ],
 
-  // MDM GENIE CLIMATIQUE
+  // MDM GENIE CLIMATIQUE (7 photos)
   'climatisation-pompe-a-chaleur-saint-cyr-sur-loire-mdm-genie-climatique-3112': [
     '1768815662425_58ej9c9ij_2024-11-12__1_.webp',
     '1768815662425_9rmv3ts0q_2023-06-28__2_.webp',
@@ -134,14 +159,14 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768815662425_xhviviynl_2024-11-12__2_.webp'
   ],
 
-  // PATINET
+  // PATINET (3 photos)
   'climatisation-pompe-a-chaleur-reims-patinet-8902': [
     '1768819448441_bdxsfaebl_unnamed__31_.webp',
     '1768819448441_d54hdcvj8_unnamed__29_.webp',
     '1768819448441_yywusruu3_unnamed__30_.webp'
   ],
 
-  // ECO SOLUTIONS
+  // ECO SOLUTIONS (13 photos)
   'climatisation-pompe-a-chaleur-perigny-eco-solutions-2479': [
     '1768820313081_1pw7tuotv_IMG_5911.webp',
     '1768820313081_7lph43dp5_Clim_DAIKIN_la_rochelle.webp',
@@ -149,17 +174,23 @@ const AUTHENTIC_EXPERT_PHOTOS = {
     '1768820313081_f3uo319ix_unnamed__32_.webp',
     '1768820313081_oc1bdcrzn_Pompe___chaleur_DAIKIN_copie.webp',
     '1768820313081_p3gtznzsa_E_B-D_LA04-08E_3_V3_ip1.webp',
-    '1768820313081_zl9sr25ir_unnamed__33_.webp'
+    '1768820313081_zl9sr25ir_unnamed__33_.webp',
+    '1768821945052_pygy3jrlq_2021-01-12.webp',
+    '1768821961079_57eb75erh_2022-04-14__1_.webp',
+    '1768821961079_chkex3l58_unnamed__34_.webp',
+    '1768821961079_h2tngvjxh_unnamed__35_.webp',
+    '1768821961079_ju8efesx9_unnamed__36_.webp',
+    '1768821961079_zugz4ksji_2022-04-14.webp'
   ],
 
-  // AERO SOLUTIONS
+  // AERO SOLUTIONS (3 photos)
   'climatisation-pompe-a-chaleur-le-mans-aero-solutions-6179': [
     '1768822701585_35dbp8hmg_unnamed__39_.webp',
     '1768822701586_jhwtgarx0_unnamed__38_.webp',
     '1768822701586_y6sjklota_unnamed__37_.webp'
   ],
 
-  // EXPERIA CLIMATISATION
+  // EXPERIA CLIMATISATION (3 photos)
   'climatisation-pompe-a-chaleur-saint-paul-de-vence-experia-climatisation-2413': [
     '1768823166911_4rumzrf3r_marco_climatisation.webp',
     '1768823166911_mhszr6nxg_unnamed__41_.webp',
@@ -168,13 +199,13 @@ const AUTHENTIC_EXPERT_PHOTOS = {
 };
 
 async function run() {
-  console.log("=== Restauration des vraies photos d'origine sans aucun mélange entre entreprises ===");
+  console.log("=== Restauration EXHAUSTIVE des photos authentiques d'origine ===");
 
   // 1. Delete all existing photos in ExpertPhoto table
   const deleteResult = await prisma.expertPhoto.deleteMany({});
-  console.log(`Supprimé ${deleteResult.count} anciennes entrées mélangées de ExpertPhoto.`);
+  console.log(`Supprimé ${deleteResult.count} anciennes entrées.`);
 
-  // 2. Insert only authentic photos for each expert
+  // 2. Insert all authentic photos for each expert
   let totalCreated = 0;
   for (const [slug, filenames] of Object.entries(AUTHENTIC_EXPERT_PHOTOS)) {
     const expert = await prisma.expert.findUnique({
@@ -186,7 +217,7 @@ async function run() {
       continue;
     }
 
-    console.log(`\nAjout de ${filenames.length} photos authentiques pour: ${expert.nom_entreprise} (${slug})...`);
+    console.log(`\nAjout de ${filenames.length} photos pour: ${expert.nom_entreprise} (${slug})...`);
     for (const file of filenames) {
       const photoUrl = `${STORAGE_BASE_URL}${file}`;
       await prisma.expertPhoto.create({
@@ -200,7 +231,7 @@ async function run() {
     }
   }
 
-  console.log(`\n=== TERMINÉ ! ${totalCreated} photos authentiques créées en base sans aucun mélange. ===`);
+  console.log(`\n=== TERMINÉ ! ${totalCreated} photos authentiques réinsérées en base avec succès. ===`);
 }
 
 run().catch(console.error).finally(() => prisma.$disconnect());
