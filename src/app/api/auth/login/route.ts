@@ -18,9 +18,12 @@ export async function POST(req: Request) {
             );
         }
 
-        // 1. Find User
+        // 1. Find User (Normalize email and trim whitespace)
+        const cleanEmail = email.trim().toLowerCase();
+        const cleanPassword = password.trim();
+
         const user = await prisma.user.findUnique({
-            where: { email },
+            where: { email: cleanEmail },
         });
 
         if (!user) {
@@ -31,7 +34,7 @@ export async function POST(req: Request) {
         }
 
         // 2. Verify Password
-        const isValid = await compare(password, user.password_hash);
+        const isValid = await compare(cleanPassword, user.password_hash);
         if (!isValid) {
             return NextResponse.json(
                 { message: "Identifiants incorrects." },
