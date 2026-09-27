@@ -14,22 +14,16 @@ export function generateExpertMetaTitle(data: ExpertSEOData): string {
     const company = data.nomEntreprise.trim();
     const city = data.ville.trim();
 
-    // Priority 1: "[Nom] - Climatisation & Gainable à [Ville]"
-    let title = `${company} — Climatisation & Gainable à ${city}${deptSuffix}`;
+    // Priority 1: "Installateur Climatisation [Ville] - [Nom] | Gainable"
+    let title = `Installateur Climatisation ${city}${deptSuffix} — ${company} | Gainable`;
 
-    // If title exceeds 60 chars, shorten subtitle
-    if (title.length > 60) {
-        title = `${company} — Climatisation à ${city}${deptSuffix}`;
+    // If title exceeds 65 chars, compact title
+    if (title.length > 65) {
+        title = `Climatisation ${city} — ${company} | Gainable.fr`;
     }
 
-    // If still > 65 chars (e.g. very long company name), compact title
     if (title.length > 65) {
-        title = `${company} — Installateur Climatisation ${city}`;
-    }
-
-    // Hard fallback cap at 65 chars
-    if (title.length > 65) {
-        title = title.substring(0, 62) + "...";
+        title = `${company} — Climatisation ${city}`;
     }
 
     return title;
