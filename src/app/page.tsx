@@ -31,11 +31,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const targetCountryCode = urlCountry ? (Object.keys(countryMap).find(k => countryMap[k] === urlCountry) || countryCode) : countryCode;
     const targetCountryName = countryMap[targetCountryCode] || "France";
 
-    // Dynamic Title optimized for CTR (<60 chars) - Large public (Split/PAC) + Spécialité (Gainable)
-    const title = `Gainable.fr : Climatisation Réversible, Split & Gainable (${targetCountryName})`;
+    // Dynamic Title optimized for CTR (<60 chars) & Exact Match Keywords
+    const title = `Installateur de Climatisation Réversible & PAC | Expert Gainable.fr`;
 
     // Meta Description optimized for CTR (150-160 chars)
-    const description = `Trouvez un installateur certifié en climatisation réversible, monosplit, multisplit, PAC & gainable invisible à ${targetCountryName}. Devis gratuit & pro CVC.`;
+    const description = `Trouvez un installateur de climatisation réversible, pompe à chaleur & gainable certifié RGE en ${targetCountryName}. Devis gratuit & pros CVC vérifiés.`;
 
     const canonicalUrl = 'https://www.gainable.fr/';
 
@@ -195,7 +195,7 @@ export default async function SearchPage({
             <section className="bg-white py-16 border-t border-slate-100">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <h1 className="text-3xl md:text-4xl font-bold text-[#1F2D3D] mb-8">
-                        Gainable : Experts en Climatisation Gainable & Réversible
+                        Installateur de Climatisation & Pompe à Chaleur : La Plateforme d'Experts
                     </h1>
 
                     <div className="grid md:grid-cols-2 gap-8 text-left mb-12">
