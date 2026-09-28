@@ -38,6 +38,14 @@ const TOP_EQUIPMENT_REFS = [
     { title: "Ecran Tactile Airzone HMIS2", slug: "hmis2-15p-v1", brand: "Airzone", type: "Régulation" },
 ];
 
+// Fallback experts in case DB query fails or times out during static page pre-rendering
+const FALLBACK_EXPERTS = [
+    { nom_entreprise: "Air G Énergie", slug: "air-g-energie", ville: "Bordeaux", expert_type: "cvc_climatisation", is_labeled: true },
+    { nom_entreprise: "Excelec 45", slug: "climatisation-pompe-a-chaleur-45650-excelec-5548", ville: "Orléans", expert_type: "cvc_climatisation", is_labeled: true },
+    { nom_entreprise: "Patinet Reims", slug: "climatisation-pompe-a-chaleur-reims-patinet-8902", ville: "Reims", expert_type: "cvc_climatisation", is_labeled: true },
+    { nom_entreprise: "MACLEM Bisontines", slug: "climatisation-pompe-a-chaleur-avanne-aveney-energies-renouvelables-bisontines-maclem-8165", ville: "Avanne-Aveney", expert_type: "cvc_climatisation", is_labeled: true },
+];
+
 export async function InternalLinking({
     zipCode,
     city,
@@ -52,65 +60,73 @@ export async function InternalLinking({
 
     const currentYear = new Date().getFullYear();
 
-    // 1. Fetch related experts
-    if (zipCode && zipCode.length >= 2) {
-        const departmentPrefix = zipCode.substring(0, 2);
-        relatedExperts = await prisma.expert.findMany({
+    try {
+        // 1. Fetch related experts
+        if (zipCode && zipCode.length >= 2) {
+            const departmentPrefix = zipCode.substring(0, 2);
+            relatedExperts = await prisma.expert.findMany({
+                where: {
+                    code_postal: { startsWith: departmentPrefix },
+                    slug: { not: currentExpertSlug || undefined },
+                    status: "active",
+                },
+                take: 4,
+                select: {
+                    nom_entreprise: true,
+                    slug: true,
+                    ville: true,
+                    expert_type: true,
+                    is_labeled: true,
+                },
+            });
+        }
+
+        // Fallback: if no department experts found (or on a product page), fetch top active experts
+        if (relatedExperts.length < 3) {
+            const topExperts = await prisma.expert.findMany({
+                where: {
+                    status: "active",
+                    slug: { not: currentExpertSlug || undefined },
+                },
+                take: 4 - relatedExperts.length,
+                select: {
+                    nom_entreprise: true,
+                    slug: true,
+                    ville: true,
+                    expert_type: true,
+                    is_labeled: true,
+                },
+            });
+            relatedExperts = [...relatedExperts, ...topExperts];
+        }
+
+        // 2. Fetch general recent SEO articles
+        relatedArticles = await prisma.article.findMany({
             where: {
-                code_postal: { startsWith: departmentPrefix },
-                slug: { not: currentExpertSlug || undefined },
-                status: "active",
+                status: "PUBLISHED",
+                slug: { not: currentArticleSlug || undefined },
             },
+            orderBy: { publishedAt: "desc" },
             take: 4,
             select: {
-                nom_entreprise: true,
+                title: true,
                 slug: true,
-                ville: true,
-                expert_type: true,
-                is_labeled: true,
-            },
-        });
-    }
-
-    // Fallback: if no department experts found (or on a product page), fetch top active experts
-    if (relatedExperts.length < 3) {
-        const topExperts = await prisma.expert.findMany({
-            where: {
-                status: "active",
-                slug: { not: currentExpertSlug || undefined },
-            },
-            take: 4 - relatedExperts.length,
-            select: {
-                nom_entreprise: true,
-                slug: true,
-                ville: true,
-                expert_type: true,
-                is_labeled: true,
-            },
-        });
-        relatedExperts = [...relatedExperts, ...topExperts];
-    }
-
-    // 2. Fetch general recent SEO articles
-    relatedArticles = await prisma.article.findMany({
-        where: {
-            status: "PUBLISHED",
-            slug: { not: currentArticleSlug || undefined },
-        },
-        orderBy: { publishedAt: "desc" },
-        take: 4,
-        select: {
-            title: true,
-            slug: true,
-            targetCity: true,
-            expert: {
-                select: {
-                    slug: true,
-                    nom_entreprise: true,
+                targetCity: true,
+                expert: {
+                    select: {
+                        slug: true,
+                        nom_entreprise: true,
+                    },
                 },
             },
-        },
-    });
+        });
+    } catch (err) {
+        console.warn("Internal linking DB fetch warning (using static fallbacks during build):", err);
+    }
+
+    if (relatedExperts.length === 0) {
+        relatedExperts = FALLBACK_EXPERTS.filter(e => e.slug !== currentExpertSlug);
+    }
 
     const isProductPage = Boolean(brand || productSku);
 
