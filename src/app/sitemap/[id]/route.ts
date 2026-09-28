@@ -53,14 +53,19 @@ export async function GET(
                 '/politique-confidentialite',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
-            // Experts
-            const experts = await prisma.expert.findMany({
-                where: { status: 'active' },
-                select: { slug: true }
-            });
-            const expertUrls = experts.map(e =>
-                `  <url><loc>${BASE_URL}/pro/${e.slug}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`
-            );
+            // Experts (safely handled)
+            let expertUrls: string[] = [];
+            try {
+                const experts = await prisma.expert.findMany({
+                    where: { status: 'active' },
+                    select: { slug: true }
+                });
+                expertUrls = experts.map(e =>
+                    `  <url><loc>${BASE_URL}/pro/${e.slug}</loc><lastmod>${nowStr}</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>`
+                );
+            } catch (e) {
+                console.warn("Sitemap DB expert query warning:", e);
+            }
 
             // Catalogue Products
             const rawCatalog = await import('@/data/sonepar_catalog.json').then(m => m.default || m);
@@ -99,26 +104,27 @@ export async function GET(
             const chunkSize = 5000;
             const skip = (id - 1) * chunkSize;
 
-            const expertsData = await prisma.expert.findMany({ select: { id: true, slug: true } });
-            const expertMap = new Map(expertsData.map(e => [e.id, e.slug]));
+            let urls: string[] = [];
+            try {
+                const expertsData = await prisma.expert.findMany({ select: { id: true, slug: true } });
+                const expertMap = new Map(expertsData.map(e => [e.id, e.slug]));
 
-            const articles = await prisma.article.findMany({
-                where: { status: 'PUBLISHED' },
-                skip: skip,
-                take: chunkSize,
-                select: { slug: true, updatedAt: true, expertId: true },
-                orderBy: { updatedAt: 'desc' }
-            });
+                const articles = await prisma.article.findMany({
+                    where: { status: 'PUBLISHED' },
+                    skip: skip,
+                    take: chunkSize,
+                    select: { slug: true, updatedAt: true, expertId: true },
+                    orderBy: { updatedAt: 'desc' }
+                });
 
-            if (articles.length === 0 && id > 1) {
-                return new NextResponse('Not found', { status: 404 });
+                urls = articles
+                    .filter(a => expertMap.has(a.expertId))
+                    .map(a =>
+                        `  <url><loc>${BASE_URL}/entreprise/${expertMap.get(a.expertId)}/articles/${a.slug}</loc><lastmod>${a.updatedAt.toISOString()}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>`
+                    );
+            } catch (e) {
+                console.warn("Sitemap DB article query warning:", e);
             }
-
-            const urls = articles
-                .filter(a => expertMap.has(a.expertId))
-                .map(a =>
-                    `  <url><loc>${BASE_URL}/entreprise/${expertMap.get(a.expertId)}/articles/${a.slug}</loc><lastmod>${a.updatedAt.toISOString()}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>`
-                );
 
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>`;
         } else {
@@ -135,7 +141,14 @@ export async function GET(
 
     } catch (err: any) {
         console.error('Sitemap error:', err);
-        return new NextResponse(`Error: ${err.message}`, { status: 500 });
+        const fallbackXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${BASE_URL}</loc><changefreq>daily</changefreq><priority>1.0</priority></url>\n</urlset>`;
+        return new NextResponse(fallbackXml, {
+            status: 200,
+            headers: {
+                'Content-Type': 'application/xml; charset=utf-8',
+                'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+            },
+        });
     }
 }
 
