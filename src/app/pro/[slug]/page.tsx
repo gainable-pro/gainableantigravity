@@ -29,36 +29,41 @@ export async function generateStaticParams() {
 
 
 async function getExpertBySlug(slug: string) {
-    const expert = await prisma.expert.findUnique({
-        where: { slug },
-        include: {
-            technologies: true,
-            interventions_clim: true,
-            interventions_etude: true,
-            interventions_diag: true,
-            batiments: true,
-            marques: true,
-            certifications: true,
-            photos: true,
-            articles: {
-                where: { status: 'PUBLISHED' },
-                orderBy: { createdAt: 'desc' }, // Updated to match main articles page
-                take: 6,
-                select: {
-                    slug: true,
-                    title: true,
-                    introduction: true,
-                    mainImage: true,
-                    publishedAt: true,
-                    createdAt: true // Need this for fallback
+    try {
+        const expert = await prisma.expert.findUnique({
+            where: { slug },
+            include: {
+                technologies: true,
+                interventions_clim: true,
+                interventions_etude: true,
+                interventions_diag: true,
+                batiments: true,
+                marques: true,
+                certifications: true,
+                photos: true,
+                articles: {
+                    where: { status: 'PUBLISHED' },
+                    orderBy: { createdAt: 'desc' }, // Updated to match main articles page
+                    take: 6,
+                    select: {
+                        slug: true,
+                        title: true,
+                        introduction: true,
+                        mainImage: true,
+                        publishedAt: true,
+                        createdAt: true // Need this for fallback
+                    }
+                },
+                user: {
+                    select: { email: true }
                 }
-            },
-            user: {
-                select: { email: true }
             }
-        }
-    });
-    return expert;
+        });
+        return expert;
+    } catch (e) {
+        console.warn("getExpertBySlug DB fetch warning during build:", e);
+        return null;
+    }
 }
 
 import type { Metadata } from "next";

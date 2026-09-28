@@ -210,46 +210,58 @@ export default async function CityPage({ params }: PageProps) {
         ]
     };
 
-    const [localExperts, totalDeptExperts, globalExpertsCount] = await Promise.all([
-        prisma.expert.findMany({
+    let localExperts: any[] = [];
+    let totalDeptExperts = 0;
+    let globalExpertsCount = 50;
+    let relatedArticles: any[] = [];
+
+    try {
+        const [experts, deptCount, globalCount] = await Promise.all([
+            prisma.expert.findMany({
+                where: {
+                    status: 'active',
+                    OR: [
+                        { ville: { contains: city.name, mode: 'insensitive' } },
+                        { code_postal: { startsWith: city.department } }
+                    ]
+                },
+                take: 3,
+                select: { id: true, nom_entreprise: true, ville: true, logo_url: true, slug: true, expert_type: true, certifications: { select: { value: true } } }
+            }),
+            prisma.expert.count({
+                where: { status: 'active', code_postal: { startsWith: city.department } }
+            }),
+            prisma.expert.count({
+                where: { status: 'active' }
+            })
+        ]);
+        localExperts = experts;
+        totalDeptExperts = deptCount;
+        globalExpertsCount = globalCount;
+
+        relatedArticles = await prisma.article.findMany({
             where: {
-                status: 'active',
+                status: 'PUBLISHED',
                 OR: [
-                    { ville: { contains: city.name, mode: 'insensitive' } },
-                    { code_postal: { startsWith: city.department } }
+                    { targetCity: city.name },
+                    { title: { contains: city.name, mode: 'insensitive' } }
                 ]
             },
             take: 3,
-            select: { id: true, nom_entreprise: true, ville: true, logo_url: true, slug: true, expert_type: true, certifications: { select: { value: true } } }
-        }),
-        prisma.expert.count({
-            where: { status: 'active', code_postal: { startsWith: city.department } }
-        }),
-        prisma.expert.count({
-            where: { status: 'active' }
-        })
-    ]);
-
-    let relatedArticles = await prisma.article.findMany({
-        where: {
-            status: 'PUBLISHED',
-            OR: [
-                { targetCity: city.name },
-                { title: { contains: city.name, mode: 'insensitive' } }
-            ]
-        },
-        take: 3,
-        select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
-    });
-
-    if (relatedArticles.length < 3) {
-        const fallback = await prisma.article.findMany({
-            where: { status: 'PUBLISHED' },
-            take: 3 - relatedArticles.length,
-            orderBy: { updatedAt: 'desc' },
             select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
         });
-        relatedArticles = [...relatedArticles, ...fallback];
+
+        if (relatedArticles.length < 3) {
+            const fallback = await prisma.article.findMany({
+                where: { status: 'PUBLISHED' },
+                take: 3 - relatedArticles.length,
+                orderBy: { updatedAt: 'desc' },
+                select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
+            });
+            relatedArticles = [...relatedArticles, ...fallback];
+        }
+    } catch (e) {
+        console.warn(`City page DB query warning for ${city.name} during build:`, e);
     }
 
 
