@@ -21,6 +21,7 @@ import {
 import rawCatalog from "@/data/sonepar_catalog.json";
 import LeadFormCVC from "@/components/materiel/LeadFormCVC";
 import ProductDetails from "@/components/materiel/ProductDetails";
+import { InternalLinking } from "@/components/features/seo/internal-linking";
 
 // ─────────────────────────────────────────────────────────────
 // Types
@@ -828,6 +829,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </Link>
           </div>
         </div>
+
+        {/* Dynamic Internal SEO Linking Mesh */}
+        <InternalLinking
+          brand={product.brand}
+          productType={type}
+          productSku={product.manufacturerSku}
+        />
       </div>
     </>
   );
