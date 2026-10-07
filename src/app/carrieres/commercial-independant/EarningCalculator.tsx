@@ -18,8 +18,8 @@ export default function EarningCalculator() {
   const monthlyCommission = dailyCommission * daysWorked;
   const monthlyCA = dailyCA * daysWorked;
 
-  // 12% renewal recurring commission on 2nd year
-  const renewalRate = 0.12;
+  // 10% renewal recurring commission on 2nd year
+  const renewalRate = 0.10;
   const annualRenewalRecurring = (monthlyCA * 12) * renewalRate;
 
   return (
@@ -30,7 +30,7 @@ export default function EarningCalculator() {
             <h3 className="text-xl font-bold text-white flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-[#D59B2B]" /> Simulateur de Rémunération
             </h3>
-            <p className="text-xs text-slate-400">Taux Fixe 17% HT + 12% Récurrent Annuel</p>
+            <p className="text-xs text-slate-400">Taux Fixe 17% HT + 10% Récurrent Annuel</p>
           </div>
           <Badge className="bg-[#D59B2B] hover:bg-[#D59B2B]/90 text-white font-bold px-3.5 py-1 text-sm border-none shadow-md">
             17% HT Fixe
@@ -120,7 +120,7 @@ export default function EarningCalculator() {
           <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-4 space-y-1">
             <div className="flex items-center justify-between">
               <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                <RefreshCw className="w-4 h-4 text-emerald-400 animate-spin-slow" /> Rente Récurrente de Renouvellement (12%)
+                <RefreshCw className="w-4 h-4 text-emerald-400 animate-spin-slow" /> Rente Récurrente de Renouvellement (10%)
               </p>
               <Badge variant="outline" className="text-emerald-400 border-emerald-500/40 text-[10px] font-bold px-2 py-0.5">
                 Année 2+

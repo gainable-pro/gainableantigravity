@@ -28,7 +28,7 @@ import EarningCalculator from "./EarningCalculator";
 
 export const metadata = {
   title: "Consultant / Commercial B2B Indépendant — SaaS & Digital BTP (H/F) | Gainable.fr",
-  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commission Fixe 17% HT + 12% récurrent annuel au renouvellement sur abonnements 750€ & 850€ HT.",
+  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commission Fixe 17% HT + 10% récurrent annuel au renouvellement sur abonnements 750€ & 850€ HT.",
   alternates: {
     canonical: "https://www.gainable.fr/carrieres/commercial-independant",
   },
@@ -91,7 +91,7 @@ export default function CommercialJobPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
                 {[
                   { label: "Commission Directe", value: "17% HT Fixe" },
-                  { label: "Récurrent Annuel", value: "12% / an" },
+                  { label: "Récurrent Annuel", value: "10% / an" },
                   { label: "Formules HT", value: "750€ & 850€" },
                   { label: "Mode de Travail", value: "Télétravail 100%" }
                 ].map((stat, idx) => (
@@ -218,7 +218,7 @@ export default function CommercialJobPage() {
                   },
                   {
                     title: "Fidélisation & Suivi client",
-                    desc: "Maintien d'une relation de confiance avec votre portefeuille pour assurer le renouvellement annuel et percevoir vos 12% récurrents.",
+                    desc: "Maintien d'une relation de confiance avec votre portefeuille pour assurer le renouvellement annuel et percevoir vos 10% récurrents.",
                     icon: <RefreshCw className="w-5 h-5 text-purple-500" />
                   }
                 ].map((mission, idx) => (
@@ -241,7 +241,7 @@ export default function CommercialJobPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-black text-white">Rémunération & Avantages Attractifs</h2>
-                  <p className="text-xs text-slate-400 font-medium">Taux Fixe 17% HT + 12% Récurrent Annuel au Renouvellement</p>
+                  <p className="text-xs text-slate-400 font-medium">Taux Fixe 17% HT + 10% Récurrent Annuel au Renouvellement</p>
                 </div>
               </div>
 
@@ -259,10 +259,10 @@ export default function CommercialJobPage() {
                 <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6 space-y-3">
                   <div className="flex items-center gap-2 text-emerald-400">
                     <RefreshCw className="w-5 h-5" />
-                    <h4 className="font-black text-lg">12% HT Récurrent Annuel</h4>
+                    <h4 className="font-black text-lg">10% HT Récurrent Annuel</h4>
                   </div>
                   <p className="text-slate-300 text-xs leading-relaxed">
-                    <strong>Revenu Récurrent Rentrable :</strong> Vos commissions sont renouvelées à <strong>12% HT</strong> chaque année lors du réabonnement de vos clients sur la 2ème année et les suivantes ! Vous vous constituez un revenu récurrent automatique.
+                    <strong>Revenu Récurrent Rentrable :</strong> Vos commissions sont renouvelées à <strong>10% HT</strong> chaque année lors du réabonnement de vos clients sur la 2ème année et les suivantes ! Vous vous constituez un revenu récurrent automatique.
                   </p>
                 </div>
               </div>
@@ -300,7 +300,7 @@ export default function CommercialJobPage() {
                   <p className="text-3xl font-black text-[#1F2D3D]">750 € HT</p>
                   <div className="pt-2 text-xs text-slate-600 font-medium space-y-1 border-t border-slate-200/60">
                     <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 127,50 € HT / vente</p>
-                    <p className="text-emerald-600 font-semibold">Récurrent Année 2+ (12%) : 90,00 € HT / an</p>
+                    <p className="text-emerald-600 font-semibold">Récurrent Année 2+ (10%) : 75,00 € HT / an</p>
                   </div>
                 </div>
 
@@ -311,7 +311,7 @@ export default function CommercialJobPage() {
                   <p className="text-3xl font-black text-[#D59B2B]">850 € HT</p>
                   <div className="pt-2 text-xs text-slate-300 font-medium space-y-1 border-t border-slate-700">
                     <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 144,50 € HT / vente</p>
-                    <p className="text-emerald-400 font-semibold">Récurrent Année 2+ (12%) : 102,00 € HT / an</p>
+                    <p className="text-emerald-400 font-semibold">Récurrent Année 2+ (10%) : 85,00 € HT / an</p>
                   </div>
                 </div>
               </div>
@@ -349,7 +349,7 @@ export default function CommercialJobPage() {
                 </div>
               </div>
               <p className="text-center text-slate-400 text-xs">
-                * Taux fixe de 17% HT calculé sur 20 jours de prospection par mois + 12% HT récurrent annuel lors du renouvellement des abonnements.
+                * Taux fixe de 17% HT calculé sur 20 jours de prospection par mois + 10% HT récurrent annuel lors du renouvellement des abonnements.
               </p>
             </div>
 
@@ -464,7 +464,7 @@ export default function CommercialJobPage() {
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-100 pb-2">
                     <span className="text-slate-500">Récurrent Annuel</span>
-                    <span className="font-bold text-emerald-600">12 % HT au renouvellement</span>
+                    <span className="font-bold text-emerald-600">10 % HT au renouvellement</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-500">Frais candidat</span>
@@ -527,7 +527,7 @@ export default function CommercialJobPage() {
             </Link>
           </div>
           <p className="text-slate-400 text-xs font-semibold pt-2">
-            100% Indépendant | 17% HT Fixe + 12% Récurrent Annuel | Formules 750€ & 850€ HT
+            100% Indépendant | 17% HT Fixe + 10% Récurrent Annuel | Formules 750€ & 850€ HT
           </p>
         </div>
       </section>
