@@ -7,7 +7,7 @@ import { Sparkles, TrendingUp, DollarSign, Target, RefreshCw } from "lucide-reac
 
 export default function EarningCalculator() {
   const [salesPerDay, setSalesPerDay] = useState(2);
-  const [basketSize, setBasketSize] = useState(750); // 750€ HT or 850€ HT
+  const [basketSize, setBasketSize] = useState(850); // 850€ HT default (Formule Premium)
   const daysWorked = 20;
 
   // Fixed 17% HT direct commission
