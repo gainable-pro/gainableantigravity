@@ -76,7 +76,10 @@ export default function EspaceProPage() {
                                     <Briefcase className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Bureau d'étude</h3>
-                                <div className="text-emerald-600 font-bold text-2xl mb-4">Gratuit</div>
+                                <div className="mt-2 mb-4">
+                                    <div className="text-emerald-600 font-extrabold text-3xl">Offert</div>
+                                    <div className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider inline-block mt-1">Pour les 100 premiers</div>
+                                </div>
                                 <div className="inline-block bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1 rounded-full mb-4 border border-slate-200">
                                     Inscription contrôlée – réservée aux BE
                                 </div>

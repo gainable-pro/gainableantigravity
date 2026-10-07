@@ -320,7 +320,7 @@ export function SignUpForm() {
         if (p === 'societe') {
             return billingInterval === 'yearly' ? "850 € HT / an" : "90 € HT / mois";
         }
-        if (p === 'bureau_etude') return "Gratuit";
+        if (p === 'bureau_etude') return "Offert (100 premiers)";
         if (p === 'diagnostiqueur') {
             return billingInterval === 'yearly' ? "750 € HT / an" : "90 € HT / mois";
         }
@@ -393,7 +393,14 @@ export function SignUpForm() {
                             </div>
                             <h3 className="text-xl font-bold text-slate-900">Bureau d'étude</h3>
                             <p className="text-slate-400 text-xs mt-1">Pour les experts en thermique</p>
-                            <div className="text-emerald-600 font-extrabold text-3xl mt-4">Gratuit</div>
+                            <div className="mt-4">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-emerald-600 font-extrabold text-4xl tracking-tight">Offert</span>
+                                </div>
+                                <div className="flex items-center gap-2 mt-1">
+                                    <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider">Pour les 100 premiers</span>
+                                </div>
+                            </div>
                         </div>
                         
                         <div className="h-px bg-slate-100 w-full mb-6" />
