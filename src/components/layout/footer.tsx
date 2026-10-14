@@ -5,6 +5,36 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export function Footer() {
+    const pathname = usePathname();
+    const isLandingPage = pathname === '/demo' || pathname === '/rendez-vous' || pathname === '/inscription' || pathname?.startsWith('/demo') || pathname?.startsWith('/inscription');
+
+
+    if (isLandingPage) {
+        return (
+            <footer className="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
+                <div className="container mx-auto px-4 text-center">
+                    <div className="flex justify-center items-center space-x-2 mb-4">
+                        <span className="text-xl font-bold text-white tracking-tight">Gainable.fr</span>
+                    </div>
+                    <div className="flex justify-center flex-wrap gap-6 mb-4 text-xs font-medium text-slate-400">
+                        <Link href="/mentions-legales" className="hover:text-amber-500 transition-colors">
+                            Mentions Légales
+                        </Link>
+                        <Link href="/politique-confidentialite" className="hover:text-amber-500 transition-colors">
+                            Politique de Confidentialité
+                        </Link>
+                        <Link href="/cgu" className="hover:text-amber-500 transition-colors">
+                            Conditions Générales
+                        </Link>
+                    </div>
+                    <p className="text-xs text-slate-600">
+                        &copy; {new Date().getFullYear()} Gainable.fr. Plateforme nationale dédiée aux experts du génie climatique.
+                    </p>
+                </div>
+            </footer>
+        );
+    }
+
     return (
         <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
             <div className="container mx-auto px-4 text-center">

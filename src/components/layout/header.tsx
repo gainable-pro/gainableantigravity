@@ -10,11 +10,40 @@ import { usePathname } from "next/navigation";
 import * as React from "react";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
+    const pathname = usePathname();
+    const isLandingPage = pathname === '/demo' || pathname === '/rendez-vous' || pathname === '/inscription' || pathname?.startsWith('/demo') || pathname?.startsWith('/inscription');
+
+
     // Dynamic Logo based on Country
     let logoSrc = "/gainable-fr-logo-officiel-climatisation.png"; // Default (FR/Global)
     if (countryCode === 'CH') logoSrc = "/gainable-ch-logo-climatisation-suisse.png"; // Suisse
     if (countryCode === 'MA') logoSrc = "/gainable-ma-logo-climatisation-maroc.png"; // Maroc
     if (countryCode === 'BE') logoSrc = "/gainable-fr-logo-bureau-etude-thermique.png"; // Belgique
+
+    if (isLandingPage) {
+        return (
+            <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-slate-100 shadow-sm">
+                <div className="container mx-auto flex py-2 items-center justify-center md:justify-between px-4">
+                    {/* Logo Only (no menu, no distractions) */}
+                    <div className="relative h-20 w-52 md:h-24 md:w-60 block">
+                        <Image
+                            src={logoSrc}
+                            alt="Gainable.fr"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
+
+                    <div className="hidden md:flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 border border-slate-200/80 rounded-full px-3.5 py-1.5 shadow-sm">
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Réseau Officiel Certifié • Démonstration Professionnelle
+                    </div>
+                </div>
+            </header>
+        );
+    }
+
 
     return (
         <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
