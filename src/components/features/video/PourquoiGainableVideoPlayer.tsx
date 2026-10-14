@@ -28,9 +28,9 @@ function VideoPlayerInner() {
         const video = videoRef.current;
         if (!video) return;
 
-        // Try playing with sound first
+        // Configure default sound to 70%
         video.muted = false;
-        video.volume = 1.0;
+        video.volume = 0.7;
 
         const startPlayback = async () => {
             try {
@@ -54,6 +54,26 @@ function VideoPlayerInner() {
         startPlayback();
     }, [searchParams, activeSrc]);
 
+    // Unmute automatically to 70% on the very first user interaction (touch/click)
+    useEffect(() => {
+        const handleFirstInteraction = () => {
+            const video = videoRef.current;
+            if (video) {
+                video.volume = 0.7;
+                video.muted = false;
+                setIsMuted(false);
+                video.play().catch(() => {});
+            }
+        };
+
+        window.addEventListener("click", handleFirstInteraction, { once: true });
+        window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+        return () => {
+            window.removeEventListener("click", handleFirstInteraction);
+            window.removeEventListener("touchstart", handleFirstInteraction);
+        };
+    }, []);
+
     const toggleSound = (e: React.MouseEvent) => {
         e.stopPropagation();
         const video = videoRef.current;
@@ -61,7 +81,7 @@ function VideoPlayerInner() {
 
         if (video.muted) {
             video.muted = false;
-            video.volume = 1.0;
+            video.volume = 0.7; // 70%
             setIsMuted(false);
         } else {
             video.muted = true;

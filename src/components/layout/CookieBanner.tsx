@@ -4,18 +4,26 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Cookie, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export function CookieBanner() {
+    const pathname = usePathname();
+    const isLandingPage = pathname === '/demo' || pathname === '/inscription' || pathname?.startsWith('/demo');
+
+
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
+        if (isLandingPage) return;
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
             // Delay showing to not overwhelm the user immediately
             const timer = setTimeout(() => setIsVisible(true), 2000);
             return () => clearTimeout(timer);
         }
-    }, []);
+    }, [isLandingPage]);
+
+    if (isLandingPage || !isVisible) return null;
 
     const handleAccept = () => {
         localStorage.setItem("cookie-consent", "accepted");
