@@ -2,9 +2,10 @@ import React from "react";
 
 interface MetaPixelProps {
   pixelId?: string;
+  trackLead?: boolean;
 }
 
-export function MetaPixel({ pixelId }: MetaPixelProps) {
+export function MetaPixel({ pixelId, trackLead = false }: MetaPixelProps) {
   const activePixelId = pixelId || process.env.NEXT_PUBLIC_META_PIXEL_ID || "1081345768207012";
 
   if (!activePixelId || activePixelId.trim() === "") {
@@ -28,6 +29,7 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${cleanId}');
             fbq('track', 'PageView');
+            ${trackLead ? "fbq('track', 'Lead');" : ""}
           `,
         }}
       />

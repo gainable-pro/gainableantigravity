@@ -303,24 +303,6 @@ Source : Landing Page Meta Ads /demo`
                         </p>
                     </div>
 
-                    {/* Direct Subscription Callout with Flash Promo */}
-                    <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/15 to-amber-500/10 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-                        <div className="text-xs sm:text-sm text-slate-800">
-                            <div className="flex items-center gap-1.5 justify-center sm:justify-start font-black text-[#1F2D3D]">
-                                <span>⚡</span> OFFRE FLASH LANCEMENT : 850 € au lieu de 1 300 € HT
-                            </div>
-                            <div className="text-slate-600 text-xs mt-0.5">
-                                Valable jusqu'au 31 octobre. Vous pouvez souscrire directement en ligne dès maintenant sans attendre d'appel.
-                            </div>
-                        </div>
-                        <a
-                            href="/inscription#offres"
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-white bg-[#1F2D3D] hover:bg-slate-800 shrink-0 px-4 py-2.5 rounded-xl shadow-sm transition-transform hover:scale-102"
-                        >
-                            <span>Souscrire directement</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
-                        </a>
-                    </div>
 
                     {/* Step indicator */}
                     <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">

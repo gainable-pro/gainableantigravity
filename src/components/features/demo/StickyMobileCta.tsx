@@ -35,9 +35,9 @@ export function StickyMobileCta() {
             <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
                 <div className="text-left">
                     <div className="text-xs font-bold text-[#1F2D3D] leading-tight">Démo 15 min gratuite</div>
-                    <a href="/inscription#offres" className="text-[11px] text-[#D59B2B] font-semibold hover:underline block mt-0.5">
-                        ou souscrire en ligne →
-                    </a>
+                    <span className="text-[11px] text-slate-500 font-medium block mt-0.5">
+                        100% sans engagement
+                    </span>
                 </div>
                 <Button
                     onClick={scrollToForm}
