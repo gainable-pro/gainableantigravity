@@ -74,7 +74,7 @@ export async function POST(req: Request) {
 
         const { data, error } = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || 'Gainable Contact <noreply@gainable.ch>',
-            to: ['contact@gainable.fr'],
+            to: ['contact@gainable.fr', 'airgenergie@gmail.com'],
             replyTo: email, // Allow direct reply to user
             subject: subject,
             html: htmlContent,
