@@ -1,16 +1,26 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Share, PlusSquare, X, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function PWAInstall() {
+  const pathname = usePathname();
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showIOSPrompt, setShowIOSPrompt] = useState(false);
   const [isStandalone, setIsStandalone] = useState(false);
   const [isVisible, setIsVisible] = useState(false); // Hide by default
 
+  // Never prompt on landing pages like /demo or /inscription
+  const isExcludedPage = pathname === '/demo' || pathname?.startsWith('/demo') || pathname === '/inscription' || pathname?.startsWith('/inscription');
+
   useEffect(() => {
+    if (isExcludedPage) {
+      setIsVisible(false);
+      return;
+    }
+
     // Check if dismissed previously
     if (localStorage.getItem('pwa_prompt_dismissed') === 'true') {
       return;
@@ -49,13 +59,10 @@ export function PWAInstall() {
       setIsVisible(true); // Show immediately for iOS
     }
 
-    // For testing/fallback: if not standalone and not iOS, show after 5s anyway?
-    // No, better not to annoy Android users if browser thinks it's not installable.
-
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     };
-  }, []);
+  }, [isExcludedPage]);
 
   const handleInstallClick = async () => {
     if (!deferredPrompt) {
@@ -71,7 +78,7 @@ export function PWAInstall() {
     }
   };
 
-  if (isStandalone || !isVisible) return null;
+  if (isExcludedPage || isStandalone || !isVisible) return null;
 
   return (
     <div className="fixed bottom-20 left-4 right-4 z-50 animate-in slide-in-from-bottom-10 duration-700">
