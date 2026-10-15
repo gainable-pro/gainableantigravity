@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -89,6 +90,7 @@ const METIERS = [
 ];
 
 export function DemoBookingWidget({ className = "", id = "reserver-creneau" }: DemoBookingWidgetProps) {
+    const router = useRouter();
     const availableDays = useMemo(() => getAvailableDays(), []);
 
     const [selectedDate, setSelectedDate] = useState<string>(availableDays[0]?.dateString || "");
@@ -172,7 +174,6 @@ Source : Landing Page Meta Ads /demo`
             });
 
             if (res.ok) {
-                setSuccess(true);
                 // Trigger Meta Pixel Conversion Events
                 trackMetaEvent("Lead", {
                     content_name: "Demande Démo Gainable",
@@ -185,6 +186,16 @@ Source : Landing Page Meta Ads /demo`
                     slot: selectedSlot,
                     company: formData.company,
                 });
+
+                // Redirect to dedicated confirmation page URL
+                const queryParams = new URLSearchParams({
+                    name: formData.firstName || formData.lastName,
+                    date: selectedDateLabel,
+                    slot: selectedSlot,
+                    phone: formData.phone,
+                    email: formData.email,
+                });
+                router.push(`/demo-confirmer?${queryParams.toString()}`);
             } else {
                 const data = await res.json().catch(() => ({}));
                 setErrorMessage(data.error || "Une erreur est survenue lors de l'enregistrement. Veuillez réessayer.");
