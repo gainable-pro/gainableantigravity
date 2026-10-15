@@ -8,9 +8,20 @@ import { CvcRequestForm } from "./cvc-form";
 interface InternationalLeadFormProps {
     city: string;
     onSuccess?: () => void;
+    expertId?: string;
+    expertName?: string;
+    hideHeader?: boolean;
+    defaultSurface?: number | string;
 }
 
-export function InternationalLeadForm({ city, onSuccess }: InternationalLeadFormProps) {
+export function InternationalLeadForm({
+    city,
+    onSuccess,
+    expertId,
+    expertName,
+    hideHeader = false,
+    defaultSurface
+}: InternationalLeadFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
@@ -32,11 +43,13 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
                 adresse: address,
                 message: data.description || "",
                 projet: data.propertyType || "Non spécifié",
-                surface: data.surface ? String(data.surface) : undefined,
-                source: `Landing Page ${city}`,
+                surface: data.surface ? String(data.surface) : (defaultSurface ? String(defaultSurface) : undefined),
+                source: expertName ? `Article ${expertName} (${city})` : `Landing Page ${city}`,
+                expert_id: expertId,
                 details: {
                     technologies: data.technologies,
-                    files: data.files
+                    files: data.files,
+                    expertName: expertName
                 }
             };
 
@@ -63,15 +76,18 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
 
     if (isSuccess) {
         return (
-            <div className="text-center py-12 space-y-6 bg-white p-8 rounded-xl shadow-lg border border-slate-100">
+            <div className="text-center py-12 space-y-6 bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-10 h-10 text-green-600" />
                 </div>
                 <div>
                     <h3 className="text-2xl font-bold text-[#1F2D3D]">Merci pour votre demande !</h3>
                     <p className="text-slate-600 mt-2">
-                        Votre dossier pour {city} a bien été transmis à nos experts locaux.
-                        <br />Ils vous contacteront prochainement par téléphone ou email pour votre devis.
+                        {expertName 
+                            ? `Votre dossier pour ${city} a bien été transmis à ${expertName}.`
+                            : `Votre dossier pour ${city} a bien été transmis à nos experts locaux.`
+                        }
+                        <br />Un installateur certifié RGE vous contactera sous 24h ouvrées pour votre devis.
                     </p>
                 </div>
                 <Button onClick={() => setIsSuccess(false)} variant="outline" className="mt-4">
@@ -82,18 +98,21 @@ export function InternationalLeadForm({ city, onSuccess }: InternationalLeadForm
     }
 
     return (
-        <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-slate-100">
-            <div className="mb-8 text-center border-b pb-6 border-slate-100">
-                <h3 className="text-2xl font-extrabold text-[#1F2D3D] flex items-center justify-center gap-2 mb-2">
-                    Obtenez votre devis à {city}
-                </h3>
-                <p className="text-slate-500">Renseignez les détails de votre projet pour être contacté par nos artisans qualifiés.</p>
-            </div>
+        <div className={hideHeader ? "" : "bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100"}>
+            {!hideHeader && (
+                <div className="mb-8 text-center border-b pb-6 border-slate-100">
+                    <h3 className="text-2xl font-extrabold text-[#1F2D3D] flex items-center justify-center gap-2 mb-2">
+                        Obtenez votre devis à {city}
+                    </h3>
+                    <p className="text-slate-500">Renseignez les détails de votre projet pour être contacté par nos artisans qualifiés.</p>
+                </div>
+            )}
             
             <CvcRequestForm 
                 onSubmit={handleSubmitCVC} 
                 isSubmitting={isSubmitting} 
-                defaultCity={city} 
+                defaultCity={city}
+                defaultSurface={defaultSurface}
             />
         </div>
     );

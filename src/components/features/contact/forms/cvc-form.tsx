@@ -67,19 +67,20 @@ interface CvcRequestFormProps {
     onSubmit: (data: CvcFormValues) => void;
     isSubmitting?: boolean;
     defaultCity?: string;
+    defaultSurface?: number | string;
 }
 
-export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity }: CvcRequestFormProps) => {
-    const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
+export const CvcRequestForm = ({ onSubmit, isSubmitting = false, defaultCity, defaultSurface }: CvcRequestFormProps) => {
+    const [selectedTechs, setSelectedTechs] = useState<string[]>(["Gainable"]);
     const [uploading, setUploading] = useState(false);
     const [files, setFiles] = useState<{ url: string, name: string }[]>([]);
 
     const form = useForm<CvcFormValues>({
         resolver: zodResolver(cvcFormSchema),
         defaultValues: {
-            technologies: [],
-            propertyType: "",
-            surface: "",
+            technologies: ["Gainable"],
+            propertyType: "Maison",
+            surface: defaultSurface ? String(defaultSurface) : "",
             description: "",
             address: defaultCity || "",
             acceptTerms: false,

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calculator, Zap, ShieldCheck, Sparkles, TrendingDown, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -19,6 +19,71 @@ export function ThermalCalculator({ cityName = "votre ville", climateZone = "Oc�
     const estimatedCostMin = Math.round(surface * 90 + (insulation === 're2020' ? 1000 : 2000));
     const estimatedCostMax = Math.round(estimatedCostMin * 1.25);
     const annualSavingsEuro = Math.round(surface * (insulation === 'ancien' ? 12.5 : 9.5));
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.location.hash === '#devis') {
+            const timer = setTimeout(() => {
+                const devisEl = document.getElementById('devis');
+                if (devisEl) {
+                    devisEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 600);
+            return () => clearTimeout(timer);
+        }
+    }, []);
+
+    const scrollToDevisForm = () => {
+        const devisEl = document.getElementById('devis');
+        if (devisEl) {
+            devisEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Automatically transfer simulation surface into devis form input
+            const surfaceInput = document.getElementById('surface') as HTMLInputElement | null;
+            if (surfaceInput) {
+                surfaceInput.value = String(surface);
+                surfaceInput.dispatchEvent(new Event('input', { bubbles: true }));
+                surfaceInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+
+            // Pre-fill project description with simulation notes if empty
+            const descInput = document.getElementById('description') as HTMLTextAreaElement | null;
+            if (descInput && !descInput.value) {
+                const insulationLabel = insulation === 're2020' ? 'Neuf RE2020' : insulation === 'renove' ? 'Rénové RT2012' : 'Ancien (> 15 ans)';
+                descInput.value = `Simulation thermique réalisée sur l'article : Surface de ${surface} m², isolation ${insulationLabel}, puissance estimée à ${powerKw} kW.`;
+                descInput.dispatchEvent(new Event('input', { bubbles: true }));
+                descInput.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+
+            // Visual highlight ring effect on the form container
+            devisEl.classList.remove('ring-4', 'ring-[#D59B2B]', 'shadow-2xl');
+            void devisEl.offsetWidth; // Trigger reflow
+            devisEl.classList.add('ring-4', 'ring-[#D59B2B]', 'shadow-2xl', 'transition-all', 'duration-500');
+            setTimeout(() => {
+                devisEl.classList.remove('ring-4', 'ring-[#D59B2B]', 'shadow-2xl');
+            }, 3000);
+
+            // Focus on first input
+            setTimeout(() => {
+                const firstInput = (document.getElementById('lastName') || document.getElementById('phone')) as HTMLInputElement | null;
+                if (firstInput) {
+                    firstInput.focus();
+                }
+            }, 500);
+
+            if (typeof window !== 'undefined' && window.history && window.history.pushState) {
+                window.history.pushState(null, '', '#devis');
+            }
+        } else {
+            // Fallback: jump to #devis
+            window.location.hash = 'devis';
+        }
+    };
+
+    const handleScrollToDevis = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToDevisForm();
+    };
 
     return (
         <div className="my-12 bg-gradient-to-br from-slate-900 via-slate-800 to-[#1F2D3D] text-white p-8 md:p-10 rounded-3xl shadow-2xl border border-slate-700/60 relative overflow-hidden">
@@ -72,21 +137,21 @@ export function ThermalCalculator({ cityName = "votre ville", climateZone = "Oc�
                             <button
                                 type="button"
                                 onClick={() => setInsulation('re2020')}
-                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border ${insulation === 're2020' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
+                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${insulation === 're2020' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
                             >
                                 Neuf RE2020
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setInsulation('renove')}
-                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border ${insulation === 'renove' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
+                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${insulation === 'renove' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
                             >
                                 Rénové RT2012
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setInsulation('ancien')}
-                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border ${insulation === 'ancien' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
+                                className={`py-3 px-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${insulation === 'ancien' ? 'bg-[#D59B2B] text-white border-[#D59B2B] shadow-lg' : 'bg-slate-800 text-slate-300 border-slate-700 hover:border-slate-500'}`}
                             >
                                 Ancien (&gt; 15 ans)
                             </button>
@@ -130,12 +195,14 @@ export function ThermalCalculator({ cityName = "votre ville", climateZone = "Oc�
                             <div className="text-xs text-slate-400">Mise en relation directe avec les professionnels certifiés RGE du secteur</div>
                         </div>
                     </div>
-                    <a href="#devis" className="w-full sm:w-auto">
-                        <Button className="w-full bg-[#D59B2B] hover:bg-[#b88622] text-white font-bold h-11 px-6 text-sm rounded-xl">
-                            Demander mes devis gratuits
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                        </Button>
-                    </a>
+                    <button
+                        type="button"
+                        onClick={handleScrollToDevis}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D59B2B] hover:bg-[#b88622] active:scale-95 text-white font-bold h-12 px-7 text-sm rounded-xl shadow-lg shadow-[#D59B2B]/20 transition-all cursor-pointer select-none group"
+                    >
+                        <span>Demander mes devis gratuits</span>
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
                 </div>
             </div>
         </div>

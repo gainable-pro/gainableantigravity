@@ -608,31 +608,35 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         </section>
                     )}
 
-                    {/* DYNAMIC LEAD FORM FOR CITY OR CATALOG ARTICLES */}
-                    {(article.targetCity || expert.slug === 'bureau-etude-gainable') ? (
-
-                        <div className="mt-16 w-full max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-                            
-                            <div className="text-center mb-8 relative z-10">
-                                <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
-                                    Estimation Gratuite
-                                </span>
-                                <h3 className="text-3xl font-bold text-slate-800">
-                                    {article.targetCity ? (
-                                        <>Démarrer votre projet à <span className="text-[#D59B2B]">{article.targetCity}</span></>
-                                    ) : (
-                                        <>Besoin d'un expert ? <span className="text-[#D59B2B]">Faites votre demande</span></>
-                                    )}
-                                </h3>
-                                <p className="text-slate-500 mt-2">Décrivez votre besoin pour recevoir des offres exclusives d'installateurs locaux certifiés RGE.</p>
-                            </div>
-                            
-                            <div className="relative z-10">
-                                <InternationalLeadForm city={article.targetCity || ""} />
-                            </div>
+                    {/* DYNAMIC LEAD FORM FOR CITY OR CATALOG ARTICLES (ALWAYS PRESENT WITH ID="devis") */}
+                    <div id="devis" className="mt-16 w-full max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden scroll-mt-28">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#D59B2B]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                        
+                        <div className="text-center mb-8 relative z-10">
+                            <span className="inline-block px-3 py-1 bg-amber-50 border border-amber-200 text-[#D59B2B] rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+                                Étude Thermique & Devis Gratuit
+                            </span>
+                            <h3 className="text-3xl font-bold text-slate-800">
+                                {targetCity ? (
+                                    <>Démarrer votre projet à <span className="text-[#D59B2B]">{targetCity}</span></>
+                                ) : (
+                                    <>Besoin d'un installateur certifié ? <span className="text-[#D59B2B]">Faites votre demande</span></>
+                                )}
+                            </h3>
+                            <p className="text-slate-500 mt-2 max-w-xl mx-auto">
+                                Décrivez votre besoin pour recevoir une étude personnalisée et des devis d'installateurs locaux certifiés RGE {targetCity ? `à ${targetCity}` : ""}.
+                            </p>
                         </div>
-                    ) : null}
+                        
+                        <div className="relative z-10">
+                            <InternationalLeadForm 
+                                city={targetCity || "votre secteur"}
+                                expertId={expert.slug !== 'bureau-etude-gainable' && expert.slug !== 'gainable-fr' && !expert.slug.includes('redaction') ? expert.id : undefined}
+                                expertName={expert.nom_entreprise}
+                                hideHeader={true}
+                            />
+                        </div>
+                    </div>
 
                 </article>
 
