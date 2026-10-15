@@ -23,7 +23,6 @@ import { Button } from "@/components/ui/button";
 import { PourquoiGainableVideoPlayer } from "@/components/features/video/PourquoiGainableVideoPlayer";
 import { DemoBookingWidget } from "@/components/features/demo/DemoBookingWidget";
 import { StickyMobileCta } from "@/components/features/demo/StickyMobileCta";
-import { MetaPixel } from "@/components/analytics/MetaPixel";
 
 export const metadata: Metadata = {
     title: "Démonstration Pro Gainable.fr | Réservez votre créneau en direct",
@@ -40,9 +39,6 @@ export const metadata: Metadata = {
 export default function DemoPage() {
     return (
         <div className="min-h-screen bg-white font-sans text-[#1F2D3D] pb-16 md:pb-0">
-            {/* Meta Pixel Integration */}
-            <MetaPixel />
-
             {/* Sticky Mobile Conversion Bar */}
             <StickyMobileCta />
 

@@ -78,6 +78,7 @@ import { PWAInstall } from "@/components/pwa/PWAInstall";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { headers } from "next/headers";
 import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
+import { MetaPixel } from "@/components/analytics/MetaPixel";
 
 export default async function RootLayout({
   children,
@@ -92,6 +93,7 @@ export default async function RootLayout({
     <html lang="fr">
       <head>
         <OrganizationJsonLd />
+        <MetaPixel />
       </head>
       <body className={`${montserrat.variable} font-sans`}>
         <Header countryCode={country} />

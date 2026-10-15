@@ -1,13 +1,11 @@
-"use client";
-
-import Script from "next/script";
+import React from "react";
 
 interface MetaPixelProps {
   pixelId?: string;
 }
 
 export function MetaPixel({ pixelId }: MetaPixelProps) {
-  const activePixelId = pixelId || process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const activePixelId = pixelId || process.env.NEXT_PUBLIC_META_PIXEL_ID || "1081345768207012";
 
   if (!activePixelId || activePixelId.trim() === "") {
     return null;
@@ -17,9 +15,7 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
 
   return (
     <>
-      <Script
-        id="meta-pixel-script"
-        strategy="afterInteractive"
+      <script
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -47,3 +43,4 @@ export function MetaPixel({ pixelId }: MetaPixelProps) {
     </>
   );
 }
+
