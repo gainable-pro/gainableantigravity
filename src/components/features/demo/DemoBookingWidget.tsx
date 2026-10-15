@@ -292,11 +292,15 @@ Source : Landing Page Meta Ads /demo`
                         </p>
                     </div>
 
-                    {/* Direct Subscription Callout */}
-                    <div className="mb-6 p-4 rounded-2xl bg-amber-50/70 border border-amber-200/90 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+                    {/* Direct Subscription Callout with Flash Promo */}
+                    <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/15 to-amber-500/10 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                         <div className="text-xs sm:text-sm text-slate-800">
-                            <span className="font-bold text-[#1F2D3D]">Vous souhaitez adhérer immédiatement ?</span>
-                            <div className="text-slate-600 text-xs mt-0.5">Vous pouvez créer votre profil pro et choisir votre offre dès maintenant sans attendre d'appel.</div>
+                            <div className="flex items-center gap-1.5 justify-center sm:justify-start font-black text-[#1F2D3D]">
+                                <span>⚡</span> OFFRE FLASH LANCEMENT : 850 € au lieu de 1 300 € HT
+                            </div>
+                            <div className="text-slate-600 text-xs mt-0.5">
+                                Valable jusqu'au 31 octobre. Vous pouvez souscrire directement en ligne dès maintenant sans attendre d'appel.
+                            </div>
                         </div>
                         <a
                             href="/inscription#offres"

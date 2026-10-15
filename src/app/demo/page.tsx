@@ -353,13 +353,13 @@ export default function DemoPage() {
                             className="w-full sm:w-auto bg-white hover:bg-slate-50 text-[#1F2D3D] font-bold text-base sm:text-lg px-8 py-7 rounded-2xl border-2 border-slate-300 shadow-md transition-transform hover:scale-102"
                         >
                             <a href="/inscription#offres">
-                                <span>Souscrire directement</span>
-                                <span className="ml-1 text-slate-400">→</span>
+                                <span>Souscrire directement (850 €)</span>
+                                <span className="ml-1 text-[#D59B2B] font-black">→</span>
                             </a>
                         </Button>
                     </div>
                     <p className="text-xs text-slate-500">
-                        Souscription 100% sécurisée • Facture pro immédiate • Sans engagement de durée
+                        ⚡ <strong>Tarif de lancement 850 € HT</strong> au lieu de 1 300 € HT jusqu'au 31 octobre • Facture pro immédiate • Sans engagement de durée
                     </p>
                 </div>
             </section>

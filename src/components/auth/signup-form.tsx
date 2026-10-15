@@ -318,7 +318,7 @@ export function SignUpForm() {
 
     const getPlanPrice = (p: string) => {
         if (p === 'societe') {
-            return billingInterval === 'yearly' ? "850 € HT / an" : "90 € HT / mois";
+            return billingInterval === 'yearly' ? "850 € HT / an" : "120 € HT / mois";
         }
         if (p === 'bureau_etude') return "Offert (100 premiers)";
         if (p === 'diagnostiqueur') {
@@ -331,7 +331,7 @@ export function SignUpForm() {
         if (p === 'societe') {
             return billingInterval === 'yearly'
                 ? { ht: "850 €", tva: "170 €", ttc: "1 020 €", period: "/an" }
-                : { ht: "90 €", tva: "18 €", ttc: "108 €", period: "/mois" };
+                : { ht: "120 €", tva: "24 €", ttc: "144 €", period: "/mois" };
         }
         if (p === 'diagnostiqueur') {
             return billingInterval === 'yearly'
@@ -347,6 +347,10 @@ export function SignUpForm() {
             {/* --- SECTION 1: CHOIX DE L'OFFRE (Grid 3 Cards) --- */}
             <div className="max-w-7xl mx-auto px-4 py-12 mb-16">
                 <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black mb-4 uppercase tracking-wider shadow-xs">
+                        <span className="text-amber-600 animate-pulse">⚡</span>
+                        <span>TARIF DE LANCEMENT : 850 € HT AU LIEU DE 1 300 € HT • VALABLE JUSQU'AU 31 OCTOBRE</span>
+                    </div>
                     <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-4 leading-tight">
                         Choisissez l'offre qui <span className="bg-gradient-to-r from-[#D59B2B] to-[#b58221] bg-clip-text text-transparent">propulsera</span> votre activité
                     </h1>
@@ -474,22 +478,43 @@ export function SignUpForm() {
                             <div className="mt-4">
                                 <div className="flex items-baseline gap-2">
                                     <span className="text-[#D59B2B] font-black text-4xl tracking-tight">
-                                        {billingInterval === 'yearly' ? '850 €' : '90 €'}
+                                        {billingInterval === 'yearly' ? '850 €' : '120 €'}
                                     </span>
-                                    <span className="text-base text-slate-400 line-through font-medium">
-                                        {billingInterval === 'yearly' ? '1 200 €' : '130 €'}
+                                    <span className="text-base text-slate-400 line-through font-semibold">
+                                        {billingInterval === 'yearly' ? '1 300 €' : '160 €'}
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
                                     <span className="text-xs text-slate-500 font-medium">
                                         {billingInterval === 'yearly' ? ' / an HT' : ' / mois HT'}
                                     </span>
-                                    <span className="text-[10px] font-black text-emerald-700 bg-emerald-50 border border-emerald-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider">Tarif lancement</span>
+                                    <span className="text-[10px] font-black text-amber-900 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md uppercase tracking-wider flex items-center gap-1">
+                                        <span>🔥</span> Tarif Lancement
+                                    </span>
                                 </div>
                             </div>
 
+                            {/* Flash Promo Box (31 octobre - passage à 1300€) */}
+                            <div className="mt-3.5 p-3 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/15 to-amber-500/10 border border-amber-300/90 text-left relative overflow-hidden">
+                                <div className="flex items-center gap-1.5">
+                                    <span className="flex h-2 w-2 relative">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D59B2B]"></span>
+                                    </span>
+                                    <span className="text-[11px] font-black text-amber-900 uppercase tracking-wide">
+                                        ⚡ OFFRE FLASH LANCEMENT
+                                    </span>
+                                </div>
+                                <div className="text-[11px] font-bold text-amber-800 mt-1">
+                                    Valable jusqu'au 31 octobre inclus
+                                </div>
+                                <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">
+                                    Profitez de <strong>-450 € de remise</strong>. Passage au tarif de base de <strong>1 300 € HT</strong> dès le 1<sup>er</sup> novembre.
+                                </p>
+                            </div>
+
                             {/* Commitment Note */}
-                            <div className="mt-4 text-[11px] leading-relaxed text-slate-500 bg-amber-50/10 p-3 rounded-xl border border-amber-200/20 text-left">
+                            <div className="mt-3 text-[11px] leading-relaxed text-slate-500 bg-amber-50/10 p-3 rounded-xl border border-amber-200/20 text-left">
                                 <span className="text-[#D59B2B] font-bold">
                                     {billingInterval === 'monthly' ? 'Engagement 12 mois reconductible.' : 'Abonnement annuel reconductible.'}
                                 </span>

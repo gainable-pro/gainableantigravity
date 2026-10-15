@@ -126,7 +126,16 @@ export default function EspaceProPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-[#1F2D3D] mb-2">Société experte CVC</h3>
                                 <div className="mb-4">
-                                    <span className="text-[#D59B2B] font-bold text-3xl">850 €</span> <span className="text-sm text-slate-500 font-normal">/ an HT</span>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-[#D59B2B] font-bold text-3xl">850 €</span>
+                                        <span className="text-base text-slate-400 line-through font-semibold">1 300 €</span>
+                                        <span className="text-sm text-slate-500 font-normal">/ an HT</span>
+                                    </div>
+                                    <div className="mt-1">
+                                        <span className="text-[10px] font-black text-amber-900 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md uppercase tracking-wider">
+                                            🔥 Tarif lancement jusqu'au 31 oct.
+                                        </span>
+                                    </div>
                                     <div className="text-xs text-slate-500 mt-2 font-medium">
                                         Abonnement annuel reconductible.<br/>
                                         Résiliation 1 mois avant la date d'anniversaire.
