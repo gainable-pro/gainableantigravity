@@ -27,6 +27,26 @@ function recordClick(clickData: any) {
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
+
+    // Endpoint de statistiques pour l'administrateur: GET /api/track-video-click?stats=1
+    if (searchParams.get("stats") === "1") {
+        try {
+            const dataDir = path.join(process.cwd(), "data");
+            const filePath = path.join(dataDir, "video_clicks.json");
+            if (fs.existsSync(filePath)) {
+                const clicks = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+                const uniqueEmails = [...new Set(clicks.map((c: any) => c.email).filter((e: string) => e && e !== "unknown"))];
+                return NextResponse.json({
+                    totalClicks: clicks.length,
+                    uniqueVisitors: uniqueEmails.length,
+                    visitors: uniqueEmails,
+                    clicks: clicks.slice(-50).reverse() // 50 derniers clics
+                });
+            }
+        } catch (e) {}
+        return NextResponse.json({ totalClicks: 0, uniqueVisitors: 0, visitors: [], clicks: [] });
+    }
+
     const source = searchParams.get("src") || "email";
     const emailId = searchParams.get("utm_content") || searchParams.get("email") || "unknown";
     const targetUrl = searchParams.get("redirect") || searchParams.get("url") || "/demo";
@@ -36,6 +56,7 @@ export async function GET(request: NextRequest) {
         id: Math.random().toString(36).substring(2, 9),
         timestamp: new Date().toISOString(),
         dateFr: new Date().toLocaleDateString("fr-FR", { timeZone: "Europe/Paris" }),
+        heureFr: new Date().toLocaleTimeString("fr-FR", { timeZone: "Europe/Paris" }),
         source,
         email: emailId,
         targetUrl,
