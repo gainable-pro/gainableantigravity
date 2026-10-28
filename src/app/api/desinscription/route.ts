@@ -29,6 +29,20 @@ function recordUnsubscribe(email: string) {
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
+
+    // Endpoint admin pour récupérer la liste des désinscrits
+    if (searchParams.get("list") === "1") {
+        try {
+            const dataDir = path.join(process.cwd(), "data");
+            const filePath = path.join(dataDir, "unsubscribed_emails.json");
+            if (fs.existsSync(filePath)) {
+                const list = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+                return NextResponse.json({ total: list.length, unsubscribed: list });
+            }
+        } catch (e) {}
+        return NextResponse.json({ total: 0, unsubscribed: [] });
+    }
+
     const email = searchParams.get("email") || searchParams.get("utm_content") || "";
 
     if (email) {
