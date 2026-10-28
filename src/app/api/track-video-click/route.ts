@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const source = searchParams.get("src") || "email";
     const emailId = searchParams.get("utm_content") || searchParams.get("email") || "unknown";
-    const targetUrl = searchParams.get("redirect") || searchParams.get("url") || "/carrieres/commercial-independant";
+    const targetUrl = searchParams.get("redirect") || searchParams.get("url") || "/demo";
     const campaign = searchParams.get("utm_campaign") || "video_presentation";
 
     const clickEvent = {
