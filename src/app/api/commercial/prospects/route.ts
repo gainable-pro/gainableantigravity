@@ -36,7 +36,7 @@ export async function GET(req: Request) {
     }
 }
 
-// POST: Ajouter un nouveau prospect avec vérification d'exclusivité anti-doublon et RDV
+// POST: Ajouter ou mettre à jour un prospect avec vérification d'exclusivité anti-doublon et RDV
 export async function POST(req: Request) {
     const user = await verifyCommercial();
     if (!user) return unauthorizedCommercial();
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ message: "Le nom de l'entreprise et le contact sont requis." }, { status: 400 });
         }
 
-        // 1. Anti-Duplicate Exclusivity Check (Vérification d'exclusivité par SIRET ou Nom + Adresse)
+        // 1. Anti-Duplicate Exclusivity Check (Vérification d'exclusivité par SIRET)
         if (body.siret && body.siret.length >= 9) {
             const existingProspect = await prisma.commercialProspect.findFirst({
                 where: { siret: body.siret },
@@ -63,6 +63,24 @@ export async function POST(req: Request) {
                     isLocked: true,
                     assignedTo: ownerName
                 }, { status: 409 });
+            }
+
+            // Si le prospect appartient déjà à ce commercial, on met à jour sa fiche (date de relance, note, statut...)
+            if (existingProspect && existingProspect.commercialId === user.id) {
+                const updatedProspect = await prisma.commercialProspect.update({
+                    where: { id: existingProspect.id },
+                    data: {
+                        email: body.email || existingProspect.email,
+                        telephone: body.telephone || existingProspect.telephone,
+                        siteWeb: body.siteWeb || existingProspect.siteWeb,
+                        status: body.status || existingProspect.status,
+                        commentaire: body.commentaire || existingProspect.commentaire,
+                        dateRdv: body.dateRdv ? new Date(body.dateRdv) : existingProspect.dateRdv,
+                        heureRdv: body.heureRdv !== undefined ? body.heureRdv : existingProspect.heureRdv,
+                        noteRdv: body.noteRdv !== undefined ? body.noteRdv : existingProspect.noteRdv
+                    }
+                });
+                return NextResponse.json({ prospect: updatedProspect, updated: true }, { status: 200 });
             }
         }
 

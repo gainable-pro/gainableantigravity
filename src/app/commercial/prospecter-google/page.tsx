@@ -193,7 +193,25 @@ export default function ProspecterGoogleLocalPage() {
             });
 
             if (res.ok) {
+                const resData = await res.json();
                 setAddSuccess(`L'entreprise "${targetCompany}" a été ajoutée avec succès à vos prospects CRM !`);
+                setCityCompanies((prev: any[]) => prev.map((item: any) => {
+                    const isSame = (compObj?.siret && item.siret === compObj.siret) || (compObj?.id && item.id === compObj.id) || item.nomEntreprise === targetCompany;
+                    if (!isSame) return item;
+                    return {
+                        ...item,
+                        isAssignedToMe: true,
+                        myProspectInfo: {
+                            status: computedStatus,
+                            dateRdv: dateRdv || resData.prospect?.dateRdv || null,
+                            heureRdv: heureRdv || resData.prospect?.heureRdv || null,
+                            noteRdv: noteRdv || resData.prospect?.noteRdv || null,
+                            commentaire: notesParts,
+                            createdAt: resData.prospect?.createdAt || new Date().toISOString(),
+                            updatedAt: new Date().toISOString()
+                        }
+                    };
+                }));
                 setTimeout(() => {
                     setCompanyName("");
                     setContactEmail("");
@@ -542,48 +560,82 @@ export default function ProspecterGoogleLocalPage() {
                                                 </div>
 
                                                 {/* Action Buttons */}
-                                                <div className="shrink-0 flex flex-wrap items-center gap-2">
-                                                    {c.isLocked ? (
-                                                        <span className="text-xs bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg font-bold">
-                                                            🔒 Attribué à {c.assignedTo || 'autre commercial'}
-                                                        </span>
-                                                    ) : (
-                                                        <>
-                                                            <button
-                                                                type="button"
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleOpenGoogleBrowser(c);
-                                                                }}
-                                                                className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
-                                                            >
-                                                                <Globe className="h-3.5 w-3.5 text-blue-600" />
-                                                                Vérification & Aperçu Google Live 🌐
-                                                            </button>
+                                                <div className="shrink-0 flex flex-col items-end gap-2">
+                                                    <div className="flex flex-wrap items-center gap-2">
+                                                        {c.isLocked ? (
+                                                            <span className="text-xs bg-slate-200 text-slate-600 px-3 py-1.5 rounded-lg font-bold">
+                                                                🔒 Attribué à {c.assignedTo || 'autre commercial'}
+                                                            </span>
+                                                        ) : (
+                                                            <>
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        handleOpenGoogleBrowser(c);
+                                                                    }}
+                                                                    className="px-3 py-1.5 bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm"
+                                                                >
+                                                                    <Globe className="h-3.5 w-3.5 text-blue-600" />
+                                                                    Vérification & Aperçu Google Live 🌐
+                                                                </button>
 
-                                                            <button
-                                                                type="button"
-                                                                onClick={(e) => {
-                                                                    e.stopPropagation();
-                                                                    handleSelectCompanyToForm(c);
-                                                                }}
-                                                                className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-sm ${
-                                                                    isSelected
-                                                                        ? "bg-blue-600 text-white shadow-md"
-                                                                        : "bg-[#D59B2B] hover:bg-[#b88622] text-white"
-                                                                }`}
-                                                            >
-                                                                {isSelected ? (
-                                                                    <>
-                                                                        <CheckCircle2 className="h-4 w-4 text-white" /> Sélectionné
-                                                                    </>
-                                                                ) : (
-                                                                    <>
-                                                                        <PlusCircle className="h-4 w-4" /> Qualifier & Ajouter
-                                                                    </>
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        handleSelectCompanyToForm(c);
+                                                                    }}
+                                                                    className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1.5 shadow-sm ${
+                                                                        isSelected
+                                                                            ? "bg-blue-600 text-white shadow-md"
+                                                                            : "bg-[#D59B2B] hover:bg-[#b88622] text-white"
+                                                                    }`}
+                                                                >
+                                                                    {isSelected ? (
+                                                                        <>
+                                                                            <CheckCircle2 className="h-4 w-4 text-white" /> Sélectionné
+                                                                        </>
+                                                                    ) : (
+                                                                        <>
+                                                                            <PlusCircle className="h-4 w-4" /> Qualifier & Ajouter
+                                                                        </>
+                                                                    )}
+                                                                </button>
+                                                            </>
+                                                        )}
+                                                    </div>
+
+                                                    {!c.isLocked && c.isAssignedToMe && (
+                                                        <div className="p-2 bg-emerald-50 border border-emerald-300 text-emerald-900 text-[11px] rounded-xl space-y-1 shadow-xs max-w-xs text-right">
+                                                            <div className="font-extrabold flex items-center justify-end gap-1 text-emerald-800">
+                                                                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                                                                <span>Attribué par moi {c.assignedTo ? `(${c.assignedTo})` : ""}</span>
+                                                                {c.myProspectInfo?.updatedAt && (
+                                                                    <span className="text-[10px] font-medium text-emerald-700 ml-1">
+                                                                        (le {new Date(c.myProspectInfo.updatedAt).toLocaleDateString("fr-FR")})
+                                                                    </span>
                                                                 )}
-                                                            </button>
-                                                        </>
+                                                            </div>
+                                                            {c.myProspectInfo?.dateRdv ? (
+                                                                <div className="font-bold text-amber-900 bg-amber-100/90 border border-amber-300 px-2 py-0.5 rounded-lg inline-flex items-center gap-1">
+                                                                    <Calendar className="h-3 w-3 text-amber-700 shrink-0" />
+                                                                    <span>
+                                                                        Relance prévue le {new Date(c.myProspectInfo.dateRdv).toLocaleDateString("fr-FR")}
+                                                                        {c.myProspectInfo?.heureRdv ? ` à ${c.myProspectInfo.heureRdv}` : ""}
+                                                                    </span>
+                                                                </div>
+                                                            ) : (
+                                                                <div className="text-[10px] text-emerald-700 font-semibold">
+                                                                    📌 Déjà enregistré dans vos prospects
+                                                                </div>
+                                                            )}
+                                                            {c.myProspectInfo?.noteRdv && (
+                                                                <div className="text-[10px] text-slate-700 bg-white/80 px-2 py-0.5 rounded border border-emerald-200 italic truncate">
+                                                                    📝 {c.myProspectInfo.noteRdv}
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     )}
                                                 </div>
                                             </div>

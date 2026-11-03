@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     const region = searchParams.get("region");
     const departement = searchParams.get("departement");
     const ville = searchParams.get("ville");
-    const search = searchParams.get("search");
+    const search = searchParams.get("search") || searchParams.get("q");
     const testDomain = searchParams.get("testDomain");
 
     // 1. Google SEO Indexing Test Action
@@ -69,24 +69,76 @@ export async function GET(req: Request) {
     // Return top 100 matching results
     const results = filtered.slice(0, 100);
 
-    // Fetch claimed prospects to enforce anti-duplicate exclusivity lock
+    // Fetch claimed prospects to enforce anti-duplicate exclusivity lock + show self-attribution & follow-up date
     const claimedProspects = await prisma.commercialProspect.findMany({
-        select: { siret: true, nomEntreprise: true, commercialId: true, commercial: { include: { commercialProfile: true } } }
+        orderBy: { updatedAt: 'asc' },
+        select: {
+            siret: true,
+            nomEntreprise: true,
+            commercialId: true,
+            status: true,
+            dateRdv: true,
+            heureRdv: true,
+            noteRdv: true,
+            commentaire: true,
+            createdAt: true,
+            updatedAt: true,
+            commercial: { include: { commercialProfile: true } }
+        }
     });
 
-    const claimedSiretsMap = new Map<string, { commercialId: string; ownerName: string }>();
+    interface ClaimInfo {
+        commercialId: string;
+        ownerName: string;
+        status: string;
+        dateRdv: Date | null;
+        heureRdv: string | null;
+        noteRdv: string | null;
+        commentaire: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+    }
+
+    const claimedSiretsMap = new Map<string, ClaimInfo>();
+    const claimedNamesMap = new Map<string, ClaimInfo>();
+
     claimedProspects.forEach(p => {
         const ownerName = p.commercial.commercialProfile?.nom || p.commercial.email;
-        if (p.siret) claimedSiretsMap.set(p.siret.trim(), { commercialId: p.commercialId, ownerName });
+        const info: ClaimInfo = {
+            commercialId: p.commercialId,
+            ownerName,
+            status: p.status,
+            dateRdv: p.dateRdv,
+            heureRdv: p.heureRdv,
+            noteRdv: p.noteRdv,
+            commentaire: p.commentaire,
+            createdAt: p.createdAt,
+            updatedAt: p.updatedAt
+        };
+        if (p.siret) claimedSiretsMap.set(p.siret.trim(), info);
+        if (p.nomEntreprise) claimedNamesMap.set(p.nomEntreprise.trim().toLowerCase(), info);
     });
 
     const enrichedResults = results.map(c => {
-        const lock = c.siret ? claimedSiretsMap.get(c.siret.trim()) : null;
+        const lock = (c.siret ? claimedSiretsMap.get(c.siret.trim()) : null)
+            || (c.nomEntreprise ? claimedNamesMap.get(c.nomEntreprise.trim().toLowerCase()) : null);
         const isLockedByOther = lock ? lock.commercialId !== user.id : false;
+        const isAssignedToMe = lock ? lock.commercialId === user.id : false;
+
         return {
             ...c,
             isLocked: isLockedByOther,
-            assignedTo: lock ? lock.ownerName : null
+            isAssignedToMe,
+            assignedTo: lock ? lock.ownerName : null,
+            myProspectInfo: isAssignedToMe && lock ? {
+                status: lock.status,
+                dateRdv: lock.dateRdv,
+                heureRdv: lock.heureRdv,
+                noteRdv: lock.noteRdv,
+                commentaire: lock.commentaire,
+                createdAt: lock.createdAt,
+                updatedAt: lock.updatedAt
+            } : null
         };
     });
 

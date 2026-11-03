@@ -177,7 +177,26 @@ export default function ProspecterCvcPage() {
             });
 
             if (res.ok) {
+                const resData = await res.json();
                 setAddSuccess("Entreprise qualifiée et enregistrée dans votre CRM prospect !");
+                // Mettre à jour immédiatement la fiche dans la grille de recherche
+                setCompanies(prev => prev.map(item => {
+                    const isSame = (comp.siret && item.siret === comp.siret) || item.id === comp.id || item.nomEntreprise === comp.nomEntreprise;
+                    if (!isSame) return item;
+                    return {
+                        ...item,
+                        isAssignedToMe: true,
+                        myProspectInfo: {
+                            status: computedStatus,
+                            dateRdv: dateRdv || resData.prospect?.dateRdv || null,
+                            heureRdv: heureRdv || resData.prospect?.heureRdv || null,
+                            noteRdv: noteRdv || resData.prospect?.noteRdv || null,
+                            commentaire: notesParts,
+                            createdAt: resData.prospect?.createdAt || new Date().toISOString(),
+                            updatedAt: new Date().toISOString()
+                        }
+                    } as any;
+                }));
                 setTimeout(() => {
                     setSelectedCompany(null);
                     setGoogleSearchCompany(null);
@@ -452,18 +471,58 @@ export default function ProspecterCvcPage() {
                                             🔒 Attribué à {(comp as any).assignedTo || 'autre commercial'}
                                         </div>
                                     ) : (
-                                        <button
-                                            onClick={() => {
-                                                setSelectedCompany(comp);
-                                                setContactEmail(comp.email || "");
-                                                setEditPhone(comp.telephone || "");
-                                                setEditWebsite(comp.siteWeb || "");
-                                            }}
-                                            className="w-full py-2.5 px-3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
-                                        >
-                                            <PlusCircle className="h-4 w-4" />
-                                            Qualifier & Ajouter à mes prospects CRM
-                                        </button>
+                                        <>
+                                            <button
+                                                onClick={() => {
+                                                    const info = (comp as any).myProspectInfo;
+                                                    setSelectedCompany(comp);
+                                                    setContactEmail(comp.email || "");
+                                                    setEditPhone(comp.telephone || "");
+                                                    setEditWebsite(comp.siteWeb || "");
+                                                    setDateRdv(info?.dateRdv ? new Date(info.dateRdv).toISOString().split("T")[0] : "");
+                                                    setHeureRdv(info?.heureRdv || "");
+                                                    setNoteRdv(info?.noteRdv || "");
+                                                }}
+                                                className="w-full py-2.5 px-3 bg-[#D59B2B] hover:bg-[#b88622] text-white font-extrabold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm"
+                                            >
+                                                <PlusCircle className="h-4 w-4" />
+                                                Qualifier & Ajouter à mes prospects CRM
+                                            </button>
+
+                                            {(comp as any).isAssignedToMe && (
+                                                <div className="w-full p-2.5 bg-emerald-50 border border-emerald-300 text-emerald-900 text-[11px] rounded-xl space-y-1 shadow-xs">
+                                                    <div className="font-extrabold flex items-center justify-between text-emerald-800">
+                                                        <span className="flex items-center gap-1">
+                                                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                                                            Attribué par moi {(comp as any).assignedTo ? `(${(comp as any).assignedTo})` : ""}
+                                                        </span>
+                                                        {(comp as any).myProspectInfo?.updatedAt && (
+                                                            <span className="text-[10px] font-medium text-emerald-700">
+                                                                le {new Date((comp as any).myProspectInfo.updatedAt).toLocaleDateString("fr-FR")}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    {(comp as any).myProspectInfo?.dateRdv ? (
+                                                        <div className="font-bold text-amber-900 bg-amber-100/90 border border-amber-300 px-2 py-1 rounded-lg flex items-center gap-1.5">
+                                                            <Calendar className="h-3.5 w-3.5 text-amber-700 shrink-0" />
+                                                            <span>
+                                                                Relance prévue le {new Date((comp as any).myProspectInfo.dateRdv).toLocaleDateString("fr-FR")}
+                                                                {(comp as any).myProspectInfo?.heureRdv ? ` à ${(comp as any).myProspectInfo.heureRdv}` : ""}
+                                                            </span>
+                                                        </div>
+                                                    ) : (
+                                                        <div className="text-[10px] text-emerald-700 font-semibold">
+                                                            📌 Déjà enregistré dans vos prospects (aucune date de relance programmée)
+                                                        </div>
+                                                    )}
+                                                    {(comp as any).myProspectInfo?.noteRdv && (
+                                                        <div className="text-[10px] text-slate-700 bg-white/80 px-2 py-1 rounded border border-emerald-200 italic truncate">
+                                                            📝 {(comp as any).myProspectInfo.noteRdv}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+                                        </>
                                     )}
                                 </div>
                             </div>
