@@ -606,37 +606,67 @@ export default function ProspecterGoogleLocalPage() {
                                                         )}
                                                     </div>
 
-                                                    {!c.isLocked && c.isAssignedToMe && (
-                                                        <div className="p-2 bg-emerald-50 border border-emerald-300 text-emerald-900 text-[11px] rounded-xl space-y-1 shadow-xs max-w-xs text-right">
-                                                            <div className="font-extrabold flex items-center justify-end gap-1 text-emerald-800">
-                                                                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
-                                                                <span>Attribué par moi {c.assignedTo ? `(${c.assignedTo})` : ""}</span>
-                                                                {c.myProspectInfo?.updatedAt && (
-                                                                    <span className="text-[10px] font-medium text-emerald-700 ml-1">
-                                                                        (le {new Date(c.myProspectInfo.updatedAt).toLocaleDateString("fr-FR")})
+                                                    {!c.isLocked && c.isAssignedToMe && (() => {
+                                                        const info = c.myProspectInfo;
+                                                        const statusMap: Record<string, { label: string; badgeClass: string }> = {
+                                                            VENTE_EFFECTUEE: { label: "🏆 Vente effectuée (Client inscrit via moi)", badgeClass: "bg-emerald-600 text-white border-emerald-700" },
+                                                            INTERESSE: { label: "🤝 Statut : Intéressé / À relancer", badgeClass: "bg-blue-100 text-blue-900 border-blue-300" },
+                                                            CONTACTE: { label: "📞 Statut : Contacté", badgeClass: "bg-sky-100 text-sky-900 border-sky-300" },
+                                                            REFUSE: { label: "❌ Statut : Refusé / Non intéressé", badgeClass: "bg-red-100 text-red-900 border-red-300" },
+                                                            NE_PLUS_DEMARCHER: { label: "🚫 Statut : Ne plus démarcher", badgeClass: "bg-slate-200 text-slate-800 border-slate-400" },
+                                                            NON_CONTACTE: { label: "⏳ Statut : En attente / Absent", badgeClass: "bg-slate-100 text-slate-700 border-slate-300" }
+                                                        };
+                                                        const effectiveStatus = info?.lastSale ? "VENTE_EFFECTUEE" : (info?.status || "NON_CONTACTE");
+                                                        const st = statusMap[effectiveStatus] || { label: `Statut : ${effectiveStatus}`, badgeClass: "bg-slate-100 text-slate-800 border-slate-300" };
+                                                        const bracketMatch = info?.commentaire?.match(/\[(.*?)\]/);
+                                                        const callTag = bracketMatch ? bracketMatch[1] : null;
+                                                        const displayNote = [info?.noteRdv, callTag].filter(Boolean).join(" • ");
+
+                                                        return (
+                                                            <div className="p-2.5 bg-emerald-50 border border-emerald-300 text-emerald-900 text-[11px] rounded-xl space-y-1.5 shadow-xs max-w-xs text-left">
+                                                                <div className="font-extrabold flex items-center justify-between gap-2 text-emerald-800">
+                                                                    <span className="flex items-center gap-1">
+                                                                        <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
+                                                                        Attribué par moi {c.assignedTo ? `(${c.assignedTo})` : ""}
                                                                     </span>
+                                                                    {info?.createdAt && (
+                                                                        <span className="text-[10px] font-medium text-emerald-700">
+                                                                            le {new Date(info.createdAt).toLocaleDateString("fr-FR")}
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                                <div className={`px-2 py-1 rounded-lg border font-bold text-[11px] ${st.badgeClass}`}>
+                                                                    {st.label}
+                                                                </div>
+                                                                {(info?.lastSale || effectiveStatus === "VENTE_EFFECTUEE") && (
+                                                                    <div className="font-extrabold text-emerald-950 bg-emerald-200/80 border border-emerald-400 px-2 py-1 rounded-lg flex items-center justify-between gap-2">
+                                                                        <span>
+                                                                            💳 Acheté le {new Date(info?.lastSale?.dateVente || info?.updatedAt).toLocaleDateString("fr-FR")}
+                                                                        </span>
+                                                                        {info?.lastSale?.montant && (
+                                                                            <span className="bg-emerald-800 text-white px-1.5 py-0.5 rounded text-[10px]">
+                                                                                {info.lastSale.montant} € HT
+                                                                            </span>
+                                                                        )}
+                                                                    </div>
+                                                                )}
+                                                                {info?.dateRdv && (
+                                                                    <div className="font-bold text-amber-900 bg-amber-100/90 border border-amber-300 px-2 py-0.5 rounded-lg flex items-center gap-1">
+                                                                        <Calendar className="h-3 w-3 text-amber-700 shrink-0" />
+                                                                        <span>
+                                                                            Relance prévue le {new Date(info.dateRdv).toLocaleDateString("fr-FR")}
+                                                                            {info?.heureRdv ? ` à ${info.heureRdv}` : ""}
+                                                                        </span>
+                                                                    </div>
+                                                                )}
+                                                                {displayNote && (
+                                                                    <div className="text-[10px] text-slate-800 bg-white/90 px-2 py-1 rounded border border-emerald-200 font-medium break-words">
+                                                                        📝 Note : {displayNote}
+                                                                    </div>
                                                                 )}
                                                             </div>
-                                                            {c.myProspectInfo?.dateRdv ? (
-                                                                <div className="font-bold text-amber-900 bg-amber-100/90 border border-amber-300 px-2 py-0.5 rounded-lg inline-flex items-center gap-1">
-                                                                    <Calendar className="h-3 w-3 text-amber-700 shrink-0" />
-                                                                    <span>
-                                                                        Relance prévue le {new Date(c.myProspectInfo.dateRdv).toLocaleDateString("fr-FR")}
-                                                                        {c.myProspectInfo?.heureRdv ? ` à ${c.myProspectInfo.heureRdv}` : ""}
-                                                                    </span>
-                                                                </div>
-                                                            ) : (
-                                                                <div className="text-[10px] text-emerald-700 font-semibold">
-                                                                    📌 Déjà enregistré dans vos prospects
-                                                                </div>
-                                                            )}
-                                                            {c.myProspectInfo?.noteRdv && (
-                                                                <div className="text-[10px] text-slate-700 bg-white/80 px-2 py-0.5 rounded border border-emerald-200 italic truncate">
-                                                                    📝 {c.myProspectInfo.noteRdv}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    )}
+                                                        );
+                                                    })()}
                                                 </div>
                                             </div>
                                         );

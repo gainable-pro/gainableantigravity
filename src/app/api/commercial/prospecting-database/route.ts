@@ -69,7 +69,7 @@ export async function GET(req: Request) {
     // Return top 100 matching results
     const results = filtered.slice(0, 100);
 
-    // Fetch claimed prospects to enforce anti-duplicate exclusivity lock + show self-attribution & follow-up date
+    // Fetch claimed prospects to enforce anti-duplicate exclusivity lock + show self-attribution, status, note & sale date
     const claimedProspects = await prisma.commercialProspect.findMany({
         orderBy: { updatedAt: 'asc' },
         select: {
@@ -83,7 +83,17 @@ export async function GET(req: Request) {
             commentaire: true,
             createdAt: true,
             updatedAt: true,
-            commercial: { include: { commercialProfile: true } }
+            commercial: { include: { commercialProfile: true } },
+            sales: {
+                orderBy: { dateVente: 'desc' },
+                take: 1,
+                select: {
+                    dateVente: true,
+                    montant: true,
+                    paiementType: true,
+                    status: true
+                }
+            }
         }
     });
 
@@ -97,6 +107,12 @@ export async function GET(req: Request) {
         commentaire: string | null;
         createdAt: Date;
         updatedAt: Date;
+        lastSale: {
+            dateVente: Date;
+            montant: number;
+            paiementType: string;
+            status: string;
+        } | null;
     }
 
     const claimedSiretsMap = new Map<string, ClaimInfo>();
@@ -113,7 +129,8 @@ export async function GET(req: Request) {
             noteRdv: p.noteRdv,
             commentaire: p.commentaire,
             createdAt: p.createdAt,
-            updatedAt: p.updatedAt
+            updatedAt: p.updatedAt,
+            lastSale: p.sales && p.sales.length > 0 ? p.sales[0] : null
         };
         if (p.siret) claimedSiretsMap.set(p.siret.trim(), info);
         if (p.nomEntreprise) claimedNamesMap.set(p.nomEntreprise.trim().toLowerCase(), info);
@@ -137,7 +154,8 @@ export async function GET(req: Request) {
                 noteRdv: lock.noteRdv,
                 commentaire: lock.commentaire,
                 createdAt: lock.createdAt,
-                updatedAt: lock.updatedAt
+                updatedAt: lock.updatedAt,
+                lastSale: lock.lastSale
             } : null
         };
     });
