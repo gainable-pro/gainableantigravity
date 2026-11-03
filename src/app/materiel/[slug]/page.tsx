@@ -232,7 +232,7 @@ export async function generateMetadata({
     "Sonepar",
     "Andrety",
     "Clim+",
-    "Cédéo",
+    "CEDEO",
     "gainable.fr",
   ]
     .filter(Boolean)
@@ -638,7 +638,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     <p className="text-xs text-slate-600 leading-relaxed mb-3">
                       Nos artisans certifiés s&apos;approvisionnent directement auprès de{" "}
                       <strong>grossistes officiels</strong> en France, Suisse et Belgique{" "}
-                      (Sonepar, Andrety, Clim+, Cédéo). Ce circuit court leur permet de
+                      (Sonepar, Andrety, Clim+, CEDEO). Ce circuit court leur permet de
                       vous proposer un <strong>tarif matériel + pose</strong> souvent plus
                       avantageux qu&apos;un achat seul en grande surface ou sur internet — tout en
                       bénéficiant de la <strong>garantie décennale</strong> et du SAV constructeur.

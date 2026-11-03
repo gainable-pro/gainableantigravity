@@ -555,13 +555,12 @@ export default function MaterielPage() {
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-blue-600 to-blue-400" />
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 font-black text-lg font-outfit">
-                    S
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                    Principal
-                  </span>
+                <div className="h-14 w-full flex items-center justify-start mb-4">
+                  <img
+                    src="/assets/brands/sonepar-climate.jpg"
+                    alt="Logo Sonepar Climate Solutions"
+                    className="max-h-12 w-auto object-contain"
+                  />
                 </div>
                 <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Sonepar / CD Sud</h3>
                 <p className="text-xs text-slate-500 mb-4 leading-relaxed">
@@ -587,13 +586,12 @@ export default function MaterielPage() {
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-orange-500 to-amber-400" />
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 font-black text-lg font-outfit">
-                    A
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
-                    PACA
-                  </span>
+                <div className="h-14 w-full flex items-center justify-start mb-4">
+                  <img
+                    src="/assets/brands/andrety.jpg"
+                    alt="Logo Andrety"
+                    className="max-h-12 w-auto object-contain"
+                  />
                 </div>
                 <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Andrety</h3>
                 <p className="text-xs text-slate-500 mb-4 leading-relaxed">
@@ -619,13 +617,12 @@ export default function MaterielPage() {
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-emerald-500 to-teal-400" />
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 font-black text-lg font-outfit">
-                    C+
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">
-                    National
-                  </span>
+                <div className="h-14 w-full flex items-center justify-start mb-4">
+                  <img
+                    src="/assets/brands/climplus.jpg"
+                    alt="Logo Clim+"
+                    className="max-h-12 w-auto object-contain"
+                  />
                 </div>
                 <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Clim+</h3>
                 <p className="text-xs text-slate-500 mb-4 leading-relaxed">
@@ -647,19 +644,18 @@ export default function MaterielPage() {
               </div>
             </div>
 
-            {/* Cédéo */}
+            {/* CEDEO */}
             <div className="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all group overflow-hidden">
               <div className="h-2 bg-gradient-to-r from-purple-600 to-violet-400" />
               <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 font-black text-lg font-outfit">
-                    Cd
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-wider text-purple-600 bg-purple-50 px-2 py-1 rounded-full">
-                    PAC & Clim
-                  </span>
+                <div className="h-14 w-full flex items-center justify-start mb-4">
+                  <img
+                    src="/assets/brands/cedeo.jpg"
+                    alt="Logo CEDEO"
+                    className="max-h-12 w-auto object-contain"
+                  />
                 </div>
-                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">Cédéo</h3>
+                <h3 className="font-bold text-slate-900 text-base font-outfit mb-1">CEDEO</h3>
                 <p className="text-xs text-slate-500 mb-4 leading-relaxed">
                   Distributeur spécialisé en sanitaire, chauffage et climatisation. Fort réseau d&apos;agences avec outil de chiffrage SOLU+ pour les professionnels (Daikin, Atlantic, Panasonic...).
                 </p>

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Sonepar",
     "Andrety",
     "Clim+",
-    "Cédéo",
+    "CEDEO",
   ].join(", "),
   openGraph: {
     title: "Achat & Pose Climatisation : Tarifs Matériel + Installation | Gainable",
@@ -98,7 +98,7 @@ export default function MaterielLayout({
             name: "Gainable",
             url: "https://www.gainable.fr",
             description:
-              "Spécialiste de l'installation de climatisation et pompes à chaleur en France. Experts certifiés RGE, partenaires des grossistes CVC officiels (Sonepar, Andrety, Clim+, Cédéo).",
+              "Spécialiste de l'installation de climatisation et pompes à chaleur en France. Experts certifiés RGE, partenaires des grossistes CVC officiels (Sonepar, Andrety, Clim+, CEDEO).",
             areaServed: ["FR", "BE", "CH"],
             knowsAbout: [
               "Climatisation",
