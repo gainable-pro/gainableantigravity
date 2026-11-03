@@ -11,7 +11,7 @@ import * as React from "react";
 
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
     const pathname = usePathname();
-    const isLandingPage = pathname === '/demo' || pathname === '/inscription' || pathname?.startsWith('/demo') || pathname?.startsWith('/inscription');
+    const isLandingPage = pathname === '/demo' || pathname?.startsWith('/demo');
 
 
 
@@ -73,6 +73,9 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                     <Link href="/pourquoi-gainable" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
                     </Link>
+                    <Link href="/materiel" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
+                        Marques
+                    </Link>
                     <Link href="/contact" className="text-sm font-medium text-slate-600 hover:text-[#D59B2B] transition-colors">
                         Contact
                     </Link>
@@ -121,6 +124,9 @@ function MobileMenu() {
                     <Link href="/labels" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Expert Vérifié</Link>
                     <Link href="/pourquoi-gainable" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
                         Pourquoi Gainable.fr
+                    </Link>
+                    <Link href="/materiel" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
+                        Marques
                     </Link>
                     <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#D59B2B] transition-colors">
                         Contact
