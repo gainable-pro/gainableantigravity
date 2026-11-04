@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import * as jose from 'jose';
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
+import { slugify } from "@/lib/utils";
 
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
@@ -231,35 +233,53 @@ export async function POST(req: Request) {
             }
         }
 
-        sections.forEach((sec: any) => {
-            generatedHtml += `<h2>${sec.title}</h2>\n`;
-            // Transform newlines to <br> or paragraphs if needed, but assuming simple text for now or basic formatting
-            // If user input is textarea, we should wrap in <p>.
-            const paragraphs = sec.content.split('\n').filter((p: string) => p.trim() !== '');
-            paragraphs.forEach((p: string) => {
-                generatedHtml += `<p>${p}</p>\n`;
+        if (blocks.length > 0) {
+            blocks.forEach((b: any) => {
+                if (!b.value) return;
+                if (b.type === 'h2') generatedHtml += `<h2>${b.value}</h2>\n`;
+                if (b.type === 'h3') generatedHtml += `<h3>${b.value}</h3>\n`;
+                if (b.type === 'text') {
+                    const paragraphs = b.value.split('\n').filter((p: string) => p.trim() !== '');
+                    paragraphs.forEach((p: string) => generatedHtml += `<p>${p}</p>\n`);
+                }
+                if (b.type === 'image') {
+                    generatedHtml += `<figure class="article-secondary-image">
+                        <img src="${b.value}" alt="${b.alt || ''}" loading="lazy" />
+                        ${b.alt ? `<figcaption>${b.alt}</figcaption>` : ''}
+                    </figure>\n`;
+                }
+                if (b.type === 'video') {
+                    generatedHtml += `<div class="video-container"><video controls src="${b.value}"></video></div>\n`;
+                }
             });
-
-            // Secondary Image (Interleaved)
-            if (sec.imageUrl) {
-                generatedHtml += `<figure class="article-secondary-image">
-                    <img src="${sec.imageUrl}" alt="${sec.imageAlt || sec.title}" loading="lazy" />
-                    ${sec.imageAlt ? `<figcaption>${sec.imageAlt}</figcaption>` : ''}
-                </figure>\n`;
-            }
-
-            if (sec.subtitle) {
-                generatedHtml += `<h3>${sec.subtitle}</h3>\n`;
-            }
-
-            if (sec.list && Array.isArray(sec.list) && sec.list.length > 0) {
-                generatedHtml += `<ul>\n`;
-                sec.list.forEach((item: string) => {
-                    if (item.trim()) generatedHtml += `<li>${item}</li>\n`;
+        } else {
+            sections.forEach((sec: any) => {
+                generatedHtml += `<h2>${sec.title}</h2>\n`;
+                const paragraphs = sec.content.split('\n').filter((p: string) => p.trim() !== '');
+                paragraphs.forEach((p: string) => {
+                    generatedHtml += `<p>${p}</p>\n`;
                 });
-                generatedHtml += `</ul>\n`;
-            }
-        });
+
+                if (sec.imageUrl) {
+                    generatedHtml += `<figure class="article-secondary-image">
+                        <img src="${sec.imageUrl}" alt="${sec.imageAlt || sec.title}" loading="lazy" />
+                        ${sec.imageAlt ? `<figcaption>${sec.imageAlt}</figcaption>` : ''}
+                    </figure>\n`;
+                }
+
+                if (sec.subtitle) {
+                    generatedHtml += `<h3>${sec.subtitle}</h3>\n`;
+                }
+
+                if (sec.list && Array.isArray(sec.list) && sec.list.length > 0) {
+                    generatedHtml += `<ul>\n`;
+                    sec.list.forEach((item: string) => {
+                        if (item.trim()) generatedHtml += `<li>${item}</li>\n`;
+                    });
+                    generatedHtml += `</ul>\n`;
+                }
+            });
+        }
 
         // 4. Save
         // Check slug uniqueness
@@ -282,7 +302,7 @@ export async function POST(req: Request) {
                 slug: body.slug,
                 introduction: body.introduction,
                 content: generatedHtml, // Auto-generated HTML
-                jsonContent: { sections, faq: faqs },
+                jsonContent: { sections, blocks, faq: faqs },
                 mainImage: body.mainImage,
                 altText: body.altText,
                 videoUrl: body.videoUrl,
@@ -294,6 +314,21 @@ export async function POST(req: Request) {
                 faq: faqs
             }
         });
+
+        if (status === 'PUBLISHED') {
+            try {
+                revalidatePath(`/pro/${expert.slug}`);
+                revalidatePath(`/entreprise/${expert.slug}/articles/${newArticle.slug}`);
+                revalidatePath('/articles');
+                revalidatePath('/sitemap/0');
+                revalidatePath('/sitemap-index');
+                if (body.targetCity) {
+                    revalidatePath(`/climatisation/${slugify(body.targetCity)}`);
+                }
+            } catch (revalErr) {
+                console.warn("Revalidate warning after article creation:", revalErr);
+            }
+        }
 
         return NextResponse.json({ success: true, article: newArticle });
 

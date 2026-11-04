@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import * as jose from 'jose';
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
+import { slugify } from "@/lib/utils";
 
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
@@ -234,7 +236,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 slug: body.slug,
                 introduction: body.introduction,
                 content: generatedHtml,
-                jsonContent: { sections, faq: faqs },
+                jsonContent: { sections, blocks, faq: faqs },
                 mainImage: body.mainImage,
                 altText: body.altText,
                 videoUrl: body.videoUrl,
@@ -245,6 +247,21 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 faq: faqs
             }
         });
+
+        if (status === 'PUBLISHED') {
+            try {
+                revalidatePath(`/pro/${expert.slug}`);
+                revalidatePath(`/entreprise/${expert.slug}/articles/${updated.slug}`);
+                revalidatePath('/articles');
+                revalidatePath('/sitemap/0');
+                revalidatePath('/sitemap-index');
+                if (body.targetCity) {
+                    revalidatePath(`/climatisation/${slugify(body.targetCity)}`);
+                }
+            } catch (revalErr) {
+                console.warn("Revalidate warning after article update:", revalErr);
+            }
+        }
 
         return NextResponse.json({ success: true, article: updated });
 

@@ -40,11 +40,13 @@ const TOP_EQUIPMENT_REFS = [
 
 // Fallback experts in case DB query fails or times out during static page pre-rendering
 const FALLBACK_EXPERTS = [
-    { nom_entreprise: "Air G Énergie", slug: "air-g-energie", ville: "Bordeaux", expert_type: "cvc_climatisation", is_labeled: true },
+    { nom_entreprise: "Air G Énergie", slug: "climatisation-pompe-a-chaleur-miramas-air-g-energie-8907", ville: "Miramas", expert_type: "cvc_climatisation", is_labeled: true },
     { nom_entreprise: "Excelec 45", slug: "climatisation-pompe-a-chaleur-45650-excelec-5548", ville: "Orléans", expert_type: "cvc_climatisation", is_labeled: true },
     { nom_entreprise: "Patinet Reims", slug: "climatisation-pompe-a-chaleur-reims-patinet-8902", ville: "Reims", expert_type: "cvc_climatisation", is_labeled: true },
     { nom_entreprise: "MACLEM Bisontines", slug: "climatisation-pompe-a-chaleur-avanne-aveney-energies-renouvelables-bisontines-maclem-8165", ville: "Avanne-Aveney", expert_type: "cvc_climatisation", is_labeled: true },
 ];
+
+const SYSTEM_EXPERT_SLUGS = ["gainable-fr", "redaction-gainable", "bureau-etude-gainable"];
 
 export async function InternalLinking({
     zipCode,
@@ -59,17 +61,24 @@ export async function InternalLinking({
     let relatedArticles: any[] = [];
 
     const currentYear = new Date().getFullYear();
+    const excludedExpertSlugs = currentExpertSlug
+        ? [...SYSTEM_EXPERT_SLUGS, currentExpertSlug]
+        : SYSTEM_EXPERT_SLUGS;
 
     try {
-        // 1. Fetch related experts
+        // 1. Fetch related experts in the same department first, ordered by article activity
         if (zipCode && zipCode.length >= 2) {
             const departmentPrefix = zipCode.substring(0, 2);
             relatedExperts = await prisma.expert.findMany({
                 where: {
                     code_postal: { startsWith: departmentPrefix },
-                    slug: { not: currentExpertSlug || undefined },
+                    slug: { notIn: excludedExpertSlugs },
                     status: "active",
                 },
+                orderBy: [
+                    { articles: { _count: "desc" } },
+                    { photos: { _count: "desc" } },
+                ],
                 take: 4,
                 select: {
                     nom_entreprise: true,
@@ -81,13 +90,18 @@ export async function InternalLinking({
             });
         }
 
-        // Fallback: if no department experts found (or on a product page), fetch top active experts
-        if (relatedExperts.length < 3) {
+        // Fallback: if fewer than 4 department experts found, fetch top active artisans who publish content
+        if (relatedExperts.length < 4) {
+            const alreadySelectedSlugs = relatedExperts.map((e) => e.slug);
             const topExperts = await prisma.expert.findMany({
                 where: {
                     status: "active",
-                    slug: { not: currentExpertSlug || undefined },
+                    slug: { notIn: [...excludedExpertSlugs, ...alreadySelectedSlugs] },
                 },
+                orderBy: [
+                    { articles: { _count: "desc" } },
+                    { photos: { _count: "desc" } },
+                ],
                 take: 4 - relatedExperts.length,
                 select: {
                     nom_entreprise: true,
@@ -100,14 +114,17 @@ export async function InternalLinking({
             relatedExperts = [...relatedExperts, ...topExperts];
         }
 
-        // 2. Fetch general recent SEO articles
+        // 2. Fetch recent articles written by REAL artisans (excluding automated system accounts)
         relatedArticles = await prisma.article.findMany({
             where: {
                 status: "PUBLISHED",
                 slug: { not: currentArticleSlug || undefined },
+                expert: {
+                    slug: { notIn: SYSTEM_EXPERT_SLUGS },
+                },
             },
-            orderBy: { publishedAt: "desc" },
-            take: 4,
+            orderBy: { createdAt: "desc" },
+            take: 6,
             select: {
                 title: true,
                 slug: true,
@@ -261,6 +278,42 @@ export async function InternalLinking({
                     </div>
 
                 </div>
+
+                {!isProductPage && relatedArticles.length > 0 && (
+                    <div className="bg-slate-800/40 rounded-2xl p-6 border border-slate-700/50 space-y-4">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2 text-[#D59B2B]">
+                                <FileText className="w-5 h-5" />
+                                <h3 className="font-bold text-base text-white">
+                                    Dernières réalisations & conseils de nos artisans RGE
+                                </h3>
+                            </div>
+                            <Link href="/articles" className="text-xs text-[#D59B2B] hover:underline font-semibold">
+                                Voir tous les articles &rarr;
+                            </Link>
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            {relatedArticles.slice(0, 6).map((article) => (
+                                <Link
+                                    key={article.slug}
+                                    href={`/entreprise/${article.expert.slug}/articles/${article.slug}`}
+                                    className="group bg-slate-800/80 p-3.5 rounded-xl border border-slate-700/80 hover:border-[#D59B2B] transition-all flex items-center justify-between"
+                                >
+                                    <div className="flex-1 pr-3">
+                                        <h4 className="font-semibold text-xs text-slate-200 group-hover:text-[#D59B2B] transition-colors line-clamp-2">
+                                            {article.title}
+                                        </h4>
+                                        <span className="text-[10px] text-slate-400 mt-1 block">
+                                            Par {article.expert.nom_entreprise}
+                                            {article.targetCity ? ` · ${article.targetCity}` : ""}
+                                        </span>
+                                    </div>
+                                    <ArrowRight className="w-4 h-4 text-slate-500 group-hover:text-[#D59B2B] transition-colors transform group-hover:translate-x-1 shrink-0" />
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Bottom Anchor Link to Home */}
                 <div className="pt-8 border-t border-slate-800/80 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">

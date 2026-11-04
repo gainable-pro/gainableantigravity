@@ -215,47 +215,84 @@ export default async function CityPage({ params }: PageProps) {
     let globalExpertsCount = 50;
     let relatedArticles: any[] = [];
 
+    const SYSTEM_SLUGS = ['gainable-fr', 'redaction-gainable', 'bureau-etude-gainable'];
+
     try {
         const [experts, deptCount, globalCount] = await Promise.all([
             prisma.expert.findMany({
                 where: {
                     status: 'active',
+                    slug: { notIn: SYSTEM_SLUGS },
                     OR: [
                         { ville: { contains: city.name, mode: 'insensitive' } },
                         { code_postal: { startsWith: city.department } }
                     ]
                 },
+                orderBy: [
+                    { articles: { _count: 'desc' } },
+                    { photos: { _count: 'desc' } }
+                ],
                 take: 3,
                 select: { id: true, nom_entreprise: true, ville: true, logo_url: true, slug: true, expert_type: true, certifications: { select: { value: true } } }
             }),
             prisma.expert.count({
-                where: { status: 'active', code_postal: { startsWith: city.department } }
+                where: { status: 'active', slug: { notIn: SYSTEM_SLUGS }, code_postal: { startsWith: city.department } }
             }),
             prisma.expert.count({
-                where: { status: 'active' }
+                where: { status: 'active', slug: { notIn: SYSTEM_SLUGS } }
             })
         ]);
         localExperts = experts;
         totalDeptExperts = deptCount;
         globalExpertsCount = globalCount;
 
-        relatedArticles = await prisma.article.findMany({
+        // 1. Prioritize real artisan articles targeting this city or department
+        const artisanArticles = await prisma.article.findMany({
             where: {
                 status: 'PUBLISHED',
+                expert: { slug: { notIn: SYSTEM_SLUGS } },
                 OR: [
-                    { targetCity: city.name },
-                    { title: { contains: city.name, mode: 'insensitive' } }
+                    { targetCity: { contains: city.name, mode: 'insensitive' } },
+                    { title: { contains: city.name, mode: 'insensitive' } },
+                    { expert: { code_postal: { startsWith: city.department } } }
                 ]
             },
+            orderBy: { createdAt: 'desc' },
             take: 3,
             select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
         });
 
+        relatedArticles = [...artisanArticles];
+
+        // 2. If fewer than 3 real artisan articles for this city/dept, supplement with city-specific articles
         if (relatedArticles.length < 3) {
-            const fallback = await prisma.article.findMany({
-                where: { status: 'PUBLISHED' },
+            const existingIds = relatedArticles.map(a => a.id);
+            const cityArticles = await prisma.article.findMany({
+                where: {
+                    status: 'PUBLISHED',
+                    id: { notIn: existingIds },
+                    OR: [
+                        { targetCity: city.name },
+                        { title: { contains: city.name, mode: 'insensitive' } }
+                    ]
+                },
                 take: 3 - relatedArticles.length,
-                orderBy: { updatedAt: 'desc' },
+                select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
+            });
+            relatedArticles = [...relatedArticles, ...cityArticles];
+        }
+
+        // 3. Final fallback to latest real artisan articles nationwide
+        if (relatedArticles.length < 3) {
+            const existingIds = relatedArticles.map(a => a.id);
+            const fallback = await prisma.article.findMany({
+                where: {
+                    status: 'PUBLISHED',
+                    id: { notIn: existingIds },
+                    expert: { slug: { notIn: SYSTEM_SLUGS } }
+                },
+                take: 3 - relatedArticles.length,
+                orderBy: { createdAt: 'desc' },
                 select: { id: true, title: true, slug: true, mainImage: true, introduction: true, expert: { select: { slug: true } } }
             });
             relatedArticles = [...relatedArticles, ...fallback];

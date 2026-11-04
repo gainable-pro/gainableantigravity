@@ -4,8 +4,10 @@ import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { ArrowRight, Calendar, User, MapPin } from "lucide-react";
 import { Metadata } from "next";
-import { prisma } from "@/lib/prisma";
+import { prisma, withDbRetry } from "@/lib/prisma";
+import activeArticleSlugsList from "@/data/seo-active-articles-whitelist.json";
 
+const SYSTEM_SLUGS = ["gainable-fr", "redaction-gainable", "bureau-etude-gainable"];
 
 export const dynamic = 'force-dynamic';
 
@@ -18,30 +20,67 @@ async function getArticlesData(page: number) {
     const take = 15;
     const skip = (page - 1) * take;
 
-    const [articles, totalCount] = await Promise.all([
-        prisma.article.findMany({
-            where: { status: 'PUBLISHED' },
-            orderBy: { createdAt: 'desc' },
-            take,
-            skip,
-            include: {
-                expert: {
-                    select: {
-                        slug: true,
-                        nom_entreprise: true,
-                        ville: true,
-                        logo_url: true,
-                        expert_type: true
-                    }
-                }
-            }
-        }),
-        prisma.article.count({
-            where: { status: 'PUBLISHED' }
-        })
-    ]);
+    const expertSelect = {
+        slug: true,
+        nom_entreprise: true,
+        ville: true,
+        logo_url: true,
+        expert_type: true
+    };
 
-    return { articles, totalCount, totalPages: Math.ceil(totalCount / take) };
+    return await withDbRetry(async () => {
+        const [artisanCount, whitelistCount] = await Promise.all([
+            prisma.article.count({
+                where: {
+                    status: 'PUBLISHED',
+                    expert: { slug: { notIn: SYSTEM_SLUGS } }
+                }
+            }),
+            prisma.article.count({
+                where: {
+                    status: 'PUBLISHED',
+                    expert: { slug: { in: SYSTEM_SLUGS } },
+                    slug: { in: activeArticleSlugsList as string[] }
+                }
+            })
+        ]);
+
+        const totalCount = artisanCount + whitelistCount;
+        let articles: any[] = [];
+
+        if (skip < artisanCount) {
+            const artisanArticles = await prisma.article.findMany({
+                where: {
+                    status: 'PUBLISHED',
+                    expert: { slug: { notIn: SYSTEM_SLUGS } }
+                },
+                orderBy: { createdAt: 'desc' },
+                take,
+                skip,
+                include: { expert: { select: expertSelect } }
+            });
+            articles = [...artisanArticles];
+        }
+
+        if (articles.length < take) {
+            const remainingTake = take - articles.length;
+            const whitelistSkip = Math.max(0, skip - artisanCount);
+            const whitelistedArticles = await prisma.article.findMany({
+                where: {
+                    status: 'PUBLISHED',
+                    expert: { slug: { in: SYSTEM_SLUGS } },
+                    slug: { in: activeArticleSlugsList as string[] }
+                },
+                orderBy: { updatedAt: 'desc' },
+                take: remainingTake,
+                skip: whitelistSkip,
+                include: { expert: { select: expertSelect } }
+            });
+            articles = [...articles, ...whitelistedArticles];
+        }
+
+        return { articles, totalCount, totalPages: Math.max(1, Math.ceil(totalCount / take)) };
+    });
 }
 
 export default async function ArticlesPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {

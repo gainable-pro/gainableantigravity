@@ -1,22 +1,14 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
 
-export const revalidate = 86400; // Cache sitemap index for 24 hours
+export const revalidate = 3600; // Cache sitemap index for 1 hour
 
 export async function GET() {
     const baseUrl = 'https://www.gainable.fr';
     const now = new Date().toISOString();
 
-    let totalSitemapsCount = 2;
-    try {
-        const articleCount = await prisma.article.count({
-            where: { status: 'PUBLISHED' }
-        });
-        const articleSitemaps = Math.max(1, Math.ceil(articleCount / 5000));
-        totalSitemapsCount = 1 + articleSitemaps;
-    } catch (e) {
-        console.error("Error fetching article count for sitemap-index:", e);
-    }
+    // Sitemap 0: Core pages, all /pro/[slug], all real artisan articles, all /materiel/[sku], all /climatisation/[city]
+    // Sitemap 1: Active whitelisted SEO articles with GSC impressions
+    const totalSitemapsCount = 2;
 
     const sitemaps = Array.from({ length: totalSitemapsCount }, (_, i) =>
         `  <sitemap>\n    <loc>${baseUrl}/sitemap/${i}.xml</loc>\n    <lastmod>${now}</lastmod>\n  </sitemap>`
@@ -32,4 +24,3 @@ export async function GET() {
         },
     });
 }
-

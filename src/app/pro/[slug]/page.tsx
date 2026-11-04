@@ -1,5 +1,5 @@
 
-import { prisma } from "@/lib/prisma";
+import { prisma, withDbRetry } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -30,8 +30,8 @@ export async function generateStaticParams() {
 
 
 async function getExpertBySlug(slug: string) {
-    try {
-        const expert = await prisma.expert.findUnique({
+    return await withDbRetry(() =>
+        prisma.expert.findUnique({
             where: { slug },
             include: {
                 technologies: true,
@@ -44,27 +44,23 @@ async function getExpertBySlug(slug: string) {
                 photos: true,
                 articles: {
                     where: { status: 'PUBLISHED' },
-                    orderBy: { createdAt: 'desc' }, // Updated to match main articles page
-                    take: 6,
+                    orderBy: { createdAt: 'desc' },
+                    take: 50,
                     select: {
                         slug: true,
                         title: true,
                         introduction: true,
                         mainImage: true,
                         publishedAt: true,
-                        createdAt: true // Need this for fallback
+                        createdAt: true
                     }
                 },
                 user: {
                     select: { email: true }
                 }
             }
-        });
-        return expert;
-    } catch (e) {
-        console.warn("getExpertBySlug DB fetch warning during build:", e);
-        return null;
-    }
+        })
+    );
 }
 
 import type { Metadata } from "next";

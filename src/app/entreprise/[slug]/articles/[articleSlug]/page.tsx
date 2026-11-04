@@ -2,15 +2,20 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { ShareButtons } from "@/components/features/articles/share-buttons";
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
+import { prisma, withDbRetry } from "@/lib/prisma";
 import { Metadata } from "next";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { MapPin, ArrowRight, User, HelpCircle } from "lucide-react";
+import { MapPin, ArrowRight, User, HelpCircle, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 import { getLocalSEOContext } from "@/lib/local-seo-engine";
 import { ThermalCalculator } from "@/components/features/articles/thermal-calculator";
+import { InternalLinking } from "@/components/features/seo/internal-linking";
+import activeArticleSlugsList from "@/data/seo-active-articles-whitelist.json";
+
+const ACTIVE_ARTICLE_SLUGS = new Set<string>(activeArticleSlugsList as string[]);
+const SYSTEM_EXPERT_SLUGS = new Set(["gainable-fr", "redaction-gainable", "bureau-etude-gainable"]);
 
 export const revalidate = 3600; // Cache la page pendant 1 heure (ISR) pour soulager la base de données face à Googlebot
 
@@ -24,7 +29,7 @@ interface PageProps {
 async function getArticleData(slug: string, articleSlug: string) {
     if (!slug || !articleSlug) return null;
 
-    try {
+    return await withDbRetry(async () => {
         const expert = await prisma.expert.findUnique({
             where: { slug },
             select: {
@@ -37,6 +42,8 @@ async function getArticleData(slug: string, articleSlug: string) {
                 lat: true,
                 lng: true,
                 logo_url: true,
+                site_web: true,
+                telephone: true,
                 user: { select: { email: true } },
                 expert_type: true
             }
@@ -55,11 +62,29 @@ async function getArticleData(slug: string, articleSlug: string) {
 
         if (!article || article.status !== 'PUBLISHED') return null;
 
-        return { expert, article };
-    } catch (e) {
-        console.error("Error in getArticleData:", e);
-        return null;
-    }
+        const isSystemAccount = SYSTEM_EXPERT_SLUGS.has(expert.slug) || expert.slug.includes('redaction');
+        const otherArticles = !isSystemAccount
+            ? await prisma.article.findMany({
+                  where: {
+                      expertId: expert.id,
+                      status: 'PUBLISHED',
+                      slug: { not: articleSlug }
+                  },
+                  orderBy: { createdAt: 'desc' },
+                  take: 6,
+                  select: {
+                      slug: true,
+                      title: true,
+                      targetCity: true,
+                      mainImage: true,
+                      publishedAt: true,
+                      createdAt: true
+                  }
+              })
+            : [];
+
+        return { expert, article, otherArticles };
+    });
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -106,9 +131,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
+    const isRealArtisan = !SYSTEM_EXPERT_SLUGS.has(expert.slug) && !expert.slug.includes('redaction');
+    const shouldIndex = isRealArtisan || ACTIVE_ARTICLE_SLUGS.has(article.slug);
+
     return {
         title: metaTitle,
         description: metaDesc,
+        robots: {
+            index: shouldIndex,
+            follow: true,
+        },
         alternates: {
             canonical: `https://www.gainable.fr/entreprise/${slug}/articles/${articleSlug}`,
         },
@@ -146,7 +178,7 @@ export default async function PublicArticlePage({ params }: PageProps) {
         notFound();
     }
 
-    const { expert, article } = data;
+    const { expert, article, otherArticles } = data;
 
     let articleContent = article.content || "";
     if (article.targetCity) {
@@ -638,6 +670,46 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         </div>
                     </div>
 
+                    {/* OTHER REALISATIONS BY THIS ARTISAN (INTERNAL LINKING ENGINE) */}
+                    {otherArticles && otherArticles.length > 0 && (
+                        <section className="mt-16 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                            <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
+                                <h2 className="text-2xl font-bold text-[#1F2D3D]">
+                                    Autres chantiers & conseils de {expert.nom_entreprise}
+                                </h2>
+                                <Link
+                                    href={`/pro/${expert.slug}`}
+                                    className="text-sm font-bold text-[#D59B2B] hover:underline flex items-center gap-1"
+                                >
+                                    Voir le profil complet <ArrowRight className="w-4 h-4" />
+                                </Link>
+                            </div>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {otherArticles.map((oa) => (
+                                    <Link
+                                        key={oa.slug}
+                                        href={`/entreprise/${expert.slug}/articles/${oa.slug}`}
+                                        className="group p-4 rounded-2xl border border-slate-100 hover:border-[#D59B2B] hover:shadow-md transition-all bg-slate-50/60 flex flex-col justify-between"
+                                    >
+                                        <div>
+                                            {oa.targetCity && (
+                                                <span className="text-xs font-bold text-[#D59B2B] uppercase tracking-wider block mb-1">
+                                                    {oa.targetCity}
+                                                </span>
+                                            )}
+                                            <h3 className="font-bold text-slate-800 group-hover:text-[#D59B2B] transition-colors line-clamp-2 text-base">
+                                                {oa.title}
+                                            </h3>
+                                        </div>
+                                        <span className="text-xs font-semibold text-[#D59B2B] mt-3 inline-flex items-center gap-1">
+                                            Lire l&apos;article <ArrowRight className="w-3.5 h-3.5" />
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
+                        </section>
+                    )}
+
                 </article>
 
                 {/* SIDEBAR : AUTHOR & CTA */}
@@ -668,11 +740,23 @@ export default async function PublicArticlePage({ params }: PageProps) {
                         </div>
 
                         {expert.slug !== 'gainable-fr' && !expert.slug.includes('redaction') && expert.slug !== 'bureau-etude-gainable' && (
-                            <Link href={`/pro/${expert.slug}`} className="w-full">
-                                <Button variant="outline" className="w-full">
-                                    Voir le profil
-                                </Button>
-                            </Link>
+                            <div className="w-full space-y-2">
+                                <Link href={`/pro/${expert.slug}`} className="w-full block">
+                                    <Button variant="outline" className="w-full">
+                                        Voir le profil
+                                    </Button>
+                                </Link>
+                                {expert.site_web && (
+                                    <a
+                                        href={expert.site_web.startsWith('http') ? expert.site_web : `https://${expert.site_web}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-full inline-flex items-center justify-center gap-2 text-xs font-semibold text-slate-600 hover:text-[#D59B2B] py-1.5"
+                                    >
+                                        <Globe className="w-3.5 h-3.5" /> Site officiel de l&apos;artisan
+                                    </a>
+                                )}
+                            </div>
                         )}
                     </div>
 
@@ -717,6 +801,12 @@ export default async function PublicArticlePage({ params }: PageProps) {
                     </div>
                 </aside>
             </div>
+            <InternalLinking
+                zipCode={expert.code_postal}
+                city={targetCity}
+                currentExpertSlug={expert.slug}
+                currentArticleSlug={article.slug}
+            />
         </div>
     );
 }

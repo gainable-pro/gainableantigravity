@@ -19,6 +19,19 @@ const globalForPrisma = globalThis as unknown as {
 
 export const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
 
-if (process.env.NODE_ENV !== "production") {
-    globalForPrisma.prisma = prisma;
+globalForPrisma.prisma = prisma;
+
+export async function withDbRetry<T>(fn: () => Promise<T>, retries = 2, delayMs = 350): Promise<T> {
+    let lastError: unknown;
+    for (let attempt = 0; attempt <= retries; attempt++) {
+        try {
+            return await fn();
+        } catch (err) {
+            lastError = err;
+            if (attempt < retries) {
+                await new Promise((res) => setTimeout(res, delayMs * (attempt + 1)));
+            }
+        }
+    }
+    throw lastError;
 }

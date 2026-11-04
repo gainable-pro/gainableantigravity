@@ -1,4 +1,3 @@
-
 import { getDepartmentFromZip } from "./departments";
 
 interface ExpertSEOData {
@@ -10,35 +9,33 @@ interface ExpertSEOData {
 
 export function generateExpertMetaTitle(data: ExpertSEOData): string {
     const dept = getDepartmentFromZip(data.codePostal);
-    const deptSuffix = dept ? ` (${dept})` : "";
-    const company = data.nomEntreprise.trim();
+    const zipOrDept = data.codePostal ? ` (${data.codePostal})` : dept ? ` (${dept})` : "";
+    const company = data.nomEntreprise.replace(/(\([^)]+\))(\s*\1)+/gi, "$1").trim();
     const city = data.ville.trim();
 
-    // Priority 1: "Installateur Climatisation [Ville] - [Nom] | Gainable"
-    let title = `Installateur Climatisation ${city}${deptSuffix} — ${company} | Gainable`;
+    let title = `${company} – Climatisation Gainable & Pompe à Chaleur à ${city}${zipOrDept}`;
 
-    // If title exceeds 65 chars, compact title
-    if (title.length > 65) {
-        title = `Climatisation ${city} — ${company} | Gainable.fr`;
+    if (title.length > 68) {
+        title = `${company} – Climatisation & PAC Gainable à ${city}${zipOrDept}`;
     }
 
-    if (title.length > 65) {
-        title = `${company} — Climatisation ${city}`;
+    if (title.length > 68) {
+        title = `${company} — Climatisation & PAC à ${city}`;
     }
 
     return title;
 }
 
 export function generateExpertMetaDescription(data: ExpertSEOData): string {
-    const company = data.nomEntreprise.trim();
+    const company = data.nomEntreprise.replace(/(\([^)]+\))(\s*\1)+/gi, "$1").trim();
     const city = data.ville.trim();
+    const zip = data.codePostal ? ` (${data.codePostal})` : "";
 
-    let desc = `Fiche officielle de ${company} à ${city}. Expert qualifié en installation et entretien de climatisation réversible et pompe à chaleur gainable. Devis gratuit.`;
+    let desc = `${company} à ${city}${zip} : artisan certifié en installation, entretien et dépannage de climatisation gainable et pompe à chaleur réversible. Devis gratuit.`;
 
     if (desc.length > 160) {
-        desc = `${company} à ${city} : spécialiste climatisation réversible et gainable. Demandez votre devis gratuit en ligne.`;
+        desc = `${company} à ${city}${zip} : spécialiste climatisation réversible, gainable et pompe à chaleur. Demandez votre devis gratuit en ligne.`;
     }
 
     return desc.substring(0, 160);
 }
-
