@@ -16,7 +16,7 @@ export default function ConditionsGeneralesUtilisation() {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
             <h1 className="text-3xl font-bold mb-4 text-[#1F2D3D]">CONDITIONS GÉNÉRALES D’UTILISATION</h1>
             <p className="text-[#D59B2B] font-bold mb-8 uppercase tracking-widest text-sm">
-                GAINABLE.FR – GAINABLE.CH – GAINABLES.CH – GAINABLE.MA – GAINABLE.BE – GAINABLES.BE
+                GAINABLE.FR – GAINABLE.CH – GAINABLES.CH – GAINABLE.MA – GAINABLE.BE – GAINABLES.BE – GAINABLE.ORG – GAINABLE.EU
             </p>
 
             <section className="space-y-10 text-slate-700 leading-relaxed">
@@ -31,6 +31,8 @@ export default function ConditionsGeneralesUtilisation() {
                         <li>www.gainable.ma</li>
                         <li>www.gainable.be</li>
                         <li>www.gainables.be</li>
+                        <li>www.gainable.org</li>
+                        <li>www.gainable.eu</li>
                     </ul>
                     <div className="mt-6 pt-6 border-t border-slate-200">
                         <p className="font-bold text-[#1F2D3D] mb-2">Ces sites sont exploités par :</p>

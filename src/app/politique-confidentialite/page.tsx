@@ -16,7 +16,7 @@ export default function PolitiqueConfidentialite() {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
             <h1 className="text-3xl font-bold mb-4 text-[#1F2D3D]">POLITIQUE DE CONFIDENTIALITÉ</h1>
             <p className="text-[#D59B2B] font-bold mb-8 uppercase tracking-widest text-sm">
-                GAINABLE.FR – GAINABLE.CH – GAINABLES.CH – GAINABLE.MA – GAINABLE.BE – GAINABLES.BE
+                GAINABLE.FR – GAINABLE.CH – GAINABLES.CH – GAINABLE.MA – GAINABLE.BE – GAINABLES.BE – GAINABLE.ORG – GAINABLE.EU
             </p>
 
             <section className="space-y-10 text-slate-700 leading-relaxed">
@@ -35,6 +35,8 @@ export default function PolitiqueConfidentialite() {
                         <li>www.gainable.ma</li>
                         <li>www.gainable.be</li>
                         <li>www.gainables.be</li>
+                        <li>www.gainable.org</li>
+                        <li>www.gainable.eu</li>
                     </ul>
                 </div>
 
@@ -71,7 +73,7 @@ export default function PolitiqueConfidentialite() {
                     <div className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
                         <h2 className="text-xl font-bold text-[#1F2D3D] mb-4 border-b pb-2 border-slate-100">2. Extensions territoriales</h2>
                         <p className="text-sm">
-                            Les noms de domaine .fr, .ch, .ma et .be sont exploités par EXCEED DIGITAL.
+                            Les noms de domaine .fr, .ch, .ma, .be, .org et .eu sont exploités par EXCEED DIGITAL.
                             Ces extensions ne constituent pas des entités distinctes. Elles redirigent vers <strong>www.gainable.fr</strong>, l’unique plateforme administrée.
                         </p>
                         <p className="text-sm mt-4 italic text-slate-500">
