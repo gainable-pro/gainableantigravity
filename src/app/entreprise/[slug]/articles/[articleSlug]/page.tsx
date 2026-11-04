@@ -12,9 +12,7 @@ import { InternationalLeadForm } from "@/components/features/contact/forms/inter
 import { getLocalSEOContext } from "@/lib/local-seo-engine";
 import { ThermalCalculator } from "@/components/features/articles/thermal-calculator";
 import { InternalLinking } from "@/components/features/seo/internal-linking";
-import activeArticleSlugsList from "@/data/seo-active-articles-whitelist.json";
 
-const ACTIVE_ARTICLE_SLUGS = new Set<string>(activeArticleSlugsList as string[]);
 const SYSTEM_EXPERT_SLUGS = new Set(["gainable-fr", "redaction-gainable", "bureau-etude-gainable"]);
 
 export const revalidate = 3600; // Cache la page pendant 1 heure (ISR) pour soulager la base de données face à Googlebot
@@ -131,14 +129,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         }
     }
 
-    const isRealArtisan = !SYSTEM_EXPERT_SLUGS.has(expert.slug) && !expert.slug.includes('redaction');
-    const shouldIndex = isRealArtisan || ACTIVE_ARTICLE_SLUGS.has(article.slug);
-
     return {
         title: metaTitle,
         description: metaDesc,
         robots: {
-            index: shouldIndex,
+            index: true,
             follow: true,
         },
         alternates: {

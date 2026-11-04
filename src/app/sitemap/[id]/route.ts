@@ -1,14 +1,25 @@
 import { NextResponse } from 'next/server';
 import { prisma, withDbRetry } from '@/lib/prisma';
-import activeArticleSlugsList from '@/data/seo-active-articles-whitelist.json';
 
-export const revalidate = 3600; // Revalidate every hour so newly published artisan articles appear quickly
+export const revalidate = 3600; // Revalidate every hour
 
 const BASE_URL = 'https://www.gainable.fr';
 const SYSTEM_EXPERT_SLUGS = ['gainable-fr', 'redaction-gainable', 'bureau-etude-gainable'];
 
 export async function generateStaticParams() {
-    return [{ id: '0' }, { id: '1' }];
+    try {
+        const articleCount = await withDbRetry(() =>
+            prisma.article.count({
+                where: { status: 'PUBLISHED' }
+            })
+        );
+        const articleSitemapsCount = Math.max(1, Math.ceil(articleCount / 5000));
+        const totalSitemaps = 1 + articleSitemapsCount;
+        return Array.from({ length: totalSitemaps }, (_, i) => ({ id: String(i) }));
+    } catch (e) {
+        console.error("Error in generateStaticParams for sitemap:", e);
+        return Array.from({ length: 13 }, (_, i) => ({ id: String(i) }));
+    }
 }
 
 export async function GET(
@@ -44,7 +55,7 @@ export async function GET(
                 '/politique-confidentialite',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
-            // 2. Active Experts + Real Artisan Articles (withDbRetry - never silently serve empty on DB failure)
+            // 2. Active Experts + Real Artisan Articles in Sitemap 0 (Priority Crawl)
             const [experts, artisanArticles] = await withDbRetry(() =>
                 Promise.all([
                     prisma.expert.findMany({
@@ -106,28 +117,31 @@ export async function GET(
             const all = [...staticUrls, ...expertUrls, ...artisanArticleUrls, ...productUrls, ...regionUrls, ...cityUrls];
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${all.join('\n')}\n</urlset>`;
 
-        } else if (id === 1) {
-            // Sitemap 1: Whitelisted automated articles that have proven GSC impressions (zero dead doorway bloat)
-            const articles = await withDbRetry(() =>
-                prisma.article.findMany({
-                    where: {
-                        status: 'PUBLISHED',
-                        expert: { slug: { in: SYSTEM_EXPERT_SLUGS } },
-                        slug: { in: activeArticleSlugsList as string[] }
-                    },
-                    select: {
-                        slug: true,
-                        updatedAt: true,
-                        expert: { select: { slug: true } }
-                    },
-                    orderBy: { updatedAt: 'desc' },
-                    take: 5000
-                })
+        } else if (id >= 1) {
+            // All published articles remain in sitemaps 1..12 (zero pages lost), protected by withDbRetry against empty responses
+            const chunkSize = 5000;
+            const skip = (id - 1) * chunkSize;
+
+            const [expertsData, articles] = await withDbRetry(() =>
+                Promise.all([
+                    prisma.expert.findMany({ select: { id: true, slug: true } }),
+                    prisma.article.findMany({
+                        where: { status: 'PUBLISHED' },
+                        skip: skip,
+                        take: chunkSize,
+                        select: { slug: true, updatedAt: true, expertId: true },
+                        orderBy: { updatedAt: 'desc' }
+                    })
+                ])
             );
 
-            const urls = articles.map(a =>
-                `  <url><loc>${BASE_URL}/entreprise/${a.expert.slug}/articles/${a.slug}</loc><lastmod>${a.updatedAt.toISOString()}</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>`
-            );
+            const expertMap = new Map(expertsData.map(e => [e.id, e.slug]));
+
+            const urls = articles
+                .filter(a => expertMap.has(a.expertId))
+                .map(a =>
+                    `  <url><loc>${BASE_URL}/entreprise/${expertMap.get(a.expertId)}/articles/${a.slug}</loc><lastmod>${a.updatedAt.toISOString()}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>`
+                );
 
             xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>`;
         } else {
@@ -144,7 +158,7 @@ export async function GET(
 
     } catch (err: any) {
         console.error('Sitemap error:', err);
-        // Never return HTTP 200 with an empty/broken sitemap on DB timeout! Return 500 with no-store so Google keeps the previous valid sitemap.
+        // Never return HTTP 200 with an empty/broken sitemap on DB timeout! Return 503 with no-store so Google keeps the previous valid sitemap.
         return new NextResponse('Service Unavailable', {
             status: 503,
             headers: {

@@ -5,7 +5,6 @@ import { fr } from "date-fns/locale";
 import { ArrowRight, Calendar, User, MapPin } from "lucide-react";
 import { Metadata } from "next";
 import { prisma, withDbRetry } from "@/lib/prisma";
-import activeArticleSlugsList from "@/data/seo-active-articles-whitelist.json";
 
 const SYSTEM_SLUGS = ["gainable-fr", "redaction-gainable", "bureau-etude-gainable"];
 
@@ -29,7 +28,7 @@ async function getArticlesData(page: number) {
     };
 
     return await withDbRetry(async () => {
-        const [artisanCount, whitelistCount] = await Promise.all([
+        const [artisanCount, systemCount] = await Promise.all([
             prisma.article.count({
                 where: {
                     status: 'PUBLISHED',
@@ -39,13 +38,12 @@ async function getArticlesData(page: number) {
             prisma.article.count({
                 where: {
                     status: 'PUBLISHED',
-                    expert: { slug: { in: SYSTEM_SLUGS } },
-                    slug: { in: activeArticleSlugsList as string[] }
+                    expert: { slug: { in: SYSTEM_SLUGS } }
                 }
             })
         ]);
 
-        const totalCount = artisanCount + whitelistCount;
+        const totalCount = artisanCount + systemCount;
         let articles: any[] = [];
 
         if (skip < artisanCount) {
@@ -64,19 +62,18 @@ async function getArticlesData(page: number) {
 
         if (articles.length < take) {
             const remainingTake = take - articles.length;
-            const whitelistSkip = Math.max(0, skip - artisanCount);
-            const whitelistedArticles = await prisma.article.findMany({
+            const systemSkip = Math.max(0, skip - artisanCount);
+            const systemArticles = await prisma.article.findMany({
                 where: {
                     status: 'PUBLISHED',
-                    expert: { slug: { in: SYSTEM_SLUGS } },
-                    slug: { in: activeArticleSlugsList as string[] }
+                    expert: { slug: { in: SYSTEM_SLUGS } }
                 },
                 orderBy: { updatedAt: 'desc' },
                 take: remainingTake,
-                skip: whitelistSkip,
+                skip: systemSkip,
                 include: { expert: { select: expertSelect } }
             });
-            articles = [...articles, ...whitelistedArticles];
+            articles = [...articles, ...systemArticles];
         }
 
         return { articles, totalCount, totalPages: Math.max(1, Math.ceil(totalCount / take)) };
