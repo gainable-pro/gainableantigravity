@@ -5,6 +5,7 @@ import * as jose from 'jose';
 import { cookies } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
+import { notifyGoogleIndexing } from "@/lib/google-indexing";
 
 const JWT_SECRET = process.env.JWT_SECRET || "super-secret-key-change-this";
 
@@ -325,6 +326,10 @@ export async function POST(req: Request) {
                 if (body.targetCity) {
                     revalidatePath(`/climatisation/${slugify(body.targetCity)}`);
                 }
+
+                // Automatic Google Indexing API ping
+                notifyGoogleIndexing(`https://www.gainable.fr/entreprise/${expert.slug}/articles/${newArticle.slug}`).catch(() => {});
+                notifyGoogleIndexing(`https://www.gainable.fr/pro/${expert.slug}`).catch(() => {});
             } catch (revalErr) {
                 console.warn("Revalidate warning after article creation:", revalErr);
             }

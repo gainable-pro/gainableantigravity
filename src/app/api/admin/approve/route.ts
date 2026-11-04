@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
+import { revalidatePath } from "next/cache";
+import { notifyGoogleIndexing } from "@/lib/google-indexing";
 
 const JWT_SECRET = process.env.JWT_SECRET || "default_super_secret_for_dev_only";
 
@@ -19,10 +21,23 @@ export async function POST(req: Request) {
 
         const { expertId } = await req.json();
 
-        await prisma.expert.update({
+        const updatedExpert = await prisma.expert.update({
             where: { id: expertId },
-            data: { status: 'active' } // Activate!
+            data: { status: 'active' }, // Activate!
+            select: { slug: true }
         });
+
+        try {
+            revalidatePath(`/pro/${updatedExpert.slug}`);
+            revalidatePath('/');
+            revalidatePath('/trouver-installateur');
+            revalidatePath('/sitemap/0');
+            revalidatePath('/sitemap-index');
+
+            notifyGoogleIndexing(`https://www.gainable.fr/pro/${updatedExpert.slug}`).catch(() => {});
+        } catch (revalErr) {
+            console.warn("Revalidation warning on expert approval:", revalErr);
+        }
 
         return NextResponse.json({ success: true });
 
