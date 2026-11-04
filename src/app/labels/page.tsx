@@ -76,6 +76,13 @@ export default function LabelsPage() {
                         Gage de Confiance • Sérénité Client • Distinction Artisan
                     </div>
 
+                    {/* Premier affichage officiel du Badge en haut de page */}
+                    <div className="flex justify-center mb-8">
+                        <div className="p-2.5 sm:p-3.5 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                            <VerifiedExpertBadge size="md" />
+                        </div>
+                    </div>
+
                     <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-tight uppercase font-montserrat text-white">
                         Installer une climatisation gainable en toute <br />
                         <span className="text-[#D59B2B] normal-case block mt-3 font-extrabold text-2xl md:text-4xl">
