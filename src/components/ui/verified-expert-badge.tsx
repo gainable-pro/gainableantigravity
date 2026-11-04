@@ -44,23 +44,29 @@ export function VerifiedExpertBadge({ size = "md", className = "" }: VerifiedExp
                         @keyframes textHeartbeat {
                             0%, 100% {
                                 transform: scale(1);
+                                filter: drop-shadow(0 0 0 rgba(213, 155, 43, 0));
                             }
                             14% {
-                                transform: scale(1.032);
+                                transform: scale(1.055);
+                                filter: drop-shadow(0 2px 8px rgba(213, 155, 43, 0.45));
                             }
                             28% {
-                                transform: scale(1);
+                                transform: scale(1.015);
+                                filter: drop-shadow(0 0 0 rgba(213, 155, 43, 0));
                             }
                             42% {
-                                transform: scale(1.02);
+                                transform: scale(1.045);
+                                filter: drop-shadow(0 2px 6px rgba(213, 155, 43, 0.35));
                             }
-                            60% {
+                            56% {
                                 transform: scale(1);
+                                filter: drop-shadow(0 0 0 rgba(213, 155, 43, 0));
                             }
                         }
                         .gainable-text-heartbeat {
-                            transform-origin: 280px 85px;
-                            animation: textHeartbeat 2.6s ease-in-out infinite;
+                            transform-box: fill-box;
+                            transform-origin: center center;
+                            animation: textHeartbeat 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
                         }
                     `}</style>
                 </defs>
