@@ -26,3 +26,4 @@ export async function notifyGoogleIndexing(url: string, type: 'URL_UPDATED' | 'U
         return { success: false, error: error.message };
     }
 }
+
