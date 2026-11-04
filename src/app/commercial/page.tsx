@@ -41,7 +41,7 @@ export default function CommercialDashboard() {
     const [stats, setStats] = useState<DashboardStats | null>(null);
     const [loading, setLoading] = useState(true);
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [selectedPrice, setSelectedPrice] = useState(850);
+    const [selectedPrice, setSelectedPrice] = useState(1200);
 
     useEffect(() => {
         const fetchStats = async () => {
@@ -201,7 +201,7 @@ export default function CommercialDashboard() {
                                 <ChevronRight className="h-4 w-4" />
                             </button>
                         </div>
-                        <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1.5 rounded hidden md:block">Tarifs : CVC 850€ HT, Diag 750€ HT</span>
+                        <span className="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1.5 rounded hidden md:block">Tarifs : CVC 1 200€ HT, Diag 750€ HT</span>
                     </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -266,7 +266,7 @@ export default function CommercialDashboard() {
                                 <p className="text-amber-400 font-bold uppercase tracking-widest text-xs mb-2">Mode de calcul personnalisé</p>
                                 <p className="text-3xl font-black text-white">Taux fixe à {stats.fixedRateValue}%</p>
                                 <p className="text-slate-300 text-sm mt-3 max-w-xl mx-auto">
-                                    Votre compte bénéficie d'un taux de commission fixe personnalisé à {stats.fixedRateValue}% sur le montant HT de chaque vente (ex : {850 * (stats.fixedRateValue || 17) / 100} € HT pour un Expert CVC et {750 * (stats.fixedRateValue || 17) / 100} € HT pour un Diag Immo), indépendamment du nombre de ventes journalières.
+                                    Votre compte bénéficie d'un taux de commission fixe personnalisé à {stats.fixedRateValue}% sur le montant HT de chaque vente (ex : {1200 * (stats.fixedRateValue || 17) / 100} € HT pour un Expert CVC et {750 * (stats.fixedRateValue || 17) / 100} € HT pour un Diag Immo), indépendamment du nombre de ventes journalières.
                                 </p>
                             </div>
 
@@ -281,7 +281,7 @@ export default function CommercialDashboard() {
                                             onChange={(e) => setSelectedPrice(Number(e.target.value))}
                                             className="bg-slate-800 text-white text-xs border border-white/20 rounded px-2.5 py-1 outline-none font-bold"
                                         >
-                                            <option value={850}>850 € HT (Expert CVC)</option>
+                                            <option value={1200}>1 200 € HT (Expert CVC)</option>
                                             <option value={750}>750 € HT (Diag Immo)</option>
                                         </select>
                                     </div>
@@ -343,7 +343,7 @@ export default function CommercialDashboard() {
                                             onChange={(e) => setSelectedPrice(Number(e.target.value))}
                                             className="bg-slate-800 text-white text-xs border border-white/20 rounded px-2.5 py-1 outline-none font-bold"
                                         >
-                                            <option value={850}>850 € HT (Expert CVC)</option>
+                                            <option value={1200}>1 200 € HT (Expert CVC)</option>
                                             <option value={750}>750 € HT (Diag Immo)</option>
                                         </select>
                                     </div>

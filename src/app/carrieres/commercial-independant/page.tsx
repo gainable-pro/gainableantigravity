@@ -28,7 +28,7 @@ import EarningCalculator from "./EarningCalculator";
 
 export const metadata = {
   title: "Consultant / Commercial B2B Indépendant — SaaS & Digital BTP (H/F) | Gainable.fr",
-  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commission Fixe 17% HT + 10% récurrent annuel au renouvellement sur abonnements 750€ & 850€ HT.",
+  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commission Fixe 17% HT + 10% récurrent annuel au renouvellement sur abonnements 750€ & 1 200€ HT.",
   alternates: {
     canonical: "https://www.gainable.fr/carrieres/commercial-independant",
   },
@@ -92,7 +92,7 @@ export default function CommercialJobPage() {
                 {[
                   { label: "Commission Directe", value: "17% HT Fixe" },
                   { label: "Récurrent Annuel", value: "10% / an" },
-                  { label: "Formules HT", value: "750€ & 850€" },
+                  { label: "Formules HT", value: "750€ & 1 200€" },
                   { label: "Mode de Travail", value: "Télétravail 100%" }
                 ].map((stat, idx) => (
                   <div key={idx} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center">
@@ -213,7 +213,7 @@ export default function CommercialJobPage() {
                   },
                   {
                     title: "Commercialisation de la solution SaaS",
-                    desc: "Vente des formules d'abonnements annuels de visibilité et référencement (750 € HT & 850 € HT).",
+                    desc: "Vente des formules d'abonnements annuels de visibilité et référencement (750 € HT & 1 200 € HT).",
                     icon: <Award className="w-5 h-5 text-emerald-500" />
                   },
                   {
@@ -252,7 +252,7 @@ export default function CommercialJobPage() {
                     <h4 className="font-black text-lg">17% HT Commission Directe Fixe</h4>
                   </div>
                   <p className="text-slate-300 text-xs leading-relaxed">
-                    Sur chaque abonnement commercialisé (750 € HT ou 850 € HT), vous percevez un taux fixe immédiat de <strong>17% HT</strong> dès la première vente.
+                    Sur chaque abonnement commercialisé (750 € HT ou 1 200 € HT), vous percevez un taux fixe immédiat de <strong>17% HT</strong> dès la première vente.
                   </p>
                 </div>
 
@@ -281,12 +281,12 @@ export default function CommercialJobPage() {
               </div>
             </div>
 
-            {/* Tableau des Formules & Commissions (750€ & 850€ HT) */}
+            {/* Tableau des Formules & Commissions (750€ & 1 200€ HT) */}
             <div className="bg-white rounded-3xl p-8 border border-slate-200/70 shadow-sm space-y-6">
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div>
                   <h2 className="text-2xl font-black text-[#1F2D3D]">Tableau des Commissions & Formules HT</h2>
-                  <p className="text-xs text-slate-400 font-medium">Formules d'abonnements 750 € HT et 850 € HT à 17% HT de commission fixe</p>
+                  <p className="text-xs text-slate-400 font-medium">Formules d'abonnements 750 € HT et 1 200 € HT à 17% HT de commission fixe</p>
                 </div>
                 <Badge className="bg-[#D59B2B] text-white font-bold text-xs">Taux Fixe 17% HT</Badge>
               </div>
@@ -308,10 +308,10 @@ export default function CommercialJobPage() {
                   <Badge className="bg-[#D59B2B] text-white border-none font-bold text-[10px] uppercase">
                     Formule Premium
                   </Badge>
-                  <p className="text-3xl font-black text-[#D59B2B]">850 € HT</p>
+                  <p className="text-3xl font-black text-[#D59B2B]">1 200 € HT</p>
                   <div className="pt-2 text-xs text-slate-300 font-medium space-y-1 border-t border-slate-700">
-                    <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 144,50 € HT / vente</p>
-                    <p className="text-emerald-400 font-semibold">Récurrent Année 2+ (10%) : 85,00 € HT / an</p>
+                    <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 204,00 € HT / vente</p>
+                    <p className="text-emerald-400 font-semibold">Récurrent Année 2+ (10%) : 120,00 € HT / an</p>
                   </div>
                 </div>
               </div>
@@ -325,16 +325,16 @@ export default function CommercialJobPage() {
                         <th className="px-6 py-4 font-bold">Ventes / jour (20j/m)</th>
                         <th className="px-6 py-4 font-bold">CA Formule 750 € HT</th>
                         <th className="px-6 py-4 font-bold text-[#D59B2B]">Com. Mensuelle (750€)</th>
-                        <th className="px-6 py-4 font-bold">CA Formule 850 € HT</th>
-                        <th className="px-6 py-4 font-bold text-emerald-600">Com. Mensuelle (850€)</th>
+                        <th className="px-6 py-4 font-bold">CA Formule 1 200 € HT</th>
+                        <th className="px-6 py-4 font-bold text-emerald-600">Com. Mensuelle (1 200€)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-200 text-slate-800 font-medium">
                       {[
-                        { count: "1 vente / j", ca750: "15 000 €", comm750: "2 550 € HT", ca850: "17 000 €", comm850: "2 890 € HT" },
-                        { count: "2 ventes / j", ca750: "30 000 €", comm750: "5 100 € HT", ca850: "34 000 €", comm850: "5 780 € HT" },
-                        { count: "3 ventes / j", ca750: "45 000 €", comm750: "7 650 € HT", ca850: "51 000 €", comm850: "8 670 € HT" },
-                        { count: "4 ventes / j", ca750: "60 000 €", comm750: "10 200 € HT", ca850: "68 000 €", comm850: "11 560 € HT" },
+                        { count: "1 vente / j", ca750: "15 000 €", comm750: "2 550 € HT", ca850: "24 000 €", comm850: "4 080 € HT" },
+                        { count: "2 ventes / j", ca750: "30 000 €", comm750: "5 100 € HT", ca850: "48 000 €", comm850: "8 160 € HT" },
+                        { count: "3 ventes / j", ca750: "45 000 €", comm750: "7 650 € HT", ca850: "72 000 €", comm850: "12 240 € HT" },
+                        { count: "4 ventes / j", ca750: "60 000 €", comm750: "10 200 € HT", ca850: "96 000 €", comm850: "16 320 € HT" },
                       ].map((row, i) => (
                         <tr key={i} className="hover:bg-slate-100/60 transition-colors">
                           <td className="px-6 py-4 font-bold text-slate-900">{row.count}</td>
@@ -456,7 +456,7 @@ export default function CommercialJobPage() {
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-100 pb-2">
                     <span className="text-slate-500">Formules</span>
-                    <span className="font-bold text-slate-900">750 € & 850 € HT</span>
+                    <span className="font-bold text-slate-900">750 € & 1 200 € HT</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-100 pb-2">
                     <span className="text-slate-500">Commission Fixe</span>
@@ -527,7 +527,7 @@ export default function CommercialJobPage() {
             </Link>
           </div>
           <p className="text-slate-400 text-xs font-semibold pt-2">
-            100% Indépendant | 17% HT Fixe + 10% Récurrent Annuel | Formules 750€ & 850€ HT
+            100% Indépendant | 17% HT Fixe + 10% Récurrent Annuel | Formules 750€ & 1 200€ HT
           </p>
         </div>
       </section>

@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
 
             // Handle Commercial Prospect Sale
             if (prospectId && commercialId) {
-                const amountPaid = session.amount_total ? session.amount_total / 100 : 850;
+                const amountPaid = session.amount_total ? session.amount_total / 100 : 1200;
                 
                 try {
                     await prisma.commercialProspect.update({

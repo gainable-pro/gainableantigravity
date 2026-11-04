@@ -117,7 +117,7 @@ const FUNNEL_STEPS = [
       "2-3 min : Preuve d'exclusivité — Montrez la carte de sa zone",
       "3-4 min : Google live — Tapez 'gainable [Ville]', montrez notre position",
       "4-5 min : Envoyez le lien Stripe. Restez en ligne pendant la saisie",
-      "Si hésitation : code EXCLU10 (-10%) = 765 € au lieu de 850 € HT",
+      "Si hésitation : code EXCLU10 (-10%) = 1 080 € au lieu de 1 200 € HT",
     ],
     tip: "Ne raccrochez JAMAIS pendant la saisie Stripe. Chaque silence, il faut meubler.",
     kpi: "Taux de conversion démo → vente : 40-60%",
@@ -147,9 +147,9 @@ const OBJECTIONS = [
     color: "red",
     items: [
       {
-        obj: "C'est trop cher — 850 € c'est beaucoup",
+        obj: "C'est trop cher — 1 200 € c'est beaucoup",
         response:
-          "« Combien vous rapporte une pose gainable en moyenne ? Entre 8 000 € et 15 000 €. Avec Gainable.fr, il vous suffit de signer UN seul chantier par an pour rentabiliser votre adhésion pour les 10 prochaines années. Et ça représente 2,33 € par jour — moins qu'un café. »",
+          "« Combien vous rapporte une pose gainable en moyenne ? Entre 8 000 € et 15 000 €. Avec Gainable.fr, il vous suffit de signer UN seul chantier par an pour rentabiliser votre adhésion pour les 10 prochaines années. Et ça représente 3,28 € par jour — moins qu'un café. »",
         tip: "Divisez toujours le tarif annuel par 365 jours. L'effet psychologique est immédiat.",
       },
       {
@@ -332,7 +332,7 @@ const CONVERSION_TIPS = [
     tips: [
       "Envoyez le lien Stripe pendant qu'il est en ligne — 70% des bails meurent 'je le fais ce soir'",
       "Le code EXCLU10 n'est utilisé QU'après une vraie résistance, jamais en premier",
-      "Proposez toujours 2 options : 850 € ou 750 € — jamais une seule",
+      "Proposez toujours 2 options : 1 200 € ou 750 € — jamais une seule",
       "Reformulez l'objection avant de répondre — il se sent entendu",
       "Silence de 3-5 sec après votre close = puissant. Ne le rompez pas le premier",
     ],
@@ -442,7 +442,7 @@ const MINDSET_SECTIONS = [
     quote: "« Ce qu'on célèbre, on le reproduit. »",
     author: "Psychologie de la performance",
     content:
-      "Une vente à 850 € HT, c'est entre 85 € et 127 € de commission selon votre grille. C'est concret. Mais une vente, c'est aussi une zone sécurisée, un artisan qui va générer des chantiers, et une prochaine vente plus facile avec la preuve de l'existence d'un partenaire local.",
+      "Une vente à 1 200 € HT, c'est 204 € de commission fixe (17%). C'est concret. Mais une vente, c'est aussi une zone sécurisée, un artisan qui va générer des chantiers, et une prochaine vente plus facile avec la preuve de l'existence d'un partenaire local.",
     actions: [
       "Notez chaque vente dans un carnet visible — la liste grandit, ça motive",
       "Partagez vos succès avec vos collègues — la compétition saine élève tout le monde",
@@ -544,7 +544,7 @@ export default function PlaybookPage() {
           </div>
           <div className="hidden lg:grid grid-cols-2 gap-3 text-center">
             <div className="bg-white/10 rounded-xl p-4">
-              <div className="text-2xl font-black text-amber-300">850 €</div>
+              <div className="text-2xl font-black text-amber-300">1 200 €</div>
               <div className="text-xs text-slate-400">Offre Expert CVC</div>
             </div>
             <div className="bg-white/10 rounded-xl p-4">
@@ -1164,7 +1164,7 @@ export default function PlaybookPage() {
                     },
                     {
                       criteria: "Prix / Coût annuel",
-                      gainable: { val: "✅ 850 € HT fixe/an", good: true },
+                      gainable: { val: "✅ 1 200 € HT fixe/an", good: true },
                       bilik: { val: "⚠️ % commission par vente", good: false },
                       travaux: { val: "⚠️ 40-80 €/lead + abonnement", good: false },
                       selocal: { val: "⚠️ Variable selon région", good: false },

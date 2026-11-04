@@ -157,14 +157,14 @@ export function SubscribeView({ expertId, email, defaultPlanType, isSuccess }: S
                         <div className="border-y border-slate-100 py-3 my-2">
                             <div className="flex items-baseline gap-1">
                                 <span className="text-3xl font-extrabold text-[#1F2D3D]">
-                                    {interval === 'yearly' ? '850 €' : '85 €'}
+                                    {interval === 'yearly' ? '1 200 €' : '120 €'}
                                 </span>
                                 <span className="text-slate-500 text-xs font-medium">
                                     HT / {interval === 'yearly' ? 'an' : 'mois'}
                                 </span>
                             </div>
                             <p className="text-[11px] text-slate-400 mt-0.5">
-                                {interval === 'yearly' ? 'Soit 1 020 € TTC / an' : 'Soit 102 € TTC / mois'}
+                                {interval === 'yearly' ? 'Soit 1 440 € TTC / an (au lieu de 1 550 € HT)' : 'Soit 144 € TTC / mois'}
                             </p>
                         </div>
 

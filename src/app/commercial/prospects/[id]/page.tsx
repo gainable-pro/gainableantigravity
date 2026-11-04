@@ -75,7 +75,7 @@ export default function EditProspect() {
         setEmailErrorDetails("");
 
         try {
-            const planId = basePrice === 850 ? "cvc" : "diag";
+            const planId = basePrice === 1200 ? "cvc" : "diag";
             const res = await fetch("/api/commercial/payment-link", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -133,7 +133,7 @@ export default function EditProspect() {
         dateVente: new Date().toISOString().split("T")[0]
     });
 
-    const [basePrice, setBasePrice] = useState<850 | 750>(850);
+    const [basePrice, setBasePrice] = useState<1200 | 750>(1200);
     const [discount, setDiscount] = useState<0 | 0.05 | 0.10>(0);
 
     const [sales, setSales] = useState<any[]>([]);
@@ -480,7 +480,7 @@ export default function EditProspect() {
                                     onChange={e => setBasePrice(Number(e.target.value) as any)}
                                     className="w-full p-2 bg-slate-800 border border-slate-700 rounded text-sm text-white font-medium focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value={850}>Expert CVC (850 € HT)</option>
+                                    <option value={1200}>Expert CVC (1 200 € HT)</option>
                                     <option value={750}>Diag Immo (750 € HT)</option>
                                 </select>
                             </div>
@@ -574,7 +574,7 @@ export default function EditProspect() {
                                     onChange={e => setBasePrice(Number(e.target.value) as any)}
                                     className="w-full p-2 border border-emerald-200 rounded focus:ring-2 focus:ring-emerald-500 bg-white text-slate-800 font-medium"
                                 >
-                                    <option value={850}>Expert CVC (850 € HT)</option>
+                                    <option value={1200}>Expert CVC (1 200 € HT)</option>
                                     <option value={750}>Diag Immo (750 € HT)</option>
                                 </select>
                             </div>

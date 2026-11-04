@@ -7,7 +7,7 @@ import { Sparkles, TrendingUp, DollarSign, Target, RefreshCw } from "lucide-reac
 
 export default function EarningCalculator() {
   const [salesPerDay, setSalesPerDay] = useState(2);
-  const [basketSize, setBasketSize] = useState(850); // 850€ HT default (Formule Premium)
+  const [basketSize, setBasketSize] = useState(1200); // 1200€ HT default (Formule Premium)
   const daysWorked = 20;
 
   // Fixed 17% HT direct commission
@@ -39,7 +39,7 @@ export default function EarningCalculator() {
 
         {/* Formule selector & Sales per day */}
         <div className="space-y-5">
-          {/* Abonnement Tier Selection: 750 € HT vs 850 € HT */}
+          {/* Abonnement Tier Selection: 750 € HT vs 1 200 € HT */}
           <div className="space-y-2">
             <label className="text-xs font-bold text-slate-300 uppercase tracking-wider block">
               Formule Abonnement (Panier HT)
@@ -60,14 +60,14 @@ export default function EarningCalculator() {
 
               <button
                 type="button"
-                onClick={() => setBasketSize(850)}
+                onClick={() => setBasketSize(1200)}
                 className={`p-3.5 rounded-2xl border text-center transition-all ${
-                  basketSize === 850
+                  basketSize === 1200
                     ? 'bg-[#D59B2B] text-white border-[#D59B2B] font-black shadow-lg scale-[1.02]'
                     : 'bg-slate-800/80 text-slate-300 border-slate-700 hover:border-slate-500 font-semibold'
                 }`}
               >
-                <span className="block text-lg">850 € HT</span>
+                <span className="block text-lg">1 200 € HT</span>
                 <span className="text-[10px] opacity-80 block font-normal">Formule Premium</span>
               </button>
             </div>

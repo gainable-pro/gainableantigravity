@@ -37,7 +37,7 @@ export default function CareersPage() {
       type: "Indépendant / Freelance",
       description: "Prospection ciblée (Cold Call) et démonstration de valeur auprès des gérants d'entreprises CVC, diagnostiqueurs et bureaux d'études.",
       icon: <Users className="w-6 h-6 text-[#D59B2B]" />,
-      perks: ["17% HT commission fixe", "Formules 750€ & 850€ HT", "10% récurrent annuel"],
+      perks: ["17% HT commission fixe", "Formules 750€ & 1 200€ HT", "10% récurrent annuel"],
       detailsUrl: "/carrieres/commercial-independant"
     },
     {
@@ -199,11 +199,11 @@ export default function CareersPage() {
                 </thead>
                 <tbody className="text-white divide-y divide-white/5 font-medium">
                   {[
-                    { count: "1", ca: "650 €", comm: "65 €", monthly: "1 300 €" },
-                    { count: "2", ca: "1 300 €", comm: "156 €", monthly: "3 120 €" },
-                    { count: "3", ca: "1 950 €", comm: "253,50 €", monthly: "5 070 €" },
-                    { count: "4", ca: "2 600 €", comm: "390 €", monthly: "7 800 €" },
-                    { count: "5", ca: "3 250 €", comm: "552,50 €", monthly: "11 050 €" },
+                    { count: "1", ca: "1 200 €", comm: "120 €", monthly: "2 400 €" },
+                    { count: "2", ca: "2 400 €", comm: "288 €", monthly: "5 760 €" },
+                    { count: "3", ca: "3 600 €", comm: "468 €", monthly: "9 360 €" },
+                    { count: "4", ca: "4 800 €", comm: "720 €", monthly: "14 400 €" },
+                    { count: "5", ca: "6 000 €", comm: "1 020 €", monthly: "20 400 €" },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-white/5 transition-colors">
                       <td className="px-8 py-6 font-black text-xl">{row.count}</td>
@@ -216,7 +216,7 @@ export default function CareersPage() {
               </table>
             </div>
           </div>
-          <p className="text-center text-slate-500 text-xs mt-8">* Basé sur 20 jours de prospection / mois. Panier moyen constaté de 650€ HT.</p>
+          <p className="text-center text-slate-500 text-xs mt-8">* Basé sur 20 jours de prospection / mois. Tarif de référence Expert CVC de 1 200€ HT.</p>
         </div>
       </section>
 

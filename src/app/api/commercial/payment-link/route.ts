@@ -34,8 +34,8 @@ export async function POST(req: Request) {
             });
         }
 
-        const priceMap: Record<string, number> = { cvc: 850, diag: 750 };
-        const baseAmount = priceMap[planId] || 850;
+        const priceMap: Record<string, number> = { cvc: 1200, diag: 750 };
+        const baseAmount = priceMap[planId] || 1200;
         const discount = Number(discountRate) || 0;
         const finalPrice = Math.round(baseAmount * (1 - discount));
 

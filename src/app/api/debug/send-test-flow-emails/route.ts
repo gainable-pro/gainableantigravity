@@ -28,7 +28,7 @@ export async function GET(req: Request) {
                     <p style="margin: 0; font-weight: bold; color: #1E293B; font-size: 15px;">Détails de l'offre réservée :</p>
                     <ul style="margin: 10px 0 0 0; padding-left: 20px; color: #334155; font-size: 14px;">
                         <li>Formule : <strong>Expert CVC Climatisation (Label G & Fiche Dédiée)</strong></li>
-                        <li>Tarif négocié : <strong>850,00 € HT / an</strong></li>
+                        <li>Tarif négocié : <strong>1 200,00 € HT / an</strong></li>
                     </ul>
                 </div>
 

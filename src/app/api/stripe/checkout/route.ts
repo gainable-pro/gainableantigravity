@@ -38,9 +38,9 @@ export async function POST(req: NextRequest) {
 
         if (planId === 'cvc') {
             if (interval === 'monthly') {
-                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY || 'price_1ThvjKGfw444kXxvQ8ypVgxa';
+                priceId = process.env.STRIPE_PRICE_CVC_MONTHLY_120 || 'price_1UXruXGfw444kXxvFJGU7dbA';
             } else {
-                priceId = process.env.STRIPE_PRICE_CVC || 'price_1ThviWGfw444kXxvdJrfcGwj';
+                priceId = process.env.STRIPE_PRICE_CVC_1200 || 'price_1UXru5Gfw444kXxv9AB77PIA';
             }
         } else if (planId === 'diag') {
             if (interval === 'monthly') {
