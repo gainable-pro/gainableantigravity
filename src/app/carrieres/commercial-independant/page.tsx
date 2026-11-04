@@ -177,7 +177,7 @@ export default function CommercialJobPage() {
                   preload="metadata"
                   className="w-full h-full object-cover"
                 >
-                  <source src="/videos/gainable-lancement-motion.mp4" type="video/mp4" />
+                  <source src="/videos/gainable-lancement-motion.mp4?v=2" type="video/mp4" />
                   Votre navigateur ne supporte pas la lecture de la vidéo.
                 </video>
               </div>

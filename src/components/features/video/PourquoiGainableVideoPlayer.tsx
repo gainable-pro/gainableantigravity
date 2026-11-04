@@ -21,8 +21,8 @@ function VideoPlayerInner() {
     }, []);
 
     const activeSrc = isMobile
-        ? "/videos/gainable-lancement-motion-mobile.mp4"
-        : "/videos/gainable-lancement-motion.mp4";
+        ? "/videos/gainable-lancement-motion-mobile.mp4?v=2"
+        : "/videos/gainable-lancement-motion.mp4?v=2";
 
     useEffect(() => {
         const video = videoRef.current;
