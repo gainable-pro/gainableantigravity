@@ -25,7 +25,11 @@ import {
     Building,
     CheckCircle,
     UserCheck,
-    Lock
+    Lock,
+    Scale,
+    Wrench,
+    BadgeAlert,
+    FileCheck2
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,17 +38,17 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Label Expert Vérifié Gainable.fr : La Référence Qualité en Climatisation",
-    description: "Découvrez le label Expert Vérifié Gainable.fr : comment notre contrôle documentaire rigoureux protège les particuliers contre les entreprises éphémères, les fausses décennales et les abandons de SAV.",
+    description: "Découvrez le label Expert Vérifié Gainable.fr : notre protocole de contrôle sur pièces pour protéger les particuliers contre les malfaçons, les fausses décennales et les sociétés éphémères.",
     openGraph: {
         title: "Label Expert Vérifié Gainable.fr : La Référence Qualité en Climatisation",
-        description: "Découvrez le label Expert Vérifié Gainable.fr : comment notre contrôle documentaire rigoureux protège les particuliers contre les entreprises éphémères, les fausses décennales et les abandons de SAV.",
+        description: "Découvrez le label Expert Vérifié Gainable.fr : notre protocole de contrôle sur pièces pour protéger les particuliers contre les malfaçons, les fausses décennales et les sociétés éphémères.",
         images: ['/gainable-fr-label-qualite-climatisation-rge.png'],
         type: 'website',
     },
     twitter: {
         card: "summary_large_image",
         title: "Label Expert Vérifié Gainable.fr : La Référence Qualité en Climatisation",
-        description: "Découvrez le label Expert Vérifié Gainable.fr : comment notre contrôle documentaire rigoureux protège les particuliers contre les entreprises éphémères, les fausses décennales et les abandons de SAV.",
+        description: "Découvrez le label Expert Vérifié Gainable.fr : notre protocole de contrôle sur pièces pour protéger les particuliers contre les malfaçons, les fausses décennales et les sociétés éphémères.",
     },
     alternates: {
         canonical: "https://www.gainable.fr/labels",
@@ -56,7 +60,7 @@ export default function LabelsPage() {
         <div className="flex min-h-screen flex-col font-sans text-[#1F2D3D] bg-white">
 
             {/* HERO SECTION */}
-            <section className="relative min-h-[520px] flex items-center justify-center py-20 px-4 overflow-hidden">
+            <section className="relative min-h-[540px] flex items-center justify-center py-20 px-4 overflow-hidden">
                 <div
                     className="absolute inset-0 z-0 bg-cover bg-center"
                     style={{ backgroundImage: "url('/gainable-fr-label-qualite-climatisation-rge.png')" }}
@@ -80,7 +84,7 @@ export default function LabelsPage() {
                     <p className="text-base md:text-xl text-slate-200 mb-10 max-w-3xl mx-auto font-normal leading-relaxed">
                         Un système gainable s’encastre au cœur de vos plafonds et de vos combles pour les 15 prochaines années. 
                         Ce n'est pas un simple appareil électroménager : c'est un investissement lourd entre <strong>8 000 € et 25 000 €</strong>. 
-                        Le Label <strong>Expert Vérifié Réseau Gainable®</strong> a été conçu pour filtrer sur pièces justificatives les entreprises sérieuses, 
+                        Le Label <strong>Expert Vérifié Réseau Gainable®</strong> a été forgé pour filtrer sur pièces justificatives les entreprises sérieuses, 
                         protéger les familles contre les poseurs fantômes et valoriser les artisans qui ont le courage d’être irréprochables.
                     </p>
 
@@ -244,6 +248,274 @@ export default function LabelsPage() {
                 </div>
             </section>
 
+            {/* SECTION 2: LE BOUCLIER DE SÉCURITÉ EN 5 VERROUS (VERSION HAUT DE GAMME & ULTRA-DÉTAILLÉE) */}
+            <section className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
+                <div className="container max-w-6xl mx-auto px-4">
+                    
+                    {/* Header Section */}
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20 text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" /> Le Bouclier de Sécurité Gainable.fr
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-black font-montserrat text-[#1F2D3D] mb-5 tracking-tight">
+                            5 Verrous de Sécurité Implacables
+                        </h2>
+                        <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+                            Chaque installateur candidat au label subit un contrôle documentaire systématique sur pièces justificatives. 
+                            Voici exactement ce que nous exigeons, et le piège précis que cela vous évite :
+                        </p>
+                    </div>
+
+                    {/* The 5 Grand Verrous Grid */}
+                    <div className="space-y-6">
+
+                        {/* VERROU 01: DÉCENNALE CVC */}
+                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-emerald-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                                <div className="flex items-start sm:items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                                        01
+                                    </div>
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold uppercase mb-1">
+                                            <Shield className="w-3.5 h-3.5" /> Verrou N°1 • Assurance Chantier
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
+                                            Assurance Décennale CVC Spécifique & Validée
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-700 font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-emerald-500/20">
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Attestation Originale Contrôlée
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-6">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                                        <FileCheck2 className="w-4 h-4 text-emerald-600" /> Ce que nous vérifions sur pièces :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                                        Attestation d'assurance de l'année en cours avec contrôle des lignes de garantie : 
+                                        mention expresse <strong>« Génie Climatique / Climatisation Réversible / Aéraulique »</strong>. 
+                                        Nous vérifions le paiement de la prime pour certifier que la couverture n'est pas suspendue.
+                                    </p>
+                                </div>
+
+                                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-2">
+                                    <p className="text-xs font-black uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                                        <AlertTriangle className="w-4 h-4 text-rose-600" /> Le cauchemar que vous évitez :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                                        Un bac à condensats déborde dans les combles et fait effondrer 30 m² de plâtre sur votre salon. 
+                                        Si l'artisan n'était assuré qu'en <em>« plomberie générale »</em> ou <em>« peinture »</em>, 
+                                        <strong> l'assureur refuse d'indemniser</strong>. Vous devriez payer 10 000 € de réparations de votre poche.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* VERROU 02: IDENTITÉ & SOLVABILITÉ */}
+                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-blue-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                                <div className="flex items-start sm:items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                                        02
+                                    </div>
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blue-50 text-blue-800 text-xs font-bold uppercase mb-1">
+                                            <Building2 className="w-3.5 h-3.5" /> Verrou N°2 • Existence Juridique
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
+                                            SIRET Actif, Ancienneté & Zéro Société Éphémère
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-500/10 text-blue-700 font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-blue-500/20">
+                                    <CheckCircle2 className="w-4 h-4 text-blue-600" /> Registre INSEE & Infogreffe en Direct
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-6">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                                        <FileCheck2 className="w-4 h-4 text-blue-600" /> Ce que nous vérifions sur pièces :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                                        Vérification du numéro SIRET/SIREN, code NAF/APE compatible (4322B Installation de climatisation), 
+                                        siège social réel en France, absence de procédure collective ou de radiation, compte bancaire professionnel officiel.
+                                    </p>
+                                </div>
+
+                                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-2">
+                                    <p className="text-xs font-black uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                                        <AlertTriangle className="w-4 h-4 text-rose-600" /> Le cauchemar que vous évitez :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                                        La société commerciale <em>« coquille vide »</em> créée il y a 6 mois qui encaisse votre acompte de 5 000 €, 
+                                        bâcle la pose, puis se met en liquidation judiciaire dès le premier contentieux pour rouvrir sous un autre nom.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* VERROU 03: CAPACITÉ FLUIDES */}
+                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-amber-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                                <div className="flex items-start sm:items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                                        03
+                                    </div>
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-50 text-amber-800 text-xs font-bold uppercase mb-1">
+                                            <Wrench className="w-3.5 h-3.5" /> Verrou N°3 • Obligation Légale Frigoriste
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
+                                            Attestation de Capacité Fluides Frigorigènes
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 text-amber-700 font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-amber-500/20">
+                                    <CheckCircle2 className="w-4 h-4 text-amber-600" /> Agrément Déposé (Dekra / Veritas / Cemafroid)
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-6">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                                        <FileCheck2 className="w-4 h-4 text-amber-600" /> Ce que nous vérifions sur pièces :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                                        Certificat officiel de manipulation des fluides frigorigènes (Catégorie I). 
+                                        Seuls les frigoristes déclarés ont le droit légal d'acheter du gaz R32, de tirer au vide et de raccorder un circuit frigorifique sous pression.
+                                    </p>
+                                </div>
+
+                                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-2">
+                                    <p className="text-xs font-black uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                                        <AlertTriangle className="w-4 h-4 text-rose-600" /> Le cauchemar que vous évitez :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                                        Un poseur non qualifié qui ne fait pas le tirage au vide de vos liaisons : l'humidité présente dans les tubes détruit l'huile du compresseur. 
+                                        Votre pompe à chaleur tombe en panne fatale au bout de 6 mois sans aucune prise en charge constructeur.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* VERROU 04: GRANDES MARQUES ET MATÉRIEL OFFICIEL */}
+                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-purple-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                                <div className="flex items-start sm:items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-violet-600 text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                                        04
+                                    </div>
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-purple-50 text-purple-800 text-xs font-bold uppercase mb-1">
+                                            <Award className="w-3.5 h-3.5" /> Verrou N°4 • Matériel Constructeur
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
+                                            Filière Officielle Grandes Marques & Airzone
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 text-purple-700 font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-purple-500/20">
+                                    <CheckCircle2 className="w-4 h-4 text-purple-600" /> Daikin, Mitsubishi, Atlantic, Toshiba
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-6">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                                        <FileCheck2 className="w-4 h-4 text-purple-600" /> Ce que nous vérifions sur pièces :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                                        Approvisionnement via les réseaux distributeurs officiels France. 
+                                        Maîtrise technique indispensable pour les plénums motorisés Airzone et le calcul aéraulique des bouches de soufflage silencieuses.
+                                    </p>
+                                </div>
+
+                                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-2">
+                                    <p className="text-xs font-black uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                                        <AlertTriangle className="w-4 h-4 text-rose-600" /> Le cauchemar que vous évitez :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                                        Du matériel importé au rabais via des canaux parallèles : en cas de carte électronique grillée, le constructeur refuse d'expédier les pièces détachées 
+                                        car le numéro de série n'est pas répertorié en France.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* VERROU 05: CHARTE DÉONTOLOGIQUE ET TOLÉRANCE ZÉRO FANTÔME */}
+                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-amber-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+                                <div className="flex items-start sm:items-center gap-4">
+                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-[#D59B2B] text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
+                                        05
+                                    </div>
+                                    <div>
+                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-50 text-amber-900 text-xs font-bold uppercase mb-1">
+                                            <HeartHandshake className="w-3.5 h-3.5" /> Verrou N°5 • Éthique & SAV
+                                        </div>
+                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
+                                            Charte Déontologique : Tolérance Zéro « Fantôme »
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 text-[#D59B2B] font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-amber-500/20">
+                                    <CheckCircle2 className="w-4 h-4 text-[#D59B2B]" /> Engagement de Réactivité Signé
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6 pt-6">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+                                        <FileCheck2 className="w-4 h-4 text-[#D59B2B]" /> Ce que nous vérifions sur pièces :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                                        Signature d'un engagement formel : devis clair sans surprise, interdiction de sous-traitance non déclarée, 
+                                        formation du client lors de la remise des clés et réponse obligatoire sous 48h en cas de dysfonctionnement après chantier.
+                                    </p>
+                                </div>
+
+                                <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-2">
+                                    <p className="text-xs font-black uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                                        <AlertTriangle className="w-4 h-4 text-rose-600" /> Le cauchemar que vous évitez :
+                                    </p>
+                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                                        L'artisan qui encaisse le dernier chèque et ne répond plus jamais. Chez Gainable.fr, tout manquement grave à la charte 
+                                        entraîne la <strong>révocation immédiate du badge</strong> et l'exclusion définitive du professionnel.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* Trust Banner Callout */}
+                    <div className="mt-12 bg-gradient-to-r from-slate-900 to-[#1F2D3D] text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div className="space-y-1 text-center md:text-left">
+                            <p className="text-amber-400 font-bold text-sm flex items-center justify-center md:justify-start gap-2">
+                                <Sparkles className="w-4 h-4 text-amber-400" /> Une Sélection Réelle & Documentée
+                            </p>
+                            <h4 className="text-xl md:text-2xl font-black font-montserrat">
+                                Plus de 35 % des dossiers de candidature sont refusés
+                            </h4>
+                            <p className="text-slate-300 text-sm max-w-2xl font-normal">
+                                Nous refusons systématiquement toute entreprise qui ne peut fournir ses attestations décennales à jour ou dont l'activité CVC n'est pas formellement couverte.
+                            </p>
+                        </div>
+                        <Link href="/trouver-installateur" className="shrink-0">
+                            <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-black px-8 py-6 rounded-2xl shadow-lg transition-all hover:scale-105">
+                                Voir les installateurs validés
+                            </Button>
+                        </Link>
+                    </div>
+
+                </div>
+            </section>
+
             {/* SECTION 1: LA RELATION DE CONFIANCE (Avec 1ère photo Business Handshake) */}
             <section className="py-20 bg-white border-b border-slate-100">
                 <div className="container max-w-6xl mx-auto px-4">
@@ -314,75 +586,6 @@ export default function LabelsPage() {
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </section>
-
-            {/* SECTION 2: LE PROTOCOLE DE CONTRÔLE SUR PIÈCES EN 5 ÉTAPES */}
-            <section className="py-20 bg-slate-50 border-b border-slate-200/60">
-                <div className="container max-w-6xl mx-auto px-4">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-3">
-                            <Shield className="w-4 h-4" /> Filtre d'admission rigoureux
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-black font-montserrat text-[#1F2D3D] mb-4">
-                            Le Protocole de Contrôle Documentaire Gainable.fr
-                        </h2>
-                        <p className="text-slate-600 text-base md:text-lg">
-                            Nous ne distribuons pas de labels de complaisance. Chaque installateur partenaire est vérifié sur pièces en 5 étapes.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {[
-                            {
-                                step: "01",
-                                title: "Existence Juridique & Solvabilité",
-                                desc: "Contrôle en direct des registres légaux (INSEE / Infogreffe). Nous écartons toute entreprise en redressement, radiée ou créée il y a moins de quelques mois sans garanties solides.",
-                                icon: <Building2 className="w-6 h-6 text-[#D59B2B]" />
-                            },
-                            {
-                                step: "02",
-                                title: "Assurance Décennale CVC Vérifiée",
-                                desc: "Attestation originale exigée avec contrôle des lignes de garantie spécifiques au génie climatique, aux pompes à chaleur et aux réseaux aérauliques.",
-                                icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />
-                            },
-                            {
-                                step: "03",
-                                title: "Capacité Fluides Frigorigènes",
-                                desc: "Vérification de l'attestation de capacité (gaz R32 / R410A) délivrée par un organisme agréé (Bureau Veritas, Dekra, Cemafroid), indispensable pour poser légalement.",
-                                icon: <FileText className="w-6 h-6 text-blue-600" />
-                            },
-                            {
-                                step: "04",
-                                title: "Grandes Marques & Régulation",
-                                desc: "Expérience éprouvée sur les fabricants majeurs (Daikin, Mitsubishi Electric, Atlantic, Toshiba, Panasonic) et maîtrise des systèmes de zonage Airzone.",
-                                icon: <Award className="w-6 h-6 text-amber-500" />
-                            },
-                            {
-                                step: "05",
-                                title: "Charte de Déontologie & SAV",
-                                desc: "Signature d'un engagement moral strict : devis détaillé transparent, interdiction de la sous-traitance opaque, écoute et obligation de suivi post-livraison.",
-                                icon: <CheckCircle2 className="w-6 h-6 text-purple-600" />
-                            },
-                            {
-                                step: "★",
-                                title: "Mise à Jour Régulière",
-                                desc: "En cas de litige client avéré non résolu ou de caducité d'assurance décennale, le badge de l'installateur est immédiatement désactivé de notre répertoire.",
-                                icon: <Clock className="w-6 h-6 text-rose-500" />
-                            }
-                        ].map((card, idx) => (
-                            <div key={idx} className="bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3 relative overflow-hidden">
-                                <div className="flex items-center justify-between">
-                                    <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center">
-                                        {card.icon}
-                                    </div>
-                                    <span className="text-xl font-black text-slate-300 font-mono">{card.step}</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-[#1F2D3D] pt-2">{card.title}</h3>
-                                <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-normal">{card.desc}</p>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
