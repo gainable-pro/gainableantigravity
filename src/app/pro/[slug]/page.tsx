@@ -11,6 +11,7 @@ import { ContactWizard } from "@/components/features/contact/contact-wizard";
 import { ExpertArticles } from "@/components/features/expert/expert-articles";
 import { PhoneCallButton } from "@/components/features/expert/phone-call-button";
 import { BrandLogo } from "@/components/ui/brand-logo";
+import { VerifiedExpertBadge } from "@/components/ui/verified-expert-badge";
 import { InternalLinking } from "@/components/features/seo/internal-linking";
 
 export const revalidate = 3600; // Cache static pages for 1 hour, auto-revalidated
@@ -601,7 +602,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
                             <div className="flex justify-center mt-4">
                                 {expert.is_labeled && (
-                                    <img src="/gainable-fr-badge-expert-verifie-rge.jpg" alt="Expert Vérifié" className="h-24 w-auto object-contain" />
+                                    <VerifiedExpertBadge size="md" />
                                 )}
                             </div>
                         </div>

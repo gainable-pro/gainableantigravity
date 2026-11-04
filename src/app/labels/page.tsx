@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/header";
 import { Button } from "@/components/ui/button";
 import { Check, ShieldCheck, Award, AlertTriangle, Briefcase, User, FileText, Star, Shield } from "lucide-react";
 import Link from "next/link";
+import { VerifiedExpertBadge } from "@/components/ui/verified-expert-badge";
 
 import { Metadata } from 'next';
 
@@ -94,11 +95,7 @@ export default function LabelsPage() {
                         <div className="relative">
                             {/* Illustration / Graphic for Trust */}
                             <div className="flex justify-center items-center">
-                                <img
-                                    src="/gainable-fr-badge-expert-verifie-rge.jpg"
-                                    alt="Logo Expert Vérifié Réseau Gainable.fr"
-                                    className="w-full max-w-sm"
-                                />
+                                <VerifiedExpertBadge size="lg" />
                             </div>
                         </div>
                     </div>

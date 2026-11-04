@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MapPin, Building2, Wrench, CheckCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/ui/brand-logo";
+import { VerifiedExpertBadge } from "@/components/ui/verified-expert-badge";
 
 interface ProCardProps {
     id: string;
@@ -153,13 +154,7 @@ export function ProCard({
                 {/* Verified Badge - Conditioned */}
                 {isLabeled && (
                     <div className="flex justify-center mt-3">
-                        <Image
-                            src="/gainable-fr-badge-expert-verifie-rge.jpg"
-                            alt="Expert Vérifié"
-                            width={120}
-                            height={80}
-                            className="h-20 w-auto object-contain"
-                        />
+                        <VerifiedExpertBadge size="sm" />
                     </div>
                 )}
             </div>
