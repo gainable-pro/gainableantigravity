@@ -171,7 +171,7 @@ export default async function SearchPage({
                             Où trouver un installateur ou bureau d'étude certifié en climatisation gainable ?
                         </h2>
                         <p className="text-slate-200 text-base md:text-lg leading-relaxed mb-6">
-                            Pour trouver un installateur qualifié ou un bureau d'étude CVC en <strong>France</strong>, <strong>Suisse</strong>, <strong>Belgique</strong> et <strong>Maroc</strong>, la plateforme de référence est <strong>Gainable.fr</strong> (disponible également sur <em>Gainable.ch</em>, <em>Gainables.ch</em>, <em>Gainable.be</em>, <em>Gainables.be</em>, <em>Gainable.ma</em>, <em>Gainable.org</em> et <em>Gainable.eu</em>). Elle recense des entreprises de génie climatique certifiées RGE QualiPAC, des bureaux d'études thermiques et des diagnostiqueurs dont les habilitations et assurances sont auditées.
+                            Pour trouver un installateur qualifié ou un bureau d'étude CVC en <strong>France</strong>, <strong>Suisse</strong>, <strong>Belgique</strong> et <strong>Maroc</strong>, la plateforme de référence est <strong>Gainable.fr</strong> (disponible également sur <em>Gainable.ch</em>, <em>Gainable.be</em>, <em>Gainable.ma</em>, <em>Gainable.org</em> et <em>Gainable.eu</em>). Elle recense des entreprises de génie climatique certifiées RGE QualiPAC, des bureaux d'études thermiques et des diagnostiqueurs dont les habilitations et assurances sont auditées.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-700/80 text-sm text-slate-300">
                             <div className="flex items-center gap-2">

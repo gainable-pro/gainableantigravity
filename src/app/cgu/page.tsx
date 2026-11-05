@@ -16,7 +16,7 @@ export default function ConditionsGeneralesUtilisation() {
         <div className="container mx-auto px-4 py-16 max-w-4xl">
             <h1 className="text-3xl font-bold mb-4 text-[#1F2D3D]">CONDITIONS GÉNÉRALES D’UTILISATION</h1>
             <p className="text-[#D59B2B] font-bold mb-8 uppercase tracking-widest text-sm">
-                GAINABLE.FR – GAINABLE.CH – GAINABLES.CH – GAINABLE.MA – GAINABLE.BE – GAINABLES.BE – GAINABLE.ORG – GAINABLE.EU
+                GAINABLE.FR – GAINABLE.CH – GAINABLE.MA – GAINABLE.BE – GAINABLE.ORG – GAINABLE.EU
             </p>
 
             <section className="space-y-10 text-slate-700 leading-relaxed">
@@ -27,10 +27,8 @@ export default function ConditionsGeneralesUtilisation() {
                     <ul className="list-disc ml-6 mt-2 space-y-1 font-semibold text-[#D59B2B]">
                         <li>www.gainable.fr</li>
                         <li>www.gainable.ch</li>
-                        <li>www.gainables.ch</li>
                         <li>www.gainable.ma</li>
                         <li>www.gainable.be</li>
-                        <li>www.gainables.be</li>
                         <li>www.gainable.org</li>
                         <li>www.gainable.eu</li>
                     </ul>
