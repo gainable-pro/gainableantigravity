@@ -552,26 +552,6 @@ export default function LabelsPage() {
 
                     </div>
 
-                    {/* Trust Banner Callout */}
-                    <div className="mt-12 bg-gradient-to-r from-slate-900 to-[#1F2D3D] text-white p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div className="space-y-1 text-center md:text-left">
-                            <p className="text-amber-400 font-bold text-sm flex items-center justify-center md:justify-start gap-2">
-                                <Sparkles className="w-4 h-4 text-amber-400" /> Une Sélection Réelle & Documentée
-                            </p>
-                            <h4 className="text-xl md:text-2xl font-black font-montserrat">
-                                Plus de 35 % des dossiers de candidature sont refusés
-                            </h4>
-                            <p className="text-slate-300 text-sm max-w-2xl font-normal">
-                                Nous refusons systématiquement toute entreprise qui ne peut fournir ses attestations décennales à jour ou dont l'activité CVC n'est pas formellement couverte.
-                            </p>
-                        </div>
-                        <Link href="/trouver-installateur" className="shrink-0">
-                            <Button size="lg" className="bg-[#D59B2B] hover:bg-[#b88622] text-white font-black px-8 py-6 rounded-2xl shadow-lg transition-all hover:scale-105">
-                                Voir les installateurs validés
-                            </Button>
-                        </Link>
-                    </div>
-
                 </div>
             </section>
 
