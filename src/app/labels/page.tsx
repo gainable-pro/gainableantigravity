@@ -102,8 +102,8 @@ export default function LabelsPage() {
                                 desc: "SIRET actif à l'INSEE, antécédents contrôlés, zéro société éphémère" 
                             },
                             { 
-                                title: "Interlocuteur Dédié & SAV", 
-                                desc: "L'artisan répond après la facture, 0 % commission intermédiaire" 
+                                title: "Mise en Relation 100 % Gratuite", 
+                                desc: "Contact direct avec l'artisan • Zéro commission ni surcoût sur votre devis" 
                             }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl text-white shadow-sm flex items-start gap-3">
@@ -199,7 +199,7 @@ export default function LabelsPage() {
                                 </p>
                                 <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 font-medium flex items-start gap-2 text-xs">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                    <span><strong>La garantie Expert Vérifié :</strong> Signature de la charte de réactivité avec engagement formel d'intervention SAV sous 48h sous peine de radiation immédiate du réseau.</span>
+                                    <span><strong>L'engagement du réseau :</strong> Des entreprises locales établies qui signent notre charte de déontologie : devis transparent sans surprise, mise en service soignée et proposition d'un contrat d'entretien régulier.</span>
                                 </div>
                             </div>
                         </div>
@@ -523,7 +523,7 @@ export default function LabelsPage() {
                                     </div>
                                 </div>
                                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 text-[#D59B2B] font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-amber-500/20">
-                                    <CheckCircle2 className="w-4 h-4 text-[#D59B2B]" /> Engagement de Réactivité Signé
+                                    <CheckCircle2 className="w-4 h-4 text-[#D59B2B]" /> Charte Qualité & Transparence
                                 </div>
                             </div>
 
@@ -533,8 +533,8 @@ export default function LabelsPage() {
                                         <FileCheck2 className="w-4 h-4 text-[#D59B2B]" /> Ce que nous vérifions sur pièces :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                                        Signature d'une charte de qualité : devis transparent et détaillé, interdiction formelle de sous-traitance clandestine, 
-                                        formation du client lors de la réception des travaux et engagement d'intervention sous 48h en cas de dysfonctionnement.
+                                        Signature d'une charte de déontologie : devis transparent et détaillé, interdiction formelle de sous-traitance clandestine, 
+                                        formation du client au pilotage de son équipement et proposition d'un suivi d'entretien annuel.
                                     </p>
                                 </div>
 
@@ -867,7 +867,7 @@ export default function LabelsPage() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xs shrink-0 mt-0.5">✓</div>
-                                    <span className="text-white">Engagement formel de réponse au SAV sous 48h en cas de dysfonctionnement</span>
+                                    <span className="text-white">Charte d'écoute client et proposition systématique d'un contrat d'entretien</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xs shrink-0 mt-0.5">✓</div>
@@ -915,8 +915,8 @@ export default function LabelsPage() {
                                 a: "Contrairement aux plateformes de courtage qui prélèvent entre 8 % et 15 % de commission sur les travaux (ce qui gonfle artificiellement la facture du client), Gainable.fr fonctionne comme un réseau de confiance indépendant. Vous traitez directement avec le gérant de l'entreprise locale sans aucun intermédiaire ni surtaxe."
                             },
                             {
-                                q: "Comment réagissez-vous si un artisan labellisé fait le mort après le paiement ?",
-                                a: "La charte Gainable.fr est formelle : tout refus injustifié d'assurer le service après-vente ou comportement fantôme entraîne la suspension immédiate du badge 'Expert Vérifié' et la radiation de la plateforme. La réputation de notre réseau passe avant tout."
+                                q: "Que se passe-t-il en cas de litige ou de manquement de l'artisan ?",
+                                a: "La charte Gainable.fr impose des critères stricts de sérieux et de probité professionnelle : tout signalement avéré de manquement déontologique ou de litige grave non traité entraîne la suspension immédiate du badge 'Expert Vérifié' et la désactivation de la fiche de l'entreprise."
                             },
                             {
                                 q: "Je suis installateur : quel est l'intérêt concret pour moi d'obtenir le badge ?",
