@@ -21,6 +21,9 @@ export function Footer() {
                         <Link href="/politique-confidentialite" className="hover:text-amber-500 transition-colors">
                             Politique de Confidentialité
                         </Link>
+                        <Link href="/politique-cookies" className="hover:text-amber-500 transition-colors">
+                            Cookies
+                        </Link>
                         <Link href="/cgu" className="hover:text-amber-500 transition-colors">
                             CGU
                         </Link>
@@ -49,6 +52,9 @@ export function Footer() {
                     </Link>
                     <Link href="/politique-confidentialite" className="hover:text-amber-500 transition-colors">
                         Politique de Confidentialité
+                    </Link>
+                    <Link href="/politique-cookies" className="hover:text-amber-500 transition-colors">
+                        Politique de Cookies
                     </Link>
                     <Link href="/cgu" className="hover:text-amber-500 transition-colors">
                         Conditions Générales d'Utilisation (CGU)

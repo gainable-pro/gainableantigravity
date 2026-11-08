@@ -54,6 +54,7 @@ export async function GET(
                 '/cgu',
                 '/cgv',
                 '/politique-confidentialite',
+                '/politique-cookies',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
             // 2. Active Experts + Real Artisan Articles in Sitemap 0 (Priority Crawl)
