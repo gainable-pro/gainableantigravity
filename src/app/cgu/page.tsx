@@ -385,139 +385,107 @@ export default function ConditionsGeneralesUtilisation() {
                     {/* ARTICLE 21 */}
                     <section className="space-y-6">
                         <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 21 — PROPRIÉTÉ INTELLECTUELLE ET PROTECTION DU RÉSEAU GAINABLE
+                            ARTICLE 21 — PROPRIÉTÉ INTELLECTUELLE ET PROTECTION DU RÉSEAU MULTIDOMAINE GAINABLE
                         </h2>
 
-                        <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 text-slate-800 text-sm space-y-2">
-                            <p>
-                                EXCEED DIGITAL détient ou exploite les droits nécessaires sur les éléments protégés de la plateforme Gainable, notamment ses logiciels, codes sources originaux, créations graphiques, contenus éditoriaux, signes distinctifs et bases de données.
-                            </p>
-                            <p>
-                                Le réseau Gainable comprend notamment les domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong> et <strong>gainable.eu</strong>, sous réserve de leur exploitation effective par EXCEED DIGITAL.
-                            </p>
-                            <p>
-                                Toute reproduction ou exploitation non autorisée d'éléments protégés est interdite, sous réserve des exceptions prévues par la loi.
-                            </p>
-                            <p>
-                                L'extraction ou la réutilisation illicite des bases de données protégées, notamment par collecte automatisée, est interdite dans les conditions prévues par le Code de la propriété intellectuelle.
-                            </p>
-                            <p>
-                                Les éléments techniques non publics, procédés confidentiels et informations stratégiques de Gainable peuvent bénéficier de la protection du secret des affaires lorsque les conditions légales sont réunies.
-                            </p>
-                            <p className="font-semibold text-rose-800">
-                                EXCEED DIGITAL se réserve le droit d'engager toute action appropriée en cas de contrefaçon, d'extraction illicite, d'atteinte à ses secrets d'affaires ou d'actes de concurrence déloyale.
-                            </p>
-                            <p className="text-xs text-slate-500 italic">
-                                Les contenus appartenant aux professionnels ou à des tiers restent soumis aux droits de leurs titulaires respectifs.
-                            </p>
-                        </div>
-
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">21.1. Identification du réseau Gainable</h3>
+                            <h3 className="font-bold text-slate-900 text-base">5.1 — Titularité des droits</h3>
+                            <p>La plateforme GAINABLE est éditée et exploitée par <strong>EXCEED DIGITAL</strong>.</p>
                             <p>
-                                La plateforme Gainable est exploitée par <strong>EXCEED DIGITAL</strong> au moyen d'un écosystème numérique comprenant notamment les noms de domaine suivants :
-                            </p>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 py-1 font-semibold text-[#D59B2B]">
-                                <div>• www.gainable.fr</div>
-                                <div>• www.gainable.ch</div>
-                                <div>• www.gainable.ma</div>
-                                <div>• www.gainable.be</div>
-                                <div>• www.gainable.org</div>
-                                <div>• www.gainable.eu</div>
-                            </div>
-                            <p>
-                                Ces domaines peuvent, selon leur configuration technique et leur disponibilité, proposer des services, présenter des contenus ou rediriger vers une plateforme commune.
-                            </p>
-                            <p className="text-xs text-slate-500 italic">
-                                La présente disposition ne préjuge pas de la titularité juridique de chaque nom de domaine, qui doit être vérifiée auprès des registres et bureaux d'enregistrement concernés.
-                            </p>
-                        </div>
-
-                        <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">21.2. Protection des éléments de la plateforme</h3>
-                            <p>
-                                Sous réserve des droits de tiers, EXCEED DIGITAL détient ou exploite les droits nécessaires sur les éléments propres à Gainable, notamment :
+                                Sous réserve des droits appartenant à des tiers, EXCEED DIGITAL est titulaire ou bénéficiaire des droits d'exploitation nécessaires sur les éléments protégés de la plateforme, notamment :
                             </p>
                             <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
-                                <li>Les marques, noms commerciaux, logos et signes distinctifs ;</li>
-                                <li>Les codes sources et logiciels originaux ;</li>
-                                <li>Les créations graphiques et interfaces originales ;</li>
-                                <li>Les textes et contenus éditoriaux propres à Gainable ;</li>
-                                <li>L'organisation originale des contenus, lorsqu'elle remplit les conditions de protection ;</li>
-                                <li>Les développements spécifiques de l'agent d'intelligence artificielle ;</li>
-                                <li>Les outils de gestion des fiches, des zones géographiques et des spécialités ;</li>
-                                <li>Les bases de données professionnelles, dans les limites des droits légalement reconnus.</li>
+                                <li>Les logiciels, développements informatiques et codes sources originaux ;</li>
+                                <li>Les interfaces, créations graphiques et éléments visuels originaux ;</li>
+                                <li>Les textes, contenus éditoriaux et documents propres à Gainable ;</li>
+                                <li>Les marques, logos, noms commerciaux et autres signes distinctifs ;</li>
+                                <li>Les bases de données protégées et leur contenu, dans les limites prévues par la loi ;</li>
+                                <li>Les développements spécifiques des outils d'intelligence artificielle et de référencement, lorsqu'ils remplissent les conditions de protection.</li>
                             </ul>
                             <p className="font-semibold text-slate-900">
-                                Aucun droit de propriété intellectuelle n'est transféré aux utilisateurs du seul fait de leur accès à la plateforme.
+                                L'accès à la plateforme n'emporte aucun transfert de propriété intellectuelle au profit des utilisateurs.
                             </p>
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.3. Protection des bases de données</h3>
+                            <h3 className="font-bold text-slate-900 text-base">5.2 — Réseau multidomaine</h3>
                             <p>
-                                EXCEED DIGITAL se réserve les droits dont elle bénéficie, le cas échéant, en qualité de producteur des bases de données Gainable, conformément aux articles L.341-1 et suivants du Code de la propriété intellectuelle.
+                                L'écosystème numérique Gainable comprend notamment les noms de domaine suivants, lorsqu'ils sont effectivement exploités par EXCEED DIGITAL :
                             </p>
-                            <p className="font-semibold text-slate-800">Sous réserve des exceptions légales, sont interdits sans autorisation :</p>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.fr</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ch</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ma</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.be</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
+                            </div>
+                            <p>
+                                Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                La détention ou l'exploitation de ces noms de domaine ne confère toutefois pas, à elle seule, un droit exclusif sur le principe d'une plateforme multidomaine.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">5.3 — Protection des bases de données</h3>
+                            <p>
+                                Les bases de données de Gainable peuvent bénéficier de la protection du droit d'auteur et/ou du droit spécifique du producteur de bases de données lorsque les conditions légales sont réunies.
+                            </p>
+                            <p>
+                                Conformément aux articles L.341-1 et suivants du Code de la propriété intellectuelle, EXCEED DIGITAL se réserve les droits qui lui sont reconnus sur ces bases.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                Sous réserve des exceptions légales, sont notamment interdites les extractions et réutilisations de données portant atteinte à ces droits, y compris lorsqu'elles sont réalisées au moyen de robots, scripts ou autres procédés automatisés.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">5.4 — Reproduction et exploitation non autorisées</h3>
+                            <p>
+                                Toute reproduction, représentation, adaptation, diffusion ou exploitation d'éléments protégés de Gainable sans autorisation du titulaire des droits est interdite, sauf exception prévue par la loi.
+                            </p>
+                            <p className="font-semibold text-rose-800">Il est notamment interdit :</p>
                             <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
-                                <li>L'extraction ou la réutilisation de la totalité ou d'une partie substantielle d'une base de données protégée ;</li>
-                                <li>L'extraction ou la réutilisation répétée et systématique de parties non substantielles dans les conditions interdites par la loi ;</li>
-                                <li>La constitution d'une base concurrente au moyen d'extractions portant atteinte aux droits d'EXCEED DIGITAL.</li>
+                                <li>De reproduire illicitement les codes sources ou logiciels protégés ;</li>
+                                <li>De copier ou d'exploiter sans autorisation des créations originales de Gainable ;</li>
+                                <li>D'extraire ou de réutiliser illicitement les bases de données protégées ;</li>
+                                <li>D'utiliser les signes distinctifs Gainable d'une manière portant atteinte aux droits de leurs titulaires ;</li>
+                                <li>De contourner frauduleusement les dispositifs de sécurité de la plateforme.</li>
                             </ul>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">5.5 — Protection du savoir-faire et des informations confidentielles</h3>
+                            <p>
+                                Les informations techniques, commerciales ou organisationnelles non publiques relatives à Gainable, notamment certains paramètres internes, procédés de développement et méthodes de déploiement, peuvent bénéficier de la protection du secret des affaires lorsque les conditions légales sont réunies.
+                            </p>
                             <p className="text-xs text-slate-500 italic">
-                                Ces dispositions s'appliquent indépendamment du nom de domaine par lequel les données protégées sont consultées.
+                                Cette protection concerne les informations présentant une valeur commerciale du fait de leur caractère secret et faisant l'objet de mesures raisonnables destinées à préserver leur confidentialité. Elle ne s'étend pas aux idées générales, aux fonctionnalités usuelles ou aux informations librement accessibles.
                             </p>
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.4. Interdiction des usages frauduleux et des reproductions illicites</h3>
-                            <p className="font-semibold text-rose-800">Il est interdit d'utiliser les services Gainable pour :</p>
-                            <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
-                                <li>Copier illicitement les codes, interfaces ou contenus protégés ;</li>
-                                <li>Reproduire ou exploiter sans autorisation les signes distinctifs Gainable ;</li>
-                                <li>Contourner les systèmes de sécurité ou d'authentification ;</li>
-                                <li>Effectuer une collecte automatisée abusive portant atteinte aux droits de Gainable ou aux droits des personnes ;</li>
-                                <li>Usurper l'identité de Gainable ou créer une confusion sur l'origine d'un service ;</li>
-                                <li>Exploiter des informations confidentielles obtenues illicitement.</li>
-                            </ul>
+                            <h3 className="font-bold text-slate-900 text-base">5.6 — Contenus des professionnels</h3>
+                            <p>
+                                Les photographies, marques, logos, réalisations et autres contenus fournis par les professionnels restent soumis aux droits de leurs titulaires respectifs.
+                            </p>
+                            <p>
+                                Leur publication sur Gainable s'effectue conformément aux autorisations et conditions contractuelles applicables.
+                            </p>
                             <p className="text-xs text-slate-500 italic">
-                                Ces interdictions s'entendent sous réserve des exceptions légales, notamment celles relatives à l'utilisation licite des logiciels, à l'interopérabilité et aux droits des utilisateurs légitimes.
+                                EXCEED DIGITAL ne revendique pas la propriété exclusive des contenus appartenant légitimement aux professionnels ou à des tiers.
                             </p>
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.5. Architecture technique et savoir-faire confidentiel</h3>
+                            <h3 className="font-bold text-slate-900 text-base">5.7 — Défense des droits</h3>
                             <p>
-                                Les éléments non publics relatifs à l'architecture technique, aux algorithmes internes, aux paramètres confidentiels de classement, aux procédures de déploiement multidomaine et aux méthodes de fonctionnement peuvent constituer des informations confidentielles ou des secrets d'affaires lorsque les conditions légales sont réunies.
-                            </p>
-                            <p>
-                                Les personnes auxquelles ces informations sont communiquées dans un cadre contractuel sont tenues de respecter les obligations de confidentialité applicables.
+                                En cas de contrefaçon, d'extraction illicite, d'atteinte à un secret d'affaires ou d'actes de concurrence déloyale, EXCEED DIGITAL se réserve le droit d'exercer toute action légalement ouverte afin de faire cesser les agissements et d'obtenir réparation du préjudice subi.
                             </p>
                             <p className="text-xs text-slate-500 italic">
-                                La présente clause ne crée aucun monopole sur les idées, fonctionnalités générales ou modèles économiques qui ne bénéficient pas d'une protection juridique spécifique.
-                            </p>
-                        </div>
-
-                        <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.6. Contenus des professionnels</h3>
-                            <p>
-                                Les photographies, logos, marques, réalisations et autres contenus fournis par les professionnels restent soumis aux droits de leurs titulaires.
-                            </p>
-                            <p>
-                                Le professionnel accorde à Gainable les autorisations nécessaires à leur diffusion conformément aux CGV professionnelles.
-                            </p>
-                            <p className="text-xs text-slate-500 italic">
-                                EXCEED DIGITAL ne revendique pas la propriété exclusive de contenus appartenant légitimement à des tiers.
-                            </p>
-                        </div>
-
-                        <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.7. Défense des droits</h3>
-                            <p>
-                                En cas de reproduction illicite, d'extraction interdite, de contrefaçon, d'atteinte à un secret d'affaires ou d'actes de concurrence déloyale, EXCEED DIGITAL se réserve la possibilité d'exercer toute action légalement ouverte afin de faire cesser les agissements et d'obtenir réparation du préjudice démontré.
-                            </p>
-                            <p className="text-xs text-slate-500 italic">
-                                La présente clause s'applique aux services exploités dans le réseau Gainable, sous réserve des lois impératives applicables dans les territoires concernés.
+                                Ces dispositions s'appliquent sous réserve des droits des utilisateurs et des législations impératives applicables.
                             </p>
                         </div>
                     </section>
