@@ -17,7 +17,7 @@ export function VerifiedExpertBadge({ size = "md", className = "" }: VerifiedExp
     return (
         <div
             className={`inline-flex items-center justify-center select-none group ${dimensions} ${className}`}
-            title="Expert Vérifié — Réseau Gainable® (profil modéré par Gainable.fr)"
+            title="Expert Vérifié — Réseau Gainable® (profil modéré et vérifié par Gainable.fr)"
         >
             <svg
                 viewBox="0 0 460 155"
@@ -25,7 +25,7 @@ export function VerifiedExpertBadge({ size = "md", className = "" }: VerifiedExp
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-full h-auto overflow-visible"
                 role="img"
-                aria-label="Expert Vérifié Réseau Gainable (profil modéré par Gainable.fr)"
+                aria-label="Expert Vérifié Réseau Gainable (profil modéré et vérifié par Gainable.fr)"
             >
                 <defs>
                     {/* Dégradé doré lumineux pour la barre du G et le check */}
@@ -152,16 +152,16 @@ export function VerifiedExpertBadge({ size = "md", className = "" }: VerifiedExp
                         <tspan fontSize="18" dy="-13" fontWeight="600">®</tspan>
                     </text>
 
-                    {/* Ligne 3 : (profil modéré par Gainable.fr) */}
+                    {/* Ligne 3 : (profil modéré & vérifié par Gainable.fr) */}
                     <text
                         x="144"
                         y="140"
                         fill="#3A4F5C"
                         fontFamily="Montserrat, Inter, system-ui, -apple-system, sans-serif"
                         fontWeight="500"
-                        fontSize="18"
+                        fontSize="15"
                     >
-                        (profil modéré par Gainable.fr)
+                        (profil modéré &amp; vérifié par Gainable.fr)
                     </text>
                 </g>
             </svg>

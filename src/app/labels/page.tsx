@@ -145,7 +145,7 @@ export default function LabelsPage() {
                     </h2>
                     <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
                         Repérez ce macaron officiel sur les fiches des professionnels et sur leurs véhicules d'intervention. 
-                        Le battement de cœur régulier du badge signale une entreprise active, dont les pièces justificatives et assurances ont fait l'objet d'une modération documentaire.
+                        Le battement de cœur régulier du badge signale une entreprise active, dont les pièces justificatives et assurances ont fait l'objet d'une modération et d'une vérification documentaire.
                     </p>
 
                     <div className="bg-white rounded-3xl p-8 md:p-12 border-2 border-slate-200/90 shadow-2xl max-w-2xl mx-auto flex flex-col items-center justify-center space-y-6">
@@ -316,13 +316,13 @@ export default function LabelsPage() {
                     {/* Header Section */}
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20 text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
-                            <ShieldCheck className="w-4 h-4 text-emerald-600" /> La Modération Gainable.fr
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" /> Modération &amp; Vérification Gainable.fr
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black font-montserrat text-[#1F2D3D] mb-5 tracking-tight">
-                            Les 4 Étapes de Modération Gainable.fr
+                            Les 4 Étapes de Modération &amp; Vérification Gainable.fr
                         </h2>
                         <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'une modération attentive de ses pièces déclaratives :
+                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'une modération et d'une vérification attentive de ses pièces déclaratives :
                         </p>
                     </div>
 
@@ -614,7 +614,7 @@ export default function LabelsPage() {
                                         <span>Avec un Expert Vérifié Gainable.fr</span>
                                     </div>
                                     <ul className="text-xs md:text-sm text-slate-700 space-y-2 pl-7 list-disc">
-                                        <li><strong>Modération documentaire sur pièces</strong> : Siret en règle, assurance décennale CVC valide et capacité gaz vérifiée.</li>
+                                        <li><strong>Modération &amp; vérification documentaire sur pièces</strong> : Siret en règle, assurance décennale CVC valide et capacité gaz vérifiée.</li>
                                         <li><strong>Contact direct et transparent</strong> : Aucun intermédiaire commercial, devis au tarif réel de l'artisan sans marge de plateforme.</li>
                                         <li><strong>Étude thermique et acoustique</strong> : Dimensionnement sur-mesure pour éviter les sifflements d'air et la surconsommation électrique.</li>
                                         <li><strong>Grandes marques et mise en service soignée</strong> : Matériel réputé posé par l'artisan dans le respect des règles de l'art.</li>
@@ -860,7 +860,7 @@ export default function LabelsPage() {
                             },
                             {
                                 q: "Que se passe-t-il si un professionnel ne respecte plus les critères du label ?",
-                                a: "Le label 'Expert Vérifié' est basé sur la modération attentive des pièces justificatives fournies (SIRET actif, attestation décennale CVC valide, capacité fluides). En cas de document caduc ou de manquement constaté, le badge est suspendu et la fiche désactivée."
+                                a: "Le label 'Expert Vérifié' est basé sur la modération et la vérification attentive des pièces justificatives fournies (SIRET actif, attestation décennale CVC valide, capacité fluides). En cas de document caduc ou de manquement constaté, le badge est suspendu et la fiche désactivée."
                             },
                             {
                                 q: "Je suis installateur : quel est l'intérêt concret pour moi d'obtenir le badge ?",
