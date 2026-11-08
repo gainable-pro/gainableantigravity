@@ -94,12 +94,12 @@ export default function LabelsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto text-left">
                         {[
                             { 
-                                title: "Garantie Décennale Contrôlée", 
-                                desc: "Attestation CVC authentifiée sur pièces justificatives" 
+                                title: "Attestation Décennale Vérifiée", 
+                                desc: "Attestation CVC vérifiée sur pièces justificatives" 
                             },
                             { 
                                 title: "Entreprise Solide & Active", 
-                                desc: "SIRET actif à l'INSEE, antécédents contrôlés, zéro société éphémère" 
+                                desc: "SIRET actif à l'INSEE, pièces vérifiées, zéro société éphémère" 
                             },
                             { 
                                 title: "Mise en Relation 100 % Gratuite", 
@@ -145,7 +145,7 @@ export default function LabelsPage() {
                     </h2>
                     <p className="text-slate-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
                         Repérez ce macaron officiel sur les fiches des professionnels et sur leurs véhicules d'intervention. 
-                        Le battement de cœur régulier du badge signale une entreprise active, dont les pièces justificatives et assurances ont été contrôlées.
+                        Le battement de cœur régulier du badge signale une entreprise active, dont les pièces justificatives et assurances ont fait l'objet d'une modération documentaire.
                     </p>
 
                     <div className="bg-white rounded-3xl p-8 md:p-12 border-2 border-slate-200/90 shadow-2xl max-w-2xl mx-auto flex flex-col items-center justify-center space-y-6">
@@ -225,7 +225,7 @@ export default function LabelsPage() {
                                 </p>
                                 <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 font-medium flex items-start gap-2 text-xs">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                    <span><strong>La garantie Expert Vérifié :</strong> Contrôle d'existence légale auprès de l'INSEE, vérification de l'ancienneté, de la solvabilité et absence de redressement judiciaire.</span>
+                                    <span><strong>La garantie Expert Vérifié :</strong> Vérification d'existence légale auprès de l'INSEE, de l'ancienneté, de la solvabilité et absence de redressement judiciaire.</span>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +250,7 @@ export default function LabelsPage() {
                                 </p>
                                 <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 font-medium flex items-start gap-2 text-xs">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                    <span><strong>La garantie Expert Vérifié :</strong> Attestation originale contrôlée avec mention obligatoire « Génie Climatique / Réseaux Aérauliques » et attestation de prime payée à jour.</span>
+                                    <span><strong>La garantie Expert Vérifié :</strong> Attestation originale vérifiée avec mention obligatoire « Génie Climatique / Réseaux Aérauliques » et attestation de prime payée à jour.</span>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +275,7 @@ export default function LabelsPage() {
                                 </p>
                                 <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 font-medium flex items-start gap-2 text-xs">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                    <span><strong>La garantie Expert Vérifié :</strong> Attestation de capacité Catégorie I officielle délivrée par Dekra, Veritas ou Cemafroid exigée et contrôlée.</span>
+                                    <span><strong>La garantie Expert Vérifié :</strong> Attestation de capacité Catégorie I officielle délivrée par Dekra, Veritas ou Cemafroid exigée et vérifiée.</span>
                                 </div>
                             </div>
                         </div>
@@ -309,20 +309,20 @@ export default function LabelsPage() {
                 </div>
             </section>
 
-            {/* SECTION 3: LE BOUCLIER EN 5 VERROUS DE CONTRÔLE SUR PIÈCES */}
+            {/* SECTION 3: LES 4 ÉTAPES DE MODÉRATION DOCUMENTAIRE */}
             <section className="py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
                 <div className="container max-w-6xl mx-auto px-4">
                     
                     {/* Header Section */}
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 border border-emerald-500/20 text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
-                            <ShieldCheck className="w-4 h-4 text-emerald-600" /> Le Filtre Gainable.fr
+                            <ShieldCheck className="w-4 h-4 text-emerald-600" /> La Modération Gainable.fr
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black font-montserrat text-[#1F2D3D] mb-5 tracking-tight">
-                            Les 4 Étapes de Contrôle Gainable.fr
+                            Les 4 Étapes de Modération Gainable.fr
                         </h2>
                         <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'un examen attentif des pièces déclaratives :
+                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'une modération attentive de ses pièces déclaratives :
                         </p>
                     </div>
 
@@ -346,14 +346,14 @@ export default function LabelsPage() {
                                     </div>
                                 </div>
                                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 text-emerald-700 font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-emerald-500/20">
-                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Attestation Originale Contrôlée
+                                    <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Attestation Originale Vérifiée
                                 </div>
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6 pt-6">
                                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                                        Attestation d'assurance de l'année en cours avec contrôle des lignes d'activité déclarées : 
+                                        Attestation d'assurance de l'année en cours avec vérification des lignes d'activité déclarées : 
                                         mention expresse <strong>« Génie Climatique / Climatisation Réversible / Aéraulique »</strong>. 
                                         La prime doit être à jour pour garantir une couverture active.
                                     </p>
@@ -364,7 +364,7 @@ export default function LabelsPage() {
                                         <ShieldCheck className="w-4 h-4 text-emerald-600" /> Rôle de l'assureur professionnel :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        L'assurance décennale souscrite par l'installateur auprès de sa propre compagnie couvre ses travaux pendant 10 ans selon les conditions de sa police. Gainable.fr n'est pas assureur mais contrôle la validité de l'attestation fournie.
+                                        L'assurance décennale souscrite par l'installateur auprès de sa propre compagnie couvre ses travaux pendant 10 ans selon les conditions de sa police. Gainable.fr n'est pas assureur mais effectue une modération documentaire de l'attestation déclarée.
                                     </p>
                                 </div>
                             </div>
@@ -614,7 +614,7 @@ export default function LabelsPage() {
                                         <span>Avec un Expert Vérifié Gainable.fr</span>
                                     </div>
                                     <ul className="text-xs md:text-sm text-slate-700 space-y-2 pl-7 list-disc">
-                                        <li><strong>Contrôle documentaire sur pièces</strong> : Siret en règle, assurance décennale CVC valide et capacité gaz vérifiée.</li>
+                                        <li><strong>Modération documentaire sur pièces</strong> : Siret en règle, assurance décennale CVC valide et capacité gaz vérifiée.</li>
                                         <li><strong>Contact direct et transparent</strong> : Aucun intermédiaire commercial, devis au tarif réel de l'artisan sans marge de plateforme.</li>
                                         <li><strong>Étude thermique et acoustique</strong> : Dimensionnement sur-mesure pour éviter les sifflements d'air et la surconsommation électrique.</li>
                                         <li><strong>Grandes marques et mise en service soignée</strong> : Matériel réputé posé par l'artisan dans le respect des règles de l'art.</li>
@@ -628,7 +628,7 @@ export default function LabelsPage() {
                                     </div>
                                     <ul className="text-xs md:text-sm text-slate-600 space-y-2 pl-7 list-disc">
                                         <li>Vos coordonnées sont revendues à 3 à 5 entreprises qui vous harcèlent jour et nuit pour vous faire signer d'urgence.</li>
-                                        <li>Aucun contrôle réel des polices d'assurance décennale : risque de pose par des sous-traitants non déclarés.</li>
+                                        <li>Aucune vérification réelle des polices d'assurance décennale : risque de pose par des sous-traitants non déclarés.</li>
                                         <li>Devis artificiellement bas pour décrocher le chantier, suivis d'avenants exorbitants une fois vos plafonds ouverts.</li>
                                         <li>Entreprises volatiles : au premier problème d'eau ou de bruit, l'interlocuteur ne répond plus ou a liquidé son affaire.</li>
                                     </ul>
@@ -744,7 +744,7 @@ export default function LabelsPage() {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white">Documents Obligatoires</h3>
-                                    <p className="text-xs text-slate-400 font-normal">Fournis et contrôlés avant validation</p>
+                                    <p className="text-xs text-slate-400 font-normal">Fournis et vérifiés lors de la modération</p>
                                 </div>
                             </div>
                             
@@ -860,7 +860,7 @@ export default function LabelsPage() {
                             },
                             {
                                 q: "Que se passe-t-il si un professionnel ne respecte plus les critères du label ?",
-                                a: "Le label 'Expert Vérifié' est basé sur le contrôle régulier des pièces justificatives fournies (SIRET actif, attestation décennale CVC valide, capacité fluides). En cas de document caduc ou de manquement constaté, le badge est suspendu et la fiche désactivée."
+                                a: "Le label 'Expert Vérifié' est basé sur la modération attentive des pièces justificatives fournies (SIRET actif, attestation décennale CVC valide, capacité fluides). En cas de document caduc ou de manquement constaté, le badge est suspendu et la fiche désactivée."
                             },
                             {
                                 q: "Je suis installateur : quel est l'intérêt concret pour moi d'obtenir le badge ?",

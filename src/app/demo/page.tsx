@@ -204,7 +204,7 @@ export default function DemoPage() {
                                     <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-1" />
                                     <div>
                                         <div className="font-semibold text-slate-900">Un annuaire automatique ouvert à tous</div>
-                                        <div className="text-sm text-slate-500">Chaque dossier fait l'objet d'un contrôle rigoureux par notre équipe.</div>
+                                        <div className="text-sm text-slate-500">Chaque dossier fait l'objet d'une modération rigoureuse par notre équipe.</div>
                                     </div>
                                 </li>
                             </ul>
