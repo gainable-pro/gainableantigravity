@@ -364,11 +364,10 @@ export default function LabelsPage() {
 
                                 <div className="p-5 rounded-2xl bg-emerald-50/50 border border-emerald-200 space-y-2">
                                     <p className="text-xs font-black uppercase text-emerald-800 tracking-wider flex items-center gap-1.5">
-                                        <ShieldCheck className="w-4 h-4 text-emerald-600" /> Votre garantie sérénité :
+                                        <ShieldCheck className="w-4 h-4 text-emerald-600" /> Rôle de l'assureur professionnel :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        En cas de sinistre imprévu (fuite au bac de condensats dans les combles, incident électrique), 
-                                        la compagnie d'assurance prend en charge les réparations sans contestation. Votre investissement est protégé pendant 10 ans.
+                                        L'assurance décennale souscrite par l'installateur auprès de sa propre compagnie couvre ses travaux pendant 10 ans selon les conditions de sa police. Gainable.fr n'est pas assureur mais contrôle la validité de l'attestation fournie.
                                     </p>
                                 </div>
                             </div>
@@ -452,11 +451,10 @@ export default function LabelsPage() {
 
                                 <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 space-y-2">
                                     <p className="text-xs font-black uppercase text-amber-800 tracking-wider flex items-center gap-1.5">
-                                        <Wrench className="w-4 h-4 text-[#D59B2B]" /> Votre garantie sérénité :
+                                        <Wrench className="w-4 h-4 text-[#D59B2B]" /> Rôle du frigoriste :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        Le tirage au vide, les raccords dudgeon et la mise en service sont exécutés dans les règles de l'art. 
-                                        Le compresseur fonctionne à son rendement optimal sans surconsommation d'énergie.
+                                        L'artisan engage sa responsabilité professionnelle sur la mise en œuvre technique et le raccordement étanche de votre circuit sous pression, conformément à son habilitation légale.
                                     </p>
                                 </div>
                             </div>
@@ -496,11 +494,10 @@ export default function LabelsPage() {
 
                                 <div className="p-5 rounded-2xl bg-purple-50/50 border border-purple-200 space-y-2">
                                     <p className="text-xs font-black uppercase text-purple-800 tracking-wider flex items-center gap-1.5">
-                                        <Award className="w-4 h-4 text-purple-600" /> Votre garantie sérénité :
+                                        <Award className="w-4 h-4 text-purple-600" /> Rôle de l'installateur :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        Vous bénéficiez des garanties officielles constructeur (jusqu'à 5 ans sur le compresseur) et de la disponibilité immédiate 
-                                        de toutes les pièces détachées d'origine en cas de besoin.
+                                        L'installateur gère en direct avec ses distributeurs l'approvisionnement et l'application des garanties constructeur. Gainable.fr n'étant ni fabricant ni revendeur, le choix du matériel et ses garanties relèvent de la relation contractuelle directe entre le client, l'artisan et le fabricant.
                                     </p>
                                 </div>
                             </div>
@@ -540,11 +537,10 @@ export default function LabelsPage() {
 
                                 <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 space-y-2">
                                     <p className="text-xs font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
-                                        <ThumbsUp className="w-4 h-4 text-[#D59B2B]" /> Votre garantie sérénité :
+                                        <ThumbsUp className="w-4 h-4 text-[#D59B2B]" /> Relation directe artisan - client :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        Un interlocuteur respectueux de votre logement, joignable et engagé. En cas de manquement répété à la charte, 
-                                        le badge du professionnel est suspendu sans délai.
+                                        Vous contractualisez directement d'égal à égal avec le professionnel de votre choix. Gainable.fr est une plateforme de mise en relation indépendante (ni fabricant, ni installateur, ni assureur) et n'intervient pas dans les relations contractuelles, pannes ou éventuels litiges entre l'installateur et le client.
                                     </p>
                                 </div>
                             </div>
@@ -677,7 +673,7 @@ export default function LabelsPage() {
                                         <li><strong>Contrôle documentaire sur pièces</strong> : Siret en règle, assurance décennale CVC valide et capacité gaz vérifiée.</li>
                                         <li><strong>Contact direct et transparent</strong> : Aucun intermédiaire commercial, devis au tarif réel de l'artisan sans marge de plateforme.</li>
                                         <li><strong>Étude thermique et acoustique</strong> : Dimensionnement sur-mesure pour éviter les sifflements d'air et la surconsommation électrique.</li>
-                                        <li><strong>Garantie constructeur et SAV durable</strong> : Matériel officiel, mise en service conforme et présence assurée au fil des années.</li>
+                                        <li><strong>Grandes marques et mise en service soignée</strong> : Matériel réputé posé par l'artisan dans le respect des règles de l'art.</li>
                                     </ul>
                                 </div>
 
@@ -915,8 +911,12 @@ export default function LabelsPage() {
                                 a: "Contrairement aux plateformes de courtage qui prélèvent entre 8 % et 15 % de commission sur les travaux (ce qui gonfle artificiellement la facture du client), Gainable.fr fonctionne comme un réseau de confiance indépendant. Vous traitez directement avec le gérant de l'entreprise locale sans aucun intermédiaire ni surtaxe."
                             },
                             {
-                                q: "Que se passe-t-il en cas de litige ou de manquement de l'artisan ?",
-                                a: "La charte Gainable.fr impose des critères stricts de sérieux et de probité professionnelle : tout signalement avéré de manquement déontologique ou de litige grave non traité entraîne la suspension immédiate du badge 'Expert Vérifié' et la désactivation de la fiche de l'entreprise."
+                                q: "Quel est le rôle exact de Gainable.fr ?",
+                                a: "Gainable.fr est une plateforme indépendante de mise en relation directe. Gainable.fr n'est ni fabricant de matériel, ni installateur, ni assureur. Nous n'intervenons pas dans les relations contractuelles, devis, exécution des travaux, garanties matérielles, pannes ou éventuels litiges entre le client et l'artisan. Chaque entreprise reste seule responsable de ses prestations et de ses garanties."
+                            },
+                            {
+                                q: "Que se passe-t-il si un professionnel ne respecte plus les critères du label ?",
+                                a: "Le label 'Expert Vérifié' est basé sur le contrôle régulier des pièces justificatives fournies (SIRET actif, attestation décennale CVC valide, capacité fluides). En cas de document caduc ou de manquement constaté, le badge est suspendu et la fiche désactivée."
                             },
                             {
                                 q: "Je suis installateur : quel est l'intérêt concret pour moi d'obtenir le badge ?",
