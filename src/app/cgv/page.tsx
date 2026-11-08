@@ -554,22 +554,148 @@ export default function ConditionsGeneralesVentePage() {
                     </section>
 
                     {/* ARTICLE 30 */}
-                    <section className="space-y-4">
+                    <section className="space-y-6">
                         <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 30 — PROTECTION DE LA PLATEFORME
+                            ARTICLE 30 — PROPRIÉTÉ INTELLECTUELLE ET PROTECTION DE LA PLATEFORME
                         </h2>
-                        <p>Les bases de données, éléments graphiques, logiciels, signes distinctifs et contenus propres à Gainable sont protégés dans les conditions prévues par les droits de propriété intellectuelle applicables.</p>
-                        <p>Sont notamment interdits, sauf autorisation ou exception légale :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>L'extraction ou la réutilisation illicite de parties protégées des bases de données ;</li>
-                            <li>L'accès frauduleux aux systèmes ;</li>
-                            <li>Le contournement des dispositifs de sécurité ;</li>
-                            <li>L'utilisation de robots ou scripts provoquant une charge abusive ;</li>
-                            <li>La reproduction non autorisée de contenus protégés ;</li>
-                            <li>L'utilisation de la plateforme à des fins frauduleuses.</li>
-                        </ul>
-                        <p>Gainable peut engager les actions nécessaires pour faire cesser ces pratiques et demander réparation des préjudices démontrés.</p>
-                        <p className="text-xs text-slate-500 italic">Toute indemnité contractuelle forfaitaire supplémentaire devra faire l'objet d'une stipulation spécifique, précise et juridiquement proportionnée.</p>
+
+                        <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-slate-800 text-sm space-y-3">
+                            <p>
+                                L'abonnement Gainable confère au professionnel un droit personnel, non exclusif et non transférable d'utiliser les fonctionnalités contractuellement mises à sa disposition pendant la durée de son abonnement.
+                            </p>
+                            <p>
+                                Il ne lui confère aucun droit de propriété sur les logiciels, codes sources, interfaces originales, bases de données protégées, marques, signes distinctifs ou éléments techniques appartenant à EXCEED DIGITAL ou exploités sous licence.
+                            </p>
+                            <p className="font-bold text-slate-900">Le professionnel s'interdit notamment :</p>
+                            <ul className="list-disc list-inside space-y-1.5 pl-2 text-slate-700">
+                                <li>D'extraire ou de réutiliser illicitement les bases de données protégées ;</li>
+                                <li>De reproduire ou d'exploiter sans autorisation les éléments protégés de la plateforme ;</li>
+                                <li>De contourner les dispositifs de sécurité ;</li>
+                                <li>De communiquer à des tiers des informations techniques ou commerciales confidentielles obtenues dans le cadre de son abonnement ;</li>
+                                <li>D'utiliser frauduleusement les services Gainable pour porter atteinte aux droits d'EXCEED DIGITAL.</li>
+                            </ul>
+                            <p>
+                                Ces obligations s'appliquent aux services du réseau Gainable, notamment aux domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong> et <strong>gainable.eu</strong>, lorsqu'ils sont exploités par EXCEED DIGITAL.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                Les interdictions ci-dessus s'entendent sous réserve des droits et exceptions légalement reconnus aux utilisateurs.
+                            </p>
+                            <p className="font-semibold text-slate-900">
+                                Le professionnel conserve ses droits sur les contenus qu'il fournit, conformément à l'article 19 des présentes CGV.
+                            </p>
+                            <p className="text-rose-800 font-bold">
+                                Toute violation peut entraîner les mesures contractuelles légalement justifiées et, le cas échéant, une action en réparation du préjudice subi.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.1. Identification du réseau Gainable</h3>
+                            <p>
+                                La plateforme Gainable est exploitée par <strong>EXCEED DIGITAL</strong> au moyen d'un écosystème numérique comprenant notamment les noms de domaine suivants :
+                            </p>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 py-1 font-semibold text-[#D59B2B]">
+                                <div>• www.gainable.fr</div>
+                                <div>• www.gainable.ch</div>
+                                <div>• www.gainable.ma</div>
+                                <div>• www.gainable.be</div>
+                                <div>• www.gainable.org</div>
+                                <div>• www.gainable.eu</div>
+                            </div>
+                            <p>
+                                Ces domaines peuvent, selon leur configuration technique et leur disponibilité, proposer des services, présenter des contenus ou rediriger vers une plateforme commune.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                La présente disposition ne préjuge pas de la titularité juridique de chaque nom de domaine, qui doit être vérifiée auprès des registres et bureaux d'enregistrement concernés.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.2. Protection des éléments de la plateforme</h3>
+                            <p>
+                                Sous réserve des droits de tiers, EXCEED DIGITAL détient ou exploite les droits nécessaires sur les éléments propres à Gainable, notamment :
+                            </p>
+                            <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
+                                <li>Les marques, noms commerciaux, logos et signes distinctifs ;</li>
+                                <li>Les codes sources et logiciels originaux ;</li>
+                                <li>Les créations graphiques et interfaces originales ;</li>
+                                <li>Les textes et contenus éditoriaux propres à Gainable ;</li>
+                                <li>L'organisation originale des contenus, lorsqu'elle remplit les conditions de protection ;</li>
+                                <li>Les développements spécifiques de l'agent d'intelligence artificielle ;</li>
+                                <li>Les outils de gestion des fiches, des zones géographiques et des spécialités ;</li>
+                                <li>Les bases de données professionnelles, dans les limites des droits légalement reconnus.</li>
+                            </ul>
+                            <p className="font-semibold text-slate-900">
+                                Aucun droit de propriété intellectuelle n'est transféré aux utilisateurs ou aux professionnels du seul fait de leur accès à la plateforme.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.3. Protection des bases de données</h3>
+                            <p>
+                                EXCEED DIGITAL se réserve les droits dont elle bénéficie, le cas échéant, en qualité de producteur des bases de données Gainable, conformément aux articles L.341-1 et suivants du Code de la propriété intellectuelle.
+                            </p>
+                            <p className="font-semibold text-slate-800">Sous réserve des exceptions légales, sont interdits sans autorisation :</p>
+                            <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
+                                <li>L'extraction ou la réutilisation de la totalité ou d'une partie substantielle d'une base de données protégée ;</li>
+                                <li>L'extraction ou la réutilisation répétée et systématique de parties non substantielles dans les conditions interdites par la loi ;</li>
+                                <li>La constitution d'une base concurrente au moyen d'extractions portant atteinte aux droits d'EXCEED DIGITAL.</li>
+                            </ul>
+                            <p className="text-xs text-slate-500 italic">
+                                Ces dispositions s'appliquent indépendamment du nom de domaine par lequel les données protégées sont consultées.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.4. Interdiction des usages frauduleux et des reproductions illicites</h3>
+                            <p className="font-semibold text-rose-800">Il est interdit d'utiliser les services Gainable pour :</p>
+                            <ul className="list-disc list-inside space-y-1 pl-2 text-slate-600">
+                                <li>Copier illicitement les codes, interfaces ou contenus protégés ;</li>
+                                <li>Reproduire ou exploiter sans autorisation les signes distinctifs Gainable ;</li>
+                                <li>Contourner les systèmes de sécurité ou d'authentification ;</li>
+                                <li>Effectuer une collecte automatisée abusive portant atteinte aux droits de Gainable ou aux droits des personnes ;</li>
+                                <li>Usurper l'identité de Gainable ou créer une confusion sur l'origine d'un service ;</li>
+                                <li>Exploiter des informations confidentielles obtenues illicitement.</li>
+                            </ul>
+                            <p className="text-xs text-slate-500 italic">
+                                Ces interdictions s'entendent sous réserve des exceptions légales, notamment celles relatives à l'utilisation licite des logiciels, à l'interopérabilité et aux droits des utilisateurs légitimes.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.5. Architecture technique et savoir-faire confidentiel</h3>
+                            <p>
+                                Les éléments non publics relatifs à l'architecture technique, aux algorithmes internes, aux paramètres confidentiels de classement, aux procédures de déploiement multidomaine et aux méthodes de fonctionnement peuvent constituer des informations confidentielles ou des secrets d'affaires lorsque les conditions légales sont réunies.
+                            </p>
+                            <p>
+                                Les personnes auxquelles ces informations sont communiquées dans un cadre contractuel sont tenues de respecter les obligations de confidentialité applicables.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                La présente clause ne crée aucun monopole sur les idées, fonctionnalités générales ou modèles économiques qui ne bénéficient pas d'une protection juridique spécifique.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.6. Contenus des professionnels</h3>
+                            <p>
+                                Les photographies, logos, marques, réalisations et autres contenus fournis par les professionnels restent soumis aux droits de leurs titulaires.
+                            </p>
+                            <p>
+                                Le professionnel accorde à Gainable les autorisations nécessaires à leur diffusion conformément aux CGV professionnelles.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                EXCEED DIGITAL ne revendique pas la propriété exclusive de contenus appartenant légitimement à des tiers.
+                            </p>
+                        </div>
+
+                        <div className="space-y-3 text-sm">
+                            <h3 className="font-bold text-slate-900 text-base">30.7. Défense des droits</h3>
+                            <p>
+                                En cas de reproduction illicite, d'extraction interdite, de contrefaçon, d'atteinte à un secret d'affaires ou d'actes de concurrence déloyale, EXCEED DIGITAL se réserve la possibilité d'exercer toute action légalement ouverte afin de faire cesser les agissements et d'obtenir réparation du préjudice démontré.
+                            </p>
+                            <p className="text-xs text-slate-500 italic">
+                                La présente clause s'applique aux services exploités dans le réseau Gainable, sous réserve des lois impératives applicables dans les territoires concernés.
+                            </p>
+                        </div>
                     </section>
 
                     {/* ARTICLE 31 */}
