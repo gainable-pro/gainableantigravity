@@ -63,6 +63,7 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-6 text-base font-medium text-slate-700">
 
+                    <Link href="https://www.gainable.fr" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Nos Experts</Link>
                     <Link href="/climatisation" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Climatisation & Chauffage</Link>
                     {/* <Link href="/materiel" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">Matériel</Link> */}
                     <Link href="/bureau-etude" className="text-sm font-medium text-slate-600 hover:text-[#1F2D3D] transition-colors">
@@ -82,15 +83,7 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                 </nav>
 
                 {/* Right Side: CTA */}
-                <div className="flex items-center gap-3">
-                    <Link href="https://www.gainable.fr" className="inline-flex">
-                        <Button
-                            size="sm"
-                            className="bg-[#D59B2B] hover:bg-[#c48e24] text-white font-bold transition-all shadow-sm px-4"
-                        >
-                            Nos Experts
-                        </Button>
-                    </Link>
+                <div className="flex items-center gap-4">
                     <div className="hidden md:block">
                         <LoginDropdown />
                     </div>
@@ -118,18 +111,12 @@ function MobileMenu() {
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
                 <SheetDescription className="sr-only">Menu principal pour mobile</SheetDescription>
                 <nav className="flex flex-col space-y-4 mt-8">
-                    <div className="mb-4 flex flex-col gap-2">
-                        <Link href="https://www.gainable.fr" onClick={() => setIsOpen(false)}>
-                            <Button
-                                className="w-full bg-[#D59B2B] hover:bg-[#c48e24] text-white font-bold"
-                            >
-                                Nos Experts
-                            </Button>
-                        </Link>
+                    <div className="mb-4">
                         <LoginDropdown />
                     </div>
                     <hr className="border-slate-100" />
 
+                    <Link href="https://www.gainable.fr" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Nos Experts</Link>
                     <Link href="/climatisation" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Climatisation & Chauffage</Link>
                     {/* <Link href="/materiel" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Matériel</Link> */}
                     <Link href="/bureau-etude" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">
