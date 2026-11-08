@@ -151,9 +151,9 @@ export default function CareersPage() {
           <div className="relative">
             <div className="absolute inset-0 bg-[#D59B2B] rounded-[3rem] rotate-3 translate-x-4 translate-y-4 opacity-10" />
             <img 
-              src="https://images.unsplash.com/photo-1600880212340-053459a139ad?auto=format&fit=crop&q=80&w=800" 
+              src="/images/gainable-team-business.jpg" 
               alt="Réunion équipe commerciale" 
-              className="relative z-10 rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000"
+              className="relative z-10 rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 object-cover w-full h-[500px]"
             />
           </div>
         </div>

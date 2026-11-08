@@ -242,11 +242,40 @@ export default function MaterielPage() {
                   </p>
                 </div>
               </div>
-              <div className="mt-6 flex flex-wrap gap-4 items-center border-t border-slate-100 pt-4">
-                <span className="text-xs text-slate-400 italic">
-                  * Les tarifs indiqués ci-dessous sont des estimations de prix publics conseillés HT (hors remises professionnelles d'installation).
-                </span>
-                <Link href="/" className="ml-auto inline-flex items-center gap-2 px-4 py-2 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs font-semibold rounded-lg transition-all shadow-sm">
+              {/* Conseil expert : Éviter l'achat en ligne autonome et privilégier l'installateur */}
+              <div className="mt-6 p-5 bg-amber-50/90 border border-amber-200 rounded-xl">
+                <h4 className="text-base font-bold text-[#1F2D3D] flex items-center gap-2 mb-2.5">
+                  <Wrench className="w-5 h-5 text-[#D59B2B] shrink-0" />
+                  Pourquoi confier la commande et le dimensionnement à l'installateur ?
+                </h4>
+                <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                  <strong>Évitez impérativement d'acheter vous-même votre matériel sur des plateformes en ligne.</strong> Il est toujours préférable que votre installateur certifié prenne directement en charge l'achat, la commande et le dimensionnement complet. Même avec tous les outils et simulateurs en ligne disponibles, <strong>seul un expert sur le terrain peut vous conseiller avec précision</strong> : calcul exact de la puissance thermique, nombre d'unités ou de splits, positionnement stratégique des unités intérieures, calcul des débits d'air (m³/h) et nombre de bouches de soufflage pour un confort thermique et acoustique irréprochable.
+                </p>
+                <div className="bg-white/90 border border-amber-200/80 rounded-lg p-3.5 space-y-2">
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                    <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+                    Les erreurs critiques qu'un artisan qualifié vous évite :
+                  </p>
+                  <ul className="text-xs sm:text-sm space-y-1.5 text-slate-600 list-disc list-inside pl-1">
+                    <li><strong className="text-slate-800">Évacuation des condensats dans le tout-à-l'égout :</strong> sans siphon sec adapté, cela engendre de graves remontées d'odeurs d'égout directes dans vos pièces.</li>
+                    <li><strong className="text-slate-800">Unité intérieure au-dessus d'une tête de lit :</strong> risque de nuisances sonores directes et de courants d'air froid sur le dormeur.</li>
+                    <li><strong className="text-slate-800">Unité intérieure posée trop haut sous plafond :</strong> mauvaise circulation de l'air ambiant et stratification de la chaleur en hiver.</li>
+                    <li><strong className="text-slate-800">Raccordement électrique non conforme :</strong> section de câble ou disjoncteur inadapté risquant d'endommager la carte électronique et d'annuler les garanties.</li>
+                  </ul>
+                  <p className="pt-1 text-xs sm:text-sm font-semibold text-[#1F2D3D]">
+                    👉 Seul l'expert en installation est capable de mieux vous aiguiller pour une installation pérenne, conforme aux normes et couverte par la garantie décennale.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-slate-200 pt-4 bg-slate-50/80 -mx-6 -mb-6 p-4 rounded-b-xl">
+                <div className="flex items-center gap-2.5 text-sm font-bold text-slate-800 bg-white border border-amber-300 px-4 py-2.5 rounded-lg shadow-sm">
+                  <Info className="w-5 h-5 text-[#D59B2B] shrink-0" />
+                  <span>
+                    <strong>* Les tarifs indiqués ci-dessous sont des estimations de prix publics conseillés HT (hors remises professionnelles d'installation).</strong>
+                  </span>
+                </div>
+                <Link href="/" className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-[#1F2D3D] hover:bg-[#D59B2B] text-white text-xs sm:text-sm font-bold rounded-lg transition-all shadow-md hover:shadow-lg">
                   Faire installer mon matériel
                 </Link>
               </div>

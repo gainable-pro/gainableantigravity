@@ -82,7 +82,15 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                 </nav>
 
                 {/* Right Side: CTA */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                    <Link href="https://www.gainable.fr" className="inline-flex">
+                        <Button
+                            size="sm"
+                            className="bg-[#D59B2B] hover:bg-[#c48e24] text-white font-bold transition-all shadow-sm px-4"
+                        >
+                            Nos Experts
+                        </Button>
+                    </Link>
                     <div className="hidden md:block">
                         <LoginDropdown />
                     </div>
@@ -110,7 +118,14 @@ function MobileMenu() {
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
                 <SheetDescription className="sr-only">Menu principal pour mobile</SheetDescription>
                 <nav className="flex flex-col space-y-4 mt-8">
-                    <div className="mb-4">
+                    <div className="mb-4 flex flex-col gap-2">
+                        <Link href="https://www.gainable.fr" onClick={() => setIsOpen(false)}>
+                            <Button
+                                className="w-full bg-[#D59B2B] hover:bg-[#c48e24] text-white font-bold"
+                            >
+                                Nos Experts
+                            </Button>
+                        </Link>
                         <LoginDropdown />
                     </div>
                     <hr className="border-slate-100" />
