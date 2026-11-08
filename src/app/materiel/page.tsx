@@ -254,16 +254,36 @@ export default function MaterielPage() {
                 <div className="bg-white/90 border border-amber-200/80 rounded-lg p-3.5 space-y-2">
                   <p className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-1.5">
                     <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-                    Les erreurs critiques qu'un artisan qualifié vous évite :
+                    Les erreurs critiques et pièges qu'un artisan qualifié vous évite :
                   </p>
-                  <ul className="text-xs sm:text-sm space-y-1.5 text-slate-600 list-disc list-inside pl-1">
-                    <li><strong className="text-slate-800">Évacuation des condensats dans le tout-à-l'égout :</strong> sans siphon sec adapté, cela engendre de graves remontées d'odeurs d'égout directes dans vos pièces.</li>
-                    <li><strong className="text-slate-800">Unité intérieure au-dessus d'une tête de lit :</strong> risque de nuisances sonores directes et de courants d'air froid sur le dormeur.</li>
-                    <li><strong className="text-slate-800">Unité intérieure posée trop haut sous plafond :</strong> mauvaise circulation de l'air ambiant et stratification de la chaleur en hiver.</li>
-                    <li><strong className="text-slate-800">Raccordement électrique non conforme :</strong> section de câble ou disjoncteur inadapté risquant d'endommager la carte électronique et d'annuler les garanties.</li>
+                  <ul className="text-xs sm:text-sm space-y-2 text-slate-600 list-disc list-inside pl-1">
+                    <li>
+                      <strong className="text-slate-800">Sous-dimensionnement ou sur-dimensionnement :</strong> dans les deux cas, cela provoque une <strong>usure prématurée du matériel et du compresseur</strong> (cycles courts et arrêts incessants en sur-dimensionnement qui usent prématurément le moteur, ou surrégime permanent avec surconsommation électrique en sous-dimensionnement).
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Gainable posé sans système de régulation (zoning) :</strong> pour casser les prix et afficher un devis attractif, certains font l'impasse sur la régulation pièce par pièce. Résultat : températures incontrôlables, certaines pièces surchauffées, d'autres trop froides et gaspillage d'énergie.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Grilles de reprise d'air mal positionnées :</strong> une reprise installée à proximité directe des WC, d'une cuisine ou d'une issue aspire les polluants et odeurs pour les réinjecter en boucle dans toute la maison.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Évacuation des condensats dans le tout-à-l'égout :</strong> raccordée directement sans siphon sec anti-désamorçage, elle aspire les gaz d'égout et diffuse des remontées d'odeurs pestilentielles dans vos pièces.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Unité intérieure au-dessus d'une tête de lit :</strong> inconfort thermique garanti avec courant d'air froid sur le dormeur et résonance acoustique nocturne.
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Unité intérieure posée trop haut sous plafond :</strong> mauvaise recirculation de l'air ambiant et stratification de la chaleur (le chaud reste bloqué en hauteur en hiver).
+                    </li>
+                    <li>
+                      <strong className="text-slate-800">Raccordement électrique non conforme :</strong> section de câble non adaptée ou protection inadéquate pouvant griller les cartes électroniques inverter et entraîner un refus de garantie constructeur.
+                    </li>
+                    <li>
+                      <strong className="text-amber-800">⚠️ Une tarification anormalement basse doit être un signal d'alarme :</strong> un prix cassé dissimule systématiquement des concessions dangereuses (matériel non garanti en France, absence d'assurance décennale valide, matériel sans régulation ou mise en service bâclée sans tirage au vide ni épreuve sous azote).
+                    </li>
                   </ul>
-                  <p className="pt-1 text-xs sm:text-sm font-semibold text-[#1F2D3D]">
-                    👉 Seul l'expert en installation est capable de mieux vous aiguiller pour une installation pérenne, conforme aux normes et couverte par la garantie décennale.
+                  <p className="pt-2 text-xs sm:text-sm font-semibold text-[#1F2D3D]">
+                    👉 Seul un expert frigoriste / CVC qualifié est capable de dimensionner vos débits réels, de vous guider de A à Z et de vous garantir une installation silencieuse, pérenne et 100% assurée.
                   </p>
                 </div>
               </div>
