@@ -319,14 +319,14 @@ export default function LabelsPage() {
                             <ShieldCheck className="w-4 h-4 text-emerald-600" /> Le Filtre Gainable.fr
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black font-montserrat text-[#1F2D3D] mb-5 tracking-tight">
-                            Notre Protocole de Contrôle en 5 Verrous
+                            Les 4 Étapes de Contrôle Gainable.fr
                         </h2>
                         <p className="text-slate-600 text-base md:text-lg leading-relaxed">
-                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'un examen approfondi sur pièces justificatives :
+                            Nous ne distribuons pas de macarons de complaisance. Chaque installateur partenaire fait l'objet d'un examen attentif des pièces déclaratives :
                         </p>
                     </div>
 
-                    {/* The 5 Grand Verrous Grid */}
+                    {/* The 4 Grand Verrous Grid */}
                     <div className="space-y-6">
 
                         {/* VERROU 01: DÉCENNALE CVC */}
@@ -352,9 +352,6 @@ export default function LabelsPage() {
 
                             <div className="grid md:grid-cols-2 gap-6 pt-6">
                                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
-                                        <FileCheck2 className="w-4 h-4 text-emerald-600" /> Ce que nous vérifions sur pièces :
-                                    </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
                                         Attestation d'assurance de l'année en cours avec contrôle des lignes d'activité déclarées : 
                                         mention expresse <strong>« Génie Climatique / Climatisation Réversible / Aéraulique »</strong>. 
@@ -396,9 +393,6 @@ export default function LabelsPage() {
 
                             <div className="grid md:grid-cols-2 gap-6 pt-6">
                                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
-                                        <FileCheck2 className="w-4 h-4 text-blue-600" /> Ce que nous vérifions sur pièces :
-                                    </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
                                         Vérification du numéro SIRET/SIREN, code NAF/APE compatible (4322B Installation de climatisation), 
                                         siège social réel en France, absence de procédure collective ou de radiation, compte bancaire professionnel officiel.
@@ -407,11 +401,10 @@ export default function LabelsPage() {
 
                                 <div className="p-5 rounded-2xl bg-blue-50/50 border border-blue-200 space-y-2">
                                     <p className="text-xs font-black uppercase text-blue-800 tracking-wider flex items-center gap-1.5">
-                                        <Building className="w-4 h-4 text-blue-600" /> Votre garantie sérénité :
+                                        <Building className="w-4 h-4 text-blue-600" /> Entreprise en direct :
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        Vous contractualisez avec une véritable entreprise établie et pérenne. Vos acomptes sont sécurisés 
-                                        et votre interlocuteur sera toujours là pour vous accompagner dans la durée.
+                                        Vous contractualisez avec une entreprise établie et pérenne. L'ensemble des prestations et devis relèvent de la responsabilité exclusive de l'artisan.
                                     </p>
                                 </div>
                             </div>
@@ -440,9 +433,6 @@ export default function LabelsPage() {
 
                             <div className="grid md:grid-cols-2 gap-6 pt-6">
                                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
-                                        <FileCheck2 className="w-4 h-4 text-amber-600" /> Ce que nous vérifions sur pièces :
-                                    </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
                                         Certificat officiel de manipulation des fluides frigorigènes (Catégorie I). 
                                         Seuls les frigoristes agréés sont autorisés par la réglementation à manipuler les gaz sous pression (R32 / R410A) et raccorder les circuits thermodynamiques.
@@ -472,7 +462,7 @@ export default function LabelsPage() {
                                             <Award className="w-3.5 h-3.5" /> Étape 4 • Matériel Constructeur
                                         </div>
                                         <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
-                                            Filière Officielle Grandes Marques & Airzone
+                                            Filière Grandes Marques & Airzone
                                         </h3>
                                     </div>
                                 </div>
@@ -483,11 +473,8 @@ export default function LabelsPage() {
 
                             <div className="grid md:grid-cols-2 gap-6 pt-6">
                                 <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
-                                        <FileCheck2 className="w-4 h-4 text-purple-600" /> Ce que nous vérifions sur pièces :
-                                    </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                                        Approvisionnement exclusif via les réseaux distributeurs officiels français. 
+                                        Approvisionnement via les réseaux distributeurs officiels français. 
                                         Maîtrise technique reconnue pour l'intégration des systèmes de zonage Airzone et le calcul acoustique des bouches de soufflage.
                                     </p>
                                 </div>
@@ -498,49 +485,6 @@ export default function LabelsPage() {
                                     </p>
                                     <p className="text-sm text-slate-700 leading-relaxed font-normal">
                                         L'installateur gère en direct avec ses distributeurs l'approvisionnement et l'application des garanties constructeur. Gainable.fr n'étant ni fabricant ni revendeur, le choix du matériel et ses garanties relèvent de la relation contractuelle directe entre le client, l'artisan et le fabricant.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* VERROU 05: CHARTE DÉONTOLOGIQUE ET ENGAGEMENT SAV */}
-                        <div className="bg-white rounded-3xl border-2 border-slate-200 hover:border-amber-500/60 p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-100">
-                                <div className="flex items-start sm:items-center gap-4">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-[#D59B2B] text-white flex items-center justify-center font-black text-xl shadow-lg shrink-0">
-                                        05
-                                    </div>
-                                    <div>
-                                        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-50 text-amber-900 text-xs font-bold uppercase mb-1">
-                                            <HeartHandshake className="w-3.5 h-3.5" /> Étape 5 • Éthique & SAV
-                                        </div>
-                                        <h3 className="text-xl md:text-2xl font-black text-[#1F2D3D]">
-                                            Charte Déontologique : Écoute & Suivi Client
-                                        </h3>
-                                    </div>
-                                </div>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 text-[#D59B2B] font-bold text-xs uppercase tracking-wider shrink-0 self-start lg:self-auto border border-amber-500/20">
-                                    <CheckCircle2 className="w-4 h-4 text-[#D59B2B]" /> Charte Qualité & Transparence
-                                </div>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 gap-6 pt-6">
-                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                                    <p className="text-xs font-black uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
-                                        <FileCheck2 className="w-4 h-4 text-[#D59B2B]" /> Ce que nous vérifions sur pièces :
-                                    </p>
-                                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                                        Signature d'une charte de déontologie : devis transparent et détaillé, interdiction formelle de sous-traitance clandestine, 
-                                        formation du client au pilotage de son équipement et proposition d'un suivi d'entretien annuel.
-                                    </p>
-                                </div>
-
-                                <div className="p-5 rounded-2xl bg-amber-50/50 border border-amber-200 space-y-2">
-                                    <p className="text-xs font-black uppercase text-amber-900 tracking-wider flex items-center gap-1.5">
-                                        <ThumbsUp className="w-4 h-4 text-[#D59B2B]" /> Relation directe artisan - client :
-                                    </p>
-                                    <p className="text-sm text-slate-700 leading-relaxed font-normal">
-                                        Vous contractualisez directement d'égal à égal avec le professionnel de votre choix. Gainable.fr est une plateforme de mise en relation indépendante (ni fabricant, ni installateur, ni assureur) et n'intervient pas dans les relations contractuelles, pannes ou éventuels litiges entre l'installateur et le client.
                                     </p>
                                 </div>
                             </div>
