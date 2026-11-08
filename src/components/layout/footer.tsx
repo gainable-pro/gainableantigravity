@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export function Footer() {
     const pathname = usePathname();
     const isLandingPage = pathname === '/demo' || pathname === '/inscription' || pathname?.startsWith('/demo') || pathname?.startsWith('/inscription');
-
-
 
     if (isLandingPage) {
         return (
@@ -25,7 +22,10 @@ export function Footer() {
                             Politique de Confidentialité
                         </Link>
                         <Link href="/cgu" className="hover:text-amber-500 transition-colors">
-                            Conditions Générales
+                            CGU
+                        </Link>
+                        <Link href="/cgv" className="hover:text-amber-500 transition-colors font-semibold text-amber-500/90">
+                            CGV Pro
                         </Link>
                     </div>
                     <p className="text-xs text-slate-600">
@@ -51,7 +51,10 @@ export function Footer() {
                         Politique de Confidentialité
                     </Link>
                     <Link href="/cgu" className="hover:text-amber-500 transition-colors">
-                        Conditions Générales d'Utilisation
+                        Conditions Générales d'Utilisation (CGU)
+                    </Link>
+                    <Link href="/cgv" className="hover:text-amber-500 transition-colors font-semibold text-amber-500/90">
+                        Conditions Générales de Vente (CGV)
                     </Link>
                     <Link href="/faq-visibilite-referencement" className="hover:text-amber-500 transition-colors text-amber-500/90 font-semibold">
                         FAQ Visibilité & Référencement

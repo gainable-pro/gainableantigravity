@@ -52,6 +52,7 @@ export async function GET(
                 '/contact',
                 '/mentions-legales',
                 '/cgu',
+                '/cgv',
                 '/politique-confidentialite',
             ].map(r => `  <url><loc>${BASE_URL}${r}</loc><lastmod>${nowStr}</lastmod><changefreq>daily</changefreq><priority>${r === '' ? '1.0' : '0.8'}</priority></url>`);
 
