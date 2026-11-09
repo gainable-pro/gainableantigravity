@@ -124,272 +124,13 @@ export default function ConditionsGeneralesUtilisation() {
                     </section>
 
                     {/* ARTICLE 3 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 3 — OBJET DE LA PLATEFORME
-                        </h2>
-                        <p>Gainable est une plateforme de référencement professionnel, de visibilité numérique et de mise en relation.</p>
-                        <p className="font-semibold text-slate-900">Elle permet notamment :</p>
-                        <ul className="list-disc list-inside space-y-1.5 pl-2 text-sm">
-                            <li>De rechercher des professionnels par région, zone d'intervention ou technologie ;</li>
-                            <li>De consulter leurs fiches et réalisations ;</li>
-                            <li>D'accéder à leurs coordonnées professionnelles ;</li>
-                            <li>De les contacter directement par téléphone ou formulaire ;</li>
-                            <li>De transmettre une demande générale de recherche de professionnels ;</li>
-                            <li>De consulter des informations et contenus relatifs aux activités référencées.</li>
-                        </ul>
-                        <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-950 font-medium text-sm">
-                            Gainable fournit un service numérique d'annuaire et d'intermédiation. Elle ne réalise pas elle-même les travaux, installations, études, diagnostics ou prestations présentés par les professionnels.
-                        </div>
-                    </section>
-
-                    {/* ARTICLE 4 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 4 — ACCÈS À LA PLATEFORME
-                        </h2>
-                        <p>La consultation publique de l'annuaire est libre et gratuite pour les particuliers.</p>
-                        <p>Certaines fonctionnalités peuvent nécessiter la communication d'informations personnelles ou la création d'un compte.</p>
-                        <p>L'utilisation de la plateforme suppose le respect des présentes CGU.</p>
-                        <p className="text-sm font-semibold text-slate-800">
-                            L'accès aux prestations payantes destinées aux professionnels est également régi par les Conditions Générales de Vente professionnelles applicables.
-                        </p>
-                    </section>
-
-                    {/* ARTICLE 5 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 5 — INDÉPENDANCE DES PROFESSIONNELS
-                        </h2>
-                        <p>Les professionnels référencés sur Gainable exercent leurs activités de manière indépendante.</p>
-                        <p>Ils demeurent seuls responsables de leurs propositions commerciales, devis, contrats, prix, assurances, qualifications, garanties et prestations.</p>
-                        <p>Gainable ne fixe pas les prix, ne négocie pas les devis, ne signe pas les contrats et n'encaisse aucun paiement relatif aux travaux conclus entre les parties.</p>
-                        <p>Gainable ne devient pas partie au contrat conclu entre le particulier et le professionnel du seul fait de leur mise en relation.</p>
-                        <p className="text-sm font-medium text-slate-800">Chaque particulier demeure libre de sélectionner, comparer, contacter ou refuser les professionnels présentés.</p>
-                    </section>
-
-                    {/* ARTICLE 6 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 6 — RÉFÉRENCEMENT ET CLASSEMENT
-                        </h2>
-                        <p>L'annuaire Gainable référence des professionnels selon les catégories d'activités proposées sur la plateforme.</p>
-                        <p className="font-semibold text-slate-900">Le classement des professionnels repose principalement sur des critères de pertinence géographique et technique, notamment :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>La région et la localisation du projet ;</li>
-                            <li>Les zones d'intervention déclarées ;</li>
-                            <li>Les technologies et spécialités professionnelles ;</li>
-                            <li>La correspondance entre la recherche et les informations disponibles.</li>
-                        </ul>
-                        <p>Les professionnels peuvent souscrire des prestations payantes de visibilité numérique et de publication de contenus.</p>
-                        <p>Le montant payé ne constitue pas, dans le fonctionnement actuel du classement ordinaire, un critère de priorité entre les professionnels.</p>
-                        <p>Certaines offres peuvent toutefois comprendre des éléments distinctifs de présentation, tels que des badges ou des fiches enrichies, conformément aux caractéristiques commerciales annoncées.</p>
-                        <p className="text-xs text-slate-500 italic">Gainable ne garantit pas une position permanente ou déterminée dans les résultats de recherche internes. Les modalités de référencement, de classement et de déréférencement sont expliquées dans une rubrique d'information accessible aux utilisateurs.</p>
-                    </section>
-
-                    {/* ARTICLE 7 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 7 — INFORMATIONS DES FICHES PROFESSIONNELLES
-                        </h2>
-                        <p>Les fiches peuvent contenir notamment :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>La dénomination commerciale ;</li>
-                            <li>Les coordonnées ;</li>
-                            <li>Les zones d'intervention ;</li>
-                            <li>Les spécialités ;</li>
-                            <li>Les qualifications déclarées ;</li>
-                            <li>Les réalisations et photographies ;</li>
-                            <li>Les liens vers les sites Internet et supports numériques.</li>
-                        </ul>
-                        <p>Les professionnels sont tenus de fournir des informations exactes, loyales et régulièrement mises à jour.</p>
-                        <p>Gainable peut effectuer certaines vérifications, sans que la publication d'une fiche constitue une certification générale de compétence ou de qualité.</p>
-                        <p className="font-semibold text-slate-900 text-sm">
-                            L'utilisateur est invité à vérifier directement auprès du professionnel les assurances, qualifications, habilitations et garanties nécessaires à son projet.
-                        </p>
-                    </section>
-
-                    {/* ARTICLE 8 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 8 — CONTACT DIRECT
-                        </h2>
-                        <p>L'utilisateur peut contacter directement un professionnel au moyen des coordonnées publiées sur sa fiche.</p>
-                        <p>Les appels téléphoniques et échanges réalisés en dehors de la plateforme relèvent des relations entre les parties.</p>
-                        <p className="text-xs text-slate-500 italic">Gainable ne contrôle pas systématiquement ces communications et ne garantit pas qu'un professionnel répondra à chaque sollicitation.</p>
-                    </section>
-
-                    {/* ARTICLE 9 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 9 — FORMULAIRE DE CONTACT D'UN PROFESSIONNEL
-                        </h2>
-                        <p>Lorsqu'un utilisateur remplit le formulaire associé à une fiche professionnelle, sa demande est destinée au professionnel qu'il a choisi.</p>
-                        <p>Les informations communiquées peuvent comprendre son identité, ses coordonnées, la localisation de son projet et la description de sa demande.</p>
-                        <p>La transmission intervient dans les conditions annoncées au moment de l'envoi du formulaire et conformément à la politique de confidentialité.</p>
-                        <p className="font-semibold text-slate-900">L'envoi d'une demande ne constitue ni une commande de travaux ni une acceptation de devis.</p>
-                        <p className="text-xs text-slate-500 italic">Le professionnel reste libre de répondre ou non à la sollicitation.</p>
-                    </section>
-
-                    {/* ARTICLE 10 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 10 — DEMANDE GÉNÉRALE ADRESSÉE À GAINABLE
-                        </h2>
-                        <p>Lorsqu'un utilisateur ne trouve pas de professionnel correspondant à son projet ou à sa zone géographique, il peut adresser une demande générale à Gainable.</p>
-                        <p>Gainable peut alors rechercher des professionnels susceptibles de répondre aux caractéristiques du projet.</p>
-                        <p>Cette recherche peut concerner des entreprises qui ne sont pas encore référencées sur la plateforme.</p>
-                        <p>Gainable peut contacter ces entreprises afin d'évaluer leur intérêt, leur zone d'intervention et leurs compétences déclarées.</p>
-                        <p>Le particulier conserve l'entière liberté de choisir ou de refuser les professionnels identifiés.</p>
-                        <p>Gainable ne garantit ni la disponibilité d'un professionnel, ni l'obtention d'un devis, ni la réalisation du projet.</p>
-                        <p className="text-xs text-slate-500 italic">Les données personnelles de l'utilisateur ne sont communiquées aux entreprises que conformément aux informations fournies lors du dépôt de la demande et à la réglementation applicable.</p>
-                    </section>
-
-                    {/* ARTICLE 11 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 11 — ABSENCE DE GARANTIE SUR LES DEVIS ET TRAVAUX
-                        </h2>
-                        <p className="font-bold text-slate-900">Gainable ne garantit pas :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>Le montant ou la compétitivité des devis ;</li>
-                            <li>Les délais de réponse des professionnels ;</li>
-                            <li>L'acceptation d'un chantier ;</li>
-                            <li>Les délais de réalisation ;</li>
-                            <li>La qualité d'exécution des travaux ;</li>
-                            <li>La solvabilité des parties ;</li>
-                            <li>Le respect par un professionnel de ses obligations contractuelles.</li>
-                        </ul>
-                        <p className="text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            Les éventuels différends relatifs à un devis, à un paiement ou à des travaux doivent être traités directement entre les parties concernées, sans préjudice des obligations propres de Gainable.
-                        </p>
-                    </section>
-
-                    {/* ARTICLE 12 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 12 — VÉRIFICATION ET BADGES
-                        </h2>
-                        <p>Gainable peut proposer des badges ou mentions permettant d'identifier certaines caractéristiques des professionnels.</p>
-                        <p>La signification de chaque badge doit correspondre aux vérifications effectivement réalisées.</p>
-                        <p>La présence d'un badge ne constitue pas une garantie de résultat, une assurance des travaux ou une certification officielle, sauf indication expresse et justifiée.</p>
-                        <p className="text-xs text-slate-500 italic">Gainable peut retirer un badge lorsque les conditions justifiant son attribution ne sont plus réunies.</p>
-                    </section>
-
-                    {/* ARTICLE 13 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 13 — CONTENUS ET PUBLICATIONS
-                        </h2>
-                        <p>Les professionnels peuvent publier des informations, photographies, réalisations et articles présentant leurs activités.</p>
-                        <p>Certains contenus peuvent être préparés avec l'assistance d'outils d'intelligence artificielle.</p>
-                        <p>Le professionnel doit veiller à l'exactitude des informations qu'il communique et à la légalité des contenus qu'il fournit ou approuve.</p>
-                        <p>Gainable peut appliquer des contrôles de conformité, des corrections techniques ou des mesures de modération dans les conditions prévues par ses documents contractuels et la réglementation applicable.</p>
-                        <p className="text-xs text-slate-500 italic">Les contenus publiés ne constituent pas des recommandations techniques personnalisées adressées à l'utilisateur.</p>
-                    </section>
-
-                    {/* ARTICLE 14 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 14 — RÉFÉRENCEMENT SUR LES MOTEURS DE RECHERCHE
-                        </h2>
-                        <p>Gainable met en œuvre des fonctionnalités destinées à faciliter la présentation et la visibilité des contenus sur Internet.</p>
-                        <p>L'indexation et le classement des pages sur les moteurs de recherche tiers, notamment Google, dépendent de mécanismes indépendants de Gainable.</p>
-                        <p>Aucun positionnement, volume de trafic ou résultat commercial déterminé n'est garanti.</p>
-                        <p className="text-xs text-slate-500 italic">Les informations techniques ou commerciales relatives au référencement ne constituent pas une promesse de performance individuelle.</p>
-                    </section>
-
-                    {/* ARTICLE 15 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 15 — OBLIGATIONS DES UTILISATEURS
-                        </h2>
-                        <p className="font-semibold text-slate-900">Les utilisateurs s'engagent à :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>Communiquer des informations exactes lors de leurs demandes ;</li>
-                            <li>Utiliser les formulaires pour des demandes légitimes ;</li>
-                            <li>Respecter les droits des autres utilisateurs ;</li>
-                            <li>Ne pas publier de contenus illicites ;</li>
-                            <li>Ne pas usurper l'identité d'un tiers ;</li>
-                            <li>Ne pas détourner les coordonnées publiées à des fins abusives ;</li>
-                            <li>Ne pas perturber le fonctionnement de la plateforme.</li>
-                        </ul>
-                        <p className="text-sm font-bold text-rose-700 bg-rose-50 p-3 rounded-xl border border-rose-200">
-                            Les demandes fictives, frauduleuses ou destinées à nuire à un professionnel sont interdites.
-                        </p>
-                    </section>
-
-                    {/* ARTICLE 16 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 16 — UTILISATIONS INTERDITES
-                        </h2>
-                        <p>Sont interdits, sauf autorisation ou exception légale applicable :</p>
-                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
-                            <li>L'accès frauduleux aux systèmes ;</li>
-                            <li>L'extraction illicite des bases de données ;</li>
-                            <li>La collecte automatisée abusive des coordonnées ;</li>
-                            <li>La reproduction non autorisée de contenus protégés ;</li>
-                            <li>L'utilisation de la plateforme pour diffuser des logiciels malveillants ;</li>
-                            <li>Les tentatives de contournement des dispositifs de sécurité ;</li>
-                            <li>L'utilisation des informations personnelles à des fins incompatibles avec leur collecte.</li>
-                        </ul>
-                        <p className="text-xs text-slate-500 italic">Gainable peut prendre les mesures nécessaires pour protéger ses systèmes et ses utilisateurs, dans le respect de la réglementation.</p>
-                    </section>
-
-                    {/* ARTICLE 17 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 17 — SIGNALEMENT DES CONTENUS ET COMPORTEMENTS
-                        </h2>
-                        <p>Tout utilisateur peut signaler un contenu potentiellement illicite, une information trompeuse, une usurpation d'identité ou un comportement abusif.</p>
-                        <p>Les signalements peuvent être adressés à <a href="mailto:contact@exceeddigital.fr" className="text-[#D59B2B] underline font-semibold">contact@exceeddigital.fr</a>, sans préjudice de la mise en place d'un dispositif de notification spécifique sur la plateforme lorsque celui-ci est légalement requis.</p>
-                        <p>Le signalement doit permettre d'identifier suffisamment le contenu concerné et les motifs de la contestation.</p>
-                        <p>Gainable examine les signalements conformément à ses obligations légales et peut, selon les circonstances, demander des précisions, limiter l'accès au contenu ou procéder à son retrait.</p>
-                        <p className="text-xs text-slate-500 italic">Les personnes concernées disposent des voies de contestation légalement applicables.</p>
-                    </section>
-
-                    {/* ARTICLE 18 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 18 — SUSPENSION ET DÉRÉFÉRENCEMENT
-                        </h2>
-                        <p>Gainable peut prendre des mesures proportionnées en cas de manquement aux présentes CGU, de fraude, de risque de sécurité ou de publication illicite.</p>
-                        <p>Ces mesures peuvent comprendre la restriction d'une fonctionnalité, le retrait d'un contenu, la suspension d'une fiche ou le déréférencement d'un professionnel.</p>
-                        <p>Les obligations de motivation, de notification, de préavis et de recours prévues par les réglementations applicables sont respectées.</p>
-                        <p className="text-xs text-slate-500 italic">Les conséquences commerciales des mesures concernant un abonnement payant sont régies par les CGV professionnelles et les dispositions légales impératives.</p>
-                    </section>
-
-                    {/* ARTICLE 19 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 19 — RESPONSABILITÉ DE GAINABLE
-                        </h2>
-                        <p>Gainable est responsable de l'exécution de ses propres obligations conformément au droit applicable.</p>
-                        <p>La plateforme n'est pas responsable du seul fait qu'un professionnel ne répond pas à une demande, qu'un devis est refusé ou qu'un chantier donne lieu à un différend entre les parties.</p>
-                        <p>Gainable ne peut toutefois exclure les responsabilités qui lui incombent légalement, notamment concernant ses propres fautes, ses obligations d'information et les obligations applicables aux services numériques.</p>
-                        <p className="text-xs text-slate-500 italic">Les limitations prévues aux présentes CGU ne privent pas les consommateurs des droits impératifs qui leur sont reconnus.</p>
-                    </section>
-
-                    {/* ARTICLE 20 */}
-                    <section className="space-y-4">
-                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 20 — DISPONIBILITÉ TECHNIQUE
-                        </h2>
-                        <p>Gainable s'efforce de maintenir l'accès à ses services dans des conditions raisonnables de disponibilité et de sécurité.</p>
-                        <p>Des interruptions peuvent intervenir pour maintenance, mise à jour, incident technique ou événement extérieur.</p>
-                        <p>Gainable prend les mesures appropriées pour remédier aux dysfonctionnements relevant de sa responsabilité.</p>
-                        <p className="text-xs text-slate-500 italic">Aucune disposition du présent article ne limite les recours légalement ouverts aux utilisateurs.</p>
-                    </section>
-
-                    {/* ARTICLE 21 */}
                     <section className="space-y-6">
                         <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
-                            ARTICLE 21 — PROPRIÉTÉ INTELLECTUELLE ET PROTECTION DU RÉSEAU MULTIDOMAINE GAINABLE
+                            ARTICLE 3 — PROPRIÉTÉ INTELLECTUELLE ET PROTECTION DU RÉSEAU MULTIDOMAINE GAINABLE
                         </h2>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.1 — Titularité des droits</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.1 — Titularité des droits</h3>
                             <p>La plateforme GAINABLE est éditée et exploitée par <strong>EXCEED DIGITAL</strong>.</p>
                             <p>
                                 Sous réserve des droits appartenant à des tiers, EXCEED DIGITAL est titulaire ou bénéficiaire des droits d'exploitation nécessaires sur les éléments protégés de la plateforme, notamment :
@@ -408,7 +149,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.2 — Réseau multidomaine</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.2 — Réseau multidomaine</h3>
                             <p>
                                 L'écosystème numérique Gainable comprend notamment les noms de domaine suivants, lorsqu'ils sont effectivement exploités par EXCEED DIGITAL :
                             </p>
@@ -429,7 +170,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.3 — Protection des bases de données</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.3 — Protection des bases de données</h3>
                             <p>
                                 Les bases de données de Gainable peuvent bénéficier de la protection du droit d'auteur et/ou du droit spécifique du producteur de bases de données lorsque les conditions légales sont réunies.
                             </p>
@@ -442,7 +183,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.4 — Reproduction et exploitation non autorisées</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.4 — Reproduction et exploitation non autorisées</h3>
                             <p>
                                 Toute reproduction, représentation, adaptation, diffusion ou exploitation d'éléments protégés de Gainable sans autorisation du titulaire des droits est interdite, sauf exception prévue par la loi.
                             </p>
@@ -457,7 +198,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.5 — Protection du savoir-faire et des informations confidentielles</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.5 — Protection du savoir-faire et des informations confidentielles</h3>
                             <p>
                                 Les informations techniques, commerciales ou organisationnelles non publiques relatives à Gainable, notamment certains paramètres internes, procédés de développement et méthodes de déploiement, peuvent bénéficier de la protection du secret des affaires lorsque les conditions légales sont réunies.
                             </p>
@@ -467,7 +208,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.6 — Contenus des professionnels</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.6 — Contenus des professionnels</h3>
                             <p>
                                 Les photographies, marques, logos, réalisations et autres contenus fournis par les professionnels restent soumis aux droits de leurs titulaires respectifs.
                             </p>
@@ -480,7 +221,7 @@ export default function ConditionsGeneralesUtilisation() {
                         </div>
 
                         <div className="space-y-3 text-sm">
-                            <h3 className="font-bold text-slate-900 text-base">5.7 — Défense des droits</h3>
+                            <h3 className="font-bold text-slate-900 text-base">3.7 — Défense des droits</h3>
                             <p>
                                 En cas de contrefaçon, d'extraction illicite, d'atteinte à un secret d'affaires ou d'actes de concurrence déloyale, EXCEED DIGITAL se réserve le droit d'exercer toute action légalement ouverte afin de faire cesser les agissements et d'obtenir réparation du préjudice subi.
                             </p>
@@ -488,6 +229,265 @@ export default function ConditionsGeneralesUtilisation() {
                                 Ces dispositions s'appliquent sous réserve des droits des utilisateurs et des législations impératives applicables.
                             </p>
                         </div>
+                    </section>
+
+                    {/* ARTICLE 4 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 4 — OBJET DE LA PLATEFORME
+                        </h2>
+                        <p>Gainable est une plateforme de référencement professionnel, de visibilité numérique et de mise en relation.</p>
+                        <p className="font-semibold text-slate-900">Elle permet notamment :</p>
+                        <ul className="list-disc list-inside space-y-1.5 pl-2 text-sm">
+                            <li>De rechercher des professionnels par région, zone d'intervention ou technologie ;</li>
+                            <li>De consulter leurs fiches et réalisations ;</li>
+                            <li>D'accéder à leurs coordonnées professionnelles ;</li>
+                            <li>De les contacter directement par téléphone ou formulaire ;</li>
+                            <li>De transmettre une demande générale de recherche de professionnels ;</li>
+                            <li>De consulter des informations et contenus relatifs aux activités référencées.</li>
+                        </ul>
+                        <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-950 font-medium text-sm">
+                            Gainable fournit un service numérique d'annuaire et d'intermédiation. Elle ne réalise pas elle-même les travaux, installations, études, diagnostics ou prestations présentés par les professionnels.
+                        </div>
+                    </section>
+
+                    {/* ARTICLE 5 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 5 — ACCÈS À LA PLATEFORME
+                        </h2>
+                        <p>La consultation publique de l'annuaire est libre et gratuite pour les particuliers.</p>
+                        <p>Certaines fonctionnalités peuvent nécessiter la communication d'informations personnelles ou la création d'un compte.</p>
+                        <p>L'utilisation de la plateforme suppose le respect des présentes CGU.</p>
+                        <p className="text-sm font-semibold text-slate-800">
+                            L'accès aux prestations payantes destinées aux professionnels est également régi par les Conditions Générales de Vente professionnelles applicables.
+                        </p>
+                    </section>
+
+                    {/* ARTICLE 6 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 6 — INDÉPENDANCE DES PROFESSIONNELS
+                        </h2>
+                        <p>Les professionnels référencés sur Gainable exercent leurs activités de manière indépendante.</p>
+                        <p>Ils demeurent seuls responsables de leurs propositions commerciales, devis, contrats, prix, assurances, qualifications, garanties et prestations.</p>
+                        <p>Gainable ne fixe pas les prix, ne négocie pas les devis, ne signe pas les contrats et n'encaisse aucun paiement relatif aux travaux conclus entre les parties.</p>
+                        <p>Gainable ne devient pas partie au contrat conclu entre le particulier et le professionnel du seul fait de leur mise en relation.</p>
+                        <p className="text-sm font-medium text-slate-800">Chaque particulier demeure libre de sélectionner, comparer, contacter ou refuser les professionnels présentés.</p>
+                    </section>
+
+                    {/* ARTICLE 7 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 7 — RÉFÉRENCEMENT ET CLASSEMENT
+                        </h2>
+                        <p>L'annuaire Gainable référence des professionnels selon les catégories d'activités proposées sur la plateforme.</p>
+                        <p className="font-semibold text-slate-900">Le classement des professionnels repose principalement sur des critères de pertinence géographique et technique, notamment :</p>
+                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
+                            <li>La région et la localisation du projet ;</li>
+                            <li>Les zones d'intervention déclarées ;</li>
+                            <li>Les technologies et spécialités professionnelles ;</li>
+                            <li>La correspondance entre la recherche et les informations disponibles.</li>
+                        </ul>
+                        <p>Les professionnels peuvent souscrire des prestations payantes de visibilité numérique et de publication de contenus.</p>
+                        <p>Le montant payé ne constitue pas, dans le fonctionnement actuel du classement ordinaire, un critère de priorité entre les professionnels.</p>
+                        <p>Certaines offres peuvent toutefois comprendre des éléments distinctifs de présentation, tels que des badges ou des fiches enrichies, conformément aux caractéristiques commerciales annoncées.</p>
+                        <p className="text-xs text-slate-500 italic">Gainable ne garantit pas une position permanente ou déterminée dans les résultats de recherche internes. Les modalités de référencement, de classement et de déréférencement sont expliquées dans une rubrique d'information accessible aux utilisateurs.</p>
+                    </section>
+
+                    {/* ARTICLE 8 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 8 — INFORMATIONS DES FICHES PROFESSIONNELLES
+                        </h2>
+                        <p>Les fiches peuvent contenir notamment :</p>
+                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
+                            <li>La dénomination commerciale ;</li>
+                            <li>Les coordonnées ;</li>
+                            <li>Les zones d'intervention ;</li>
+                            <li>Les spécialités ;</li>
+                            <li>Les qualifications déclarées ;</li>
+                            <li>Les réalisations et photographies ;</li>
+                            <li>Les liens vers les sites Internet et supports numériques.</li>
+                        </ul>
+                        <p>Les professionnels sont tenus de fournir des informations exactes, loyales et régulièrement mises à jour.</p>
+                        <p>Gainable peut effectuer certaines vérifications, sans que la publication d'une fiche constitue une certification générale de compétence ou de qualité.</p>
+                        <p className="font-semibold text-slate-900 text-sm">
+                            L'utilisateur est invité à vérifier directement auprès du professionnel les assurances, qualifications, habilitations et garanties nécessaires à son projet.
+                        </p>
+                    </section>
+
+                    {/* ARTICLE 9 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 9 — CONTACT DIRECT
+                        </h2>
+                        <p>L'utilisateur peut contacter directement un professionnel au moyen des coordonnées publiées sur sa fiche.</p>
+                        <p>Les appels téléphoniques et échanges réalisés en dehors de la plateforme relèvent des relations entre les parties.</p>
+                        <p className="text-xs text-slate-500 italic">Gainable ne contrôle pas systématiquement ces communications et ne garantit pas qu'un professionnel répondra à chaque sollicitation.</p>
+                    </section>
+
+                    {/* ARTICLE 10 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 10 — FORMULAIRE DE CONTACT D'UN PROFESSIONNEL
+                        </h2>
+                        <p>Lorsqu'un utilisateur remplit le formulaire associé à une fiche professionnelle, sa demande est destinée au professionnel qu'il a choisi.</p>
+                        <p>Les informations communiquées peuvent comprendre son identité, ses coordonnées, la localisation de son projet et la description de sa demande.</p>
+                        <p>La transmission intervient dans les conditions annoncées au moment de l'envoi du formulaire et conformément à la politique de confidentialité.</p>
+                        <p className="font-semibold text-slate-900">L'envoi d'une demande ne constitue ni une commande de travaux ni une acceptation de devis.</p>
+                        <p className="text-xs text-slate-500 italic">Le professionnel reste libre de répondre ou non à la sollicitation.</p>
+                    </section>
+
+                    {/* ARTICLE 11 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 11 — DEMANDE GÉNÉRALE ADRESSÉE À GAINABLE
+                        </h2>
+                        <p>Lorsqu'un utilisateur ne trouve pas de professionnel correspondant à son projet ou à sa zone géographique, il peut adresser une demande générale à Gainable.</p>
+                        <p>Gainable peut alors rechercher des professionnels susceptibles de répondre aux caractéristiques du projet.</p>
+                        <p>Cette recherche peut concerner des entreprises qui ne sont pas encore référencées sur la plateforme.</p>
+                        <p>Gainable peut contacter ces entreprises afin d'évaluer leur intérêt, leur zone d'intervention et leurs compétences déclarées.</p>
+                        <p>Le particulier conserve l'entière liberté de choisir ou de refuser les professionnels identifiés.</p>
+                        <p>Gainable ne garantit ni la disponibilité d'un professionnel, ni l'obtention d'un devis, ni la réalisation du projet.</p>
+                        <p className="text-xs text-slate-500 italic">Les données personnelles de l'utilisateur ne sont communiquées aux entreprises que conformément aux informations fournies lors du dépôt de la demande et à la réglementation applicable.</p>
+                    </section>
+
+                    {/* ARTICLE 12 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 12 — ABSENCE DE GARANTIE SUR LES DEVIS ET TRAVAUX
+                        </h2>
+                        <p className="font-bold text-slate-900">Gainable ne garantit pas :</p>
+                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
+                            <li>Le montant ou la compétitivité des devis ;</li>
+                            <li>Les délais de réponse des professionnels ;</li>
+                            <li>L'acceptation d'un chantier ;</li>
+                            <li>Les délais de réalisation ;</li>
+                            <li>La qualité d'exécution des travaux ;</li>
+                            <li>La solvabilité des parties ;</li>
+                            <li>Le respect par un professionnel de ses obligations contractuelles.</li>
+                        </ul>
+                        <p className="text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            Les éventuels différends relatifs à un devis, à un paiement ou à des travaux doivent être traités directement entre les parties concernées, sans préjudice des obligations propres de Gainable.
+                        </p>
+                    </section>
+
+                    {/* ARTICLE 13 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 13 — VÉRIFICATION ET BADGES
+                        </h2>
+                        <p>Gainable peut proposer des badges ou mentions permettant d'identifier certaines caractéristiques des professionnels.</p>
+                        <p>La signification de chaque badge doit correspondre aux vérifications effectivement réalisées.</p>
+                        <p>La présence d'un badge ne constitue pas une garantie de résultat, une assurance des travaux ou une certification officielle, sauf indication expresse et justifiée.</p>
+                        <p className="text-xs text-slate-500 italic">Gainable peut retirer un badge lorsque les conditions justifiant son attribution ne sont plus réunies.</p>
+                    </section>
+
+                    {/* ARTICLE 14 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 14 — CONTENUS ET PUBLICATIONS
+                        </h2>
+                        <p>Les professionnels peuvent publier des informations, photographies, réalisations et articles présentant leurs activités.</p>
+                        <p>Certains contenus peuvent être préparés avec l'assistance d'outils d'intelligence artificielle.</p>
+                        <p>Le professionnel doit veiller à l'exactitude des informations qu'il communique et à la légalité des contenus qu'il fournit ou approuve.</p>
+                        <p>Gainable peut appliquer des contrôles de conformité, des corrections techniques ou des mesures de modération dans les conditions prévues par ses documents contractuels et la réglementation applicable.</p>
+                        <p className="text-xs text-slate-500 italic">Les contenus publiés ne constituent pas des recommandations techniques personnalisées adressées à l'utilisateur.</p>
+                    </section>
+
+                    {/* ARTICLE 15 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 15 — RÉFÉRENCEMENT SUR LES MOTEURS DE RECHERCHE
+                        </h2>
+                        <p>Gainable met en œuvre des fonctionnalités destinées à faciliter la présentation et la visibilité des contenus sur Internet.</p>
+                        <p>L'indexation et le classement des pages sur les moteurs de recherche tiers, notamment Google, dépendent de mécanismes indépendants de Gainable.</p>
+                        <p>Aucun positionnement, volume de trafic ou résultat commercial déterminé n'est garanti.</p>
+                        <p className="text-xs text-slate-500 italic">Les informations techniques ou commerciales relatives au référencement ne constituent pas une promesse de performance individuelle.</p>
+                    </section>
+
+                    {/* ARTICLE 16 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 16 — OBLIGATIONS DES UTILISATEURS
+                        </h2>
+                        <p className="font-semibold text-slate-900">Les utilisateurs s'engagent à :</p>
+                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
+                            <li>Communiquer des informations exactes lors de leurs demandes ;</li>
+                            <li>Utiliser les formulaires pour des demandes légitimes ;</li>
+                            <li>Respecter les droits des autres utilisateurs ;</li>
+                            <li>Ne pas publier de contenus illicites ;</li>
+                            <li>Ne pas usurper l'identité d'un tiers ;</li>
+                            <li>Ne pas détourner les coordonnées publiées à des fins abusives ;</li>
+                            <li>Ne pas perturber le fonctionnement de la plateforme.</li>
+                        </ul>
+                        <p className="text-sm font-bold text-rose-700 bg-rose-50 p-3 rounded-xl border border-rose-200">
+                            Les demandes fictives, frauduleuses ou destinées à nuire à un professionnel sont interdites.
+                        </p>
+                    </section>
+
+                    {/* ARTICLE 17 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 17 — UTILISATIONS INTERDITES
+                        </h2>
+                        <p>Sont interdits, sauf autorisation ou exception légale applicable :</p>
+                        <ul className="list-disc list-inside space-y-1 pl-2 text-sm">
+                            <li>L'accès frauduleux aux systèmes ;</li>
+                            <li>L'extraction illicite des bases de données ;</li>
+                            <li>La collecte automatisée abusive des coordonnées ;</li>
+                            <li>La reproduction non autorisée de contenus protégés ;</li>
+                            <li>L'utilisation de la plateforme pour diffuser des logiciels malveillants ;</li>
+                            <li>Les tentatives de contournement des dispositifs de sécurité ;</li>
+                            <li>L'utilisation des informations personnelles à des fins incompatibles avec leur collecte.</li>
+                        </ul>
+                        <p className="text-xs text-slate-500 italic">Gainable peut prendre les mesures nécessaires pour protéger ses systèmes et ses utilisateurs, dans le respect de la réglementation.</p>
+                    </section>
+
+                    {/* ARTICLE 18 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 18 — SIGNALEMENT DES CONTENUS ET COMPORTEMENTS
+                        </h2>
+                        <p>Tout utilisateur peut signaler un contenu potentiellement illicite, une information trompeuse, une usurpation d'identité ou un comportement abusif.</p>
+                        <p>Les signalements peuvent être adressés à <a href="mailto:contact@exceeddigital.fr" className="text-[#D59B2B] underline font-semibold">contact@exceeddigital.fr</a>, sans préjudice de la mise en place d'un dispositif de notification spécifique sur la plateforme lorsque celui-ci est légalement requis.</p>
+                        <p>Le signalement doit permettre d'identifier suffisamment le contenu concerné et les motifs de la contestation.</p>
+                        <p>Gainable examine les signalements conformément à ses obligations légales et peut, selon les circonstances, demander des précisions, limiter l'accès au contenu ou procéder à son retrait.</p>
+                        <p className="text-xs text-slate-500 italic">Les personnes concernées disposent des voies de contestation légalement applicables.</p>
+                    </section>
+
+                    {/* ARTICLE 19 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 19 — SUSPENSION ET DÉRÉFÉRENCEMENT
+                        </h2>
+                        <p>Gainable peut prendre des mesures proportionnées en cas de manquement aux présentes CGU, de fraude, de risque de sécurité ou de publication illicite.</p>
+                        <p>Ces mesures peuvent comprendre la restriction d'une fonctionnalité, le retrait d'un contenu, la suspension d'une fiche ou le déréférencement d'un professionnel.</p>
+                        <p>Les obligations de motivation, de notification, de préavis et de recours prévues par les réglementations applicables sont respectées.</p>
+                        <p className="text-xs text-slate-500 italic">Les conséquences commerciales des mesures concernant un abonnement payant sont régies par les CGV professionnelles et les dispositions légales impératives.</p>
+                    </section>
+
+                    {/* ARTICLE 20 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 20 — RESPONSABILITÉ DE GAINABLE
+                        </h2>
+                        <p>Gainable est responsable de l'exécution de ses propres obligations conformément au droit applicable.</p>
+                        <p>La plateforme n'est pas responsable du seul fait qu'un professionnel ne répond pas à une demande, qu'un devis est refusé ou qu'un chantier donne lieu à un différend entre les parties.</p>
+                        <p>Gainable ne peut toutefois exclure les responsabilités qui lui incombent légalement, notamment concernant ses propres fautes, ses obligations d'information et les obligations applicables aux services numériques.</p>
+                        <p className="text-xs text-slate-500 italic">Les limitations prévues aux présentes CGU ne privent pas les consommateurs des droits impératifs qui leur sont reconnus.</p>
+                    </section>
+
+                    {/* ARTICLE 21 */}
+                    <section className="space-y-4">
+                        <h2 className="text-xl font-black font-montserrat text-[#1F2D3D] border-b border-slate-100 pb-3">
+                            ARTICLE 21 — DISPONIBILITÉ TECHNIQUE
+                        </h2>
+                        <p>Gainable s'efforce de maintenir l'accès à ses services dans des conditions raisonnables de disponibilité et de sécurité.</p>
+                        <p>Des interruptions peuvent intervenir pour maintenance, mise à jour, incident technique ou événement extérieur.</p>
+                        <p>Gainable prend les mesures appropriées pour remédier aux dysfonctionnements relevant de sa responsabilité.</p>
+                        <p className="text-xs text-slate-500 italic">Aucune disposition du présent article ne limite les recours légalement ouverts aux utilisateurs.</p>
                     </section>
 
                     {/* ARTICLE 22 */}
