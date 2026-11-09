@@ -54,7 +54,7 @@ export default function ConditionsGeneralesUtilisation() {
                         <p className="text-xs font-bold uppercase text-slate-500 tracking-wider flex items-center gap-2 mb-3">
                             <Globe2 className="w-4 h-4 text-[#D59B2B]" /> Plateforme &amp; Domaines Internationaux Associés :
                         </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-sm font-semibold text-slate-800">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 text-sm font-semibold text-slate-800">
                             <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
                                 <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                                 www.gainable.fr
@@ -78,6 +78,10 @@ export default function ConditionsGeneralesUtilisation() {
                             <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
                                 <span className="w-2 h-2 rounded-full bg-teal-500"></span>
                                 www.gainable.eu
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                                www.gainable.ca
                             </div>
                         </div>
                     </div>
@@ -103,7 +107,7 @@ export default function ConditionsGeneralesUtilisation() {
                             Les présentes Conditions Générales d'Utilisation, ci-après « CGU », régissent l'accès et l'utilisation de la plateforme Gainable.fr.
                         </p>
                         <p className="text-xs text-slate-500 italic">
-                            Les domaines gainable.ch, gainable.ma, gainable.be, gainable.org et gainable.eu sont également concernés lorsqu'ils redirigent vers le service Gainable.fr. Les dispositions impératives des législations territoriales applicables demeurent réservées.
+                            Les domaines gainable.ch, gainable.ma, gainable.be, gainable.org, gainable.eu et gainable.ca sont également concernés lorsqu'ils redirigent vers le service Gainable.fr. Les dispositions impératives des législations territoriales applicables demeurent réservées.
                         </p>
                     </section>
 
@@ -153,13 +157,14 @@ export default function ConditionsGeneralesUtilisation() {
                             <p>
                                 L'écosystème numérique Gainable comprend notamment les noms de domaine suivants, lorsqu'ils sont effectivement exploités par EXCEED DIGITAL :
                             </p>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.fr</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ch</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ma</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.be</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
                             </div>
                             <p>
                                 Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.

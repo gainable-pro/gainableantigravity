@@ -157,13 +157,14 @@ export default function MentionsLegales() {
                         <p>
                             L'écosystème numérique Gainable comprend notamment les noms de domaine suivants, lorsqu'ils sont effectivement exploités par EXCEED DIGITAL :
                         </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.fr</div>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ch</div>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ma</div>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.be</div>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
+                            <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
                         </div>
                         <p>
                             Ces domaines peuvent proposer des contenus, des fonctionnalités ou des redirections vers une plateforme commune, selon leur configuration technique.

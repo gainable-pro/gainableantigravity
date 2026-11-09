@@ -52,7 +52,8 @@ export function OrganizationJsonLd() {
       'https://www.gainable.be',
       'https://www.gainable.ma',
       'https://www.gainable.org',
-      'https://www.gainable.eu'
+      'https://www.gainable.eu',
+      'https://www.gainable.ca'
     ],
   };
 

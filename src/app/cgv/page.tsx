@@ -128,7 +128,7 @@ export default function ConditionsGeneralesVentePage() {
                                 <li>D'utiliser frauduleusement les services Gainable pour porter atteinte aux droits d'EXCEED DIGITAL.</li>
                             </ul>
                             <p>
-                                Ces obligations s'appliquent aux services du réseau Gainable, notamment aux domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong> et <strong>gainable.eu</strong>, lorsqu'ils sont exploités par EXCEED DIGITAL.
+                                Ces obligations s'appliquent aux services du réseau Gainable, notamment aux domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong>, <strong>gainable.eu</strong> et <strong>gainable.ca</strong>, lorsqu'ils sont exploités par EXCEED DIGITAL.
                             </p>
                             <p className="text-xs text-slate-500 italic">
                                 Les interdictions ci-dessus s'entendent sous réserve des droits et exceptions légalement reconnus aux utilisateurs.
@@ -165,13 +165,14 @@ export default function ConditionsGeneralesVentePage() {
                             <p>
                                 L'écosystème numérique Gainable comprend notamment les noms de domaine suivants, lorsqu'ils sont effectivement exploités par EXCEED DIGITAL :
                             </p>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 py-1 text-sm font-semibold text-[#D59B2B]">
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.fr</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ch</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ma</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.be</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
                             </div>
                             <p>
                                 Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.

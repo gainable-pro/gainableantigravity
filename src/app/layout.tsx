@@ -37,6 +37,7 @@ export const metadata: Metadata = {
       'fr-CH': 'https://www.gainable.ch',
       'fr-BE': 'https://www.gainable.be',
       'fr-MA': 'https://www.gainable.ma',
+      'fr-CA': 'https://www.gainable.ca',
     },
   },
   openGraph: {
