@@ -19,7 +19,7 @@ export default function NewProspect() {
         siret: "",
         adresse: "",
         siteWeb: "",
-        status: "NON_CONTACTE",
+        status: "CONTACTE",
         commentaire: ""
     });
 
@@ -112,21 +112,27 @@ export default function NewProspect() {
                     </div>
 
                     <div className="border-t pt-6 space-y-4">
-                        <h2 className="text-lg font-semibold text-slate-800">Suivi</h2>
+                        <div className="flex items-center justify-between">
+                            <h2 className="text-lg font-semibold text-slate-800">Suivi & Contact Téléphonique</h2>
+                            <span className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full">
+                                ⏱️ Chrono 40 jours démarré à l'ajout
+                            </span>
+                        </div>
+                        <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs text-blue-900">
+                            <strong>Règle anti-réservation :</strong> L'ajout d'une fiche requiert d'avoir contacté l'entreprise par téléphone. Vous disposez de <strong>40 jours</strong> pour signer le prospect avant remise automatique en base commune.
+                        </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-1">Statut</label>
+                                <label className="block text-sm font-medium text-slate-700 mb-1">Statut du premier contact *</label>
                                 <select 
                                     value={formData.status} 
                                     onChange={e => setFormData({...formData, status: e.target.value})} 
-                                    className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-2 border border-slate-300 rounded focus:ring-2 focus:ring-blue-500 font-medium"
                                 >
-                                    <option value="NON_CONTACTE">Non contacté</option>
-                                    <option value="CONTACTE">Contacté</option>
-                                    <option value="INTERESSE">Intéressé</option>
-                                    <option value="REFUSE">Refusé</option>
-                                    <option value="NE_PLUS_DEMARCHER">Ne plus démarcher</option>
-                                    {/* Vente effectuée is managed separately via the sales logic */}
+                                    <option value="CONTACTE">📞 Contacté (Échange ou Message vocal)</option>
+                                    <option value="INTERESSE">🤝 Intéressé (Rappel ou RDV)</option>
+                                    <option value="REFUSE">❌ Appel effectué / Refusé</option>
+                                    <option value="NE_PLUS_DEMARCHER">🚫 Ne plus démarcher</option>
                                 </select>
                             </div>
                             <div>

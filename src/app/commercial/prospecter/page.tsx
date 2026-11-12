@@ -124,14 +124,18 @@ export default function ProspecterCvcPage() {
         setAddError("");
         setAddSuccess("");
 
-        let computedStatus = "NON_CONTACTE";
+        // Règle anti-réservation obligatoire : contact téléphonique réel requis
+        if (!callOutcome || callOutcome === "ABSENT") {
+            setAddError("Règle anti-réservation obligatoire : Pour vous attribuer cette fiche dans votre CRM, vous devez obligatoirement contacter l'entreprise par téléphone (laisser un message vocal, convenir d'un échange/RDV ou acter un refus).");
+            setAdding(false);
+            return;
+        }
+
+        let computedStatus = "CONTACTE";
         let outcomeNote = "";
         if (callOutcome === "VOICEMAIL") {
             computedStatus = "CONTACTE";
             outcomeNote = " [🎙️ Message vocal laissé]";
-        } else if (callOutcome === "ABSENT") {
-            computedStatus = "NON_CONTACTE";
-            outcomeNote = " [📵 Prospect absent / Pas de réponse]";
         } else if (callOutcome === "CALLBACK") {
             computedStatus = "INTERESSE";
             outcomeNote = " [📞 Rappel téléphonique à prévoir]";
@@ -751,9 +755,14 @@ export default function ProspecterCvcPage() {
 
                                             {/* Call Result Quick Selector */}
                                             <div className="space-y-1.5 pt-1 border-t border-slate-100">
-                                                <label className="text-[11px] font-extrabold text-slate-800 block">
-                                                    Résultat de l'Appel Commercial (Cocher une option) :
-                                                </label>
+                                                <div className="flex items-center justify-between">
+                                                    <label className="text-[11px] font-extrabold text-slate-800 block">
+                                                        📞 Contact Téléphonique Réel Obligatoire :
+                                                    </label>
+                                                    <span className="text-[10px] text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                                                        Chrono 40 jours
+                                                    </span>
+                                                </div>
                                                 <div className="grid grid-cols-2 gap-1.5">
                                                     <button
                                                         type="button"
@@ -773,21 +782,6 @@ export default function ProspecterCvcPage() {
                                                     <button
                                                         type="button"
                                                         onClick={() => {
-                                                            const newOutcome = callOutcome === "ABSENT" ? "" : "ABSENT";
-                                                            setCallOutcome(newOutcome);
-                                                            setDateRdv("");
-                                                            setHeureRdv("");
-                                                            setNoteRdv("");
-                                                        }}
-                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
-                                                            callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
-                                                        }`}
-                                                    >
-                                                        📵 Absent / Pas de rep.
-                                                    </button>
-                                                    <button
-                                                        type="button"
-                                                        onClick={() => {
                                                             const newOutcome = callOutcome === "CALLBACK" ? "" : "CALLBACK";
                                                             setCallOutcome(newOutcome);
                                                             if (newOutcome && !dateRdv) {
@@ -800,7 +794,7 @@ export default function ProspecterCvcPage() {
                                                             callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                                         }`}
                                                     >
-                                                        📞 Rappel tel.
+                                                        📞 Échange / Rappel
                                                     </button>
                                                     <button
                                                         type="button"
@@ -818,6 +812,21 @@ export default function ProspecterCvcPage() {
                                                         }`}
                                                     >
                                                         🤝 RDV / Intéressé
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            const newOutcome = callOutcome === "REFUSED" ? "" : "REFUSED";
+                                                            setCallOutcome(newOutcome);
+                                                            setDateRdv("");
+                                                            setHeureRdv("");
+                                                            setNoteRdv("");
+                                                        }}
+                                                        className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                            callOutcome === "REFUSED" ? "bg-red-600 text-white border-red-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                                        }`}
+                                                    >
+                                                        ❌ Appel / Refusé
                                                     </button>
                                                 </div>
                                             </div>
@@ -924,9 +933,14 @@ export default function ProspecterCvcPage() {
 
                                 {/* Call Result Quick Selector */}
                                 <div className="space-y-1.5 pt-1 border-t border-slate-100">
-                                    <label className="text-[11px] font-extrabold text-slate-800 block">
-                                        Résultat de l'Appel Commercial (Cocher une option) :
-                                    </label>
+                                    <div className="flex items-center justify-between">
+                                        <label className="text-[11px] font-extrabold text-slate-800 block">
+                                            📞 Contact Téléphonique Réel Obligatoire :
+                                        </label>
+                                        <span className="text-[10px] text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+                                            Chrono 40 jours
+                                        </span>
+                                    </div>
                                     <div className="grid grid-cols-2 gap-1.5">
                                         <button
                                             type="button"
@@ -936,15 +950,6 @@ export default function ProspecterCvcPage() {
                                             }`}
                                         >
                                             🎙️ Message vocal
-                                        </button>
-                                        <button
-                                            type="button"
-                                            onClick={() => setCallOutcome(callOutcome === "ABSENT" ? "" : "ABSENT")}
-                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
-                                                callOutcome === "ABSENT" ? "bg-amber-500 text-white border-amber-500 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
-                                            }`}
-                                        >
-                                            📵 Absent / Pas de rep.
                                         </button>
                                         <button
                                             type="button"
@@ -961,7 +966,7 @@ export default function ProspecterCvcPage() {
                                                 callOutcome === "CALLBACK" ? "bg-purple-600 text-white border-purple-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                                             }`}
                                         >
-                                            📞 Rappel tel.
+                                            📞 Échange / Rappel
                                         </button>
                                         <button
                                             type="button"
@@ -979,6 +984,15 @@ export default function ProspecterCvcPage() {
                                             }`}
                                         >
                                             🤝 RDV / Intéressé
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={() => setCallOutcome(callOutcome === "REFUSED" ? "" : "REFUSED")}
+                                            className={`p-2 rounded-xl border text-[11px] font-bold flex items-center gap-1 transition-all ${
+                                                callOutcome === "REFUSED" ? "bg-red-600 text-white border-red-600 shadow-sm" : "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
+                                            }`}
+                                        >
+                                            ❌ Appel / Refusé
                                         </button>
                                     </div>
                                 </div>

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyCommercial, unauthorizedCommercial } from "@/lib/commercial-auth";
 import cvcCompaniesData from "@/data/cvc_companies.json";
+import { releaseExpiredProspects, computeProspectExpiry } from "@/lib/commercial-expiration";
 
 export const dynamic = "force-dynamic";
 
@@ -69,6 +70,9 @@ export async function GET(req: Request) {
     // Return top 100 matching results
     const results = filtered.slice(0, 100);
 
+    // Auto-release expired claims (> 40 days without sale)
+    await releaseExpiredProspects();
+
     // Fetch claimed prospects to enforce anti-duplicate exclusivity lock + show self-attribution, status, note & sale date
     const claimedProspects = await prisma.commercialProspect.findMany({
         orderBy: { updatedAt: 'asc' },
@@ -81,6 +85,7 @@ export async function GET(req: Request) {
             heureRdv: true,
             noteRdv: true,
             commentaire: true,
+            assignedAt: true,
             createdAt: true,
             updatedAt: true,
             commercial: { include: { commercialProfile: true } },
@@ -105,8 +110,12 @@ export async function GET(req: Request) {
         heureRdv: string | null;
         noteRdv: string | null;
         commentaire: string | null;
+        assignedAt: Date;
         createdAt: Date;
         updatedAt: Date;
+        daysRemaining: number;
+        isExpired: boolean;
+        isSold: boolean;
         lastSale: {
             dateVente: Date;
             montant: number;
@@ -119,6 +128,12 @@ export async function GET(req: Request) {
     const claimedNamesMap = new Map<string, ClaimInfo>();
 
     claimedProspects.forEach(p => {
+        const expiry = computeProspectExpiry(p);
+        // Si le prospect a expiré sans vente, il n'est plus verrouillé dans la base commune !
+        if (expiry.isExpired && !expiry.isSold) {
+            return;
+        }
+
         const ownerName = p.commercial.commercialProfile?.nom || p.commercial.email;
         const info: ClaimInfo = {
             commercialId: p.commercialId,
@@ -128,8 +143,12 @@ export async function GET(req: Request) {
             heureRdv: p.heureRdv,
             noteRdv: p.noteRdv,
             commentaire: p.commentaire,
+            assignedAt: p.assignedAt || p.createdAt,
             createdAt: p.createdAt,
             updatedAt: p.updatedAt,
+            daysRemaining: expiry.daysRemaining,
+            isExpired: expiry.isExpired,
+            isSold: expiry.isSold,
             lastSale: p.sales && p.sales.length > 0 ? p.sales[0] : null
         };
         if (p.siret) claimedSiretsMap.set(p.siret.trim(), info);
@@ -147,14 +166,19 @@ export async function GET(req: Request) {
             isLocked: isLockedByOther,
             isAssignedToMe,
             assignedTo: lock ? lock.ownerName : null,
+            daysRemaining: lock ? lock.daysRemaining : null,
+            assignedAt: lock ? lock.assignedAt : null,
             myProspectInfo: isAssignedToMe && lock ? {
                 status: lock.status,
                 dateRdv: lock.dateRdv,
                 heureRdv: lock.heureRdv,
                 noteRdv: lock.noteRdv,
                 commentaire: lock.commentaire,
+                assignedAt: lock.assignedAt,
                 createdAt: lock.createdAt,
                 updatedAt: lock.updatedAt,
+                daysRemaining: lock.daysRemaining,
+                isSold: lock.isSold,
                 lastSale: lock.lastSale
             } : null
         };

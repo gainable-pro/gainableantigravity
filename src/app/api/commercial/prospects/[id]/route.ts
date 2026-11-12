@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { verifyCommercial, unauthorizedCommercial } from "@/lib/commercial-auth";
+import { computeProspectExpiry } from "@/lib/commercial-expiration";
 
 export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const user = await verifyCommercial();
@@ -21,7 +22,20 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
             return NextResponse.json({ message: "Accès refusé" }, { status: 403 });
         }
 
-        return NextResponse.json({ prospect });
+        const expiry = computeProspectExpiry(prospect);
+
+        return NextResponse.json({ 
+            prospect: {
+                ...prospect,
+                assignedAt: prospect.assignedAt || prospect.createdAt,
+                daysRemaining: expiry.daysRemaining,
+                daysElapsed: expiry.daysElapsed,
+                percentElapsed: expiry.percentElapsed,
+                isExpired: expiry.isExpired,
+                isSold: expiry.isSold,
+                expiryDate: expiry.expiryDate.toISOString()
+            } 
+        });
     } catch (error) {
         return NextResponse.json({ message: "Erreur serveur" }, { status: 500 });
     }
@@ -73,16 +87,29 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
                 dateRdv: body.dateRdv !== undefined ? (body.dateRdv ? new Date(body.dateRdv) : null) : prospect.dateRdv,
                 heureRdv: body.heureRdv !== undefined ? body.heureRdv : prospect.heureRdv,
                 noteRdv: body.noteRdv !== undefined ? body.noteRdv : prospect.noteRdv
-            }
+            },
+            include: { sales: true }
         });
 
-        return NextResponse.json({ prospect: updatedProspect });
+        const expiry = computeProspectExpiry(updatedProspect);
+
+        return NextResponse.json({ 
+            prospect: {
+                ...updatedProspect,
+                assignedAt: updatedProspect.assignedAt || updatedProspect.createdAt,
+                daysRemaining: expiry.daysRemaining,
+                daysElapsed: expiry.daysElapsed,
+                percentElapsed: expiry.percentElapsed,
+                isExpired: expiry.isExpired,
+                isSold: expiry.isSold,
+                expiryDate: expiry.expiryDate.toISOString()
+            } 
+        });
     } catch (error) {
         return NextResponse.json({ message: "Erreur serveur" }, { status: 500 });
     }
 }
 
-// Optionally, DELETE if allowed (request said "ne supprime rien", but typically they can't delete accounts, though they might want to delete a prospect they created by mistake. For safety, let's only allow them to update status to "REFUSE" instead of deleting, as requested: "le commercial ne peut pas supprimer un compte")
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
-    return NextResponse.json({ message: "La suppression est désactivée pour des raisons de suivi." }, { status: 403 });
+    return NextResponse.json({ message: "La suppression manuelle est désactivée pour préserver l'historique d'audit." }, { status: 403 });
 }

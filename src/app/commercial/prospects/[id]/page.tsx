@@ -137,6 +137,15 @@ export default function EditProspect() {
     const [discount, setDiscount] = useState<0 | 0.05 | 0.10>(0);
 
     const [sales, setSales] = useState<any[]>([]);
+    const [expiryInfo, setExpiryInfo] = useState<{
+        assignedAt: string;
+        daysRemaining: number;
+        daysElapsed: number;
+        percentElapsed: number;
+        isExpired: boolean;
+        isSold: boolean;
+        expiryDate: string;
+    } | null>(null);
 
     useEffect(() => {
         const fetchProspect = async () => {
@@ -160,6 +169,17 @@ export default function EditProspect() {
                         noteRdv: data.prospect.noteRdv || ""
                     });
                     setSales(data.prospect.sales || []);
+                    if (data.prospect.assignedAt) {
+                        setExpiryInfo({
+                            assignedAt: data.prospect.assignedAt,
+                            daysRemaining: data.prospect.daysRemaining,
+                            daysElapsed: data.prospect.daysElapsed,
+                            percentElapsed: data.prospect.percentElapsed,
+                            isExpired: data.prospect.isExpired,
+                            isSold: data.prospect.isSold,
+                            expiryDate: data.prospect.expiryDate
+                        });
+                    }
                 } else {
                     setError("Prospect introuvable ou accès refusé.");
                 }
@@ -225,6 +245,7 @@ export default function EditProspect() {
             if (res.ok) {
                 setSuccess("Vente enregistrée avec succès !");
                 setFormData(prev => ({ ...prev, status: "VENTE_EFFECTUEE" }));
+                setExpiryInfo(prev => prev ? ({ ...prev, isSold: true, isExpired: false }) : null);
                 const data = await res.json();
                 setSales([...sales, data.sale]);
             } else {
@@ -286,6 +307,85 @@ export default function EditProspect() {
 
             {error && <div className="p-4 bg-red-50 text-red-600 rounded-lg">{error}</div>}
             {success && <div className="p-4 bg-emerald-50 text-emerald-600 rounded-lg flex items-center gap-2"><CheckCircle className="h-5 w-5" /> {success}</div>}
+
+            {/* Chrono 40 Jours & Date d'attribution */}
+            {expiryInfo && (
+                <div className={`p-5 rounded-2xl border transition-all ${
+                    expiryInfo.isSold 
+                        ? "bg-emerald-50/90 border-emerald-300 text-emerald-950 shadow-sm"
+                        : expiryInfo.daysRemaining <= 5
+                            ? "bg-red-50/90 border-red-300 text-red-950 shadow-sm"
+                            : expiryInfo.daysRemaining <= 15
+                                ? "bg-amber-50/90 border-amber-300 text-amber-950 shadow-sm"
+                                : "bg-blue-50/80 border-blue-200 text-blue-950 shadow-sm"
+                }`}>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div className="space-y-1.5">
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className="text-2xl">⏱️</span>
+                                <span className="font-extrabold text-base tracking-tight">
+                                    {expiryInfo.isSold 
+                                        ? "Client Gagné Définitivement (Vente Validée)" 
+                                        : `Chrono d'Exclusivité Commerciale : ${expiryInfo.daysRemaining} jour${expiryInfo.daysRemaining > 1 ? 's' : ''} restant${expiryInfo.daysRemaining > 1 ? 's' : ''}`}
+                                </span>
+                                {!expiryInfo.isSold && (
+                                    <span className={`px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider ${
+                                        expiryInfo.daysRemaining <= 5 
+                                            ? "bg-red-600 text-white animate-pulse" 
+                                            : expiryInfo.daysRemaining <= 15
+                                                ? "bg-amber-600 text-white"
+                                                : "bg-blue-600 text-white"
+                                    }`}>
+                                        J-{expiryInfo.daysRemaining} / 40j
+                                    </span>
+                                )}
+                            </div>
+                            <div className="text-xs text-slate-600 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                <span>
+                                    📅 Date d'attribution : <strong className="text-slate-900 font-bold">{new Date(expiryInfo.assignedAt).toLocaleDateString("fr-FR", { day: 'numeric', month: 'long', year: 'numeric' })}</strong>
+                                </span>
+                                {!expiryInfo.isSold && (
+                                    <span>
+                                        ⏳ Date limite de conclusion : <strong className="text-slate-900 font-bold">{new Date(expiryInfo.expiryDate).toLocaleDateString("fr-FR", { day: 'numeric', month: 'long', year: 'numeric' })}</strong>
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+
+                        {!expiryInfo.isSold && (
+                            <div className="w-full md:w-64 space-y-1.5 shrink-0">
+                                <div className="flex justify-between text-[11px] font-bold text-slate-600">
+                                    <span>Délai de prospection (40j)</span>
+                                    <span>{expiryInfo.percentElapsed}% écoulé</span>
+                                </div>
+                                <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                                    <div 
+                                        className={`h-full transition-all duration-500 rounded-full ${
+                                            expiryInfo.daysRemaining <= 5 
+                                                ? "bg-red-500" 
+                                                : expiryInfo.daysRemaining <= 15 
+                                                    ? "bg-amber-500" 
+                                                    : "bg-blue-600"
+                                        }`}
+                                        style={{ width: `${Math.max(5, expiryInfo.percentElapsed)}%` }}
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    {!expiryInfo.isSold ? (
+                        <div className="mt-3.5 pt-3 border-t border-slate-200/80 text-[11px] text-slate-700 flex items-center gap-1.5">
+                            <span className="font-extrabold text-amber-800">⚠️ Règle de libération automatique :</span>
+                            <span>Vous disposez d'un délai strict de 40 jours pour contacter le prospect et conclure la vente. Au-delà de 40 jours sans vente conclue, cette fiche est automatiquement libérée et remise dans la base commune pour l'ensemble des commerciaux.</span>
+                        </div>
+                    ) : (
+                        <div className="mt-2.5 pt-2 border-t border-emerald-200 text-xs font-semibold text-emerald-800">
+                            ✓ Vente validée : cette entreprise est désormais un client partenaire affilié à votre portefeuille.
+                        </div>
+                    )}
+                </div>
+            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">

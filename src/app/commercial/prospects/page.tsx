@@ -75,6 +75,19 @@ export default function ProspectsList() {
                 </div>
             </div>
 
+            {/* Banner Règle Chrono 40 Jours */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-4 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs text-blue-950 shadow-xs">
+                <div className="flex items-start md:items-center gap-2.5">
+                    <span className="text-xl shrink-0">⏱️</span>
+                    <div>
+                        <strong className="font-extrabold text-blue-900">Règle d'exclusivité & Chrono 40 jours :</strong>
+                        <span className="text-blue-800 ml-1">
+                            Chaque fiche attribuée est réservée pour un délai de <strong>40 jours</strong> pour contacter et conclure la vente. Au-delà de 40 jours sans vente conclue, la fiche est automatiquement libérée et remise dans la base commune pour l'ensemble des commerciaux.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
                 <div className="p-4 border-b border-slate-200 bg-slate-50">
                     <form onSubmit={handleSearch} className="flex gap-2">
@@ -102,7 +115,7 @@ export default function ProspectsList() {
                                 <th className="px-6 py-3 font-semibold">Contact</th>
                                 <th className="px-6 py-3 font-semibold">Statut Prospection</th>
                                 <th className="px-6 py-3 font-semibold">Prochain RDV / Rappel</th>
-                                <th className="px-6 py-3 font-semibold">Date d'ajout</th>
+                                <th className="px-6 py-3 font-semibold">Attribution & Chrono (40j)</th>
                                 <th className="px-6 py-3 font-semibold text-right">Action</th>
                             </tr>
                         </thead>
@@ -147,8 +160,29 @@ export default function ProspectsList() {
                                             <span className="text-slate-400 text-xs italic">Aucun RDV</span>
                                         )}
                                     </td>
-                                    <td className="px-6 py-4 text-slate-500">
-                                        {new Date(p.createdAt).toLocaleDateString("fr-FR")}
+                                    <td className="px-6 py-4">
+                                        <div className="flex flex-col gap-1">
+                                            <span className="text-slate-900 font-semibold text-xs">
+                                                {new Date(p.assignedAt || p.createdAt).toLocaleDateString("fr-FR")}
+                                            </span>
+                                            {p.status === "VENTE_EFFECTUEE" || p.isSold ? (
+                                                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded w-fit">
+                                                    🏆 Vente conclue
+                                                </span>
+                                            ) : p.daysRemaining !== undefined ? (
+                                                <span className={`inline-flex items-center gap-1 text-[11px] font-extrabold px-2 py-0.5 rounded w-fit border ${
+                                                    p.daysRemaining <= 5 
+                                                        ? "bg-red-50 text-red-700 border-red-300 animate-pulse" 
+                                                        : p.daysRemaining <= 15
+                                                            ? "bg-amber-50 text-amber-800 border-amber-300"
+                                                            : "bg-blue-50 text-blue-700 border-blue-200"
+                                                }`}>
+                                                    ⏱️ {p.daysRemaining}j restant{p.daysRemaining > 1 ? 's' : ''}
+                                                </span>
+                                            ) : (
+                                                <span className="text-slate-400 text-[11px]">Chrono 40j</span>
+                                            )}
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 text-right">
                                         <Link 
