@@ -331,6 +331,8 @@ model CommercialProfile {
   statutLegal  String?  // ex: "Micro-entreprise", "SASU", etc.
   telephone    String?
   adresse      String?
+  commissionRate Int?    @default(17) // 10, 13, 17
+  commissionTier String? @default("expert") // "debutant", "confirme", "expert"
   
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt

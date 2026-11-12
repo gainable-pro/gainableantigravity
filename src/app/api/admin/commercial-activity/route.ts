@@ -128,6 +128,8 @@ export async function GET(req: Request) {
                 phone: c.commercialProfile?.telephone || null,
                 statutLegal: c.commercialProfile?.statutLegal || 'Commercial',
                 siren: c.commercialProfile?.siren || null,
+                commissionRate: c.commercialProfile?.commissionRate ?? 17,
+                commissionTier: c.commercialProfile?.commissionTier ?? 'expert',
                 createdAt: c.created_at,
                 lastLoginAt: c.lastLoginAt ? c.lastLoginAt.toISOString() : null,
                 lastActiveAt: lastActiveDate ? lastActiveDate.toISOString() : null,
@@ -173,5 +175,48 @@ export async function GET(req: Request) {
     } catch (error: any) {
         console.error("Commercial activity API error:", error);
         return NextResponse.json({ message: "Erreur lors du chargement des données commerciales" }, { status: 500 });
+    }
+}
+
+export async function PATCH(req: Request) {
+    const admin = await verifyAdmin();
+    if (!admin) {
+        return NextResponse.json({ message: "Non autorisé" }, { status: 403 });
+    }
+
+    try {
+        const body = await req.json();
+        const { userId, tier } = body;
+
+        if (!userId || !tier) {
+            return NextResponse.json({ message: "Paramètres manquants (userId, tier)" }, { status: 400 });
+        }
+
+        const tierRates: Record<string, number> = {
+            debutant: 10,
+            confirme: 13,
+            expert: 17
+        };
+
+        const cleanTier = String(tier).toLowerCase();
+        const rate = tierRates[cleanTier] || 17;
+
+        await prisma.commercialProfile.upsert({
+            where: { userId },
+            update: {
+                commissionTier: cleanTier,
+                commissionRate: rate
+            },
+            create: {
+                userId,
+                commissionTier: cleanTier,
+                commissionRate: rate
+            }
+        });
+
+        return NextResponse.json({ success: true, tier: cleanTier, rate });
+    } catch (error: any) {
+        console.error("Error updating commercial commission tier:", error);
+        return NextResponse.json({ message: error.message || "Erreur serveur" }, { status: 500 });
     }
 }

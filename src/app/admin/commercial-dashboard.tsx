@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import {
     Users, TrendingUp, DollarSign, Calendar, Clock, LogIn,
     CheckCircle2, XCircle, AlertCircle, RefreshCw, Search,
-    Eye, BarChart3, Filter, Award, Activity, Phone, Shield, ArrowUpRight
+    Eye, BarChart3, Filter, Award, Activity, Phone, Shield, ArrowUpRight, Trash2
 } from "lucide-react";
 
 interface CommercialSalesItem {
@@ -35,6 +35,8 @@ interface CommercialItem {
     phone?: string | null;
     statutLegal?: string | null;
     siren?: string | null;
+    commissionRate?: number;
+    commissionTier?: string;
     createdAt: string;
     lastLoginAt?: string | null;
     lastActiveAt?: string | null;
@@ -113,6 +115,62 @@ export default function CommercialDashboard() {
             alert("Erreur technique");
         } finally {
             setImpersonatingId(null);
+        }
+    };
+
+    const handleDeleteCommercial = async (commercial: CommercialItem) => {
+        if (!confirm(`Supprimer définitivement le compte commercial de ${commercial.name} (${commercial.email}) ?\nSes données d'accès seront révoquées.`)) {
+            return;
+        }
+
+        try {
+            const res = await fetch(`/api/admin/users/${commercial.id}`, { method: "DELETE" });
+            if (res.ok) {
+                setCommercials(prev => prev.filter(c => c.id !== commercial.id));
+                if (selectedCommercial?.id === commercial.id) {
+                    setSelectedCommercial(null);
+                }
+                // Refresh data to keep counters accurate
+                fetchData();
+            } else {
+                alert("Erreur lors de la suppression du commercial.");
+            }
+        } catch (e) {
+            console.error("Error deleting commercial:", e);
+            alert("Erreur technique lors de la suppression.");
+        }
+    };
+
+    const handleUpdateTier = async (userId: string, newTier: string) => {
+        const tierRates: Record<string, number> = {
+            debutant: 10,
+            confirme: 13,
+            expert: 17
+        };
+        const newRate = tierRates[newTier] || 17;
+
+        // Optimistic update
+        setCommercials(prev => prev.map(c => {
+            if (c.id === userId) {
+                return { ...c, commissionTier: newTier, commissionRate: newRate };
+            }
+            return c;
+        }));
+
+        try {
+            const res = await fetch("/api/admin/commercial-activity", {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ userId, tier: newTier })
+            });
+            if (!res.ok) {
+                alert("Erreur lors de la mise à jour du palier commercial.");
+                fetchData();
+            }
+        } catch (e) {
+            console.error("Error updating commercial tier:", e);
+            alert("Erreur réseau");
+            fetchData();
         }
     };
 
@@ -420,6 +478,36 @@ export default function CommercialDashboard() {
                                                 <div className="text-[11px] text-amber-700 font-medium mt-1">
                                                     {c.statutLegal || "Commercial"}
                                                 </div>
+
+                                                {/* Sélecteur de niveau : Débutant 10%, Confirmé 13%, Expert 17% */}
+                                                <div className="mt-2.5 pt-2 border-t border-slate-200/80 flex items-center gap-1.5">
+                                                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Palier :</span>
+                                                    <select
+                                                        value={c.commissionTier || 'expert'}
+                                                        onChange={(e) => handleUpdateTier(c.id, e.target.value)}
+                                                        className={`text-xs font-bold rounded-md border px-2 py-1 transition-all cursor-pointer shadow-sm outline-none ${
+                                                            (c.commissionTier || 'expert') === 'debutant'
+                                                                ? 'bg-slate-100 border-slate-300 text-slate-700 hover:bg-slate-200'
+                                                                : (c.commissionTier || 'expert') === 'confirme'
+                                                                ? 'bg-blue-50 border-blue-300 text-blue-700 hover:bg-blue-100'
+                                                                : 'bg-amber-50 border-amber-300 text-amber-900 hover:bg-amber-100'
+                                                        }`}
+                                                        title="Modifier le palier de commission du commercial"
+                                                    >
+                                                        <option value="debutant">Débutant (10%)</option>
+                                                        <option value="confirme">Confirmé (13%)</option>
+                                                        <option value="expert">Expert (17%)</option>
+                                                    </select>
+                                                    <Badge className={`text-[10px] font-black border-none px-2 py-0.5 ${
+                                                        (c.commissionRate || 17) === 17
+                                                            ? 'bg-[#D59B2B] text-white'
+                                                            : (c.commissionRate || 17) === 13
+                                                            ? 'bg-blue-600 text-white'
+                                                            : 'bg-slate-700 text-white'
+                                                    }`}>
+                                                        {c.commissionRate || 17}% HT
+                                                    </Badge>
+                                                </div>
                                             </td>
 
                                             {/* Connection Status & Daily Check-in */}
@@ -505,6 +593,16 @@ export default function CommercialDashboard() {
                                                     title="Se connecter à son espace commercial CRM"
                                                 >
                                                     <LogIn className="w-3.5 h-3.5 mr-1" /> Espace
+                                                </Button>
+
+                                                <Button
+                                                    size="sm"
+                                                    variant="outline"
+                                                    onClick={() => handleDeleteCommercial(c)}
+                                                    className="border-rose-200 text-rose-600 hover:bg-rose-50 hover:text-rose-700 hover:border-rose-300 text-xs font-semibold"
+                                                    title="Supprimer cet accès commercial"
+                                                >
+                                                    <Trash2 className="w-3.5 h-3.5" />
                                                 </Button>
                                             </td>
                                         </tr>

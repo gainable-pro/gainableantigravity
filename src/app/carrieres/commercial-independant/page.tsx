@@ -28,7 +28,7 @@ import EarningCalculator from "./EarningCalculator";
 
 export const metadata = {
   title: "Consultant / Commercial B2B Indépendant — SaaS & Digital BTP (H/F) | Gainable.fr",
-  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commission Fixe 17% HT + 10% récurrent annuel au renouvellement sur abonnements 750€ & 1 200€ HT.",
+  description: "Offre d'emploi Consultant Commercial B2B Indépendant. EXCEED DIGITAL SAS (Gainable.fr). Commissions de 10% à 17% HT selon profil & expérience, avec réévaluation après 1 mois sur abonnements 750€ & 1 200€ HT.",
   alternates: {
     canonical: "https://www.gainable.fr/carrieres/commercial-independant",
   },
@@ -71,7 +71,7 @@ export default function CommercialJobPage() {
                   🔥 Offre Indépendant / Freelance
                 </Badge>
                 <Badge variant="outline" className="text-emerald-400 border-emerald-400/50 py-1.5 px-4 rounded-full font-bold text-xs">
-                  Taux Fixe 17% HT
+                  10% à 17% HT (Selon Profil)
                 </Badge>
                 <Badge variant="outline" className="text-blue-300 border-blue-400/40 py-1.5 px-4 rounded-full font-bold text-xs">
                   EXCEED DIGITAL SAS
@@ -90,8 +90,8 @@ export default function CommercialJobPage() {
               {/* Fast Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 pt-2">
                 {[
-                  { label: "Commission Directe", value: "17% HT Fixe" },
-                  { label: "Récurrent Annuel", value: "10% / an" },
+                  { label: "Commission Directe", value: "10% à 17% HT" },
+                  { label: "Évolution Palier", value: "Après 1 mois" },
                   { label: "Formules HT", value: "750€ & 1 200€" },
                   { label: "Mode de Travail", value: "Télétravail 100%" }
                 ].map((stat, idx) => (
@@ -218,8 +218,8 @@ export default function CommercialJobPage() {
                   },
                   {
                     title: "Fidélisation & Suivi client",
-                    desc: "Maintien d'une relation de confiance avec votre portefeuille pour assurer le renouvellement annuel et percevoir vos 10% récurrents.",
-                    icon: <RefreshCw className="w-5 h-5 text-purple-500" />
+                    desc: "Maintien d'une relation de confiance avec votre portefeuille pour assurer le suivi des partenaires et développer votre réseau local.",
+                    icon: <CheckCircle2 className="w-5 h-5 text-purple-500" />
                   }
                 ].map((mission, idx) => (
                   <div key={idx} className="bg-slate-50 border border-slate-100 rounded-2xl p-5 space-y-2 hover:border-[#D59B2B]/40 transition-colors">
@@ -241,7 +241,7 @@ export default function CommercialJobPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-black text-white">Rémunération & Avantages Attractifs</h2>
-                  <p className="text-xs text-slate-400 font-medium">Taux Fixe 17% HT + 10% Récurrent Annuel au Renouvellement</p>
+                  <p className="text-xs text-slate-400 font-medium">Paliers 10% (Débutant), 13% (Confirmé) & 17% (Expert) • Réévaluation après 1 mois</p>
                 </div>
               </div>
 
@@ -249,20 +249,20 @@ export default function CommercialJobPage() {
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-3">
                   <div className="flex items-center gap-2 text-[#D59B2B]">
                     <Sparkles className="w-5 h-5" />
-                    <h4 className="font-black text-lg">17% HT Commission Directe Fixe</h4>
+                    <h4 className="font-black text-lg">10% à 17% HT Commission Directe</h4>
                   </div>
                   <p className="text-slate-300 text-xs leading-relaxed">
-                    Sur chaque abonnement commercialisé (750 € HT ou 1 200 € HT), vous percevez un taux fixe immédiat de <strong>17% HT</strong> dès la première vente.
+                    Sur chaque abonnement commercialisé (750 € HT ou 1 200 € HT), votre commission est calculée selon votre palier d'expérience (<strong>10% Débutant</strong>, <strong>13% Confirmé</strong> ou <strong>17% Expert</strong>) dès la première vente.
                   </p>
                 </div>
 
                 <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-2xl p-6 space-y-3">
                   <div className="flex items-center gap-2 text-emerald-400">
-                    <RefreshCw className="w-5 h-5" />
-                    <h4 className="font-black text-lg">10% HT Récurrent Annuel</h4>
+                    <Clock className="w-5 h-5" />
+                    <h4 className="font-black text-lg">Réévaluation après 1 Mois</h4>
                   </div>
                   <p className="text-slate-300 text-xs leading-relaxed">
-                    <strong>Revenu Récurrent Rentrable :</strong> Vos commissions sont renouvelées à <strong>10% HT</strong> chaque année lors du réabonnement de vos clients sur la 2ème année et les suivantes ! Vous vous constituez un revenu récurrent automatique.
+                    <strong>Évolution rapide :</strong> Votre palier de commission est réévalué systématiquement après 30 jours d'activité sur la base de vos résultats et de votre rigueur, vous permettant d'atteindre rapidement le taux Expert à <strong>17% HT</strong>.
                   </p>
                 </div>
               </div>
@@ -285,38 +285,62 @@ export default function CommercialJobPage() {
             <div className="bg-white rounded-3xl p-8 border border-slate-200/70 shadow-sm space-y-6">
               <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div>
-                  <h2 className="text-2xl font-black text-[#1F2D3D]">Tableau des Commissions & Formules HT</h2>
-                  <p className="text-xs text-slate-400 font-medium">Formules d'abonnements 750 € HT et 1 200 € HT à 17% HT de commission fixe</p>
+                  <h2 className="text-2xl font-black text-[#1F2D3D]">Tableau des Commissions & Paliers HT</h2>
+                  <p className="text-xs text-slate-400 font-medium">Formules 750 € HT et 1 200 € HT déclinées par palier de compétences</p>
                 </div>
-                <Badge className="bg-[#D59B2B] text-white font-bold text-xs">Taux Fixe 17% HT</Badge>
+                <Badge className="bg-[#D59B2B] text-white font-bold text-xs">10% à 17% HT</Badge>
               </div>
 
               {/* Formules presentation cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 space-y-2 text-center">
-                  <Badge className="bg-slate-200 text-slate-700 hover:bg-slate-200 border-none font-bold text-[10px] uppercase">
-                    Formule Standard
-                  </Badge>
-                  <p className="text-3xl font-black text-[#1F2D3D]">750 € HT</p>
-                  <div className="pt-2 text-xs text-slate-600 font-medium space-y-1 border-t border-slate-200/60">
-                    <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 127,50 € HT / vente</p>
-                    <p className="text-emerald-600 font-semibold">Récurrent Année 2+ (10%) : 75,00 € HT / an</p>
+                <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-5 space-y-3">
+                  <div className="text-center">
+                    <Badge className="bg-slate-200 text-slate-700 hover:bg-slate-200 border-none font-bold text-[10px] uppercase">
+                      Formule Standard (Diag Immo)
+                    </Badge>
+                    <p className="text-3xl font-black text-[#1F2D3D] mt-1">750 € HT</p>
+                  </div>
+                  <div className="pt-2 text-xs text-slate-700 font-medium space-y-1.5 border-t border-slate-200/60">
+                    <div className="flex justify-between items-center py-0.5">
+                      <span className="text-slate-500">Débutant (10%) :</span>
+                      <strong className="text-slate-900 font-black">75,00 € HT / vente</strong>
+                    </div>
+                    <div className="flex justify-between items-center py-0.5">
+                      <span className="text-blue-600 font-medium">Confirmé (13%) :</span>
+                      <strong className="text-blue-700 font-black">97,50 € HT / vente</strong>
+                    </div>
+                    <div className="flex justify-between items-center py-0.5 bg-amber-50/80 px-2 rounded-lg">
+                      <span className="text-amber-800 font-semibold">Expert (17%) :</span>
+                      <strong className="text-[#D59B2B] font-black text-sm">127,50 € HT / vente</strong>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-[#1F2D3D] text-white border border-[#D59B2B] rounded-2xl p-5 space-y-2 text-center shadow-lg">
-                  <Badge className="bg-[#D59B2B] text-white border-none font-bold text-[10px] uppercase">
-                    Formule Premium
-                  </Badge>
-                  <p className="text-3xl font-black text-[#D59B2B]">1 200 € HT</p>
-                  <div className="pt-2 text-xs text-slate-300 font-medium space-y-1 border-t border-slate-700">
-                    <p className="text-[#D59B2B] font-bold text-sm">Commission Directe (17%) : 204,00 € HT / vente</p>
-                    <p className="text-emerald-400 font-semibold">Récurrent Année 2+ (10%) : 120,00 € HT / an</p>
+                <div className="bg-[#1F2D3D] text-white border border-[#D59B2B] rounded-2xl p-5 space-y-3 shadow-lg">
+                  <div className="text-center">
+                    <Badge className="bg-[#D59B2B] text-white border-none font-bold text-[10px] uppercase">
+                      Formule Premium (Expert CVC)
+                    </Badge>
+                    <p className="text-3xl font-black text-[#D59B2B] mt-1">1 200 € HT</p>
+                  </div>
+                  <div className="pt-2 text-xs text-slate-300 font-medium space-y-1.5 border-t border-slate-700">
+                    <div className="flex justify-between items-center py-0.5">
+                      <span className="text-slate-400">Débutant (10%) :</span>
+                      <strong className="text-white font-black">120,00 € HT / vente</strong>
+                    </div>
+                    <div className="flex justify-between items-center py-0.5">
+                      <span className="text-blue-400 font-medium">Confirmé (13%) :</span>
+                      <strong className="text-blue-300 font-black">156,00 € HT / vente</strong>
+                    </div>
+                    <div className="flex justify-between items-center py-0.5 bg-white/5 px-2 rounded-lg">
+                      <span className="text-amber-300 font-semibold">Expert (17%) :</span>
+                      <strong className="text-emerald-400 font-black text-sm">204,00 € HT / vente</strong>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Simulation Details Table */}
+              {/* Simulation Details Table at Expert rate (17%) */}
               <div className="bg-slate-50 rounded-2xl border border-slate-200/70 overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs md:text-sm">
@@ -324,9 +348,9 @@ export default function CommercialJobPage() {
                       <tr className="bg-slate-100 text-slate-600 border-b border-slate-200">
                         <th className="px-6 py-4 font-bold">Ventes / jour (20j/m)</th>
                         <th className="px-6 py-4 font-bold">CA Formule 750 € HT</th>
-                        <th className="px-6 py-4 font-bold text-[#D59B2B]">Com. Mensuelle (750€)</th>
+                        <th className="px-6 py-4 font-bold text-[#D59B2B]">Com. Palier Expert (17%)</th>
                         <th className="px-6 py-4 font-bold">CA Formule 1 200 € HT</th>
-                        <th className="px-6 py-4 font-bold text-emerald-600">Com. Mensuelle (1 200€)</th>
+                        <th className="px-6 py-4 font-bold text-emerald-600">Com. Palier Expert (17%)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-200 text-slate-800 font-medium">
@@ -349,7 +373,7 @@ export default function CommercialJobPage() {
                 </div>
               </div>
               <p className="text-center text-slate-400 text-xs">
-                * Taux fixe de 17% HT calculé sur 20 jours de prospection par mois + 10% HT récurrent annuel lors du renouvellement des abonnements.
+                * Commissions calculées sur une base de 20 jours de prospection par mois selon votre palier (10%, 13% ou 17% HT). Réévaluation systématique du palier au bout de 1 mois d'activité.
               </p>
             </div>
 
@@ -527,7 +551,7 @@ export default function CommercialJobPage() {
             </Link>
           </div>
           <p className="text-slate-400 text-xs font-semibold pt-2">
-            100% Indépendant | 17% HT Fixe + 10% Récurrent Annuel | Formules 750€ & 1 200€ HT
+            100% Indépendant | 10% à 17% HT selon profil | Réévaluation après 1 mois | Formules 750€ & 1 200€ HT
           </p>
         </div>
       </section>

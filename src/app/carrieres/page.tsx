@@ -37,7 +37,7 @@ export default function CareersPage() {
       type: "Indépendant / Freelance",
       description: "Prospection ciblée (Cold Call) et démonstration de valeur auprès des gérants d'entreprises CVC, diagnostiqueurs et bureaux d'études.",
       icon: <Users className="w-6 h-6 text-[#D59B2B]" />,
-      perks: ["17% HT commission fixe", "Formules 750€ & 1 200€ HT", "10% récurrent annuel"],
+      perks: ["10% à 17% HT de commission", "Formules 750€ & 1 200€ HT", "Réévaluation après 1 mois"],
       detailsUrl: "/carrieres/commercial-independant"
     },
     {
@@ -162,25 +162,27 @@ export default function CareersPage() {
       {/* Commission Structure (THE GRID) */}
       <section className="py-32 bg-slate-900 overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl font-black text-white mb-6">Un système de commission ultra-valorisant</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-white mb-6">Un système de commission par palier évolutif</h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Chaque journée est indépendante. Plus vous réalisez de ventes dans la journée, plus votre taux de commission augmente sur l'ensemble de vos ventes.
+              Votre taux de commission (10%, 13% ou 17% HT) est attribué selon votre profil et votre expérience, avec une réévaluation systématique au bout de 1 mois d'activité.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
             {[
-              { level: "Niveau 1", count: "1 vente/jour", rate: "10%", color: "bg-slate-800" },
-              { level: "Niveau 2", count: "2 ventes/jour", rate: "12%", color: "bg-slate-800" },
-              { level: "Niveau 3", count: "3 ventes/jour", rate: "13%", color: "bg-slate-800" },
-              { level: "Niveau 4", count: "4 ventes/jour", rate: "15%", color: "bg-slate-800 border-2 border-[#D59B2B]/50" },
-              { level: "Niveau 5", count: "5+ ventes/jour", rate: "17%", color: "bg-[#D59B2B]", text: "text-white" },
+              { level: "Palier Débutant", count: "Profil junior / apprentissage", rate: "10% HT", color: "bg-slate-800 border border-emerald-500/30", comm1200: "120 € HT / vente" },
+              { level: "Palier Confirmé", count: "Expérience commerciale B2B", rate: "13% HT", color: "bg-slate-800 border border-blue-500/40", comm1200: "156 € HT / vente" },
+              { level: "Palier Expert", count: "Top closer autonome", rate: "17% HT", color: "bg-gradient-to-br from-[#D59B2B]/20 to-slate-800 border-2 border-[#D59B2B]", text: "text-white", comm1200: "204 € HT / vente" },
             ].map((lvl, i) => (
-              <div key={i} className={`${lvl.color} rounded-2xl p-6 text-center shadow-lg transform transition-transform hover:scale-105`}>
-                <p className={`text-xs font-bold uppercase tracking-widest ${lvl.text || 'text-slate-500'} mb-2`}>{lvl.level}</p>
-                <p className={`text-xl font-black ${lvl.text || 'text-white'} mb-1`}>{lvl.rate}</p>
-                <p className={`text-[10px] ${lvl.text || 'text-slate-400'} font-medium`}>{lvl.count}</p>
+              <div key={i} className={`${lvl.color} rounded-2xl p-6 text-center shadow-lg transform transition-transform hover:scale-105 space-y-2`}>
+                <p className="text-xs font-bold uppercase tracking-widest text-[#D59B2B]">{lvl.level}</p>
+                <p className={`text-3xl font-black ${lvl.text || 'text-white'}`}>{lvl.rate}</p>
+                <p className="text-xs text-slate-300 font-medium">{lvl.count}</p>
+                <p className="text-xs font-bold text-emerald-400">{lvl.comm1200}</p>
+                <Badge variant="outline" className="border-white/20 text-slate-300 text-[10px] font-bold mt-2">
+                  Réévaluation à 1 mois
+                </Badge>
               </div>
             ))}
           </div>

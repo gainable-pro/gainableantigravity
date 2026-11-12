@@ -21,9 +21,16 @@ export async function GET(req: Request) {
 
         const targetCommercial = await prisma.user.findUnique({
             where: { id: targetCommercialId },
-            select: { email: true }
+            select: { 
+                email: true,
+                commercialProfile: {
+                    select: { commissionRate: true, commissionTier: true }
+                }
+            }
         });
-        const isCustom17 = targetCommercial?.email === "top.informatique13@gmail.com" || targetCommercial?.email === "emymarty.pro@gmail.com";
+        const commercialRateInt = targetCommercial?.commercialProfile?.commissionRate || 17;
+        const commercialTierStr = targetCommercial?.commercialProfile?.commissionTier || 'expert';
+        const isCustom17 = true;
 
         const now = new Date();
         const queryMonth = url.searchParams.get("month");
@@ -88,12 +95,12 @@ export async function GET(req: Request) {
 
         let totalMonthlyCommission = 0;
         const historyDetails = [];
-        const FIXED_RATE = 0.17; // Fixed 17% commission rate for all commercials
+        const FIXED_RATE = commercialRateInt / 100; // Dynamic commission rate according to commercial level (10%, 13%, 17%)
 
         for (const [day, dayData] of Object.entries(salesByDay)) {
             const count = dayData.count;
             
-            // Calculate commission dynamically based on 17% rate
+            // Calculate commission dynamically based on commercial rate
             let dailyComm = 0;
             for (const s of dayData.sales) {
                 dailyComm += s.montant * FIXED_RATE;
@@ -104,8 +111,8 @@ export async function GET(req: Request) {
             historyDetails.push({
                 date: day,
                 count: count,
-                level: 5,
-                rate: 17,
+                level: commercialTierStr === 'debutant' ? 1 : commercialTierStr === 'confirme' ? 3 : 5,
+                rate: commercialRateInt,
                 ca: dayData.totalAmount,
                 commission: parseFloat(dailyComm.toFixed(2))
             });
@@ -142,7 +149,8 @@ export async function GET(req: Request) {
             pendingSalesCount,
             history: historyDetails,
             isFixedRate: true,
-            fixedRateValue: 17
+            fixedRateValue: commercialRateInt,
+            commissionTier: commercialTierStr
         });
 
     } catch (error) {
