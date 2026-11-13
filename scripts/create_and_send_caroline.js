@@ -252,13 +252,36 @@ async function main() {
 </html>
     `;
 
+    const plainText = `Bonjour ${firstName},
+
+Félicitations, votre candidature a été retenue pour la mission d'Agent Commercial Indépendant Gainable.fr.
+
+Voici vos accès personnels à votre Portail Commercial :
+- URL de connexion : https://www.gainable.fr/commercial/login
+- Identifiant / Email : ${email}
+- Mot de passe : ${password}
+- Rôle : Agent Commercial Indépendant
+
+Documents à nous transmettre par retour d'email pour l'établissement de votre contrat :
+- Extrait KBIS ou avis de situation SIRENE
+- Numéro de société (SIREN / SIRET)
+- RIB professionnel
+
+Votre compte est d'ores et déjà actif. Vous pouvez vous connecter pour explorer votre CRM et vos outils de prospection.
+
+Bienvenue dans l'équipe,
+L'équipe Gainable.fr
+https://www.gainable.fr
+`;
+
     const emailResponse = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'Gainable.fr Recrutement <conseil@gainable.ch>',
       replyTo: 'contact@gainable.fr',
       to: [email],
       cc: ccEmails,
-      subject: '🚀 Confirmation de candidature validée & Vos accès Commercial Indépendant Gainable.fr',
-      html: htmlContent
+      subject: 'Vos accès au Portail Commercial — Gainable.fr',
+      html: htmlContent,
+      text: plainText
     });
 
     console.log("🎉 Email de confirmation et identifiants envoyé avec succès ! Réponse Resend :", emailResponse);
