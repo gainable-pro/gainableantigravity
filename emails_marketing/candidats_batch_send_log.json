@@ -919,5 +919,14 @@
     "status": "success",
     "resendId": "01a1d1ad-0271-7189-8a81-368a1defe091",
     "timestamp": "2026-11-12T21:32:19.180Z"
+  },
+  {
+    "email": "sofiane.bensaada@gmail.com",
+    "firstName": "Sofiane",
+    "lastName": "Bensaada",
+    "copyTo": "contact@gainable.fr",
+    "status": "success",
+    "resendId": "01a1d41f-6551-7106-a0c7-43f26b9d3cbb",
+    "timestamp": "2026-11-13T08:56:29.503Z"
   }
 ]
