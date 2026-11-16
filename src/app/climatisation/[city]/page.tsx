@@ -213,7 +213,7 @@ export default async function CityPage({ params }: PageProps) {
             },
             {
                 "@type": "FAQPage",
-                "@id": `https://www.gainable.fr/climatisation/${slug}#faq`,
+                "@id": `https://www.gainable.fr/climatisation/${city.slug}#faq`,
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -248,7 +248,6 @@ export default async function CityPage({ params }: PageProps) {
                         }
                     }
                 ]
-            }
             }
         ]
     };
