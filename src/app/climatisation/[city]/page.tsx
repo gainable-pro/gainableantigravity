@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, MapPin, ShieldCheck, Star, Wrench, HelpCircle, Info, Timer, Euro } from "lucide-react";
 import { ContactWizard } from "@/components/features/contact/contact-wizard";
-import { prisma } from "@/lib/prisma";
+import { prisma, withDbRetry } from "@/lib/prisma";
 import { InternationalLeadForm } from "@/components/features/contact/forms/international-form";
 import fs from 'fs';
 import path from 'path';
@@ -173,7 +173,7 @@ export default async function CityPage({ params }: PageProps) {
     // Block 4: Gainable Choices
     const gainableChoices = [
         `La <strong>climatisation gainable à ${city.name}</strong> est le choix premium pour les villas et appartements recherchant un confort invisible. Intégrée dans les combles ou les faux-plafonds, elle diffuse l'air par de fines grilles linéaires ultra-discrètes. Couplée à un <strong>système intelligent (type Airzone) à ${city.name}</strong>, elle permet de piloter la température de chaque pièce de votre logement de manière indépendante, maximisant ainsi le confort et les économies.`,
-        `Vous souhaitez éviter les unités intérieures disgracieuses sur vos murs à {city.name} ? Le <strong>gainable réversible à ${city.name}</strong> est la réponse idéale. Son fonctionnement est d'un silence absolu puisque l'unité intérieure principale est déportée dans des espaces non habités. Nos frigoristes certifiés à ${city.name} réalisent le réseau de gaines isolées sur-mesure pour un débit d'air doux et sans aucun courant d'air direct.`,
+        `Vous souhaitez éviter les unités intérieures disgracieuses sur vos murs à ${city.name} ? Le <strong>gainable réversible à ${city.name}</strong> est la réponse idéale. Son fonctionnement est d'un silence absolu puisque l'unité intérieure principale est déportée dans des espaces non habités. Nos frigoristes certifiés à ${city.name} réalisent le réseau de gaines isolées sur-mesure pour un débit d'air doux et sans aucun courant d'air direct.`,
         `Le <strong>gainable à ${city.name}</strong> s'impose dans les projets de construction et de rénovation haut de gamme. Sa conception technique requiert un véritable savoir-faire pour équilibrer les débits d'air soufflé et repris. Confier son projet de climatisation invisible à un expert qualifié à ${city.name} garantit un système silencieux, performant et parfaitement intégré.`
     ];
 
@@ -259,7 +259,7 @@ export default async function CityPage({ params }: PageProps) {
     const SYSTEM_SLUGS = ['gainable-fr', 'redaction-gainable', 'bureau-etude-gainable'];
 
     try {
-        const [experts, deptCount, globalCount] = await Promise.all([
+        const [experts, deptCount, globalCount] = await withDbRetry(() => Promise.all([
             prisma.expert.findMany({
                 where: {
                     status: 'active',
@@ -282,7 +282,7 @@ export default async function CityPage({ params }: PageProps) {
             prisma.expert.count({
                 where: { status: 'active', slug: { notIn: SYSTEM_SLUGS } }
             })
-        ]);
+        ]));
         localExperts = experts;
         totalDeptExperts = deptCount;
         globalExpertsCount = globalCount;

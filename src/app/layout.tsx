@@ -25,18 +25,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.gainable.fr'),
   title: {
     default: "Gainable.fr - Trouvez votre Installateur de Climatisation Gainable & VRV",
-    template: "%s | Gainable.fr"
+    template: "%s"
   },
   description: "La première plateforme de mise en relation d'experts en climatisation gainable & VRV. Trouvez un installateur, un bureau d'étude ou un diagnostiqueur certifié.",
   alternates: {
     canonical: './',
-    languages: {
-      'fr-FR': 'https://www.gainable.fr',
-      'fr-CH': 'https://www.gainable.ch',
-      'fr-BE': 'https://www.gainable.be',
-      'fr-MA': 'https://www.gainable.ma',
-      'fr-CA': 'https://www.gainable.ca',
-    },
   },
   openGraph: {
     type: 'website',

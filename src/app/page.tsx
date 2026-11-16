@@ -44,6 +44,13 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
         description,
         alternates: {
             canonical: canonicalUrl,
+            languages: {
+                'fr-FR': 'https://www.gainable.fr',
+                'fr-CH': 'https://www.gainable.ch',
+                'fr-BE': 'https://www.gainable.be',
+                'fr-MA': 'https://www.gainable.ma',
+                'fr-CA': 'https://www.gainable.ca',
+            },
         },
         openGraph: {
             title,
