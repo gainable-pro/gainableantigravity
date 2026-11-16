@@ -121,6 +121,8 @@ export default async function CityPage({ params }: PageProps) {
         priceMultiplier = 1.6;
     }
 
+    const currencyCode = isSwitzerland ? 'CHF' : isMorocco ? 'MAD' : 'EUR';
+
     const priceMinRaw = 12000 * city.priceIndex * priceMultiplier;
     const priceMaxRaw = 18000 * city.priceIndex * priceMultiplier;
 
@@ -201,7 +203,7 @@ export default async function CityPage({ params }: PageProps) {
                 "description": `Installation, entretien et dépannage de climatisation réversible gainable à ${city.name}.`,
                 "offers": {
                     "@type": "AggregateOffer",
-                    "priceCurrency": "EUR",
+                    "priceCurrency": currencyCode,
                     "lowPrice": priceMin.toString(),
                     "highPrice": priceMax.toString(),
                     "offerCount": "3",
@@ -218,7 +220,7 @@ export default async function CityPage({ params }: PageProps) {
                         "name": `Quel budget prévoir pour une clim gainable à ${city.name} ?`,
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": `Pour une installation complète à ${city.name}, comptez entre ${priceMin.toLocaleString('fr-FR')}€ et ${priceMax.toLocaleString('fr-FR')}€ pour 100m², selon la complexité et les technologies de régulation thermique.`
+                            "text": `Pour une installation complète à ${city.name}, comptez entre ${priceMin.toLocaleString('fr-FR')}${currency === '€' ? '€' : ' ' + currency} et ${priceMax.toLocaleString('fr-FR')}${currency === '€' ? '€' : ' ' + currency} pour 100m², selon la complexité et les technologies de régulation thermique.`
                         }
                     },
                     {
