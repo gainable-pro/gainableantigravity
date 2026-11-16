@@ -19,7 +19,17 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-{
+      {
+        source: '/devis',
+        destination: '/trouver-installateur',
+        permanent: true,
+      },
+      {
+        source: '/demande-devis',
+        destination: '/trouver-installateur',
+        permanent: true,
+      },
+      {
         source: '/mot-de-passe-oublie',
         destination: '/auth/reset-password',
         permanent: true,

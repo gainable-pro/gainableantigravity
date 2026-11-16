@@ -1,4 +1,5 @@
 
+import type { Metadata } from "next";
 import { prisma, withDbRetry } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import { PhoneCallButton } from "@/components/features/expert/phone-call-button"
 import { BrandLogo } from "@/components/ui/brand-logo";
 import { VerifiedExpertBadge } from "@/components/ui/verified-expert-badge";
 import { InternalLinking } from "@/components/features/seo/internal-linking";
+import { generateExpertMetaTitle, generateExpertMetaDescription } from "@/lib/seo-templates";
 
 export const revalidate = 3600; // Cache static pages for 1 hour, auto-revalidated
 
@@ -63,46 +65,60 @@ async function getExpertBySlug(slug: string) {
     );
 }
 
-import type { Metadata } from "next";
-
-import { generateExpertMetaTitle, generateExpertMetaDescription } from "@/lib/seo-templates";
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-    const { slug } = await params;
-    const expert = await getExpertBySlug(slug);
+    try {
+        const { slug } = await params;
+        const expert = await getExpertBySlug(slug);
 
-    if (!expert) {
+        if (!expert) {
+            return {
+                title: "Expert introuvable - Gainable.fr",
+                description: "Le profil de cet expert est introuvable.",
+                alternates: {
+                    canonical: `https://www.gainable.fr/pro/${slug}`,
+                }
+            };
+        }
+
+        const seoData = {
+            nomEntreprise: expert.nom_entreprise,
+            ville: expert.ville,
+            codePostal: expert.code_postal,
+            description: expert.description
+        };
+
+        const title = expert.metaTitle || generateExpertMetaTitle(seoData) || `${expert.nom_entreprise} - Installateur Climatisation & PAC`;
+        const description = expert.metaDesc || generateExpertMetaDescription(seoData) || `Profil officiel de ${expert.nom_entreprise}, artisan vérifié en climatisation gainable et pompe à chaleur. Devis gratuit et coordonnées.`;
+        const canonical = `https://www.gainable.fr/pro/${expert.slug}`;
+
         return {
-            title: "Expert introuvable - Gainable.fr",
-            description: "Le profil de cet expert est introuvable."
+            title,
+            description,
+            alternates: {
+                canonical,
+            },
+            openGraph: {
+                title,
+                description,
+                url: canonical,
+                siteName: 'Gainable.fr',
+                images: [
+                    expert.logo_url 
+                        ? (expert.logo_url.startsWith('http') ? expert.logo_url : `https://www.gainable.fr${expert.logo_url.startsWith('/') ? '' : '/'}${expert.logo_url}`)
+                        : 'https://www.gainable.fr/assets/logo-share.png'
+                ],
+                type: 'profile',
+            }
+        };
+    } catch {
+        return {
+            title: "Expert Vérifié Gainable.fr",
+            description: "Installateur certifié de climatisation gainable et pompe à chaleur.",
+            alternates: {
+                canonical: "https://www.gainable.fr/trouver-installateur",
+            }
         };
     }
-
-    // fallbackData object for template generator
-    const seoData = {
-        nomEntreprise: expert.nom_entreprise,
-        ville: expert.ville,
-        codePostal: expert.code_postal,
-        description: expert.description
-    };
-
-    return {
-        title: expert.metaTitle || generateExpertMetaTitle(seoData),
-        description: expert.metaDesc || generateExpertMetaDescription(seoData),
-        alternates: {
-            canonical: `https://www.gainable.fr/pro/${expert.slug}`,
-        },
-        openGraph: {
-            title: expert.metaTitle || generateExpertMetaTitle(seoData),
-            description: expert.metaDesc || generateExpertMetaDescription(seoData),
-            images: [
-                expert.logo_url 
-                    ? (expert.logo_url.startsWith('http') ? expert.logo_url : `https://www.gainable.fr${expert.logo_url.startsWith('/') ? '' : '/'}${expert.logo_url}`)
-                    : 'https://www.gainable.fr/assets/logo-share.png'
-            ],
-            type: 'profile',
-        }
-    };
 }
 
 export default async function PublicProfilePage({ params }: { params: Promise<{ slug: string }> }) {
