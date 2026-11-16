@@ -14,8 +14,7 @@ const BRAND_LOGOS: Record<string, string> = {
     "Koolnova": "koolnova.png",
     "Midea": "midea.png",
     "Samsung": "samsung.png",
-    "Saunier Duval": "saunier_duval.png",
-    "Hitachi": "hitachi.png"
+    "Saunier Duval": "saunier_duval.png"
 };
 
 export const BrandLogo = ({ brand, size = 40 }: { brand: string; size?: number }) => {
