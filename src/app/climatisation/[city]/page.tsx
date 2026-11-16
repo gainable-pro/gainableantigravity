@@ -200,12 +200,53 @@ export default async function CityPage({ params }: PageProps) {
                 },
                 "description": `Installation, entretien et dépannage de climatisation réversible gainable à ${city.name}.`,
                 "offers": {
-                    "@type": "Offer",
+                    "@type": "AggregateOffer",
                     "priceCurrency": "EUR",
-                    "price": priceMin.toString(),
+                    "lowPrice": priceMin.toString(),
+                    "highPrice": priceMax.toString(),
+                    "offerCount": "3",
                     "priceValidUntil": "2026-12-31",
                     "availability": "https://schema.org/InStock"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": `https://www.gainable.fr/climatisation/${slug}#faq`,
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": `Quel budget prévoir pour une clim gainable à ${city.name} ?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Pour une installation complète à ${city.name}, comptez entre ${priceMin.toLocaleString('fr-FR')}€ et ${priceMax.toLocaleString('fr-FR')}€ pour 100m², selon la complexité et les technologies de régulation thermique.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Faut-il de l'entretien ?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Absolument. Un filtre encrassé est la cause n°1 de perte de performance et d'allergies. Un entretien périodique par un technicien agréé à ${city.name} est indispensable pour préserver la garantie décennale.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `Quelle est la durée des travaux d'installation à ${city.name} ?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `En moyenne, comptez 1 à 2 jours de travaux pour un split mural classique, et 3 à 5 jours pour un système gainable complet avec passage dans les faux-plafonds dans votre logement à ${city.name}.`
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": `Quelles aides financières sont disponibles pour installer une PAC à ${city.name} ?`,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": `Selon vos ressources, vous pouvez prétendre à MaPrimeRénov', aux Certificats d'Économie d'Énergie (CEE), à la TVA réduite et à l'éco-PTZ à ${city.name}, à condition que la pose soit effectuée par un installateur certifié RGE.`
+                        }
+                    }
+                ]
+            }
             }
         ]
     };
