@@ -67,14 +67,15 @@ Enregistrement de 4 baselines `seo-drift` pré-déploiement, puis déploiement d
 * **`2ded165`** — Devise dynamique `priceCurrency` (`EUR` / `CHF` / `MAD`) dans `AggregateOffer` et la FAQ des pages Villes.
 * **`daa6d92`** — Correctif syntaxique `FAQPage` et référence `city.slug` pour rétablir un déploiement Vercel vert.
 
-#### 9. Phase 4 — Maillage `/trouver-installateur` & Déblocage Cache ISR Vercel Edge (18/11/2026)
+#### 9. Phase 4 — Maillage `/trouver-installateur` & Déblocage Cache ISR Vercel Edge (18/11/2026 — Commit `33dbe0c`)
 * **Maillage interne Footer** (`src/components/layout/footer.tsx`) : Ajout des liens directs **`/trouver-installateur`** (*Annuaire Installateurs RGE*) et **`/materiel`** (*Catalogue Matériel*) sur l'ensemble des 59 350 pages pour lever leur statut GSC *« URL inconnue de Google »* et accélérer le recrawl des pages Régions/Villes.
 * **Fiabilisation `/trouver-installateur`** (`src/app/trouver-installateur/page.tsx`) : Enveloppement de la requête Prisma dans `withDbRetry()`.
 * **Déblocage du cache ISR Vercel Edge** (`src/app/layout.tsx`, `src/components/layout/header.tsx`, `src/middleware.ts`) : Suppression de `await headers()` dans `RootLayout` (qui forçait `Cache-Control: private, no-cache` sur tout le site). Détection du logo pays (`FR`/`CH`/`MA`/`BE`) déportée côté client (`window.location.hostname` + cookie léger `gainable_country` posé uniquement pour les visiteurs `CH`/`MA`/`BE`, sans jamais casser le cache CDN pour la France et les robots). Résultat vérifié au build Next.js (`973` pages statiques/ISR générées, `0` erreur TypeScript) et certifié en production (`X-Vercel-Cache: PRERENDER` / `HIT`, TTFB `/pro/...` = **248 ms**).
 
-#### 10. Phase 4 bis — Cache ISR Edge sur les 56 277 Articles & En-têtes Sécurité 100/100 (18/11/2026)
-* **Cache ISR à la demande sur les 56 277 articles** (`src/app/entreprise/[slug]/articles/[articleSlug]/page.tsx`) : Ajout de `dynamicParams = true` et `generateStaticParams() { return []; }` afin que Next.js 16 bascule la route de `ƒ (Dynamic)` (~2 550 ms TTFB, `X-Vercel-Cache: MISS`) vers **`● (On-Demand ISR 1h)`** — divisant jusqu'à 10× le TTFB et soulageant PostgreSQL face au crawl Googlebot.
-* **Sécurité HTTP 100/100 & propreté `next.config.ts`** : Ajout des 3 en-têtes manquants (`X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy`) et suppression de l'ancien rewrite mort `/trouver-installateur → /`.
+#### 10. Phase 4 bis — Cache ISR Edge sur les 56 277 Articles & En-têtes Sécurité 100/100 (18/11/2026 — Commit `53263ab`)
+* **Cache ISR à la demande sur les 56 277 articles** (`src/app/entreprise/[slug]/articles/[articleSlug]/page.tsx`) : Ajout de `dynamicParams = true` et `generateStaticParams() { return []; }` → route basculée en **`● (On-Demand ISR 1h)`**. **Vérifié en production le 18/11 à 07h45** : passage à `X-Vercel-Cache: HIT` avec un TTFB tombé de **2 550 ms → 303 ms** (**÷8,4**, 0 requête BDD en cache).
+* **Sécurité HTTP 100/100 & propreté `next.config.ts`** : Ajout de `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` et suppression du rewrite mort `/trouver-installateur → /`. **Vérifié en production** : `security_headers.py` = **100/100 (0 issue)**.
+* **Demandes d'indexation prioritaire GSC effectuées le 18/11 à 07h44** : `/trouver-installateur` et `/materiel` placées en file d'exploration prioritaire.
 
 ---
 
@@ -107,8 +108,8 @@ Enregistrement de 4 baselines `seo-drift` pré-déploiement, puis déploiement d
 | :--- | :--- | :---: | :---: | :--- |
 | Pilier | `/` | ✅ Indexée | 14/11/2026 | — |
 | Pilier | `/bureau-etude` | ✅ Indexée | 07/11/2026 | — |
-| Pilier | `/trouver-installateur` | ⚠️ **Inconnue de Google** | Jamais | — *(non liée en Header/Footer)* |
-| Pilier | `/materiel` | ⚠️ **Inconnue de Google** | Jamais | — |
+| Pilier | `/trouver-installateur` | ⏳ **Indexation demandée (18/11)** | Jamais *(file prioritaire)* | — *(lié Footer le 18/11)* |
+| Pilier | `/materiel` | ⏳ **Indexation demandée (18/11)** | Jamais *(file prioritaire)* | — *(lié Footer le 18/11)* |
 | Redirect | `/devis` | ℹ️ Inconnue (308 → `/trouver-installateur`) | Jamais | — |
 | Pro | `/pro/...miramas-air-g-energie-8907` | ✅ Indexée | **17/11/2026** *(post-fix)* | **Breadcrumbs, Review snippets ⭐** |
 | Pro | `/pro/...le-mans-aero-solutions-6179` | ✅ Indexée | 11/09/2026 | — |
@@ -132,8 +133,8 @@ Enregistrement de 4 baselines `seo-drift` pré-déploiement, puis déploiement d
 
 ## 🚀 5. PLAN D'ACTION POUR LE MAXIMUM DE PAGES ET LA TÊTE DE LISTING
 
-1. **Demander l'indexation GSC de `/trouver-installateur` et `/materiel`** :
-   * Maillage interne Footer déployé le 18/11 — reste à déclencher *« Demander une indexation »* dans l'interface Search Console (ou laisser Googlebot les découvrir au prochain passage).
+1. **✅ Fait le 18/11 — Indexation prioritaire de `/trouver-installateur` et `/materiel`** :
+   * Maillage interne Footer déployé (`33dbe0c`) + *« Demander une indexation »* validé dans GSC le 18/11 à 07h44. Vérifier leur passage à *Indexée* au prochain point.
 2. **Suivi du recrawl post-16/11 & post-18/11 (Échéance 22–25 novembre)** :
    * Contrôler la courbe GSC (impressions, clics, CTR), le passage de Googlebot sur les grandes pages Villes (`paris`, `lyon`, `marseille`, `bordeaux`) et les autres fiches Pro pour généraliser les Rich Snippets `Review` + `FAQPage`, ainsi que la baisse du TTFB grâce au cache ISR Edge.
 3. **Priorisation E-E-A-T, Contenu Frais & Quick Wins Top 10** :
