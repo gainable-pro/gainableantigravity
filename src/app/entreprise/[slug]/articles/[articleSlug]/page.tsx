@@ -16,6 +16,12 @@ import { InternalLinking } from "@/components/features/seo/internal-linking";
 const SYSTEM_EXPERT_SLUGS = new Set(["gainable-fr", "redaction-gainable", "bureau-etude-gainable"]);
 
 export const revalidate = 3600; // Cache la page pendant 1 heure (ISR) pour soulager la base de données face à Googlebot
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+    // Active le cache ISR Edge à la demande (on-demand ISR) pour les 56 277 articles sans surcharger le build
+    return [];
+}
 
 interface PageProps {
     params: Promise<{
