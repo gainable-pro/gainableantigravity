@@ -4,7 +4,7 @@ import { MapPin, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { CITIES_100 } from "@/data/cities-100";
 import { CITIES_EXTENDED } from "@/data/cities-extended";
 import { slugify } from '@/lib/utils';
-import { prisma } from '@/lib/prisma';
+import { prisma, withDbRetry } from '@/lib/prisma';
 import { ItemListJsonLd } from '@/components/seo/JsonLd';
 
 export const revalidate = 3600;
@@ -30,17 +30,19 @@ export default async function DirectoryPage() {
         regionsMap.get(region)!.push(city);
     });
 
-    const activeExperts = await prisma.expert.findMany({
-        where: { status: 'active' },
-        take: 12,
-        select: {
-            slug: true,
-            nom_entreprise: true,
-            ville: true,
-            expert_type: true,
-            is_labeled: true
-        }
-    });
+    const activeExperts = await withDbRetry(() =>
+        prisma.expert.findMany({
+            where: { status: 'active' },
+            take: 12,
+            select: {
+                slug: true,
+                nom_entreprise: true,
+                ville: true,
+                expert_type: true,
+                is_labeled: true
+            }
+        })
+    );
 
     return (
         <div className="bg-slate-50 min-h-screen pb-20">

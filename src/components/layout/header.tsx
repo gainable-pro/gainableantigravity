@@ -12,14 +12,34 @@ import * as React from "react";
 export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
     const pathname = usePathname();
     const isLandingPage = pathname === '/demo' || pathname?.startsWith('/demo');
+    const [detectedCountry, setDetectedCountry] = React.useState(countryCode);
 
-
+    React.useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const host = window.location.hostname.toLowerCase();
+        if (host.endsWith('.ch')) {
+            setDetectedCountry('CH');
+            return;
+        }
+        if (host.endsWith('.ma')) {
+            setDetectedCountry('MA');
+            return;
+        }
+        if (host.endsWith('.be')) {
+            setDetectedCountry('BE');
+            return;
+        }
+        const match = document.cookie.match(/(?:^|;\s*)gainable_country=(CH|MA|BE)(?:;|$)/);
+        if (match) {
+            setDetectedCountry(match[1]);
+        }
+    }, []);
 
     // Dynamic Logo based on Country
     let logoSrc = "/gainable-fr-logo-officiel-climatisation.png"; // Default (FR/Global)
-    if (countryCode === 'CH') logoSrc = "/gainable-ch-logo-climatisation-suisse.png"; // Suisse
-    if (countryCode === 'MA') logoSrc = "/gainable-ma-logo-climatisation-maroc.png"; // Maroc
-    if (countryCode === 'BE') logoSrc = "/gainable-fr-logo-bureau-etude-thermique.png"; // Belgique
+    if (detectedCountry === 'CH') logoSrc = "/gainable-ch-logo-climatisation-suisse.png"; // Suisse
+    if (detectedCountry === 'MA') logoSrc = "/gainable-ma-logo-climatisation-maroc.png"; // Maroc
+    if (detectedCountry === 'BE') logoSrc = "/gainable-fr-logo-bureau-etude-thermique.png"; // Belgique
 
     if (isLandingPage) {
         return (

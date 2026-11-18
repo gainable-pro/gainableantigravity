@@ -68,25 +68,20 @@ export const metadata: Metadata = {
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PWAInstall } from "@/components/pwa/PWAInstall";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
-import { headers } from "next/headers";
 import { VercelAnalytics } from "@/components/analytics/VercelAnalytics";
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Get Country from Vercel Headers
-  const headersList = await headers();
-  const country = headersList.get('x-vercel-ip-country') || 'FR';
-
   return (
     <html lang="fr">
       <head>
         <OrganizationJsonLd />
       </head>
       <body className={`${montserrat.variable} font-sans`}>
-        <Header countryCode={country} />
+        <Header />
         <main className="min-h-screen">
           {children}
         </main>

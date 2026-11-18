@@ -65,6 +65,12 @@ export function Footer() {
                     <Link href="/faq-visibilite-referencement" className="hover:text-amber-500 transition-colors text-amber-500/90 font-semibold">
                         FAQ Visibilité & Référencement
                     </Link>
+                    <Link href="/trouver-installateur" className="hover:text-amber-500 transition-colors text-white/95 font-semibold">
+                        Annuaire Installateurs RGE
+                    </Link>
+                    <Link href="/materiel" className="hover:text-amber-500 transition-colors">
+                        Catalogue Matériel
+                    </Link>
                     <Link href="/articles" className="hover:text-amber-500 transition-colors">
                         Articles
                     </Link>

@@ -55,7 +55,21 @@ export function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL(cleanPath + request.nextUrl.search, request.url), 301);
     }
 
-    return NextResponse.next();
+    const response = NextResponse.next();
+
+    // Propagate non-FR geo country via lightweight cookie only when needed (keeps FR & bots 100% ISR edge-cacheable)
+    const ipCountry = request.headers.get('x-vercel-ip-country');
+    if (ipCountry && (ipCountry === 'CH' || ipCountry === 'MA' || ipCountry === 'BE')) {
+        if (request.cookies.get('gainable_country')?.value !== ipCountry) {
+            response.cookies.set('gainable_country', ipCountry, {
+                path: '/',
+                maxAge: 60 * 60 * 24,
+                sameSite: 'lax',
+            });
+        }
+    }
+
+    return response;
 }
 
 export const config = {
