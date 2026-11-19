@@ -20,7 +20,7 @@ export function OrganizationJsonLd() {
     '@type': ['Organization', 'Service'],
     '@id': 'https://www.gainable.fr/#organization',
     name: 'Gainable.fr',
-    alternateName: ['Gainable.ch', 'Gainable.be', 'Gainable.ma', 'Gainable.org', 'Gainable.eu', 'Gainable Pro'],
+    alternateName: ['Gainable.ch', 'Gainable.be', 'Gainable.ma', 'Gainable.org', 'Gainable.eu', 'Gainable.ca', 'DuctedExpert', 'Gainable Pro'],
     url: 'https://www.gainable.fr',
     logo: 'https://www.gainable.fr/assets/logo-share.png',
     description: "La première plateforme internationale de mise en relation et de référencement d'experts certifiés en climatisation gainable, pompes à chaleur réversibles, bureaux d'études CVC et diagnostiqueurs.",
@@ -53,7 +53,8 @@ export function OrganizationJsonLd() {
       'https://www.gainable.ma',
       'https://www.gainable.org',
       'https://www.gainable.eu',
-      'https://www.gainable.ca'
+      'https://www.gainable.ca',
+      'https://www.ductedexpert.com'
     ],
   };
 

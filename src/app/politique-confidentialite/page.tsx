@@ -83,6 +83,10 @@ export default function PolitiqueConfidentialite() {
                                 <span className="w-2 h-2 rounded-full bg-rose-500"></span>
                                 www.gainable.ca
                             </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                www.ductedexpert.com
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -451,6 +455,7 @@ export default function PolitiqueConfidentialite() {
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.ductedexpert.com</div>
                             </div>
                             <p>
                                 Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.

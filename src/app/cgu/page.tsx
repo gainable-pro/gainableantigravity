@@ -83,6 +83,10 @@ export default function ConditionsGeneralesUtilisation() {
                                 <span className="w-2 h-2 rounded-full bg-rose-500"></span>
                                 www.gainable.ca
                             </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                www.ductedexpert.com
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +111,7 @@ export default function ConditionsGeneralesUtilisation() {
                             Les présentes Conditions Générales d'Utilisation, ci-après « CGU », régissent l'accès et l'utilisation de la plateforme Gainable.fr.
                         </p>
                         <p className="text-xs text-slate-500 italic">
-                            Les domaines gainable.ch, gainable.ma, gainable.be, gainable.org, gainable.eu et gainable.ca sont également concernés lorsqu'ils redirigent vers le service Gainable.fr. Les dispositions impératives des législations territoriales applicables demeurent réservées.
+                            Les domaines gainable.ch, gainable.ma, gainable.be, gainable.org, gainable.eu, gainable.ca et www.ductedexpert.com sont également concernés lorsqu'ils redirigent vers le service Gainable.fr. Les dispositions impératives des législations territoriales applicables demeurent réservées.
                         </p>
                     </section>
 
@@ -165,6 +169,7 @@ export default function ConditionsGeneralesUtilisation() {
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.ductedexpert.com</div>
                             </div>
                             <p>
                                 Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.

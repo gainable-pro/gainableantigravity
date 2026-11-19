@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { FileText, ShieldAlert, CheckCircle2, ArrowLeft, Mail, Building2, Scale } from 'lucide-react';
+import { FileText, ShieldAlert, CheckCircle2, ArrowLeft, Mail, Building2, Scale, Globe2 } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Conditions Générales de Vente Professionnelles (CGV) - Gainable.fr",
@@ -48,10 +48,51 @@ export default function ConditionsGeneralesVentePage() {
                     <p className="text-base md:text-lg font-bold text-[#D59B2B] mb-4">
                         GAINABLE.FR — EXCEED DIGITAL
                     </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold mb-6">
                         <span>Version du 8 novembre 2026</span>
                         <span className="text-slate-400">•</span>
                         <span className="text-amber-800 font-bold">Projet soumis à validation juridique</span>
+                    </div>
+
+                    {/* Affichage des sites / domaines */}
+                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                        <p className="text-xs font-bold uppercase text-slate-500 tracking-wider flex items-center gap-2 mb-3">
+                            <Globe2 className="w-4 h-4 text-[#D59B2B]" /> Plateforme &amp; Domaines Internationaux Associés :
+                        </p>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 text-sm font-semibold text-slate-800">
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                www.gainable.fr
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                                www.gainable.ch
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                                www.gainable.ma
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                                www.gainable.be
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                                www.gainable.org
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-teal-500"></span>
+                                www.gainable.eu
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                                www.gainable.ca
+                            </div>
+                            <div className="px-3 py-2 bg-white rounded-xl border border-slate-200/80 flex items-center gap-2 shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                www.ductedexpert.com
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -128,7 +169,7 @@ export default function ConditionsGeneralesVentePage() {
                                 <li>D'utiliser frauduleusement les services Gainable pour porter atteinte aux droits d'EXCEED DIGITAL.</li>
                             </ul>
                             <p>
-                                Ces obligations s'appliquent aux services du réseau Gainable, notamment aux domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong>, <strong>gainable.eu</strong> et <strong>gainable.ca</strong>, lorsqu'ils sont exploités par EXCEED DIGITAL.
+                                Ces obligations s'appliquent aux services du réseau Gainable, notamment aux domaines <strong>gainable.fr</strong>, <strong>gainable.ch</strong>, <strong>gainable.ma</strong>, <strong>gainable.be</strong>, <strong>gainable.org</strong>, <strong>gainable.eu</strong>, <strong>gainable.ca</strong> et <strong>www.ductedexpert.com</strong>, lorsqu'ils sont exploités par EXCEED DIGITAL.
                             </p>
                             <p className="text-xs text-slate-500 italic">
                                 Les interdictions ci-dessus s'entendent sous réserve des droits et exceptions légalement reconnus aux utilisateurs.
@@ -173,6 +214,7 @@ export default function ConditionsGeneralesVentePage() {
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.org</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.eu</div>
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.gainable.ca</div>
+                                <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">• www.ductedexpert.com</div>
                             </div>
                             <p>
                                 Les protections légales applicables aux éléments de Gainable s'exercent indépendamment du nom de domaine utilisé pour accéder aux services.
