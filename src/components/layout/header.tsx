@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Globe, Menu } from "lucide-react";
 import Image from "next/image";
 import { LoginDropdown } from "@/components/layout/login-dropdown";
+import { LanguageDropdown } from "@/components/layout/language-dropdown";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import * as React from "react";
@@ -103,7 +104,8 @@ export function Header({ countryCode = 'FR' }: { countryCode?: string }) {
                 </nav>
 
                 {/* Right Side: CTA */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                    <LanguageDropdown />
                     <div className="hidden md:block">
                         <LoginDropdown />
                     </div>
@@ -134,6 +136,7 @@ function MobileMenu() {
                     <div className="mb-4">
                         <LoginDropdown />
                     </div>
+                    <LanguageDropdown mobile={true} />
                     <hr className="border-slate-100" />
 
                     <Link href="https://www.gainable.fr" onClick={() => setIsOpen(false)} className="text-lg font-medium text-slate-700 hover:text-[#1F2D3D] transition-colors">Nos Experts</Link>
