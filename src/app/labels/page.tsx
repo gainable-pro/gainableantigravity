@@ -36,6 +36,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { VerifiedExpertBadge } from "@/components/ui/verified-expert-badge";
+import { ExpertShortVideoPlayer } from "@/components/features/video/ExpertShortVideoPlayer";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -45,6 +46,15 @@ export const metadata: Metadata = {
         title: "Label Expert Vérifié Gainable.fr : La Référence Qualité en Climatisation",
         description: "Découvrez le label Expert Vérifié Gainable.fr : la protection officielle des particuliers contre les faux artisans, les fausses décennales et les abandons de SAV.",
         images: ['/gainable-fr-label-qualite-climatisation-rge.png'],
+        videos: [
+            {
+                url: "https://www.gainable.fr/videos/gainable-expert-short-fr.mp4",
+                secureUrl: "https://www.gainable.fr/videos/gainable-expert-short-fr.mp4",
+                type: "video/mp4",
+                width: 1920,
+                height: 1080,
+            }
+        ],
         type: 'website',
     },
     twitter: {
@@ -132,6 +142,9 @@ export default function LabelsPage() {
                     </div>
                 </div>
             </section>
+
+            {/* SECTION: VIDÉO DU LABEL EN 30 SECONDES */}
+            <ExpertShortVideoPlayer />
 
             {/* SECTION 1: LE BADGE OFFICIEL MIS EN AVANT EN PREMIER (DEMANDE UTILISATEUR) */}
             <section className="py-16 bg-gradient-to-b from-slate-100 via-white to-slate-50 border-b border-slate-200">
